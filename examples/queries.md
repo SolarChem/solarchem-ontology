@@ -1,0 +1,3 @@
+# Some queries
+
+Below are some examples of queries, using as reference an extract from the data sets provided by ...
