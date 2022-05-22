@@ -1,0 +1,266 @@
+ @prefix artelafs: <http://www.owl-ontologies.com/artelafs#> .
+@prefix artleafs: <http://base.namespace.com> .
+@prefix bibo: <http://purl.org/ontology/bibo> .
+@prefix chebi: <http://purl.obolibrary.org/obo/> .
+@prefix dc: <http://purl.org/dc/terms> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qudt: <http://qudt.org/1.1/vocab/unit> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+artleafs: a owl:Ontology ;
+    dc:creator "Oier Beaskoetxea" ;
+    dc:description "Ontology code created by Chowlk" ;
+    dc:title "Photocatalysis Ontology" ;
+    owl:versionInfo "0.0.1" .
+
+artleafs:BET a owl:DatatypeProperty ;
+    rdfs:label "b e t" ;
+    rdfs:range xsd:qudt .
+
+artleafs:Catalyst a owl:Class ;
+    rdfs:label "Catalyst" ;
+    rdfs:subClassOf artleafs:Input .
+
+artleafs:CatalystSetUp a owl:Class ;
+    rdfs:label "Catalyst Set Up" .
+
+artleafs:Co-catalyst a owl:Class ;
+    rdfs:label "Co-catalyst" ;
+    rdfs:subClassOf artleafs:ExtraChem .
+
+artleafs:Condition a owl:Class ;
+    rdfs:label "Condition" .
+
+artleafs:Dopant a owl:Class ;
+    rdfs:label "Dopant" ;
+    rdfs:subClassOf artleafs:ExtraChem .
+
+artleafs:Dye a owl:Class ;
+    rdfs:label "Dye" ;
+    rdfs:subClassOf artleafs:ExtraChem .
+
+artleafs:IluminatedArea a owl:DatatypeProperty ;
+    rdfs:label "iluminated area" ;
+    rdfs:range xsd:qudt .
+
+artleafs:Irradiance a owl:DatatypeProperty ;
+    rdfs:label "irradiance" ;
+    rdfs:range xsd:qudt .
+
+artleafs:Lamp a owl:Class ;
+    rdfs:label "Lamp" .
+
+artleafs:LampType a owl:DatatypeProperty ;
+    rdfs:label "lamp type" ;
+    rdfs:range xsd:string .
+
+artleafs:LightSource a owl:Class ;
+    rdfs:label "Light Source" .
+
+artleafs:LightSourceType a owl:DatatypeProperty ;
+    rdfs:label "light source type" ;
+    rdfs:range xsd:string .
+
+artleafs:Mass a owl:DatatypeProperty ;
+    rdfs:label "mass" ;
+    rdfs:range xsd:qudt .
+
+artleafs:MaterialTransformation a owl:Class ;
+    rdfs:label "Material Transformation" .
+
+artleafs:Name a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    rdfs:range xsd:string .
+
+artleafs:OperationMode a owl:DatatypeProperty ;
+    rdfs:label "operation mode" ;
+    rdfs:range xsd:string .
+
+artleafs:Output a owl:Class ;
+    rdfs:label "Output" ;
+    rdfs:subClassOf artleafs:Material .
+
+artleafs:PH a owl:DatatypeProperty ;
+    rdfs:label "p h" ;
+    rdfs:range xsd:double .
+
+artleafs:Percentage a owl:DatatypeProperty ;
+    rdfs:label "percentage" ;
+    rdfs:range xsd:double .
+
+artleafs:Power a owl:DatatypeProperty ;
+    rdfs:label "power" ;
+    rdfs:range xsd:qudt .
+
+artleafs:Pressure a owl:DatatypeProperty ;
+    rdfs:label "pressure" ;
+    rdfs:range xsd:qudt .
+
+artleafs:ReactionMedium a owl:Class ;
+    rdfs:label "Reaction Medium" .
+
+artleafs:ReactionMediumType a owl:DatatypeProperty ;
+    rdfs:label "reaction medium type" ;
+    rdfs:range xsd:string .
+
+artleafs:ReactionTime a owl:DatatypeProperty ;
+    rdfs:label "reaction time" ;
+    rdfs:range xsd:qudt .
+
+artleafs:Reactor a owl:Class ;
+    rdfs:label "Reactor" .
+
+artleafs:ReactorType a owl:DatatypeProperty ;
+    rdfs:label "reactor type" ;
+    rdfs:range xsd:string .
+
+artleafs:Reductant a owl:Class ;
+    rdfs:label "Reductant" .
+
+artleafs:SetUpType a owl:DatatypeProperty ;
+    rdfs:label "set up type" ;
+    rdfs:range xsd:string .
+
+artleafs:SpaceVelocity a owl:DatatypeProperty ;
+    rdfs:label "space velocity" ;
+    rdfs:range xsd:qudt .
+
+artleafs:Support a owl:Class ;
+    rdfs:label "Support" ;
+    rdfs:subClassOf artleafs:ExtraChem .
+
+artleafs:Temperature a owl:DatatypeProperty ;
+    rdfs:label "temperature" ;
+    rdfs:range xsd:qudt .
+
+artleafs:Volume a owl:DatatypeProperty ;
+    rdfs:label "volume" ;
+    rdfs:range xsd:qudt .
+
+artleafs:Wavlelength a owl:DatatypeProperty ;
+    rdfs:label "wavlelength" ;
+    rdfs:range xsd:qudt .
+
+artleafs:hasCatalyst a owl:ObjectProperty ;
+    rdfs:label "has catalyst" .
+
+artleafs:hasCataysrSetUp a owl:ObjectProperty ;
+    rdfs:label "has cataysr set up" .
+
+artleafs:hasCo-catalyst a owl:ObjectProperty ;
+    rdfs:label "has co-catalyst" .
+
+artleafs:hasCondition a owl:ObjectProperty ;
+    rdfs:label "has condition" .
+
+artleafs:hasDopant a owl:ObjectProperty ;
+    rdfs:label "has dopant" .
+
+artleafs:hasDye a owl:ObjectProperty ;
+    rdfs:label "has dye" .
+
+artleafs:hasLamp a owl:ObjectProperty ;
+    rdfs:label "has lamp" .
+
+artleafs:hasLightSource a owl:ObjectProperty ;
+    rdfs:label "has light source" .
+
+artleafs:hasMaterialTransformation a owl:ObjectProperty ;
+    rdfs:label "has material transformation" .
+
+artleafs:hasOutput a owl:ObjectProperty ;
+    rdfs:label "has output" .
+
+artleafs:hasQuantity a owl:ObjectProperty ;
+    rdfs:label "has quantity" .
+
+artleafs:hasReactionMedium a owl:ObjectProperty ;
+    rdfs:label "has reaction medium" .
+
+artleafs:hasReactor a owl:ObjectProperty ;
+    rdfs:label "has reactor" .
+
+artleafs:hasReductant a owl:ObjectProperty ;
+    rdfs:label "has reductant" .
+
+artleafs:hasSupport a owl:ObjectProperty ;
+    rdfs:label "has support" .
+
+chebi:chemicalsubstance a owl:Class ;
+    rdfs:label "chemicalsubstance" ;
+    owl:equivalentClass artleafs:Material .
+
+dc:creator a owl:ObjectProperty ;
+    rdfs:label "creator" .
+
+dc:date a owl:DatatypeProperty ;
+    rdfs:label "date" .
+
+dc:title a owl:DatatypeProperty ;
+    rdfs:label "title" .
+
+bibo:Article a owl:Class ;
+    rdfs:label "Article" .
+
+bibo:Journal a owl:Class ;
+    rdfs:label "Journal" .
+
+bibo:abstract a owl:DatatypeProperty ;
+    rdfs:label "abstract" .
+
+bibo:authorList a owl:DatatypeProperty ;
+    rdfs:label "author list" .
+
+bibo:doi a owl:DatatypeProperty ;
+    rdfs:label "doi" .
+
+bibo:issue a owl:DatatypeProperty ;
+    rdfs:label "issue" .
+
+bibo:pageEnd a owl:DatatypeProperty ;
+    rdfs:label "page end" .
+
+bibo:pageStart a owl:DatatypeProperty ;
+    rdfs:label "page start" .
+
+bibo:volume a owl:DatatypeProperty ;
+    rdfs:label "volume" .
+
+qudt:MicroMOL-PER-GM a owl:Class ;
+    rdfs:label "Micro M O L- P E R- G M" ;
+    owl:equivalentClass artleafs:Quantity .
+
+qudt:MicroMOL-PER-GM-HR a owl:Class ;
+    rdfs:label "Micro M O L- P E R- G M- H R" ;
+    owl:equivalentClass artleafs:Quantity .
+
+qudt:MicroMOL-PER-M2-HR a owl:Class ;
+    rdfs:label "Micro M O L- P E R- M2- H R" ;
+    owl:equivalentClass artleafs:Quantity .
+
+artelafs:Eg a owl:DatatypeProperty ;
+    rdfs:label "eg" ;
+    rdfs:range xsd:qudt .
+
+foaf:Person a owl:Class ;
+    rdfs:label "Person" .
+
+foaf:mbox a owl:DatatypeProperty ;
+    rdfs:label "mbox" .
+
+artleafs:Input a owl:Class ;
+    rdfs:label "Input" ;
+    rdfs:subClassOf artleafs:Material .
+
+artleafs:Material a owl:Class ;
+    rdfs:label "Material" .
+
+artleafs:Quantity a owl:Class ;
+    rdfs:label "Quantity" .
+
+artleafs:ExtraChem a owl:Class ;
+    rdfs:label "Extra Chem" ;
+    rdfs:subClassOf artleafs:Input .
+
