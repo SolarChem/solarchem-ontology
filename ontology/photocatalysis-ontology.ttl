@@ -1,8 +1,8 @@
-@prefix bibo: <http://purl.org/ontology/bibo> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix chebi: <http://purl.obolibrary.org/obo/> .
-@prefix dc: <http://purl.org/dc/terms> .
+@prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix phcat: <http://base.namespace.com> .
+@prefix phcat: <http://base.namespace.com/> .
 @prefix qudt: <http://qudt.org//2.1/schema/qudt/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
@@ -39,7 +39,7 @@ phcat:hasReactionMedium a owl:ObjectProperty ;
     rdfs:label "has reaction medium" .
 
 phcat:hasReductant a owl:ObjectProperty ;
-    rdfs:range phcat:Reductant ;
+    rdfs:range chebi:CHEBI:24431 ;
     rdfs:label "has reductant" .
 
 phcat:hasRole a owl:ObjectProperty ;
@@ -53,8 +53,7 @@ phcat:reportedIn a owl:ObjectProperty ;
     rdfs:range bibo:Article ;
     rdfs:label "reported in" .
 
-dc:isPartOf a bibo:Journal ;
-    rdfs:range phcat:ReactionMedium ;
+dc:isPartOf a owl:ObjectProperty ;
     rdfs:label "is part of" .
 
 phcat:hasChemical a owl:ObjectProperty ;

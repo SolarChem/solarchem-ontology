@@ -1,0 +1,961 @@
+@prefix : <http://base.namespace.com#> .
+@prefix dc: <http://purl.org/dc/terms> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bibo: <http://purl.org/ontology/bibo> .
+@prefix qudt: <http://qudt.org//2.1/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix chebi: <http://purl.obolibrary.org/obo/> .
+@prefix phcat: <http://base.namespace.com> .
+@prefix schema: <https://schema.org/> .
+@base <http://base.namespace.com> .
+
+<http://base.namespace.com> rdf:type owl:Ontology ;
+                             <http://purl.org/dc/terms/creator> "Oier Beaskoetxea" ;
+                             <http://purl.org/dc/terms/description> "Ontology code created by Chowlk" ;
+                             owl:versionInfo "0.4.2" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#maxCardinality
+owl:maxCardinality rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://base.namespace.com/hasBET
+<http://base.namespace.com/hasBET> rdf:type owl:ObjectProperty ;
+                                   rdfs:domain <http://base.namespace.com/MaterialTransformationProcess> ;
+                                   rdfs:range <http://base.namespace.com/BET> .
+
+
+###  http://base.namespace.com/hasChemical
+<http://base.namespace.com/hasChemical> rdf:type owl:ObjectProperty ;
+                                        rdfs:domain <http://base.namespace.com/Input> ,
+                                                    <http://base.namespace.com/Output> ;
+                                        rdfs:range <http://purl.obolibrary.org/obo/CHEBI:24431> .
+
+
+###  http://base.namespace.com/hasCondition
+<http://base.namespace.com/hasCondition> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain <http://base.namespace.com/MaterialTransformationProcess> ;
+                                         rdfs:range <http://base.namespace.com/Condition> .
+
+
+###  http://base.namespace.com/hasEg
+<http://base.namespace.com/hasEg> rdf:type owl:ObjectProperty ;
+                                  rdfs:domain <http://base.namespace.com/MaterialTransformationProcess> ;
+                                  rdfs:range <http://base.namespace.com/Eg> .
+
+
+###  http://base.namespace.com/hasInput
+<http://base.namespace.com/hasInput> rdf:type owl:ObjectProperty ;
+                                     rdfs:domain <http://base.namespace.com/MaterialTransformationProcess> ;
+                                     rdfs:range <http://base.namespace.com/Input> .
+
+
+###  http://base.namespace.com/hasMaterialTransformationProcess
+<http://base.namespace.com/hasMaterialTransformationProcess> rdf:type owl:ObjectProperty ;
+                                                             owl:inverseOf <http://base.namespace.com/reportedIn> ;
+                                                             rdfs:domain <http://purl.org/ontology/bibo/Article> ;
+                                                             rdfs:range <http://base.namespace.com/MaterialTransformationProcess> .
+
+
+###  http://base.namespace.com/hasOutput
+<http://base.namespace.com/hasOutput> rdf:type owl:ObjectProperty ;
+                                      rdfs:domain <http://base.namespace.com/MaterialTransformationProcess> ;
+                                      rdfs:range <http://base.namespace.com/Output> .
+
+
+###  http://base.namespace.com/hasOutputCuantity
+<http://base.namespace.com/hasOutputCuantity> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain <http://base.namespace.com/Output> ;
+                                              rdfs:range <http://base.namespace.com/OutputQuantity> .
+
+
+###  http://base.namespace.com/hasReactionMedium
+<http://base.namespace.com/hasReactionMedium> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain <http://base.namespace.com/MaterialTransformationProcess> ;
+                                              rdfs:range <http://base.namespace.com/ReactionMedium> .
+
+
+###  http://base.namespace.com/hasReductant
+<http://base.namespace.com/hasReductant> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain <http://base.namespace.com/MaterialTransformationProcess> ;
+                                         rdfs:range <http://purl.obolibrary.org/obo/CHEBI:24431> .
+
+
+###  http://base.namespace.com/hasRole
+<http://base.namespace.com/hasRole> rdf:type owl:ObjectProperty ;
+                                    rdfs:domain <http://base.namespace.com/Input> ;
+                                    rdfs:range <http://base.namespace.com/MaterialTransformationRole> .
+
+
+###  http://base.namespace.com/reportedIn
+<http://base.namespace.com/reportedIn> rdf:type owl:ObjectProperty ;
+                                       rdfs:domain <http://base.namespace.com/MaterialTransformationProcess> ;
+                                       rdfs:range <http://purl.org/ontology/bibo/Article> .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:ObjectProperty ;
+                                   rdfs:domain <http://purl.org/ontology/bibo/Article> ;
+                                   rdfs:range schema:Person .
+
+
+###  http://purl.org/dc/terms/isPartOf
+<http://purl.org/dc/terms/isPartOf> rdf:type owl:ObjectProperty ;
+                                    rdfs:domain <http://purl.org/ontology/bibo/Article> ;
+                                    rdfs:range <http://purl.org/ontology/bibo/Journal> .
+
+
+###  http://qudt.org//2.1/schema/qudt/unit
+qudt:unit rdf:type owl:ObjectProperty ;
+          rdfs:domain <http://base.namespace.com/BET> ,
+                      <http://base.namespace.com/CatalystSetUpCondition> ,
+                      <http://base.namespace.com/Eg> ,
+                      <http://base.namespace.com/IluminatedAreaCondition> ,
+                      <http://base.namespace.com/IrradianceCondition> ,
+                      <http://base.namespace.com/OutputQuantity> ,
+                      <http://base.namespace.com/PowerCondition> ,
+                      <http://base.namespace.com/PressureCondition> ,
+                      <http://base.namespace.com/ReactionTimeCondition> ,
+                      <http://base.namespace.com/ReactorCondition> ,
+                      <http://base.namespace.com/SpaceVelocityCondition> ,
+                      <http://base.namespace.com/TemperatureCondition> ,
+                      <http://base.namespace.com/WavelengthCondition> ;
+          rdfs:range qudt:Unit .
+
+
+###  https://schema.org/nationality
+schema:nationality rdf:type owl:ObjectProperty ;
+                   rdfs:domain schema:Person ;
+                   rdfs:range schema:Country .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://base.namespace.com/conditionType
+<http://base.namespace.com/conditionType> rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain <http://base.namespace.com/Condition> ;
+                                          rdfs:range xsd:string .
+
+
+###  http://base.namespace.com/cristalStructure
+<http://base.namespace.com/cristalStructure> rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain <http://base.namespace.com/Input> ;
+                                             rdfs:range xsd:string .
+
+
+###  http://base.namespace.com/lampType
+<http://base.namespace.com/lampType> rdf:type owl:DatatypeProperty ;
+                                     rdfs:subPropertyOf <http://base.namespace.com/conditionType> ;
+                                     rdfs:domain <http://base.namespace.com/LampCondition> ;
+                                     rdfs:range xsd:string .
+
+
+###  http://base.namespace.com/lightSourceType
+<http://base.namespace.com/lightSourceType> rdf:type owl:DatatypeProperty ;
+                                            rdfs:subPropertyOf <http://base.namespace.com/conditionType> ;
+                                            rdfs:domain <http://base.namespace.com/LightSourceCondition> ;
+                                            rdfs:range xsd:string .
+
+
+###  http://base.namespace.com/operationMode
+<http://base.namespace.com/operationMode> rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain <http://base.namespace.com/MaterialTransformationProcess> ;
+                                          rdfs:range xsd:string .
+
+
+###  http://base.namespace.com/pH
+<http://base.namespace.com/pH> rdf:type owl:DatatypeProperty ;
+                               rdfs:domain <http://base.namespace.com/ReactionMedium> ;
+                               rdfs:range xsd:nonNegativeInteger .
+
+
+###  http://base.namespace.com/percentage
+<http://base.namespace.com/percentage> rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain <http://base.namespace.com/Input> ;
+                                       rdfs:range xsd:double .
+
+
+###  http://base.namespace.com/reactorType
+<http://base.namespace.com/reactorType> rdf:type owl:DatatypeProperty ;
+                                        rdfs:subPropertyOf <http://base.namespace.com/conditionType> ;
+                                        rdfs:domain <http://base.namespace.com/ReactorCondition> ;
+                                        rdfs:range xsd:string .
+
+
+###  http://base.namespace.com/setUpType
+<http://base.namespace.com/setUpType> rdf:type owl:DatatypeProperty ;
+                                      rdfs:subPropertyOf <http://base.namespace.com/conditionType> ;
+                                      rdfs:domain <http://base.namespace.com/CatalystSetUpCondition> ;
+                                      rdfs:range xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/formula
+chebi:formula rdf:type owl:DatatypeProperty ;
+              rdfs:domain chebi:ChemicalEntity ,
+                          <http://purl.obolibrary.org/obo/CHEBI:24431> ;
+              rdfs:range xsd:string .
+
+
+###  http://purl.org/dc/terms/date
+<http://purl.org/dc/terms/date> rdf:type owl:DatatypeProperty ;
+                                rdfs:domain <http://purl.org/ontology/bibo/Article> ;
+                                rdfs:range xsd:dateTime .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain <http://purl.org/ontology/bibo/Article> ;
+                                 rdfs:range xsd:string .
+
+
+###  http://purl.org/ontology/bibo/abstract
+<http://purl.org/ontology/bibo/abstract> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <http://purl.org/ontology/bibo/Article> ;
+                                         rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/ontology/bibo/doi
+<http://purl.org/ontology/bibo/doi> rdf:type owl:DatatypeProperty ;
+                                    rdfs:domain <http://purl.org/ontology/bibo/Article> ;
+                                    rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/ontology/bibo/issue
+<http://purl.org/ontology/bibo/issue> rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain <http://purl.org/ontology/bibo/Article> ;
+                                      rdfs:range xsd:string .
+
+
+###  http://purl.org/ontology/bibo/pageStart
+<http://purl.org/ontology/bibo/pageStart> rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain <http://purl.org/ontology/bibo/Article> ;
+                                          rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/ontology/bibo/volume
+<http://purl.org/ontology/bibo/volume> rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain <http://purl.org/ontology/bibo/Article> ;
+                                       rdfs:range rdfs:Literal .
+
+
+###  http://qudt.org//2.1/schema/qudt/numericValue
+qudt:numericValue rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf qudt:value ;
+                  rdfs:domain <http://base.namespace.com/BET> ,
+                              <http://base.namespace.com/CatalystSetUpCondition> ,
+                              <http://base.namespace.com/Eg> ,
+                              <http://base.namespace.com/IluminatedAreaCondition> ,
+                              <http://base.namespace.com/IrradianceCondition> ,
+                              <http://base.namespace.com/OutputQuantity> ,
+                              <http://base.namespace.com/PowerCondition> ,
+                              <http://base.namespace.com/PressureCondition> ,
+                              <http://base.namespace.com/ReactionTimeCondition> ,
+                              <http://base.namespace.com/ReactorCondition> ,
+                              <http://base.namespace.com/SpaceVelocityCondition> ,
+                              <http://base.namespace.com/TemperatureCondition> ;
+                  rdfs:range xsd:double .
+
+
+###  http://qudt.org//2.1/schema/qudt/value
+qudt:value rdf:type owl:DatatypeProperty ;
+           rdfs:domain <http://base.namespace.com/Condition> ;
+           rdfs:range rdfs:Literal .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:DatatypeProperty ;
+           rdfs:domain <http://base.namespace.com/MaterialTransformationProcess> ,
+                       chebi:ChemicalEntity ,
+                       <http://purl.obolibrary.org/obo/CHEBI:24431> ;
+           rdfs:range xsd:string .
+
+
+###  https://schema.org/email
+schema:email rdf:type owl:DatatypeProperty ;
+             rdfs:domain schema:Person ;
+             rdfs:range xsd:string .
+
+
+###  https://schema.org/name
+schema:name rdf:type owl:DatatypeProperty ;
+            rdfs:domain schema:Person ;
+            rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://base.namespace.com/BET
+<http://base.namespace.com/BET> rdf:type owl:Class ;
+                                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                  owl:onProperty qudt:unit ;
+                                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                ] .
+
+
+###  http://base.namespace.com/CatalystSetUpCondition
+<http://base.namespace.com/CatalystSetUpCondition> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://base.namespace.com/Condition> .
+
+
+###  http://base.namespace.com/Condition
+<http://base.namespace.com/Condition> rdf:type owl:Class .
+
+
+###  http://base.namespace.com/Eg
+<http://base.namespace.com/Eg> rdf:type owl:Class ;
+                               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                 owl:onProperty qudt:unit ;
+                                                 owl:cardinality "1"^^xsd:nonNegativeInteger
+                                               ] .
+
+
+###  http://base.namespace.com/IluminatedAreaCondition
+<http://base.namespace.com/IluminatedAreaCondition> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://base.namespace.com/LightSourceCondition> ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty qudt:unit ;
+                                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                    ] .
+
+
+###  http://base.namespace.com/Input
+<http://base.namespace.com/Input> rdf:type owl:Class ;
+                                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <http://base.namespace.com/hasChemical> ;
+                                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <http://base.namespace.com/hasRole> ;
+                                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                  ] .
+
+
+###  http://base.namespace.com/IrradianceCondition
+<http://base.namespace.com/IrradianceCondition> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://base.namespace.com/LampCondition> ,
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty qudt:unit ;
+                                                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                ] .
+
+
+###  http://base.namespace.com/LampCondition
+<http://base.namespace.com/LampCondition> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://base.namespace.com/Condition> .
+
+
+###  http://base.namespace.com/LightSourceCondition
+<http://base.namespace.com/LightSourceCondition> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://base.namespace.com/Condition> .
+
+
+###  http://base.namespace.com/MaterialTransformationProcess
+<http://base.namespace.com/MaterialTransformationProcess> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://org.semanticweb.owlapi/error#Error27> ,
+                                                                          <http://org.semanticweb.owlapi/error#Error28> ,
+                                                                          <http://org.semanticweb.owlapi/error#Error29> ,
+                                                                          <http://org.semanticweb.owlapi/error#Error30> ,
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <http://base.namespace.com/hasInput> ;
+                                                                            owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                          ] ,
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <http://base.namespace.com/hasOutput> ;
+                                                                            owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                          ] ,
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <http://base.namespace.com/hasReactionMedium> ;
+                                                                            owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                          ] ,
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <http://base.namespace.com/hasReductant> ;
+                                                                            owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                          ] ,
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <http://base.namespace.com/reportedIn> ;
+                                                                            owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                          ] ,
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty <http://base.namespace.com/hasBET> ;
+                                                                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                          ] .
+
+
+###  http://base.namespace.com/MaterialTransformationRole
+<http://base.namespace.com/MaterialTransformationRole> rdf:type owl:Class .
+
+
+###  http://base.namespace.com/Output
+<http://base.namespace.com/Output> rdf:type owl:Class ;
+                                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <http://base.namespace.com/hasChemical> ;
+                                                     owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <http://base.namespace.com/hasOutputCuantity> ;
+                                                     owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                   ] .
+
+
+###  http://base.namespace.com/OutputQuantity
+<http://base.namespace.com/OutputQuantity> rdf:type owl:Class ;
+                                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                             owl:onProperty qudt:unit ;
+                                                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                           ] .
+
+
+###  http://base.namespace.com/PowerCondition
+<http://base.namespace.com/PowerCondition> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://base.namespace.com/LampCondition> ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty qudt:unit ;
+                                                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                           ] .
+
+
+###  http://base.namespace.com/PressureCondition
+<http://base.namespace.com/PressureCondition> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://base.namespace.com/Condition> ,
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty qudt:unit ;
+                                                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                              ] .
+
+
+###  http://base.namespace.com/ReactionMedium
+<http://base.namespace.com/ReactionMedium> rdf:type owl:Class .
+
+
+###  http://base.namespace.com/ReactionTimeCondition
+<http://base.namespace.com/ReactionTimeCondition> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://base.namespace.com/Condition> ,
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty qudt:unit ;
+                                                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                  ] .
+
+
+###  http://base.namespace.com/ReactorCondition
+<http://base.namespace.com/ReactorCondition> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://base.namespace.com/Condition> ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty qudt:unit ;
+                                                               owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                             ] .
+
+
+###  http://base.namespace.com/SpaceVelocityCondition
+<http://base.namespace.com/SpaceVelocityCondition> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://base.namespace.com/Condition> ,
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty qudt:unit ;
+                                                                     owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                   ] .
+
+
+###  http://base.namespace.com/TemperatureCondition
+<http://base.namespace.com/TemperatureCondition> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://base.namespace.com/Condition> ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty qudt:unit ;
+                                                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                 ] .
+
+
+###  http://base.namespace.com/WavelengthCondition
+<http://base.namespace.com/WavelengthCondition> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://base.namespace.com/LightSourceCondition> ,
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty qudt:unit ;
+                                                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                                ] .
+
+
+###  http://org.semanticweb.owlapi/error#Error25
+<http://org.semanticweb.owlapi/error#Error25> rdf:type owl:Class .
+
+
+###  http://org.semanticweb.owlapi/error#Error26
+<http://org.semanticweb.owlapi/error#Error26> rdf:type owl:Class .
+
+
+###  http://org.semanticweb.owlapi/error#Error27
+<http://org.semanticweb.owlapi/error#Error27> rdf:type owl:Class .
+
+
+###  http://org.semanticweb.owlapi/error#Error28
+<http://org.semanticweb.owlapi/error#Error28> rdf:type owl:Class .
+
+
+###  http://org.semanticweb.owlapi/error#Error29
+<http://org.semanticweb.owlapi/error#Error29> rdf:type owl:Class .
+
+
+###  http://org.semanticweb.owlapi/error#Error30
+<http://org.semanticweb.owlapi/error#Error30> rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/ChemicalEntity
+chebi:ChemicalEntity rdf:type owl:Class .
+
+
+###  http://purl.obolibrary.org/obo/CHEBI:24431
+<http://purl.obolibrary.org/obo/CHEBI:24431> rdf:type owl:Class .
+
+
+###  http://purl.org/ontology/bibo/Article
+<http://purl.org/ontology/bibo/Article> rdf:type owl:Class ;
+                                        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://purl.org/dc/terms/isPartOf> ;
+                                                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                        ] .
+
+
+###  http://purl.org/ontology/bibo/Journal
+<http://purl.org/ontology/bibo/Journal> rdf:type owl:Class .
+
+
+###  http://qudt.org//2.1/schema/qudt/Unit
+qudt:Unit rdf:type owl:Class .
+
+
+###  https://schema.org/Country
+schema:Country rdf:type owl:Class .
+
+
+###  https://schema.org/Person
+schema:Person rdf:type owl:Class ;
+              rdfs:subClassOf <http://org.semanticweb.owlapi/error#Error25> ,
+                              <http://org.semanticweb.owlapi/error#Error26> ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <http://base.namespace.com/hasMaterialTransformationProcess> ;
+                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <http://purl.org/dc/terms/creator> ;
+                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty qudt:unit ;
+                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty schema:nationality ;
+                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                              ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://base.namespace.com
+<http://base.namespace.com> rdf:type owl:NamedIndividual ;
+                            <http://purl.org/dc/terms/title> "Photocatalysis Ontology" .
+
+
+###  http://base.namespace.com/BET
+<http://base.namespace.com/BET> rdf:type owl:NamedIndividual ;
+                                rdfs:label "BET" .
+
+
+###  http://base.namespace.com/Catalyst
+<http://base.namespace.com/Catalyst> rdf:type owl:NamedIndividual ,
+                                              <http://base.namespace.com/MaterialTransformationRole> ;
+                                     rdfs:label "Catalyst" .
+
+
+###  http://base.namespace.com/CatalystSetUpCondition
+<http://base.namespace.com/CatalystSetUpCondition> rdf:type owl:NamedIndividual ;
+                                                   rdfs:label "Catalyst Set Up Condition" .
+
+
+###  http://base.namespace.com/Co-catalyst
+<http://base.namespace.com/Co-catalyst> rdf:type owl:NamedIndividual ,
+                                                 <http://base.namespace.com/MaterialTransformationRole> ;
+                                        rdfs:label "Co-catalyst" .
+
+
+###  http://base.namespace.com/Condition
+<http://base.namespace.com/Condition> rdf:type owl:NamedIndividual ;
+                                      rdfs:label "Condition" .
+
+
+###  http://base.namespace.com/Dopant
+<http://base.namespace.com/Dopant> rdf:type owl:NamedIndividual ,
+                                            <http://base.namespace.com/MaterialTransformationRole> ;
+                                   rdfs:label "Dopant" .
+
+
+###  http://base.namespace.com/Dye
+<http://base.namespace.com/Dye> rdf:type owl:NamedIndividual ,
+                                         <http://base.namespace.com/MaterialTransformationRole> ;
+                                rdfs:label "Dye" .
+
+
+###  http://base.namespace.com/Eg
+<http://base.namespace.com/Eg> rdf:type owl:NamedIndividual ;
+                               rdfs:label "Eg" .
+
+
+###  http://base.namespace.com/Gas
+<http://base.namespace.com/Gas> rdf:type owl:NamedIndividual ,
+                                         <http://base.namespace.com/ReactionMedium> ;
+                                rdfs:label "Gas" .
+
+
+###  http://base.namespace.com/IluminatedAreaCondition
+<http://base.namespace.com/IluminatedAreaCondition> rdf:type owl:NamedIndividual ;
+                                                    rdfs:label "Iluminated Area Condition" .
+
+
+###  http://base.namespace.com/Input
+<http://base.namespace.com/Input> rdf:type owl:NamedIndividual ;
+                                  rdfs:label "Input" .
+
+
+###  http://base.namespace.com/IrradianceCondition
+<http://base.namespace.com/IrradianceCondition> rdf:type owl:NamedIndividual ;
+                                                rdfs:label "Irradiance Condition" .
+
+
+###  http://base.namespace.com/LampCondition
+<http://base.namespace.com/LampCondition> rdf:type owl:NamedIndividual ;
+                                          rdfs:label "Lamp Condition" .
+
+
+###  http://base.namespace.com/LightSourceCondition
+<http://base.namespace.com/LightSourceCondition> rdf:type owl:NamedIndividual ;
+                                                 rdfs:label "Light Source Condition" .
+
+
+###  http://base.namespace.com/Liquid
+<http://base.namespace.com/Liquid> rdf:type owl:NamedIndividual ,
+                                            <http://base.namespace.com/ReactionMedium> ;
+                                   rdfs:label "Liquid" .
+
+
+###  http://base.namespace.com/MaterialTransformationProcess
+<http://base.namespace.com/MaterialTransformationProcess> rdf:type owl:NamedIndividual ;
+                                                          rdfs:label "Material Transformation Process" .
+
+
+###  http://base.namespace.com/MaterialTransformationRole
+<http://base.namespace.com/MaterialTransformationRole> rdf:type owl:NamedIndividual ;
+                                                       rdfs:label "Material Transformation Role" .
+
+
+###  http://base.namespace.com/Output
+<http://base.namespace.com/Output> rdf:type owl:NamedIndividual ;
+                                   rdfs:label "Output" .
+
+
+###  http://base.namespace.com/OutputQuantity
+<http://base.namespace.com/OutputQuantity> rdf:type owl:NamedIndividual ;
+                                           rdfs:label "Output Quantity" .
+
+
+###  http://base.namespace.com/PowerCondition
+<http://base.namespace.com/PowerCondition> rdf:type owl:NamedIndividual ;
+                                           rdfs:label "Power Condition" .
+
+
+###  http://base.namespace.com/PressureCondition
+<http://base.namespace.com/PressureCondition> rdf:type owl:NamedIndividual ;
+                                              rdfs:label "Pressure Condition" .
+
+
+###  http://base.namespace.com/ReactionMedium
+<http://base.namespace.com/ReactionMedium> rdf:type owl:NamedIndividual ;
+                                           rdfs:label "Reaction Medium" .
+
+
+###  http://base.namespace.com/ReactionTimeCondition
+<http://base.namespace.com/ReactionTimeCondition> rdf:type owl:NamedIndividual ;
+                                                  rdfs:label "Reaction Time Condition" .
+
+
+###  http://base.namespace.com/ReactorCondition
+<http://base.namespace.com/ReactorCondition> rdf:type owl:NamedIndividual ;
+                                             rdfs:label "Reactor Condition" .
+
+
+###  http://base.namespace.com/SpaceVelocityCondition
+<http://base.namespace.com/SpaceVelocityCondition> rdf:type owl:NamedIndividual ;
+                                                   rdfs:label "Space Velocity Condition" .
+
+
+###  http://base.namespace.com/Support
+<http://base.namespace.com/Support> rdf:type owl:NamedIndividual ,
+                                             <http://base.namespace.com/MaterialTransformationRole> ;
+                                    rdfs:label "Support" .
+
+
+###  http://base.namespace.com/TemperatureCondition
+<http://base.namespace.com/TemperatureCondition> rdf:type owl:NamedIndividual ;
+                                                 rdfs:label "Temperature Condition" .
+
+
+###  http://base.namespace.com/WavelengthCondition
+<http://base.namespace.com/WavelengthCondition> rdf:type owl:NamedIndividual ;
+                                                rdfs:label "Wavelength Condition" .
+
+
+###  http://base.namespace.com/conditionType
+<http://base.namespace.com/conditionType> rdf:type owl:NamedIndividual ;
+                                          rdfs:label "condition type" .
+
+
+###  http://base.namespace.com/cristalStructure
+<http://base.namespace.com/cristalStructure> rdf:type owl:NamedIndividual ;
+                                             rdfs:label "cristal structure" .
+
+
+###  http://base.namespace.com/hasBET
+<http://base.namespace.com/hasBET> rdf:type owl:NamedIndividual ;
+                                   rdfs:label "has bet" .
+
+
+###  http://base.namespace.com/hasChemical
+<http://base.namespace.com/hasChemical> rdf:type owl:NamedIndividual ;
+                                        rdfs:label "has chemical" .
+
+
+###  http://base.namespace.com/hasCondition
+<http://base.namespace.com/hasCondition> rdf:type owl:NamedIndividual ;
+                                         rdfs:label "has condition" .
+
+
+###  http://base.namespace.com/hasEg
+<http://base.namespace.com/hasEg> rdf:type owl:NamedIndividual ;
+                                  rdfs:label "has eg" .
+
+
+###  http://base.namespace.com/hasInput
+<http://base.namespace.com/hasInput> rdf:type owl:NamedIndividual ;
+                                     rdfs:label "has input" .
+
+
+###  http://base.namespace.com/hasMaterialTransformationProcess
+<http://base.namespace.com/hasMaterialTransformationProcess> rdf:type owl:NamedIndividual ;
+                                                             rdfs:label "has material transformation process" .
+
+
+###  http://base.namespace.com/hasOutput
+<http://base.namespace.com/hasOutput> rdf:type owl:NamedIndividual ;
+                                      rdfs:label "has output" .
+
+
+###  http://base.namespace.com/hasOutputCuantity
+<http://base.namespace.com/hasOutputCuantity> rdf:type owl:NamedIndividual ;
+                                              rdfs:label "has output cuantity" .
+
+
+###  http://base.namespace.com/hasReactionMedium
+<http://base.namespace.com/hasReactionMedium> rdf:type owl:NamedIndividual ;
+                                              rdfs:label "has reaction medium" .
+
+
+###  http://base.namespace.com/hasReductant
+<http://base.namespace.com/hasReductant> rdf:type owl:NamedIndividual ;
+                                         rdfs:label "has reductant" .
+
+
+###  http://base.namespace.com/hasRole
+<http://base.namespace.com/hasRole> rdf:type owl:NamedIndividual ;
+                                    rdfs:label "has role" .
+
+
+###  http://base.namespace.com/lampType
+<http://base.namespace.com/lampType> rdf:type owl:NamedIndividual ;
+                                     rdfs:label "lamp type" .
+
+
+###  http://base.namespace.com/lightSourceType
+<http://base.namespace.com/lightSourceType> rdf:type owl:NamedIndividual ;
+                                            rdfs:label "light source type" .
+
+
+###  http://base.namespace.com/operationMode
+<http://base.namespace.com/operationMode> rdf:type owl:NamedIndividual ;
+                                          rdfs:label "operation mode" .
+
+
+###  http://base.namespace.com/pH
+<http://base.namespace.com/pH> rdf:type owl:NamedIndividual ;
+                               rdfs:label "pH" .
+
+
+###  http://base.namespace.com/percentage
+<http://base.namespace.com/percentage> rdf:type owl:NamedIndividual ;
+                                       rdfs:label "percentage" .
+
+
+###  http://base.namespace.com/reactorType
+<http://base.namespace.com/reactorType> rdf:type owl:NamedIndividual ;
+                                        rdfs:label "reactor type" .
+
+
+###  http://base.namespace.com/reportedIn
+<http://base.namespace.com/reportedIn> rdf:type owl:NamedIndividual ;
+                                       rdfs:label "reported in" .
+
+
+###  http://base.namespace.com/setUpType
+<http://base.namespace.com/setUpType> rdf:type owl:NamedIndividual ;
+                                      rdfs:label "set up type" .
+
+
+###  http://purl.obolibrary.org/obo/ChemicalEntity
+chebi:ChemicalEntity rdf:type owl:NamedIndividual ;
+                     rdfs:label "Chemical Entity" .
+
+
+###  http://purl.obolibrary.org/obo/formula
+chebi:formula rdf:type owl:NamedIndividual ;
+              rdfs:label "formula" .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:NamedIndividual ;
+                                   rdfs:label "creator" .
+
+
+###  http://purl.org/dc/terms/date
+<http://purl.org/dc/terms/date> rdf:type owl:NamedIndividual ;
+                                rdfs:label "date" .
+
+
+###  http://purl.org/dc/terms/isPartOf
+<http://purl.org/dc/terms/isPartOf> rdf:type owl:NamedIndividual ;
+                                    rdfs:label "is part of" .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:NamedIndividual ;
+                                 rdfs:label "title" .
+
+
+###  http://purl.org/ontology/bibo/Article
+<http://purl.org/ontology/bibo/Article> rdf:type owl:NamedIndividual ;
+                                        rdfs:label "Article" .
+
+
+###  http://purl.org/ontology/bibo/Journal
+<http://purl.org/ontology/bibo/Journal> rdf:type owl:NamedIndividual ;
+                                        rdfs:label "Journal" .
+
+
+###  http://purl.org/ontology/bibo/abstract
+<http://purl.org/ontology/bibo/abstract> rdf:type owl:NamedIndividual ;
+                                         rdfs:label "abstract" .
+
+
+###  http://purl.org/ontology/bibo/doi
+<http://purl.org/ontology/bibo/doi> rdf:type owl:NamedIndividual ;
+                                    rdfs:label "doi" .
+
+
+###  http://purl.org/ontology/bibo/issue
+<http://purl.org/ontology/bibo/issue> rdf:type owl:NamedIndividual ;
+                                      rdfs:label "issue" .
+
+
+###  http://purl.org/ontology/bibo/pageStart
+<http://purl.org/ontology/bibo/pageStart> rdf:type owl:NamedIndividual ;
+                                          rdfs:label "page start" .
+
+
+###  http://purl.org/ontology/bibo/volume
+<http://purl.org/ontology/bibo/volume> rdf:type owl:NamedIndividual ;
+                                       rdfs:label "volume" .
+
+
+###  http://qudt.org//2.1/schema/qudt/Unit
+qudt:Unit rdf:type owl:NamedIndividual ;
+          rdfs:label "Unit" .
+
+
+###  http://qudt.org//2.1/schema/qudt/numericValue
+qudt:numericValue rdf:type owl:NamedIndividual ;
+                  rdfs:label "numeric value" .
+
+
+###  http://qudt.org//2.1/schema/qudt/unit
+qudt:unit rdf:type owl:NamedIndividual ;
+          rdfs:label "unit" .
+
+
+###  http://qudt.org//2.1/schema/qudt/value
+qudt:value rdf:type owl:NamedIndividual ;
+           rdfs:label "value" .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:NamedIndividual ;
+           rdfs:label "label" .
+
+
+###  https://schema.org/Country
+schema:Country rdf:type owl:NamedIndividual ;
+               rdfs:label "Country" .
+
+
+###  https://schema.org/Person
+schema:Person rdf:type owl:NamedIndividual ;
+              rdfs:label "Person" .
+
+
+###  https://schema.org/email
+schema:email rdf:type owl:NamedIndividual ;
+             rdfs:label "email" .
+
+
+###  https://schema.org/name
+schema:name rdf:type owl:NamedIndividual ;
+            rdfs:label "name" .
+
+
+###  https://schema.org/nationality
+schema:nationality rdf:type owl:NamedIndividual ;
+                   rdfs:label "nationality" .
+
+
+[ owl:maxCardinality "n"^^xsd:nonNegativeInteger
+] .
+
+[ owl:maxCardinality "n"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:maxCardinality "n"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:maxCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:maxCardinality "n"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:maxCardinality "*"^^xsd:nonNegativeInteger
+ ] .
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
