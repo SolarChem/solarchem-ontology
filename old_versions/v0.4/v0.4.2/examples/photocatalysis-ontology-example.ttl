@@ -53,15 +53,14 @@
 	phcat:hasInput <#process1/co-catalyst_Cu> ;
 	phcat:hasInput <#process1/co-catalyst_Fe> ;
 	phcat:hasInput <#process1/dye_N3> ;
-	phcat:hasInput <#process1/reductant_H20> ;
 	phcat:reportedIn <https://doi.org/10.1007/s10563-009-9065-9>
 	phcat:operationMode "Continuous"
 	phcat:hasReactionMedium phcat:Gas ;
-	phcat:hasReductant chebi:CHEBI_15377 ; # water
+	phcat:hasReductant chebi:CHEBI:15377 ; # water
 	phcat:hasCondition <#process1/reactor-condition> ;
 	phcat:hasCondition <#process1/lightsource> ;
 	phcat:hasCondition <#process1/lamppirradiance> ;
-	phcat:hasCondition <#process1/lamppower> ;
+	phcat:hasCondition <#process1/lampppower> ;
 	phcat:hasCondition <#process1/catalyst-set-up> ;
 	phcat:hasCondition <#process1/temperature> ;
 	phcat:hasCondition <#process1/pressure> ;
@@ -73,27 +72,23 @@
 	phcat:hasOutput <#process1/output4> ;
 .
 <#process1/catalyst_TiO2_P25> a phcat:Input ;
-	phcat:hasChemical chebi:CHEBI_32234^^chebi:CHEBI_24431 ;
+	phcat:hasChemical chebi:CHEBI:32234^^chebi:CHEBI:24431 ;
 	phcat:cristalStructure "P25"^^xsd:string ;
 	phcat:hasRole phcat:Catalyst ;
 .
 <#process1/co-catalyst_Cu> a phcat:Input ;
-	phcat:hasChemical chebi:CHEBI_28694^^chebi:CHEBI_24431 ;
+	phcat:hasChemical chebi:CHEBI:28694^^chebi:CHEBI:24431 ;
 	phcat:percentage 0.5^^xsd:double ;
 	phcat:hasRole phcat:Co-catalyst ;
 .
 <#process1/co-catalyst_Fe> a phcat:Input ;
-	phcat:hasChemical chebi:CHEBI_18248^^chebi:CHEBI_24431 ;
+	phcat:hasChemical chebi:CHEBI:18248^^chebi:CHEBI:24431 ;
 	phcat:percentage 0.5^^xsd:double ;
 	phcat:hasRole phcat:Co-catalyst ;
 .
 <#process1/dye_N3> a phcat:Input ;
-	phcat:hasChemical chebi:CHEBI_29448^^chebi:CHEBI_24431 ;
+	phcat:hasChemical chebi:CHEBI:29448^^chebi:CHEBI:24431 ;
 	phcat:hasRole phcat:Dye ;
-.
-<#process1/reductant_H20> a phcat:Input ;
-	phcat:hasChemical chebi:CHEBI_15377^^chebi:CHEBI_24431 ;
-	phcat:hasRole phcat:Reductant ;
 .
 <#process1/reactor-condition> a phcat:ReactorCondition ;
 	phcat:reactorType "Fixed-bed" ;
@@ -107,7 +102,7 @@
 .
 # NOTE: Revisar - las dos unidades son caracteristicas de la lampara
 # 		lo de las subclases no tiene mucho sentido
-<#process1/lamppower> a phcat:PowerCondition ;
+<#process1/lampppower> a phcat:PowerCondition ;
 	phcat:lampType "Mercury(Hg)" ;
 	qudt:unit unit:W ;
 	qudt:value "100"^^xsd:double ;
@@ -139,34 +134,34 @@
 	qudt:value 4.00 ;
 .
 <#process1/output1> a phcat:Output ;
-	phcat:hasChemical chebi:CHEBI_16183 ;
-	phcat:hasOutputQuantity <#process1/output1/quantity>;
+	phcat:hasChemical chebi:CHEBI:16183 ;
+	phcat:hasOutputQuantity <#process1/output1/cuantity>;
 .
-<#process1/output1/quantity> a phcat:OutputQuantity ;
+<#process1/output1/cuantity> a phcat:OutputQuantity ;
 	qudt:numericValue 3.388 ;
 	qudt:unit unit:MicroMOL-PER-GM ;
 .
 <#process1/output2> a phcat:Output ;
-	phcat:hasChemical chebi:CHEBI_16183 ;
-	phcat:hasOutputQuantity <#process1/output2/quantity>;
+	phcat:hasChemical chebi:CHEBI:16183 ;
+	phcat:hasOutputQuantity <#process1/output2/cuantity>;
 .
-<#process1/output2/quantity> a phcat:OutputQuantity ;
+<#process1/output2/cuantity> a phcat:OutputQuantity ;
 	qudt:value 0.847 ;
 	qudt:unit unit:MicroMOL-PER-GM-HR ;
 .
 <#process1/output3> a phcat:Output ;
-	phcat:hasChemical chebi:CHEBI_18153 ;
-	phcat:hasOutputQuantity <#process1/output1/quantity>;
+	phcat:hasChemical chebi:CHEBI:18153 ;
+	phcat:hasOutputQuantity <#process1/output1/cuantity>;
 .
-<#process1/output3/quantity> a phcat:OutputQuantity ;
+<#process1/output3/cuantity> a phcat:OutputQuantity ;
 	qudt:numericValue 2.248 ;
 	qudt:unit unit:MicroMOL-PER-GM ;
 .
 <#process1/output4> a phcat:Output ;
-	phcat:hasChemical chebi:CHEBI_18153 ;
-	phcat:hasOutputQuantity <#process1/output2/quantity>;
+	phcat:hasChemical chebi:CHEBI:18153 ;
+	phcat:hasOutputQuantity <#process1/output2/cuantity>;
 .
-<#process1/output4/quantity> a phcat:OutputQuantity ;
+<#process1/output4/cuantity> a phcat:OutputQuantity ;
 	qudt:value 0.562 ;
 	qudt:unit unit:MicroMOL-PER-GM-HR ;
 .
@@ -178,10 +173,10 @@
 	phcat:hasInput <#process2/co-catalyst_Cu> ;
 	phcat:hasInput <#process2/co-catalyst_Fe> ;
 	phcat:hasInput <#process2/dye_N3> ;
-	phcat:hasInput <#process1/reductant_H20> ;
 	phcat:reportedIn <https://doi.org/10.1007/s10563-009-9065-9>
 	phcat:operationMode "Continuous"
 	phcat:hasReactionMedium phcat:Gas ;
+	phcat:hasReductant chebi:CHEBI:15377 ; # water
 	phcat:hasCondition <#process2/reactor-condition> ;
 	phcat:hasCondition <#process2/lightsource> ;
 	phcat:hasCondition <#process2/lamppirradiance> ;
@@ -194,27 +189,23 @@
 	phcat:hasOutput <#process2/output2> ;
 .
 <#process2/catalyst_TiO2_P25> a phcat:Input ;
-	phcat:hasChemical chebi:CHEBI_32234^^chebi:CHEBI_24431 ;
+	phcat:hasChemical chebi:CHEBI:32234^^chebi:CHEBI:24431 ;
 	phcat:cristalStructure "P25"^^xsd:string ;
 	phcat:hasRole phcat:Catalyst ;
 .
 <#process2/co-catalyst_Cu> a phcat:Input ;
-	phcat:hasChemical chebi:CHEBI_28694^^chebi:CHEBI_24431 ;
+	phcat:hasChemical chebi:CHEBI:28694^^chebi:CHEBI:24431 ;
 	phcat:percentage 0.5^^xsd:double ;
 	phcat:hasRole phcat:Co-catalyst ;
 .
 <#process2/co-catalyst_Fe> a phcat:Input ;
-	phcat:hasChemical chebi:CHEBI_18248^^chebi:CHEBI_24431 ;
+	phcat:hasChemical chebi:CHEBI:18248^^chebi:CHEBI:24431 ;
 	phcat:percentage 0.5^^xsd:double ;
 	phcat:hasRole phcat:Co-catalyst ;
 .
 <#process2/dye_N3> a phcat:Input ;
-	phcat:hasChemical chebi:CHEBI_29448^^chebi:CHEBI_24431 ;
+	phcat:hasChemical chebi:CHEBI:29448^^chebi:CHEBI:24431 ;
 	phcat:hasRole phcat:Dye ;
-.
-<#process2/reductant_H20> a phcat:Input ;
-	phcat:hasChemical chebi:CHEBI_15377^^chebi:CHEBI_24431 ;
-	phcat:hasRole phcat:Reductant ;
 .
 <#process2/reactor-condition> a phcat:ReactorCondition ;
 	phcat:reactorType "Fixed-bed" ;
@@ -255,18 +246,18 @@
 	qudt:value 5.50 ;
 .
 <#process2/output1> a phcat:Output ;
-	phcat:hasChemical chebi:CHEBI_16183 ;
-	phcat:hasOutputQuantity <#process2/output1/quantity>;
+	phcat:hasChemical chebi:CHEBI:16183 ;
+	phcat:hasOutputQuantity <#process2/output1/cuantity>;
 .
-<#process2/output1/quantity> a phcat:OutputQuantity ;
+<#process2/output1/cuantity> a phcat:OutputQuantity ;
 	qudt:numericValue 3.3935 ;
 	qudt:unit unit:MicroMOL-PER-GM ;
 .
 <#process2/output2> a phcat:Output ;
-	phcat:hasChemical chebi:CHEBI_16183 ;
-	phcat:hasOutputQuantity <#process2/output2/quantity>;
+	phcat:hasChemical chebi:CHEBI:16183 ;
+	phcat:hasOutputQuantity <#process2/output2/cuantity>;
 .
-<#process2/output2/quantity> a phcat:OutputQuantity ;
+<#process2/output2/cuantity> a phcat:OutputQuantity ;
 	qudt:value 0.617 ;
 	qudt:unit unit:MicroMOL-PER-GM-HR ;
 .
@@ -278,10 +269,10 @@
 	phcat:hasInput <#process3/co-catalyst_Cu> ;
 	phcat:hasInput <#process3/co-catalyst_Fe> ;
 	phcat:hasInput <#process3/support_NiO2> ;
-	phcat:hasInput <#process1/reductant_H20> ;
 	phcat:reportedIn <https://doi.org/10.1007/s10563-009-9065-9>
 	phcat:operationMode "Continuous"
 	phcat:hasReactionMedium phcat:Gas ;
+	phcat:hasReductant chebi:CHEBI:15377 ; # water
 	phcat:hasCondition <#process3/reactor-condition> ;
 	phcat:hasCondition <#process3/lightsource> ;
 	phcat:hasCondition <#process3/lamppirradiance> ;
@@ -294,31 +285,27 @@
 	phcat:hasOutput <#process3/output2> ;
 .
 <#process3/catalyst_TiO2_Anatase> a phcat:Input ;
-	phcat:hasChemical chebi:CHEBI_32234^^chebi:CHEBI_24431 ;
+	phcat:hasChemical chebi:CHEBI:32234^^chebi:CHEBI:24431 ;
 	phcat:cristalStructure "Anatase"^^xsd:string ;
 	phcat:hasRole phcat:Catalyst ;
 .
 <#process3/co-catalyst_Cu> a phcat:Input ;
-	phcat:hasChemical chebi:CHEBI_28694^^chebi:CHEBI_24431 ;
+	phcat:hasChemical chebi:CHEBI:28694^^chebi:CHEBI:24431 ;
 	phcat:percentage 0.5^^xsd:double ;
 	phcat:hasRole phcat:Co-catalyst ;
 .
 <#process3/co-catalyst_Fe> a phcat:Input ;
-	phcat:hasChemical chebi:CHEBI_18248^^chebi:CHEBI_24431 ;
+	phcat:hasChemical chebi:CHEBI:18248^^chebi:CHEBI:24431 ;
 	phcat:percentage 0.5^^xsd:double ;
 	phcat:hasRole phcat:Co-catalyst ;
 .
-<#process3/support_NiO2/chemical> a chebi:CHEBI_24431
+<#process3/support_NiO2/chemical> a chebi:CHEBI:24431
 	chebi:formula "NiO2" ;
 	rdfs:label "Nickel dioxide" ;
 .
 <#process3/support_NiO2> a phcat:Input ;
 	phcat:hasChemical <#process3/support_NiO2/chemical> ;
 	phcat:hasRole phcat:Support ;
-.
-<#process3/reductant_H20> a phcat:Input ;
-	phcat:hasChemical chebi:CHEBI_15377^^chebi:CHEBI_24431 ;
-	phcat:hasRole phcat:Reductant ;
 .
 <#process3/reactor-condition> a phcat:ReactorCondition ;
 	phcat:reactorType "Fixed-bed" ;
@@ -359,18 +346,18 @@
 	qudt:value 5.50 ;
 .
 <#process3/output1> a phcat:Output ;
-	phcat:hasChemical chebi:CHEBI_16183 ;
-	phcat:hasOutputQuantity <#process3/output1/quantity>;
+	phcat:hasChemical chebi:CHEBI:16183 ;
+	phcat:hasOutputQuantity <#process3/output1/cuantity>;
 .
-<#process3/output1/quantity> a phcat:OutputQuantity ;
+<#process3/output1/cuantity> a phcat:OutputQuantity ;
 	qudt:numericValue 1.5345 ;
 	qudt:unit unit:MicroMOL-PER-GM ;
 .
 <#process3/output2> a phcat:Output ;
-	phcat:hasChemical chebi:CHEBI_16183 ;
-	phcat:hasOutputQuantity <#process3/output2/quantity>;
+	phcat:hasChemical chebi:CHEBI:16183 ;
+	phcat:hasOutputQuantity <#process3/output2/cuantity>;
 .
-<#process3/output2/quantity> a phcat:OutputQuantity ;
+<#process3/output2/cuantity> a phcat:OutputQuantity ;
 	qudt:value 0.279 ;
 	qudt:unit unit:MicroMOL-PER-GM-HR ;
 .
@@ -427,13 +414,13 @@
 	phcat:hasInput <#process4/co-catalyst_AgBr> ;
 	phcat:hasInput <#process4/co-catalyst_Ag> ;
 	phcat:hasInput <#process4/support_NiO2> ;
-	phcat:hasInput <#process1/reductant_H20> ;
 	phcat:reportedIn <https://doi.org/10.1039/C2JM31736B>
 	phcat:operationMode "Continuous"
 	phcat:hasReactionMedium <#process4/reaction-medium> ;
+	phcat:hasReductant chebi:CHEBI:15377 ; # water
 	phcat:hasCondition <#process4/reactor-condition> ;
 	phcat:hasCondition <#process4/lightsource> ;
-	phcat:hasCondition <#process4/lamppower> ;
+	phcat:hasCondition <#process4/lampppower> ;
 	phcat:hasCondition <#process4/catalyst-set-up> ;
 	phcat:hasCondition <#process4/reaction-time> ;
 	phcat:hasOutput <#process4/output1> ;
@@ -445,10 +432,10 @@
 	phcat:pH 0 ; # NOTE: puede ser 0 una medida valida o deberia ignorarse la propiedad?
 .
 <#process4/catalyst_AgCl> a phcat:Input ;
-	phcat:hasChemical chebi:CHEBI_30341 ;
+	phcat:hasChemical chebi:CHEBI:30341 ;
 	phcat:hasRole phcat:Catalyst ;
 .
-<#AgBr> a chebi:CHEBI_24431
+<#AgBr> a chebi:CHEBI:24431
 	chebi:formula "AgBr" ;
 .
 <#process4/co-catalyst_AgBr> a phcat:Input ;
@@ -456,19 +443,15 @@
 	phcat:hasRole phcat:Co-catalyst ;
 .
 <#process4/co-catalyst_Ag> a phcat:Input ;
-	phcat:hasChemical chebi:CHEBI_30512 ;
+	phcat:hasChemical chebi:CHEBI:30512 ;
 	phcat:hasRole phcat:Co-catalyst ;
 .
-<#process4/support_NiO2/chemical> a chebi:CHEBI_24431
+<#process4/support_NiO2/chemical> a chebi:CHEBI:24431
 	chebi:formula "NiO2" ;
 .
 <#process4/support_NiO2> a phcat:Input ;
 	phcat:hasChemical <#process4/support_NiO2/chemical> ;
 	phcat:hasRole phcat:Support ;
-.
-<#process4/reductant_H20> a phcat:Input ;
-	phcat:hasChemical chebi:CHEBI_15377^^chebi:CHEBI_24431 ;
-	phcat:hasRole phcat:Reductant ;
 .
 <#process4/reactor-condition> a phcat:ReactorCondition ;
 	phcat:reactorType "Slurry" ;
@@ -482,7 +465,7 @@
 .
 # NOTE: Revisar - las dos unidades son caracteristicas de la lampara
 # 		lo de las subclases no tiene mucho sentido
-<#process4/lamppower> a phcat:IrradianceCondition ;
+<#process4/lampppower> a phcat:IrradianceCondition ;
 	phcat:lampType "Xenon(Xe)" ;
 	qudt:unit unit:W ;
 	qudt:value "300"^^xsd:double ;
@@ -496,39 +479,39 @@
 	qudt:unit unit:HR ;
 	qudt:value 5.00 ;
 .
-<#CH3OH> a chebi:CHEBI_24431
+<#CH3OH> a chebi:CHEBI:24431
 	chebi:formula "CH3OH" ;
 	rdfs:label "metanol" ;
 .
 <#process4/output1> a phcat:Output ;
 	phcat:hasChemical <#CH3OH> ;
-	phcat:hasOutputQuantity <#process4/output1/quantity>;
+	phcat:hasOutputQuantity <#process4/output1/cuantity>;
 .
-<#process4/output1/quantity> a phcat:OutputQuantity ;
+<#process4/output1/cuantity> a phcat:OutputQuantity ;
 	qudt:numericValue 220 ;
 	qudt:unit unit:MicroMOL-PER-GM ;
 .
 <#process4/output2> a phcat:Output ;
 	phcat:hasChemical chebi:<#CH3OH> ;
-	phcat:hasOutputQuantity <#process4/output2/quantity>;
+	phcat:hasOutputQuantity <#process4/output2/cuantity>;
 .
-<#process4/output2/quantity> a phcat:OutputQuantity ;
+<#process4/output2/cuantity> a phcat:OutputQuantity ;
 	qudt:value 44 ;
 	qudt:unit unit:MicroMOL-PER-GM-HR ;
 .
 <#process4/output3> a phcat:Output ;
-	phcat:hasChemical chebi:CHEBI_16236 ;
-	phcat:hasOutputQuantity <#process4/output3/quantity>;
+	phcat:hasChemical chebi:CHEBI:16236 ;
+	phcat:hasOutputQuantity <#process4/output3/cuantity>;
 .
-<#process4/output3/quantity> a phcat:OutputQuantity ;
+<#process4/output3/cuantity> a phcat:OutputQuantity ;
 	qudt:value 310 ;
 	qudt:unit unit:MicroMOL-PER-GM-HR ;
 .
 <#process4/output4> a phcat:Output ;
-	phcat:hasChemical chebi:CHEBI_16236 ;
-	phcat:hasOutputQuantity <#process4/output4/quantity>;
+	phcat:hasChemical chebi:CHEBI:16236 ;
+	phcat:hasOutputQuantity <#process4/output4/cuantity>;
 .
-<#process4/output4/quantity> a phcat:OutputQuantity ;
+<#process4/output4/cuantity> a phcat:OutputQuantity ;
 	qudt:value 62 ;
 	qudt:unit unit:MicroMOL-PER-GM-HR ;
 .

@@ -16,7 +16,7 @@
                              dc:creator "Oier Beaskoetxea" ;
                              dc:description "Ontology code created by Chowlk" ;
                              dc:title "The Photocatalysis Ontology"^^xsd:string ;
-                             owl:versionInfo "0.5" .
+                             owl:versionInfo "0.4.2" .
 
 #################################################################
 #    Annotation properties
@@ -95,8 +95,8 @@ phcat:hasOutput rdf:type owl:ObjectProperty ;
                 rdfs:range phcat:Output .
 
 
-###  http://base.namespace.com/hasOutputQuantity
-phcat:hasOutputQuantity rdf:type owl:ObjectProperty ;
+###  http://base.namespace.com/hasOutputCuantity
+phcat:hasOutputCuantity rdf:type owl:ObjectProperty ;
                         rdfs:domain phcat:Output ;
                         rdfs:range phcat:OutputQuantity .
 
@@ -105,6 +105,12 @@ phcat:hasOutputQuantity rdf:type owl:ObjectProperty ;
 phcat:hasReactionMedium rdf:type owl:ObjectProperty ;
                         rdfs:domain phcat:MaterialTransformationProcess ;
                         rdfs:range phcat:ReactionMedium .
+
+
+###  http://base.namespace.com/hasReductant
+phcat:hasReductant rdf:type owl:ObjectProperty ;
+                   rdfs:domain phcat:MaterialTransformationProcess ;
+                   rdfs:range chebi:CHEBI_24431 .
 
 
 ###  http://base.namespace.com/hasRole
@@ -121,7 +127,8 @@ phcat:reportedIn rdf:type owl:ObjectProperty ;
 
 ###  http://purl.org/dc/terms/creator
 dc:creator rdf:type owl:ObjectProperty ;
-           rdfs:domain bibo:Article .
+           rdfs:domain bibo:Article ;
+           rdfs:range schema:Person .
 
 
 ###  http://purl.org/dc/terms/isPartOf
@@ -386,6 +393,10 @@ phcat:MaterialTransformationProcess rdf:type owl:Class ;
                                                       owl:cardinality "1"^^xsd:nonNegativeInteger
                                                     ] ,
                                                     [ rdf:type owl:Restriction ;
+                                                      owl:onProperty phcat:hasReductant ;
+                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                    ] ,
+                                                    [ rdf:type owl:Restriction ;
                                                       owl:onProperty phcat:reportedIn ;
                                                       owl:cardinality "1"^^xsd:nonNegativeInteger
                                                     ] ,
@@ -406,7 +417,7 @@ phcat:Output rdf:type owl:Class ;
                                owl:cardinality "1"^^xsd:nonNegativeInteger
                              ] ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty phcat:hasOutputQuantity ;
+                               owl:onProperty phcat:hasOutputCuantity ;
                                owl:cardinality "1"^^xsd:nonNegativeInteger
                              ] .
 
@@ -538,11 +549,6 @@ schema:Person rdf:type owl:Class ;
 
 ###  http://base.namespace.com
 <http://base.namespace.com> rdf:type owl:NamedIndividual .
-
-
-###  http://base.namespace.com#Reductant
-:Reductant rdf:type owl:NamedIndividual ,
-                    phcat:MaterialTransformationRole .
 
 
 ###  http://base.namespace.com/BET
@@ -707,8 +713,8 @@ phcat:hasMaterialTransformationProcess rdf:type owl:NamedIndividual .
 phcat:hasOutput rdf:type owl:NamedIndividual .
 
 
-###  http://base.namespace.com/hasOutputQuantity
-phcat:hasOutputQuantity rdf:type owl:NamedIndividual .
+###  http://base.namespace.com/hasOutputCuantity
+phcat:hasOutputCuantity rdf:type owl:NamedIndividual .
 
 
 ###  http://base.namespace.com/hasReactionMedium
@@ -847,8 +853,11 @@ schema:name rdf:type owl:NamedIndividual .
 schema:nationality rdf:type owl:NamedIndividual .
 
 
-[ owl:maxCardinality "*"^^xsd:nonNegativeInteger
+[ owl:maxCardinality "n"^^xsd:nonNegativeInteger
 ] .
+
+[ owl:maxCardinality "*"^^xsd:nonNegativeInteger
+ ] .
 
 [ owl:maxCardinality "n"^^xsd:nonNegativeInteger
  ] .
@@ -857,9 +866,6 @@ schema:nationality rdf:type owl:NamedIndividual .
  ] .
 
 [ owl:maxCardinality "1"^^xsd:nonNegativeInteger
- ] .
-
-[ owl:maxCardinality "n"^^xsd:nonNegativeInteger
  ] .
 
 [ owl:maxCardinality "n"^^xsd:nonNegativeInteger
@@ -959,10 +965,13 @@ phcat:hasMaterialTransformationProcess rdfs:label "has material transformation p
 phcat:hasOutput rdfs:label "has output" .
 
 
-phcat:hasOutputQuantity rdfs:label "has output quantity" .
+phcat:hasOutputCuantity rdfs:label "has output cuantity" .
 
 
 phcat:hasReactionMedium rdfs:label "has reaction medium" .
+
+
+phcat:hasReductant rdfs:label "has reductant" .
 
 
 phcat:hasRole rdfs:label "has role" .
