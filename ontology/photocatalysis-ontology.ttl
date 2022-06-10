@@ -1,21 +1,24 @@
 @prefix : <http://base.namespace.com#> .
-@prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix qudt: <http://qudt.org/2.1/schema/qudt/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix chebi: <http://purl.obolibrary.org/obo/> .
 @prefix phcat: <http://base.namespace.com/> .
 @prefix schema: <https://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @base <http://base.namespace.com> .
 
 <http://base.namespace.com> rdf:type owl:Ontology ;
-                             dc:creator "Oier Beaskoetxea" ;
-                             dc:description "Ontology code created by Chowlk" ;
-                             dc:title "The Photocatalysis Ontology"^^xsd:string ;
+                             dcterms:creator "Oier Beaskoetxea" ;
+                             dcterms:description "Vocabulario para la representación de datos sobre los procesos de fotocatálisis descritos en las publicaciones científicas."@es ;
+                             dcterms:license "https://creativecommons.org/licenses/by/4.0/" ;
+                             dcterms:title "The Photocatalysis Ontology"^^xsd:string ;
+                             rdfs:comment "Esta ontología ha sido diseñada en conjunto con el instituto IMDEA Energía de Madrid. Para generar las bases de este vocabulario se ha utilizado como base su proyecto \"Artleafs\" que consiste en una plataforma web para recavar información sobre experimentos en el campo de la fotocatásilis para posibilitar y facilitar la reproducibilidad de los procesos explicados en los artículos cientificos."@es ,
+                                          "This ontology has been designed in conjunction with the IMDEA Energy Institute of Madrid. To generate the bases of this vocabulary, the \"Artleafs\" project has been used as a basis, which consists of a web platform to collect information on experiments in the field of photocatalysis to enable and facilitate the reproducibility of the processes explained in scientific articles."@en ;
                              owl:versionInfo "0.5" .
 
 #################################################################
@@ -23,18 +26,23 @@
 #################################################################
 
 ###  http://purl.org/dc/terms/creator
-dc:creator rdf:type owl:AnnotationProperty ;
-           rdfs:range schema:Person .
+dcterms:creator rdf:type owl:AnnotationProperty ;
+                rdfs:range schema:Person .
 
 
 ###  http://purl.org/dc/terms/description
-dc:description rdf:type owl:AnnotationProperty .
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dcterms:license rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/title
-dc:title rdf:type owl:AnnotationProperty ;
-         rdfs:range xsd:string ;
-         rdfs:domain bibo:Article .
+dcterms:title rdf:type owl:AnnotationProperty ;
+              rdfs:range xsd:string ;
+              rdfs:domain bibo:Article ,
+                          bibo:Journal .
 
 
 ###  http://www.w3.org/2000/01/rdf-schema#label
@@ -59,8 +67,14 @@ phcat:hasBET rdf:type owl:ObjectProperty ;
 
 ###  http://base.namespace.com/hasChemical
 phcat:hasChemical rdf:type owl:ObjectProperty ;
-                  rdfs:domain phcat:Input ,
-                              phcat:Output ;
+                  rdfs:domain [ rdf:type owl:Restriction ;
+                                owl:onProperty phcat:hasChemical ;
+                                owl:allValuesFrom [ rdf:type owl:Class ;
+                                                    owl:unionOf ( phcat:Input
+                                                                  phcat:Output
+                                                                )
+                                                  ]
+                              ] ;
                   rdfs:range chebi:CHEBI_24431 .
 
 
@@ -120,15 +134,14 @@ phcat:reportedIn rdf:type owl:ObjectProperty ;
 
 
 ###  http://purl.org/dc/terms/creator
-dc:creator rdf:type owl:ObjectProperty ;
-           rdfs:domain bibo:Article ;
-           rdfs:range schema:Person .
+dcterms:creator rdf:type owl:ObjectProperty ;
+                rdfs:domain bibo:Article .
 
 
 ###  http://purl.org/dc/terms/isPartOf
-dc:isPartOf rdf:type owl:ObjectProperty ;
-            rdfs:domain bibo:Article ;
-            rdfs:range bibo:Journal .
+dcterms:isPartOf rdf:type owl:ObjectProperty ;
+                 rdfs:domain bibo:Article ;
+                 rdfs:range bibo:Journal .
 
 
 ###  http://qudt.org/2.1/schema/qudt/unit
@@ -224,16 +237,13 @@ chebi:formula rdf:type owl:DatatypeProperty ;
 
 
 ###  http://purl.org/dc/terms/date
-dc:date rdf:type owl:DatatypeProperty ;
-        rdfs:domain bibo:Article ;
-        rdfs:range xsd:dateTime .
+dcterms:date rdf:type owl:DatatypeProperty ;
+             rdfs:domain bibo:Article ;
+             rdfs:range xsd:dateTime .
 
 
 ###  http://purl.org/dc/terms/title
-dc:title rdf:type owl:DatatypeProperty ;
-         rdfs:domain bibo:Article ,
-                     bibo:Journal ;
-         rdfs:range xsd:string .
+dcterms:title rdf:type owl:DatatypeProperty .
 
 
 ###  http://purl.org/ontology/bibo/abstract
@@ -291,10 +301,7 @@ qudt:value rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.w3.org/2000/01/rdf-schema#label
-rdfs:label rdf:type owl:DatatypeProperty ;
-           rdfs:domain phcat:MaterialTransformationProcess ,
-                       chebi:CHEBI_24431 ;
-           rdfs:range xsd:string .
+rdfs:label rdf:type owl:DatatypeProperty .
 
 
 ###  https://schema.org/email
@@ -503,8 +510,9 @@ chebi:CHEBI_24431 rdf:type owl:Class ;
 ###  http://purl.org/ontology/bibo/Article
 bibo:Article rdf:type owl:Class ;
              rdfs:subClassOf [ rdf:type owl:Restriction ;
-                               owl:onProperty dc:isPartOf ;
-                               owl:cardinality "1"^^xsd:nonNegativeInteger
+                               owl:onProperty dcterms:isPartOf ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass bibo:Journal
                              ] .
 
 
@@ -527,7 +535,7 @@ schema:Person rdf:type owl:Class ;
                                 owl:minCardinality "1"^^xsd:nonNegativeInteger
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty dc:creator ;
+                                owl:onProperty dcterms:creator ;
                                 owl:minCardinality "1"^^xsd:nonNegativeInteger
                               ] ,
                               [ rdf:type owl:Restriction ;
@@ -544,12 +552,10 @@ schema:Person rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
-###  http://base.namespace.com
-<http://base.namespace.com> rdf:type owl:NamedIndividual .
 
 
 ###  http://base.namespace.com#Reductant
-:Reductant rdf:type owl:NamedIndividual ,
+phcat:Reductant rdf:type owl:NamedIndividual ,
                     phcat:MaterialTransformationRole .
 
 
@@ -567,10 +573,10 @@ phcat:Catalyst rdf:type owl:NamedIndividual ,
 phcat:CatalystSetUpCondition rdf:type owl:NamedIndividual .
 
 
-###  http://base.namespace.com/Co-catalyst
-phcat:Co-catalyst rdf:type owl:NamedIndividual ,
-                           phcat:MaterialTransformationRole ;
-                  rdfs:label "Co-catalyst" .
+###  http://base.namespace.com/CoCatalyst
+phcat:CoCatalyst rdf:type owl:NamedIndividual ,
+                          phcat:MaterialTransformationRole ;
+                 rdfs:label "Co-catalyst" .
 
 
 ###  http://base.namespace.com/Condition
@@ -772,19 +778,19 @@ chebi:formula rdf:type owl:NamedIndividual .
 
 
 ###  http://purl.org/dc/terms/creator
-dc:creator rdf:type owl:NamedIndividual .
+dcterms:creator rdf:type owl:NamedIndividual .
 
 
 ###  http://purl.org/dc/terms/date
-dc:date rdf:type owl:NamedIndividual .
+dcterms:date rdf:type owl:NamedIndividual .
 
 
 ###  http://purl.org/dc/terms/isPartOf
-dc:isPartOf rdf:type owl:NamedIndividual .
+dcterms:isPartOf rdf:type owl:NamedIndividual .
 
 
 ###  http://purl.org/dc/terms/title
-dc:title rdf:type owl:NamedIndividual .
+dcterms:title rdf:type owl:NamedIndividual .
 
 
 ###  http://purl.org/ontology/bibo/Article
@@ -858,16 +864,16 @@ schema:nationality rdf:type owl:NamedIndividual .
 [ owl:maxCardinality "n"^^xsd:nonNegativeInteger
 ] .
 
-[ owl:maxCardinality "n"^^xsd:nonNegativeInteger
- ] .
-
 [ owl:maxCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
+[ owl:maxCardinality "*"^^xsd:nonNegativeInteger
+ ] .
+
 [ owl:maxCardinality "n"^^xsd:nonNegativeInteger
  ] .
 
-[ owl:maxCardinality "*"^^xsd:nonNegativeInteger
+[ owl:maxCardinality "n"^^xsd:nonNegativeInteger
  ] .
 
 [ owl:maxCardinality "n"^^xsd:nonNegativeInteger
@@ -941,8 +947,8 @@ phcat:PressureCondition rdfs:comment "The pressupre in which the process is made
                         rdfs:label "Pressure Condition" .
 
 
-phcat:ReactionMedium rdfs:comment "The medium used in the reaction is made." ;
-                     rdfs:label "Reaction Medium" .
+phcat:ReactionMedium rdfs:label "Reaction Medium" ;
+                     rdfs:comment "The medium used in the reaction is made." .
 
 
 phcat:ReactionTimeCondition rdfs:label "Reaction Time Condition" ;
@@ -1040,22 +1046,22 @@ chebi:formula rdfs:isDefinedBy "http://purl.obolibrary.org/obo/" ;
               rdfs:label "formula" .
 
 
-dc:creator rdfs:label "creator" ;
-           rdfs:isDefinedBy "http://purl.org/dc/terms/" ;
-           rdfs:comment "The reference of the author of an Article." .
+dcterms:creator rdfs:label "creator" ;
+                rdfs:isDefinedBy "http://purl.org/dc/terms/" ;
+                rdfs:comment "The reference of the author of an Article." .
 
 
-dc:date rdfs:label "date" ;
-        rdfs:isDefinedBy "http://purl.org/dc/terms/" .
+dcterms:date rdfs:isDefinedBy "http://purl.org/dc/terms/" ;
+             rdfs:label "date" .
 
 
-dc:isPartOf rdfs:isDefinedBy "http://purl.org/dc/terms/" ;
-            rdfs:label "is part of" ;
-            rdfs:comment "The reference of the journal of the article." .
+dcterms:isPartOf rdfs:label "is part of" ;
+                 rdfs:isDefinedBy "http://purl.org/dc/terms/" ;
+                 rdfs:comment "The reference of the journal of the article." .
 
 
-dc:title rdfs:label "title" ;
-         rdfs:isDefinedBy "http://purl.org/dc/terms/" .
+dcterms:title rdfs:label "title" ;
+              rdfs:isDefinedBy "http://purl.org/dc/terms/" .
 
 
 bibo:Article rdfs:comment "The article that describes the catalytic processes." ;
