@@ -1,26 +1,18 @@
-@prefix : <http://base.namespace.com/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
-@prefix qudt: <http://qudt.org/2.1/schema/qudt/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix chebi: <http://purl.obolibrary.org/obo/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix phcat: <http://base.namespace.com/> .
+@prefix qudt: <http://qudt.org//2.1/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@base <http://base.namespace.com> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://base.namespace.com> a owl:Ontology ;
-    dcterms:creator "Oier Beaskoetxea" ;
-	dcterms:description "Vocabulario para la representación de datos sobre los procesos de fotocatálisis descritos en las publicaciones científicas."@es ;
-	dcterms:license "https://creativecommons.org/licenses/by/4.0/" ;
-	dcterms:title "The Photocatalysis Ontology"^^xsd:string ;
-	rdfs:comment "Esta ontología ha sido diseñada en conjunto con el instituto IMDEA Energía de Madrid. Para generar las bases de este vocabulario se ha utilizado como base su proyecto \"Artleafs\" que consiste en una plataforma web para recavar información sobre experimentos en el campo de la fotocatásilis para posibilitar y facilitar la reproducibilidad de los procesos explicados en los artículos cientificos."@es ,
-				"This ontology has been designed in conjunction with the IMDEA Energy Institute of Madrid. To generate the bases of this vocabulary, the \"Artleafs\" project has been used as a basis, which consists of a web platform to collect information on experiments in the field of photocatalysis to enable and facilitate the reproducibility of the processes explained in scientific articles."@en ;
-	owl:versionInfo "0.5.1" 
-.
+    dc:creator "Oier Beaskoetxea" ;
+    dc:description "Ontology code created by Chowlk" ;
+    dc:title "Photocatalysis Ontology" ;
+    owl:versionInfo "0.5.0" .
 
 #################################################################
 #    Instances
@@ -32,11 +24,11 @@
 	bibo:doi "10.1007/s10563-009-9065-9"^^xsd:string ;
 	bibo:abstract "Sun is the Earth&rsquo;s ultimate and inexhaustible energy source. One of the best routes to remedy the CO2 problem is to convert it to valuable hydrocarbons using solar energy. In this study, CO2 was photocatalytically reduced to produce methanol, methane and ethylene in a steady-state optical-fiber reactor under artificial light and real sunlight irradiation. The photocatalyst was dip-coated on the optical fibers that enable the light to transmit and spread uniformly inside the reactor. The optical-fiber photoreactor, comprised of nearly 120 photocatalyst-coated fibers, was designed and assembled. The XRD spectra indicated the anatase phase for all photocatalysts. It is found that the methanol yield increased with UV light intensity. A maximum methanol yield of 4.12 &mu;mole/g-cat h is obtained when 1.0 wt% Ag/TiO2 photocatalyst was used under a light intensity of 10 W/cm2. When mixed oxide, TiO2&ndash;SiO2, is doped with Cu and Fe metals, the resulting photocatalysts show substantial difference in hydrocarbon production as well as product selectivity. Methane and ethylene were produced on Cu&ndash;Fe loaded TiO2&ndash;SiO2 photocatalyst. Since dye-sensitized Cu&ndash;Fe/P25 photocatalyst can fully harvest the light energy of 400&ndash;800 nm from sunlight, its photoactivity was significantly enhanced. Finally, CO2 photoreduction was studied by in situ IR spectroscopy and possible mechanism for the photoreaction was proposed."^^xsd:string ;
 	bibo:volume 13^^xsd:nonNegativeInteger ;
-	dcterms:title "Photocatalytic reduction of greenhouse gas CO2 to fuel"^^xsd:string ;
-	dcterms:date 2009^^xsd:date ;
+	dc:title "Photocatalytic reduction of greenhouse gas CO2 to fuel"^^xsd:string ;
+	dc:date 2009^^xsd:date ;
 	bibo:pageStart 30^^xsd:nonNegativeInteger ;
-	dcterms:isPartOf  <https://portal.issn.org/resource/ISSN/1571-1013>^^bibo:Journal;
-	dcterms:creator  <https://orcid.org/0000-0002-2231-3118>^^schema:Person;
+	dc:isPartOf  <https://portal.issn.org/resource/ISSN/1571-1013>^^bibo:Journal;
+	dc:creator  <https://orcid.org/0000-0002-2231-3118>^^schema:Person;
 	phcat:hasMaterialTransformationProcess <#process1>^^phcat:MaterialTransformation ;
 	phcat:hasMaterialTransformationProcess <#process2>^^phcat:MaterialTransformation ;
 	phcat:hasMaterialTransformationProcess <#process3>^^phcat:MaterialTransformation ;
@@ -44,13 +36,13 @@
 
 <https://portal.issn.org/resource/ISSN/1571-1013>
 	a bibo:Journal ;
-	dcterms:title "CATALYSIS SURVEYS FROM ASIA" ;
+	dc:title "CATALYSIS SURVEYS FROM ASIA" ;
 .
 <https://orcid.org/0000-0002-2231-3118>
 	a schema:Person ;
 	schema:email "cswu@ntu.edu.tw"^^xsd:string ;
 	schema:name "Jeffrey C. S. Wu"^^xsd:string ;
-	phcat:affilitaionCountry <https://en.wikipedia.org/wiki/Taiwan>^^schema:Country ;
+	schema:nationality <https://en.wikipedia.org/wiki/Taiwan>^^schema:Country ;
 .
 
 ## Proceso 1 ## 
@@ -64,7 +56,7 @@
 	phcat:hasInput <#process1/reductant_H20> ;
 	phcat:reportedIn <https://doi.org/10.1007/s10563-009-9065-9>
 	phcat:operationMode "Continuous"
-	phcat:hasCondition <#process1/reaction-medium> ;
+	phcat:hasReactionMedium phcat:Gas ;
 	phcat:hasReductant chebi:CHEBI_15377 ; # water
 	phcat:hasCondition <#process1/reactor-condition> ;
 	phcat:hasCondition <#process1/lightsource> ;
@@ -102,9 +94,6 @@
 <#process1/reductant_H20> a phcat:Input ;
 	phcat:hasChemical chebi:CHEBI_15377^^chebi:CHEBI_24431 ;
 	phcat:hasRole phcat:Reductant ;
-.
-<#process1/reaction-medium> a phcat:ReactionMediumCondition ;
-	phcat:reactionMediumType "Gas" ;
 .
 <#process1/reactor-condition> a phcat:ReactorCondition ;
 	phcat:reactorType "Fixed-bed" ;
@@ -192,7 +181,7 @@
 	phcat:hasInput <#process1/reductant_H20> ;
 	phcat:reportedIn <https://doi.org/10.1007/s10563-009-9065-9>
 	phcat:operationMode "Continuous"
-	phcat:hasCondition <#process2/reaction-medium> ;
+	phcat:hasReactionMedium phcat:Gas ;
 	phcat:hasCondition <#process2/reactor-condition> ;
 	phcat:hasCondition <#process2/lightsource> ;
 	phcat:hasCondition <#process2/lamppirradiance> ;
@@ -226,9 +215,6 @@
 <#process2/reductant_H20> a phcat:Input ;
 	phcat:hasChemical chebi:CHEBI_15377^^chebi:CHEBI_24431 ;
 	phcat:hasRole phcat:Reductant ;
-.
-<#process2/reaction-medium> a phcat:ReactionMediumCondition ;
-	phcat:reactionMediumType "Gas" ;
 .
 <#process2/reactor-condition> a phcat:ReactorCondition ;
 	phcat:reactorType "Fixed-bed" ;
@@ -295,7 +281,7 @@
 	phcat:hasInput <#process1/reductant_H20> ;
 	phcat:reportedIn <https://doi.org/10.1007/s10563-009-9065-9>
 	phcat:operationMode "Continuous"
-	phcat:hasCondition <#process3/reaction-medium> ;
+	phcat:hasReactionMedium phcat:Gas ;
 	phcat:hasCondition <#process3/reactor-condition> ;
 	phcat:hasCondition <#process3/lightsource> ;
 	phcat:hasCondition <#process3/lamppirradiance> ;
@@ -333,9 +319,6 @@
 <#process3/reductant_H20> a phcat:Input ;
 	phcat:hasChemical chebi:CHEBI_15377^^chebi:CHEBI_24431 ;
 	phcat:hasRole phcat:Reductant ;
-.
-<#process3/reaction-medium> a phcat:ReactionMediumCondition ;
-	phcat:reactionMediumType "Gas" ;
 .
 <#process3/reactor-condition> a phcat:ReactorCondition ;
 	phcat:reactorType "Fixed-bed" ;
@@ -398,39 +381,39 @@
 	bibo:doi "10.1039/C2JM31736B" ;
 	bibo:abstract "Heterostructured Ag@AgBr/AgCl nanocashews have been synthesized by an anion-exchange reaction between AgCl nanocubes and Br&minus; ions followed by photoreduction. Compared to polyhedral Ag@AgBr nanoparticles, the obtained nanostructures exhibit enhanced photocatalytic activity towards decomposition of organic pollutants, i.e., rhodamine-B (RhB). For example, only 2 min is taken to completely decompose RhB molecules with the assistance of these novel heterostructured nanoparticles under visible light irradiation. Furthermore, the as-synthesized nanocatalyst can be reused 20 times without losing activity, showing its high stability. Interestingly, the novel heterostructured Ag@AgBr/AgCl nanophotocatalyst also shows efficient visible light conversion of CO2 to energetic fuels, e.g. methanol/ethanol. Therefore, the present route opens an avenue to achieve highly efficient visible-light-driven nanophotocatalysts for applications in environmental remediation and resourceful use of CO2." ;
 	bibo:volume 22 ;
-	dcterms:title "Synthesis of Ag@AgBr/AgCl heterostructured nanocashews with enhanced photocatalytic performance via anion exchange" ;
-	dcterms:date 2012 ;
+	dc:title "Synthesis of Ag@AgBr/AgCl heterostructured nanocashews with enhanced photocatalytic performance via anion exchange" ;
+	dc:date 2012 ;
 	bibo:pageStart 13153 ;
-	dcterms:isPartOf  <https://portal.issn.org/resource/ISSN/1571-1013>;
+	dc:isPartOf  <https://portal.issn.org/resource/ISSN/1571-1013>;
 	#NOTE: no se ha podido encontrar a todos los autores
-	dcterms:creator  <https://orcid.org/0000-0003-2227-5008> ;
-	dcterms:creator  <https://orcid.org/0000-0002-4106-9093> ;
-	dcterms:creator  <https://scholar.google.com/citations?user=GZOJpwYAAAAJ&hl=es&oi=sra> ;
-	dcterms:creator  <https://orcid.org/0000-0003-3030-2440> ;
-	dcterms:creator	<#WenJiang> ;
+	dc:creator  <https://orcid.org/0000-0003-2227-5008> ;
+	dc:creator  <https://orcid.org/0000-0002-4106-9093> ;
+	dc:creator  <https://scholar.google.com/citations?user=GZOJpwYAAAAJ&hl=es&oi=sra> ;
+	dc:creator  <https://orcid.org/0000-0003-3030-2440> ;
+	dc:creator	<#WenJiang> ;
 	phcat:hasMaterialTransformationProcess <#process4> ;
 .
 <https://portal.issn.org/resource/ISSN/0959-9428>
 	a bibo:Journal ;
-	dcterms:title "Journal of Materials Chemistry" ;
+	dc:title "Journal of Materials Chemistry" ;
 .
 <https://orcid.org/0000-0003-2227-5008>
 	a schema:Person ;
 	schema:email "qhzhang@upc.edu.cn" ;
-	phcat:affilitaionCountry <https://en.wikipedia.org/wiki/China>^^schema:Country ;
+	schema:nationality <https://en.wikipedia.org/wiki/China>^^schema:Country ;
 .
 <https://orcid.org/0000-0002-4106-9093>
 	a schema:Person ;
 	schema:email "jizhuang@jnu.edu.cn" ;
-	phcat:affilitaionCountry <https://en.wikipedia.org/wiki/China>^^schema:Country ;
+	schema:nationality <https://en.wikipedia.org/wiki/China>^^schema:Country ;
 .
 <https://scholar.google.com/citations?user=GZOJpwYAAAAJ&hl=es&oi=sra>
 	a schema:Person ;
-	phcat:affilitaionCountry <https://en.wikipedia.org/wiki/China>^^schema:Country ;
+	schema:nationality <https://en.wikipedia.org/wiki/China>^^schema:Country ;
 .
 <https://orcid.org/0000-0003-3030-2440>
 	a schema:Person ;
-	phcat:affilitaionCountry <https://en.wikipedia.org/wiki/China>^^schema:Country ;
+	schema:nationality <https://en.wikipedia.org/wiki/China>^^schema:Country ;
 .
 <#WenJiang>
 	a schema:Person ;
@@ -447,7 +430,7 @@
 	phcat:hasInput <#process1/reductant_H20> ;
 	phcat:reportedIn <https://doi.org/10.1039/C2JM31736B>
 	phcat:operationMode "Continuous"
-	phcat:hasCondition <#process4/reaction-medium> ;
+	phcat:hasReactionMedium <#process4/reaction-medium> ;
 	phcat:hasCondition <#process4/reactor-condition> ;
 	phcat:hasCondition <#process4/lightsource> ;
 	phcat:hasCondition <#process4/lamppower> ;
@@ -457,6 +440,9 @@
 	phcat:hasOutput <#process4/output2> ;
 	phcat:hasOutput <#process4/output3> ;
 	phcat:hasOutput <#process4/output4> ;
+.
+<#process4/reaction-medium> a phcat:Liquid ;
+	phcat:pH 0 ; # NOTE: puede ser 0 una medida valida o deberia ignorarse la propiedad?
 .
 <#process4/catalyst_AgCl> a phcat:Input ;
 	phcat:hasChemical chebi:CHEBI_30341 ;
@@ -484,15 +470,10 @@
 	phcat:hasChemical chebi:CHEBI_15377^^chebi:CHEBI_24431 ;
 	phcat:hasRole phcat:Reductant ;
 .
-<#process4/reaction-medium> a phcat:ReactionMediumCondition ;
-	phcat:reactionMediumType "Liquid" ;
-	qudt:unit unit:PH ; 
-	qudt:numericValue 0 # NOTE: puede ser 0 una medida valida o deberia ignorarse la propiedad?
-.
 <#process4/reactor-condition> a phcat:ReactorCondition ;
 	phcat:reactorType "Slurry" ;
 	# qudt:unit unit:L ; # NOTE: Revisar - no aparece en la bd entonces es obligatorio?
-	# qudt:numericValue 0 ;
+	# qudt:value 0 ;
 .
 <#process4/lightsource> a phcat:WavelengthCondition ;
 	phcat:lightSourceType "Visual" ;
@@ -504,16 +485,16 @@
 <#process4/lamppower> a phcat:IrradianceCondition ;
 	phcat:lampType "Xenon(Xe)" ;
 	qudt:unit unit:W ;
-	qudt:numericValue "300"^^xsd:double ;
+	qudt:value "300"^^xsd:double ;
 .
 <#process4/catalyst-set-up> a phcat:CatalystSetUpCondition ;
 	phcat:setUpType "Powder(Suspended)" ;
 	# qudt:unit unit:GM ;
-	# qudt:numericValue 0 ;
+	# qudt:value 0 ;
 .
 <#process4/reaction-time> a phcat:ReactionTimeCondition ;
 	qudt:unit unit:HR ;
-	qudt:numericValue 5.00 ;
+	qudt:value 5.00 ;
 .
 <#CH3OH> a chebi:CHEBI_24431
 	chebi:formula "CH3OH" ;
@@ -532,7 +513,7 @@
 	phcat:hasOutputQuantity <#process4/output2/quantity>;
 .
 <#process4/output2/quantity> a phcat:OutputQuantity ;
-	qudt:numericValue 44 ;
+	qudt:value 44 ;
 	qudt:unit unit:MicroMOL-PER-GM-HR ;
 .
 <#process4/output3> a phcat:Output ;
@@ -540,7 +521,7 @@
 	phcat:hasOutputQuantity <#process4/output3/quantity>;
 .
 <#process4/output3/quantity> a phcat:OutputQuantity ;
-	qudt:numericValue 310 ;
+	qudt:value 310 ;
 	qudt:unit unit:MicroMOL-PER-GM-HR ;
 .
 <#process4/output4> a phcat:Output ;
@@ -548,6 +529,6 @@
 	phcat:hasOutputQuantity <#process4/output4/quantity>;
 .
 <#process4/output4/quantity> a phcat:OutputQuantity ;
-	qudt:numericValue 62 ;
+	qudt:value 62 ;
 	qudt:unit unit:MicroMOL-PER-GM-HR ;
 .
