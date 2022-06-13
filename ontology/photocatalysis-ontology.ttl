@@ -10,16 +10,16 @@
 @prefix chebi: <http://purl.obolibrary.org/obo/> .
 @prefix schema: <https://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@base <http://base.namespace.com> .
+@base <http://base.namespace.com/> .
 
-<http://base.namespace.com> rdf:type owl:Ontology ;
-                             dcterms:creator "Oier Beaskoetxea" ;
-                             dcterms:description "Vocabulario para la representación de datos sobre los procesos de fotocatálisis descritos en las publicaciones científicas."@es ;
-                             dcterms:license "https://creativecommons.org/licenses/by/4.0/" ;
-                             dcterms:title "The Photocatalysis Ontology"^^xsd:string ;
-                             rdfs:comment "Esta ontología ha sido diseñada en conjunto con el instituto IMDEA Energía de Madrid. Para generar las bases de este vocabulario se ha utilizado como base su proyecto \"Artleafs\" que consiste en una plataforma web para recavar información sobre experimentos en el campo de la fotocatásilis para posibilitar y facilitar la reproducibilidad de los procesos explicados en los artículos cientificos."@es ,
-                                          "This ontology has been designed in conjunction with the IMDEA Energy Institute of Madrid. To generate the bases of this vocabulary, the \"Artleafs\" project has been used as a basis, which consists of a web platform to collect information on experiments in the field of photocatalysis to enable and facilitate the reproducibility of the processes explained in scientific articles."@en ;
-                             owl:versionInfo "0.5.1" .
+<http://base.namespace.com/> rdf:type owl:Ontology ;
+                              dcterms:creator "Oier Beaskoetxea" ;
+                              dcterms:description "Vocabulario para la representación de datos sobre los procesos de fotocatálisis descritos en las publicaciones científicas."@es ;
+                              dcterms:license "https://creativecommons.org/licenses/by/4.0/" ;
+                              dcterms:title "The Photocatalysis Ontology"^^xsd:string ;
+                              rdfs:comment "Esta ontología ha sido diseñada en conjunto con el instituto IMDEA Energía de Madrid. Para generar las bases de este vocabulario se ha utilizado como base su proyecto \"Artleafs\" que consiste en una plataforma web para recavar información sobre experimentos en el campo de la fotocatásilis para posibilitar y facilitar la reproducibilidad de los procesos explicados en los artículos cientificos."@es ,
+                                           "This ontology has been designed in conjunction with the IMDEA Energy Institute of Madrid. To generate the bases of this vocabulary, the \"Artleafs\" project has been used as a basis, which consists of a web platform to collect information on experiments in the field of photocatalysis to enable and facilitate the reproducibility of the processes explained in scientific articles."@en ;
+                              owl:versionInfo "0.5.1" .
 
 #################################################################
 #    Annotation properties
@@ -89,6 +89,13 @@ owl:maxCardinality rdf:type owl:AnnotationProperty .
               rdfs:label "has condition" .
 
 
+###  http://base.namespace.com/hasEfficiency
+:hasEfficiency rdf:type owl:ObjectProperty ;
+               rdfs:domain :MaterialTransformationProcess ;
+               rdfs:range :Efficiency ;
+               rdfs:label "has efficiency" .
+
+
 ###  http://base.namespace.com/hasEg
 :hasEg rdf:type owl:ObjectProperty ;
        rdfs:domain :MaterialTransformationProcess ;
@@ -142,7 +149,8 @@ owl:maxCardinality rdf:type owl:AnnotationProperty .
 :reportedIn rdf:type owl:ObjectProperty ;
             rdfs:domain :MaterialTransformationProcess ;
             rdfs:range bibo:Article ;
-            rdfs:comment "The reference of the article in which the process is mentioned." .
+            rdfs:comment "The reference of the article in which the process is mentioned." ;
+            rdfs:label "reported in" .
 
 
 ###  http://purl.org/dc/terms/creator
@@ -179,17 +187,11 @@ qudt:unit rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
-###  http://base.namespace.com#reactionMediumType
-:reactionMediumType rdf:type owl:DatatypeProperty ;
-                    rdfs:subPropertyOf :conditionType ;
-                    rdfs:domain :ReactionMediumCondition ;
-                    rdfs:range xsd:string .
-
-
 ###  http://base.namespace.com/conditionType
 :conditionType rdf:type owl:DatatypeProperty ;
                rdfs:domain :Condition ;
                rdfs:range xsd:string ;
+               rdfs:comment "A condition type in which the material transformation is performed." ;
                rdfs:label "condition type" .
 
 
@@ -197,6 +199,7 @@ qudt:unit rdf:type owl:ObjectProperty ;
 :crystalStructure rdf:type owl:DatatypeProperty ;
                   rdfs:domain :Input ;
                   rdfs:range xsd:string ;
+                  rdfs:comment "The crystal structure of the catalyst. It is mandatory when TiO2 is used as catalyst material." ;
                   rdfs:label "crystal structure" .
 
 
@@ -205,6 +208,7 @@ qudt:unit rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf :conditionType ;
           rdfs:domain :LampCondition ;
           rdfs:range xsd:string ;
+          rdfs:comment "The lamp type used in the material transformation." ;
           rdfs:label "lamp type" .
 
 
@@ -213,6 +217,7 @@ qudt:unit rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf :conditionType ;
                  rdfs:domain :LightSourceCondition ;
                  rdfs:range xsd:string ;
+                 rdfs:comment "Light source used in the material transformation." ;
                  rdfs:label "light source type" .
 
 
@@ -220,21 +225,25 @@ qudt:unit rdf:type owl:ObjectProperty ;
 :operationMode rdf:type owl:DatatypeProperty ;
                rdfs:domain :MaterialTransformationProcess ;
                rdfs:range xsd:string ;
+               rdfs:comment "The operation mode of the material transformation process. It can be continuous or in batch." ;
                rdfs:label "operation mode" .
-
-
-###  http://base.namespace.com/pH
-:pH rdf:type owl:DatatypeProperty ;
-    rdfs:domain :ReactionMediumCondition ;
-    rdfs:range xsd:nonNegativeInteger ;
-    rdfs:label "pH" .
 
 
 ###  http://base.namespace.com/percentage
 :percentage rdf:type owl:DatatypeProperty ;
             rdfs:domain :Input ;
             rdfs:range xsd:double ;
+            rdfs:comment "The percentage of the input material used in the process. The sum of all the percentages in the process can not be more than 100%." ;
             rdfs:label "percentage" .
+
+
+###  http://base.namespace.com/reactionMediumType
+:reactionMediumType rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf :conditionType ;
+                    rdfs:domain :ReactionMediumCondition ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "The reaction medium in which the material transformation is performed. It can be liquid or gas." ;
+                    rdfs:label "reaction medium type" .
 
 
 ###  http://base.namespace.com/reactorType
@@ -242,6 +251,7 @@ qudt:unit rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf :conditionType ;
              rdfs:domain :ReactorCondition ;
              rdfs:range xsd:string ;
+             rdfs:comment "The reactor used in the material transformation process." ;
              rdfs:label "reactor type" .
 
 
@@ -250,6 +260,7 @@ qudt:unit rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf :conditionType ;
            rdfs:domain :CatalystSetUpCondition ;
            rdfs:range xsd:string ;
+           rdfs:comment "The set up used in the material transformation." ;
            rdfs:label "set up type" .
 
 
@@ -257,6 +268,7 @@ qudt:unit rdf:type owl:ObjectProperty ;
 chebi:formula rdf:type owl:DatatypeProperty ;
               rdfs:domain chebi:CHEBI_24431 ;
               rdfs:range xsd:string ;
+              rdfs:comment "The chemical formula of the material." ;
               rdfs:isDefinedBy "http://purl.obolibrary.org/obo/" ;
               rdfs:label "formula" .
 
@@ -265,6 +277,7 @@ chebi:formula rdf:type owl:DatatypeProperty ;
 dcterms:date rdf:type owl:DatatypeProperty ;
              rdfs:domain bibo:Article ;
              rdfs:range xsd:dateTime ;
+             rdfs:comment "The date when the article was published." ;
              rdfs:isDefinedBy "http://purl.org/dc/terms/" ;
              rdfs:label "date" .
 
@@ -273,6 +286,7 @@ dcterms:date rdf:type owl:DatatypeProperty ;
 bibo:abstract rdf:type owl:DatatypeProperty ;
               rdfs:domain bibo:Article ;
               rdfs:range rdfs:Literal ;
+              rdfs:comment "The abstraacto of an article" ;
               rdfs:isDefinedBy "http://purl.org/ontology/bibo/" .
 
 
@@ -280,6 +294,7 @@ bibo:abstract rdf:type owl:DatatypeProperty ;
 bibo:doi rdf:type owl:DatatypeProperty ;
          rdfs:domain bibo:Article ;
          rdfs:range rdfs:Literal ;
+         rdfs:comment "The DOI of the article." ;
          rdfs:isDefinedBy "http://purl.org/ontology/bibo/" ;
          rdfs:label "doi" .
 
@@ -296,6 +311,7 @@ bibo:issue rdf:type owl:DatatypeProperty ;
 bibo:pageStart rdf:type owl:DatatypeProperty ;
                rdfs:domain bibo:Article ;
                rdfs:range rdfs:Literal ;
+               rdfs:comment "The page on which the article begins." ;
                rdfs:isDefinedBy "http://purl.org/ontology/bibo/" ;
                rdfs:label "page start" .
 
@@ -304,6 +320,7 @@ bibo:pageStart rdf:type owl:DatatypeProperty ;
 bibo:volume rdf:type owl:DatatypeProperty ;
             rdfs:domain bibo:Article ;
             rdfs:range rdfs:Literal ;
+            rdfs:comment "The volume in which the article was published." ;
             rdfs:isDefinedBy "http://purl.org/ontology/bibo/" ;
             rdfs:label "volume" .
 
@@ -327,6 +344,7 @@ qudt:numericValue rdf:type owl:DatatypeProperty ;
                                             )
                               ] ;
                   rdfs:range xsd:double ;
+                  rdfs:comment "The numeric value of the measured property." ;
                   rdfs:isDefinedBy "http://qudt.org/2.1/schema/qudt/" ;
                   rdfs:label "numeric value" .
 
@@ -335,6 +353,7 @@ qudt:numericValue rdf:type owl:DatatypeProperty ;
 qudt:value rdf:type owl:DatatypeProperty ;
            rdfs:domain :Condition ;
            rdfs:range rdfs:Literal ;
+           rdfs:comment "The value of the measured property." ;
            rdfs:isDefinedBy "http://qudt.org/2.1/schema/qudt/" ;
            rdfs:label "value" .
 
@@ -343,6 +362,7 @@ qudt:value rdf:type owl:DatatypeProperty ;
 schema:email rdf:type owl:DatatypeProperty ;
              rdfs:domain schema:Person ;
              rdfs:range xsd:string ;
+             rdfs:comment "The email of the author." ;
              rdfs:isDefinedBy "https://schema.org/" ;
              rdfs:label "email" .
 
@@ -351,6 +371,7 @@ schema:email rdf:type owl:DatatypeProperty ;
 schema:name rdf:type owl:DatatypeProperty ;
             rdfs:domain schema:Person ;
             rdfs:range xsd:string ;
+            rdfs:comment "The name of the author." ;
             rdfs:isDefinedBy "https://schema.org/" ;
             rdfs:label "name" .
 
@@ -373,7 +394,12 @@ schema:name rdf:type owl:DatatypeProperty ;
 
 ###  http://base.namespace.com/CatalystSetUpCondition
 :CatalystSetUpCondition rdf:type owl:Class ;
-                        rdfs:subClassOf :Condition ;
+                        rdfs:subClassOf :Condition ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty qudt:unit ;
+                                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onClass qudt:Unit
+                                        ] ;
                         rdfs:comment "It describes which is the configuration of the catalyst." ;
                         rdfs:label "Catalyst Set Up Condition" .
 
@@ -382,6 +408,12 @@ schema:name rdf:type owl:DatatypeProperty ;
 :Condition rdf:type owl:Class ;
            rdfs:comment "It describes the conditions in which the material transformation process is done." ;
            rdfs:label "Condition" .
+
+
+###  http://base.namespace.com/Efficiency
+:Efficiency rdf:type owl:Class ;
+            rdfs:comment "The energetic efficiency of the process." ;
+            rdfs:label "Efficiency" .
 
 
 ###  http://base.namespace.com/Eg
@@ -402,7 +434,8 @@ schema:name rdf:type owl:DatatypeProperty ;
                          rdfs:subClassOf :LightSourceCondition ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty qudt:unit ;
-                                           owl:cardinality "1"^^xsd:nonNegativeInteger
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass qudt:Unit
                                          ] ;
                          rdfs:comment "It describes how large the illuminated area is in the process." ;
                          rdfs:label "Iluminated Area Condition" .
@@ -429,7 +462,8 @@ schema:name rdf:type owl:DatatypeProperty ;
                      rdfs:subClassOf :LampCondition ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty qudt:unit ;
-                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass qudt:Unit
                                      ] ;
                      rdfs:comment "It describes the irradiance of the lamp on the process" ;
                      rdfs:label "Irradiance Condition" .
@@ -513,7 +547,8 @@ schema:name rdf:type owl:DatatypeProperty ;
                 rdfs:subClassOf :LampCondition ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty qudt:unit ;
-                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass qudt:Unit
                                 ] ;
                 rdfs:comment "Describe cual es la energía emitida por la lampara en el proceso."@es ,
                              "It describes how much energy is emitted by the lamp in the process."@en ;
@@ -525,7 +560,8 @@ schema:name rdf:type owl:DatatypeProperty ;
                    rdfs:subClassOf :Condition ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty qudt:unit ;
-                                     owl:cardinality "1"^^xsd:nonNegativeInteger
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass qudt:Unit
                                    ] ;
                    rdfs:comment "The pressupre in which the process is made." ;
                    rdfs:label "Pressure Condition" .
@@ -533,7 +569,12 @@ schema:name rdf:type owl:DatatypeProperty ;
 
 ###  http://base.namespace.com/ReactionMediumCondition
 :ReactionMediumCondition rdf:type owl:Class ;
-                         rdfs:subClassOf :Condition ;
+                         rdfs:subClassOf :Condition ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty qudt:unit ;
+                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass qudt:Unit
+                                         ] ;
                          rdfs:comment "The medium used in the reaction is made." ;
                          rdfs:label "Reaction Medium Condition" .
 
@@ -543,7 +584,8 @@ schema:name rdf:type owl:DatatypeProperty ;
                        rdfs:subClassOf :Condition ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty qudt:unit ;
-                                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onClass qudt:Unit
                                        ] ;
                        rdfs:comment "It describes how long the transformation has been going on." ;
                        rdfs:label "Reaction Time Condition" .
@@ -554,7 +596,8 @@ schema:name rdf:type owl:DatatypeProperty ;
                   rdfs:subClassOf :Condition ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty qudt:unit ;
-                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass qudt:Unit
                                   ] ;
                   rdfs:comment "It describes the reactor type used in the process and its size" ;
                   rdfs:label "Reactor Condition" .
@@ -565,7 +608,8 @@ schema:name rdf:type owl:DatatypeProperty ;
                         rdfs:subClassOf :Condition ,
                                         [ rdf:type owl:Restriction ;
                                           owl:onProperty qudt:unit ;
-                                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onClass qudt:Unit
                                         ] ;
                         rdfs:comment "It is the ratio of the volumetric flow rate (hourly) of the catalyst present in the reactor." ;
                         rdfs:label "Space Velocity Condition" .
@@ -576,7 +620,8 @@ schema:name rdf:type owl:DatatypeProperty ;
                       rdfs:subClassOf :Condition ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty qudt:unit ;
-                                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass qudt:Unit
                                       ] ;
                       rdfs:comment "The temperature in which the process is made." ;
                       rdfs:label "Temperature Condition" .
@@ -587,7 +632,8 @@ schema:name rdf:type owl:DatatypeProperty ;
                      rdfs:subClassOf :LightSourceCondition ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty qudt:unit ;
-                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass qudt:Unit
                                      ] ;
                      rdfs:comment "This describes what is wavelength of the light soruce used in the process." ;
                      rdfs:label "Wavelength Condition" .
@@ -694,8 +740,7 @@ schema:Person rdf:type owl:Class ;
 #################################################################
 
 dcterms:creator rdfs:label "creator" ;
-                rdfs:isDefinedBy "http://purl.org/dc/terms/" ;
-                rdfs:comment "The reference of the author of an Article." .
+                rdfs:isDefinedBy "http://purl.org/dc/terms/" .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
