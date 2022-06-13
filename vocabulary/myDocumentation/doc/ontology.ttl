@@ -3,20 +3,14 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix bibo: <http://purl.org/ontology/bibo/> .
-@prefix qudt: <http://qudt.org/2.1/schema/qudt/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix unit: <http://qudt.org/vocab/unit/> .
-@prefix chebi: <http://purl.obolibrary.org/obo/> .
-@prefix schema: <https://schema.org/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
 @base <http://base.namespace.com/> .
 
 <http://base.namespace.com/> rdf:type owl:Ontology ;
-                              dcterms:creator "Oier Beaskoetxea" ;
-                              dcterms:description "Vocabulario para la representación de datos sobre los procesos de fotocatálisis descritos en las publicaciones científicas."@es ;
-                              dcterms:license "https://creativecommons.org/licenses/by/4.0/" ;
-                              dcterms:title "The Photocatalysis Ontology"^^xsd:string ;
+                              <http://purl.org/dc/terms/creator> "Oier Beaskoetxea" ;
+                              <http://purl.org/dc/terms/description> "Vocabulario para la representación de datos sobre los procesos de fotocatálisis descritos en las publicaciones científicas."@es ;
+                              <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by/4.0/" ;
+                              <http://purl.org/dc/terms/title> "The Photocatalysis Ontology" ;
                               rdfs:comment "Esta ontología ha sido diseñada en conjunto con el instituto IMDEA Energía de Madrid. Para generar las bases de este vocabulario se ha utilizado como base su proyecto \"Artleafs\" que consiste en una plataforma web para recavar información sobre experimentos en el campo de la fotocatásilis para posibilitar y facilitar la reproducibilidad de los procesos explicados en los artículos cientificos."@es ,
                                            "This ontology has been designed in conjunction with the IMDEA Energy Institute of Madrid. To generate the bases of this vocabulary, the \"Artleafs\" project has been used as a basis, which consists of a web platform to collect information on experiments in the field of photocatalysis to enable and facilitate the reproducibility of the processes explained in scientific articles."@en ;
                               owl:versionInfo "0.5.1" .
@@ -26,16 +20,16 @@
 #################################################################
 
 ###  http://purl.org/dc/terms/description
-dcterms:description rdf:type owl:AnnotationProperty .
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/license
-dcterms:license rdf:type owl:AnnotationProperty .
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/title
-dcterms:title rdf:type owl:AnnotationProperty ;
-              rdfs:range xsd:string .
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty ;
+                                 rdfs:range xsd:string .
 
 
 ###  http://www.w3.org/2000/01/rdf-schema#label
@@ -53,8 +47,8 @@ owl:maxCardinality rdf:type owl:AnnotationProperty .
 
 ###  http://base.namespace.com/affiliationCountry
 :affiliationCountry rdf:type owl:ObjectProperty ;
-                    rdfs:domain schema:Person ;
-                    rdfs:range schema:Country ;
+                    rdfs:domain <https://schema.org/Person> ;
+                    rdfs:range <https://schema.org/Country> ;
                     rdfs:comment "Reference to the country in which the organization the author works for resides when submitting the article."@en ,
                                  "Referencia al país en el que reside la organización para la que el autor trabaja cuando presenta el artículo."@es ;
                     rdfs:isDefinedBy "https://schema.org/" ;
@@ -76,7 +70,7 @@ owl:maxCardinality rdf:type owl:AnnotationProperty .
                                          :Output
                                        )
                          ] ;
-             rdfs:range chebi:CHEBI_24431 ;
+             rdfs:range <http://purl.obolibrary.org/obo/CHEBI_24431> ;
              rdfs:comment "The reference of a chemical entity." ;
              rdfs:label "has chemical" .
 
@@ -115,7 +109,7 @@ owl:maxCardinality rdf:type owl:AnnotationProperty .
 ###  http://base.namespace.com/hasMaterialTransformationProcess
 :hasMaterialTransformationProcess rdf:type owl:ObjectProperty ;
                                   owl:inverseOf :reportedIn ;
-                                  rdfs:domain bibo:Article ;
+                                  rdfs:domain <http://purl.org/ontology/bibo/Article> ;
                                   rdfs:range :MaterialTransformationProcess ;
                                   rdfs:comment "The reference to a transformation process mentioned in the article." ;
                                   rdfs:label "has material transformation process" .
@@ -148,39 +142,39 @@ owl:maxCardinality rdf:type owl:AnnotationProperty .
 ###  http://base.namespace.com/reportedIn
 :reportedIn rdf:type owl:ObjectProperty ;
             rdfs:domain :MaterialTransformationProcess ;
-            rdfs:range bibo:Article ;
+            rdfs:range <http://purl.org/ontology/bibo/Article> ;
             rdfs:comment "The reference of the article in which the process is mentioned." ;
             rdfs:label "reported in" .
 
 
 ###  http://purl.org/dc/terms/creator
-dcterms:creator rdf:type owl:ObjectProperty ;
-                rdfs:domain bibo:Article ;
-                rdfs:range schema:Person .
+<http://purl.org/dc/terms/creator> rdf:type owl:ObjectProperty ;
+                                   rdfs:domain <http://purl.org/ontology/bibo/Article> ;
+                                   rdfs:range <https://schema.org/Person> .
 
 
 ###  http://purl.org/dc/terms/isPartOf
-dcterms:isPartOf rdf:type owl:ObjectProperty ;
-                 rdfs:domain bibo:Article ;
-                 rdfs:range bibo:Journal ;
-                 rdfs:comment "The reference of the journal of the article." ;
-                 rdfs:isDefinedBy "http://purl.org/dc/terms/" ;
-                 rdfs:label "is part of" .
+<http://purl.org/dc/terms/isPartOf> rdf:type owl:ObjectProperty ;
+                                    rdfs:domain <http://purl.org/ontology/bibo/Article> ;
+                                    rdfs:range <http://purl.org/ontology/bibo/Journal> ;
+                                    rdfs:comment "The reference of the journal of the article." ;
+                                    rdfs:isDefinedBy "http://purl.org/dc/terms/" ;
+                                    rdfs:label "is part of" .
 
 
 ###  http://qudt.org/2.1/schema/qudt/unit
-qudt:unit rdf:type owl:ObjectProperty ;
-          rdfs:domain [ rdf:type owl:Class ;
-                        owl:unionOf ( :BET
-                                      :Condition
-                                      :Eg
-                                      :OutputQuantity
-                                    )
-                      ] ;
-          rdfs:range qudt:Unit ;
-          rdfs:comment "The reference to an unit of measure." ;
-          rdfs:isDefinedBy "http://qudt.org/2.1/schema/qudt/" ;
-          rdfs:label "unit" .
+<http://qudt.org/2.1/schema/qudt/unit> rdf:type owl:ObjectProperty ;
+                                       rdfs:domain [ rdf:type owl:Class ;
+                                                     owl:unionOf ( :BET
+                                                                   :Condition
+                                                                   :Eg
+                                                                   :OutputQuantity
+                                                                 )
+                                                   ] ;
+                                       rdfs:range <http://qudt.org/2.1/schema/qudt/Unit> ;
+                                       rdfs:comment "The reference to an unit of measure." ;
+                                       rdfs:isDefinedBy "http://qudt.org/2.1/schema/qudt/" ;
+                                       rdfs:label "unit" .
 
 
 #################################################################
@@ -265,117 +259,117 @@ qudt:unit rdf:type owl:ObjectProperty ;
 
 
 ###  http://purl.obolibrary.org/obo/formula
-chebi:formula rdf:type owl:DatatypeProperty ;
-              rdfs:domain chebi:CHEBI_24431 ;
-              rdfs:range xsd:string ;
-              rdfs:comment "The chemical formula of the material." ;
-              rdfs:isDefinedBy "http://purl.obolibrary.org/obo/" ;
-              rdfs:label "formula" .
+<http://purl.obolibrary.org/obo/formula> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+                                         rdfs:range xsd:string ;
+                                         rdfs:comment "The chemical formula of the material." ;
+                                         rdfs:isDefinedBy "http://purl.obolibrary.org/obo/" ;
+                                         rdfs:label "formula" .
 
 
 ###  http://purl.org/dc/terms/date
-dcterms:date rdf:type owl:DatatypeProperty ;
-             rdfs:domain bibo:Article ;
-             rdfs:range xsd:dateTime ;
-             rdfs:comment "The date when the article was published." ;
-             rdfs:isDefinedBy "http://purl.org/dc/terms/" ;
-             rdfs:label "date" .
+<http://purl.org/dc/terms/date> rdf:type owl:DatatypeProperty ;
+                                rdfs:domain <http://purl.org/ontology/bibo/Article> ;
+                                rdfs:range xsd:dateTime ;
+                                rdfs:comment "The date when the article was published." ;
+                                rdfs:isDefinedBy "http://purl.org/dc/terms/" ;
+                                rdfs:label "date" .
 
 
 ###  http://purl.org/ontology/bibo/abstract
-bibo:abstract rdf:type owl:DatatypeProperty ;
-              rdfs:domain bibo:Article ;
-              rdfs:range rdfs:Literal ;
-              rdfs:comment "The abstract of an article." ;
-              rdfs:isDefinedBy "http://purl.org/ontology/bibo/" ;
-              rdfs:label "abstract"@en ,
-                         "resumen"@es .
+<http://purl.org/ontology/bibo/abstract> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <http://purl.org/ontology/bibo/Article> ;
+                                         rdfs:range rdfs:Literal ;
+                                         rdfs:comment "The abstract of an article." ;
+                                         rdfs:isDefinedBy "http://purl.org/ontology/bibo/" ;
+                                         rdfs:label "abstract"@en ,
+                                                    "resumen"@es .
 
 
 ###  http://purl.org/ontology/bibo/doi
-bibo:doi rdf:type owl:DatatypeProperty ;
-         rdfs:domain bibo:Article ;
-         rdfs:range rdfs:Literal ;
-         rdfs:comment "The DOI of the article." ;
-         rdfs:isDefinedBy "http://purl.org/ontology/bibo/" ;
-         rdfs:label "doi" .
+<http://purl.org/ontology/bibo/doi> rdf:type owl:DatatypeProperty ;
+                                    rdfs:domain <http://purl.org/ontology/bibo/Article> ;
+                                    rdfs:range rdfs:Literal ;
+                                    rdfs:comment "The DOI of the article." ;
+                                    rdfs:isDefinedBy "http://purl.org/ontology/bibo/" ;
+                                    rdfs:label "doi" .
 
 
 ###  http://purl.org/ontology/bibo/issue
-bibo:issue rdf:type owl:DatatypeProperty ;
-           rdfs:domain bibo:Article ;
-           rdfs:range xsd:string ;
-           rdfs:isDefinedBy "http://purl.org/ontology/bibo/" ;
-           rdfs:label "issue" .
+<http://purl.org/ontology/bibo/issue> rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain <http://purl.org/ontology/bibo/Article> ;
+                                      rdfs:range xsd:string ;
+                                      rdfs:isDefinedBy "http://purl.org/ontology/bibo/" ;
+                                      rdfs:label "issue" .
 
 
 ###  http://purl.org/ontology/bibo/pageStart
-bibo:pageStart rdf:type owl:DatatypeProperty ;
-               rdfs:domain bibo:Article ;
-               rdfs:range rdfs:Literal ;
-               rdfs:comment "The page on which the article begins." ;
-               rdfs:isDefinedBy "http://purl.org/ontology/bibo/" ;
-               rdfs:label "page start" .
+<http://purl.org/ontology/bibo/pageStart> rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain <http://purl.org/ontology/bibo/Article> ;
+                                          rdfs:range rdfs:Literal ;
+                                          rdfs:comment "The page on which the article begins." ;
+                                          rdfs:isDefinedBy "http://purl.org/ontology/bibo/" ;
+                                          rdfs:label "page start" .
 
 
 ###  http://purl.org/ontology/bibo/volume
-bibo:volume rdf:type owl:DatatypeProperty ;
-            rdfs:domain bibo:Article ;
-            rdfs:range rdfs:Literal ;
-            rdfs:comment "The volume in which the article was published." ;
-            rdfs:isDefinedBy "http://purl.org/ontology/bibo/" ;
-            rdfs:label "volume" .
+<http://purl.org/ontology/bibo/volume> rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain <http://purl.org/ontology/bibo/Article> ;
+                                       rdfs:range rdfs:Literal ;
+                                       rdfs:comment "The volume in which the article was published." ;
+                                       rdfs:isDefinedBy "http://purl.org/ontology/bibo/" ;
+                                       rdfs:label "volume" .
 
 
 ###  http://qudt.org/2.1/schema/qudt/numericValue
-qudt:numericValue rdf:type owl:DatatypeProperty ;
-                  rdfs:subPropertyOf qudt:value ;
-                  rdfs:domain [ rdf:type owl:Class ;
-                                owl:unionOf ( :BET
-                                              :Eg
-                                              :IluminatedAreaCondition
-                                              :IrradianceCondition
-                                              :OutputQuantity
-                                              :PowerCondition
-                                              :PressureCondition
-                                              :ReactionMediumCondition
-                                              :ReactionTimeCondition
-                                              :ReactorCondition
-                                              :SpaceVelocityCondition
-                                              :TemperatureCondition
-                                            )
-                              ] ;
-                  rdfs:range xsd:double ;
-                  rdfs:comment "The numeric value of the measured property." ;
-                  rdfs:isDefinedBy "http://qudt.org/2.1/schema/qudt/" ;
-                  rdfs:label "numeric value" .
+<http://qudt.org/2.1/schema/qudt/numericValue> rdf:type owl:DatatypeProperty ;
+                                               rdfs:subPropertyOf <http://qudt.org/2.1/schema/qudt/value> ;
+                                               rdfs:domain [ rdf:type owl:Class ;
+                                                             owl:unionOf ( :BET
+                                                                           :Eg
+                                                                           :IluminatedAreaCondition
+                                                                           :IrradianceCondition
+                                                                           :OutputQuantity
+                                                                           :PowerCondition
+                                                                           :PressureCondition
+                                                                           :ReactionMediumCondition
+                                                                           :ReactionTimeCondition
+                                                                           :ReactorCondition
+                                                                           :SpaceVelocityCondition
+                                                                           :TemperatureCondition
+                                                                         )
+                                                           ] ;
+                                               rdfs:range xsd:double ;
+                                               rdfs:comment "The numeric value of the measured property." ;
+                                               rdfs:isDefinedBy "http://qudt.org/2.1/schema/qudt/" ;
+                                               rdfs:label "numeric value" .
 
 
 ###  http://qudt.org/2.1/schema/qudt/value
-qudt:value rdf:type owl:DatatypeProperty ;
-           rdfs:domain :Condition ;
-           rdfs:range rdfs:Literal ;
-           rdfs:comment "The value of the measured property." ;
-           rdfs:isDefinedBy "http://qudt.org/2.1/schema/qudt/" ;
-           rdfs:label "value" .
+<http://qudt.org/2.1/schema/qudt/value> rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain :Condition ;
+                                        rdfs:range rdfs:Literal ;
+                                        rdfs:comment "The value of the measured property." ;
+                                        rdfs:isDefinedBy "http://qudt.org/2.1/schema/qudt/" ;
+                                        rdfs:label "value" .
 
 
 ###  https://schema.org/email
-schema:email rdf:type owl:DatatypeProperty ;
-             rdfs:domain schema:Person ;
-             rdfs:range xsd:string ;
-             rdfs:comment "The email of the author." ;
-             rdfs:isDefinedBy "https://schema.org/" ;
-             rdfs:label "email" .
+<https://schema.org/email> rdf:type owl:DatatypeProperty ;
+                           rdfs:domain <https://schema.org/Person> ;
+                           rdfs:range xsd:string ;
+                           rdfs:comment "The email of the author." ;
+                           rdfs:isDefinedBy "https://schema.org/" ;
+                           rdfs:label "email" .
 
 
 ###  https://schema.org/name
-schema:name rdf:type owl:DatatypeProperty ;
-            rdfs:domain schema:Person ;
-            rdfs:range xsd:string ;
-            rdfs:comment "The name of the author." ;
-            rdfs:isDefinedBy "https://schema.org/" ;
-            rdfs:label "name" .
+<https://schema.org/name> rdf:type owl:DatatypeProperty ;
+                          rdfs:domain <https://schema.org/Person> ;
+                          rdfs:range xsd:string ;
+                          rdfs:comment "The name of the author." ;
+                          rdfs:isDefinedBy "https://schema.org/" ;
+                          rdfs:label "name" .
 
 
 #################################################################
@@ -385,9 +379,9 @@ schema:name rdf:type owl:DatatypeProperty ;
 ###  http://base.namespace.com/BET
 :BET rdf:type owl:Class ;
      rdfs:subClassOf [ rdf:type owl:Restriction ;
-                       owl:onProperty qudt:unit ;
+                       owl:onProperty <http://qudt.org/2.1/schema/qudt/unit> ;
                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                       owl:onClass qudt:Unit
+                       owl:onClass <http://qudt.org/2.1/schema/qudt/Unit>
                      ] ;
      rdfs:comment "It describes the relationship between the number of gas molecules adsorbed at a given relative pressure." ;
      rdfs:label "BET" ,
@@ -398,9 +392,9 @@ schema:name rdf:type owl:DatatypeProperty ;
 :CatalystSetUpCondition rdf:type owl:Class ;
                         rdfs:subClassOf :Condition ,
                                         [ rdf:type owl:Restriction ;
-                                          owl:onProperty qudt:unit ;
+                                          owl:onProperty <http://qudt.org/2.1/schema/qudt/unit> ;
                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                          owl:onClass qudt:Unit
+                                          owl:onClass <http://qudt.org/2.1/schema/qudt/Unit>
                                         ] ;
                         rdfs:comment "It describes which is the configuration of the catalyst." ;
                         rdfs:label "Catalyst Set Up Condition" .
@@ -421,9 +415,9 @@ schema:name rdf:type owl:DatatypeProperty ;
 ###  http://base.namespace.com/Eg
 :Eg rdf:type owl:Class ;
     rdfs:subClassOf [ rdf:type owl:Restriction ;
-                      owl:onProperty qudt:unit ;
+                      owl:onProperty <http://qudt.org/2.1/schema/qudt/unit> ;
                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                      owl:onClass qudt:Unit
+                      owl:onClass <http://qudt.org/2.1/schema/qudt/Unit>
                     ] ;
     rdfs:comment "The difference of energy between the bottom of the conduction band and the top of the valence band of the electrons in a crystalline solid." ;
     rdfs:label "Band gap" ,
@@ -435,9 +429,9 @@ schema:name rdf:type owl:DatatypeProperty ;
 :IluminatedAreaCondition rdf:type owl:Class ;
                          rdfs:subClassOf :LightSourceCondition ,
                                          [ rdf:type owl:Restriction ;
-                                           owl:onProperty qudt:unit ;
+                                           owl:onProperty <http://qudt.org/2.1/schema/qudt/unit> ;
                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                           owl:onClass qudt:Unit
+                                           owl:onClass <http://qudt.org/2.1/schema/qudt/Unit>
                                          ] ;
                          rdfs:comment "It describes how large the illuminated area is in the process." ;
                          rdfs:label "Iluminated Area Condition" .
@@ -448,7 +442,7 @@ schema:name rdf:type owl:DatatypeProperty ;
        rdfs:subClassOf [ rdf:type owl:Restriction ;
                          owl:onProperty :hasChemical ;
                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                         owl:onClass chebi:CHEBI_24431
+                         owl:onClass <http://purl.obolibrary.org/obo/CHEBI_24431>
                        ] ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :hasRole ;
@@ -463,9 +457,9 @@ schema:name rdf:type owl:DatatypeProperty ;
 :IrradianceCondition rdf:type owl:Class ;
                      rdfs:subClassOf :LampCondition ,
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty qudt:unit ;
+                                       owl:onProperty <http://qudt.org/2.1/schema/qudt/unit> ;
                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                       owl:onClass qudt:Unit
+                                       owl:onClass <http://qudt.org/2.1/schema/qudt/Unit>
                                      ] ;
                      rdfs:comment "It describes the irradiance of the lamp on the process" ;
                      rdfs:label "Irradiance Condition" .
@@ -500,7 +494,7 @@ schema:name rdf:type owl:DatatypeProperty ;
                                                [ rdf:type owl:Restriction ;
                                                  owl:onProperty :reportedIn ;
                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                 owl:onClass bibo:Article
+                                                 owl:onClass <http://purl.org/ontology/bibo/Article>
                                                ] ,
                                                [ rdf:type owl:Restriction ;
                                                  owl:onProperty :hasBET ;
@@ -522,7 +516,7 @@ schema:name rdf:type owl:DatatypeProperty ;
         rdfs:subClassOf [ rdf:type owl:Restriction ;
                           owl:onProperty :hasChemical ;
                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                          owl:onClass chebi:CHEBI_24431
+                          owl:onClass <http://purl.obolibrary.org/obo/CHEBI_24431>
                         ] ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty :hasOutputQuantity ;
@@ -536,9 +530,9 @@ schema:name rdf:type owl:DatatypeProperty ;
 ###  http://base.namespace.com/OutputQuantity
 :OutputQuantity rdf:type owl:Class ;
                 rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                  owl:onProperty qudt:unit ;
+                                  owl:onProperty <http://qudt.org/2.1/schema/qudt/unit> ;
                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onClass qudt:Unit
+                                  owl:onClass <http://qudt.org/2.1/schema/qudt/Unit>
                                 ] ;
                 rdfs:comment "The amount of output material produced from the transformation." ;
                 rdfs:label "Output Quantity" .
@@ -548,9 +542,9 @@ schema:name rdf:type owl:DatatypeProperty ;
 :PowerCondition rdf:type owl:Class ;
                 rdfs:subClassOf :LampCondition ,
                                 [ rdf:type owl:Restriction ;
-                                  owl:onProperty qudt:unit ;
+                                  owl:onProperty <http://qudt.org/2.1/schema/qudt/unit> ;
                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onClass qudt:Unit
+                                  owl:onClass <http://qudt.org/2.1/schema/qudt/Unit>
                                 ] ;
                 rdfs:comment "Describe cual es la energía emitida por la lampara en el proceso."@es ,
                              "It describes how much energy is emitted by the lamp in the process."@en ;
@@ -561,9 +555,9 @@ schema:name rdf:type owl:DatatypeProperty ;
 :PressureCondition rdf:type owl:Class ;
                    rdfs:subClassOf :Condition ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty qudt:unit ;
+                                     owl:onProperty <http://qudt.org/2.1/schema/qudt/unit> ;
                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onClass qudt:Unit
+                                     owl:onClass <http://qudt.org/2.1/schema/qudt/Unit>
                                    ] ;
                    rdfs:comment "The pressupre in which the process is made." ;
                    rdfs:label "Pressure Condition" .
@@ -573,9 +567,9 @@ schema:name rdf:type owl:DatatypeProperty ;
 :ReactionMediumCondition rdf:type owl:Class ;
                          rdfs:subClassOf :Condition ,
                                          [ rdf:type owl:Restriction ;
-                                           owl:onProperty qudt:unit ;
+                                           owl:onProperty <http://qudt.org/2.1/schema/qudt/unit> ;
                                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                           owl:onClass qudt:Unit
+                                           owl:onClass <http://qudt.org/2.1/schema/qudt/Unit>
                                          ] ;
                          rdfs:comment "The medium used in the reaction is made." ;
                          rdfs:label "Reaction Medium Condition" .
@@ -585,9 +579,9 @@ schema:name rdf:type owl:DatatypeProperty ;
 :ReactionTimeCondition rdf:type owl:Class ;
                        rdfs:subClassOf :Condition ,
                                        [ rdf:type owl:Restriction ;
-                                         owl:onProperty qudt:unit ;
+                                         owl:onProperty <http://qudt.org/2.1/schema/qudt/unit> ;
                                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                         owl:onClass qudt:Unit
+                                         owl:onClass <http://qudt.org/2.1/schema/qudt/Unit>
                                        ] ;
                        rdfs:comment "It describes how long the transformation has been going on." ;
                        rdfs:label "Reaction Time Condition" .
@@ -597,9 +591,9 @@ schema:name rdf:type owl:DatatypeProperty ;
 :ReactorCondition rdf:type owl:Class ;
                   rdfs:subClassOf :Condition ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty qudt:unit ;
+                                    owl:onProperty <http://qudt.org/2.1/schema/qudt/unit> ;
                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onClass qudt:Unit
+                                    owl:onClass <http://qudt.org/2.1/schema/qudt/Unit>
                                   ] ;
                   rdfs:comment "It describes the reactor type used in the process and its size" ;
                   rdfs:label "Reactor Condition" .
@@ -609,9 +603,9 @@ schema:name rdf:type owl:DatatypeProperty ;
 :SpaceVelocityCondition rdf:type owl:Class ;
                         rdfs:subClassOf :Condition ,
                                         [ rdf:type owl:Restriction ;
-                                          owl:onProperty qudt:unit ;
+                                          owl:onProperty <http://qudt.org/2.1/schema/qudt/unit> ;
                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                          owl:onClass qudt:Unit
+                                          owl:onClass <http://qudt.org/2.1/schema/qudt/Unit>
                                         ] ;
                         rdfs:comment "It is the ratio of the volumetric flow rate (hourly) of the catalyst present in the reactor." ;
                         rdfs:label "Space Velocity Condition" .
@@ -621,9 +615,9 @@ schema:name rdf:type owl:DatatypeProperty ;
 :TemperatureCondition rdf:type owl:Class ;
                       rdfs:subClassOf :Condition ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty qudt:unit ;
+                                        owl:onProperty <http://qudt.org/2.1/schema/qudt/unit> ;
                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                        owl:onClass qudt:Unit
+                                        owl:onClass <http://qudt.org/2.1/schema/qudt/Unit>
                                       ] ;
                       rdfs:comment "The temperature in which the process is made." ;
                       rdfs:label "Temperature Condition" .
@@ -633,68 +627,68 @@ schema:name rdf:type owl:DatatypeProperty ;
 :WavelengthCondition rdf:type owl:Class ;
                      rdfs:subClassOf :LightSourceCondition ,
                                      [ rdf:type owl:Restriction ;
-                                       owl:onProperty qudt:unit ;
+                                       owl:onProperty <http://qudt.org/2.1/schema/qudt/unit> ;
                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                       owl:onClass qudt:Unit
+                                       owl:onClass <http://qudt.org/2.1/schema/qudt/Unit>
                                      ] ;
                      rdfs:comment "This describes what is wavelength of the light soruce used in the process." ;
                      rdfs:label "Wavelength Condition" .
 
 
 ###  http://purl.obolibrary.org/obo/CHEBI_24431
-chebi:CHEBI_24431 rdf:type owl:Class ;
-                  rdfs:comment "The chemical that participates in process input/output." ;
-                  rdfs:isDefinedBy "http://purl.obolibrary.org/obo/"^^xsd:anyURI ;
-                  rdfs:label "CHEBI:24431" ,
-                             "Chemical entity" .
+<http://purl.obolibrary.org/obo/CHEBI_24431> rdf:type owl:Class ;
+                                             rdfs:comment "The chemical that participates in process input/output." ;
+                                             rdfs:isDefinedBy "http://purl.obolibrary.org/obo/"^^xsd:anyURI ;
+                                             rdfs:label "CHEBI:24431" ,
+                                                        "Chemical entity" .
 
 
 ###  http://purl.org/ontology/bibo/Article
-bibo:Article rdf:type owl:Class ;
-             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                               owl:onProperty dcterms:creator ;
-                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                               owl:onClass schema:Person
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty dcterms:isPartOf ;
-                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                               owl:onClass bibo:Journal
-                             ] ;
-             rdfs:comment "The article that describes the catalytic processes." ;
-             rdfs:isDefinedBy "http://purl.org/ontology/bibo/"^^xsd:anyURI ;
-             rdfs:label "Article"@en ,
-                        "Artículo"@es .
+<http://purl.org/ontology/bibo/Article> rdf:type owl:Class ;
+                                        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://purl.org/dc/terms/creator> ;
+                                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                          owl:onClass <https://schema.org/Person>
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://purl.org/dc/terms/isPartOf> ;
+                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                          owl:onClass <http://purl.org/ontology/bibo/Journal>
+                                                        ] ;
+                                        rdfs:comment "The article that describes the catalytic processes." ;
+                                        rdfs:isDefinedBy "http://purl.org/ontology/bibo/"^^xsd:anyURI ;
+                                        rdfs:label "Article"@en ,
+                                                   "Artículo"@es .
 
 
 ###  http://purl.org/ontology/bibo/Journal
-bibo:Journal rdf:type owl:Class ;
-             rdfs:isDefinedBy "http://purl.org/ontology/bibo/"^^xsd:anyURI ;
-             rdfs:label "Journal" .
+<http://purl.org/ontology/bibo/Journal> rdf:type owl:Class ;
+                                        rdfs:isDefinedBy "http://purl.org/ontology/bibo/"^^xsd:anyURI ;
+                                        rdfs:label "Journal" .
 
 
 ###  http://qudt.org/2.1/schema/qudt/Unit
-qudt:Unit rdf:type owl:Class ;
-          rdfs:comment "The unit of measure of a quantity." ;
-          rdfs:isDefinedBy "http://qudt.org/2.1/schema/qudt/"^^xsd:anyURI ;
-          rdfs:label "Unit" .
+<http://qudt.org/2.1/schema/qudt/Unit> rdf:type owl:Class ;
+                                       rdfs:comment "The unit of measure of a quantity." ;
+                                       rdfs:isDefinedBy "http://qudt.org/2.1/schema/qudt/"^^xsd:anyURI ;
+                                       rdfs:label "Unit" .
 
 
 ###  https://schema.org/Country
-schema:Country rdf:type owl:Class ;
-               rdfs:isDefinedBy "https://schema.org/"^^xsd:anyURI ;
-               rdfs:label "Country" .
+<https://schema.org/Country> rdf:type owl:Class ;
+                             rdfs:isDefinedBy "https://schema.org/"^^xsd:anyURI ;
+                             rdfs:label "Country" .
 
 
 ###  https://schema.org/Person
-schema:Person rdf:type owl:Class ;
-              rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                owl:onProperty :affiliationCountry ;
-                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                owl:onClass schema:Country
-                              ] ;
-              rdfs:isDefinedBy "https://schema.org/"^^xsd:anyURI ;
-              rdfs:label "Person" .
+<https://schema.org/Person> rdf:type owl:Class ;
+                            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                              owl:onProperty :affiliationCountry ;
+                                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                              owl:onClass <https://schema.org/Country>
+                                            ] ;
+                            rdfs:isDefinedBy "https://schema.org/"^^xsd:anyURI ;
+                            rdfs:label "Person" .
 
 
 #################################################################
@@ -741,8 +735,8 @@ schema:Person rdf:type owl:Class ;
 #    Annotations
 #################################################################
 
-dcterms:creator rdfs:label "creator" ;
-                rdfs:isDefinedBy "http://purl.org/dc/terms/" .
+<http://purl.org/dc/terms/creator> rdfs:isDefinedBy "http://purl.org/dc/terms/" ;
+                                   rdfs:label "creator" .
 
 
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
