@@ -89,6 +89,13 @@ owl:maxCardinality rdf:type owl:AnnotationProperty .
               rdfs:label "has condition" .
 
 
+###  http://base.namespace.com/hasEfficiency
+:hasEfficiency rdf:type owl:ObjectProperty ;
+               rdfs:domain :MaterialTransformationProcess ;
+               rdfs:range :Efficiency ;
+               rdfs:label "has efficiency" .
+
+
 ###  http://base.namespace.com/hasEg
 :hasEg rdf:type owl:ObjectProperty ;
        rdfs:domain :MaterialTransformationProcess ;
@@ -136,14 +143,6 @@ owl:maxCardinality rdf:type owl:AnnotationProperty .
          rdfs:range :MaterialTransformationRole ;
          rdfs:comment "The reference to a role of the input material." ;
          rdfs:label "has role" .
-
-
-###  http://base.namespace.com/hasYield
-:hasYield rdf:type owl:ObjectProperty ;
-          rdfs:domain :MaterialTransformationProcess ;
-          rdfs:range :Yield ;
-          rdfs:comment "The reference to the yield (efficiency) of the transformation process." ;
-          rdfs:label "has yield" .
 
 
 ###  http://base.namespace.com/reportedIn
@@ -328,15 +327,6 @@ bibo:volume rdf:type owl:DatatypeProperty ;
             rdfs:label "volume" .
 
 
-###  http://qudt.org/2.1/schema/qudt/floatPercentage
-qudt:floatPercentage rdf:type owl:DatatypeProperty ;
-                     rdfs:domain :Yield ;
-                     rdfs:range xsd:double ;
-                     rdfs:comment "The percentage taht indicates the efficiency of the material transformation process." ;
-                     rdfs:isDefinedBy "http://qudt.org/2.1/schema/qudt/" ;
-                     rdfs:label "float percentage" .
-
-
 ###  http://qudt.org/2.1/schema/qudt/numericValue
 qudt:numericValue rdf:type owl:DatatypeProperty ;
                   rdfs:subPropertyOf qudt:value ;
@@ -420,6 +410,12 @@ schema:name rdf:type owl:DatatypeProperty ;
 :Condition rdf:type owl:Class ;
            rdfs:comment "It describes the conditions in which the material transformation process is done." ;
            rdfs:label "Condition" .
+
+
+###  http://base.namespace.com/Efficiency
+:Efficiency rdf:type owl:Class ;
+            rdfs:comment "The energetic efficiency of the process." ;
+            rdfs:label "Efficiency" .
 
 
 ###  http://base.namespace.com/Eg
@@ -510,11 +506,6 @@ schema:name rdf:type owl:DatatypeProperty ;
                                                  owl:onProperty :hasBET ;
                                                  owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                  owl:onClass :BET
-                                               ] ,
-                                               [ rdf:type owl:Restriction ;
-                                                 owl:onProperty :hasYield ;
-                                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                 owl:onClass :Yield
                                                ] ;
                                rdfs:comment "The process that transforms some input chemicals into other ones when energy is applied." ;
                                rdfs:label "Material Transformation Process" .
@@ -648,13 +639,6 @@ schema:name rdf:type owl:DatatypeProperty ;
                                      ] ;
                      rdfs:comment "This describes what is wavelength of the light soruce used in the process." ;
                      rdfs:label "Wavelength Condition" .
-
-
-###  http://base.namespace.com/Yield
-:Yield rdf:type owl:Class ;
-       rdfs:comment "El rendimiento (yield) indica lo buena que ha sido la transformación en terminos de rendimiento."@es ,
-                    "The yield indicates how good the transformation has been in terms of performance."@en ;
-       rdfs:label "Yield" .
 
 
 ###  http://purl.obolibrary.org/obo/CHEBI_24431
