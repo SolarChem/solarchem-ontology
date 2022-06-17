@@ -14,7 +14,7 @@
         <terms:title>The Photocatalysis Ontology</terms:title>
         <rdfs:comment xml:lang="es">Esta ontología ha sido diseñada en conjunto con el instituto IMDEA Energía de Madrid. Para generar las bases de este vocabulario se ha utilizado como base su proyecto &quot;Artleafs&quot; que consiste en una plataforma web para recavar información sobre experimentos en el campo de la fotocatásilis para posibilitar y facilitar la reproducibilidad de los procesos explicados en los artículos cientificos.</rdfs:comment>
         <rdfs:comment xml:lang="en">This ontology has been designed in conjunction with the IMDEA Energy Institute of Madrid. To generate the bases of this vocabulary, the &quot;Artleafs&quot; project has been used as a basis, which consists of a web platform to collect information on experiments in the field of photocatalysis to enable and facilitate the reproducibility of the processes explained in scientific articles.</rdfs:comment>
-        <owl:versionInfo>0.5.1</owl:versionInfo>
+        <owl:versionInfo>0.5.3</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -139,17 +139,6 @@
     
 
 
-    <!-- http://base.namespace.com/hasEfficiency -->
-
-
-    <owl:ObjectProperty rdf:about="http://base.namespace.com/hasEfficiency">
-        <rdfs:domain rdf:resource="http://base.namespace.com/MaterialTransformationProcess"/>
-        <rdfs:range rdf:resource="http://base.namespace.com/Efficiency"/>
-        <rdfs:label>has efficiency</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://base.namespace.com/hasEg -->
 
 
@@ -219,6 +208,18 @@
         <rdfs:range rdf:resource="http://base.namespace.com/MaterialTransformationRole"/>
         <rdfs:comment>The reference to a role of the input material.</rdfs:comment>
         <rdfs:label>has role</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://base.namespace.com/hasYield -->
+
+
+    <owl:ObjectProperty rdf:about="http://base.namespace.com/hasYield">
+        <rdfs:domain rdf:resource="http://base.namespace.com/MaterialTransformationProcess"/>
+        <rdfs:range rdf:resource="http://base.namespace.com/Yield"/>
+        <rdfs:comment>The reference to the yield (efficiency) of the transformation process.</rdfs:comment>
+        <rdfs:label>has yield</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -496,6 +497,19 @@
     
 
 
+    <!-- http://qudt.org/2.1/schema/qudt/floatPercentage -->
+
+
+    <owl:DatatypeProperty rdf:about="http://qudt.org/2.1/schema/qudt/floatPercentage">
+        <rdfs:domain rdf:resource="http://base.namespace.com/Yield"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment>The percentage taht indicates the efficiency of the material transformation process.</rdfs:comment>
+        <rdfs:isDefinedBy>http://qudt.org/2.1/schema/qudt/</rdfs:isDefinedBy>
+        <rdfs:label>float percentage</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://qudt.org/2.1/schema/qudt/numericValue -->
 
 
@@ -590,8 +604,9 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>It describes the relationship between the number of gas molecules adsorbed at a given relative pressure.</rdfs:comment>
+        <rdfs:label xml:lang="en">Specific Surface Area</rdfs:label>
+        <rdfs:label xml:lang="es">Superficie específica</rdfs:label>
         <rdfs:label>BET</rdfs:label>
-        <rdfs:label>Specific Surface Area</rdfs:label>
     </owl:Class>
     
 
@@ -620,16 +635,6 @@
     <owl:Class rdf:about="http://base.namespace.com/Condition">
         <rdfs:comment>It describes the conditions in which the material transformation process is done.</rdfs:comment>
         <rdfs:label>Condition</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://base.namespace.com/Efficiency -->
-
-
-    <owl:Class rdf:about="http://base.namespace.com/Efficiency">
-        <rdfs:comment>The energetic efficiency of the process.</rdfs:comment>
-        <rdfs:label>Efficiency</rdfs:label>
     </owl:Class>
     
 
@@ -765,6 +770,13 @@
                 <owl:onProperty rdf:resource="http://base.namespace.com/hasBET"/>
                 <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
                 <owl:onClass rdf:resource="http://base.namespace.com/BET"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://base.namespace.com/hasYield"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://base.namespace.com/Yield"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>The process that transforms some input chemicals into other ones when energy is applied.</rdfs:comment>
@@ -965,6 +977,17 @@
         </rdfs:subClassOf>
         <rdfs:comment>This describes what is wavelength of the light soruce used in the process.</rdfs:comment>
         <rdfs:label>Wavelength Condition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://base.namespace.com/Yield -->
+
+
+    <owl:Class rdf:about="http://base.namespace.com/Yield">
+        <rdfs:comment xml:lang="es">El rendimiento (yield) indica lo buena que ha sido la transformación en terminos de rendimiento.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The yield indicates how good the transformation has been in terms of performance.</rdfs:comment>
+        <rdfs:label>Yield</rdfs:label>
     </owl:Class>
     
 

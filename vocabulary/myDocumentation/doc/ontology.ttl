@@ -13,7 +13,7 @@
                               <http://purl.org/dc/terms/title> "The Photocatalysis Ontology" ;
                               rdfs:comment "Esta ontología ha sido diseñada en conjunto con el instituto IMDEA Energía de Madrid. Para generar las bases de este vocabulario se ha utilizado como base su proyecto \"Artleafs\" que consiste en una plataforma web para recavar información sobre experimentos en el campo de la fotocatásilis para posibilitar y facilitar la reproducibilidad de los procesos explicados en los artículos cientificos."@es ,
                                            "This ontology has been designed in conjunction with the IMDEA Energy Institute of Madrid. To generate the bases of this vocabulary, the \"Artleafs\" project has been used as a basis, which consists of a web platform to collect information on experiments in the field of photocatalysis to enable and facilitate the reproducibility of the processes explained in scientific articles."@en ;
-                              owl:versionInfo "0.5.1" .
+                              owl:versionInfo "0.5.3" .
 
 #################################################################
 #    Annotation properties
@@ -83,13 +83,6 @@ owl:maxCardinality rdf:type owl:AnnotationProperty .
               rdfs:label "has condition" .
 
 
-###  http://base.namespace.com/hasEfficiency
-:hasEfficiency rdf:type owl:ObjectProperty ;
-               rdfs:domain :MaterialTransformationProcess ;
-               rdfs:range :Efficiency ;
-               rdfs:label "has efficiency" .
-
-
 ###  http://base.namespace.com/hasEg
 :hasEg rdf:type owl:ObjectProperty ;
        rdfs:domain :MaterialTransformationProcess ;
@@ -137,6 +130,14 @@ owl:maxCardinality rdf:type owl:AnnotationProperty .
          rdfs:range :MaterialTransformationRole ;
          rdfs:comment "The reference to a role of the input material." ;
          rdfs:label "has role" .
+
+
+###  http://base.namespace.com/hasYield
+:hasYield rdf:type owl:ObjectProperty ;
+          rdfs:domain :MaterialTransformationProcess ;
+          rdfs:range :Yield ;
+          rdfs:comment "The reference to the yield (efficiency) of the transformation process." ;
+          rdfs:label "has yield" .
 
 
 ###  http://base.namespace.com/reportedIn
@@ -321,6 +322,15 @@ owl:maxCardinality rdf:type owl:AnnotationProperty .
                                        rdfs:label "volume" .
 
 
+###  http://qudt.org/2.1/schema/qudt/floatPercentage
+<http://qudt.org/2.1/schema/qudt/floatPercentage> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain :Yield ;
+                                                  rdfs:range xsd:double ;
+                                                  rdfs:comment "The percentage taht indicates the efficiency of the material transformation process." ;
+                                                  rdfs:isDefinedBy "http://qudt.org/2.1/schema/qudt/" ;
+                                                  rdfs:label "float percentage" .
+
+
 ###  http://qudt.org/2.1/schema/qudt/numericValue
 <http://qudt.org/2.1/schema/qudt/numericValue> rdf:type owl:DatatypeProperty ;
                                                rdfs:subPropertyOf <http://qudt.org/2.1/schema/qudt/value> ;
@@ -384,8 +394,9 @@ owl:maxCardinality rdf:type owl:AnnotationProperty .
                        owl:onClass <http://qudt.org/2.1/schema/qudt/Unit>
                      ] ;
      rdfs:comment "It describes the relationship between the number of gas molecules adsorbed at a given relative pressure." ;
-     rdfs:label "BET" ,
-                "Specific Surface Area" .
+     rdfs:label "Specific Surface Area"@en ,
+                "Superficie específica"@es ,
+                "BET" .
 
 
 ###  http://base.namespace.com/CatalystSetUpCondition
@@ -404,12 +415,6 @@ owl:maxCardinality rdf:type owl:AnnotationProperty .
 :Condition rdf:type owl:Class ;
            rdfs:comment "It describes the conditions in which the material transformation process is done." ;
            rdfs:label "Condition" .
-
-
-###  http://base.namespace.com/Efficiency
-:Efficiency rdf:type owl:Class ;
-            rdfs:comment "The energetic efficiency of the process." ;
-            rdfs:label "Efficiency" .
 
 
 ###  http://base.namespace.com/Eg
@@ -500,6 +505,11 @@ owl:maxCardinality rdf:type owl:AnnotationProperty .
                                                  owl:onProperty :hasBET ;
                                                  owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                  owl:onClass :BET
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :hasYield ;
+                                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                 owl:onClass :Yield
                                                ] ;
                                rdfs:comment "The process that transforms some input chemicals into other ones when energy is applied." ;
                                rdfs:label "Material Transformation Process" .
@@ -633,6 +643,13 @@ owl:maxCardinality rdf:type owl:AnnotationProperty .
                                      ] ;
                      rdfs:comment "This describes what is wavelength of the light soruce used in the process." ;
                      rdfs:label "Wavelength Condition" .
+
+
+###  http://base.namespace.com/Yield
+:Yield rdf:type owl:Class ;
+       rdfs:comment "El rendimiento (yield) indica lo buena que ha sido la transformación en terminos de rendimiento."@es ,
+                    "The yield indicates how good the transformation has been in terms of performance."@en ;
+       rdfs:label "Yield" .
 
 
 ###  http://purl.obolibrary.org/obo/CHEBI_24431

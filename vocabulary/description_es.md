@@ -1,5 +1,0 @@
-Como se ha mencionado anteriormente el ámbito de este vocabulario es la representación de procesos de fotocatálisis mencionados en artículos científicos. El vocabulario define varias clases y propiedades que permiten describir dichos dichos experimentos, siendo la clase [phcat:MaterialTransformationProcess](#MaterialTransformationProcess) el eje central de la misma y definiendo mediante sus propiedades el contexto del experimento completo como por ejemplo los químicos de entrada y de salida, definidos como [phcat:Input](#Input) y [phcat:Output](#Output); y las condiciones preparadas para realizar el proceso, definida mediante [phcat:Condition](#Condition).
-
-<!--
-También se han utilizado varios esquemas conceptuales de SKOS para representar algunas de las clasificaciones de este dominio. La Figura 1 muestra algunas de estas relaciones con los esquemas conceptuales de SKOS. En el caso del tipo de variación, representado por la propiedad [espad:tipoVariacion](), existen varias posibilidades para representar dicho tipo de datos, tales como registro, baja y modificación, y los motivos asociados a cada variación.
--->
