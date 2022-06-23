@@ -28,4 +28,4 @@ except mysql.connector.Error as err:
 
   exit()
 else:
-  cursor = cnx.cursor()
+  cursor = cnx.cursor(dictionary=True)

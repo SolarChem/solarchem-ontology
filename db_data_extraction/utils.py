@@ -1,0 +1,20 @@
+import csv
+import os
+
+def dequote(s):
+    """
+    If a string has single or double quotes around it, remove them.
+    Make sure the pair of quotes match.
+    If a matching pair of quotes is not found, return the string unchanged.
+    """
+    if (s.startswith(("'", '"')) and s[0] == s[-1]):
+        return s[1:-1]
+    return s
+
+def createCsv(data, file_name):
+    file_name = os.path.join(os.path.dirname(__file__), 'data', file_name)
+    fieldnames = list(data[0].keys())
+    with open(file_name, 'w') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames = fieldnames)
+        writer.writeheader()
+        writer.writerows(data)
