@@ -10,11 +10,11 @@ def prepare_articles():
     result = cursor.fetchall()
     for i in range(len(result)):
         row = result[i]
-        row['Title'] = dequote(row['Title'])
-        row['Abstract'] = dequote(row['Abstract'])
-        row['Authors'] = dequote(row['Authors'])
-        row['Country'] = dequote(row['Country'])
-        row['Country_name'] = dequote(row['Country_name'])
+        row['Title'] = cleanText(row['Title'])
+        row['Abstract'] = cleanText(row['Abstract'])
+        row['Authors'] = cleanText(row['Authors'])
+        row['Country'] = cleanText(row['Country'])
+        row['Country_name'] = cleanText(row['Country_name'])
         result[i] = row
 
     return result
@@ -25,11 +25,16 @@ def prepare_authors(articles):
         article_id = article['ID']
         author_names = re.split(",\s*", article['Authors'])
         countries = re.split(",\s*", article['Country'])
-        country_names = re.split(",\s*", article['Country_name'])
         for i in range(len(author_names)):
             author_id = len(result)+1
             c = None 
             cname = None
+            email = None
+
+            if i == 0:
+                # NOTE: esto no es correcto, habria que preguntar cual es la 
+                #       mejor forma de relacionar el mail con el author
+                email = article['Corresponding_author']
 
             if len(countries) > i:
                 country = pycountry.countries.get(alpha_2=countries[i])
@@ -40,6 +45,7 @@ def prepare_authors(articles):
             author = {'ID': author_id,
                 'paperID': article_id,
                 'name': author_names[i],
+                'email': email,
                 'country': c,
                 'country_name': cname
                 }

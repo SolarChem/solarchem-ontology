@@ -1,5 +1,3 @@
-from ctypes import util
-from email import utils
 from data_inicializator import *
 from utils import *
 
