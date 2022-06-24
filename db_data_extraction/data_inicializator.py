@@ -21,11 +21,16 @@ def prepare_articles():
 
 def prepare_authors(articles):
     name_regex = '\*\s*'
+    split_regex = ",\s*"
     result = []
     for article in articles:
         article_id = article['ID']
-        author_names = re.split(",\s*", article['Authors'])
-        countries = re.split(",\s*", article['Country'])
+        author_names = re.split(split_regex, article['Authors'])
+        countries = re.split(split_regex, article['Country'])
+        corresponding_mail = article['Corresponding_author']
+        mail_referenced = False
+        first_author_pos = len(result)
+
         for i in range(len(author_names)):
             author_id = len(result)+1
             aname = author_names[i]
@@ -36,11 +41,11 @@ def prepare_authors(articles):
                 if re.search(name_regex, aname):
                     corresponding = True
                     aname = re.sub(name_regex, '', aname)
-
-                if corresponding:
-                    # NOTE: esto no es correcto, habria que preguntar cual es la 
-                    #       mejor forma de relacionar el mail con el author
-                    email = article['Corresponding_author']
+                    if not mail_referenced:
+                        # NOTE: esto no es correcto, habria que preguntar cual es la 
+                        #       mejor forma de relacionar el mail con el author
+                        mail_referenced = True
+                        email = corresponding_mail
 
                 c, cname = prepare_countries(countries, i)
                 
@@ -53,6 +58,9 @@ def prepare_authors(articles):
                     }
                 
                 result.append(author)
+        
+        if not mail_referenced and len(result) >= first_author_pos:
+            result[first_author_pos]['email'] = corresponding_mail
 
     return result
 
