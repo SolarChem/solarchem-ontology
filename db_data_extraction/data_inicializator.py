@@ -29,8 +29,6 @@ def prepare_authors(articles):
         for i in range(len(author_names)):
             author_id = len(result)+1
             aname = author_names[i]
-            c = None 
-            cname = None
             email = None
             corresponding = False
 
@@ -44,11 +42,7 @@ def prepare_authors(articles):
                     #       mejor forma de relacionar el mail con el author
                     email = article['Corresponding_author']
 
-                if len(countries) > i:
-                    country = pycountry.countries.get(alpha_2=countries[i])
-                    if country:
-                        c = country.alpha_2
-                        cname = country.name
+                c, cname = prepare_countries(countries, i)
                 
                 author = {'ID': author_id,
                     'paperID': article_id,
@@ -61,3 +55,15 @@ def prepare_authors(articles):
                 result.append(author)
 
     return result
+
+def prepare_countries(countries, i):
+    c = None 
+    cname = None
+
+    if len(countries) > i:
+        country = pycountry.countries.get(alpha_2=countries[i])
+        if country:
+            c = country.alpha_2
+            cname = country.name
+    
+    return c, cname

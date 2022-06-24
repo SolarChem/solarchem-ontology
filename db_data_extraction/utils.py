@@ -3,7 +3,7 @@ import os
 import re
 import json
 
-def dequote(s):
+def dequote(s: str):
     """
     If a string has single or double quotes around it, remove them.
     Make sure the pair of quotes match.
