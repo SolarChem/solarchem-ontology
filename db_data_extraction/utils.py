@@ -1,5 +1,4 @@
 import csv
-import unicodecsv
 import os
 import re
 import json

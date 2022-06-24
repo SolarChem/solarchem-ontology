@@ -20,6 +20,7 @@ def prepare_articles():
     return result
 
 def prepare_authors(articles):
+    name_regex = '\*\s*'
     result = []
     for article in articles:
         article_id = article['ID']
@@ -27,29 +28,36 @@ def prepare_authors(articles):
         countries = re.split(",\s*", article['Country'])
         for i in range(len(author_names)):
             author_id = len(result)+1
+            aname = author_names[i]
             c = None 
             cname = None
             email = None
+            corresponding = False
 
-            if i == 0:
-                # NOTE: esto no es correcto, habria que preguntar cual es la 
-                #       mejor forma de relacionar el mail con el author
-                email = article['Corresponding_author']
+            if aname != '':
+                if re.search(name_regex, aname):
+                    corresponding = True
+                    aname = re.sub(name_regex, '', aname)
 
-            if len(countries) > i:
-                country = pycountry.countries.get(alpha_2=countries[i])
-                if country:
-                    c = country.alpha_2
-                    cname = country.name
-            
-            author = {'ID': author_id,
-                'paperID': article_id,
-                'name': author_names[i],
-                'email': email,
-                'country': c,
-                'country_name': cname
-                }
-            
-            result.append(author)
+                if corresponding:
+                    # NOTE: esto no es correcto, habria que preguntar cual es la 
+                    #       mejor forma de relacionar el mail con el author
+                    email = article['Corresponding_author']
+
+                if len(countries) > i:
+                    country = pycountry.countries.get(alpha_2=countries[i])
+                    if country:
+                        c = country.alpha_2
+                        cname = country.name
+                
+                author = {'ID': author_id,
+                    'paperID': article_id,
+                    'name': aname,
+                    'email': email,
+                    'country': c,
+                    'country_name': cname
+                    }
+                
+                result.append(author)
 
     return result
