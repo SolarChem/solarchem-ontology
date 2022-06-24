@@ -32,3 +32,26 @@ def cleanText(s):
     s = dequote(s)
     s = unicodeToPlain(s)
     return s
+
+def clean_empties(s):
+    """
+    Converts empty fields to None.
+    An field is empty if its value is an empty string, -1 or N/A 
+    """
+    saux = s
+    if isinstance(saux, str):
+        saux = saux.lower()
+
+    if saux == '' or saux == -1 or saux == 'n/a' or saux == '-1':
+        return None
+    return s
+
+def clean_row(row):
+    """
+    Converts empty fields in a row to None.
+    An field is empty if its value is an empty string, -1 or N/A 
+    """
+    for idx in row:
+        row[idx] = clean_empties(row[idx])
+        
+    return row

@@ -35,11 +35,9 @@ def prepare_authors(articles):
             author_id = len(result)+1
             aname = author_names[i]
             email = None
-            corresponding = False
 
             if aname != '':
                 if re.search(name_regex, aname):
-                    corresponding = True
                     aname = re.sub(name_regex, '', aname)
                     if not mail_referenced:
                         # NOTE: esto no es correcto, habria que preguntar cual es la 
@@ -75,3 +73,31 @@ def prepare_countries(countries, i):
             cname = country.name
     
     return c, cname
+
+def prepare_material_transformations():
+    query = "SELECT * FROM catalystsdata"
+    cursor.execute(query)
+
+    result = cursor.fetchall()
+    for i in range(len(result)):
+        result[i] = clean_row(result[i])
+
+    return result
+
+def prepare_inputs(mtplist):
+    result = []
+    for mtp in mtplist:
+        # input format => ['chemical', percentage]
+        input_list = {
+            'Catalyst': [mtp['Catalyst'], None],
+            'Support': [mtp['Support'], mtp['support_percent']]
+        }
+
+        for input_id in input_list:
+            input = input_list[input_id]
+            # if the first element (chemical) is not None then exists and we add the role and append
+            if input[0]:
+                input.append(input_id)
+                result.append(input)
+                
+    return result
