@@ -55,3 +55,11 @@ def clean_row(row):
         row[idx] = clean_empties(row[idx])
         
     return row
+
+def check_if_all_none(list_of_elem):
+    """ Check if all elements in list are None """
+    result = True
+    for elem in list_of_elem:
+        if elem is not None:
+            return False
+    return result
