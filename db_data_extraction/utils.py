@@ -9,7 +9,7 @@ def dequote(s: str):
     Make sure the pair of quotes match.
     If a matching pair of quotes is not found, return the string unchanged.
     """
-    if (s.startswith(("'", '"')) and s[0] == s[-1]):
+    if (s and s.startswith(("'", '"')) and s[0] == s[-1]):
         return s[1:-1]
     return s
 
@@ -28,9 +28,11 @@ def unicodeToPlain(s):
         s = s.replace(ucode, c)
     return s
 
-def cleanText(s):
+def cleanText(s: str):
     s = dequote(s)
     s = unicodeToPlain(s)
+    s = s.replace('\r', '').replace('\n', ' ') # remove the line breaks
+    s = re.sub('\s+',' ',s)
     return s
 
 def clean_empties(s):
@@ -53,7 +55,9 @@ def clean_row(row):
     """
     for idx in row:
         row[idx] = clean_empties(row[idx])
-        
+        if isinstance(row[idx], str):
+            row[idx] = cleanText(row[idx])
+ 
     return row
 
 def check_if_all_none(list_of_elem):

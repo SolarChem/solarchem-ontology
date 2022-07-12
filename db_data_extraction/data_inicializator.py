@@ -3,21 +3,31 @@ from utils import *
 import re
 import pycountry
 
-def prepare_articles():
-    query = "SELECT * FROM paper_references"
+def prepare_from_query(query):
     cursor.execute(query)
 
     result = cursor.fetchall()
     for i in range(len(result)):
-        row = result[i]
-        row['Title'] = cleanText(row['Title'])
-        row['Abstract'] = cleanText(row['Abstract'])
-        row['Authors'] = cleanText(row['Authors'])
-        row['Country'] = cleanText(row['Country'])
-        row['Country_name'] = cleanText(row['Country_name'])
-        result[i] = row
+        result[i] = clean_row(result[i])
 
     return result
+
+def prepare_articles():
+    query = "SELECT p.*, j.ID as journalID FROM paper_references p, journals j WHERE j.name = p.Journal"
+    return prepare_from_query(query)
+
+def prepare_journals(articles):
+    result = {}
+    for article in articles:
+        journal_id = article['journalID']
+        if not journal_id in result:
+            journal = {'ID': journal_id,
+                'name': article['Journal']
+                }
+
+            result[journal_id] = journal
+
+    return list(result.values())
 
 def prepare_authors(articles):
     name_regex = '\*\s*'
@@ -76,13 +86,7 @@ def prepare_countries(countries, i):
 
 def prepare_material_transformations():
     query = "SELECT * FROM catalystsdata"
-    cursor.execute(query)
-
-    result = cursor.fetchall()
-    for i in range(len(result)):
-        result[i] = clean_row(result[i])
-
-    return result
+    return prepare_from_query(query)
 
 def prepare_inputs(mtplist):
     result = []
@@ -106,10 +110,12 @@ def prepare_inputs(mtplist):
                 if 'Co-catalyst' in input_id:
                     input_id = 'Co-catalyst'
 
-                result.append({'Material_transformation_id': mtp['ID'],
+                result.append({'ID': len(result)+1,
+                    'Material_transformation_id': mtp['ID'],
                     'Chemical': input[0],
                     'Percent': input[1],
-                    'Role': input_id
+                    'Role': input_id,
+                    'crystal_structure': mtp['TiO2_crystal_structure']
                 })
                 
     return result
@@ -118,31 +124,37 @@ def prepare_conditions(mtplist):
     result = []
     for mtp in mtplist:
         cond_list = {
-            'Reactor_condition': [mtp['Reactor_type'], mtp['Reactor_Volume_l']],
-            'Catalyst_set_up_condition': [mtp['Catalyst_set_up'], mtp['Masscat_g']],
-            'Lamp_power_condition': [mtp['Lamp'], mtp['Power_W']],
-            'Lamp_irradiance_condition': [mtp['Lamp'], mtp['Light_Intensity_W_m2']],
-            'Temperature_condition': [None, mtp['T_C']],
-            'Preasure_condition': [None, mtp['P_bar']],
-            'Space_velocity_condition': [None, mtp['Residence_time_min1']],
-            'Reaction_time_condition': [None, mtp['Reaction_time_h']],
-            'Reaction_medium_condition': [mtp['Reaction_medium'], mtp['ph_value']],
-            'Wavelength_condition': [mtp['Light_source'], mtp['Wavelength_nm']],
-            'Illuminated_area_condition': [mtp['Light_source'], mtp['Illuminated_area_m2']]
+            'Reactor_condition': [mtp['Reactor_type'], mtp['Reactor_Volume_l'], 'L'],
+            'Catalyst_set_up_condition': [mtp['Catalyst_set_up'], mtp['Masscat_g'], 'GM'],
+            'Lamp_power_condition': [mtp['Lamp'], mtp['Power_W'], 'W'],
+            'Lamp_irradiance_condition': [mtp['Lamp'], mtp['Light_Intensity_W_m2'], 'W-PER-M2'],
+            'Temperature_condition': [None, mtp['T_C'], 'DEG_C'],
+            'Preasure_condition': [None, mtp['P_bar'], 'BAR'],
+            'Space_velocity_condition': [None, mtp['Residence_time_min1'], 'PER-HR'],
+            'Reaction_time_condition': [None, mtp['Reaction_time_h'], 'HR'],
+            'Reaction_medium_condition': [mtp['Reaction_medium'], mtp['ph_value'], 'PH'],
+            'Wavelength_condition': [mtp['Light_source'], mtp['Wavelength_nm'], 'NanoM'],
+            'Illuminated_area_condition': [mtp['Light_source'], mtp['Illuminated_area_m2'], 'M2']
         }
         
         for cond_id in cond_list:
             cond = cond_list[cond_id]
             if not check_if_all_none(cond):
-                result.append({'Material_transformation_id': mtp['ID'],
+                result.append({'ID': len(result)+1,
+                    'Material_transformation_id': mtp['ID'],
                     'Type': cond[0],
                     'Quantity': cond[1],
-                    'Condition': cond_id.replace('_', ' ')
+                    'Condition': cond_id.replace('_', ' '),
+                    'Unit': cond[2]
                 })
 
     return result
 
 def prepare_outputs(mtplist):
+    unit_equivalences = {'g': 'MicroMOL-PER-GM', 
+        'gh': 'MicroMOL-PER-GM-HR', 
+        'm2h': 'MicroMOL-PER-M2-HR'
+    }
     result = []
     for mtp in mtplist:
         keylist = mtp.keys()
@@ -153,9 +165,24 @@ def prepare_outputs(mtplist):
                 unit = splited_key[-1]
                 quantity = mtp[key]
                 if quantity is not None and quantity > 0:
-                    result.append({'Material_transformation_id': mtp['ID'],
+                    result.append({'ID': len(result)+1,
+                    'Material_transformation_id': mtp['ID'],
                     'Chemical': chemical,
                     'Quantity': quantity,
-                    'Unit': unit
+                    'Unit': unit,
+                    'QUDT_unit': unit_equivalences[unit]
                 })
+    return result
+
+def prepare_chemicals(itemlits):
+    result = []
+    chem_list = []
+    for input in itemlits:
+        chem = input['Chemical']
+        if not chem in chem_list:
+            chem_list.append(chem)
+            result.append({'ID': len(result)+1,
+                'Chemical': chem
+            })
+
     return result
