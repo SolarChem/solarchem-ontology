@@ -145,7 +145,7 @@ def prepare_conditions(mtplist):
                     'Type': cond[0],
                     'Quantity': cond[1],
                     'Condition': cond_id.replace('_', ' '),
-                    'Unit': cond[2]
+                    'QUDT_unit': cond[2]
                 })
 
     return result
@@ -177,12 +177,28 @@ def prepare_outputs(mtplist):
 def prepare_chemicals(itemlits):
     result = []
     chem_list = []
-    for input in itemlits:
-        chem = input['Chemical']
+    for item in itemlits:
+        chem = item['Chemical']
         if not chem in chem_list:
             chem_list.append(chem)
             result.append({'ID': len(result)+1,
                 'Chemical': chem
+            })
+
+    return result
+
+def prepare_units(itemlist):
+    result = [{'ID': 1, 'Unit': 'EV'}, {'ID': 2, 'Unit': 'M2-PER-GM'}]
+    unit_list = []
+    for unit in result:
+        unit_list.append(unit['Unit'])
+
+    for item in itemlist:
+        unit = item['QUDT_unit']
+        if not unit in unit_list:
+            unit_list.append(unit)
+            result.append({'ID': len(result)+1,
+                'Unit': unit
             })
 
     return result
