@@ -1,12 +1,6 @@
 import mysql.connector
 from mysql.connector import errorcode
-import configparser
-import os
-
-parser = configparser.ConfigParser()
-
-conf_file = os.path.join(os.path.dirname(__file__), 'conf', 'settings.conf')
-parser.read(conf_file)
+from conf.config import parser
 
 config = {
   'user': parser.get("database", "user"),

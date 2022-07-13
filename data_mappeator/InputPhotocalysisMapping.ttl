@@ -1,0 +1,388 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix phcat: <http://base.namespace.com/>.
+@prefix bibo: <http://purl.org/ontology/bibo/>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix schema: <https://schema.org/>.
+@prefix dbo: <https://dbpedia.org/page/>.
+@prefix qudt: <http://qudt.org/2.1/schema/qudt/>.
+@prefix unit: <http://qudt.org/vocab/unit/>.
+@prefix chebi: <http://purl.obolibrary.org/obo/>.
+
+
+<#Journal>
+    a rr:TriplesMap;
+    rr:logicalTable [
+    	rr:tableName "journals"
+    ];
+    rr:subjectMap [
+    	a rr:Subject;
+    	rr:termType rr:IRI;
+    	rr:template "http://data.example.com/journal/{ID}";
+    	rr:class bibo:Journal;
+    ];
+    rr:predicateObjectMap [
+    	rr:predicateMap	[ rr:constant dcterms:title];
+    	rr:objectMap	[ rr:column "NAME"; rr:termType rr:Literal; rr:datatype xsd:string ]
+    ];
+.
+
+
+
+# <#Article>
+#     a rr:TriplesMap;
+#     rr:logicalTable [
+#     	rr:tableName "paper_references"
+#     ];
+#     rr:subjectMap [
+#     	a rr:Subject;
+#     	rr:termType rr:IRI;
+#     	rr:template "https://doi.org/{DOI}";
+#     	rr:class bibo:Article;
+#     ];
+#     rr:predicateObjectMap [
+#     	rr:predicateMap	[ rr:constant bibo:doi];
+#     	rr:objectMap	[ rr:column "DOI"; rr:termType rr:Literal; rr:datatype xsd:string ]
+#     ];
+#     rr:predicateObjectMap [
+#     	rr:predicateMap	[ rr:constant dcterms:title];
+#     	rr:objectMap	[ rr:column "TITLE"; rr:termType rr:Literal; rr:datatype xsd:string ]
+#     ];
+#     rr:predicateObjectMap [
+#     	rr:predicateMap	[ rr:constant bibo:abstract];
+#     	rr:objectMap	[ rr:column "ABSTRACT"; rr:termType rr:Literal; rr:datatype xsd:string ]
+#     ];
+#     rr:predicateObjectMap [
+#     	rr:predicateMap	[ rr:constant bibo:volume];
+#     	rr:objectMap	[ rr:column "VOLUME"; rr:termType rr:Literal; rr:datatype xsd:positiveInteger ]
+#     ];
+#     rr:predicateObjectMap [
+#     	rr:predicateMap	[ rr:constant bibo:issue];
+#     	rr:objectMap	[ rr:column "ISSUE"; rr:termType rr:Literal; rr:datatype xsd:string ]
+#     ];
+#     rr:predicateObjectMap [
+#     	rr:predicateMap	[ rr:constant dcterms:date];
+#     	rr:objectMap	[ rr:column "YEAR"; rr:termType rr:Literal; rr:datatype xsd:date ]
+#     ];
+#     rr:predicateObjectMap [
+#     	rr:predicateMap	[ rr:constant bibo:pageStart];
+#     	rr:objectMap	[ rr:column "PAGES"; rr:termType rr:Literal; rr:datatype xsd:positiveInteger ]
+#     ];
+#     rr:predicateObjectMap [
+#         rr:predicateMap	[ rr:constant dcterms:isPartOf ];
+#         rr:objectMap 	[
+#             rr:parentTriplesMap <#Journal>;
+#             rr:joinCondition	[
+#                 rr:child	"JOURNALID";
+#                 rr:parent	"ID";
+#             ];
+#         ];
+#     ];
+#     rr:predicateObjectMap [
+#         rr:predicateMap	[ rr:constant phcat:hasMaterialTransformationProcess ];
+#         rr:objectMap 	[
+#             rr:parentTriplesMap <#MaterialTransformationProcess>;
+#             rr:joinCondition	[
+#                 rr:child	"ID";
+#                 rr:parent	"NO_DE_REF";
+#             ];
+#         ];
+#     ];
+#     rr:predicateObjectMap [
+#         rr:predicateMap	[ rr:constant dcterms:creator ];
+#         rr:objectMap 	[
+#             rr:parentTriplesMap <#Author>;
+#             rr:joinCondition	[
+#                 rr:child	"ID";
+#                 rr:parent	"PAPER_ID";
+#             ];
+#         ];
+#     ];
+# .
+
+
+
+# <#Author>
+#     a rr:TriplesMap;
+#     rr:logicalTable [
+#     	rr:tableName "authors"
+#     ];
+#     rr:subjectMap [
+#     	a rr:Subject;
+#     	rr:termType rr:IRI;
+#     	rr:template "http://data.example.com/author/{AUTHOR_NAME}-{ID}";
+#     	rr:class schema:Person;
+#     ];
+#     rr:predicateObjectMap [
+#     	rr:predicateMap	[ rr:constant schema:name];
+#     	rr:objectMap	[ rr:column "AUTHOR_NAME"; rr:termType rr:Literal; rr:datatype xsd:string ]
+#     ];
+#     rr:predicateObjectMap [
+#     	rr:predicateMap	[ rr:constant phcat:affiliationCountry];
+#     	rr:objectMap	[ rr:template "https://en.wikipedia.org/wiki/{country_name}"; rr:termType rr:IRI; rr:datatype xsd:schema:Country ]
+#     ];
+# .
+
+
+
+# <#MaterialTransformationProcess>
+#     a rr:TriplesMap;
+#     rr:logicalTable [
+#     	rr:tableName "material_transformations"
+#     ];
+#     rr:subjectMap [
+#     	a rr:Subject;
+#     	rr:termType rr:IRI;
+#     	rr:template "http://data.example.com/materialTransformastionProcess/{ID}";
+#     	rr:class phcat:MaterialTransformationProcess;
+#     ];
+#     rr:predicateObjectMap [
+#     	rr:predicateMap	[ rr:constant rdfs:label];
+#     	rr:objectMap	[ rr:column "CATALYST_NAME"; rr:termType rr:Literal; rr:datatype xsd:string ]
+#     ];
+#     rr:predicateObjectMap [
+#     	rr:predicateMap	[ rr:constant phcat:operationMode];
+#     	rr:objectMap	[ rr:column "OPERATION_MODE"; rr:termType rr:Literal; rr:datatype xsd:string ]
+#     ];
+#     rr:predicateObjectMap [
+#         rr:predicateMap	[ rr:constant phcat:reportedIn ];
+#         rr:objectMap 	[
+#             rr:parentTriplesMap <#Article>;
+#             rr:joinCondition	[
+#                 rr:child	"NO_DE_REF";
+#                 rr:parent	"ID";
+#             ];
+#         ];
+#     ];
+#     rr:predicateObjectMap [
+#         rr:predicateMap	[ rr:constant phcat:hasReactionEg ];
+#         rr:objectMap 	[
+#             rr:parentTriplesMap <#Eg>;
+#             rr:joinCondition	[
+#                 rr:child	"ID";
+#                 rr:parent	"ID";
+#             ];
+#         ];
+#     ];
+#     rr:predicateObjectMap [
+#         rr:predicateMap	[ rr:constant phcat:hasBET ];
+#         rr:objectMap 	[
+#             rr:parentTriplesMap <#BET>;
+#             rr:joinCondition	[
+#                 rr:child	"ID";
+#                 rr:parent	"ID";
+#             ];
+#         ];
+#     ];
+#     rr:predicateObjectMap [
+#         rr:predicateMap	[ rr:constant phcat:hasInput ];
+#         rr:objectMap 	[
+#             rr:parentTriplesMap <#Input>;
+#             rr:joinCondition	[
+#                 rr:child	"ID";
+#                 rr:parent	"MATERIAL_TRANSFORMATION_ID";
+#             ];
+#         ];
+#     ];
+#     rr:predicateObjectMap [
+#         rr:predicateMap	[ rr:constant phcat:hasCondition ];
+#         rr:objectMap 	[
+#             rr:parentTriplesMap <#Condition>;
+#             rr:joinCondition	[
+#                 rr:child	"ID";
+#                 rr:parent	"MATERIAL_TRANSFORMATION_ID";
+#             ];
+#         ];
+#     ];
+# .
+
+
+
+# <#Input>
+#     a rr:TriplesMap;
+#     rr:logicalTable [
+#     	rr:tableName "inputs"
+#     ];
+#     rr:subjectMap [
+#     	a rr:Subject;
+#     	rr:termType rr:IRI;
+#     	rr:template "http://data.example.com/input/{ID}";
+#     	rr:class phcat:Input;
+#     ];
+#     rr:predicateObjectMap [
+#     	rr:predicateMap	[ rr:constant phcat:percentage];
+#     	rr:objectMap	[ rr:column "PERCENT"; rr:termType rr:Literal; rr:datatype xsd:double ]
+#     ];
+#     rr:predicateObjectMap [
+#     	rr:predicateMap	[ rr:constant phcat:cristalStructure];
+#     	rr:objectMap	[ rr:column "CRYSTAL_STRUCTURE"; rr:termType rr:Literal; rr:datatype xsd:string ]
+#     ];
+#     rr:predicateObjectMap [
+#     	rr:predicateMap	[ rr:constant phcat:hasRole];
+#     	rr:objectMap	[ rr:template "phcat:{ROLE}"; rr:termType rr:IRI; rr:datatype xsd:phcat:MaterialTransformationRole ]
+#     ];
+#     rr:predicateObjectMap [
+#         rr:predicateMap	[ rr:constant phcat:hasChemical ];
+#         rr:objectMap 	[
+#             rr:parentTriplesMap <#Chemical>;
+#             rr:joinCondition	[
+#                 rr:child	"CHEMICAL";
+#                 rr:parent	"CHEMICAL";
+#             ];
+#         ];
+#     ];
+# .
+
+
+
+# <#Condition>
+#     a rr:TriplesMap;
+#     rr:logicalTable [
+#     	rr:tableName "conditions"
+#     ];
+#     rr:subjectMap [
+#     	a rr:Subject;
+#     	rr:termType rr:IRI;
+#     	rr:template "http://data.example.com/condition/{ID}";
+#     	rr:class phcat:Condition;
+#     ];
+#     rr:predicateObjectMap [
+#     	rr:predicateMap	[ rr:constant phcat:conditionType];
+#     	rr:objectMap	[ rr:column "TYPE"; rr:termType rr:Literal; rr:datatype xsd:string ]
+#     ];
+#     rr:predicateObjectMap [
+#     	rr:predicateMap	[ rr:constant qudt:value];
+#     	rr:objectMap	[ rr:column "QUANTITY"; rr:termType rr:Literal; rr:datatype xsd:string ]
+#     ];
+#     rr:predicateObjectMap [
+#     	rr:predicateMap	[ rr:constant qudt:unit];
+#     	rr:objectMap	[ rr:template "unit:{UNIT}"; rr:termType rr:IRI; rr:datatype xsd:qudt:Unit ]
+#     ];
+# .
+
+
+
+# <#Output>
+#     a rr:TriplesMap;
+#     rr:logicalTable [
+#     	rr:tableName "outputs"
+#     ];
+#     rr:subjectMap [
+#     	a rr:Subject;
+#     	rr:termType rr:IRI;
+#     	rr:template "http://data.example.com/output/{ID}";
+#     	rr:class phcat:Output;
+#     ];
+#     rr:predicateObjectMap [
+#         rr:predicateMap	[ rr:constant phcat:hasChemical ];
+#         rr:objectMap 	[
+#             rr:parentTriplesMap <#Chemical>;
+#             rr:joinCondition	[
+#                 rr:child	"CHEMICAL";
+#                 rr:parent	"CHEMICAL";
+#             ];
+#         ];
+#     ];
+#     rr:predicateObjectMap [
+#         rr:predicateMap	[ rr:constant phcat:hasOutputCuantity ];
+#         rr:objectMap 	[
+#             rr:parentTriplesMap <#OutputCuantity>;
+#             rr:joinCondition	[
+#                 rr:child	"ID";
+#                 rr:parent	"ID";
+#             ];
+#         ];
+#     ];
+# .
+
+
+
+# <#Eg>
+#     a rr:TriplesMap;
+#     rr:logicalTable [
+#     	rr:tableName "material_transformations"
+#     ];
+#     rr:subjectMap [
+#     	a rr:Subject;
+#     	rr:termType rr:IRI;
+#     	rr:template "http://data.example.com/eg/{ID}";
+#     	rr:class phcat:Eg;
+#     ];
+#     rr:predicateObjectMap [
+#     	rr:predicateMap	[ rr:constant qudt:numericValue];
+#     	rr:objectMap	[ rr:column "EG_EV"; rr:termType rr:Literal; rr:datatype xsd:integer ]
+#     ];
+#     rr:predicateObjectMap [
+#     	rr:predicateMap	[ rr:constant qudt:unit];
+#     	rr:objectMap	[ rr:constant unit:EV; rr:termType rr:IRI; rr:datatype xsd:qudt:Unit ]
+#     ];
+# .
+
+
+
+# <#BET>
+#     a rr:TriplesMap;
+#     rr:logicalTable [
+#     	rr:tableName "material_transformations"
+#     ];
+#     rr:subjectMap [
+#     	a rr:Subject;
+#     	rr:termType rr:IRI;
+#     	rr:template "http://data.example.com/bet/{ID}";
+#     	rr:class phcat:BET;
+#     ];
+#     rr:predicateObjectMap [
+#     	rr:predicateMap	[ rr:constant qudt:numericValue];
+#     	rr:objectMap	[ rr:column "BET_M2_G"; rr:termType rr:Literal; rr:datatype xsd:integer ]
+#     ];
+#     rr:predicateObjectMap [
+#     	rr:predicateMap	[ rr:constant qudt:unit];
+#     	rr:objectMap	[ rr:constant unit:M2-PER-GM; rr:termType rr:IRI; rr:datatype xsd:qudt:Unit ]
+#     ];
+# .
+
+
+
+# <#Chemical>
+#     a rr:TriplesMap;
+#     rr:logicalTable [
+#     	rr:tableName "chemicals"
+#     ];
+#     rr:subjectMap [
+#     	a rr:Subject;
+#     	rr:termType rr:IRI;
+#     	rr:template "http://data.example.com/chemical/{ID}";
+#     	rr:class chebi:CHEBI_24431;
+#     ];
+#     rr:predicateObjectMap [
+#     	rr:predicateMap	[ rr:constant rdfs:label];
+#     	rr:objectMap	[ rr:column "CHEMICAL"; rr:termType rr:Literal; rr:datatype xsd:string ]
+#     ];
+# .
+
+
+
+# <#OutputCuantity>
+#     a rr:TriplesMap;
+#     rr:logicalTable [
+#     	rr:tableName "outputs"
+#     ];
+#     rr:subjectMap [
+#     	a rr:Subject;
+#     	rr:termType rr:IRI;
+#     	rr:template "http://data.example.com/output_quantity/{ID}-{UNIT}";
+#     	rr:class phcat:OutputCuantity;
+#     ];
+#     rr:predicateObjectMap [
+#     	rr:predicateMap	[ rr:constant phcat:numericValue];
+#     	rr:objectMap	[ rr:column "QUANTITY"; rr:termType rr:Literal; rr:datatype xsd:positiveInteger ]
+#     ];
+#     rr:predicateObjectMap [
+#     	rr:predicateMap	[ rr:constant qudt:unit];
+#     	rr:objectMap	[ rr:template "unit:{QUDT_UNIT}"; rr:termType rr:IRI; rr:datatype xsd:qudt:Unit ]
+#     ];
+# .

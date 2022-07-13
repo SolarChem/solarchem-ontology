@@ -2,6 +2,7 @@ import csv
 import os
 import re
 import json
+from conf.config import parser
 
 def dequote(s: str):
     """
@@ -14,7 +15,7 @@ def dequote(s: str):
     return s
 
 def createCsv(data, file_name):
-    file_name = os.path.join(os.path.dirname(__file__), 'data', file_name)
+    file_name = os.path.join(os.path.dirname(__file__), parser.get("data", "path"), file_name)
     fieldnames = list(data[0].keys())
     with open(file_name, 'w', errors='surrogatepass', encoding="utf8", newline='') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames = fieldnames)
