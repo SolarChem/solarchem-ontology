@@ -106,21 +106,6 @@
 
 
 
-<#Country>
-    a rr:TriplesMap;
-    rr:logicalTable [
-    	rr:tableName "authors"
-    ];
-    rr:subjectMap [
-    	a rr:Subject;
-    	rr:termType rr:IRI;
-    	rr:template "https://en.wikipedia.org/wiki/{COUNTRY_NAME}";
-    	rr:class schema:Country;
-    ];
-.
-
-
-
 <#Author>
     a rr:TriplesMap;
     rr:logicalTable [
@@ -253,8 +238,8 @@
     	rr:objectMap	[ rr:column "CRYSTAL_STRUCTURE"; rr:termType rr:Literal; rr:datatype xsd:string ]
     ];
     rr:predicateObjectMap [
-    	rr:predicateMap	[ rr:constant phcat:hasRole];
-    	rr:objectMap	[ rr:template "phcat:{ROLE}"; rr:termType rr:IRI ]
+        rr:predicateMap	[ rr:constant phcat:hasRole ];
+    	rr:objectMap	[ rr:template "http://base.namespace.com/material_transformation_role/{ROLE}"; rr:termType rr:IRI ]
     ];
     rr:predicateObjectMap [
         rr:predicateMap	[ rr:constant phcat:hasChemical ];
@@ -290,8 +275,8 @@
     	rr:objectMap	[ rr:column "QUANTITY"; rr:termType rr:Literal; rr:datatype xsd:string ]
     ];
     rr:predicateObjectMap [
-     	rr:predicateMap	[ rr:constant qudt:unit];
-     	rr:objectMap	[ rr:template "unit:{QUDT_UNIT}"; rr:termType rr:IRI ]
+        rr:predicateMap	[ rr:constant qudt:unit ];
+     	rr:objectMap	[ rr:template "http://qudt.org/vocab/unit/{QUDT_UNIT}"; rr:termType rr:IRI ]
     ];
 .
 
@@ -372,7 +357,7 @@
     ];
     rr:predicateObjectMap [
     	rr:predicateMap	[ rr:constant qudt:unit];
-    	rr:objectMap	[ rr:constant unit:M2-PER-GM; rr:termType rr:IRI; ]
+    	rr:objectMap	[ rr:constant unit:M2-PER-GM; rr:termType rr:IRI ]
     ];
 .
 
@@ -413,7 +398,22 @@
     	rr:objectMap	[ rr:column "QUANTITY"; rr:termType rr:Literal; rr:datatype xsd:positiveInteger ]
     ];
     rr:predicateObjectMap [
-    	rr:predicateMap	[ rr:constant qudt:unit];
-    	rr:objectMap	[ rr:template "unit:{QUDT_UNIT}"; rr:termType rr:IRI ]
+        rr:predicateMap	[ rr:constant qudt:unit ];
+     	rr:objectMap	[ rr:template "http://qudt.org/vocab/unit/{QUDT_UNIT}"; rr:termType rr:IRI ]
+    ];
+.
+
+
+
+<#Country>
+    a rr:TriplesMap;
+    rr:logicalTable [
+    	rr:tableName "authors"
+    ];
+    rr:subjectMap [
+    	a rr:Subject;
+    	rr:termType rr:IRI;
+    	rr:template "https://en.wikipedia.org/wiki/{COUNTRY_NAME}";
+    	rr:class schema:Country;
     ];
 .
