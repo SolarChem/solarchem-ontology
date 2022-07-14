@@ -124,17 +124,17 @@ def prepare_conditions(mtplist):
     result = []
     for mtp in mtplist:
         cond_list = {
-            'Reactor_condition': [mtp['Reactor_type'], mtp['Reactor_Volume_l'], 'L'],
-            'Catalyst_set_up_condition': [mtp['Catalyst_set_up'], mtp['Masscat_g'], 'GM'],
-            'Lamp_power_condition': [mtp['Lamp'], mtp['Power_W'], 'W'],
-            'Lamp_irradiance_condition': [mtp['Lamp'], mtp['Light_Intensity_W_m2'], 'W-PER-M2'],
-            'Temperature_condition': [None, mtp['T_C'], 'DEG_C'],
-            'Preasure_condition': [None, mtp['P_bar'], 'BAR'],
-            'Space_velocity_condition': [None, mtp['Residence_time_min1'], 'PER-HR'],
-            'Reaction_time_condition': [None, mtp['Reaction_time_h'], 'HR'],
-            'Reaction_medium_condition': [mtp['Reaction_medium'], mtp['ph_value'], 'PH'],
-            'Wavelength_condition': [mtp['Light_source'], mtp['Wavelength_nm'], 'NanoM'],
-            'Illuminated_area_condition': [mtp['Light_source'], mtp['Illuminated_area_m2'], 'M2']
+            'ReactorCondition': [mtp['Reactor_type'], mtp['Reactor_Volume_l'], 'L'],
+            'CatalystSetUpCondition': [mtp['Catalyst_set_up'], mtp['Masscat_g'], 'GM'],
+            'LampPowerCondition': [mtp['Lamp'], mtp['Power_W'], 'W'],
+            'LampIrradianceCondition': [mtp['Lamp'], mtp['Light_Intensity_W_m2'], 'W-PER-M2'],
+            'TemperatureCondition': [None, mtp['T_C'], 'DEG_C'],
+            'PreasureCondition': [None, mtp['P_bar'], 'BAR'],
+            'SpaceVelocityCondition': [None, mtp['Residence_time_min1'], 'PER-HR'],
+            'ReactionTimeCondition': [None, mtp['Reaction_time_h'], 'HR'],
+            'ReactionMediumCondition': [mtp['Reaction_medium'], mtp['ph_value'], 'PH'],
+            'WavelengthCondition': [mtp['Light_source'], mtp['Wavelength_nm'], 'NanoM'],
+            'IlluminatedAreaCondition': [mtp['Light_source'], mtp['Illuminated_area_m2'], 'M2']
         }
         
         for cond_id in cond_list:
@@ -144,7 +144,7 @@ def prepare_conditions(mtplist):
                     'Material_transformation_id': mtp['ID'],
                     'Type': cond[0],
                     'Quantity': cond[1],
-                    'Condition': cond_id.replace('_', ' '),
+                    'Condition': cond_id,
                     'QUDT_unit': cond[2]
                 })
 

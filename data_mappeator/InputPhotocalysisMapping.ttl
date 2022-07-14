@@ -1,8 +1,8 @@
 @prefix rr: <http://www.w3.org/ns/r2rml#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix ql: <http://semweb.mmlab.be/ns/ql#>.
-@prefix rr: <http://www.w3.org/ns/r2rml#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix phcat: <http://base.namespace.com/>.
 @prefix bibo: <http://purl.org/ontology/bibo/>.
@@ -264,7 +264,6 @@
     	a rr:Subject;
     	rr:termType rr:IRI;
     	rr:template "http://data.example.com/condition/{ID}";
-    	rr:class phcat:Condition;
     ];
     rr:predicateObjectMap [
     	rr:predicateMap	[ rr:constant phcat:conditionType];
@@ -277,6 +276,10 @@
     rr:predicateObjectMap [
         rr:predicateMap	[ rr:constant qudt:unit ];
      	rr:objectMap	[ rr:template "http://qudt.org/vocab/unit/{QUDT_UNIT}"; rr:termType rr:IRI ]
+    ];
+    rr:predicateObjectMap [
+    	rr:predicateMap	[ rr:constant rdf:type];
+    	rr:objectMap	[ rr:template "http://base.namespace.com/{CONDITION}"; rr:termType rr:IRI ]
     ];
 .
 
