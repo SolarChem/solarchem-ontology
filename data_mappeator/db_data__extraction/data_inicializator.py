@@ -140,13 +140,36 @@ def prepare_conditions(mtplist):
         for cond_id in cond_list:
             cond = cond_list[cond_id]
             if not check_if_all_none(cond):
-                result.append({'ID': len(result)+1,
+                condition = {'ID': len(result)+1,
                     'Material_transformation_id': mtp['ID'],
                     'Type': cond[0],
-                    'Quantity': cond[1],
+                    'Quantity': None,
+                    'Numeric_quantity': cond[1],
                     'Condition': cond_id,
+                    'Reactor_type': None,
+                    'Set_up_type': None,
+                    'Lamp_type': None,
+                    'Reaction_medium_type': None,
+                    'Light_source_type': None,
                     'QUDT_unit': cond[2]
-                })
+                }
+
+                if cond_id == 'ReactorCondition':
+                    condition['Reactor_type'] = cond[0]
+                elif cond_id == 'CatalystSetUpCondition':
+                    condition['Set_up_type'] = cond[0]
+                elif cond_id == 'LampPowerCondition' or cond_id == 'LampIrradianceCondition':
+                    condition['Lamp_type'] = cond[0]
+                elif cond_id == 'ReactionMediumCondition':
+                    condition['Reaction_medium_type'] = cond[0]
+                elif cond_id == 'IlluminatedAreaCondition':
+                    condition['Light_source_type'] = cond[0]
+                elif cond_id == 'WavelengthCondition':
+                    condition['Light_source_type'] = cond[0]
+                    condition['Quantity'] = condition['Numeric_quantity']
+                    condition['Quantity'] = None
+                
+                result.append(condition)
 
     return result
 
