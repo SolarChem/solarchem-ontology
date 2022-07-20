@@ -1,0 +1,27 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+<http://data.example.com/condition/reactionMediumType> a skos:ConceptScheme;
+    skos:hasTopConcept <http://data.example.com/condition/reactionMediumType/liquid> ;
+    skos:hasTopConcept <http://data.example.com/condition/reactionMediumType/gas> ;
+    dc:creator "Oier Beaskoetxea Aldazabal (Universidad Politécnica de Madrid)" ;
+    dc:date "2022-07-20"^^xsd:date ;
+    skos:prefLabel "Tipos de medios de reacción"@es,
+                    "Reaction medium types"@en ;
+    dc:title "Tesauro que recoge los tipos de medios de reacción."@es,
+             "Thesaurus that collects the types of reaction media."@en .
+
+<http://data.example.com/condition/reactionMediumType/liquid> a skos:Concept ;
+	skos:inScheme <http://data.example.com/condition/reactionMediumType> ;
+    skos:notation "liquid" ;
+	skos:prefLabel "Líquido"@es,
+                    "Liquid"@en .
+
+<http://data.example.com/condition/reactionMediumType/gas> a skos:Concept ;
+	skos:inScheme <http://data.example.com/condition/reactionMediumType> ;
+    skos:notation "Gas" ;
+	skos:prefLabel "Gas" .
