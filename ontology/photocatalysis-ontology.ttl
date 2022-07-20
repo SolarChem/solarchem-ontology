@@ -10,6 +10,7 @@
 @prefix chebi: <http://purl.obolibrary.org/obo/> .
 @prefix schema: <https://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @base <http://base.namespace.com/> .
 
 <http://base.namespace.com/> rdf:type owl:Ontology ;
@@ -45,6 +46,14 @@ rdfs:label rdf:type owl:AnnotationProperty ;
 
 ###  http://www.w3.org/2002/07/owl#maxCardinality
 owl:maxCardinality rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -184,6 +193,14 @@ qudt:unit rdf:type owl:ObjectProperty ;
           rdfs:label "unit" .
 
 
+###  http://www.w3.org/2004/02/skos/core#inScheme
+skos:inScheme rdf:type owl:ObjectProperty ;
+              rdfs:range skos:ConceptScheme ;
+              rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+              rdfs:label "is in scheme"@en ;
+              skos:definition "Relates a resource (for example a concept) to a concept scheme in which it is included."@en .
+
+
 #################################################################
 #    Data properties
 #################################################################
@@ -217,7 +234,15 @@ qudt:unit rdf:type owl:ObjectProperty ;
 :lightSourceType rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf :conditionType ;
                  rdfs:domain :LightSourceCondition ;
-                 rdfs:range xsd:string ;
+                #  rdfs:range xsd:string ;
+                rdfs:range [ owl:intersectionOf ( skos:Concept
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty skos:inScheme ;
+                          owl:hasValue <http://vocab.example.com/condition/lightSourceType>
+                        ]
+                      ) ;
+                      rdf:type owl:Class
+                    ] ;
                  rdfs:comment "Light source used in the material transformation." ;
                  rdfs:label "light source type" .
 
@@ -225,7 +250,15 @@ qudt:unit rdf:type owl:ObjectProperty ;
 ###  http://base.namespace.com/operationMode
 :operationMode rdf:type owl:DatatypeProperty ;
                rdfs:domain :MaterialTransformationProcess ;
-               rdfs:range xsd:string ;
+              #  rdfs:range xsd:string ;
+              rdfs:range [ owl:intersectionOf ( skos:Concept
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty skos:inScheme ;
+                          owl:hasValue <http://vocab.example.com/condition/operationMode>
+                        ]
+                      ) ;
+                      rdf:type owl:Class
+                    ] ;
                rdfs:comment "The operation mode of the material transformation process. It can be continuous or in batch." ;
                rdfs:label "operation mode" .
 
@@ -242,7 +275,15 @@ qudt:unit rdf:type owl:ObjectProperty ;
 :reactionMediumType rdf:type owl:DatatypeProperty ;
                     rdfs:subPropertyOf :conditionType ;
                     rdfs:domain :ReactionMediumCondition ;
-                    rdfs:range xsd:string ;
+                    # rdfs:range xsd:string ;
+                    rdfs:range [ owl:intersectionOf ( skos:Concept
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty skos:inScheme ;
+                          owl:hasValue <http://vocab.example.com/condition/reactionMediumType>
+                        ]
+                      ) ;
+                      rdf:type owl:Class
+                    ] ;
                     rdfs:comment "The reaction medium in which the material transformation is performed. It can be liquid or gas." ;
                     rdfs:label "reaction medium type" .
 
@@ -714,6 +755,25 @@ schema:Person rdf:type owl:Class ;
               rdfs:label "Person" .
 
 
+###  http://www.w3.org/2004/02/skos/core#Concept
+skos:Concept rdf:type owl:Class ;
+             owl:disjointWith skos:ConceptScheme ;
+             dcterms:issued "2004-02-xx" ;
+             rdfs:isDefinedBy skos: ;
+             rdfs:label "Concept"@en ;
+             skos:definition "An abstract idea or notion; a unit of thought." .
+
+
+###  http://www.w3.org/2004/02/skos/core#ConceptScheme
+skos:ConceptScheme rdf:type owl:Class ;
+                   dcterms:issued "2004-02-xx" ;
+                   rdfs:comment "A concept scheme may be defined to include concepts from different sources."@en ,
+                                "Thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', and other types of controlled vocabulary are all examples of concept schemes.  Concept schemes are also embedded in glossaries and terminologies."@en ;
+                   rdfs:isDefinedBy skos: ;
+                   rdfs:label "Concept Scheme"@en ;
+                   skos:definition "A set of concepts, optionally including statements about semantic relationships between those concepts."@en .
+
+
 #################################################################
 #    Individuals
 #################################################################
@@ -752,6 +812,21 @@ schema:Person rdf:type owl:Class ;
 :Support rdf:type owl:NamedIndividual ,
                   :MaterialTransformationRole ;
          rdfs:label "Support" .
+
+
+###  http://vocab.example.com/condition/operationMode
+<http://vocab.example.com/condition/operationMode> rdf:type owl:NamedIndividual ,
+                                                            skos:ConceptScheme .
+
+
+###  http://vocab.example.com/condition/reactionMediumType
+<http://vocab.example.com/condition/reactionMediumType> rdf:type owl:NamedIndividual ,
+                                                                skos:ConceptScheme .
+
+
+###  http://vocab.example.com/condition/lightSourceType
+<http://vocab.example.com/condition/lightSourceType> rdf:type owl:NamedIndividual ,
+                                                             skos:ConceptScheme .
 
 
 #################################################################
