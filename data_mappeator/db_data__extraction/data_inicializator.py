@@ -13,7 +13,10 @@ def prepare_from_query(query):
     return result
 
 def prepare_articles():
-    query = "SELECT p.*, j.ID as journalID FROM paper_references p, journals j WHERE j.name = p.Journal"
+    query = """SELECT p.*, j.ID as journalID FROM paper_references p, journals j 
+        WHERE j.name = p.Journal AND No_de_Ref IN (SELECT No_de_Ref FROM catalystsdata)
+    """
+
     return prepare_from_query(query)
 
 def prepare_journals(articles):
