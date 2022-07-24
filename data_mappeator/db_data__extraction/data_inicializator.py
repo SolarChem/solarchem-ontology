@@ -12,10 +12,12 @@ def prepare_from_query(query):
 
     return result
 
-def prepare_articles():
+def prepare_articles(limit = -1):
     query = """SELECT p.*, j.ID as journalID FROM paper_references p, journals j 
         WHERE j.name = p.Journal AND No_de_Ref IN (SELECT No_de_Ref FROM catalystsdata)
     """
+    if limit > 0:
+        query = query + " LIMIT " + str(limit)
 
     return prepare_from_query(query)
 
@@ -87,8 +89,17 @@ def prepare_countries(countries, i):
     
     return c, cname
 
-def prepare_material_transformations():
+def prepare_material_transformations(articles = None):
     query = "SELECT * FROM catalystsdata"
+    if articles:
+        paper_refs = []
+        for article in articles:
+            paper_refs.append(str(article['No_de_Ref'])) #primero se transforma a string para evitar errores al unir el texto
+
+        joined_list = ",".join(paper_refs)
+        query_aux = " WHERE No_de_Ref IN (" + joined_list + ");"
+        query = query + query_aux
+
     return prepare_from_query(query)
 
 def prepare_inputs(mtplist):

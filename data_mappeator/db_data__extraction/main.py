@@ -5,7 +5,7 @@ from utils import *
 articles = prepare_articles()
 journals = prepare_journals(articles)
 authors = prepare_authors(articles)
-material_tranformations = prepare_material_transformations()
+material_tranformations = prepare_material_transformations(articles)
 inputs = prepare_inputs(material_tranformations)
 conditions = prepare_conditions(material_tranformations)
 outputs = prepare_outputs(material_tranformations)
