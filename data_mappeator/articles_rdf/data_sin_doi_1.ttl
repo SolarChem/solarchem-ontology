@@ -1,0 +1,120 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://purl.org/ontology/bibo/> .
+@prefix ns21: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/K.Koci-378> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Czechia> ;
+    schema:name "K.Koci" .
+
+<http://data.example.com/author/L.%20Obalova-379> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Czechia> ;
+    schema:name "L. Obalova" .
+
+<http://data.example.com/author/O.%20Solcova-380> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Czechia> ;
+    schema:name "O. Solcova" .
+
+<http://data.example.com/condition/870> a ns21:ReactorCondition ;
+    ns21:conditionType "Slurry" ;
+    ns21:reactorType "Slurry" ;
+    ns11:numericValue "0.10" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/871> a ns21:CatalystSetUpCondition ;
+    ns21:conditionType "Powder(Suspended)" ;
+    ns21:setUpType "Powder(Suspended)" ;
+    ns11:numericValue "0.1" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/872> a ns21:LampPowerCondition ;
+    ns21:conditionType "Mercury(Hg)" ;
+    ns21:lampType "Mercury(Hg)" ;
+    ns11:numericValue "8.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/873> a ns21:LampIrradianceCondition ;
+    ns21:conditionType "Mercury(Hg)" ;
+    ns21:lampType "Mercury(Hg)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/874> a ns21:TemperatureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/875> a ns21:PreasureCondition ;
+    ns11:numericValue "1.10" ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/876> a ns21:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/877> a ns21:ReactionTimeCondition ;
+    ns11:numericValue "24.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/878> a ns21:ReactionMediumCondition ;
+    ns21:conditionType "Liquid" ;
+    ns21:reactionMediumType "Liquid" ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/879> a ns21:WavelengthCondition ;
+    ns21:conditionType "UV" ;
+    ns21:lightSourceType "UV" ;
+    ns11:numericValue "192-280(UV-A)" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/880> a ns21:IlluminatedAreaCondition ;
+    ns21:conditionType "UV" ;
+    ns21:lightSourceType "UV" ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/194> a ns2:Journal ;
+    dcterms:title "CHEMICAL AND PROCESS ENGINEERING-INZYNIERIA CHEMICZNA I PROCESOWA" .
+
+<http://data.example.com/materialTransformastionProcess/84> a ns21:MaterialTransformationProcess ;
+    rdfs:label "TiO2" ;
+    ns21:hasBET <http://data.example.com/bet/84> ;
+    ns21:hasCondition <http://data.example.com/condition/870>,
+        <http://data.example.com/condition/871>,
+        <http://data.example.com/condition/872>,
+        <http://data.example.com/condition/873>,
+        <http://data.example.com/condition/874>,
+        <http://data.example.com/condition/875>,
+        <http://data.example.com/condition/876>,
+        <http://data.example.com/condition/877>,
+        <http://data.example.com/condition/878>,
+        <http://data.example.com/condition/879>,
+        <http://data.example.com/condition/880> ;
+    ns21:hasInput <http://data.example.com/input/204>,
+        <http://data.example.com/input/205> ;
+    ns21:hasOutput <http://data.example.com/output/298>,
+        <http://data.example.com/output/299>,
+        <http://data.example.com/output/300>,
+        <http://data.example.com/output/301>,
+        <http://data.example.com/output/302>,
+        <http://data.example.com/output/303>,
+        <http://data.example.com/output/304>,
+        <http://data.example.com/output/305> ;
+    ns21:hasReactionEg <http://data.example.com/eg/84> ;
+    ns21:operationMode "Batch" ;
+    ns21:reportedIn <https://doi.org/sin_doi_1> .
+
+<https://doi.org/sin_doi_1> a ns2:Article ;
+    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/84> ;
+    dcterms:creator <http://data.example.com/author/K.Koci-378>,
+        <http://data.example.com/author/L.%20Obalova-379>,
+        <http://data.example.com/author/O.%20Solcova-380> ;
+    dcterms:date "2010-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/194> ;
+    dcterms:title "Kinetic study of photocatalytic reduction of CO2 over TiO2" ;
+    ns2:abstract "Time dependences of photocatalytic reduction of CO2 with water in a UV\\/TIO2 process were studied. The main products of the process were found to be methanol and methane. The Langmuir - Hinshelwood type kinetic equation was developed for modelling of CO2 photoreduction. A simple kinetic model incorporating the coupled effect of the adsorptive photocatalytic reduction and oxidation has been proposed." ;
+    ns2:doi "sin_doi_1" ;
+    ns2:pageStart "395"^^xsd:positiveInteger ;
+    ns2:volume "31"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/Czechia> a schema:Country .
+

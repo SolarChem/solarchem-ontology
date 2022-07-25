@@ -1,0 +1,115 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://purl.org/ontology/bibo/> .
+@prefix ns21: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/A.M.%20Uskov-1305> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Russian%20Federation> ;
+    schema:name "A.M. Uskov" .
+
+<http://data.example.com/author/B.B.%20Tarasov-1304> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Russian%20Federation> ;
+    schema:name "B.B. Tarasov" .
+
+<http://data.example.com/author/T.S.%20Dzhabiev-1303> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Russian%20Federation> ;
+    schema:name "T.S. Dzhabiev" .
+
+<http://data.example.com/condition/16347> a ns21:ReactorCondition ;
+    ns21:conditionType "Slurry" ;
+    ns21:reactorType "Slurry" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/16348> a ns21:CatalystSetUpCondition ;
+    ns21:conditionType "Other" ;
+    ns21:setUpType "Other" ;
+    ns11:numericValue "0.1" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/16349> a ns21:LampPowerCondition ;
+    ns21:conditionType "Other" ;
+    ns21:lampType "Other" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/16350> a ns21:LampIrradianceCondition ;
+    ns21:conditionType "Other" ;
+    ns21:lampType "Other" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/16351> a ns21:TemperatureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/16352> a ns21:PreasureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/16353> a ns21:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/16354> a ns21:ReactionTimeCondition ;
+    ns11:numericValue "4.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/16355> a ns21:ReactionMediumCondition ;
+    ns21:conditionType "Liquid" ;
+    ns21:reactionMediumType "Liquid" ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/16356> a ns21:WavelengthCondition ;
+    ns21:conditionType "UV" ;
+    ns21:lightSourceType "UV" ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/16357> a ns21:IlluminatedAreaCondition ;
+    ns21:conditionType "UV" ;
+    ns21:lightSourceType "UV" ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/181> a ns2:Journal ;
+    dcterms:title "CATALYSIS TODAY" .
+
+<http://data.example.com/materialTransformastionProcess/2338> a ns21:MaterialTransformationProcess ;
+    rdfs:label "TiO2" ;
+    ns21:hasBET <http://data.example.com/bet/2338> ;
+    ns21:hasCondition <http://data.example.com/condition/16347>,
+        <http://data.example.com/condition/16348>,
+        <http://data.example.com/condition/16349>,
+        <http://data.example.com/condition/16350>,
+        <http://data.example.com/condition/16351>,
+        <http://data.example.com/condition/16352>,
+        <http://data.example.com/condition/16353>,
+        <http://data.example.com/condition/16354>,
+        <http://data.example.com/condition/16355>,
+        <http://data.example.com/condition/16356>,
+        <http://data.example.com/condition/16357> ;
+    ns21:hasInput <http://data.example.com/input/4014>,
+        <http://data.example.com/input/4015>,
+        <http://data.example.com/input/4016> ;
+    ns21:hasOutput <http://data.example.com/output/4983>,
+        <http://data.example.com/output/4984>,
+        <http://data.example.com/output/4985>,
+        <http://data.example.com/output/4986> ;
+    ns21:hasReactionEg <http://data.example.com/eg/2338> ;
+    ns21:operationMode "Batch" ;
+    ns21:reportedIn <https://doi.org/10.1016%2F0920-5861%2892%2980113-2> .
+
+<https://doi.org/10.1016%2F0920-5861%2892%2980113-2> a ns2:Article ;
+    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/2338> ;
+    dcterms:creator <http://data.example.com/author/A.M.%20Uskov-1305>,
+        <http://data.example.com/author/B.B.%20Tarasov-1304>,
+        <http://data.example.com/author/T.S.%20Dzhabiev-1303> ;
+    dcterms:date "1992-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/181> ;
+    dcterms:title "Photocatalytic reduction of carbon dioxide in aqueous semiconductor suspensions" ;
+    ns2:abstract "Reactions of photocatalytic reduction of carbon dioxide in aqueous CdS, SiC, TiO2, and SrTiO3 suspensions with supported catalytic additives of Pt, Rh, Ru, Ag and Cu have been studied. In the absence of specially added electron donors, the carbon dioxide photoreduction is observed on the TiO2 and SrTiO3 suspensions only, those with CdS and SiC being inactive. The ratio of the reaction products (CO, C, methane) is dependent on the nature of the metal-catalyst on the semiconductor surface. " ;
+    ns2:doi "10.1016/0920-5861(92)80113-2" ;
+    ns2:issue "4" ;
+    ns2:pageStart "695"^^xsd:positiveInteger ;
+    ns2:volume "13"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/Russian%20Federation> a schema:Country .
+

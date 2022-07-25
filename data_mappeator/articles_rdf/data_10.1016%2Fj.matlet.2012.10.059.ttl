@@ -1,0 +1,133 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://purl.org/ontology/bibo/> .
+@prefix ns12: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/F.%20Peng-878> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "F. Peng" .
+
+<http://data.example.com/author/G.%20Ge-880> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "G. Ge" .
+
+<http://data.example.com/author/H.%20Ma-884> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "H. Ma" .
+
+<http://data.example.com/author/J.%20Wang-879> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "J. Wang" .
+
+<http://data.example.com/author/L.%20Cao-882> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "L. Cao" .
+
+<http://data.example.com/author/S.%20Sun-885> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "S. Sun" .
+
+<http://data.example.com/author/T.%20He-881> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "T. He" .
+
+<http://data.example.com/author/Y.%20He-883> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Y. He" .
+
+<http://data.example.com/condition/8372> a ns2:ReactorCondition ;
+    ns2:conditionType "Slurry" ;
+    ns2:reactorType "Slurry" ;
+    ns12:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/8373> a ns2:CatalystSetUpCondition ;
+    ns2:conditionType "Powder(Suspended)" ;
+    ns2:setUpType "Powder(Suspended)" ;
+    ns12:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/8374> a ns2:LampPowerCondition ;
+    ns2:conditionType "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns12:numericValue "420.00" ;
+    ns12:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/8375> a ns2:LampIrradianceCondition ;
+    ns2:conditionType "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns12:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/8376> a ns2:TemperatureCondition ;
+    ns12:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/8377> a ns2:PreasureCondition ;
+    ns12:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/8378> a ns2:SpaceVelocityCondition ;
+    ns12:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/8379> a ns2:ReactionTimeCondition ;
+    ns12:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/8380> a ns2:ReactionMediumCondition ;
+    ns2:conditionType "Liquid" ;
+    ns2:reactionMediumType "Liquid" ;
+    ns12:numericValue "0" ;
+    ns12:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/8381> a ns2:WavelengthCondition ;
+    ns2:conditionType "Visible" ;
+    ns2:lightSourceType "Visible" ;
+    ns12:numericValue "400-780" ;
+    ns12:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/8382> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionType "Visible" ;
+    ns2:lightSourceType "Visible" ;
+    ns12:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/740> a ns1:Journal ;
+    dcterms:title "MATERIALS LETTERS" .
+
+<http://data.example.com/materialTransformastionProcess/852> a ns2:MaterialTransformationProcess ;
+    rdfs:label "SiNCs" ;
+    ns2:hasBET <http://data.example.com/bet/852> ;
+    ns2:hasCondition <http://data.example.com/condition/8372>,
+        <http://data.example.com/condition/8373>,
+        <http://data.example.com/condition/8374>,
+        <http://data.example.com/condition/8375>,
+        <http://data.example.com/condition/8376>,
+        <http://data.example.com/condition/8377>,
+        <http://data.example.com/condition/8378>,
+        <http://data.example.com/condition/8379>,
+        <http://data.example.com/condition/8380>,
+        <http://data.example.com/condition/8381>,
+        <http://data.example.com/condition/8382> ;
+    ns2:hasInput <http://data.example.com/input/2048>,
+        <http://data.example.com/input/2049> ;
+    ns2:hasReactionEg <http://data.example.com/eg/852> ;
+    ns2:operationMode "Batch" ;
+    ns2:reportedIn <https://doi.org/10.1016%2Fj.matlet.2012.10.059> .
+
+<https://doi.org/10.1016%2Fj.matlet.2012.10.059> a ns1:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/852> ;
+    dcterms:creator <http://data.example.com/author/F.%20Peng-878>,
+        <http://data.example.com/author/G.%20Ge-880>,
+        <http://data.example.com/author/H.%20Ma-884>,
+        <http://data.example.com/author/J.%20Wang-879>,
+        <http://data.example.com/author/L.%20Cao-882>,
+        <http://data.example.com/author/S.%20Sun-885>,
+        <http://data.example.com/author/T.%20He-881>,
+        <http://data.example.com/author/Y.%20He-883> ;
+    dcterms:date "2013-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/740> ;
+    dcterms:title "Photochemical reduction of CO2 catalyzed by silicon nanocrystals produced by high energy ball milling" ;
+    ns1:abstract "High energy ball milling (HEBM) with ZrO2 balls is shown to be an efficient method for the preparation of silicon nanocrystals (SiNCs), which exhibit excellent photocatalytic activity for the reduction of CO2 in aqueous solution. TEM indicated that the size of the as-prepared SiNCs ranged from 1 to 4 nm, and XRD data confirmed that the crystallinity of the SiNCs was well preserved. The SiNCs without capping molecules (no-SiNCs) on their surfaces exhibited excellent rates for the conversion of CO2 to aldehyde. No photochemical catalytic activity was observed for the alkyl-capped SiNCs (alkyl-SiNCs). A mechanism for the photocatalytic properties associated with the photoluminescent characteristics of these two types of SiNCs was tentatively proposed." ;
+    ns1:doi "10.1016/j.matlet.2012.10.059" ;
+    ns1:pageStart "65"^^xsd:positiveInteger ;
+    ns1:volume "92"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/China> a schema:Country .
+

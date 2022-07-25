@@ -1,0 +1,124 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://purl.org/ontology/bibo/> .
+@prefix ns21: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/K.%20Teramura-2064> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "K. Teramura" .
+
+<http://data.example.com/author/S.Hosokawa-2065> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "S.Hosokawa" .
+
+<http://data.example.com/author/T.%20Tanaka-2066> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "T. Tanaka" .
+
+<http://data.example.com/author/Z.%20Huang-2063> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "Z. Huang" .
+
+<http://data.example.com/condition/20813> a ns21:ReactorCondition ;
+    ns21:conditionType "Slurry" ;
+    ns21:reactorType "Slurry" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/20814> a ns21:CatalystSetUpCondition ;
+    ns21:conditionType "Other" ;
+    ns21:setUpType "Other" ;
+    ns11:numericValue "1.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/20815> a ns21:LampPowerCondition ;
+    ns21:conditionType "Mercury(Hg)" ;
+    ns21:lampType "Mercury(Hg)" ;
+    ns11:numericValue "400.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/20816> a ns21:LampIrradianceCondition ;
+    ns21:conditionType "Mercury(Hg)" ;
+    ns21:lampType "Mercury(Hg)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/20817> a ns21:TemperatureCondition ;
+    ns11:numericValue "25.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/20818> a ns21:PreasureCondition ;
+    ns11:numericValue "1.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/20819> a ns21:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/20820> a ns21:ReactionTimeCondition ;
+    ns11:numericValue "5.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/20821> a ns21:ReactionMediumCondition ;
+    ns21:conditionType "Liquid" ;
+    ns21:reactionMediumType "Liquid" ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/20822> a ns21:WavelengthCondition ;
+    ns21:conditionType "UV" ;
+    ns21:lightSourceType "UV" ;
+    ns11:numericValue "280-315(UV-B)" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/20823> a ns21:IlluminatedAreaCondition ;
+    ns21:conditionType "UV" ;
+    ns21:lightSourceType "UV" ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/99> a ns2:Journal ;
+    dcterms:title "APPLIED CATALYSIS B-ENVIRONMENTAL" .
+
+<http://data.example.com/materialTransformastionProcess/2849> a ns21:MaterialTransformationProcess ;
+    rdfs:label "Ag/Sr2KTaO15" ;
+    ns21:hasBET <http://data.example.com/bet/2849> ;
+    ns21:hasCondition <http://data.example.com/condition/20813>,
+        <http://data.example.com/condition/20814>,
+        <http://data.example.com/condition/20815>,
+        <http://data.example.com/condition/20816>,
+        <http://data.example.com/condition/20817>,
+        <http://data.example.com/condition/20818>,
+        <http://data.example.com/condition/20819>,
+        <http://data.example.com/condition/20820>,
+        <http://data.example.com/condition/20821>,
+        <http://data.example.com/condition/20822>,
+        <http://data.example.com/condition/20823> ;
+    ns21:hasInput <http://data.example.com/input/5066>,
+        <http://data.example.com/input/5067>,
+        <http://data.example.com/input/5068> ;
+    ns21:hasOutput <http://data.example.com/output/6884>,
+        <http://data.example.com/output/6885>,
+        <http://data.example.com/output/6886>,
+        <http://data.example.com/output/6887>,
+        <http://data.example.com/output/6888>,
+        <http://data.example.com/output/6889> ;
+    ns21:hasReactionEg <http://data.example.com/eg/2849> ;
+    ns21:operationMode "Batch" ;
+    ns21:reportedIn <https://doi.org/10.1016%2Fj.apcatb.2016.06.039> .
+
+<https://doi.org/10.1016%2Fj.apcatb.2016.06.039> a ns2:Article ;
+    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/2849> ;
+    dcterms:creator <http://data.example.com/author/K.%20Teramura-2064>,
+        <http://data.example.com/author/S.Hosokawa-2065>,
+        <http://data.example.com/author/T.%20Tanaka-2066>,
+        <http://data.example.com/author/Z.%20Huang-2063> ;
+    dcterms:date "2016-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/99> ;
+    dcterms:title "Fabrication of well-shaped Sr2KTa5O15 nanorods with a tetragonal tungsten bronze structure by a flux method for artificial photosynthesis" ;
+    ns2:abstract "Sr2KTa5O15 nanorods with a tetragonal tungsten bronze structure were synthesized by a facile one-pot method using potassium chloride (KCl) as flux. Only the flux method obtained pure nanorods under the same calcination temperature and time comparing with that of solid-state reaction (SSR) and polymerized complex (PC) methods. The as-fabricated Sr2KTa5O15 nanorods with a Ag cocatalyst showed relatively high activity and good selectivity toward CO evolution in the photocatalytic conversion of CO2 by H2O. Stoichiometric amounts of O2 as an oxidation product together with those of CO and H2 as reduction products were obtained, indicating that H2O worked as an electron donor in the photocatalytic conversion of CO2. The Sr2KTa5O15 nanorods fabricated at 1173 K for 3 h in the mass ratio of KCl flux to precursors at 1.0 afforded the highest formation rate of CO evolution (65.5 μmol h−1) and good selectivity toward CO evolution (88.7%)." ;
+    ns2:doi "10.1016/j.apcatb.2016.06.039" ;
+    ns2:pageStart "272"^^xsd:positiveInteger ;
+    ns2:volume "199"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/Japan> a schema:Country .
+

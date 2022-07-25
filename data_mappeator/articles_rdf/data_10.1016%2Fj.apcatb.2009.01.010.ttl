@@ -1,0 +1,146 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://purl.org/ontology/bibo/> .
+@prefix ns21: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/D.Placa-119> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Czechia> ;
+    schema:name "D.Placa" .
+
+<http://data.example.com/author/J.Jirkovsky-121> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Czechia> ;
+    schema:name "J.Jirkovsky" .
+
+<http://data.example.com/author/K.Koci-116> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Czechia> ;
+    schema:name "K.Koci" .
+
+<http://data.example.com/author/L.%20Matejova-118> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Czechia> ;
+    schema:name "L. Matejova" .
+
+<http://data.example.com/author/L.%20Obalova-117> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Czechia> ;
+    schema:name "L. Obalova" .
+
+<http://data.example.com/author/O.%20Solcova-122> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Czechia> ;
+    schema:name "O. Solcova" .
+
+<http://data.example.com/author/Z.%20Lacny-120> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Czechia> ;
+    schema:name "Z. Lacny" .
+
+<http://data.example.com/condition/793> a ns21:ReactorCondition ;
+    ns21:conditionType "Slurry" ;
+    ns21:reactorType "Slurry" ;
+    ns11:numericValue "100.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/794> a ns21:CatalystSetUpCondition ;
+    ns21:conditionType "Powder(Suspended)" ;
+    ns21:setUpType "Powder(Suspended)" ;
+    ns11:numericValue "0.1" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/795> a ns21:LampPowerCondition ;
+    ns21:conditionType "Mercury(Hg)" ;
+    ns21:lampType "Mercury(Hg)" ;
+    ns11:numericValue "8.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/796> a ns21:LampIrradianceCondition ;
+    ns21:conditionType "Mercury(Hg)" ;
+    ns21:lampType "Mercury(Hg)" ;
+    ns11:numericValue "17.20" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/797> a ns21:TemperatureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/798> a ns21:PreasureCondition ;
+    ns11:numericValue "1.10" ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/799> a ns21:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/800> a ns21:ReactionTimeCondition ;
+    ns11:numericValue "24.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/801> a ns21:ReactionMediumCondition ;
+    ns21:conditionType "Liquid" ;
+    ns21:reactionMediumType "Liquid" ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/802> a ns21:WavelengthCondition ;
+    ns21:conditionType "UV" ;
+    ns21:lightSourceType "UV" ;
+    ns11:numericValue "192-280(UV-A)" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/803> a ns21:IlluminatedAreaCondition ;
+    ns21:conditionType "UV" ;
+    ns21:lightSourceType "UV" ;
+    ns11:numericValue "0.01" ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/99> a ns2:Journal ;
+    dcterms:title "APPLIED CATALYSIS B-ENVIRONMENTAL" .
+
+<http://data.example.com/materialTransformastionProcess/77> a ns21:MaterialTransformationProcess ;
+    rdfs:label "TiO2" ;
+    ns21:hasBET <http://data.example.com/bet/77> ;
+    ns21:hasCondition <http://data.example.com/condition/793>,
+        <http://data.example.com/condition/794>,
+        <http://data.example.com/condition/795>,
+        <http://data.example.com/condition/796>,
+        <http://data.example.com/condition/797>,
+        <http://data.example.com/condition/798>,
+        <http://data.example.com/condition/799>,
+        <http://data.example.com/condition/800>,
+        <http://data.example.com/condition/801>,
+        <http://data.example.com/condition/802>,
+        <http://data.example.com/condition/803> ;
+    ns21:hasInput <http://data.example.com/input/180>,
+        <http://data.example.com/input/181> ;
+    ns21:hasOutput <http://data.example.com/output/268>,
+        <http://data.example.com/output/269>,
+        <http://data.example.com/output/270>,
+        <http://data.example.com/output/271>,
+        <http://data.example.com/output/272>,
+        <http://data.example.com/output/273>,
+        <http://data.example.com/output/274>,
+        <http://data.example.com/output/275>,
+        <http://data.example.com/output/276>,
+        <http://data.example.com/output/277>,
+        <http://data.example.com/output/278>,
+        <http://data.example.com/output/279> ;
+    ns21:hasReactionEg <http://data.example.com/eg/77> ;
+    ns21:operationMode "Batch" ;
+    ns21:reportedIn <https://doi.org/10.1016%2Fj.apcatb.2009.01.010> .
+
+<https://doi.org/10.1016%2Fj.apcatb.2009.01.010> a ns2:Article ;
+    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/77> ;
+    dcterms:creator <http://data.example.com/author/D.Placa-119>,
+        <http://data.example.com/author/J.Jirkovsky-121>,
+        <http://data.example.com/author/K.Koci-116>,
+        <http://data.example.com/author/L.%20Matejova-118>,
+        <http://data.example.com/author/L.%20Obalova-117>,
+        <http://data.example.com/author/O.%20Solcova-122>,
+        <http://data.example.com/author/Z.%20Lacny-120> ;
+    dcterms:date "2009-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/99> ;
+    dcterms:title "Effect of TiO2 particle size on the photocatalytic reduction of CO2" ;
+    ns2:abstract "Pure TiO2 anatase particles with a crystallite diameters ranging from 4.5 to 29nm were prepared by precipitation and sol&ndash;gel method, characterized by X-ray diffraction (XRD), BET surface area measurement, UV&ndash;vis and scanning electron microscopy (SEM) and tested in CO2 photocatalytic reduction. Methane and methanol were the main reduction products. The optimum particle size corresponding to the highest yields of both products was 14nm. The observed optimum particle size is a result of competing effects of specific surface area, charge&ndash;carrier dynamics and light absorption efficiency." ;
+    ns2:doi "10.1016/j.apcatb.2009.01.010" ;
+    ns2:pageStart "494"^^xsd:positiveInteger ;
+    ns2:volume "89"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/Czechia> a schema:Country .
+

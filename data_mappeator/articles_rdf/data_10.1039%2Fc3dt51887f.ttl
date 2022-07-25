@@ -1,0 +1,130 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://purl.org/ontology/bibo/> .
+@prefix ns21: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/F.%20Xin-541> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "F. Xin" .
+
+<http://data.example.com/author/G.%20Song-539> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "G. Song" .
+
+<http://data.example.com/author/J.%20Chen-537> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "J. Chen" .
+
+<http://data.example.com/author/S.%20Qin-538> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "S. Qin" .
+
+<http://data.example.com/author/T.%20Xiang-540> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "T. Xiang" .
+
+<http://data.example.com/author/X.%20Yin-542> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "X. Yin" .
+
+<http://data.example.com/condition/8944> a ns21:ReactorCondition ;
+    ns21:conditionType "Slurry" ;
+    ns21:reactorType "Slurry" ;
+    ns11:numericValue "0.01" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/8945> a ns21:CatalystSetUpCondition ;
+    ns21:conditionType "Other" ;
+    ns21:setUpType "Other" ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/8946> a ns21:LampPowerCondition ;
+    ns21:conditionType "Mercury(Hg)" ;
+    ns21:lampType "Mercury(Hg)" ;
+    ns11:numericValue "250.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/8947> a ns21:LampIrradianceCondition ;
+    ns21:conditionType "Mercury(Hg)" ;
+    ns21:lampType "Mercury(Hg)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/8948> a ns21:TemperatureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/8949> a ns21:PreasureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/8950> a ns21:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/8951> a ns21:ReactionTimeCondition ;
+    ns11:numericValue "4.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/8952> a ns21:ReactionMediumCondition ;
+    ns21:conditionType "Liquid" ;
+    ns21:reactionMediumType "Liquid" ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/8953> a ns21:WavelengthCondition ;
+    ns21:conditionType "UV" ;
+    ns21:lightSourceType "UV" ;
+    ns11:numericValue "315-400(UV-C)" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/8954> a ns21:IlluminatedAreaCondition ;
+    ns21:conditionType "UV" ;
+    ns21:lightSourceType "UV" ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/309> a ns2:Journal ;
+    dcterms:title "DALTON TRANSACTIONS" .
+
+<http://data.example.com/materialTransformastionProcess/1636> a ns21:MaterialTransformationProcess ;
+    rdfs:label "Bi2S3" ;
+    ns21:hasBET <http://data.example.com/bet/1636> ;
+    ns21:hasCondition <http://data.example.com/condition/8944>,
+        <http://data.example.com/condition/8945>,
+        <http://data.example.com/condition/8946>,
+        <http://data.example.com/condition/8947>,
+        <http://data.example.com/condition/8948>,
+        <http://data.example.com/condition/8949>,
+        <http://data.example.com/condition/8950>,
+        <http://data.example.com/condition/8951>,
+        <http://data.example.com/condition/8952>,
+        <http://data.example.com/condition/8953>,
+        <http://data.example.com/condition/8954> ;
+    ns21:hasInput <http://data.example.com/input/2194>,
+        <http://data.example.com/input/2195> ;
+    ns21:hasOutput <http://data.example.com/output/2573>,
+        <http://data.example.com/output/2574>,
+        <http://data.example.com/output/2575> ;
+    ns21:hasReactionEg <http://data.example.com/eg/1636> ;
+    ns21:operationMode "Batch" ;
+    ns21:reportedIn <https://doi.org/10.1039%2Fc3dt51887f> .
+
+<https://doi.org/10.1039%2Fc3dt51887f> a ns2:Article ;
+    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/1636> ;
+    dcterms:creator <http://data.example.com/author/F.%20Xin-541>,
+        <http://data.example.com/author/G.%20Song-539>,
+        <http://data.example.com/author/J.%20Chen-537>,
+        <http://data.example.com/author/S.%20Qin-538>,
+        <http://data.example.com/author/T.%20Xiang-540>,
+        <http://data.example.com/author/X.%20Yin-542> ;
+    dcterms:date "2013-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/309> ;
+    dcterms:title "Shape-controlled solvothermal synthesis of Bi2S3 for photocatalytic reduction of CO2 to methyl formate in methanol" ;
+    ns2:abstract "Different shape of bismuth sulfide (Bi2S3), including nanoparticles, and urchin-like, microspheres hierarchical nanostructures, have been successfully fabricated using a facile and template-free solvothermal method. Their crystal and porous structures, morphologies, as well as the optical absorption were characterized by powder X-ray diffraction (XRD), scanning electron microscopy (SEM), UV-vis diffuse reflection spectroscopy (DRS) and nitrogen sorption. The electron microscopy observations showed that both the sulfur sources and solvents greatly affected the morphologies of the as-prepared Bi2S3. Compared with Bi2S 3 nanoparticles, the hierarchical architectures exhibited higher activity for photocatalytic reduction of CO2 to methyl formate (MF) in methanol, and Bi2S3 microspheres showed the highest activity. This was attributed to their special hierarchical structure, good permeability and high light-harvesting capacity." ;
+    ns2:doi "10.1039/c3dt51887f" ;
+    ns2:issue "42" ;
+    ns2:pageStart "15133"^^xsd:positiveInteger ;
+    ns2:volume "42"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/China> a schema:Country .
+

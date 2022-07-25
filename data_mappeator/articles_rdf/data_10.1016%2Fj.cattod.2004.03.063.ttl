@@ -1,0 +1,111 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://purl.org/ontology/bibo/> .
+@prefix ns21: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/I-H.%20Tseng-325> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Taiwan%2C%20Province%20of%20China> ;
+    schema:name "I-H. Tseng" .
+
+<http://data.example.com/author/J.C.S.%20Wu-326> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Taiwan%2C%20Province%20of%20China> ;
+    schema:name "J.C.S. Wu" .
+
+<http://data.example.com/condition/2982> a ns21:ReactorCondition ;
+    ns21:conditionType "Slurry" ;
+    ns21:reactorType "Slurry" ;
+    ns11:numericValue "0.30" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/2983> a ns21:CatalystSetUpCondition ;
+    ns21:conditionType "Powder(Suspended)" ;
+    ns21:setUpType "Powder(Suspended)" ;
+    ns11:numericValue "0.3" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/2984> a ns21:LampPowerCondition ;
+    ns21:conditionType "Mercury(Hg)" ;
+    ns21:lampType "Mercury(Hg)" ;
+    ns11:numericValue "8.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/2985> a ns21:LampIrradianceCondition ;
+    ns21:conditionType "Mercury(Hg)" ;
+    ns21:lampType "Mercury(Hg)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/2986> a ns21:TemperatureCondition ;
+    ns11:numericValue "50.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/2987> a ns21:PreasureCondition ;
+    ns11:numericValue "1.17" ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/2988> a ns21:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/2989> a ns21:ReactionTimeCondition ;
+    ns11:numericValue "28.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/2990> a ns21:ReactionMediumCondition ;
+    ns21:conditionType "Liquid" ;
+    ns21:reactionMediumType "Liquid" ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/2991> a ns21:WavelengthCondition ;
+    ns21:conditionType "UV" ;
+    ns21:lightSourceType "UV" ;
+    ns11:numericValue "192-280(UV-A)" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/2992> a ns21:IlluminatedAreaCondition ;
+    ns21:conditionType "UV" ;
+    ns21:lightSourceType "UV" ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/181> a ns2:Journal ;
+    dcterms:title "CATALYSIS TODAY" .
+
+<http://data.example.com/materialTransformastionProcess/281> a ns21:MaterialTransformationProcess ;
+    rdfs:label "Cu/TiO2" ;
+    ns21:hasBET <http://data.example.com/bet/281> ;
+    ns21:hasCondition <http://data.example.com/condition/2982>,
+        <http://data.example.com/condition/2983>,
+        <http://data.example.com/condition/2984>,
+        <http://data.example.com/condition/2985>,
+        <http://data.example.com/condition/2986>,
+        <http://data.example.com/condition/2987>,
+        <http://data.example.com/condition/2988>,
+        <http://data.example.com/condition/2989>,
+        <http://data.example.com/condition/2990>,
+        <http://data.example.com/condition/2991>,
+        <http://data.example.com/condition/2992> ;
+    ns21:hasInput <http://data.example.com/input/737>,
+        <http://data.example.com/input/738>,
+        <http://data.example.com/input/739> ;
+    ns21:hasOutput <http://data.example.com/output/925>,
+        <http://data.example.com/output/926> ;
+    ns21:hasReactionEg <http://data.example.com/eg/281> ;
+    ns21:operationMode "Batch" ;
+    ns21:reportedIn <https://doi.org/10.1016%2Fj.cattod.2004.03.063> .
+
+<https://doi.org/10.1016%2Fj.cattod.2004.03.063> a ns2:Article ;
+    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/281> ;
+    dcterms:creator <http://data.example.com/author/I-H.%20Tseng-325>,
+        <http://data.example.com/author/J.C.S.%20Wu-326> ;
+    dcterms:date "2004-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/181> ;
+    dcterms:title "Chemical states of metal-loaded titania in the photoreduction of CO2" ;
+    ns2:abstract "Various sol&ndash;gel procedures and post-treatments were applied to modify the distribution of Cu on the surface of Cu/TiO 2 catalysts in order to increase the production of methanol in the photoreduction of CO 2 . The chemical states of Cu in 2wt.% Cu/TiO 2 were characterized in detail as a follow-up the high Cu dispersion found in previous studies. XRD, XPS and XAS analysis reveal that the active Cu state for the photoreaction of CO 2 is suggested to be highly dispersed Cu(I). The photoactivity decreases when Cu(I) changes to Cu(0) or aggregates after reduction with H 2 . An optimal distribution of Cu exists between the surface and bulk of TiO 2 particles. The photocatalytic activity attains maximum when near 25% of the total Cu loading is located on the outermost surface of a TiO 2 particle. Cu/TiO 2 is a more active catalyst than Ag/TiO 2 because Cu particles act as electron trapping sites while still maintain the mobility of photoelectrons." ;
+    ns2:doi "10.1016/j.cattod.2004.03.063" ;
+    ns2:pageStart "113"^^xsd:positiveInteger ;
+    ns2:volume "97"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/Taiwan%2C%20Province%20of%20China> a schema:Country .
+

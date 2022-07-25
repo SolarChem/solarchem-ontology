@@ -1,0 +1,125 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://purl.org/ontology/bibo/> .
+@prefix ns21: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/H.%20Kurimoto-550> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "H. Kurimoto" .
+
+<http://data.example.com/author/K.%20Ohta-552> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "K. Ohta" .
+
+<http://data.example.com/author/S.%20Kaneco-549> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "S. Kaneco" .
+
+<http://data.example.com/author/T.%20Mizuno-553> a schema:Person ;
+    schema:name "T. Mizuno" .
+
+<http://data.example.com/author/Y.%20Shimizu-551> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "Y. Shimizu" .
+
+<http://data.example.com/condition/210> a ns21:ReactorCondition ;
+    ns21:conditionType "Fixed-bed" ;
+    ns21:reactorType "Fixed-bed" ;
+    ns11:numericValue "0.06" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/211> a ns21:CatalystSetUpCondition ;
+    ns21:conditionType "Powder(Supported)" ;
+    ns21:setUpType "Powder(Supported)" ;
+    ns11:numericValue "0.05" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/212> a ns21:LampPowerCondition ;
+    ns21:conditionType "Xenon(Xe)" ;
+    ns21:lampType "Xenon(Xe)" ;
+    ns11:numericValue "990.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/213> a ns21:LampIrradianceCondition ;
+    ns21:conditionType "Xenon(Xe)" ;
+    ns21:lampType "Xenon(Xe)" ;
+    ns11:numericValue "960.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/214> a ns21:TemperatureCondition ;
+    ns11:numericValue "35.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/215> a ns21:PreasureCondition ;
+    ns11:numericValue "90.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/216> a ns21:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/217> a ns21:ReactionTimeCondition ;
+    ns11:numericValue "5.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/218> a ns21:ReactionMediumCondition ;
+    ns21:conditionType "Gas" ;
+    ns21:reactionMediumType "Gas" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/219> a ns21:WavelengthCondition ;
+    ns21:conditionType "UV" ;
+    ns21:lightSourceType "UV" ;
+    ns11:numericValue "315-400(UV-C)" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/220> a ns21:IlluminatedAreaCondition ;
+    ns21:conditionType "UV" ;
+    ns21:lightSourceType "UV" ;
+    ns11:numericValue "0.40" ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/326> a ns2:Journal ;
+    dcterms:title "ENERGY" .
+
+<http://data.example.com/materialTransformastionProcess/20> a ns21:MaterialTransformationProcess ;
+    rdfs:label "TiO2" ;
+    ns21:hasBET <http://data.example.com/bet/20> ;
+    ns21:hasCondition <http://data.example.com/condition/210>,
+        <http://data.example.com/condition/211>,
+        <http://data.example.com/condition/212>,
+        <http://data.example.com/condition/213>,
+        <http://data.example.com/condition/214>,
+        <http://data.example.com/condition/215>,
+        <http://data.example.com/condition/216>,
+        <http://data.example.com/condition/217>,
+        <http://data.example.com/condition/218>,
+        <http://data.example.com/condition/219>,
+        <http://data.example.com/condition/220> ;
+    ns21:hasInput <http://data.example.com/input/42> ;
+    ns21:hasOutput <http://data.example.com/output/90>,
+        <http://data.example.com/output/91>,
+        <http://data.example.com/output/92> ;
+    ns21:hasReactionEg <http://data.example.com/eg/20> ;
+    ns21:operationMode "Continuous" ;
+    ns21:reportedIn <https://doi.org/10.1016%2FS0360-5442%2898%2900070-X> .
+
+<https://doi.org/10.1016%2FS0360-5442%2898%2900070-X> a ns2:Article ;
+    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/20> ;
+    dcterms:creator <http://data.example.com/author/H.%20Kurimoto-550>,
+        <http://data.example.com/author/K.%20Ohta-552>,
+        <http://data.example.com/author/S.%20Kaneco-549>,
+        <http://data.example.com/author/T.%20Mizuno-553>,
+        <http://data.example.com/author/Y.%20Shimizu-551> ;
+    dcterms:date "1999-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/326> ;
+    dcterms:title "Photocatalytic reduction of CO2 using TiO2 powders in supercritical fluid CO2" ;
+    ns2:abstract "At present, carbon dioxide is considered the largest contributor among greenhouse gases. This review covers the current state of problem of carbon dioxide emissions from industrial and combustion processes, the principle of photocatalysis, existing literature related to photocatalytic CO2 reduction over TiO2 based catalysts and the effects of important parameters on the process performance including light wavelength and intensity, type of reductant, metal-modified surface, temperature and pressure." ;
+    ns2:doi "10.1016/S0360-5442(98)00070-X" ;
+    ns2:pageStart "21"^^xsd:positiveInteger ;
+    ns2:volume "24"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/Japan> a schema:Country .
+

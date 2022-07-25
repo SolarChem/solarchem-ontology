@@ -1,0 +1,142 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://purl.org/ontology/bibo/> .
+@prefix ns12: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/H.%20Chen-3022> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "H. Chen" .
+
+<http://data.example.com/author/J.%20Jiang-3024> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "J. Jiang" .
+
+<http://data.example.com/author/L.%20Sun-3025> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Sweden> ;
+    schema:name "L. Sun" .
+
+<http://data.example.com/author/L.%20Ye-3020> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "L. Ye" .
+
+<http://data.example.com/author/S.%20Cao-3021> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "S. Cao" .
+
+<http://data.example.com/author/Y.%20Gao-3019> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Y. Gao" .
+
+<http://data.example.com/author/Y.%20Yao-3023> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Y. Yao" .
+
+<http://data.example.com/condition/40701> a ns2:ReactorCondition ;
+    ns2:conditionType "Slurry" ;
+    ns2:reactorType "Slurry" ;
+    ns12:numericValue "0.04" ;
+    ns12:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/40702> a ns2:CatalystSetUpCondition ;
+    ns2:conditionType "Powder(Suspended)" ;
+    ns2:setUpType "Powder(Suspended)" ;
+    ns12:numericValue "0.0001" ;
+    ns12:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/40703> a ns2:LampPowerCondition ;
+    ns2:conditionType "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns12:numericValue "300.00" ;
+    ns12:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/40704> a ns2:LampIrradianceCondition ;
+    ns2:conditionType "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns12:numericValue "3000.00" ;
+    ns12:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/40705> a ns2:TemperatureCondition ;
+    ns12:numericValue "25.00" ;
+    ns12:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/40706> a ns2:PreasureCondition ;
+    ns12:numericValue "1.00" ;
+    ns12:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/40707> a ns2:SpaceVelocityCondition ;
+    ns12:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/40708> a ns2:ReactionTimeCondition ;
+    ns12:numericValue "1.50" ;
+    ns12:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/40709> a ns2:ReactionMediumCondition ;
+    ns2:conditionType "Liquid" ;
+    ns2:reactionMediumType "Liquid" ;
+    ns12:numericValue "7" ;
+    ns12:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/40710> a ns2:WavelengthCondition ;
+    ns2:conditionType "Visible" ;
+    ns2:lightSourceType "Visible" ;
+    ns12:numericValue "400-780" ;
+    ns12:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/40711> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionType "Visible" ;
+    ns2:lightSourceType "Visible" ;
+    ns12:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/12> a ns1:Journal ;
+    dcterms:title "ACS SUSTAINABLE CHEMISTRY & ENGINEERING" .
+
+<http://data.example.com/materialTransformastionProcess/5000> a ns2:MaterialTransformationProcess ;
+    rdfs:label "Ru(bpy)3(PF6)2/CoSn(OH)6" ;
+    ns2:hasBET <http://data.example.com/bet/5000> ;
+    ns2:hasCondition <http://data.example.com/condition/40701>,
+        <http://data.example.com/condition/40702>,
+        <http://data.example.com/condition/40703>,
+        <http://data.example.com/condition/40704>,
+        <http://data.example.com/condition/40705>,
+        <http://data.example.com/condition/40706>,
+        <http://data.example.com/condition/40707>,
+        <http://data.example.com/condition/40708>,
+        <http://data.example.com/condition/40709>,
+        <http://data.example.com/condition/40710>,
+        <http://data.example.com/condition/40711> ;
+    ns2:hasInput <http://data.example.com/input/10089>,
+        <http://data.example.com/input/10090>,
+        <http://data.example.com/input/10091> ;
+    ns2:hasOutput <http://data.example.com/output/11281>,
+        <http://data.example.com/output/11282>,
+        <http://data.example.com/output/11283>,
+        <http://data.example.com/output/11284> ;
+    ns2:hasReactionEg <http://data.example.com/eg/5000> ;
+    ns2:operationMode "Continuous" ;
+    ns2:reportedIn <https://doi.org/10.1021%2Facssuschemeng.7b03119> .
+
+<https://doi.org/10.1021%2Facssuschemeng.7b03119> a ns1:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/5000> ;
+    dcterms:creator <http://data.example.com/author/H.%20Chen-3022>,
+        <http://data.example.com/author/J.%20Jiang-3024>,
+        <http://data.example.com/author/L.%20Sun-3025>,
+        <http://data.example.com/author/L.%20Ye-3020>,
+        <http://data.example.com/author/S.%20Cao-3021>,
+        <http://data.example.com/author/Y.%20Gao-3019>,
+        <http://data.example.com/author/Y.%20Yao-3023> ;
+    dcterms:date "2018-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/12> ;
+    dcterms:title "Perovskite Hydroxide CoSn(OH)6 Nanocubes for Efficient Photoreduction of CO2 to CO" ;
+    ns1:abstract "Perovskite hydroxide CoSn(OH)6 nanoparticles were synthesized and used for the first time in the photocatalytic reduction of CO2 to CO. Under mild reaction conditions and using [Ru(bpy)3](PF6)2 as the photosensitizer, a high photocatalytic efficiency of 19.3 μmol for CO evolution with a high selectivity of 86.46% was obtained. The photocatalytic activity and CO selectivity were further improved by adding weak Brönsted acids, as proton sources, to the system." ;
+    ns1:doi "10.1021/acssuschemeng.7b03119" ;
+    ns1:issue "1" ;
+    ns1:pageStart "781"^^xsd:positiveInteger ;
+    ns1:volume "6"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/Sweden> a schema:Country .
+
+<https://en.wikipedia.org/wiki/China> a schema:Country .
+

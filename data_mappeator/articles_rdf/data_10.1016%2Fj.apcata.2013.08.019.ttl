@@ -1,0 +1,130 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://purl.org/ontology/bibo/> .
+@prefix ns12: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/C.%20Zhao-105> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "C. Zhao" .
+
+<http://data.example.com/author/D.%20T.%20Pitts-103> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "D. T. Pitts" .
+
+<http://data.example.com/author/H.%20Zhao-104> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "H. Zhao" .
+
+<http://data.example.com/author/L.%20Liu-102> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "L. Liu" .
+
+<http://data.example.com/author/Y.%20Li-106> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "Y. Li" .
+
+<http://data.example.com/condition/9087> a ns2:ReactorCondition ;
+    ns2:conditionType "Fixed-bed" ;
+    ns2:reactorType "Fixed-bed" ;
+    ns12:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/9088> a ns2:CatalystSetUpCondition ;
+    ns2:conditionType "Other" ;
+    ns2:setUpType "Other" ;
+    ns12:numericValue "0.03" ;
+    ns12:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/9089> a ns2:LampPowerCondition ;
+    ns2:conditionType "Solar" ;
+    ns2:lampType "Solar" ;
+    ns12:numericValue "150.00" ;
+    ns12:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/9090> a ns2:LampIrradianceCondition ;
+    ns2:conditionType "Solar" ;
+    ns2:lampType "Solar" ;
+    ns12:numericValue "90.00" ;
+    ns12:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/9091> a ns2:TemperatureCondition ;
+    ns12:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/9092> a ns2:PreasureCondition ;
+    ns12:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/9093> a ns2:SpaceVelocityCondition ;
+    ns12:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/9094> a ns2:ReactionTimeCondition ;
+    ns12:numericValue "6.00" ;
+    ns12:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/9095> a ns2:ReactionMediumCondition ;
+    ns2:conditionType "Gas" ;
+    ns2:reactionMediumType "Gas" ;
+    ns12:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/9096> a ns2:WavelengthCondition ;
+    ns2:conditionType "Solar" ;
+    ns2:lightSourceType "Solar" ;
+    ns12:numericValue "0" ;
+    ns12:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/9097> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionType "Solar" ;
+    ns2:lightSourceType "Solar" ;
+    ns12:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/98> a ns1:Journal ;
+    dcterms:title "APPLIED CATALYSIS A-GENERAL" .
+
+<http://data.example.com/materialTransformastionProcess/1649> a ns2:MaterialTransformationProcess ;
+    rdfs:label "TiO2" ;
+    ns2:hasBET <http://data.example.com/bet/1649> ;
+    ns2:hasCondition <http://data.example.com/condition/9087>,
+        <http://data.example.com/condition/9088>,
+        <http://data.example.com/condition/9089>,
+        <http://data.example.com/condition/9090>,
+        <http://data.example.com/condition/9091>,
+        <http://data.example.com/condition/9092>,
+        <http://data.example.com/condition/9093>,
+        <http://data.example.com/condition/9094>,
+        <http://data.example.com/condition/9095>,
+        <http://data.example.com/condition/9096>,
+        <http://data.example.com/condition/9097> ;
+    ns2:hasInput <http://data.example.com/input/2227>,
+        <http://data.example.com/input/2228>,
+        <http://data.example.com/input/2229> ;
+    ns2:hasOutput <http://data.example.com/output/2627>,
+        <http://data.example.com/output/2628>,
+        <http://data.example.com/output/2629>,
+        <http://data.example.com/output/2630>,
+        <http://data.example.com/output/2631>,
+        <http://data.example.com/output/2632>,
+        <http://data.example.com/output/2633>,
+        <http://data.example.com/output/2634>,
+        <http://data.example.com/output/2635> ;
+    ns2:hasReactionEg <http://data.example.com/eg/1649> ;
+    ns2:operationMode "Batch" ;
+    ns2:reportedIn <https://doi.org/10.1016%2Fj.apcata.2013.08.019> .
+
+<https://doi.org/10.1016%2Fj.apcata.2013.08.019> a ns1:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/1649> ;
+    dcterms:creator <http://data.example.com/author/C.%20Zhao-105>,
+        <http://data.example.com/author/D.%20T.%20Pitts-103>,
+        <http://data.example.com/author/H.%20Zhao-104>,
+        <http://data.example.com/author/L.%20Liu-102>,
+        <http://data.example.com/author/Y.%20Li-106> ;
+    dcterms:date "2013-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/98> ;
+    dcterms:title "Silver-incorporated bicrystalline (anatasebrookite) TiO2 microspheres for CO2 photoreduction with water in the presence of methanol" ;
+    ns1:abstract "Ag nanoparticles deposited on porous TiO2 microspheres with controllable Ag valence and TiO2 crystal phase were prepared through a sequential hydrothermal, ultrasonic spray pyrolysis and in situ photoreduction process. The crystal phase of TiO2, i.e., pure anatase (A), an anatase-rich anatase\\/brookite mixture (AB), or a brookite-rich anatase\\/brookite mixture (BA), was controlled by varying the hydrothermal reaction environment. The as-prepared Ag\\/TiO2 was dominated by the Ag(I) species, while Ag(0) was the major Ag species upon in situ photoreduction of the as-prepared Ag(I)\\/TiO2. The Ag\\/TiO2 composites were applied as photocatalysts for CO2 reduction with H2O, using methanol as a hole scavenger under UV-vis irradiation. Simultaneous production of hydrogen (H-2) and carbon-containing fuels (CO, CH4) was observed. The CH4 and H-2 production rates by Ag(0)\\/TiO2 exhibited a two-fold enhancement compared with Ag(I)\\/TiO2. The Ag(0)\\/TiO2 catalysts using TiO2(AB) as the support demonstrated 50% higher activity than using TiO2(A) as the support and more than three times higher activity than using TiO2(BA) and TiO2(P25) as the supports. In addition, the novel in situ photoreduction method of producing Ag(0) nanoparticles was superior to conventional ex situ photo-deposition and wet-impregnation methods, as evidenced by one order of magnitude higher activity of the catalysts prepared by the novel method. The superb activity of the Ag(0)\\/Ti(AB) catalysts was ascribed to their large surface area, small and well-dispersed Ag(0) nanoparticles, and an enhanced interfacial charge transfer between the anatase and brookite nanocrystals." ;
+    ns1:doi "10.1016/j.apcata.2013.08.019" ;
+    ns1:pageStart "474"^^xsd:positiveInteger ;
+    ns1:volume "467"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/United%20States> a schema:Country .
+

@@ -1,0 +1,123 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://purl.org/ontology/bibo/> .
+@prefix ns21: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/A.%20Knížek-1795> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Czechia> ;
+    schema:name "A. Knížek" .
+
+<http://data.example.com/author/L.%20Kavan-1797> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Czechia> ;
+    schema:name "L. Kavan" .
+
+<http://data.example.com/author/M.%20Ferus-1794> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Czechia> ;
+    schema:name "M. Ferus" .
+
+<http://data.example.com/author/M.%20Zukalová-1798> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Czechia> ;
+    schema:name "M. Zukalová" .
+
+<http://data.example.com/author/P.%20Kubelík-1796> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Czechia> ;
+    schema:name "P. Kubelík" .
+
+<http://data.example.com/author/S.%20Civiš-1793> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Czechia> ;
+    schema:name "S. Civiš" .
+
+<http://data.example.com/condition/18987> a ns21:ReactorCondition ;
+    ns21:conditionType "Fixed-bed" ;
+    ns21:reactorType "Fixed-bed" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/18988> a ns21:CatalystSetUpCondition ;
+    ns21:conditionType "Powder(Supported)" ;
+    ns21:setUpType "Powder(Supported)" ;
+    ns11:numericValue "1.000" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/18989> a ns21:LampPowerCondition ;
+    ns21:conditionType "Tungsten(W)" ;
+    ns21:lampType "Tungsten(W)" ;
+    ns11:numericValue "160.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/18990> a ns21:LampIrradianceCondition ;
+    ns21:conditionType "Tungsten(W)" ;
+    ns21:lampType "Tungsten(W)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/18991> a ns21:TemperatureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/18992> a ns21:PreasureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/18993> a ns21:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/18994> a ns21:ReactionTimeCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/18995> a ns21:ReactionMediumCondition ;
+    ns21:conditionType "Gas" ;
+    ns21:reactionMediumType "Gas" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/18996> a ns21:WavelengthCondition ;
+    ns21:conditionType "UV" ;
+    ns21:lightSourceType "UV" ;
+    ns11:numericValue "315-400(UV-C)" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/18997> a ns21:IlluminatedAreaCondition ;
+    ns21:conditionType "UV" ;
+    ns21:lightSourceType "UV" ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/821> a ns2:Journal ;
+    dcterms:title "OPTICAL MATERIALS" .
+
+<http://data.example.com/materialTransformastionProcess/2642> a ns21:MaterialTransformationProcess ;
+    rdfs:label "TiO2" ;
+    ns21:hasBET <http://data.example.com/bet/2642> ;
+    ns21:hasCondition <http://data.example.com/condition/18987>,
+        <http://data.example.com/condition/18988>,
+        <http://data.example.com/condition/18989>,
+        <http://data.example.com/condition/18990>,
+        <http://data.example.com/condition/18991>,
+        <http://data.example.com/condition/18992>,
+        <http://data.example.com/condition/18993>,
+        <http://data.example.com/condition/18994>,
+        <http://data.example.com/condition/18995>,
+        <http://data.example.com/condition/18996>,
+        <http://data.example.com/condition/18997> ;
+    ns21:hasInput <http://data.example.com/input/4665>,
+        <http://data.example.com/input/4666> ;
+    ns21:hasReactionEg <http://data.example.com/eg/2642> ;
+    ns21:operationMode "Continuous" ;
+    ns21:reportedIn <https://doi.org/10.1016%2Fj.optmat.2015.11.015> .
+
+<https://doi.org/10.1016%2Fj.optmat.2015.11.015> a ns2:Article ;
+    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/2642> ;
+    dcterms:creator <http://data.example.com/author/A.%20Knížek-1795>,
+        <http://data.example.com/author/L.%20Kavan-1797>,
+        <http://data.example.com/author/M.%20Ferus-1794>,
+        <http://data.example.com/author/M.%20Zukalová-1798>,
+        <http://data.example.com/author/P.%20Kubelík-1796>,
+        <http://data.example.com/author/S.%20Civiš-1793> ;
+    dcterms:date "2016-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/821> ;
+    dcterms:title "Photocatalytic transformation of CO2 to CH4 and CO on acidic surface of TiO2 anatase" ;
+    ns2:abstract "Recently, many studies have demonstrated that carbon dioxide can be converted to methane on TiO2 surface by a photocatalytic process. We show that such a photo-reduction can be significantly affected by the presence of an acidic proton in powder samples of titania. Using in situ absorption gas-phase rovibrational spectroscopic detection of CH4, CO and CO2, we demonstrate that proton enhancement positively affects transformation of intermediate derivatives to methane during the photo-irradiation process via several reactions in which the electron transfer inside titania is coupled to oxygen transfer to the Ti3+ centers of TiO2 structure. The yield of CH4 or CO depends on the surface conditioning of titania: the formation of CH4 is boosted by a presence of adsorbed HCl, while the formation of CO is boosted by adsorbed H2SO4." ;
+    ns2:doi "10.1016/j.optmat.2015.11.015" ;
+    ns2:pageStart "80"^^xsd:positiveInteger ;
+    ns2:volume "56"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/Czechia> a schema:Country .
+

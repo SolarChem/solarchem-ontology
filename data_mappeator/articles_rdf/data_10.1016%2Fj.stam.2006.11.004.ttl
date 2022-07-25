@@ -1,0 +1,119 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://purl.org/ontology/bibo/> .
+@prefix ns21: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/E.%20Hu-929> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Australia> ;
+    schema:name "E. Hu" .
+
+<http://data.example.com/author/L.%20Zou-928> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Australia> ;
+    schema:name "L. Zou" .
+
+<http://data.example.com/author/S.S.%20Tan-927> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Singapore> ;
+    schema:name "S.S. Tan" .
+
+<http://data.example.com/condition/3125> a ns21:ReactorCondition ;
+    ns21:conditionType "Fixed-bed" ;
+    ns21:reactorType "Fixed-bed" ;
+    ns11:numericValue "1.10" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/3126> a ns21:CatalystSetUpCondition ;
+    ns21:conditionType "Powder(Supported)" ;
+    ns21:setUpType "Powder(Supported)" ;
+    ns11:numericValue "100" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/3127> a ns21:LampPowerCondition ;
+    ns21:conditionType "Fluorescent" ;
+    ns21:lampType "Fluorescent" ;
+    ns11:numericValue "4.80" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/3128> a ns21:LampIrradianceCondition ;
+    ns21:conditionType "Fluorescent" ;
+    ns21:lampType "Fluorescent" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/3129> a ns21:TemperatureCondition ;
+    ns11:numericValue "38.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/3130> a ns21:PreasureCondition ;
+    ns11:numericValue "1.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/3131> a ns21:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/3132> a ns21:ReactionTimeCondition ;
+    ns11:numericValue "24.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/3133> a ns21:ReactionMediumCondition ;
+    ns21:conditionType "Gas" ;
+    ns21:reactionMediumType "Gas" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/3134> a ns21:WavelengthCondition ;
+    ns21:conditionType "UV" ;
+    ns21:lightSourceType "UV" ;
+    ns11:numericValue "192-280(UV-A)" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/3135> a ns21:IlluminatedAreaCondition ;
+    ns21:conditionType "UV" ;
+    ns21:lightSourceType "UV" ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/1001> a ns2:Journal ;
+    dcterms:title "SCIENCE AND TECHNOLOGY OF ADVANCED MATERIALS" .
+
+<http://data.example.com/materialTransformastionProcess/295> a ns21:MaterialTransformationProcess ;
+    rdfs:label "TiO2" ;
+    ns21:hasBET <http://data.example.com/bet/295> ;
+    ns21:hasCondition <http://data.example.com/condition/3125>,
+        <http://data.example.com/condition/3126>,
+        <http://data.example.com/condition/3127>,
+        <http://data.example.com/condition/3128>,
+        <http://data.example.com/condition/3129>,
+        <http://data.example.com/condition/3130>,
+        <http://data.example.com/condition/3131>,
+        <http://data.example.com/condition/3132>,
+        <http://data.example.com/condition/3133>,
+        <http://data.example.com/condition/3134>,
+        <http://data.example.com/condition/3135> ;
+    ns21:hasInput <http://data.example.com/input/770> ;
+    ns21:hasOutput <http://data.example.com/output/955>,
+        <http://data.example.com/output/956>,
+        <http://data.example.com/output/957>,
+        <http://data.example.com/output/958>,
+        <http://data.example.com/output/959>,
+        <http://data.example.com/output/960> ;
+    ns21:hasReactionEg <http://data.example.com/eg/295> ;
+    ns21:operationMode "Batch" ;
+    ns21:reportedIn <https://doi.org/10.1016%2Fj.stam.2006.11.004> .
+
+<https://doi.org/10.1016%2Fj.stam.2006.11.004> a ns2:Article ;
+    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/295> ;
+    dcterms:creator <http://data.example.com/author/E.%20Hu-929>,
+        <http://data.example.com/author/L.%20Zou-928>,
+        <http://data.example.com/author/S.S.%20Tan-927> ;
+    dcterms:date "2007-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/1001> ;
+    dcterms:title "Photosynthesis of hydrogen and methane as key components for clean energy system" ;
+    ns2:abstract "While researchers are trying to solve the world&rsquo;s energy woes, hydrogen is becoming the key component in sustainable energy systems. Hydrogen could be produced through photocatalytic water-splitting technology. It has also been found that hydrogen and methane could be produced through photocatalytic reduction of carbon dioxide with water. In this exploratory study, instead of coating catalysts on a substrate, pellet form of catalyst, which has better adsorption capacity, was used in the photo-reduction of carbon dioxide with water. In the experiment, some water was first absorbed into titanium dioxide pellets. Highly purified carbon dioxide gas was then discharged into a reactor containing these wet pellets, which were then illuminated continuously using UVC lamps. Gaseous samples accumulated in the reactor were extracted at different intervals to analyze the product yields. The results confirmed that methane and hydrogen were photosynthesized using pellet form of TiO2 catalysts. Hydrogen was formed at a rate as high as 0.16 micromoles per hour&mu;mol h&ndash;1). The maximum formation rate of CH4 was achieved at 0.25 &mu;mol h&ndash;1 after 24 h of irradiation. CO was also detected." ;
+    ns2:doi "10.1016/j.stam.2006.11.004" ;
+    ns2:pageStart "89"^^xsd:positiveInteger ;
+    ns2:volume "8"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/Singapore> a schema:Country .
+
+<https://en.wikipedia.org/wiki/Australia> a schema:Country .
+

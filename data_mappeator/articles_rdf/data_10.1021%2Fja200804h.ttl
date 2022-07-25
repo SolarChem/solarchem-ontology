@@ -1,0 +1,146 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://purl.org/ontology/bibo/> .
+@prefix ns21: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/C.E.%20Bunker-828> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "C.E. Bunker" .
+
+<http://data.example.com/author/E.A.%20Guliants-832> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "E.A. Guliants" .
+
+<http://data.example.com/author/J.%20Xu-829> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "J. Xu" .
+
+<http://data.example.com/author/K.A.S.%20Fernando-830> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "K.A.S. Fernando" .
+
+<http://data.example.com/author/K.N.%20Tackett-833> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "K.N. Tackett" .
+
+<http://data.example.com/author/L.%20Cao-825> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "L. Cao" .
+
+<http://data.example.com/author/P.%20Anilkumar-827> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "P. Anilkumar" .
+
+<http://data.example.com/author/P.%20Wang-831> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "P. Wang" .
+
+<http://data.example.com/author/S.%20Sahu-826> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "S. Sahu" .
+
+<http://data.example.com/author/Y-P.%20Sun-834> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "Y-P. Sun" .
+
+<http://data.example.com/condition/584> a ns21:ReactorCondition ;
+    ns21:conditionType "Slurry" ;
+    ns21:reactorType "Slurry" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/585> a ns21:CatalystSetUpCondition ;
+    ns21:conditionType "Powder(Suspended)" ;
+    ns21:setUpType "Powder(Suspended)" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/586> a ns21:LampPowerCondition ;
+    ns21:conditionType "Not spedified" ;
+    ns21:lampType "Not spedified" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/587> a ns21:LampIrradianceCondition ;
+    ns21:conditionType "Not spedified" ;
+    ns21:lampType "Not spedified" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/588> a ns21:TemperatureCondition ;
+    ns11:numericValue "25.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/589> a ns21:PreasureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/590> a ns21:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/591> a ns21:ReactionTimeCondition ;
+    ns11:numericValue "5.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/592> a ns21:ReactionMediumCondition ;
+    ns21:conditionType "Liquid" ;
+    ns21:reactionMediumType "Liquid" ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/593> a ns21:WavelengthCondition ;
+    ns21:conditionType "Visible" ;
+    ns21:lightSourceType "Visible" ;
+    ns11:numericValue "400-780" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/594> a ns21:IlluminatedAreaCondition ;
+    ns21:conditionType "Visible" ;
+    ns21:lightSourceType "Visible" ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/657> a ns2:Journal ;
+    dcterms:title "JOURNAL OF THE AMERICAN CHEMICAL SOCIETY" .
+
+<http://data.example.com/materialTransformastionProcess/55> a ns21:MaterialTransformationProcess ;
+    rdfs:label "Au-Pt/CNPs" ;
+    ns21:hasBET <http://data.example.com/bet/55> ;
+    ns21:hasCondition <http://data.example.com/condition/584>,
+        <http://data.example.com/condition/585>,
+        <http://data.example.com/condition/586>,
+        <http://data.example.com/condition/587>,
+        <http://data.example.com/condition/588>,
+        <http://data.example.com/condition/589>,
+        <http://data.example.com/condition/590>,
+        <http://data.example.com/condition/591>,
+        <http://data.example.com/condition/592>,
+        <http://data.example.com/condition/593>,
+        <http://data.example.com/condition/594> ;
+    ns21:hasInput <http://data.example.com/input/136>,
+        <http://data.example.com/input/137>,
+        <http://data.example.com/input/138>,
+        <http://data.example.com/input/139> ;
+    ns21:hasReactionEg <http://data.example.com/eg/55> ;
+    ns21:operationMode "Batch" ;
+    ns21:reportedIn <https://doi.org/10.1021%2Fja200804h> .
+
+<https://doi.org/10.1021%2Fja200804h> a ns2:Article ;
+    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/55> ;
+    dcterms:creator <http://data.example.com/author/C.E.%20Bunker-828>,
+        <http://data.example.com/author/E.A.%20Guliants-832>,
+        <http://data.example.com/author/J.%20Xu-829>,
+        <http://data.example.com/author/K.A.S.%20Fernando-830>,
+        <http://data.example.com/author/K.N.%20Tackett-833>,
+        <http://data.example.com/author/L.%20Cao-825>,
+        <http://data.example.com/author/P.%20Anilkumar-827>,
+        <http://data.example.com/author/P.%20Wang-831>,
+        <http://data.example.com/author/S.%20Sahu-826>,
+        <http://data.example.com/author/Y-P.%20Sun-834> ;
+    dcterms:date "2011-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/657> ;
+    dcterms:title "Carbon Nanoparticles as Visible-light Photocatalysts for Efficient CO2 Conversion and Beyond" ;
+    ns2:abstract "Increasing atmospheric CO2 levels have generated much concern, driving the ongoing carbon sequestration effort. A compelling CO2 sequestration option is its photocatalytic conversion to hydrocarbons, for which the use of solar irradiation represents an ultimate solution. Here we report a new strategy of using surface-functionalized small carbon nanoparticles to harvest visible photons for subsequent charge separation on the particle surface in order to drive the efficient photocatalytic process. The aqueous solubility of the catalysts enables photoreduction under more desirable homogeneous reaction conditions. Beyond CO2 conversion, the nanoscale carbon-based photocatalysts are also useful for the photogeneration of H2 from water under similar conditions." ;
+    ns2:doi "10.1021/ja200804h" ;
+    ns2:pageStart "4754"^^xsd:positiveInteger ;
+    ns2:volume "133"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/United%20States> a schema:Country .
+

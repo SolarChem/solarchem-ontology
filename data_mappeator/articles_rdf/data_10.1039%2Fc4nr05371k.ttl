@@ -1,0 +1,113 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://purl.org/ontology/bibo/> .
+@prefix ns21: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/K.%20Shankar-1764> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Canada> ;
+    schema:name "K. Shankar" .
+
+<http://data.example.com/author/P.%20Kar-1761> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Canada> ;
+    schema:name "P. Kar" .
+
+<http://data.example.com/author/S.%20Farsinezhad-1762> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Canada> ;
+    schema:name "S. Farsinezhad" .
+
+<http://data.example.com/author/X.%20Zhang-1763> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Canada> ;
+    schema:name "X. Zhang" .
+
+<http://data.example.com/condition/13839> a ns21:ReactorCondition ;
+    ns21:conditionType "Fixed-bed" ;
+    ns21:reactorType "Fixed-bed" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/13840> a ns21:CatalystSetUpCondition ;
+    ns21:conditionType "Other" ;
+    ns21:setUpType "Other" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/13841> a ns21:LampPowerCondition ;
+    ns21:conditionType "Solar" ;
+    ns21:lampType "Solar" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/13842> a ns21:LampIrradianceCondition ;
+    ns21:conditionType "Solar" ;
+    ns21:lampType "Solar" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/13843> a ns21:TemperatureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/13844> a ns21:PreasureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/13845> a ns21:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/13846> a ns21:ReactionTimeCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/13847> a ns21:ReactionMediumCondition ;
+    ns21:conditionType "Gas" ;
+    ns21:reactionMediumType "Gas" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/13848> a ns21:WavelengthCondition ;
+    ns21:conditionType "Solar" ;
+    ns21:lightSourceType "Solar" ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/13849> a ns21:IlluminatedAreaCondition ;
+    ns21:conditionType "Solar" ;
+    ns21:lightSourceType "Solar" ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/788> a ns2:Journal ;
+    dcterms:title "NANOSCALE" .
+
+<http://data.example.com/materialTransformastionProcess/2110> a ns21:MaterialTransformationProcess ;
+    rdfs:label "CuS" ;
+    ns21:hasBET <http://data.example.com/bet/2110> ;
+    ns21:hasCondition <http://data.example.com/condition/13839>,
+        <http://data.example.com/condition/13840>,
+        <http://data.example.com/condition/13841>,
+        <http://data.example.com/condition/13842>,
+        <http://data.example.com/condition/13843>,
+        <http://data.example.com/condition/13844>,
+        <http://data.example.com/condition/13845>,
+        <http://data.example.com/condition/13846>,
+        <http://data.example.com/condition/13847>,
+        <http://data.example.com/condition/13848>,
+        <http://data.example.com/condition/13849> ;
+    ns21:hasInput <http://data.example.com/input/3388>,
+        <http://data.example.com/input/3389> ;
+    ns21:hasOutput <http://data.example.com/output/4102> ;
+    ns21:hasReactionEg <http://data.example.com/eg/2110> ;
+    ns21:operationMode "Batch" ;
+    ns21:reportedIn <https://doi.org/10.1039%2Fc4nr05371k> .
+
+<https://doi.org/10.1039%2Fc4nr05371k> a ns2:Article ;
+    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/2110> ;
+    dcterms:creator <http://data.example.com/author/K.%20Shankar-1764>,
+        <http://data.example.com/author/P.%20Kar-1761>,
+        <http://data.example.com/author/S.%20Farsinezhad-1762>,
+        <http://data.example.com/author/X.%20Zhang-1763> ;
+    dcterms:date "2014-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/788> ;
+    dcterms:title "Anodic Cu2S and CuS nanorod and nanowall arrays: Preparation, properties and application in CO2 photoreduction" ;
+    ns2:abstract "Copper sulfide semiconductors made from earth-abundant elements have an optical absorption edge at ca. 1.2 eV, nearly ideal for solar energy harvesting. We report the growth and formation mechanism of vertically oriented arrays of copper sulfide nanostructures formed by electrochemical anodization. Key parameters that affect the morphology and phase of the nanostructures are type and strength of electrolyte, anodization voltage and duration. Cu2S and CuS nanostructures were obtained on both copper foil and copper-coated flexible Kapton substrates, and depending on the anodization parameters, consisted of vertically oriented arrays of nanowalls, nanoleafs or rods with branched nanodendrites. The anodization parameters also controlled the phase and stoichiometry of the nanostructures. p-type conduction for Cu2S nanostructures and n-type conduction for CuS nanostructures were revealed by admittance spectroscopy and Mott Schottky analysis. We also observed a weak, but nevertheless promising and previously unnoticed, photocatalytic action in copper sulfide nanorod and platelet arrays for the sunlight-driven conversion of CO2 into CH4. Under irradiation by AM 1.5G simulated sunlight at room temperature, a CH4 production rate as high as 38 ?mol m-2 h-1 was obtained using the copper sulfide nanostructure arrays as stand-alone photocatalysts for CO2 photoreduction." ;
+    ns2:doi "10.1039/c4nr05371k" ;
+    ns2:issue "23" ;
+    ns2:pageStart "14305"^^xsd:positiveInteger ;
+    ns2:volume "6"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/Canada> a schema:Country .
+

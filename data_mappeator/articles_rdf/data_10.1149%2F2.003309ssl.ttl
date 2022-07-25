@@ -1,0 +1,132 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://purl.org/ontology/bibo/> .
+@prefix ns21: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/B.%20Li-546> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "B. Li" .
+
+<http://data.example.com/author/C.%20Zhang-543> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "C. Zhang" .
+
+<http://data.example.com/author/Q.%20Zhang-544> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Q. Zhang" .
+
+<http://data.example.com/author/S.%20Kang-545> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "S. Kang" .
+
+<http://data.example.com/author/X.%20Li-547> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "X. Li" .
+
+<http://data.example.com/author/Y.%20Wang-548> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Y. Wang" .
+
+<http://data.example.com/condition/9208> a ns21:ReactorCondition ;
+    ns21:conditionType "Fixed-bed" ;
+    ns21:reactorType "Fixed-bed" ;
+    ns11:numericValue "1.50" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/9209> a ns21:CatalystSetUpCondition ;
+    ns21:conditionType "Other" ;
+    ns21:setUpType "Other" ;
+    ns11:numericValue "0.1" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/9210> a ns21:LampPowerCondition ;
+    ns21:conditionType "Xenon(Xe)" ;
+    ns21:lampType "Xenon(Xe)" ;
+    ns11:numericValue "300.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/9211> a ns21:LampIrradianceCondition ;
+    ns21:conditionType "Xenon(Xe)" ;
+    ns21:lampType "Xenon(Xe)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/9212> a ns21:TemperatureCondition ;
+    ns11:numericValue "30.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/9213> a ns21:PreasureCondition ;
+    ns11:numericValue "1.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/9214> a ns21:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/9215> a ns21:ReactionTimeCondition ;
+    ns11:numericValue "5.42" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/9216> a ns21:ReactionMediumCondition ;
+    ns21:conditionType "Gas" ;
+    ns21:reactionMediumType "Gas" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/9217> a ns21:WavelengthCondition ;
+    ns21:conditionType "Solar" ;
+    ns21:lightSourceType "Solar" ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/9218> a ns21:IlluminatedAreaCondition ;
+    ns21:conditionType "Solar" ;
+    ns21:lightSourceType "Solar" ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/319> a ns2:Journal ;
+    dcterms:title "ECS SOLID STATE LETTERS" .
+
+<http://data.example.com/materialTransformastionProcess/1660> a ns21:MaterialTransformationProcess ;
+    rdfs:label "TiO2" ;
+    ns21:hasBET <http://data.example.com/bet/1660> ;
+    ns21:hasCondition <http://data.example.com/condition/9208>,
+        <http://data.example.com/condition/9209>,
+        <http://data.example.com/condition/9210>,
+        <http://data.example.com/condition/9211>,
+        <http://data.example.com/condition/9212>,
+        <http://data.example.com/condition/9213>,
+        <http://data.example.com/condition/9214>,
+        <http://data.example.com/condition/9215>,
+        <http://data.example.com/condition/9216>,
+        <http://data.example.com/condition/9217>,
+        <http://data.example.com/condition/9218> ;
+    ns21:hasInput <http://data.example.com/input/2253>,
+        <http://data.example.com/input/2254> ;
+    ns21:hasOutput <http://data.example.com/output/2675>,
+        <http://data.example.com/output/2676>,
+        <http://data.example.com/output/2677>,
+        <http://data.example.com/output/2678> ;
+    ns21:hasReactionEg <http://data.example.com/eg/1660> ;
+    ns21:operationMode "Continuous" ;
+    ns21:reportedIn <https://doi.org/10.1149%2F2.003309ssl> .
+
+<https://doi.org/10.1149%2F2.003309ssl> a ns2:Article ;
+    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/1660> ;
+    dcterms:creator <http://data.example.com/author/B.%20Li-546>,
+        <http://data.example.com/author/C.%20Zhang-543>,
+        <http://data.example.com/author/Q.%20Zhang-544>,
+        <http://data.example.com/author/S.%20Kang-545>,
+        <http://data.example.com/author/X.%20Li-547>,
+        <http://data.example.com/author/Y.%20Wang-548> ;
+    dcterms:date "2013-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/319> ;
+    dcterms:title "Route to mesoporous TiO2graphitic carbon microspheres for photocatalytic reduction of CO2 under simulated solar irradiation" ;
+    ns2:abstract "Mesoporous TiO2graphitic carbon microspheres were synthesized by a simple nanocasting route using monodisperse SiO2 microspheres as the template. X-ray diffraction, nitrogen adsorption-desorption, scanning electron microscopy, transmission electron microscope and thermogravimetric analysis techniques were used to characterize the sample. It was observed that anatase TiO2 nanoparticles of 8-14 nm in diameter were highly dispersed in the graphitic carbon microspheres, and the resulting composite with hierarchical mesostructure and high specific surface area exhibited exceptionally high activity in the photocatalytic reduction of CO2 with H2O under simulated solar irradiation." ;
+    ns2:doi "10.1149/2.003309ssl" ;
+    ns2:issue "9" ;
+    ns2:pageStart "M49"^^xsd:positiveInteger ;
+    ns2:volume "2"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/China> a schema:Country .
+

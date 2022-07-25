@@ -1,0 +1,114 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://purl.org/ontology/bibo/> .
+@prefix ns21: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/N.%20Bao-1192> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "N. Bao" .
+
+<http://data.example.com/author/S.%20C.%20Roy-1193> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "S. C. Roy" .
+
+<http://data.example.com/author/S.%20Rani-1191> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "S. Rani" .
+
+<http://data.example.com/condition/12200> a ns21:ReactorCondition ;
+    ns21:conditionType "Membrane" ;
+    ns21:reactorType "Membrane" ;
+    ns11:numericValue "0.01" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/12201> a ns21:CatalystSetUpCondition ;
+    ns21:conditionType "Other" ;
+    ns21:setUpType "Other" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/12202> a ns21:LampPowerCondition ;
+    ns21:conditionType "Solar" ;
+    ns21:lampType "Solar" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/12203> a ns21:LampIrradianceCondition ;
+    ns21:conditionType "Solar" ;
+    ns21:lampType "Solar" ;
+    ns11:numericValue "100.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/12204> a ns21:TemperatureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/12205> a ns21:PreasureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/12206> a ns21:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/12207> a ns21:ReactionTimeCondition ;
+    ns11:numericValue "4.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/12208> a ns21:ReactionMediumCondition ;
+    ns21:conditionType "Gas" ;
+    ns21:reactionMediumType "Gas" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/12209> a ns21:WavelengthCondition ;
+    ns21:conditionType "Solar" ;
+    ns21:lightSourceType "Solar" ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/12210> a ns21:IlluminatedAreaCondition ;
+    ns21:conditionType "Solar" ;
+    ns21:lightSourceType "Solar" ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/116> a ns2:Journal ;
+    dcterms:title "APPLIED SURFACE SCIENCE" .
+
+<http://data.example.com/materialTransformastionProcess/1960> a ns21:MaterialTransformationProcess ;
+    rdfs:label "TiO2" ;
+    ns21:hasBET <http://data.example.com/bet/1960> ;
+    ns21:hasCondition <http://data.example.com/condition/12200>,
+        <http://data.example.com/condition/12201>,
+        <http://data.example.com/condition/12202>,
+        <http://data.example.com/condition/12203>,
+        <http://data.example.com/condition/12204>,
+        <http://data.example.com/condition/12205>,
+        <http://data.example.com/condition/12206>,
+        <http://data.example.com/condition/12207>,
+        <http://data.example.com/condition/12208>,
+        <http://data.example.com/condition/12209>,
+        <http://data.example.com/condition/12210> ;
+    ns21:hasInput <http://data.example.com/input/2989>,
+        <http://data.example.com/input/2990>,
+        <http://data.example.com/input/2991> ;
+    ns21:hasOutput <http://data.example.com/output/3630>,
+        <http://data.example.com/output/3631> ;
+    ns21:hasReactionEg <http://data.example.com/eg/1960> ;
+    ns21:operationMode "Batch" ;
+    ns21:reportedIn <https://doi.org/10.1016%2Fj.apsusc.2013.10.135> .
+
+<https://doi.org/10.1016%2Fj.apsusc.2013.10.135> a ns2:Article ;
+    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/1960> ;
+    dcterms:creator <http://data.example.com/author/N.%20Bao-1192>,
+        <http://data.example.com/author/S.%20C.%20Roy-1193>,
+        <http://data.example.com/author/S.%20Rani-1191> ;
+    dcterms:date "2014-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/116> ;
+    dcterms:title "Solar spectrum photocatalytic conversion of CO2 and water vapor into hydrocarbons using TiO2 nanoparticle membranes" ;
+    ns2:abstract "A viable option for recycling carbon dioxide is through the sunlight-powered photocatalytic conversion of CO2 and water vapor into hydrocarbon fuels over highly active nanocatalysts. With photocatalytic CO2 reduction sunlight, a renewable energy source as durable as the sun, is used to drive the catalytic reaction with the resultant fuel products compatible with the current hydrocarbon-based energy infrastructure. The use of co-catalyst (Cu, Pt)-sensitized TiO2 nanoparticle wafers in the photocatalytic conversion of CO2 and water vapor to hydrocarbon fuels, with optimal humidity levels and exposure times established. We also attempted to increase product formation by sputtering both co-catalysts on the nanoparticle wafer's surface, with the resulting product rates significantly higher than that of either the Cu or Pt coated samples. When the TiO2 nanoparticle wafers are used in a flow-through membrane implementation we find a significant increase in product rates of formation, including methane, hydrogen, and carbon monoxide. We believe that nanocatalyst-based flow-through membranes are a viable route for achieving large-scale and low cost photocatalytic solar fuel production." ;
+    ns2:doi "10.1016/j.apsusc.2013.10.135" ;
+    ns2:pageStart "203"^^xsd:positiveInteger ;
+    ns2:volume "289"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/China> a schema:Country .
+
+<https://en.wikipedia.org/wiki/United%20States> a schema:Country .
+

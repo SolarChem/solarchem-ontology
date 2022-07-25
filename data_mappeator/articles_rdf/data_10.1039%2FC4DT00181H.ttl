@@ -1,0 +1,127 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://purl.org/ontology/bibo/> .
+@prefix ns12: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/J.%20Fu-1413> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "J. Fu" .
+
+<http://data.example.com/author/J.%20Low-1416> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "J. Low" .
+
+<http://data.example.com/author/J.%20Yu-1415> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "J. Yu" .
+
+<http://data.example.com/author/S.%20Cao-1414> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "S. Cao" .
+
+<http://data.example.com/author/Y.%20Lei-1417> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Y. Lei" .
+
+<http://data.example.com/condition/11056> a ns2:ReactorCondition ;
+    ns2:conditionType "Slurry" ;
+    ns2:reactorType "Slurry" ;
+    ns12:numericValue "0.20" ;
+    ns12:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/11057> a ns2:CatalystSetUpCondition ;
+    ns2:conditionType "Other" ;
+    ns2:setUpType "Other" ;
+    ns12:numericValue "0.1" ;
+    ns12:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/11058> a ns2:LampPowerCondition ;
+    ns2:conditionType "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns12:numericValue "300.00" ;
+    ns12:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/11059> a ns2:LampIrradianceCondition ;
+    ns2:conditionType "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns12:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/11060> a ns2:TemperatureCondition ;
+    ns12:numericValue "25.00" ;
+    ns12:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/11061> a ns2:PreasureCondition ;
+    ns12:numericValue "1.00" ;
+    ns12:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/11062> a ns2:SpaceVelocityCondition ;
+    ns12:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/11063> a ns2:ReactionTimeCondition ;
+    ns12:numericValue "1.00" ;
+    ns12:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/11064> a ns2:ReactionMediumCondition ;
+    ns2:conditionType "Liquid" ;
+    ns2:reactionMediumType "Liquid" ;
+    ns12:numericValue "0" ;
+    ns12:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/11065> a ns2:WavelengthCondition ;
+    ns2:conditionType "UV-Vis" ;
+    ns2:lightSourceType "UV-Vis" ;
+    ns12:numericValue "0" ;
+    ns12:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/11066> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionType "UV-Vis" ;
+    ns2:lightSourceType "UV-Vis" ;
+    ns12:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/309> a ns1:Journal ;
+    dcterms:title "DALTON TRANSACTIONS" .
+
+<http://data.example.com/materialTransformastionProcess/1855> a ns2:MaterialTransformationProcess ;
+    rdfs:label "TiO2" ;
+    ns2:hasBET <http://data.example.com/bet/1855> ;
+    ns2:hasCondition <http://data.example.com/condition/11056>,
+        <http://data.example.com/condition/11057>,
+        <http://data.example.com/condition/11058>,
+        <http://data.example.com/condition/11059>,
+        <http://data.example.com/condition/11060>,
+        <http://data.example.com/condition/11061>,
+        <http://data.example.com/condition/11062>,
+        <http://data.example.com/condition/11063>,
+        <http://data.example.com/condition/11064>,
+        <http://data.example.com/condition/11065>,
+        <http://data.example.com/condition/11066> ;
+    ns2:hasInput <http://data.example.com/input/2704>,
+        <http://data.example.com/input/2705> ;
+    ns2:hasOutput <http://data.example.com/output/3269>,
+        <http://data.example.com/output/3270>,
+        <http://data.example.com/output/3271> ;
+    ns2:hasReactionEg <http://data.example.com/eg/1855> ;
+    ns2:operationMode "Batch" ;
+    ns2:reportedIn <https://doi.org/10.1039%2FC4DT00181H> .
+
+<https://doi.org/10.1039%2FC4DT00181H> a ns1:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/1855> ;
+    dcterms:creator <http://data.example.com/author/J.%20Fu-1413>,
+        <http://data.example.com/author/J.%20Low-1416>,
+        <http://data.example.com/author/J.%20Yu-1415>,
+        <http://data.example.com/author/S.%20Cao-1414>,
+        <http://data.example.com/author/Y.%20Lei-1417> ;
+    dcterms:date "2014-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/309> ;
+    dcterms:title "Enhanced photocatalytic CO2-reduction activity of electrospun mesoporous TiO2 nanofibers by solvothermal treatment" ;
+    ns1:abstract "Photocatalytic reduction of CO2 into renewable hydrocarbon fuels using semiconductor photocatalysts is considered as a potential solution to the energy deficiency and greenhouse effect. In this work, mesoporous TiO 2 nanofibers with high specific surface areas and abundant surface hydroxyl groups are prepared using an electrospinning strategy combined with a subsequent calcination process, followed by a solvothermal treatment. The solvothermally treated mesoporous TiO2 nanofibers exhibit excellent photocatalytic performance on CO2 reduction into hydrocarbon fuels. The significantly improved photocatalytic activity can be attributed to the enhanced CO2 adsorption capacity and the improved charge separation after solvothermal treatment. The highest activity is achieved for the sample with a 2-h solvothermal treatment, showing 6- and 25-fold higher CH4 production rate than those of TiO2 nanofibers without solvothermal treatment and P25, respectively. This work may also provide a prototype for studying the effect of solvothermal treatment on the structure and photocatalytic activity of semiconductor photocatalysts." ;
+    ns1:doi "10.1039/C4DT00181H" ;
+    ns1:issue "24" ;
+    ns1:pageStart "9158"^^xsd:positiveInteger ;
+    ns1:volume "43"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/China> a schema:Country .
+

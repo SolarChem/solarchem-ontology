@@ -1,0 +1,138 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://purl.org/ontology/bibo/> .
+@prefix ns12: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/D.%20Wang-1641> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "D. Wang" .
+
+<http://data.example.com/author/H.%20L.%20Jiang-1646> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "H. L. Jiang" .
+
+<http://data.example.com/author/H.%20Q.%20Xu-1639> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "H. Q. Xu" .
+
+<http://data.example.com/author/J.%20Hu-1640> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "J. Hu" .
+
+<http://data.example.com/author/Q.%20Zhang-1643> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Q. Zhang" .
+
+<http://data.example.com/author/S.%20H.%20Yu-1645> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "S. H. Yu" .
+
+<http://data.example.com/author/Y.%20Luo-1644> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Y. Luo" .
+
+<http://data.example.com/author/Z.%20Li-1642> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Z. Li" .
+
+<http://data.example.com/condition/17425> a ns2:ReactorCondition ;
+    ns2:conditionType "Slurry" ;
+    ns2:reactorType "Slurry" ;
+    ns12:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/17426> a ns2:CatalystSetUpCondition ;
+    ns2:conditionType "Other" ;
+    ns2:setUpType "Other" ;
+    ns12:numericValue "0.05" ;
+    ns12:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/17427> a ns2:LampPowerCondition ;
+    ns2:conditionType "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns12:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/17428> a ns2:LampIrradianceCondition ;
+    ns2:conditionType "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns12:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/17429> a ns2:TemperatureCondition ;
+    ns12:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/17430> a ns2:PreasureCondition ;
+    ns12:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/17431> a ns2:SpaceVelocityCondition ;
+    ns12:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/17432> a ns2:ReactionTimeCondition ;
+    ns12:numericValue "10.00" ;
+    ns12:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/17433> a ns2:ReactionMediumCondition ;
+    ns2:conditionType "Liquid" ;
+    ns2:reactionMediumType "Liquid" ;
+    ns12:numericValue "0" ;
+    ns12:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/17434> a ns2:WavelengthCondition ;
+    ns2:conditionType "Visible" ;
+    ns2:lightSourceType "Visible" ;
+    ns12:numericValue "400-780" ;
+    ns12:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/17435> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionType "Visible" ;
+    ns2:lightSourceType "Visible" ;
+    ns12:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/657> a ns1:Journal ;
+    dcterms:title "JOURNAL OF THE AMERICAN CHEMICAL SOCIETY" .
+
+<http://data.example.com/materialTransformastionProcess/2436> a ns2:MaterialTransformationProcess ;
+    rdfs:label "Zr-PCN-222" ;
+    ns2:hasBET <http://data.example.com/bet/2436> ;
+    ns2:hasCondition <http://data.example.com/condition/17425>,
+        <http://data.example.com/condition/17426>,
+        <http://data.example.com/condition/17427>,
+        <http://data.example.com/condition/17428>,
+        <http://data.example.com/condition/17429>,
+        <http://data.example.com/condition/17430>,
+        <http://data.example.com/condition/17431>,
+        <http://data.example.com/condition/17432>,
+        <http://data.example.com/condition/17433>,
+        <http://data.example.com/condition/17434>,
+        <http://data.example.com/condition/17435> ;
+    ns2:hasInput <http://data.example.com/input/4286>,
+        <http://data.example.com/input/4287> ;
+    ns2:hasOutput <http://data.example.com/output/5466>,
+        <http://data.example.com/output/5467>,
+        <http://data.example.com/output/5468> ;
+    ns2:hasReactionEg <http://data.example.com/eg/2436> ;
+    ns2:operationMode "Batch" ;
+    ns2:reportedIn <https://doi.org/10.1021%2Fjacs.5b08773> .
+
+<https://doi.org/10.1021%2Fjacs.5b08773> a ns1:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/2436> ;
+    dcterms:creator <http://data.example.com/author/D.%20Wang-1641>,
+        <http://data.example.com/author/H.%20L.%20Jiang-1646>,
+        <http://data.example.com/author/H.%20Q.%20Xu-1639>,
+        <http://data.example.com/author/J.%20Hu-1640>,
+        <http://data.example.com/author/Q.%20Zhang-1643>,
+        <http://data.example.com/author/S.%20H.%20Yu-1645>,
+        <http://data.example.com/author/Y.%20Luo-1644>,
+        <http://data.example.com/author/Z.%20Li-1642> ;
+    dcterms:date "2015-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/657> ;
+    dcterms:title "Visible-Light Photoreduction of CO2 in a Metal-Organic Framework: Boosting Electron-Hole Separation via Electron Trap States" ;
+    ns1:abstract "It is highly desirable to convert CO2 to valuable fuels or chemicals by means of solar energy, which requires CO2 enrichment around photocatalysts from the atmosphere. Here we demonstrate that a porphyrin-involved metal-organic framework (MOF), PCN-222, can selectively capture and further photoreduce CO2 with high efficiency under visible-light irradiation. Mechanistic information gleaned from ultrafast transient absorption spectroscopy (combined with time-resolved photoluminescence spectroscopy) has elucidated the relationship between the photocatalytic activity and the electron-hole separation efficiency. The presence of a deep electron trap state in PCN-222 effectively inhibits the detrimental, radiative electron-hole recombination. As a direct result, PCN-222 significantly enhances photocatalytic conversion of CO2 into formate anion compared to the corresponding porphyrin ligand itself. This work provides important insights into the design of MOF-based materials for CO2 capture and photoreduction." ;
+    ns1:doi "10.1021/jacs.5b08773" ;
+    ns1:issue "42" ;
+    ns1:pageStart "13440"^^xsd:positiveInteger ;
+    ns1:volume "137"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/China> a schema:Country .
+

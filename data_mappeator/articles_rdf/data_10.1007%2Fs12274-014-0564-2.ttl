@@ -1,0 +1,130 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://purl.org/ontology/bibo/> .
+@prefix ns12: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/D.%20Jiang-1731> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "D. Jiang" .
+
+<http://data.example.com/author/E.%20Gao-1732> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "E. Gao" .
+
+<http://data.example.com/author/L.%20Zhang-1729> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "L. Zhang" .
+
+<http://data.example.com/author/S.%20Sun-1733> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "S. Sun" .
+
+<http://data.example.com/author/W.%20Wang-1730> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "W. Wang" .
+
+<http://data.example.com/condition/15940> a ns2:ReactorCondition ;
+    ns2:conditionType "Slurry" ;
+    ns2:reactorType "Slurry" ;
+    ns12:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/15941> a ns2:CatalystSetUpCondition ;
+    ns2:conditionType "Other" ;
+    ns2:setUpType "Other" ;
+    ns12:numericValue "0.10" ;
+    ns12:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/15942> a ns2:LampPowerCondition ;
+    ns2:conditionType "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns12:numericValue "500.00" ;
+    ns12:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/15943> a ns2:LampIrradianceCondition ;
+    ns2:conditionType "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns12:numericValue "100.00" ;
+    ns12:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/15944> a ns2:TemperatureCondition ;
+    ns12:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/15945> a ns2:PreasureCondition ;
+    ns12:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/15946> a ns2:SpaceVelocityCondition ;
+    ns12:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/15947> a ns2:ReactionTimeCondition ;
+    ns12:numericValue "8.00" ;
+    ns12:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/15948> a ns2:ReactionMediumCondition ;
+    ns2:conditionType "Liquid" ;
+    ns2:reactionMediumType "Liquid" ;
+    ns12:numericValue "0" ;
+    ns12:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/15949> a ns2:WavelengthCondition ;
+    ns2:conditionType "UV-Vis" ;
+    ns2:lightSourceType "UV-Vis" ;
+    ns12:numericValue "0" ;
+    ns12:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/15950> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionType "UV-Vis" ;
+    ns2:lightSourceType "UV-Vis" ;
+    ns12:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/781> a ns1:Journal ;
+    dcterms:title "NANO RESEARCH" .
+
+<http://data.example.com/materialTransformastionProcess/2301> a ns2:MaterialTransformationProcess ;
+    rdfs:label "BiOCl" ;
+    ns2:hasBET <http://data.example.com/bet/2301> ;
+    ns2:hasCondition <http://data.example.com/condition/15940>,
+        <http://data.example.com/condition/15941>,
+        <http://data.example.com/condition/15942>,
+        <http://data.example.com/condition/15943>,
+        <http://data.example.com/condition/15944>,
+        <http://data.example.com/condition/15945>,
+        <http://data.example.com/condition/15946>,
+        <http://data.example.com/condition/15947>,
+        <http://data.example.com/condition/15948>,
+        <http://data.example.com/condition/15949>,
+        <http://data.example.com/condition/15950> ;
+    ns2:hasInput <http://data.example.com/input/3914>,
+        <http://data.example.com/input/3915> ;
+    ns2:hasOutput <http://data.example.com/output/4852>,
+        <http://data.example.com/output/4853>,
+        <http://data.example.com/output/4854>,
+        <http://data.example.com/output/4855>,
+        <http://data.example.com/output/4856>,
+        <http://data.example.com/output/4857>,
+        <http://data.example.com/output/4858>,
+        <http://data.example.com/output/4859> ;
+    ns2:hasReactionEg <http://data.example.com/eg/2301> ;
+    ns2:operationMode "Batch" ;
+    ns2:reportedIn <https://doi.org/10.1007%2Fs12274-014-0564-2> .
+
+<https://doi.org/10.1007%2Fs12274-014-0564-2> a ns1:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/2301> ;
+    dcterms:creator <http://data.example.com/author/D.%20Jiang-1731>,
+        <http://data.example.com/author/E.%20Gao-1732>,
+        <http://data.example.com/author/L.%20Zhang-1729>,
+        <http://data.example.com/author/S.%20Sun-1733>,
+        <http://data.example.com/author/W.%20Wang-1730> ;
+    dcterms:date "2015-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/781> ;
+    dcterms:title "Photoreduction of CO2 on BiOCl nanoplates with the assistance of photoinduced oxygen vacancies" ;
+    ns1:abstract "CO2 photoreduction by semiconductors is of growing interest. Fabrication of oxygen-deficient surfaces is an important strategy for enhancing CO2 photoreduction activity. However, regeneration of the oxygen vacancies in photocatalysts is still a problem since an oxygen vacancy will be filled up by the O atom from CO2 after the dissociation process. Herein, we have fabricated highly efficient BiOCl nanoplates with photoinduced oxygen vacancies. Oxygen vacancies were easily regenerated by light irradiation due to the high oxygen atom density and low Bi-O bond energy even when the oxygen vacancies had been filled up by the O atom in the photocatalytic reactions. These oxygen vacancies not only enhanced the trapping capability for CO2, but also enhanced the efficiency of separation of electron-hole pairs, which resulted in the photocatalytic CO2 reduction under simulated solar light. Furthermore, the generation and recovery of the defects in the BiOCl could be realized during the photocatalytic reduction of CO2 in water. The existence of photoinduced defects in thin BiOCl nanoplates undoubtedly leads to new possibilities for the design of solar-driven bismuth based photocatalysts." ;
+    ns1:doi "10.1007/s12274-014-0564-2" ;
+    ns1:issue "3" ;
+    ns1:pageStart "821"^^xsd:positiveInteger ;
+    ns1:volume "8"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/China> a schema:Country .
+

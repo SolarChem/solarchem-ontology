@@ -1,0 +1,136 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://purl.org/ontology/bibo/> .
+@prefix ns21: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/Huilin%20Tao-4286> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Huilin Tao" .
+
+<http://data.example.com/author/Maria-Magdalena%20Titirici-4288> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/United%20Kingdom> ;
+    schema:name "Maria-Magdalena Titirici" .
+
+<http://data.example.com/author/Pengju%20Yang-4284> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Pengju Yang" .
+
+<http://data.example.com/author/Ruirui%20Wang-4285> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Ruirui Wang" .
+
+<http://data.example.com/author/Xinchen%20Wang-4289> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Xinchen Wang" .
+
+<http://data.example.com/author/Yongfan%20Zhang-4287> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Yongfan Zhang" .
+
+<http://data.example.com/condition/52658> a ns21:ReactorCondition ;
+    ns21:conditionType "Slurry" ;
+    ns21:reactorType "Slurry" ;
+    ns11:numericValue "0.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/52659> a ns21:CatalystSetUpCondition ;
+    ns21:conditionType "Powder(Suspended)" ;
+    ns21:setUpType "Powder(Suspended)" ;
+    ns11:numericValue "0.00001" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/52660> a ns21:LampPowerCondition ;
+    ns21:conditionType "Xenon(Xe)" ;
+    ns21:lampType "Xenon(Xe)" ;
+    ns11:numericValue "300.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/52661> a ns21:LampIrradianceCondition ;
+    ns21:conditionType "Xenon(Xe)" ;
+    ns21:lampType "Xenon(Xe)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/52662> a ns21:TemperatureCondition ;
+    ns11:numericValue "30.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/52663> a ns21:PreasureCondition ;
+    ns11:numericValue "1.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/52664> a ns21:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/52665> a ns21:ReactionTimeCondition ;
+    ns11:numericValue "0.50" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/52666> a ns21:ReactionMediumCondition ;
+    ns21:conditionType "Liquid" ;
+    ns21:reactionMediumType "Liquid" ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/52667> a ns21:WavelengthCondition ;
+    ns21:conditionType "Visible" ;
+    ns21:lightSourceType "Visible" ;
+    ns11:numericValue "400-780" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/52668> a ns21:IlluminatedAreaCondition ;
+    ns21:conditionType "Visible" ;
+    ns21:lightSourceType "Visible" ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/99> a ns2:Journal ;
+    dcterms:title "APPLIED CATALYSIS B-ENVIRONMENTAL" .
+
+<http://data.example.com/materialTransformastionProcess/6087> a ns21:MaterialTransformationProcess ;
+    rdfs:label "Co4N/NCs" ;
+    ns21:hasBET <http://data.example.com/bet/6087> ;
+    ns21:hasCondition <http://data.example.com/condition/52658>,
+        <http://data.example.com/condition/52659>,
+        <http://data.example.com/condition/52660>,
+        <http://data.example.com/condition/52661>,
+        <http://data.example.com/condition/52662>,
+        <http://data.example.com/condition/52663>,
+        <http://data.example.com/condition/52664>,
+        <http://data.example.com/condition/52665>,
+        <http://data.example.com/condition/52666>,
+        <http://data.example.com/condition/52667>,
+        <http://data.example.com/condition/52668> ;
+    ns21:hasInput <http://data.example.com/input/13142>,
+        <http://data.example.com/input/13143>,
+        <http://data.example.com/input/13144>,
+        <http://data.example.com/input/13145> ;
+    ns21:hasOutput <http://data.example.com/output/14239>,
+        <http://data.example.com/output/14240>,
+        <http://data.example.com/output/14241>,
+        <http://data.example.com/output/14242> ;
+    ns21:hasReactionEg <http://data.example.com/eg/6087> ;
+    ns21:operationMode "Batch" ;
+    ns21:reportedIn <https://doi.org/10.1016%2Fj.apcatb.2020.119454> .
+
+<https://doi.org/10.1016%2Fj.apcatb.2020.119454> a ns2:Article ;
+    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/6087> ;
+    dcterms:creator <http://data.example.com/author/Huilin%20Tao-4286>,
+        <http://data.example.com/author/Maria-Magdalena%20Titirici-4288>,
+        <http://data.example.com/author/Pengju%20Yang-4284>,
+        <http://data.example.com/author/Ruirui%20Wang-4285>,
+        <http://data.example.com/author/Xinchen%20Wang-4289>,
+        <http://data.example.com/author/Yongfan%20Zhang-4287> ;
+    dcterms:date "2020-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/99> ;
+    dcterms:title "Cobalt Nitride Anchored on Nitrogen-Rich Carbons for Efficient Carbon Dioxide Reduction with Visible Light" ;
+    ns2:abstract "Utilizing solar energy to convert CO2 into fuels and chemicals represents a promising solution to reduce reliance on fossil fuels, but it is hampered by the lack of highly-efficient catalysts. Herein, we report unique cobalt nitride\\/nitrogen-rich carbons (Co4N\\/NCs), which can work as noble-metal-free catalysts for CO2-to-CO conversion. The mass activity of Co4N\\/NCs is two orders of magnitude higher than those of previously reported CO2 photoreduction catalysts. The quantum yield for CO production at 450 nm reaches 7.2% with a turnover frequency per Co atom of 0.97 s-1. The electronic structure and coordinated environment of catalysts are analyzed by X-ray absorption fine structure spectroscopy and X-ray photoelectron spectroscopy. The reaction processes are investigated by in-situ diffuse reflectance infrared fourier transform spectroscopy and density functional theory calculations. Results suggest that the synergetic effects between the Co4N and the NCs can consolidate the adsorption and activation of CO2 and accelerate the interfacial electron-transfer kinetics between the Co4N\\/NCs catalysts and light-harvesting antenna, thereby resulting in the outstanding activity for synthesizing CO from CO2. This work offers the possibility to design Co-based host-guest topology for highly-efficient CO2 reduction." ;
+    ns2:doi "10.1016/j.apcatb.2020.119454" ;
+    ns2:pageStart "119454"^^xsd:positiveInteger ;
+    ns2:volume "280"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/United%20Kingdom> a schema:Country .
+
+<https://en.wikipedia.org/wiki/China> a schema:Country .
+

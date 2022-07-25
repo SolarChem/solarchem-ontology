@@ -1,0 +1,133 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://purl.org/ontology/bibo/> .
+@prefix ns21: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/A.%20Kan-2> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "A. Kan" .
+
+<http://data.example.com/author/C.%20Saitoh-3> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "C. Saitoh" .
+
+<http://data.example.com/author/K.%20Koike-4> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "K. Koike" .
+
+<http://data.example.com/author/O.%20Ishitan-6> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "O. Ishitan" .
+
+<http://data.example.com/author/T.%20Ibusuki-5> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "T. Ibusuki" .
+
+<http://data.example.com/author/T.%20Yui-1> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "T. Yui" .
+
+<http://data.example.com/condition/4445> a ns21:ReactorCondition ;
+    ns21:conditionType "Slurry" ;
+    ns21:reactorType "Slurry" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/4446> a ns21:CatalystSetUpCondition ;
+    ns21:conditionType "Powder(Suspended)" ;
+    ns21:setUpType "Powder(Suspended)" ;
+    ns11:numericValue "0.15" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/4447> a ns21:LampPowerCondition ;
+    ns21:conditionType "Mercury(Hg)" ;
+    ns21:lampType "Mercury(Hg)" ;
+    ns11:numericValue "500.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/4448> a ns21:LampIrradianceCondition ;
+    ns21:conditionType "Mercury(Hg)" ;
+    ns21:lampType "Mercury(Hg)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/4449> a ns21:TemperatureCondition ;
+    ns11:numericValue "5.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/4450> a ns21:PreasureCondition ;
+    ns11:numericValue "0.87" ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/4451> a ns21:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/4452> a ns21:ReactionTimeCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/4453> a ns21:ReactionMediumCondition ;
+    ns21:conditionType "Liquid" ;
+    ns21:reactionMediumType "Liquid" ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/4454> a ns21:WavelengthCondition ;
+    ns21:conditionType "UV" ;
+    ns21:lightSourceType "UV" ;
+    ns11:numericValue "280-315(UV-B)" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/4455> a ns21:IlluminatedAreaCondition ;
+    ns21:conditionType "UV" ;
+    ns21:lightSourceType "UV" ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/6> a ns2:Journal ;
+    dcterms:title "ACS APPLIED MATERIALS & INTERFACES" .
+
+<http://data.example.com/materialTransformastionProcess/425> a ns21:MaterialTransformationProcess ;
+    rdfs:label "TiO2" ;
+    ns21:hasBET <http://data.example.com/bet/425> ;
+    ns21:hasCondition <http://data.example.com/condition/4445>,
+        <http://data.example.com/condition/4446>,
+        <http://data.example.com/condition/4447>,
+        <http://data.example.com/condition/4448>,
+        <http://data.example.com/condition/4449>,
+        <http://data.example.com/condition/4450>,
+        <http://data.example.com/condition/4451>,
+        <http://data.example.com/condition/4452>,
+        <http://data.example.com/condition/4453>,
+        <http://data.example.com/condition/4454>,
+        <http://data.example.com/condition/4455> ;
+    ns21:hasInput <http://data.example.com/input/1072>,
+        <http://data.example.com/input/1073>,
+        <http://data.example.com/input/1074> ;
+    ns21:hasOutput <http://data.example.com/output/1281>,
+        <http://data.example.com/output/1282>,
+        <http://data.example.com/output/1283>,
+        <http://data.example.com/output/1284>,
+        <http://data.example.com/output/1285>,
+        <http://data.example.com/output/1286> ;
+    ns21:hasReactionEg <http://data.example.com/eg/425> ;
+    ns21:operationMode "Batch" ;
+    ns21:reportedIn <https://doi.org/10.1021%2Fam200425y> .
+
+<https://doi.org/10.1021%2Fam200425y> a ns2:Article ;
+    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/425> ;
+    dcterms:creator <http://data.example.com/author/A.%20Kan-2>,
+        <http://data.example.com/author/C.%20Saitoh-3>,
+        <http://data.example.com/author/K.%20Koike-4>,
+        <http://data.example.com/author/O.%20Ishitan-6>,
+        <http://data.example.com/author/T.%20Ibusuki-5>,
+        <http://data.example.com/author/T.%20Yui-1> ;
+    dcterms:date "2011-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/6> ;
+    dcterms:title "Photochemical Reduction of CO2 Using TiO2: Effects of Organic Adsorbates on TiO2 and Deposition of Pd onto TiO2" ;
+    ns2:abstract "n/a" ;
+    ns2:doi "10.1021/am200425y" ;
+    ns2:pageStart "2594"^^xsd:positiveInteger ;
+    ns2:volume "3"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/Japan> a schema:Country .
+

@@ -1,0 +1,117 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://purl.org/ontology/bibo/> .
+@prefix ns21: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/John%20Kiwi-1787> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Switzerland> ;
+    schema:name "John Kiwi" .
+
+<http://data.example.com/author/K.%20Ravindranathan%20Thampi-1786> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Switzerland> ;
+    schema:name "K. Ravindranathan Thampi" .
+
+<http://data.example.com/author/Michael%20Grätzel-1788> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Switzerland> ;
+    schema:name "Michael Grätzel" .
+
+<http://data.example.com/condition/16039> a ns21:ReactorCondition ;
+    ns21:conditionType "Slurry" ;
+    ns21:reactorType "Slurry" ;
+    ns11:numericValue "0.02" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/16040> a ns21:CatalystSetUpCondition ;
+    ns21:conditionType "Other" ;
+    ns21:setUpType "Other" ;
+    ns11:numericValue "0.1" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/16041> a ns21:LampPowerCondition ;
+    ns21:conditionType "Xenon(Xe)" ;
+    ns21:lampType "Xenon(Xe)" ;
+    ns11:numericValue "150.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/16042> a ns21:LampIrradianceCondition ;
+    ns21:conditionType "Xenon(Xe)" ;
+    ns21:lampType "Xenon(Xe)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/16043> a ns21:TemperatureCondition ;
+    ns11:numericValue "25.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/16044> a ns21:PreasureCondition ;
+    ns11:numericValue "1.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/16045> a ns21:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/16046> a ns21:ReactionTimeCondition ;
+    ns11:numericValue "23.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/16047> a ns21:ReactionMediumCondition ;
+    ns21:conditionType "Liquid" ;
+    ns21:reactionMediumType "Liquid" ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/16048> a ns21:WavelengthCondition ;
+    ns21:conditionType "UV-Vis" ;
+    ns21:lightSourceType "UV-Vis" ;
+    ns11:numericValue "315-780" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/16049> a ns21:IlluminatedAreaCondition ;
+    ns21:conditionType "UV-Vis" ;
+    ns21:lightSourceType "UV-Vis" ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/795> a ns2:Journal ;
+    dcterms:title "NATURE" .
+
+<http://data.example.com/materialTransformastionProcess/2310> a ns21:MaterialTransformationProcess ;
+    rdfs:label "TiO2" ;
+    ns21:hasBET <http://data.example.com/bet/2310> ;
+    ns21:hasCondition <http://data.example.com/condition/16039>,
+        <http://data.example.com/condition/16040>,
+        <http://data.example.com/condition/16041>,
+        <http://data.example.com/condition/16042>,
+        <http://data.example.com/condition/16043>,
+        <http://data.example.com/condition/16044>,
+        <http://data.example.com/condition/16045>,
+        <http://data.example.com/condition/16046>,
+        <http://data.example.com/condition/16047>,
+        <http://data.example.com/condition/16048>,
+        <http://data.example.com/condition/16049> ;
+    ns21:hasInput <http://data.example.com/input/3942>,
+        <http://data.example.com/input/3943>,
+        <http://data.example.com/input/3944> ;
+    ns21:hasOutput <http://data.example.com/output/4904>,
+        <http://data.example.com/output/4905>,
+        <http://data.example.com/output/4906> ;
+    ns21:hasReactionEg <http://data.example.com/eg/2310> ;
+    ns21:operationMode "Batch" ;
+    ns21:reportedIn <https://doi.org/10.1038%2F327506a0> .
+
+<https://doi.org/10.1038%2F327506a0> a ns2:Article ;
+    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/2310> ;
+    dcterms:creator <http://data.example.com/author/John%20Kiwi-1787>,
+        <http://data.example.com/author/K.%20Ravindranathan%20Thampi-1786>,
+        <http://data.example.com/author/Michael%20Grätzel-1788> ;
+    dcterms:date "1987-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/795> ;
+    dcterms:title "Methanation and photo-methanation of carbon dioxide at room temperature and atmospheric pressure" ;
+    ns2:abstract "The Sabatier reaction: CO2+4H2 right arrow CH4+2H2O(g) ?G" ;
+    ns2:doi "10.1038/327506a0" ;
+    ns2:pageStart "506"^^xsd:positiveInteger ;
+    ns2:volume "327"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/Switzerland> a schema:Country .
+

@@ -1,0 +1,115 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://purl.org/ontology/bibo/> .
+@prefix ns12: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/B.%20J.%20Liu-733> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "B. J. Liu" .
+
+<http://data.example.com/author/H.%20Yoneyama-735> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "H. Yoneyama" .
+
+<http://data.example.com/author/T.%20Torimoto-734> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "T. Torimoto" .
+
+<http://data.example.com/condition/2762> a ns2:ReactorCondition ;
+    ns2:conditionType "Slurry" ;
+    ns2:reactorType "Slurry" ;
+    ns12:numericValue "0.01" ;
+    ns12:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/2763> a ns2:CatalystSetUpCondition ;
+    ns2:conditionType "Film" ;
+    ns2:setUpType "Film" ;
+    ns12:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/2764> a ns2:LampPowerCondition ;
+    ns2:conditionType "Mercury(Hg)" ;
+    ns2:lampType "Mercury(Hg)" ;
+    ns12:numericValue "500.00" ;
+    ns12:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/2765> a ns2:LampIrradianceCondition ;
+    ns2:conditionType "Mercury(Hg)" ;
+    ns2:lampType "Mercury(Hg)" ;
+    ns12:numericValue "9999.99" ;
+    ns12:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/2766> a ns2:TemperatureCondition ;
+    ns12:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/2767> a ns2:PreasureCondition ;
+    ns12:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/2768> a ns2:SpaceVelocityCondition ;
+    ns12:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/2769> a ns2:ReactionTimeCondition ;
+    ns12:numericValue "7.00" ;
+    ns12:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/2770> a ns2:ReactionMediumCondition ;
+    ns2:conditionType "Liquid" ;
+    ns2:reactionMediumType "Liquid" ;
+    ns12:numericValue "0" ;
+    ns12:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/2771> a ns2:WavelengthCondition ;
+    ns2:conditionType "UV" ;
+    ns2:lightSourceType "UV" ;
+    ns12:numericValue "192-280(UV-A)" ;
+    ns12:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/2772> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionType "UV" ;
+    ns2:lightSourceType "UV" ;
+    ns12:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/598> a ns1:Journal ;
+    dcterms:title "JOURNAL OF PHOTOCHEMISTRY AND PHOTOBIOLOGY A-CHEMISTRY" .
+
+<http://data.example.com/materialTransformastionProcess/261> a ns2:MaterialTransformationProcess ;
+    rdfs:label "Q-TiO2/SiO2" ;
+    ns2:hasBET <http://data.example.com/bet/261> ;
+    ns2:hasCondition <http://data.example.com/condition/2762>,
+        <http://data.example.com/condition/2763>,
+        <http://data.example.com/condition/2764>,
+        <http://data.example.com/condition/2765>,
+        <http://data.example.com/condition/2766>,
+        <http://data.example.com/condition/2767>,
+        <http://data.example.com/condition/2768>,
+        <http://data.example.com/condition/2769>,
+        <http://data.example.com/condition/2770>,
+        <http://data.example.com/condition/2771>,
+        <http://data.example.com/condition/2772> ;
+    ns2:hasInput <http://data.example.com/input/687>,
+        <http://data.example.com/input/688>,
+        <http://data.example.com/input/689> ;
+    ns2:hasOutput <http://data.example.com/output/876>,
+        <http://data.example.com/output/877> ;
+    ns2:hasReactionEg <http://data.example.com/eg/261> ;
+    ns2:operationMode "Batch" ;
+    ns2:reportedIn <https://doi.org/10.1016%2FS1010-6030%2898%2900272-X> .
+
+<https://doi.org/10.1016%2FS1010-6030%2898%2900272-X> a ns1:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/261> ;
+    dcterms:creator <http://data.example.com/author/B.%20J.%20Liu-733>,
+        <http://data.example.com/author/H.%20Yoneyama-735>,
+        <http://data.example.com/author/T.%20Torimoto-734> ;
+    dcterms:date "1998-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/598> ;
+    dcterms:title "Photocatalytic reduction of carbon dioxide in the presence of nitrate using TiO2 nanocrystal photocatalyst embedded in SiO2 matrices" ;
+    ns1:abstract "At present, carbon dioxide is considered the largest contributor among greenhouse gases. This review covers the current state of problem of carbon dioxide emissions from industrial and combustion processes, the principle of photocatalysis, existing literature related to photocatalytic CO2 reduction over TiO2 based catalysts and the effects of important parameters on the process performance including light wavelength and intensity, type of reductant, metal-modified surface, temperature and pressure." ;
+    ns1:doi "10.1016/S1010-6030(98)00272-X" ;
+    ns1:issue "3" ;
+    ns1:pageStart "227"^^xsd:positiveInteger ;
+    ns1:volume "115"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/Japan> a schema:Country .
+

@@ -1,0 +1,115 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://purl.org/ontology/bibo/> .
+@prefix ns21: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/A.%20Wang-1522> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "A. Wang" .
+
+<http://data.example.com/author/S.%20Shen-1523> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "S. Shen" .
+
+<http://data.example.com/author/W.%20Wu-1525> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "W. Wu" .
+
+<http://data.example.com/author/Y.%20Zhao-1524> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Y. Zhao" .
+
+<http://data.example.com/condition/14565> a ns21:ReactorCondition ;
+    ns21:conditionType "Slurry" ;
+    ns21:reactorType "Slurry" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/14566> a ns21:CatalystSetUpCondition ;
+    ns21:conditionType "Other" ;
+    ns21:setUpType "Other" ;
+    ns11:numericValue "0.10" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/14567> a ns21:LampPowerCondition ;
+    ns21:conditionType "Xenon(Xe)" ;
+    ns21:lampType "Xenon(Xe)" ;
+    ns11:numericValue "500.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/14568> a ns21:LampIrradianceCondition ;
+    ns21:conditionType "Xenon(Xe)" ;
+    ns21:lampType "Xenon(Xe)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/14569> a ns21:TemperatureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/14570> a ns21:PreasureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/14571> a ns21:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/14572> a ns21:ReactionTimeCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/14573> a ns21:ReactionMediumCondition ;
+    ns21:conditionType "Liquid" ;
+    ns21:reactionMediumType "Liquid" ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/14574> a ns21:WavelengthCondition ;
+    ns21:conditionType "Solar" ;
+    ns21:lightSourceType "Solar" ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/14575> a ns21:IlluminatedAreaCondition ;
+    ns21:conditionType "Solar" ;
+    ns21:lightSourceType "Solar" ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/514> a ns2:Journal ;
+    dcterms:title "JOURNAL OF COLLOID AND INTERFACE SCIENCE" .
+
+<http://data.example.com/materialTransformastionProcess/2176> a ns21:MaterialTransformationProcess ;
+    rdfs:label "BiVO4" ;
+    ns21:hasBET <http://data.example.com/bet/2176> ;
+    ns21:hasCondition <http://data.example.com/condition/14565>,
+        <http://data.example.com/condition/14566>,
+        <http://data.example.com/condition/14567>,
+        <http://data.example.com/condition/14568>,
+        <http://data.example.com/condition/14569>,
+        <http://data.example.com/condition/14570>,
+        <http://data.example.com/condition/14571>,
+        <http://data.example.com/condition/14572>,
+        <http://data.example.com/condition/14573>,
+        <http://data.example.com/condition/14574>,
+        <http://data.example.com/condition/14575> ;
+    ns21:hasInput <http://data.example.com/input/3576>,
+        <http://data.example.com/input/3577> ;
+    ns21:hasOutput <http://data.example.com/output/4384> ;
+    ns21:hasReactionEg <http://data.example.com/eg/2176> ;
+    ns21:operationMode "Batch" ;
+    ns21:reportedIn <https://doi.org/10.1016%2Fj.jcis.2015.01.017> .
+
+<https://doi.org/10.1016%2Fj.jcis.2015.01.017> a ns2:Article ;
+    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/2176> ;
+    dcterms:creator <http://data.example.com/author/A.%20Wang-1522>,
+        <http://data.example.com/author/S.%20Shen-1523>,
+        <http://data.example.com/author/W.%20Wu-1525>,
+        <http://data.example.com/author/Y.%20Zhao-1524> ;
+    dcterms:date "2015-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/514> ;
+    dcterms:title "Preparation and characterizations of BiVO4reduced graphene oxide nanocomposites with higher visible light reduction activities" ;
+    ns2:abstract "Bismuth vanadatereduced graphene oxide (BiVO4RGO) composites were synthesized by one-step hydrothermal method with graphite oxide, Bi(NO3)3 and NH4VO3 as precursors. The as-synthesized nanocomposites were characterized by X-ray diffraction (XRD), transmission electron microscopy (TEM), Fourier transform infrared spectroscopy (FTIR), Raman spectroscopy, UV-Vis spectroscopy (UV), fluorescence spectroscopy (FL) and electrochemical impedance spectroscopy (EIS). The reduced graphene oxide sheets were decorated by butterfly-like BiVO4 lamellas. Such combination not only alleviated the agglomeration of BiVO4 particles but also restrained the restacking of reduced graphene oxide. A preliminary study on the photo-reductions of Cr (VI) and CO2 under the illumination of simulated sunlight with as-synthesized BiVO4RGO nanocomposites as catalyst was carried out. The nanocomposites showed better photo-catalytic activity than the conventional BiVO4 particles. The photo-reduction efficiency of BiVO4RGO nanocomposites increased about 50.1% and the ethanol yield improved about 15.4?molg-cat comparing with pure BiVO4. The enhancements of the photo-catalytic activities were attributed to the effective charge transfer of photo-generated electron from BiVO4 to RGO and improved absorption performance." ;
+    ns2:doi "10.1016/j.jcis.2015.01.017" ;
+    ns2:pageStart "330"^^xsd:positiveInteger ;
+    ns2:volume "445"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/China> a schema:Country .
+

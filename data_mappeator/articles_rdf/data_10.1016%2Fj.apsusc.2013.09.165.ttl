@@ -1,0 +1,129 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://purl.org/ontology/bibo/> .
+@prefix ns21: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/F.%20Xin-1201> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "F. Xin" .
+
+<http://data.example.com/author/W.%20Jiang-1199> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "W. Jiang" .
+
+<http://data.example.com/author/X.%20Li-1204> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "X. Li" .
+
+<http://data.example.com/author/X.%20Yin-1200> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "X. Yin" .
+
+<http://data.example.com/author/Y.%20Bi-1202> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Y. Bi" .
+
+<http://data.example.com/author/Y.%20Liu-1203> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Y. Liu" .
+
+<http://data.example.com/condition/12233> a ns21:ReactorCondition ;
+    ns21:conditionType "Slurry" ;
+    ns21:reactorType "Slurry" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/12234> a ns21:CatalystSetUpCondition ;
+    ns21:conditionType "Other" ;
+    ns21:setUpType "Other" ;
+    ns11:numericValue "0.02" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/12235> a ns21:LampPowerCondition ;
+    ns21:conditionType "Mercury(Hg)" ;
+    ns21:lampType "Mercury(Hg)" ;
+    ns11:numericValue "250.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/12236> a ns21:LampIrradianceCondition ;
+    ns21:conditionType "Mercury(Hg)" ;
+    ns21:lampType "Mercury(Hg)" ;
+    ns11:numericValue "25.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/12237> a ns21:TemperatureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/12238> a ns21:PreasureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/12239> a ns21:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/12240> a ns21:ReactionTimeCondition ;
+    ns11:numericValue "10.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/12241> a ns21:ReactionMediumCondition ;
+    ns21:conditionType "Liquid" ;
+    ns21:reactionMediumType "Liquid" ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/12242> a ns21:WavelengthCondition ;
+    ns21:conditionType "UV-Vis" ;
+    ns21:lightSourceType "UV-Vis" ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/12243> a ns21:IlluminatedAreaCondition ;
+    ns21:conditionType "UV-Vis" ;
+    ns21:lightSourceType "UV-Vis" ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/116> a ns2:Journal ;
+    dcterms:title "APPLIED SURFACE SCIENCE" .
+
+<http://data.example.com/materialTransformastionProcess/1963> a ns21:MaterialTransformationProcess ;
+    rdfs:label "CdIn2S4" ;
+    ns21:hasBET <http://data.example.com/bet/1963> ;
+    ns21:hasCondition <http://data.example.com/condition/12233>,
+        <http://data.example.com/condition/12234>,
+        <http://data.example.com/condition/12235>,
+        <http://data.example.com/condition/12236>,
+        <http://data.example.com/condition/12237>,
+        <http://data.example.com/condition/12238>,
+        <http://data.example.com/condition/12239>,
+        <http://data.example.com/condition/12240>,
+        <http://data.example.com/condition/12241>,
+        <http://data.example.com/condition/12242>,
+        <http://data.example.com/condition/12243> ;
+    ns21:hasInput <http://data.example.com/input/2996>,
+        <http://data.example.com/input/2997> ;
+    ns21:hasOutput <http://data.example.com/output/3638>,
+        <http://data.example.com/output/3639>,
+        <http://data.example.com/output/3640> ;
+    ns21:hasReactionEg <http://data.example.com/eg/1963> ;
+    ns21:operationMode "Batch" ;
+    ns21:reportedIn <https://doi.org/10.1016%2Fj.apsusc.2013.09.165> .
+
+<https://doi.org/10.1016%2Fj.apsusc.2013.09.165> a ns2:Article ;
+    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/1963> ;
+    dcterms:creator <http://data.example.com/author/F.%20Xin-1201>,
+        <http://data.example.com/author/W.%20Jiang-1199>,
+        <http://data.example.com/author/X.%20Li-1204>,
+        <http://data.example.com/author/X.%20Yin-1200>,
+        <http://data.example.com/author/Y.%20Bi-1202>,
+        <http://data.example.com/author/Y.%20Liu-1203> ;
+    dcterms:date "2014-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/116> ;
+    dcterms:title "Preparation of CdIn2S4 microspheres and application for photocatalytic reduction of carbon dioxide" ;
+    ns2:abstract "A series of novel microspheres of CdIn2S4 were prepared by hydrothermal process, among them the CdIn2S4 synthesized from l-cysteine exhibited higher photocatalytic activity for CO 2 reduction and has potential application for using visible light. Characterization of X-ray diffractometer (XRD), UV-vis absorption spectrometry (UV-vis), field emission scanning electron microscopy (FE-SEM), transmission electron microscope (TEM) and N2 sorption analysis resulted in the crystal morphology, light absorption band and porous geometry. The mechanism of photocatalytic reduction of CO2 in methanol over CdIn 2S4 was also proposed. The narrow band gap of the as prepared catalyst promoted reducing CO2 to dimethoxymethane and methyl formate in methanol." ;
+    ns2:doi "10.1016/j.apsusc.2013.09.165" ;
+    ns2:pageStart "138"^^xsd:positiveInteger ;
+    ns2:volume "288"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/China> a schema:Country .
+

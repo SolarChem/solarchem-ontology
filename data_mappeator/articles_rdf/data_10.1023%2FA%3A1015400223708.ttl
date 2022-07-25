@@ -1,0 +1,119 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://purl.org/ontology/bibo/> .
+@prefix ns12: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/K.%20Ikeue-268> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "K. Ikeue" .
+
+<http://data.example.com/author/M.%20Anpo-271> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "M. Anpo" .
+
+<http://data.example.com/author/M.%20Ogawa-270> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "M. Ogawa" .
+
+<http://data.example.com/author/S.%20Nozaki-269> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "S. Nozaki" .
+
+<http://data.example.com/condition/1640> a ns2:ReactorCondition ;
+    ns2:conditionType "Fixed-bed" ;
+    ns2:reactorType "Fixed-bed" ;
+    ns12:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/1641> a ns2:CatalystSetUpCondition ;
+    ns2:conditionType "Film" ;
+    ns2:setUpType "Film" ;
+    ns12:numericValue "0.05" ;
+    ns12:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/1642> a ns2:LampPowerCondition ;
+    ns2:conditionType "Mercury(Hg)" ;
+    ns2:lampType "Mercury(Hg)" ;
+    ns12:numericValue "100.00" ;
+    ns12:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/1643> a ns2:LampIrradianceCondition ;
+    ns2:conditionType "Mercury(Hg)" ;
+    ns2:lampType "Mercury(Hg)" ;
+    ns12:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/1644> a ns2:TemperatureCondition ;
+    ns12:numericValue "50.00" ;
+    ns12:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/1645> a ns2:PreasureCondition ;
+    ns12:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/1646> a ns2:SpaceVelocityCondition ;
+    ns12:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/1647> a ns2:ReactionTimeCondition ;
+    ns12:numericValue "8.00" ;
+    ns12:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/1648> a ns2:ReactionMediumCondition ;
+    ns2:conditionType "Gas" ;
+    ns2:reactionMediumType "Gas" ;
+    ns12:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/1649> a ns2:WavelengthCondition ;
+    ns2:conditionType "UV" ;
+    ns2:lightSourceType "UV" ;
+    ns12:numericValue "192-280(UV-A)" ;
+    ns12:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/1650> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionType "UV" ;
+    ns2:lightSourceType "UV" ;
+    ns12:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/176> a ns1:Journal ;
+    dcterms:title "CATALYSIS LETTERS" .
+
+<http://data.example.com/materialTransformastionProcess/157> a ns2:MaterialTransformationProcess ;
+    rdfs:label "TiO2" ;
+    ns2:hasBET <http://data.example.com/bet/157> ;
+    ns2:hasCondition <http://data.example.com/condition/1640>,
+        <http://data.example.com/condition/1641>,
+        <http://data.example.com/condition/1642>,
+        <http://data.example.com/condition/1643>,
+        <http://data.example.com/condition/1644>,
+        <http://data.example.com/condition/1645>,
+        <http://data.example.com/condition/1646>,
+        <http://data.example.com/condition/1647>,
+        <http://data.example.com/condition/1648>,
+        <http://data.example.com/condition/1649>,
+        <http://data.example.com/condition/1650> ;
+    ns2:hasInput <http://data.example.com/input/415>,
+        <http://data.example.com/input/416> ;
+    ns2:hasOutput <http://data.example.com/output/520>,
+        <http://data.example.com/output/521>,
+        <http://data.example.com/output/522>,
+        <http://data.example.com/output/523> ;
+    ns2:hasReactionEg <http://data.example.com/eg/157> ;
+    ns2:operationMode "Batch" ;
+    ns2:reportedIn <https://doi.org/10.1023%2FA%3A1015400223708> .
+
+<https://doi.org/10.1023%2FA%3A1015400223708> a ns1:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/157> ;
+    dcterms:creator <http://data.example.com/author/K.%20Ikeue-268>,
+        <http://data.example.com/author/M.%20Anpo-271>,
+        <http://data.example.com/author/M.%20Ogawa-270>,
+        <http://data.example.com/author/S.%20Nozaki-269> ;
+    dcterms:date "2002-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/176> ;
+    dcterms:title "Photocatalytic reduction of CO2 with H2O on Ti-containing porous silica thin film photocatalysts" ;
+    ns1:abstract "Two different Ti-containing porous silica thin films having a hexagonal and cubic pore structure were synthesized and used as photocatalysts for the reduction of CO2 with H2O at 323 K. UV irradiation of the Ti-containing porous silica thin films in the presence of CO2 and H2O led to the formation of CH4 and CH3OH with a high quantum yield of 0.28%. These porous silica thin film photocatalysts having a hexagonal pore structure exhibited higher reactivity than the Ti-MCM-41 powder photocatalysts with the same pore structure." ;
+    ns1:doi "10.1023/A:1015400223708" ;
+    ns1:pageStart "3"^^xsd:positiveInteger ;
+    ns1:volume "80"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/Japan> a schema:Country .
+

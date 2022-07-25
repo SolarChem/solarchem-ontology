@@ -1,0 +1,119 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://purl.org/ontology/bibo/> .
+@prefix ns21: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/T.%20Xin-179> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "T. Xin" .
+
+<http://data.example.com/author/W.%20Jing-178> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "W. Jing" .
+
+<http://data.example.com/author/Y.%20Tao-180> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Y. Tao" .
+
+<http://data.example.com/author/Z.%20Lin-181> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Z. Lin" .
+
+<http://data.example.com/condition/4093> a ns21:ReactorCondition ;
+    ns21:conditionType "Slurry" ;
+    ns21:reactorType "Slurry" ;
+    ns11:numericValue "0.05" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/4094> a ns21:CatalystSetUpCondition ;
+    ns21:conditionType "Powder(Suspended)" ;
+    ns21:setUpType "Powder(Suspended)" ;
+    ns11:numericValue "0.005" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/4095> a ns21:LampPowerCondition ;
+    ns21:conditionType "Mercury(Hg)" ;
+    ns21:lampType "Mercury(Hg)" ;
+    ns11:numericValue "300.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/4096> a ns21:LampIrradianceCondition ;
+    ns21:conditionType "Mercury(Hg)" ;
+    ns21:lampType "Mercury(Hg)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/4097> a ns21:TemperatureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/4098> a ns21:PreasureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/4099> a ns21:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/4100> a ns21:ReactionTimeCondition ;
+    ns11:numericValue "6.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/4101> a ns21:ReactionMediumCondition ;
+    ns21:conditionType "Liquid" ;
+    ns21:reactionMediumType "Liquid" ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/4102> a ns21:WavelengthCondition ;
+    ns21:conditionType "UV" ;
+    ns21:lightSourceType "UV" ;
+    ns11:numericValue "315-400(UV-C)" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/4103> a ns21:IlluminatedAreaCondition ;
+    ns21:conditionType "UV" ;
+    ns21:lightSourceType "UV" ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/105> a ns2:Journal ;
+    dcterms:title "APPLIED MECHANICS AND MATERIALS" .
+
+<http://data.example.com/materialTransformastionProcess/393> a ns21:MaterialTransformationProcess ;
+    rdfs:label "TiO2/Y-Zeolite" ;
+    ns21:hasBET <http://data.example.com/bet/393> ;
+    ns21:hasCondition <http://data.example.com/condition/4093>,
+        <http://data.example.com/condition/4094>,
+        <http://data.example.com/condition/4095>,
+        <http://data.example.com/condition/4096>,
+        <http://data.example.com/condition/4097>,
+        <http://data.example.com/condition/4098>,
+        <http://data.example.com/condition/4099>,
+        <http://data.example.com/condition/4100>,
+        <http://data.example.com/condition/4101>,
+        <http://data.example.com/condition/4102>,
+        <http://data.example.com/condition/4103> ;
+    ns21:hasInput <http://data.example.com/input/988>,
+        <http://data.example.com/input/989>,
+        <http://data.example.com/input/990> ;
+    ns21:hasOutput <http://data.example.com/output/1173>,
+        <http://data.example.com/output/1174> ;
+    ns21:hasReactionEg <http://data.example.com/eg/393> ;
+    ns21:operationMode "Batch" ;
+    ns21:reportedIn <https://doi.org/10.4028%2Fwww.scientific.net%2FAMM.55-57.1506> .
+
+<https://doi.org/10.4028%2Fwww.scientific.net%2FAMM.55-57.1506> a ns2:Article ;
+    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/393> ;
+    dcterms:creator <http://data.example.com/author/T.%20Xin-179>,
+        <http://data.example.com/author/W.%20Jing-178>,
+        <http://data.example.com/author/Y.%20Tao-180>,
+        <http://data.example.com/author/Z.%20Lin-181> ;
+    dcterms:date "2011-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/105> ;
+    dcterms:title "Characterization of Y/TiO2 nanoparticles and their reactivity for CO2 photoreduction" ;
+    ns2:abstract "A series of Y/TiO2 nanoparticles (NPs) were synthesized via sol-gel method. The crystal structures, morphologies and chemical properties were characterized using X-ray diffraction (XRD), high resolution transmission electron microscopy (HR-TEM) and X-ray photoelectron spectroscopy (XPS). We investigated the effects of different doping amounts of Y on the reaction of CO2 photoreduction. The results shown that 0.1 wt.%Y/TiO2 (0.1YT) performed the highest photocatalytic activity, which yielded 384.62 &micro;mol/gcat. formaldehyde after 6 h of UV illumination." ;
+    ns2:doi "10.4028/www.scientific.net/AMM.55-57.1506" ;
+    ns2:pageStart "1506"^^xsd:positiveInteger ;
+    ns2:volume "55"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/China> a schema:Country .
+

@@ -1,0 +1,133 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://purl.org/ontology/bibo/> .
+@prefix ns21: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/A.%20Call-1967> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "A. Call" .
+
+<http://data.example.com/author/K.%20Sakai-1972> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "K. Sakai" .
+
+<http://data.example.com/author/K.%20Yamamoto-1969> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "K. Yamamoto" .
+
+<http://data.example.com/author/K.%20Yamauchi-1971> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "K. Yamauchi" .
+
+<http://data.example.com/author/M.%20Cibian-1968> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "M. Cibian" .
+
+<http://data.example.com/author/T.%20Nakazono-1970> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "T. Nakazono" .
+
+<http://data.example.com/condition/42670> a ns21:ReactorCondition ;
+    ns21:conditionType "Slurry" ;
+    ns21:reactorType "Slurry" ;
+    ns11:numericValue "0.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/42671> a ns21:CatalystSetUpCondition ;
+    ns21:conditionType "Powder(Suspended)" ;
+    ns21:setUpType "Powder(Suspended)" ;
+    ns11:numericValue "0.0001" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/42672> a ns21:LampPowerCondition ;
+    ns21:conditionType "Xenon(Xe)" ;
+    ns21:lampType "Xenon(Xe)" ;
+    ns11:numericValue "300.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/42673> a ns21:LampIrradianceCondition ;
+    ns21:conditionType "Xenon(Xe)" ;
+    ns21:lampType "Xenon(Xe)" ;
+    ns11:numericValue "1790.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/42674> a ns21:TemperatureCondition ;
+    ns11:numericValue "25.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/42675> a ns21:PreasureCondition ;
+    ns11:numericValue "0.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/42676> a ns21:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/42677> a ns21:ReactionTimeCondition ;
+    ns11:numericValue "4.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/42678> a ns21:ReactionMediumCondition ;
+    ns21:conditionType "Liquid" ;
+    ns21:reactionMediumType "Liquid" ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/42679> a ns21:WavelengthCondition ;
+    ns21:conditionType "Visible" ;
+    ns21:lightSourceType "Visible" ;
+    ns11:numericValue "400-780" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/42680> a ns21:IlluminatedAreaCondition ;
+    ns21:conditionType "Visible" ;
+    ns21:lightSourceType "Visible" ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/7> a ns2:Journal ;
+    dcterms:title "ACS CATALYSIS" .
+
+<http://data.example.com/materialTransformastionProcess/5179> a ns21:MaterialTransformationProcess ;
+    rdfs:label "CoTPPS" ;
+    ns21:hasBET <http://data.example.com/bet/5179> ;
+    ns21:hasCondition <http://data.example.com/condition/42670>,
+        <http://data.example.com/condition/42671>,
+        <http://data.example.com/condition/42672>,
+        <http://data.example.com/condition/42673>,
+        <http://data.example.com/condition/42674>,
+        <http://data.example.com/condition/42675>,
+        <http://data.example.com/condition/42676>,
+        <http://data.example.com/condition/42677>,
+        <http://data.example.com/condition/42678>,
+        <http://data.example.com/condition/42679>,
+        <http://data.example.com/condition/42680> ;
+    ns21:hasInput <http://data.example.com/input/10554>,
+        <http://data.example.com/input/10555>,
+        <http://data.example.com/input/10556> ;
+    ns21:hasOutput <http://data.example.com/output/11926>,
+        <http://data.example.com/output/11927>,
+        <http://data.example.com/output/11928>,
+        <http://data.example.com/output/11929> ;
+    ns21:hasReactionEg <http://data.example.com/eg/5179> ;
+    ns21:operationMode "Batch" ;
+    ns21:reportedIn <https://doi.org/10.1021%2Facscatal.8b04975> .
+
+<https://doi.org/10.1021%2Facscatal.8b04975> a ns2:Article ;
+    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/5179> ;
+    dcterms:creator <http://data.example.com/author/A.%20Call-1967>,
+        <http://data.example.com/author/K.%20Sakai-1972>,
+        <http://data.example.com/author/K.%20Yamamoto-1969>,
+        <http://data.example.com/author/K.%20Yamauchi-1971>,
+        <http://data.example.com/author/M.%20Cibian-1968>,
+        <http://data.example.com/author/T.%20Nakazono-1970> ;
+    dcterms:date "2019-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/7> ;
+    dcterms:title "Highly Efficient and Selective Photocatalytic CO 2 Reduction to CO in Water by a Cobalt Porphyrin Molecular Catalyst" ;
+    ns2:abstract "The performance of a water-soluble cobalt porphyrin (CoTPPS) as a catalyst for the photoreduction of CO2in fully \\\\r\\\\naqueous media has been investigated under visible light irradiation using [Ru(bpy)3]\\\\r\\\\n2+\\\\r\\\\nas a photosensitizer and ascorbate as a \\\\r\\\\nsacrificial electron donor. COis selectively produced (> 82%) with high efficiency (926 TONCO).Upon optimization, selectivities \\\\r\\\\nof at least 91% are achieved. Efficiencies up to 4000 TONCOand 2400 h\\\\r\\\\n-1\\\\r\\\\nTOFCOare reached at low catalyst loadings, albeit with \\\\r\\\\nloss in selectivity. This work successfully demonstrates the ability ofCoTPPS to perform highly efficient photoreduction of CO2\\\\r\\\\nin water while retaining its high selectivity for COformation" ;
+    ns2:doi "10.1021/acscatal.8b04975" ;
+    ns2:pageStart "4867"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/Japan> a schema:Country .
+

@@ -1,0 +1,107 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://purl.org/ontology/bibo/> .
+@prefix ns21: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/A.%20A.%20H.%20Kadhum-946> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Malaysia> ;
+    schema:name "A. A. H. Kadhum" .
+
+<http://data.example.com/author/M.%20F.%20M.%20Zain-945> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Malaysia> ;
+    schema:name "M. F. M. Zain" .
+
+<http://data.example.com/author/R.%20K.%20Nath-944> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Malaysia> ;
+    schema:name "R. K. Nath" .
+
+<http://data.example.com/condition/8823> a ns21:ReactorCondition ;
+    ns21:conditionType "Fixed-bed" ;
+    ns21:reactorType "Fixed-bed" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/8824> a ns21:CatalystSetUpCondition ;
+    ns21:conditionType "Other" ;
+    ns21:setUpType "Other" ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/8825> a ns21:LampPowerCondition ;
+    ns21:conditionType "Fluorescent" ;
+    ns21:lampType "Fluorescent" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/8826> a ns21:LampIrradianceCondition ;
+    ns21:conditionType "Fluorescent" ;
+    ns21:lampType "Fluorescent" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/8827> a ns21:TemperatureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/8828> a ns21:PreasureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/8829> a ns21:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/8830> a ns21:ReactionTimeCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/8831> a ns21:ReactionMediumCondition ;
+    ns21:conditionType "Gas" ;
+    ns21:reactionMediumType "Gas" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/8832> a ns21:WavelengthCondition ;
+    ns21:conditionType "UV" ;
+    ns21:lightSourceType "UV" ;
+    ns11:numericValue "315-400(UV-C)" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/8833> a ns21:IlluminatedAreaCondition ;
+    ns21:conditionType "UV" ;
+    ns21:lightSourceType "UV" ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/1066> a ns2:Journal ;
+    dcterms:title "THE SCIENTIFIC WORLD JOURNAL" .
+
+<http://data.example.com/materialTransformastionProcess/1623> a ns21:MaterialTransformationProcess ;
+    rdfs:label "LiNbO3" ;
+    ns21:hasBET <http://data.example.com/bet/1623> ;
+    ns21:hasCondition <http://data.example.com/condition/8823>,
+        <http://data.example.com/condition/8824>,
+        <http://data.example.com/condition/8825>,
+        <http://data.example.com/condition/8826>,
+        <http://data.example.com/condition/8827>,
+        <http://data.example.com/condition/8828>,
+        <http://data.example.com/condition/8829>,
+        <http://data.example.com/condition/8830>,
+        <http://data.example.com/condition/8831>,
+        <http://data.example.com/condition/8832>,
+        <http://data.example.com/condition/8833> ;
+    ns21:hasInput <http://data.example.com/input/2166>,
+        <http://data.example.com/input/2167> ;
+    ns21:hasReactionEg <http://data.example.com/eg/1623> ;
+    ns21:operationMode "Batch" ;
+    ns21:reportedIn <https://doi.org/10.1155%2F2013%2F686497> .
+
+<https://doi.org/10.1155%2F2013%2F686497> a ns2:Article ;
+    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/1623> ;
+    dcterms:creator <http://data.example.com/author/A.%20A.%20H.%20Kadhum-946>,
+        <http://data.example.com/author/M.%20F.%20M.%20Zain-945>,
+        <http://data.example.com/author/R.%20K.%20Nath-944> ;
+    dcterms:date "2013-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/1066> ;
+    dcterms:title "LiNbO3 coating on concrete surface: A new and environmentally friendly route for artificial photosynthesis" ;
+    ns2:abstract "The addition of a photocatalyst to ordinary building materials such as concrete creates environmentally friendly materials by which air pollution or pollution of the surface can be diminished. The use of LiNbO3 photocatalyst in concrete material would be more beneficial since it can produce artificial photosynthesis in concrete. In these research photoassisted solid-gas phases reduction of carbon dioxide (artificial photosynthesis) was performed using a photocatalyst, LiNbO3, coated on concrete surface under illumination of UV-visible or sunlight and showed that LiNbO3 achieved high conversion of CO2 into products despite the low levels of band-gap light available. The high reaction efficiency of LiNbO3 is explained by its strong remnant polarization (70 ?Ccm2), allowing a longer lifetime of photoinduced carriers as well as an alternative reaction pathway. Due to the ease of usage and good photocatalytic efficiency, the research work done showed its potential application in pollution prevention." ;
+    ns2:doi "10.1155/2013/686497" ;
+    ns2:pageStart "1"^^xsd:positiveInteger ;
+    ns2:volume "2013"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/Malaysia> a schema:Country .
+

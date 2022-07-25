@@ -1,0 +1,116 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://purl.org/ontology/bibo/> .
+@prefix ns21: <http://base.namespace.com/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/L.%20Yong-574> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "L. Yong" .
+
+<http://data.example.com/author/T.%20Wong-573> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "T. Wong" .
+
+<http://data.example.com/author/X.%20Du-575> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "X. Du" .
+
+<http://data.example.com/author/Y.%20Yang-576> a schema:Person ;
+    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Y. Yang" .
+
+<http://data.example.com/condition/8174> a ns21:ReactorCondition ;
+    ns21:conditionType "Fixed-bed" ;
+    ns21:reactorType "Fixed-bed" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/8175> a ns21:CatalystSetUpCondition ;
+    ns21:conditionType "Optical Fiber" ;
+    ns21:setUpType "Optical Fiber" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/8176> a ns21:LampPowerCondition ;
+    ns21:conditionType "Other" ;
+    ns21:lampType "Other" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/8177> a ns21:LampIrradianceCondition ;
+    ns21:conditionType "Other" ;
+    ns21:lampType "Other" ;
+    ns11:numericValue "250.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/8178> a ns21:TemperatureCondition ;
+    ns11:numericValue "25.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/8179> a ns21:PreasureCondition ;
+    ns11:numericValue "1.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/8180> a ns21:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/8181> a ns21:ReactionTimeCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/8182> a ns21:ReactionMediumCondition ;
+    ns21:conditionType "Gas" ;
+    ns21:reactionMediumType "Gas" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/8183> a ns21:WavelengthCondition ;
+    ns21:conditionType "UV" ;
+    ns21:lightSourceType "UV" ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/8184> a ns21:IlluminatedAreaCondition ;
+    ns21:conditionType "UV" ;
+    ns21:lightSourceType "UV" ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/330> a ns2:Journal ;
+    dcterms:title "ENERGY CONVERSION AND MANAGEMENT" .
+
+<http://data.example.com/materialTransformastionProcess/834> a ns21:MaterialTransformationProcess ;
+    rdfs:label "NiO-InTaO4/TiO2" ;
+    ns21:hasBET <http://data.example.com/bet/834> ;
+    ns21:hasCondition <http://data.example.com/condition/8174>,
+        <http://data.example.com/condition/8175>,
+        <http://data.example.com/condition/8176>,
+        <http://data.example.com/condition/8177>,
+        <http://data.example.com/condition/8178>,
+        <http://data.example.com/condition/8179>,
+        <http://data.example.com/condition/8180>,
+        <http://data.example.com/condition/8181>,
+        <http://data.example.com/condition/8182>,
+        <http://data.example.com/condition/8183>,
+        <http://data.example.com/condition/8184> ;
+    ns21:hasInput <http://data.example.com/input/1995>,
+        <http://data.example.com/input/1996>,
+        <http://data.example.com/input/1997>,
+        <http://data.example.com/input/1998> ;
+    ns21:hasReactionEg <http://data.example.com/eg/834> ;
+    ns21:operationMode "Continuous" ;
+    ns21:reportedIn <https://doi.org/10.1016%2Fj.enconman.2012.08.021> .
+
+<https://doi.org/10.1016%2Fj.enconman.2012.08.021> a ns2:Article ;
+    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/834> ;
+    dcterms:creator <http://data.example.com/author/L.%20Yong-574>,
+        <http://data.example.com/author/T.%20Wong-573>,
+        <http://data.example.com/author/X.%20Du-575>,
+        <http://data.example.com/author/Y.%20Yang-576> ;
+    dcterms:date "2013-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/330> ;
+    dcterms:title "Numerical investigation on CO2 photocatalytic reduction in optical fiber monolith reactor" ;
+    ns2:abstract "Photocatalytic reduction of carbon dioxide had been a promising way to control greenhouse gas emission. Optical fiber monolith reactor with catalyst coated on the inner surface attracts attention in recent years by its high light utilization ratio. A two-dimensional computational model to describe the photocatalytic reduction of carbon dioxide in a multichannel optical fiber monolith reactor, which had been experimentally investigated, is developed and simulated. Laminar fluid flow, empirical radiation field and a Langmuir&ndash;Hinshelwood kinetics submodel are incorporated in this model, which numerical results agree well with the experimental data. The variation of methanol concentration distribution with the inflow water vapor concentration ratio, inflow velocity and light intensity input are obtained and analyzed. The influence of the deviation of optical fiber installed in the monolith upon the methanol concentration and production efficiency is presented. The results show that the methanol concentration at outlet increases as the inflow water vapor concentration ratio and light intensity input increase, but decreases with increasing the inflow velocity, all of which cause the rise of overall methanol production. With the increase of the optical fiber deviation from the monolith axis, the methanol production efficiency will decrease. Central and straight installation of the optical fiber is recommended either in experiments or scale-up photocatalytic industries." ;
+    ns2:doi "10.1016/j.enconman.2012.08.021" ;
+    ns2:pageStart "299"^^xsd:positiveInteger ;
+    ns2:volume "65"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/China> a schema:Country .
+
