@@ -3,7 +3,7 @@
 START=$(date +%s)
 
 echo "Starting with data extraction..."
-python3 db_data__extraction/main.py
+python3 db_data_extraction/main.py
 
 END=$(date +%s)
 DIFF=$(( $END - $START ))

@@ -2,7 +2,7 @@ from data_inicializator import *
 from utils import *
 
 #Preparamos la información
-articles = prepare_articles()
+articles = prepare_articles(100)
 journals = prepare_journals(articles)
 authors = prepare_authors(articles)
 material_tranformations = prepare_material_transformations(articles)
