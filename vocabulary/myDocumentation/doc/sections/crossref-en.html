@@ -16,6 +16,13 @@ This section provides details for each class and property defined by The Photoca
          <a href="#http://purl.obolibrary.org/obo/CHEBI_24431" title="http://purl.obolibrary.org/obo/CHEBI_24431">CHEBI:24431</a>
       </li>
       <li>
+         <a href="#http://www.w3.org/2004/02/skos/core#Concept" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/2004/02/skos/core#ConceptScheme"
+            title="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a>
+      </li>
+      <li>
          <a href="#Condition" title="http://base.namespace.com/Condition">Condition</a>
       </li>
       <li>
@@ -201,6 +208,79 @@ This section provides details for each class and property defined by The Photoca
          </dd>
       </dl>
    </div>
+   <div class="entity" id="http://www.w3.org/2004/02/skos/core#Concept">
+      <h3>Concept<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#Concept</p>
+      <div class="comment">
+         <span class="markdown">An abstract idea or notion; a unit of thought.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://www.w3.org/2004/02/skos/core#">http://www.w3.org/2004/02/skos/core#</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#conditionTypeAsSKOSConcept"
+               title="http://base.namespace.com/conditionTypeAsSKOSConcept">condition type as SKOS concept</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#http://www.w3.org/2004/02/skos/core#ConceptScheme"
+               title="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.w3.org/2004/02/skos/core#ConceptScheme">
+      <h3>Concept Scheme<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#ConceptScheme</p>
+      <div class="comment">
+         <span class="markdown">A concept scheme may be defined to include concepts from different sources.</span>
+      </div>
+      <div class="comment">
+         <span class="markdown">A set of concepts, optionally including statements about semantic relationships between those concepts.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://www.w3.org/2004/02/skos/core#">http://www.w3.org/2004/02/skos/core#</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://www.w3.org/2004/02/skos/core#inScheme" title="http://www.w3.org/2004/02/skos/core#inScheme">is in scheme</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#http://vocab.example.com/condition/lightSourceType"
+               title="http://vocab.example.com/condition/lightSourceType">light source type</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://vocab.example.com/condition/operationMode"
+               title="http://vocab.example.com/condition/operationMode">operation mode</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#http://vocab.example.com/condition/reactionMediumType"
+               title="http://vocab.example.com/condition/reactionMediumType">reaction medium type</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#http://www.w3.org/2004/02/skos/core#Concept" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="Condition">
       <h3>Condition<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -229,7 +309,9 @@ This section provides details for each class and property defined by The Photoca
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#conditionType" title="http://base.namespace.com/conditionType">condition type</a>
+            <a href="#conditionTypeAsSKOSConcept"
+               title="http://base.namespace.com/conditionTypeAsSKOSConcept">condition type as SKOS concept</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#conditionTypeAsText" title="http://base.namespace.com/conditionTypeAsText">condition type as text</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#http://qudt.org/2.1/schema/qudt/value" title="http://qudt.org/2.1/schema/qudt/value">value</a>
             <sup class="type-dp" title="data property">dp</sup>
          </dd>
@@ -396,7 +478,7 @@ This section provides details for each class and property defined by The Photoca
          <dt>is in domain of</dt>
          <dd>
             <a href="#lightSourceType" title="http://base.namespace.com/lightSourceType">light source type</a>
-            <sup class="type-dp" title="data property">dp</sup>
+            <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
@@ -422,7 +504,7 @@ This section provides details for each class and property defined by The Photoca
             <sup class="type-op" title="object property">op</sup>, <a href="#hasOutput" title="http://base.namespace.com/hasOutput">has output</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasYield" title="http://base.namespace.com/hasYield">has yield</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#operationMode" title="http://base.namespace.com/operationMode">operation mode</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#reportedIn" title="http://base.namespace.com/reportedIn">reported in</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#reportedIn" title="http://base.namespace.com/reportedIn">reported in</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
@@ -589,7 +671,7 @@ This section provides details for each class and property defined by The Photoca
          <dt>is in domain of</dt>
          <dd>
             <a href="#reactionMediumType" title="http://base.namespace.com/reactionMediumType">reaction medium type</a>
-            <sup class="type-dp" title="data property">dp</sup>
+            <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
@@ -760,6 +842,10 @@ This section provides details for each class and property defined by The Photoca
          <a href="#affiliationCountry" title="http://base.namespace.com/affiliationCountry">affiliation country</a>
       </li>
       <li>
+         <a href="#conditionTypeAsSKOSConcept"
+            title="http://base.namespace.com/conditionTypeAsSKOSConcept">condition type as SKOS concept</a>
+      </li>
+      <li>
          <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">
             <span>creator</span>
          </a>
@@ -796,7 +882,19 @@ This section provides details for each class and property defined by The Photoca
          <a href="#hasYield" title="http://base.namespace.com/hasYield">has yield</a>
       </li>
       <li>
+         <a href="#http://www.w3.org/2004/02/skos/core#inScheme" title="http://www.w3.org/2004/02/skos/core#inScheme">is in scheme</a>
+      </li>
+      <li>
          <a href="#http://purl.org/dc/terms/isPartOf" title="http://purl.org/dc/terms/isPartOf">is part of</a>
+      </li>
+      <li>
+         <a href="#lightSourceType" title="http://base.namespace.com/lightSourceType">light source type</a>
+      </li>
+      <li>
+         <a href="#operationMode" title="http://base.namespace.com/operationMode">operation mode</a>
+      </li>
+      <li>
+         <a href="#reactionMediumType" title="http://base.namespace.com/reactionMediumType">reaction medium type</a>
       </li>
       <li>
          <a href="#reportedIn" title="http://base.namespace.com/reportedIn">reported in</a>
@@ -829,6 +927,37 @@ This section provides details for each class and property defined by The Photoca
             <dt>has range</dt>
             <dd>
                <a href="#https://schema.org/Country" title="https://schema.org/Country">Country</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="conditionTypeAsSKOSConcept">
+      <h3>condition type as SKOS concept<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://base.namespace.com/conditionTypeAsSKOSConcept</p>
+      <div class="comment">
+         <span class="markdown">A condition type in which the material transformation is performed. Here only SKOS concepts can be written.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#lightSourceType" title="http://base.namespace.com/lightSourceType">light source type</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#reactionMediumType" title="http://base.namespace.com/reactionMediumType">reaction medium type</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Condition" title="http://base.namespace.com/Condition">Condition</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://www.w3.org/2004/02/skos/core#Concept" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -1122,6 +1251,33 @@ This section provides details for each class and property defined by The Photoca
          </dl>
       </div>
    </div>
+   <div class="entity" id="http://www.w3.org/2004/02/skos/core#inScheme">
+      <h3>is in scheme<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#inScheme</p>
+      <div class="comment">
+         <span class="markdown">Relates a resource (for example a concept) to a concept scheme in which it is included.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://www.w3.org/2004/02/skos/core#ConceptScheme"
+                  title="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="http://purl.org/dc/terms/isPartOf">
       <h3>is part of<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -1148,6 +1304,107 @@ This section provides details for each class and property defined by The Photoca
                <a href="#http://purl.org/ontology/bibo/Journal" title="http://purl.org/ontology/bibo/Journal">Journal</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="lightSourceType">
+      <h3>light source type<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://base.namespace.com/lightSourceType</p>
+      <div class="comment">
+         <span class="markdown">Light source used in the material transformation.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#conditionTypeAsSKOSConcept"
+                  title="http://base.namespace.com/conditionTypeAsSKOSConcept">condition type as SKOS concept</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#LightSourceCondition" title="http://base.namespace.com/LightSourceCondition">Light Source Condition</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://www.w3.org/2004/02/skos/core#Concept" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">and</span> (<a href="#http://www.w3.org/2004/02/skos/core#inScheme" title="http://www.w3.org/2004/02/skos/core#inScheme">is in scheme</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">value</span> 
+               <a href="#http://vocab.example.com/condition/lightSourceType"
+                  title="http://vocab.example.com/condition/lightSourceType">light source type</a>)</dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="operationMode">
+      <h3>operation mode<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://base.namespace.com/operationMode</p>
+      <div class="comment">
+         <span class="markdown">The operation mode of the material transformation process. It can be continuous or in batch.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MaterialTransformationProcess"
+                  title="http://base.namespace.com/MaterialTransformationProcess">Material Transformation Process</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://www.w3.org/2004/02/skos/core#Concept" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">and</span> (<a href="#http://www.w3.org/2004/02/skos/core#inScheme" title="http://www.w3.org/2004/02/skos/core#inScheme">is in scheme</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">value</span> 
+               <a href="#http://vocab.example.com/condition/operationMode"
+                  title="http://vocab.example.com/condition/operationMode">operation mode</a>)</dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="reactionMediumType">
+      <h3>reaction medium type<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://base.namespace.com/reactionMediumType</p>
+      <div class="comment">
+         <span class="markdown">The reaction medium in which the material transformation is performed. It can be liquid or gas.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#conditionTypeAsSKOSConcept"
+                  title="http://base.namespace.com/conditionTypeAsSKOSConcept">condition type as SKOS concept</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#ReactionMediumCondition"
+                  title="http://base.namespace.com/ReactionMediumCondition">Reaction Medium Condition</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://www.w3.org/2004/02/skos/core#Concept" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">and</span> (<a href="#http://www.w3.org/2004/02/skos/core#inScheme" title="http://www.w3.org/2004/02/skos/core#inScheme">is in scheme</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">value</span> 
+               <a href="#http://vocab.example.com/condition/reactionMediumType"
+                  title="http://vocab.example.com/condition/reactionMediumType">reaction medium type</a>)</dd>
          </dl>
       </div>
    </div>
@@ -1228,7 +1485,7 @@ This section provides details for each class and property defined by The Photoca
          <a href="#http://purl.org/ontology/bibo/abstract" title="http://purl.org/ontology/bibo/abstract">abstract</a>
       </li>
       <li>
-         <a href="#conditionType" title="http://base.namespace.com/conditionType">condition type</a>
+         <a href="#conditionTypeAsText" title="http://base.namespace.com/conditionTypeAsText">condition type as text</a>
       </li>
       <li>
          <a href="#crystalStructure" title="http://base.namespace.com/crystalStructure">crystal structure</a>
@@ -1255,25 +1512,16 @@ This section provides details for each class and property defined by The Photoca
          <a href="#lampType" title="http://base.namespace.com/lampType">lamp type</a>
       </li>
       <li>
-         <a href="#lightSourceType" title="http://base.namespace.com/lightSourceType">light source type</a>
-      </li>
-      <li>
          <a href="#https://schema.org/name" title="https://schema.org/name">name</a>
       </li>
       <li>
          <a href="#http://qudt.org/2.1/schema/qudt/numericValue" title="http://qudt.org/2.1/schema/qudt/numericValue">numeric value</a>
       </li>
       <li>
-         <a href="#operationMode" title="http://base.namespace.com/operationMode">operation mode</a>
-      </li>
-      <li>
          <a href="#http://purl.org/ontology/bibo/pageStart" title="http://purl.org/ontology/bibo/pageStart">page start</a>
       </li>
       <li>
          <a href="#percentage" title="http://base.namespace.com/percentage">percentage</a>
-      </li>
-      <li>
-         <a href="#reactionMediumType" title="http://base.namespace.com/reactionMediumType">reaction medium type</a>
       </li>
       <li>
          <a href="#reactorType" title="http://base.namespace.com/reactorType">reactor type</a>
@@ -1318,23 +1566,21 @@ This section provides details for each class and property defined by The Photoca
          </dl>
       </div>
    </div>
-   <div class="entity" id="conditionType">
-      <h3>condition type<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="conditionTypeAsText">
+      <h3>condition type as text<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://base.namespace.com/conditionType</p>
+         <strong>IRI:</strong> http://base.namespace.com/conditionTypeAsText</p>
       <div class="comment">
-         <span class="markdown">A condition type in which the material transformation is performed.</span>
+         <span class="markdown">A condition type in which the material transformation is performed. Here any kind of text can be written.</span>
       </div>
       <div class="description">
          <dl>
             <dt>has sub-properties</dt>
             <dd>
                <a href="#lampType" title="http://base.namespace.com/lampType">lamp type</a>
-               <sup class="type-dp" title="data property">dp</sup>, <a href="#lightSourceType" title="http://base.namespace.com/lightSourceType">light source type</a>
-               <sup class="type-dp" title="data property">dp</sup>, <a href="#reactionMediumType" title="http://base.namespace.com/reactionMediumType">reaction medium type</a>
                <sup class="type-dp" title="data property">dp</sup>, <a href="#reactorType" title="http://base.namespace.com/reactorType">reactor type</a>
                <sup class="type-dp" title="data property">dp</sup>, <a href="#setUpType" title="http://base.namespace.com/setUpType">set up type</a>
                <sup class="type-dp" title="data property">dp</sup>
@@ -1570,43 +1816,12 @@ This section provides details for each class and property defined by The Photoca
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#conditionType" title="http://base.namespace.com/conditionType">condition type</a>
+               <a href="#conditionTypeAsText" title="http://base.namespace.com/conditionTypeAsText">condition type as text</a>
                <sup class="type-dp" title="data property">dp</sup>
             </dd>
             <dt>has domain</dt>
             <dd>
                <a href="#LampCondition" title="http://base.namespace.com/LampCondition">Lamp Condition</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#string"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="lightSourceType">
-      <h3>light source type<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://base.namespace.com/lightSourceType</p>
-      <div class="comment">
-         <span class="markdown">Light source used in the material transformation.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#conditionType" title="http://base.namespace.com/conditionType">condition type</a>
-               <sup class="type-dp" title="data property">dp</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#LightSourceCondition" title="http://base.namespace.com/LightSourceCondition">Light Source Condition</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1719,33 +1934,6 @@ This section provides details for each class and property defined by The Photoca
          </dl>
       </div>
    </div>
-   <div class="entity" id="operationMode">
-      <h3>operation mode<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://base.namespace.com/operationMode</p>
-      <div class="comment">
-         <span class="markdown">The operation mode of the material transformation process. It can be continuous or in batch.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#MaterialTransformationProcess"
-                  title="http://base.namespace.com/MaterialTransformationProcess">Material Transformation Process</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#string"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
-            </dd>
-         </dl>
-      </div>
-   </div>
    <div class="entity" id="http://purl.org/ontology/bibo/pageStart">
       <h3>page start<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
@@ -1802,38 +1990,6 @@ This section provides details for each class and property defined by The Photoca
          </dl>
       </div>
    </div>
-   <div class="entity" id="reactionMediumType">
-      <h3>reaction medium type<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://base.namespace.com/reactionMediumType</p>
-      <div class="comment">
-         <span class="markdown">The reaction medium in which the material transformation is performed. It can be liquid or gas.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#conditionType" title="http://base.namespace.com/conditionType">condition type</a>
-               <sup class="type-dp" title="data property">dp</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#ReactionMediumCondition"
-                  title="http://base.namespace.com/ReactionMediumCondition">Reaction Medium Condition</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#string"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
-            </dd>
-         </dl>
-      </div>
-   </div>
    <div class="entity" id="reactorType">
       <h3>reactor type<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
@@ -1848,7 +2004,7 @@ This section provides details for each class and property defined by The Photoca
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#conditionType" title="http://base.namespace.com/conditionType">condition type</a>
+               <a href="#conditionTypeAsText" title="http://base.namespace.com/conditionTypeAsText">condition type as text</a>
                <sup class="type-dp" title="data property">dp</sup>
             </dd>
             <dt>has domain</dt>
@@ -1879,7 +2035,7 @@ This section provides details for each class and property defined by The Photoca
          <dl>
             <dt>has super-properties</dt>
             <dd>
-               <a href="#conditionType" title="http://base.namespace.com/conditionType">condition type</a>
+               <a href="#conditionTypeAsText" title="http://base.namespace.com/conditionTypeAsText">condition type as text</a>
                <sup class="type-dp" title="data property">dp</sup>
             </dd>
             <dt>has domain</dt>
@@ -1977,6 +2133,24 @@ This section provides details for each class and property defined by The Photoca
          <a href="#Dye" title="http://base.namespace.com/Dye">Dye</a>
       </li>
       <li>
+         <a href="#http://vocab.example.com/condition/lightSourceType"
+            title="http://vocab.example.com/condition/lightSourceType">
+            <span>light source type</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://vocab.example.com/condition/operationMode"
+            title="http://vocab.example.com/condition/operationMode">
+            <span>operation mode</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://vocab.example.com/condition/reactionMediumType"
+            title="http://vocab.example.com/condition/reactionMediumType">
+            <span>reaction medium type</span>
+         </a>
+      </li>
+      <li>
          <a href="#Reductant" title="http://base.namespace.com/Reductant">Reductant</a>
       </li>
       <li>
@@ -2043,6 +2217,54 @@ This section provides details for each class and property defined by The Photoca
          <dd>
             <a href="#MaterialTransformationRole"
                title="http://base.namespace.com/MaterialTransformationRole">Material Transformation Role</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://vocab.example.com/condition/lightSourceType">
+      <h3>light source type<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.example.com/condition/lightSourceType</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://www.w3.org/2004/02/skos/core#ConceptScheme"
+               title="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://vocab.example.com/condition/operationMode">
+      <h3>operation mode<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.example.com/condition/operationMode</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://www.w3.org/2004/02/skos/core#ConceptScheme"
+               title="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://vocab.example.com/condition/reactionMediumType">
+      <h3>reaction medium type<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.example.com/condition/reactionMediumType</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#http://www.w3.org/2004/02/skos/core#ConceptScheme"
+               title="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>

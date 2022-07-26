@@ -2,11 +2,8 @@ Como se ha mencionado anteriormente este vocabulario se centra en la representac
 
 Los elementos de [bibo:Article](http://bibliontology.com/content/article.html) referencian al artículo en el que el proceso es descrito. Entre sus propiedades se encuentran datos informativos sobre el mismo, así como relaciones con los elementos [bibo:Journal](http://gbol.life/ontology/bibo/Journal/) y [schema:Person](https://schema.org/Person). Estos últimos además contienen información entre la que se encuentra el [schema:Country](https://schema.org/Country) útil para hacer búsquedas por país de afiliación de los investigadores. Los elementos de las clases [phcat:Input](#Input) y [phcat:Output](#Output) guardan una referencia del tipo [phcat:hasChemical](#hasChemical) con la clase [chebi:CHEBI_24431](https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:24431) (una sustancia química) pero solo los elementos de entrada cumplen con un rol del tipo [phcat:MaterialTransformationProcess](#MaterialTransformationProcess) para el proceso. Por otro lado el proceso puede tener varios tipos de condiciones, todas ellas subclases de [phcat:Condition](#Condition), las cuales representan un elemento medible mediante alguna unidad de medida y cantidades de la ontología QUDT como [qudt:Unit](https://qudt.org/schema/qudt/Unit) y [qudt:value](https://qudt.org/schema/qudt/value).
 
-<!--
-Hablar de SKOS (cuando se añada)
-
-También se han utilizado varios esquemas conceptuales (Tesauros) de SKOS para representar algunas de las clasificaciones de este dominio. La Figura 1 muestra algunas de estas relaciones con los esquemas conceptuales de SKOS. En el caso del tipo de variación, representado por la propiedad [espad:tipoVariacion](), existen varias posibilidades para representar dicho tipo de datos, tales como registro, baja y modificación, y los motivos asociados a cada variación.
--->
+<!-- SKOS -->
+También se han utilizado varios esquemas conceptuales (Tesauros) de SKOS para representar algunas de las clasificaciones de este dominio. <!-- La Figura 1 muestra algunas de estas relaciones con los esquemas conceptuales de SKOS. --> En el caso de esta ontología, estos esquemas se han usado para definir los modos de operación posibles y para controlar la clasificación de varios tipos de condición (propiedad phcat:conditionTypeAsSKOSConcept) como la fuente de luz y medio de reacción.
 
 ## 3.1 Ejemplos de uso
 
@@ -21,8 +18,7 @@ En primer lugar generamos una instancia de la clase [bibo:Article](http://biblio
         dcterms:title "Synthesis of Ag@AgBr/AgCl heterostructured nanocashews with enhanced photocatalytic performance via anion exchange" ;
         dcterms:date 2012 ;
         bibo:pageStart 13153 ;
-        dcterms:isPartOf  <https://portal.issn.org/resource/ISSN/1571-1013>;
-        #NOTE: no se ha podido encontrar a todos los autores
+        dcterms:isPartOf  <https://portal.issn.org/resource/ISSN/1571-1013> ;
         dcterms:creator  <https://orcid.org/0000-0003-2227-5008> ;
         dcterms:creator  <https://orcid.org/0000-0002-4106-9093> ;
         dcterms:creator  <https://scholar.google.com/citations?user=GZOJpwYAAAAJ&hl=es&oi=sra> ;
