@@ -6,7 +6,6 @@
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix qudt: <http://qudt.org/2.1/schema/qudt/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix chebi: <http://purl.obolibrary.org/obo/> .
 @prefix schema: <https://schema.org/> .
@@ -20,7 +19,7 @@
                               dcterms:title "The Photocatalysis Ontology"^^xsd:string ;
                               rdfs:comment "Esta ontología ha sido diseñada en conjunto con el instituto IMDEA Energía de Madrid. Para generar las bases de este vocabulario se ha utilizado como base su proyecto \"Artleafs\" que consiste en una plataforma web para recavar información sobre experimentos en el campo de la fotocatásilis para posibilitar y facilitar la reproducibilidad de los procesos explicados en los artículos cientificos."@es ,
                                            "This ontology has been designed in conjunction with the IMDEA Energy Institute of Madrid. To generate the bases of this vocabulary, the \"Artleafs\" project has been used as a basis, which consists of a web platform to collect information on experiments in the field of photocatalysis to enable and facilitate the reproducibility of the processes explained in scientific articles."@en ;
-                              owl:versionInfo "0.6" .
+                              owl:versionInfo "0.5.3" .
 
 #################################################################
 #    Annotation properties
@@ -28,10 +27,6 @@
 
 ###  http://purl.org/dc/terms/description
 dcterms:description rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/issued
-dcterms:issued rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/license
@@ -52,14 +47,6 @@ rdfs:label rdf:type owl:AnnotationProperty ;
 owl:maxCardinality rdf:type owl:AnnotationProperty .
 
 
-###  http://www.w3.org/2004/02/skos/core#definition
-skos:definition rdf:type owl:AnnotationProperty .
-
-
-###  http://www.w3.org/2004/02/skos/core#example
-skos:example rdf:type owl:AnnotationProperty .
-
-
 #################################################################
 #    Object Properties
 #################################################################
@@ -72,14 +59,6 @@ skos:example rdf:type owl:AnnotationProperty .
                                  "Referencia al país en el que reside la organización para la que el autor trabaja cuando presenta el artículo."@es ;
                     rdfs:isDefinedBy "https://schema.org/" ;
                     rdfs:label "affiliation country" .
-
-
-###  http://base.namespace.com/conditionTypeAsSKOSConcept
-:conditionTypeAsSKOSConcept rdf:type owl:ObjectProperty ;
-                            rdfs:domain :Condition ;
-                            rdfs:range skos:Concept ;
-                            rdfs:comment "A condition type in which the material transformation is performed. Here only SKOS concepts can be written." ;
-                            rdfs:label "condition type as SKOS concept" .
 
 
 ###  http://base.namespace.com/hasBET
@@ -167,53 +146,6 @@ skos:example rdf:type owl:AnnotationProperty .
           rdfs:label "has yield" .
 
 
-###  http://base.namespace.com/lightSourceType
-:lightSourceType rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf :conditionTypeAsSKOSConcept ;
-                 rdfs:domain :LightSourceCondition ;
-                 rdfs:range [ owl:intersectionOf ( skos:Concept
-                                                   [ rdf:type owl:Restriction ;
-                                                     owl:onProperty skos:inScheme ;
-                                                     owl:hasValue <http://vocab.example.com/condition/lightSourceType>
-                                                   ]
-                                                 ) ;
-                              rdf:type owl:Class
-                            ] ;
-                 rdfs:comment "Light source used in the material transformation." ;
-                 rdfs:label "light source type" .
-
-
-###  http://base.namespace.com/operationMode
-:operationMode rdf:type owl:ObjectProperty ;
-               rdfs:domain :MaterialTransformationProcess ;
-               rdfs:range [ owl:intersectionOf ( skos:Concept
-                                                 [ rdf:type owl:Restriction ;
-                                                   owl:onProperty skos:inScheme ;
-                                                   owl:hasValue <http://vocab.example.com/condition/operationMode>
-                                                 ]
-                                               ) ;
-                            rdf:type owl:Class
-                          ] ;
-               rdfs:comment "The operation mode of the material transformation process. It can be continuous or in batch." ;
-               rdfs:label "operation mode" .
-
-
-###  http://base.namespace.com/reactionMediumType
-:reactionMediumType rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf :conditionTypeAsSKOSConcept ;
-                    rdfs:domain :ReactionMediumCondition ;
-                    rdfs:range [ owl:intersectionOf ( skos:Concept
-                                                      [ rdf:type owl:Restriction ;
-                                                        owl:onProperty skos:inScheme ;
-                                                        owl:hasValue <http://vocab.example.com/condition/reactionMediumType>
-                                                      ]
-                                                    ) ;
-                                 rdf:type owl:Class
-                               ] ;
-                    rdfs:comment "The reaction medium in which the material transformation is performed. It can be liquid or gas." ;
-                    rdfs:label "reaction medium type" .
-
-
 ###  http://base.namespace.com/reportedIn
 :reportedIn rdf:type owl:ObjectProperty ;
             rdfs:domain :MaterialTransformationProcess ;
@@ -252,24 +184,16 @@ qudt:unit rdf:type owl:ObjectProperty ;
           rdfs:label "unit" .
 
 
-###  http://www.w3.org/2004/02/skos/core#inScheme
-skos:inScheme rdf:type owl:ObjectProperty ;
-              rdfs:range skos:ConceptScheme ;
-              rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-              rdfs:label "is in scheme"@en ;
-              skos:definition "Relates a resource (for example a concept) to a concept scheme in which it is included."@en .
-
-
 #################################################################
 #    Data properties
 #################################################################
 
-###  http://base.namespace.com/conditionTypeAsText
-:conditionTypeAsText rdf:type owl:DatatypeProperty ;
-                     rdfs:domain :Condition ;
-                     rdfs:range xsd:string ;
-                     rdfs:comment "A condition type in which the material transformation is performed. Here any kind of text can be written." ;
-                     rdfs:label "condition type as text" .
+###  http://base.namespace.com/conditionType
+:conditionType rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Condition ;
+               rdfs:range xsd:string ;
+               rdfs:comment "A condition type in which the material transformation is performed." ;
+               rdfs:label "condition type" .
 
 
 ###  http://base.namespace.com/crystalStructure
@@ -282,11 +206,28 @@ skos:inScheme rdf:type owl:ObjectProperty ;
 
 ###  http://base.namespace.com/lampType
 :lampType rdf:type owl:DatatypeProperty ;
-          rdfs:subPropertyOf :conditionTypeAsText ;
+          rdfs:subPropertyOf :conditionType ;
           rdfs:domain :LampCondition ;
           rdfs:range xsd:string ;
           rdfs:comment "The lamp type used in the material transformation." ;
           rdfs:label "lamp type" .
+
+
+###  http://base.namespace.com/lightSourceType
+:lightSourceType rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf :conditionType ;
+                 rdfs:domain :LightSourceCondition ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Light source used in the material transformation." ;
+                 rdfs:label "light source type" .
+
+
+###  http://base.namespace.com/operationMode
+:operationMode rdf:type owl:DatatypeProperty ;
+               rdfs:domain :MaterialTransformationProcess ;
+               rdfs:range xsd:string ;
+               rdfs:comment "The operation mode of the material transformation process. It can be continuous or in batch." ;
+               rdfs:label "operation mode" .
 
 
 ###  http://base.namespace.com/percentage
@@ -297,9 +238,18 @@ skos:inScheme rdf:type owl:ObjectProperty ;
             rdfs:label "percentage" .
 
 
+###  http://base.namespace.com/reactionMediumType
+:reactionMediumType rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf :conditionType ;
+                    rdfs:domain :ReactionMediumCondition ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "The reaction medium in which the material transformation is performed. It can be liquid or gas." ;
+                    rdfs:label "reaction medium type" .
+
+
 ###  http://base.namespace.com/reactorType
 :reactorType rdf:type owl:DatatypeProperty ;
-             rdfs:subPropertyOf :conditionTypeAsText ;
+             rdfs:subPropertyOf :conditionType ;
              rdfs:domain :ReactorCondition ;
              rdfs:range xsd:string ;
              rdfs:comment "The reactor used in the material transformation process." ;
@@ -308,7 +258,7 @@ skos:inScheme rdf:type owl:ObjectProperty ;
 
 ###  http://base.namespace.com/setUpType
 :setUpType rdf:type owl:DatatypeProperty ;
-           rdfs:subPropertyOf :conditionTypeAsText ;
+           rdfs:subPropertyOf :conditionType ;
            rdfs:domain :CatalystSetUpCondition ;
            rdfs:range xsd:string ;
            rdfs:comment "The set up used in the material transformation." ;
@@ -451,7 +401,7 @@ schema:name rdf:type owl:DatatypeProperty ;
                      ] ;
      rdfs:comment "It describes the relationship between the number of gas molecules adsorbed at a given relative pressure." ;
      rdfs:label "BET" ,
-                "Specific Surface Area"@en ,
+                "Specific Surface Area"@en,
                 "Superficie específica"@es .
 
 
@@ -747,25 +697,6 @@ qudt:Unit rdf:type owl:Class ;
           rdfs:label "Unit" .
 
 
-###  http://www.w3.org/2004/02/skos/core#Concept
-skos:Concept rdf:type owl:Class ;
-             owl:disjointWith skos:ConceptScheme ;
-             dcterms:issued "2004-02-xx" ;
-             rdfs:isDefinedBy skos: ;
-             rdfs:label "Concept"@en ;
-             skos:definition "An abstract idea or notion; a unit of thought." .
-
-
-###  http://www.w3.org/2004/02/skos/core#ConceptScheme
-skos:ConceptScheme rdf:type owl:Class ;
-                   dcterms:issued "2004-02-xx" ;
-                   rdfs:comment "A concept scheme may be defined to include concepts from different sources."@en ,
-                                "Thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', and other types of controlled vocabulary are all examples of concept schemes.  Concept schemes are also embedded in glossaries and terminologies."@en ;
-                   rdfs:isDefinedBy skos: ;
-                   rdfs:label "Concept Scheme"@en ;
-                   skos:definition "A set of concepts, optionally including statements about semantic relationships between those concepts."@en .
-
-
 ###  https://schema.org/Country
 schema:Country rdf:type owl:Class ;
                rdfs:isDefinedBy "https://schema.org/"^^xsd:anyURI ;
@@ -821,21 +752,6 @@ schema:Person rdf:type owl:Class ;
 :Support rdf:type owl:NamedIndividual ,
                   :MaterialTransformationRole ;
          rdfs:label "Support" .
-
-
-###  http://vocab.example.com/condition/lightSourceType
-<http://vocab.example.com/condition/lightSourceType> rdf:type owl:NamedIndividual ,
-                                                              skos:ConceptScheme .
-
-
-###  http://vocab.example.com/condition/operationMode
-<http://vocab.example.com/condition/operationMode> rdf:type owl:NamedIndividual ,
-                                                            skos:ConceptScheme .
-
-
-###  http://vocab.example.com/condition/reactionMediumType
-<http://vocab.example.com/condition/reactionMediumType> rdf:type owl:NamedIndividual ,
-                                                                 skos:ConceptScheme .
 
 
 #################################################################

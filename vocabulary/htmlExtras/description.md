@@ -2,6 +2,9 @@ As mentioned above, this vocabulary focuses on the representation of photocataly
 
 The elements of [bibo:Article](http://bibliontology.com/content/article.html) refer to the article in which the process is described. Among its properties are informative data about it, as well as relationships with the elements [bibo:Journal](http://gbol.life/ontology/bibo/Journal/) and [schema:Person](https://schema .org/person). The latter also contain information including [schema:Country](https://schema.org/Country) useful for searching by the researchers country of affiliation. The elements of the classes [phcat:Input](#Input) and [phcat:Output](#Output) store a reference of type [phcat:hasChemical](#hasChemical) with the class [chebi:CHEBI_24431](https:/ /www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:24431) (a chemical) but only the input elements fulfill a role of type [phcat:MaterialTransformationProcess](#MaterialTransformationProcess) for the process . On the other hand, the process can have several types of conditions, all of them subclasses of [phcat:Condition](#Condition), which represent an element measurable by some unit of measure and quantities of the QUDT ontology such as [qudt:Unit]( https://qudt.org/schema/qudt/Unit) and [qudt:value](https://qudt.org/schema/qudt/value).
 
+<!-- SKOS -->
+Several SKOS conceptual schemes (Thesauri) have also been used to represent some of the classifications of this domain. <!-- Figure 1 shows some of these relationships with the SKOS conceptual schemes. --> These schemes have been used to define the possible modes of operation and to control the classification of various condition types (property phcat:conditionTypeAsSKOSConcept) such as light source and reaction medium.
+
 ## 3.1 Examples of use
 
 In order to facilitate the understanding of the use of some classes and properties of this vocabulary, some examples will be provided below.
@@ -15,8 +18,7 @@ First we generate an instance of the class [bibo:Article](http://bibliontology.c
         dcterms:title "Synthesis of Ag@AgBr/AgCl heterostructured nanocashews with enhanced photocatalytic performance via anion exchange" ;
         dcterms:date 2012 ;
         bibo:pageStart 13153 ;
-        dcterms:isPartOf  <https://portal.issn.org/resource/ISSN/1571-1013>;
-        #NOTE: no se ha podido encontrar a todos los autores
+        dcterms:isPartOf  <https://portal.issn.org/resource/ISSN/1571-1013> ;
         dcterms:creator  <https://orcid.org/0000-0003-2227-5008> ;
         dcterms:creator  <https://orcid.org/0000-0002-4106-9093> ;
         dcterms:creator  <https://scholar.google.com/citations?user=GZOJpwYAAAAJ&hl=es&oi=sra> ;
