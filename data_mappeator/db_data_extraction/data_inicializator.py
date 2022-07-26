@@ -100,7 +100,21 @@ def prepare_material_transformations(articles = None):
         query_aux = " WHERE No_de_Ref IN (" + joined_list + ");"
         query = query + query_aux
 
-    return prepare_from_query(query)
+    cursor.execute(query)
+    result = cursor.fetchall()
+    for i in range(len(result)):
+        row = clean_row(result[i])
+        percentage = row['percent']
+        if percentage:
+            try:
+                if float(percentage) < 0:
+                    row['percent'] = None
+            except Exception:
+                row['percent'] = None
+
+        result[i] = row
+
+    return result
 
 def prepare_inputs(mtplist):
     result = []

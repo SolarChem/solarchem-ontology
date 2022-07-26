@@ -1,98 +1,112 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
-@prefix ns2: <http://purl.org/ontology/bibo/> .
-@prefix ns21: <http://base.namespace.com/> .
+@prefix ns1: <http://base.namespace.com/> .
+@prefix ns2: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://data.example.com/author/A.%20Kumar-3723> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
+<http://data.example.com/author/A.%20Kumar-3730> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
     schema:name "A. Kumar" .
 
-<http://data.example.com/author/A.%20M.S-3725> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
+<http://data.example.com/author/A.%20M.S-3732> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
     schema:name "A. M.S" .
 
-<http://data.example.com/author/B.%20Behera-3727> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
+<http://data.example.com/author/B.%20Behera-3734> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
     schema:name "B. Behera" .
 
-<http://data.example.com/author/D.%20Pratap-3726> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/France> ;
+<http://data.example.com/author/D.%20Pratap-3733> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/France> ;
     schema:name "D. Pratap" .
 
-<http://data.example.com/author/P.%20Kumar-3724> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
+<http://data.example.com/author/P.%20Kumar-3731> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
     schema:name "P. Kumar" .
 
-<http://data.example.com/author/S.%20L.%20Jain-3728> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
+<http://data.example.com/author/S.%20L.%20Jain-3735> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
     schema:name "S. L. Jain" .
 
-<http://data.example.com/condition/42109> a ns21:ReactorCondition ;
-    ns21:conditionType "Slurry" ;
-    ns21:reactorType "Slurry" ;
-    ns11:numericValue "0.06" ;
-    ns11:unit <http://qudt.org/vocab/unit/L> .
+<http://data.example.com/chemical/307> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TEA" .
 
-<http://data.example.com/condition/42110> a ns21:CatalystSetUpCondition ;
-    ns21:conditionType "Powder(Suspended)" ;
-    ns21:setUpType "Powder(Suspended)" ;
-    ns11:numericValue "0.002" ;
-    ns11:unit <http://qudt.org/vocab/unit/GM> .
+<http://data.example.com/chemical/605> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "[Ru(bpy)2(bpm)Ru(CO)2Cl2]" .
 
-<http://data.example.com/condition/42111> a ns21:LampPowerCondition ;
-    ns21:conditionType "LED" ;
-    ns21:lampType "LED" ;
-    ns11:numericValue "20.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/W> .
+<http://data.example.com/condition/42109> a ns1:ReactorCondition ;
+    ns1:conditionTypeAsText "Slurry" ;
+    ns1:reactorType "Slurry" ;
+    ns2:numericValue "0.06" ;
+    ns2:unit <http://qudt.org/vocab/unit/L> .
 
-<http://data.example.com/condition/42112> a ns21:LampIrradianceCondition ;
-    ns21:conditionType "LED" ;
-    ns21:lampType "LED" ;
-    ns11:numericValue "75.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+<http://data.example.com/condition/42110> a ns1:CatalystSetUpCondition ;
+    ns1:conditionTypeAsText "Powder(Suspended)" ;
+    ns1:setUpType "Powder(Suspended)" ;
+    ns2:numericValue "0.002" ;
+    ns2:unit <http://qudt.org/vocab/unit/GM> .
 
-<http://data.example.com/condition/42113> a ns21:TemperatureCondition ;
-    ns11:numericValue "20.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+<http://data.example.com/condition/42111> a ns1:LampPowerCondition ;
+    ns1:conditionTypeAsText "LED" ;
+    ns1:lampType "LED" ;
+    ns2:numericValue "20.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W> .
 
-<http://data.example.com/condition/42114> a ns21:PreasureCondition ;
-    ns11:numericValue "0.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+<http://data.example.com/condition/42112> a ns1:LampIrradianceCondition ;
+    ns1:conditionTypeAsText "LED" ;
+    ns1:lampType "LED" ;
+    ns2:numericValue "75.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W-PER-M2> .
 
-<http://data.example.com/condition/42115> a ns21:SpaceVelocityCondition ;
-    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+<http://data.example.com/condition/42113> a ns1:TemperatureCondition ;
+    ns2:numericValue "20.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/DEG_C> .
 
-<http://data.example.com/condition/42116> a ns21:ReactionTimeCondition ;
-    ns11:numericValue "12.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/HR> .
+<http://data.example.com/condition/42114> a ns1:PreasureCondition ;
+    ns2:numericValue "0.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/BAR> .
 
-<http://data.example.com/condition/42117> a ns21:ReactionMediumCondition ;
-    ns21:conditionType "Liquid" ;
-    ns21:reactionMediumType "Liquid" ;
-    ns11:numericValue "7" ;
-    ns11:unit <http://qudt.org/vocab/unit/PH> .
+<http://data.example.com/condition/42115> a ns1:SpaceVelocityCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/PER-HR> .
 
-<http://data.example.com/condition/42118> a ns21:WavelengthCondition ;
-    ns21:conditionType "Visible" ;
-    ns21:lightSourceType "Visible" ;
-    ns11:numericValue "400-780" ;
-    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+<http://data.example.com/condition/42116> a ns1:ReactionTimeCondition ;
+    ns2:numericValue "12.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/HR> .
 
-<http://data.example.com/condition/42119> a ns21:IlluminatedAreaCondition ;
-    ns21:conditionType "Visible" ;
-    ns21:lightSourceType "Visible" ;
-    ns11:unit <http://qudt.org/vocab/unit/M2> .
+<http://data.example.com/condition/42117> a ns1:ReactionMediumCondition ;
+    ns1:conditionTypeAsText "Liquid" ;
+    ns1:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns2:numericValue "7" ;
+    ns2:unit <http://qudt.org/vocab/unit/PH> .
 
-<http://data.example.com/journal/552> a ns2:Journal ;
+<http://data.example.com/condition/42118> a ns1:WavelengthCondition ;
+    ns1:conditionTypeAsText "Visible" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns2:numericValue "400-780" ;
+    ns2:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/42119> a ns1:IlluminatedAreaCondition ;
+    ns1:conditionTypeAsText "Visible" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns2:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/input/10407> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/605> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/10408> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/307> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/journal/552> a ns21:Journal ;
     dcterms:title "JOURNAL OF INDUSTRIAL AND ENGINEERING CHEMISTRY" .
 
-<http://data.example.com/materialTransformastionProcess/5128> a ns21:MaterialTransformationProcess ;
+<http://data.example.com/materialTransformastionProcess/5128> a ns1:MaterialTransformationProcess ;
     rdfs:label "Ru-Ru" ;
-    ns21:hasBET <http://data.example.com/bet/5128> ;
-    ns21:hasCondition <http://data.example.com/condition/42109>,
+    ns1:hasBET <http://data.example.com/bet/5128> ;
+    ns1:hasCondition <http://data.example.com/condition/42109>,
         <http://data.example.com/condition/42110>,
         <http://data.example.com/condition/42111>,
         <http://data.example.com/condition/42112>,
@@ -103,33 +117,71 @@
         <http://data.example.com/condition/42117>,
         <http://data.example.com/condition/42118>,
         <http://data.example.com/condition/42119> ;
-    ns21:hasInput <http://data.example.com/input/10407>,
+    ns1:hasInput <http://data.example.com/input/10407>,
         <http://data.example.com/input/10408> ;
-    ns21:hasOutput <http://data.example.com/output/11762>,
+    ns1:hasOutput <http://data.example.com/output/11762>,
         <http://data.example.com/output/11763>,
         <http://data.example.com/output/11764>,
         <http://data.example.com/output/11765> ;
-    ns21:hasReactionEg <http://data.example.com/eg/5128> ;
-    ns21:operationMode "Batch" ;
-    ns21:reportedIn <https://doi.org/10.1016%2Fj.jiec.2017.12.037> .
+    ns1:hasReactionEg <http://data.example.com/eg/5128> ;
+    ns1:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns1:reportedIn <https://doi.org/10.1016%2Fj.jiec.2017.12.037> .
 
-<https://doi.org/10.1016%2Fj.jiec.2017.12.037> a ns2:Article ;
-    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/5128> ;
-    dcterms:creator <http://data.example.com/author/A.%20Kumar-3723>,
-        <http://data.example.com/author/A.%20M.S-3725>,
-        <http://data.example.com/author/B.%20Behera-3727>,
-        <http://data.example.com/author/D.%20Pratap-3726>,
-        <http://data.example.com/author/P.%20Kumar-3724>,
-        <http://data.example.com/author/S.%20L.%20Jain-3728> ;
+<http://data.example.com/output/11762> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/11762-gh> .
+
+<http://data.example.com/output/11763> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/7> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/11763-gh> .
+
+<http://data.example.com/output/11764> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/11764-g> .
+
+<http://data.example.com/output/11765> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/7> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/11765-g> .
+
+<http://data.example.com/output_quantity/11762-gh> a ns1:OutputQuantity ;
+    ns1:numericValue "0.1600"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/11763-gh> a ns1:OutputQuantity ;
+    ns1:numericValue "0.0500"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/11764-g> a ns1:OutputQuantity ;
+    ns1:numericValue "1.9300"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/11765-g> a ns1:OutputQuantity ;
+    ns1:numericValue "0.6100"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<https://doi.org/10.1016%2Fj.jiec.2017.12.037> a ns21:Article ;
+    ns1:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/5128> ;
+    dcterms:creator <http://data.example.com/author/A.%20Kumar-3730>,
+        <http://data.example.com/author/A.%20M.S-3732>,
+        <http://data.example.com/author/B.%20Behera-3734>,
+        <http://data.example.com/author/D.%20Pratap-3733>,
+        <http://data.example.com/author/P.%20Kumar-3731>,
+        <http://data.example.com/author/S.%20L.%20Jain-3735> ;
     dcterms:date "2018-01-01"^^xsd:date ;
     dcterms:isPartOf <http://data.example.com/journal/552> ;
-    dcterms:title "A bridged ruthenium dimer (Ru–Ru) for photoreduction of CO 2 under visible light irradiation" ;
-    ns2:abstract "A bridged binuclear complex consisting of two ruthenium units (Ru–Ru) connected through a bridging ligand was synthesized, in which one unit serves as a photosensitizer, while another unit works as a catalyst. The synthesized Ru–Ru photocatalyst was tested for photoreduction of CO2 to give CO and HCOOH under visible light irradiation in the presence of triethanolamine as a sacrificial donor. The yield of CO and HCOOH was found to be 54 ppm and 28 ppm respectively after 12 h of irradiation. Due to the binding of photosensitizer and catalyst units in a single molecule via bridging ligand provides faster and efficient electron transfer from sensitizer to catalyst unit which resulted in the higher activity and better product yields." ;
-    ns2:doi "10.1016/j.jiec.2017.12.037" ;
-    ns2:pageStart "381"^^xsd:positiveInteger ;
-    ns2:volume "61"^^xsd:positiveInteger .
+    dcterms:title "A bridged ruthenium dimer (Ruâ€“Ru) for photoreduction of CO 2 under visible light irradiation" ;
+    ns21:abstract "A bridged binuclear complex consisting of two ruthenium units (Ruâ€“Ru) connected through a bridging ligand was synthesized, in which one unit serves as a photosensitizer, while another unit works as a catalyst. The synthesized Ruâ€“Ru photocatalyst was tested for photoreduction of CO2 to give CO and HCOOH under visible light irradiation in the presence of triethanolamine as a sacrificial donor. The yield of CO and HCOOH was found to be 54 ppm and 28 ppm respectively after 12 h of irradiation. Due to the binding of photosensitizer and catalyst units in a single molecule via bridging ligand provides faster and efficient electron transfer from sensitizer to catalyst unit which resulted in the higher activity and better product yields." ;
+    ns21:doi "10.1016/j.jiec.2017.12.037" ;
+    ns21:pageStart "381"^^xsd:positiveInteger ;
+    ns21:volume "61"^^xsd:positiveInteger .
 
 <https://en.wikipedia.org/wiki/France> a schema:Country .
+
+<http://data.example.com/chemical/7> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "HCOOH" .
+
+<http://data.example.com/chemical/927> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CO" .
 
 <https://en.wikipedia.org/wiki/India> a schema:Country .
 

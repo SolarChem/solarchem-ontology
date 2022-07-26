@@ -1,88 +1,88 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
-@prefix ns2: <http://purl.org/ontology/bibo/> .
-@prefix ns21: <http://base.namespace.com/> .
+@prefix ns1: <http://base.namespace.com/> .
+@prefix ns2: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://data.example.com/author/G.%20Ji-1241> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "G. Ji" .
 
 <http://data.example.com/author/J.%20Wang-1240> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "J. Wang" .
 
 <http://data.example.com/author/M.%20A.%20Gondal-1243> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Saudi%20Arabia> ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/Saudi%20Arabia> ;
     schema:name "M. A. Gondal" .
 
 <http://data.example.com/author/X.%20Chang-1244> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "X. Chang" .
 
 <http://data.example.com/author/Y.%20Liu-1242> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "Y. Liu" .
 
-<http://data.example.com/condition/12013> a ns21:ReactorCondition ;
-    ns21:conditionType "Slurry" ;
-    ns21:reactorType "Slurry" ;
-    ns11:unit <http://qudt.org/vocab/unit/L> .
+<http://data.example.com/condition/12013> a ns1:ReactorCondition ;
+    ns1:conditionTypeAsText "Slurry" ;
+    ns1:reactorType "Slurry" ;
+    ns2:unit <http://qudt.org/vocab/unit/L> .
 
-<http://data.example.com/condition/12014> a ns21:CatalystSetUpCondition ;
-    ns21:conditionType "Other" ;
-    ns21:setUpType "Other" ;
-    ns11:unit <http://qudt.org/vocab/unit/GM> .
+<http://data.example.com/condition/12014> a ns1:CatalystSetUpCondition ;
+    ns1:conditionTypeAsText "Other" ;
+    ns1:setUpType "Other" ;
+    ns2:unit <http://qudt.org/vocab/unit/GM> .
 
-<http://data.example.com/condition/12015> a ns21:LampPowerCondition ;
-    ns21:conditionType "Mercury-Xenon(Hg-Xe)" ;
-    ns21:lampType "Mercury-Xenon(Hg-Xe)" ;
-    ns11:numericValue "500.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/W> .
+<http://data.example.com/condition/12015> a ns1:LampPowerCondition ;
+    ns1:conditionTypeAsText "Mercury-Xenon(Hg-Xe)" ;
+    ns1:lampType "Mercury-Xenon(Hg-Xe)" ;
+    ns2:numericValue "500.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W> .
 
-<http://data.example.com/condition/12016> a ns21:LampIrradianceCondition ;
-    ns21:conditionType "Mercury-Xenon(Hg-Xe)" ;
-    ns21:lampType "Mercury-Xenon(Hg-Xe)" ;
-    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+<http://data.example.com/condition/12016> a ns1:LampIrradianceCondition ;
+    ns1:conditionTypeAsText "Mercury-Xenon(Hg-Xe)" ;
+    ns1:lampType "Mercury-Xenon(Hg-Xe)" ;
+    ns2:unit <http://qudt.org/vocab/unit/W-PER-M2> .
 
-<http://data.example.com/condition/12017> a ns21:TemperatureCondition ;
-    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+<http://data.example.com/condition/12017> a ns1:TemperatureCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/DEG_C> .
 
-<http://data.example.com/condition/12018> a ns21:PreasureCondition ;
-    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+<http://data.example.com/condition/12018> a ns1:PreasureCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/BAR> .
 
-<http://data.example.com/condition/12019> a ns21:SpaceVelocityCondition ;
-    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+<http://data.example.com/condition/12019> a ns1:SpaceVelocityCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/PER-HR> .
 
-<http://data.example.com/condition/12020> a ns21:ReactionTimeCondition ;
-    ns11:unit <http://qudt.org/vocab/unit/HR> .
+<http://data.example.com/condition/12020> a ns1:ReactionTimeCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/HR> .
 
-<http://data.example.com/condition/12021> a ns21:ReactionMediumCondition ;
-    ns21:conditionType "Liquid" ;
-    ns21:reactionMediumType "Liquid" ;
-    ns11:numericValue "0" ;
-    ns11:unit <http://qudt.org/vocab/unit/PH> .
+<http://data.example.com/condition/12021> a ns1:ReactionMediumCondition ;
+    ns1:conditionTypeAsText "Liquid" ;
+    ns1:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns2:numericValue "0" ;
+    ns2:unit <http://qudt.org/vocab/unit/PH> .
 
-<http://data.example.com/condition/12022> a ns21:WavelengthCondition ;
-    ns21:conditionType "UV-Vis" ;
-    ns21:lightSourceType "UV-Vis" ;
-    ns11:numericValue "0" ;
-    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+<http://data.example.com/condition/12022> a ns1:WavelengthCondition ;
+    ns1:conditionTypeAsText "UV-Vis" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV-Vis> ;
+    ns2:numericValue "0" ;
+    ns2:unit <http://qudt.org/vocab/unit/NanoM> .
 
-<http://data.example.com/condition/12023> a ns21:IlluminatedAreaCondition ;
-    ns21:conditionType "UV-Vis" ;
-    ns21:lightSourceType "UV-Vis" ;
-    ns11:unit <http://qudt.org/vocab/unit/M2> .
+<http://data.example.com/condition/12023> a ns1:IlluminatedAreaCondition ;
+    ns1:conditionTypeAsText "UV-Vis" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV-Vis> ;
+    ns2:unit <http://qudt.org/vocab/unit/M2> .
 
-<http://data.example.com/journal/175> a ns2:Journal ;
+<http://data.example.com/journal/175> a ns21:Journal ;
     dcterms:title "CATALYSIS COMMUNICATIONS" .
 
-<http://data.example.com/materialTransformastionProcess/1943> a ns21:MaterialTransformationProcess ;
+<http://data.example.com/materialTransformastionProcess/1943> a ns1:MaterialTransformationProcess ;
     rdfs:label "TiO2" ;
-    ns21:hasBET <http://data.example.com/bet/1943> ;
-    ns21:hasCondition <http://data.example.com/condition/12013>,
+    ns1:hasBET <http://data.example.com/bet/1943> ;
+    ns1:hasCondition <http://data.example.com/condition/12013>,
         <http://data.example.com/condition/12014>,
         <http://data.example.com/condition/12015>,
         <http://data.example.com/condition/12016>,
@@ -93,15 +93,15 @@
         <http://data.example.com/condition/12021>,
         <http://data.example.com/condition/12022>,
         <http://data.example.com/condition/12023> ;
-    ns21:hasInput <http://data.example.com/input/2938>,
+    ns1:hasInput <http://data.example.com/input/2938>,
         <http://data.example.com/input/2939>,
         <http://data.example.com/input/2940> ;
-    ns21:hasReactionEg <http://data.example.com/eg/1943> ;
-    ns21:operationMode "Batch" ;
-    ns21:reportedIn <https://doi.org/10.1016%2Fj.catcom.2013.11.011> .
+    ns1:hasReactionEg <http://data.example.com/eg/1943> ;
+    ns1:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns1:reportedIn <https://doi.org/10.1016%2Fj.catcom.2013.11.011> .
 
-<https://doi.org/10.1016%2Fj.catcom.2013.11.011> a ns2:Article ;
-    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/1943> ;
+<https://doi.org/10.1016%2Fj.catcom.2013.11.011> a ns21:Article ;
+    ns1:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/1943> ;
     dcterms:creator <http://data.example.com/author/G.%20Ji-1241>,
         <http://data.example.com/author/J.%20Wang-1240>,
         <http://data.example.com/author/M.%20A.%20Gondal-1243>,
@@ -110,10 +110,10 @@
     dcterms:date "2014-01-01"^^xsd:date ;
     dcterms:isPartOf <http://data.example.com/journal/175> ;
     dcterms:title "Cu2OTiO2 heterostructure nanotube arrays prepared by an electrodeposition method exhibiting enhanced photocatalytic activity for CO2 reduction to methanol" ;
-    ns2:abstract "Cu2OTiO2 composite nanotube arrays demonstrating enhanced photocatalytic performance were synthesized using an electrodeposition method to impregnate the p-type Cu2O into the n-type titanium dioxide nanotube arrays (TNTs). The morphological results confirmed that the TNTs are wrapped by the Cu2O nanoparticles and the UV-Vis absorption spectra showed that the Cu2OTNTs display a better ability for visible light absorption compared to the pure TNTs. CO2 photocatalytic reduction experiments carried out by using Cu2OTNT nanocomposites proved that Cu2OTNTs exhibit high photocatalytic activity in conversion of CO2 to methanol, while pure TNT arrays were almost inactive. Furthermore, Cu2OTNTs also exhibited augmented activity in degradation of target organic pollutant like acid orange (AO) under visible light irradiation. The ultra enhanced photocatalytic activity noticed by using Cu2OTNTs in CO2 reduction and degradation of organic pollutant could be attributed to the formation of Cu2OTiO 2 heterostructures with higher charge separation efficiency." ;
-    ns2:doi "10.1016/j.catcom.2013.11.011" ;
-    ns2:pageStart "17"^^xsd:positiveInteger ;
-    ns2:volume "46"^^xsd:positiveInteger .
+    ns21:abstract "Cu2OTiO2 composite nanotube arrays demonstrating enhanced photocatalytic performance were synthesized using an electrodeposition method to impregnate the p-type Cu2O into the n-type titanium dioxide nanotube arrays (TNTs). The morphological results confirmed that the TNTs are wrapped by the Cu2O nanoparticles and the UV-Vis absorption spectra showed that the Cu2OTNTs display a better ability for visible light absorption compared to the pure TNTs. CO2 photocatalytic reduction experiments carried out by using Cu2OTNT nanocomposites proved that Cu2OTNTs exhibit high photocatalytic activity in conversion of CO2 to methanol, while pure TNT arrays were almost inactive. Furthermore, Cu2OTNTs also exhibited augmented activity in degradation of target organic pollutant like acid orange (AO) under visible light irradiation. The ultra enhanced photocatalytic activity noticed by using Cu2OTNTs in CO2 reduction and degradation of organic pollutant could be attributed to the formation of Cu2OTiO 2 heterostructures with higher charge separation efficiency." ;
+    ns21:doi "10.1016/j.catcom.2013.11.011" ;
+    ns21:pageStart "17"^^xsd:positiveInteger ;
+    ns21:volume "46"^^xsd:positiveInteger .
 
 <https://en.wikipedia.org/wiki/Saudi%20Arabia> a schema:Country .
 

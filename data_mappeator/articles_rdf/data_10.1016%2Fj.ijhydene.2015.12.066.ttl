@@ -1,98 +1,119 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
-@prefix ns2: <http://purl.org/ontology/bibo/> .
-@prefix ns21: <http://base.namespace.com/> .
+@prefix ns1: <http://base.namespace.com/> .
+@prefix ns2: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://data.example.com/author/L.%20Li-2494> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/L.%20Li-2508> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "L. Li" .
 
-<http://data.example.com/author/Q.%20Liao-2491> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/Q.%20Liao-2505> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "Q. Liao" .
 
-<http://data.example.com/author/R.%20Chen-2489> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/R.%20Chen-2503> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "R. Chen" .
 
-<http://data.example.com/author/S.%20Li-2493> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/S.%20Li-2507> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "S. Li" .
 
-<http://data.example.com/author/X.%20Cheng-2488> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/X.%20Cheng-2502> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "X. Cheng" .
 
-<http://data.example.com/author/X.%20He-2492> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/X.%20He-2506> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "X. He" .
 
-<http://data.example.com/author/X.%20Zhu-2490> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/X.%20Zhu-2504> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "X. Zhu" .
 
-<http://data.example.com/condition/19207> a ns21:ReactorCondition ;
-    ns21:conditionType "Membrane" ;
-    ns21:reactorType "Membrane" ;
-    ns11:unit <http://qudt.org/vocab/unit/L> .
+<http://data.example.com/chemical/1> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TiO2" .
 
-<http://data.example.com/condition/19208> a ns21:CatalystSetUpCondition ;
-    ns21:conditionType "powders" ;
-    ns21:setUpType "powders" ;
-    ns11:numericValue "-1.000" ;
-    ns11:unit <http://qudt.org/vocab/unit/GM> .
+<http://data.example.com/chemical/184> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CH3OH" .
 
-<http://data.example.com/condition/19209> a ns21:LampPowerCondition ;
-    ns21:conditionType "LED" ;
-    ns21:lampType "LED" ;
-    ns11:numericValue "100.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/W> .
+<http://data.example.com/chemical/3> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "H2O" .
 
-<http://data.example.com/condition/19210> a ns21:LampIrradianceCondition ;
-    ns21:conditionType "LED" ;
-    ns21:lampType "LED" ;
-    ns11:numericValue "80.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+<http://data.example.com/chemical/379> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TiO2" .
 
-<http://data.example.com/condition/19211> a ns21:TemperatureCondition ;
-    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+<http://data.example.com/condition/19207> a ns1:ReactorCondition ;
+    ns1:conditionTypeAsText "Membrane" ;
+    ns1:reactorType "Membrane" ;
+    ns2:unit <http://qudt.org/vocab/unit/L> .
 
-<http://data.example.com/condition/19212> a ns21:PreasureCondition ;
-    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+<http://data.example.com/condition/19208> a ns1:CatalystSetUpCondition ;
+    ns1:conditionTypeAsText "powders" ;
+    ns1:setUpType "powders" ;
+    ns2:numericValue "-1.000" ;
+    ns2:unit <http://qudt.org/vocab/unit/GM> .
 
-<http://data.example.com/condition/19213> a ns21:SpaceVelocityCondition ;
-    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+<http://data.example.com/condition/19209> a ns1:LampPowerCondition ;
+    ns1:conditionTypeAsText "LED" ;
+    ns1:lampType "LED" ;
+    ns2:numericValue "100.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W> .
 
-<http://data.example.com/condition/19214> a ns21:ReactionTimeCondition ;
-    ns11:unit <http://qudt.org/vocab/unit/HR> .
+<http://data.example.com/condition/19210> a ns1:LampIrradianceCondition ;
+    ns1:conditionTypeAsText "LED" ;
+    ns1:lampType "LED" ;
+    ns2:numericValue "80.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W-PER-M2> .
 
-<http://data.example.com/condition/19215> a ns21:ReactionMediumCondition ;
-    ns21:conditionType "Liquid" ;
-    ns21:reactionMediumType "Liquid" ;
-    ns11:numericValue "0" ;
-    ns11:unit <http://qudt.org/vocab/unit/PH> .
+<http://data.example.com/condition/19211> a ns1:TemperatureCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/DEG_C> .
 
-<http://data.example.com/condition/19216> a ns21:WavelengthCondition ;
-    ns21:conditionType "UV" ;
-    ns21:lightSourceType "UV" ;
-    ns11:numericValue "315-400(UV-C)" ;
-    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+<http://data.example.com/condition/19212> a ns1:PreasureCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/BAR> .
 
-<http://data.example.com/condition/19217> a ns21:IlluminatedAreaCondition ;
-    ns21:conditionType "UV" ;
-    ns21:lightSourceType "UV" ;
-    ns11:unit <http://qudt.org/vocab/unit/M2> .
+<http://data.example.com/condition/19213> a ns1:SpaceVelocityCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/PER-HR> .
 
-<http://data.example.com/journal/463> a ns2:Journal ;
+<http://data.example.com/condition/19214> a ns1:ReactionTimeCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/19215> a ns1:ReactionMediumCondition ;
+    ns1:conditionTypeAsText "Liquid" ;
+    ns1:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns2:numericValue "0" ;
+    ns2:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/19216> a ns1:WavelengthCondition ;
+    ns1:conditionTypeAsText "UV" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns2:numericValue "315-400(UV-C)" ;
+    ns2:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/19217> a ns1:IlluminatedAreaCondition ;
+    ns1:conditionTypeAsText "UV" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns2:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/input/4705> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/1>,
+        <http://data.example.com/chemical/379> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/4706> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/3> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/journal/463> a ns21:Journal ;
     dcterms:title "INTERNATIONAL JOURNAL OF HYDROGEN ENERGY" .
 
-<http://data.example.com/materialTransformastionProcess/2663> a ns21:MaterialTransformationProcess ;
+<http://data.example.com/materialTransformastionProcess/2663> a ns1:MaterialTransformationProcess ;
     rdfs:label "TiO2" ;
-    ns21:hasBET <http://data.example.com/bet/2663> ;
-    ns21:hasCondition <http://data.example.com/condition/19207>,
+    ns1:hasBET <http://data.example.com/bet/2663> ;
+    ns1:hasCondition <http://data.example.com/condition/19207>,
         <http://data.example.com/condition/19208>,
         <http://data.example.com/condition/19209>,
         <http://data.example.com/condition/19210>,
@@ -103,29 +124,37 @@
         <http://data.example.com/condition/19215>,
         <http://data.example.com/condition/19216>,
         <http://data.example.com/condition/19217> ;
-    ns21:hasInput <http://data.example.com/input/4705>,
+    ns1:hasInput <http://data.example.com/input/4705>,
         <http://data.example.com/input/4706> ;
-    ns21:hasOutput <http://data.example.com/output/6152> ;
-    ns21:hasReactionEg <http://data.example.com/eg/2663> ;
-    ns21:operationMode "Continuous" ;
-    ns21:reportedIn <https://doi.org/10.1016%2Fj.ijhydene.2015.12.066> .
+    ns1:hasOutput <http://data.example.com/output/6152> ;
+    ns1:hasReactionEg <http://data.example.com/eg/2663> ;
+    ns1:operationMode <http://vocab.example.com/condition/operationMode/Continuous> ;
+    ns1:reportedIn <https://doi.org/10.1016%2Fj.ijhydene.2015.12.066> .
 
-<https://doi.org/10.1016%2Fj.ijhydene.2015.12.066> a ns2:Article ;
-    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/2663> ;
-    dcterms:creator <http://data.example.com/author/L.%20Li-2494>,
-        <http://data.example.com/author/Q.%20Liao-2491>,
-        <http://data.example.com/author/R.%20Chen-2489>,
-        <http://data.example.com/author/S.%20Li-2493>,
-        <http://data.example.com/author/X.%20Cheng-2488>,
-        <http://data.example.com/author/X.%20He-2492>,
-        <http://data.example.com/author/X.%20Zhu-2490> ;
+<http://data.example.com/output/6152> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/184> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/6152-gh> .
+
+<http://data.example.com/output_quantity/6152-gh> a ns1:OutputQuantity ;
+    ns1:numericValue "111.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<https://doi.org/10.1016%2Fj.ijhydene.2015.12.066> a ns21:Article ;
+    ns1:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/2663> ;
+    dcterms:creator <http://data.example.com/author/L.%20Li-2508>,
+        <http://data.example.com/author/Q.%20Liao-2505>,
+        <http://data.example.com/author/R.%20Chen-2503>,
+        <http://data.example.com/author/S.%20Li-2507>,
+        <http://data.example.com/author/X.%20Cheng-2502>,
+        <http://data.example.com/author/X.%20He-2506>,
+        <http://data.example.com/author/X.%20Zhu-2504> ;
     dcterms:date "2016-01-01"^^xsd:date ;
     dcterms:isPartOf <http://data.example.com/journal/463> ;
     dcterms:title "Optofluidic membrane microreactor for photocatalytic reduction of CO2" ;
-    ns2:abstract "Photocatalytic reduction of CO2 is a promising technology to capture CO2 and convert it into solar fuels simultaneously. However, current photoreactors usually face the problems of low specific surface area, non-uniform light distribution and poor photon transfer. To address these issues, a novel optofluidic membrane microreactor with high surface-areato-volume ratio, enhanced photon and mass transport and uniform light distribution was proposed in this work by combining optofluidics with the membrane reactor technology for the photocatalytic reduction of CO2 with liquid water. A TiO2\\/carbon paper composite membrane was prepared as the photocatalytic membrane via coating TiO2 onto the carbon paper followed by hydrophobic treatment by poly-tetrafluoroethylene (PTFE) for the separation of the gas\\/liquid phases. The performance of the proposed optofluidic membrane microreactor was evaluated by measuring the methanol yield. The effects of the liquid water flow rate, light intensity and catalyst loading on the methanol yield were also studied. It was shown that a maximum methanol yield of 111.0 mmole\\/g-cat$h was achieved at a flow rate of 25 mL\\/min and under the light intensity of 8 mW\\/cm2 , which is among the top in comparison to the reported data. Results obtained fully demonstrate the feasibility and superiority of the proposed optofluidic membrane microreactor for the photocatalytic reduction of CO2." ;
-    ns2:doi "10.1016/j.ijhydene.2015.12.066" ;
-    ns2:pageStart "2457"^^xsd:positiveInteger ;
-    ns2:volume "41"^^xsd:positiveInteger .
+    ns21:abstract "Photocatalytic reduction of CO2 is a promising technology to capture CO2 and convert it into solar fuels simultaneously. However, current photoreactors usually face the problems of low specific surface area, non-uniform light distribution and poor photon transfer. To address these issues, a novel optofluidic membrane microreactor with high surface-areato-volume ratio, enhanced photon and mass transport and uniform light distribution was proposed in this work by combining optofluidics with the membrane reactor technology for the photocatalytic reduction of CO2 with liquid water. A TiO2\\/carbon paper composite membrane was prepared as the photocatalytic membrane via coating TiO2 onto the carbon paper followed by hydrophobic treatment by poly-tetrafluoroethylene (PTFE) for the separation of the gas\\/liquid phases. The performance of the proposed optofluidic membrane microreactor was evaluated by measuring the methanol yield. The effects of the liquid water flow rate, light intensity and catalyst loading on the methanol yield were also studied. It was shown that a maximum methanol yield of 111.0 mmole\\/g-cat$h was achieved at a flow rate of 25 mL\\/min and under the light intensity of 8 mW\\/cm2 , which is among the top in comparison to the reported data. Results obtained fully demonstrate the feasibility and superiority of the proposed optofluidic membrane microreactor for the photocatalytic reduction of CO2." ;
+    ns21:doi "10.1016/j.ijhydene.2015.12.066" ;
+    ns21:pageStart "2457"^^xsd:positiveInteger ;
+    ns21:volume "41"^^xsd:positiveInteger .
 
 <https://en.wikipedia.org/wiki/China> a schema:Country .
 

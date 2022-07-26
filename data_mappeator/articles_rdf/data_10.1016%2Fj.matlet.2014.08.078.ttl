@@ -1,93 +1,107 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
-@prefix ns2: <http://purl.org/ontology/bibo/> .
-@prefix ns21: <http://base.namespace.com/> .
+@prefix ns1: <http://base.namespace.com/> .
+@prefix ns2: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://data.example.com/author/Cui-1667> a schema:Person ;
+<http://data.example.com/author/Cui-1671> a schema:Person ;
     schema:name "Cui" .
 
-<http://data.example.com/author/F.%20Wang-1663> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/F.%20Wang-1667> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "F. Wang" .
 
-<http://data.example.com/author/L.-F-1666> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/L.-F-1670> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "L.-F" .
 
-<http://data.example.com/author/X.%20Zhang-1665> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/X.%20Zhang-1669> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "X. Zhang" .
 
-<http://data.example.com/author/Y.%20Wang-1662> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/Y.%20Wang-1666> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "Y. Wang" .
 
-<http://data.example.com/author/Y.%20Zuo-1664> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/Y.%20Zuo-1668> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "Y. Zuo" .
 
-<http://data.example.com/condition/10000> a ns21:ReactorCondition ;
-    ns21:conditionType "Fixed-bed" ;
-    ns21:reactorType "Fixed-bed" ;
-    ns11:unit <http://qudt.org/vocab/unit/L> .
+<http://data.example.com/chemical/197> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "g-C3N4" .
 
-<http://data.example.com/condition/10001> a ns21:CatalystSetUpCondition ;
-    ns21:conditionType "Other" ;
-    ns21:setUpType "Other" ;
-    ns11:numericValue "0.1" ;
-    ns11:unit <http://qudt.org/vocab/unit/GM> .
+<http://data.example.com/chemical/3> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "H2O" .
 
-<http://data.example.com/condition/10002> a ns21:LampPowerCondition ;
-    ns21:conditionType "Mercury(Hg)" ;
-    ns21:lampType "Mercury(Hg)" ;
-    ns11:unit <http://qudt.org/vocab/unit/W> .
+<http://data.example.com/condition/10000> a ns1:ReactorCondition ;
+    ns1:conditionTypeAsText "Fixed-bed" ;
+    ns1:reactorType "Fixed-bed" ;
+    ns2:unit <http://qudt.org/vocab/unit/L> .
 
-<http://data.example.com/condition/10003> a ns21:LampIrradianceCondition ;
-    ns21:conditionType "Mercury(Hg)" ;
-    ns21:lampType "Mercury(Hg)" ;
-    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+<http://data.example.com/condition/10001> a ns1:CatalystSetUpCondition ;
+    ns1:conditionTypeAsText "Other" ;
+    ns1:setUpType "Other" ;
+    ns2:numericValue "0.1" ;
+    ns2:unit <http://qudt.org/vocab/unit/GM> .
 
-<http://data.example.com/condition/10004> a ns21:TemperatureCondition ;
-    ns11:numericValue "30.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+<http://data.example.com/condition/10002> a ns1:LampPowerCondition ;
+    ns1:conditionTypeAsText "Mercury(Hg)" ;
+    ns1:lampType "Mercury(Hg)" ;
+    ns2:unit <http://qudt.org/vocab/unit/W> .
 
-<http://data.example.com/condition/10005> a ns21:PreasureCondition ;
-    ns11:numericValue "1.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+<http://data.example.com/condition/10003> a ns1:LampIrradianceCondition ;
+    ns1:conditionTypeAsText "Mercury(Hg)" ;
+    ns1:lampType "Mercury(Hg)" ;
+    ns2:unit <http://qudt.org/vocab/unit/W-PER-M2> .
 
-<http://data.example.com/condition/10006> a ns21:SpaceVelocityCondition ;
-    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+<http://data.example.com/condition/10004> a ns1:TemperatureCondition ;
+    ns2:numericValue "30.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/DEG_C> .
 
-<http://data.example.com/condition/10007> a ns21:ReactionTimeCondition ;
-    ns11:numericValue "6.67" ;
-    ns11:unit <http://qudt.org/vocab/unit/HR> .
+<http://data.example.com/condition/10005> a ns1:PreasureCondition ;
+    ns2:numericValue "1.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/BAR> .
 
-<http://data.example.com/condition/10008> a ns21:ReactionMediumCondition ;
-    ns21:conditionType "Gas" ;
-    ns21:reactionMediumType "Gas" ;
-    ns11:unit <http://qudt.org/vocab/unit/PH> .
+<http://data.example.com/condition/10006> a ns1:SpaceVelocityCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/PER-HR> .
 
-<http://data.example.com/condition/10009> a ns21:WavelengthCondition ;
-    ns21:conditionType "UV" ;
-    ns21:lightSourceType "UV" ;
-    ns11:numericValue "0" ;
-    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+<http://data.example.com/condition/10007> a ns1:ReactionTimeCondition ;
+    ns2:numericValue "6.67" ;
+    ns2:unit <http://qudt.org/vocab/unit/HR> .
 
-<http://data.example.com/condition/10010> a ns21:IlluminatedAreaCondition ;
-    ns21:conditionType "UV" ;
-    ns21:lightSourceType "UV" ;
-    ns11:unit <http://qudt.org/vocab/unit/M2> .
+<http://data.example.com/condition/10008> a ns1:ReactionMediumCondition ;
+    ns1:conditionTypeAsText "Gas" ;
+    ns1:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Gas> ;
+    ns2:unit <http://qudt.org/vocab/unit/PH> .
 
-<http://data.example.com/journal/740> a ns2:Journal ;
+<http://data.example.com/condition/10009> a ns1:WavelengthCondition ;
+    ns1:conditionTypeAsText "UV" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns2:numericValue "0" ;
+    ns2:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/10010> a ns1:IlluminatedAreaCondition ;
+    ns1:conditionTypeAsText "UV" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns2:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/input/2448> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/197> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/2449> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/3> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/journal/740> a ns21:Journal ;
     dcterms:title "MATERIALS LETTERS" .
 
-<http://data.example.com/materialTransformastionProcess/1750> a ns21:MaterialTransformationProcess ;
+<http://data.example.com/materialTransformastionProcess/1750> a ns1:MaterialTransformationProcess ;
     rdfs:label "g-C3N4" ;
-    ns21:hasBET <http://data.example.com/bet/1750> ;
-    ns21:hasCondition <http://data.example.com/condition/10000>,
+    ns1:hasBET <http://data.example.com/bet/1750> ;
+    ns1:hasCondition <http://data.example.com/condition/10000>,
         <http://data.example.com/condition/10001>,
         <http://data.example.com/condition/10002>,
         <http://data.example.com/condition/10003>,
@@ -98,30 +112,57 @@
         <http://data.example.com/condition/10008>,
         <http://data.example.com/condition/10009>,
         <http://data.example.com/condition/10010> ;
-    ns21:hasInput <http://data.example.com/input/2448>,
+    ns1:hasInput <http://data.example.com/input/2448>,
         <http://data.example.com/input/2449> ;
-    ns21:hasOutput <http://data.example.com/output/2909>,
+    ns1:hasOutput <http://data.example.com/output/2909>,
         <http://data.example.com/output/2910>,
         <http://data.example.com/output/2911> ;
-    ns21:hasReactionEg <http://data.example.com/eg/1750> ;
-    ns21:operationMode "Continuous" ;
-    ns21:reportedIn <https://doi.org/10.1016%2Fj.matlet.2014.08.078> .
+    ns1:hasReactionEg <http://data.example.com/eg/1750> ;
+    ns1:operationMode <http://vocab.example.com/condition/operationMode/Continuous> ;
+    ns1:reportedIn <https://doi.org/10.1016%2Fj.matlet.2014.08.078> .
 
-<https://doi.org/10.1016%2Fj.matlet.2014.08.078> a ns2:Article ;
-    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/1750> ;
-    dcterms:creator <http://data.example.com/author/Cui-1667>,
-        <http://data.example.com/author/F.%20Wang-1663>,
-        <http://data.example.com/author/L.-F-1666>,
-        <http://data.example.com/author/X.%20Zhang-1665>,
-        <http://data.example.com/author/Y.%20Wang-1662>,
-        <http://data.example.com/author/Y.%20Zuo-1664> ;
+<http://data.example.com/output/2909> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/2909-gh> .
+
+<http://data.example.com/output/2910> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/2910-g> .
+
+<http://data.example.com/output/2911> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/2911-m2h> .
+
+<http://data.example.com/output_quantity/2909-gh> a ns1:OutputQuantity ;
+    ns1:numericValue "0.5250"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/2910-g> a ns1:OutputQuantity ;
+    ns1:numericValue "3.5000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/2911-m2h> a ns1:OutputQuantity ;
+    ns1:numericValue "0.0040"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-M2-HR> .
+
+<https://doi.org/10.1016%2Fj.matlet.2014.08.078> a ns21:Article ;
+    ns1:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/1750> ;
+    dcterms:creator <http://data.example.com/author/Cui-1671>,
+        <http://data.example.com/author/F.%20Wang-1667>,
+        <http://data.example.com/author/L.-F-1670>,
+        <http://data.example.com/author/X.%20Zhang-1669>,
+        <http://data.example.com/author/Y.%20Wang-1666>,
+        <http://data.example.com/author/Y.%20Zuo-1668> ;
     dcterms:date "2014-01-01"^^xsd:date ;
     dcterms:isPartOf <http://data.example.com/journal/740> ;
     dcterms:title "Simple synthesis of ordered cubic mesoporous graphitic carbon nitride by chemical vapor deposition method using melamine" ;
-    ns2:abstract "Ordered cubic mesoporous graphitic carbon nitride (g-C3N 4) was synthesized by a simple chemical vapor deposition method using three-dimensional cubic mesoporous silica KIT-6 as the template and melamine as the precursor. X-ray diffraction, nitrogen adsorption-desorption, transmission electron microscopy and UV-vis diffuse reflectance spectra analysis techniques were used to analyze the sample. It was observed that the synthesized ordered mesoporous g-C3N4 had a cubic I4132 symmetry with a high surface area of 129.8 m2g and uniform pore size of 3.5 nm. Because of these properties, the obtained ordered mesoporous g-C 3N4 exhibited an enhanced photocatalytic activity for the reduction of CO2 with H2O when compared that of flake-like g-C3N4." ;
-    ns2:doi "10.1016/j.matlet.2014.08.078" ;
-    ns2:pageStart "271"^^xsd:positiveInteger ;
-    ns2:volume "136"^^xsd:positiveInteger .
+    ns21:abstract "Ordered cubic mesoporous graphitic carbon nitride (g-C3N 4) was synthesized by a simple chemical vapor deposition method using three-dimensional cubic mesoporous silica KIT-6 as the template and melamine as the precursor. X-ray diffraction, nitrogen adsorption-desorption, transmission electron microscopy and UV-vis diffuse reflectance spectra analysis techniques were used to analyze the sample. It was observed that the synthesized ordered mesoporous g-C3N4 had a cubic I4132 symmetry with a high surface area of 129.8 m2g and uniform pore size of 3.5 nm. Because of these properties, the obtained ordered mesoporous g-C 3N4 exhibited an enhanced photocatalytic activity for the reduction of CO2 with H2O when compared that of flake-like g-C3N4." ;
+    ns21:doi "10.1016/j.matlet.2014.08.078" ;
+    ns21:pageStart "271"^^xsd:positiveInteger ;
+    ns21:volume "136"^^xsd:positiveInteger .
+
+<http://data.example.com/chemical/927> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CO" .
 
 <https://en.wikipedia.org/wiki/China> a schema:Country .
 

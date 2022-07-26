@@ -10,5 +10,5 @@ def clean_directory(dir):
 
 def get_file_directory_name(iri):
     doi = iri.split("/")[-1]
-    filename = parser.get('files', 'output_name')+"_"+doi
-    return parser.get('files', 'output_directory')+"/"+filename+"."+parser.get('files', 'extension')
+    filename = parser.get('files', 'output_name')+"_"+doi+"."+parser.get('files', 'extension')
+    return parser.get('files', 'output_directory')+"/"+filename

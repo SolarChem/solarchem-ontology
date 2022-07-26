@@ -1,86 +1,86 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <http://purl.org/ontology/bibo/> .
-@prefix ns12: <http://qudt.org/2.1/schema/qudt/> .
-@prefix ns2: <http://base.namespace.com/> .
+@prefix ns1: <http://base.namespace.com/> .
+@prefix ns2: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://data.example.com/author/F.%20Rahimpour-942> a schema:Person ;
-    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Iran%2C%20Islamic%20Republic%20of> ;
+<http://data.example.com/author/F.%20Rahimpour-949> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/Iran%2C%20Islamic%20Republic%20of> ;
     schema:name "F. Rahimpour" .
 
-<http://data.example.com/author/G.%20Mahmodi-940> a schema:Person ;
-    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Iran%2C%20Islamic%20Republic%20of> ;
+<http://data.example.com/author/G.%20Mahmodi-947> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/Iran%2C%20Islamic%20Republic%20of> ;
     schema:name "G. Mahmodi" .
 
-<http://data.example.com/author/S.%20Sharifnia-941> a schema:Person ;
-    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Iran%2C%20Islamic%20Republic%20of> ;
+<http://data.example.com/author/S.%20Sharifnia-948> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/Iran%2C%20Islamic%20Republic%20of> ;
     schema:name "S. Sharifnia" .
 
-<http://data.example.com/author/S.N.%20Hosseini-943> a schema:Person ;
-    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Iran%2C%20Islamic%20Republic%20of> ;
+<http://data.example.com/author/S.N.%20Hosseini-950> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/Iran%2C%20Islamic%20Republic%20of> ;
     schema:name "S.N. Hosseini" .
 
-<http://data.example.com/condition/8185> a ns2:ReactorCondition ;
-    ns2:conditionType "Fixed-bed" ;
-    ns2:reactorType "Fixed-bed" ;
-    ns12:numericValue "1.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/L> .
+<http://data.example.com/condition/8185> a ns1:ReactorCondition ;
+    ns1:conditionTypeAsText "Fixed-bed" ;
+    ns1:reactorType "Fixed-bed" ;
+    ns2:numericValue "1.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/L> .
 
-<http://data.example.com/condition/8186> a ns2:CatalystSetUpCondition ;
-    ns2:conditionType "Mesh" ;
-    ns2:setUpType "Mesh" ;
-    ns12:numericValue "8" ;
-    ns12:unit <http://qudt.org/vocab/unit/GM> .
+<http://data.example.com/condition/8186> a ns1:CatalystSetUpCondition ;
+    ns1:conditionTypeAsText "Mesh" ;
+    ns1:setUpType "Mesh" ;
+    ns2:numericValue "8" ;
+    ns2:unit <http://qudt.org/vocab/unit/GM> .
 
-<http://data.example.com/condition/8187> a ns2:LampPowerCondition ;
-    ns2:conditionType "Fluorescent" ;
-    ns2:lampType "Fluorescent" ;
-    ns12:numericValue "250.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/W> .
+<http://data.example.com/condition/8187> a ns1:LampPowerCondition ;
+    ns1:conditionTypeAsText "Fluorescent" ;
+    ns1:lampType "Fluorescent" ;
+    ns2:numericValue "250.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W> .
 
-<http://data.example.com/condition/8188> a ns2:LampIrradianceCondition ;
-    ns2:conditionType "Fluorescent" ;
-    ns2:lampType "Fluorescent" ;
-    ns12:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+<http://data.example.com/condition/8188> a ns1:LampIrradianceCondition ;
+    ns1:conditionTypeAsText "Fluorescent" ;
+    ns1:lampType "Fluorescent" ;
+    ns2:unit <http://qudt.org/vocab/unit/W-PER-M2> .
 
-<http://data.example.com/condition/8189> a ns2:TemperatureCondition ;
-    ns12:unit <http://qudt.org/vocab/unit/DEG_C> .
+<http://data.example.com/condition/8189> a ns1:TemperatureCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/DEG_C> .
 
-<http://data.example.com/condition/8190> a ns2:PreasureCondition ;
-    ns12:unit <http://qudt.org/vocab/unit/BAR> .
+<http://data.example.com/condition/8190> a ns1:PreasureCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/BAR> .
 
-<http://data.example.com/condition/8191> a ns2:SpaceVelocityCondition ;
-    ns12:unit <http://qudt.org/vocab/unit/PER-HR> .
+<http://data.example.com/condition/8191> a ns1:SpaceVelocityCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/PER-HR> .
 
-<http://data.example.com/condition/8192> a ns2:ReactionTimeCondition ;
-    ns12:numericValue "5.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/HR> .
+<http://data.example.com/condition/8192> a ns1:ReactionTimeCondition ;
+    ns2:numericValue "5.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/HR> .
 
-<http://data.example.com/condition/8193> a ns2:ReactionMediumCondition ;
-    ns2:conditionType "Gas" ;
-    ns2:reactionMediumType "Gas" ;
-    ns12:unit <http://qudt.org/vocab/unit/PH> .
+<http://data.example.com/condition/8193> a ns1:ReactionMediumCondition ;
+    ns1:conditionTypeAsText "Gas" ;
+    ns1:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Gas> ;
+    ns2:unit <http://qudt.org/vocab/unit/PH> .
 
-<http://data.example.com/condition/8194> a ns2:WavelengthCondition ;
-    ns2:conditionType "UV" ;
-    ns2:lightSourceType "UV" ;
-    ns12:numericValue "0" ;
-    ns12:unit <http://qudt.org/vocab/unit/NanoM> .
+<http://data.example.com/condition/8194> a ns1:WavelengthCondition ;
+    ns1:conditionTypeAsText "UV" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns2:numericValue "0" ;
+    ns2:unit <http://qudt.org/vocab/unit/NanoM> .
 
-<http://data.example.com/condition/8195> a ns2:IlluminatedAreaCondition ;
-    ns2:conditionType "UV" ;
-    ns2:lightSourceType "UV" ;
-    ns12:unit <http://qudt.org/vocab/unit/M2> .
+<http://data.example.com/condition/8195> a ns1:IlluminatedAreaCondition ;
+    ns1:conditionTypeAsText "UV" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns2:unit <http://qudt.org/vocab/unit/M2> .
 
-<http://data.example.com/journal/1028> a ns1:Journal ;
+<http://data.example.com/journal/1028> a ns21:Journal ;
     dcterms:title "SOLAR ENERGY MATERIALS AND SOLAR CELLS" .
 
-<http://data.example.com/materialTransformastionProcess/835> a ns2:MaterialTransformationProcess ;
+<http://data.example.com/materialTransformastionProcess/835> a ns1:MaterialTransformationProcess ;
     rdfs:label "ZnO" ;
-    ns2:hasBET <http://data.example.com/bet/835> ;
-    ns2:hasCondition <http://data.example.com/condition/8185>,
+    ns1:hasBET <http://data.example.com/bet/835> ;
+    ns1:hasCondition <http://data.example.com/condition/8185>,
         <http://data.example.com/condition/8186>,
         <http://data.example.com/condition/8187>,
         <http://data.example.com/condition/8188>,
@@ -91,25 +91,25 @@
         <http://data.example.com/condition/8193>,
         <http://data.example.com/condition/8194>,
         <http://data.example.com/condition/8195> ;
-    ns2:hasInput <http://data.example.com/input/1999>,
+    ns1:hasInput <http://data.example.com/input/1999>,
         <http://data.example.com/input/2000> ;
-    ns2:hasReactionEg <http://data.example.com/eg/835> ;
-    ns2:operationMode "Batch" ;
-    ns2:reportedIn <https://doi.org/10.1016%2Fj.solmat.2012.12.017> .
+    ns1:hasReactionEg <http://data.example.com/eg/835> ;
+    ns1:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns1:reportedIn <https://doi.org/10.1016%2Fj.solmat.2012.12.017> .
 
-<https://doi.org/10.1016%2Fj.solmat.2012.12.017> a ns1:Article ;
-    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/835> ;
-    dcterms:creator <http://data.example.com/author/F.%20Rahimpour-942>,
-        <http://data.example.com/author/G.%20Mahmodi-940>,
-        <http://data.example.com/author/S.%20Sharifnia-941>,
-        <http://data.example.com/author/S.N.%20Hosseini-943> ;
+<https://doi.org/10.1016%2Fj.solmat.2012.12.017> a ns21:Article ;
+    ns1:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/835> ;
+    dcterms:creator <http://data.example.com/author/F.%20Rahimpour-949>,
+        <http://data.example.com/author/G.%20Mahmodi-947>,
+        <http://data.example.com/author/S.%20Sharifnia-948>,
+        <http://data.example.com/author/S.N.%20Hosseini-950> ;
     dcterms:date "2013-01-01"^^xsd:date ;
     dcterms:isPartOf <http://data.example.com/journal/1028> ;
     dcterms:title "Photocatalytic conversion of CO2 and CH4 using ZnO coated mesh: Effect of operational parameters and optimization" ;
-    ns1:abstract "In this study, immobilized ZnO semiconductor on stainless steel mesh was used in photocatalytic conversion of carbon dioxide (CO2) and methane (CH4). To determine optimum conditions of photoreduction of CO2 and CH4, one of the experimental design techniques i.e. response surface methodology (RSM) was applied. Different properties of commercial and calcinated photocatalysts on mesh surface were characterized using XRD, SEM and UV&ndash;vis analysis, and photoreduction products were identified using GC-TCD and FTIR in gas medium. Calcination of coated ZnO increased the absorption of UV&ndash;vis light, reduced the agglomeration and led to uniform structure of photocatalyst. Optimization of experimental conditions indicate that maximum conversion of carbon dioxide was achieved in CO2 ratio of 10%, UV light power of 250 W, total pressure of 30 psi and 8 g ZnO coated on mesh. Also, the products of the conversion were characterized to be formate and acetate derivatives." ;
-    ns1:doi "10.1016/j.solmat.2012.12.017" ;
-    ns1:pageStart "31"^^xsd:positiveInteger ;
-    ns1:volume "111"^^xsd:positiveInteger .
+    ns21:abstract "In this study, immobilized ZnO semiconductor on stainless steel mesh was used in photocatalytic conversion of carbon dioxide (CO2) and methane (CH4). To determine optimum conditions of photoreduction of CO2 and CH4, one of the experimental design techniques i.e. response surface methodology (RSM) was applied. Different properties of commercial and calcinated photocatalysts on mesh surface were characterized using XRD, SEM and UV&ndash;vis analysis, and photoreduction products were identified using GC-TCD and FTIR in gas medium. Calcination of coated ZnO increased the absorption of UV&ndash;vis light, reduced the agglomeration and led to uniform structure of photocatalyst. Optimization of experimental conditions indicate that maximum conversion of carbon dioxide was achieved in CO2 ratio of 10%, UV light power of 250 W, total pressure of 30 psi and 8 g ZnO coated on mesh. Also, the products of the conversion were characterized to be formate and acetate derivatives." ;
+    ns21:doi "10.1016/j.solmat.2012.12.017" ;
+    ns21:pageStart "31"^^xsd:positiveInteger ;
+    ns21:volume "111"^^xsd:positiveInteger .
 
 <https://en.wikipedia.org/wiki/Iran%2C%20Islamic%20Republic%20of> a schema:Country .
 

@@ -1,89 +1,110 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
-@prefix ns2: <http://purl.org/ontology/bibo/> .
-@prefix ns21: <http://base.namespace.com/> .
+@prefix ns1: <http://base.namespace.com/> .
+@prefix ns2: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://data.example.com/author/J.%20Jin-1515> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/J.%20Jin-1519> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "J. Jin" .
 
-<http://data.example.com/author/M.F.%20Ehsan-1513> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/M.F.%20Ehsan-1517> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "M.F. Ehsan" .
 
-<http://data.example.com/author/T.%20He-1516> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/T.%20He-1520> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "T. He" .
 
-<http://data.example.com/author/Y.%20Bi-1512> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/Y.%20Bi-1516> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "Y. Bi" .
 
-<http://data.example.com/author/Y.%20Huang-1514> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/Y.%20Huang-1518> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "Y. Huang" .
 
-<http://data.example.com/condition/17909> a ns21:ReactorCondition ;
-    ns21:conditionType "Fixed-bed" ;
-    ns21:reactorType "Fixed-bed" ;
-    ns11:unit <http://qudt.org/vocab/unit/L> .
+<http://data.example.com/chemical/258> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "SrTiO3" .
 
-<http://data.example.com/condition/17910> a ns21:CatalystSetUpCondition ;
-    ns21:conditionType "Other" ;
-    ns21:setUpType "Other" ;
-    ns11:numericValue "0.02" ;
-    ns11:unit <http://qudt.org/vocab/unit/GM> .
+<http://data.example.com/chemical/3> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "H2O" .
 
-<http://data.example.com/condition/17911> a ns21:LampPowerCondition ;
-    ns21:conditionType "Xenon(Xe)" ;
-    ns21:lampType "Xenon(Xe)" ;
-    ns11:numericValue "300.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/W> .
+<http://data.example.com/chemical/79> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "Cr" .
 
-<http://data.example.com/condition/17912> a ns21:LampIrradianceCondition ;
-    ns21:conditionType "Xenon(Xe)" ;
-    ns21:lampType "Xenon(Xe)" ;
-    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+<http://data.example.com/condition/17909> a ns1:ReactorCondition ;
+    ns1:conditionTypeAsText "Fixed-bed" ;
+    ns1:reactorType "Fixed-bed" ;
+    ns2:unit <http://qudt.org/vocab/unit/L> .
 
-<http://data.example.com/condition/17913> a ns21:TemperatureCondition ;
-    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+<http://data.example.com/condition/17910> a ns1:CatalystSetUpCondition ;
+    ns1:conditionTypeAsText "Other" ;
+    ns1:setUpType "Other" ;
+    ns2:numericValue "0.02" ;
+    ns2:unit <http://qudt.org/vocab/unit/GM> .
 
-<http://data.example.com/condition/17914> a ns21:PreasureCondition ;
-    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+<http://data.example.com/condition/17911> a ns1:LampPowerCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "300.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W> .
 
-<http://data.example.com/condition/17915> a ns21:SpaceVelocityCondition ;
-    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+<http://data.example.com/condition/17912> a ns1:LampIrradianceCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:unit <http://qudt.org/vocab/unit/W-PER-M2> .
 
-<http://data.example.com/condition/17916> a ns21:ReactionTimeCondition ;
-    ns11:numericValue "10.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/HR> .
+<http://data.example.com/condition/17913> a ns1:TemperatureCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/DEG_C> .
 
-<http://data.example.com/condition/17917> a ns21:ReactionMediumCondition ;
-    ns21:conditionType "Gas" ;
-    ns21:reactionMediumType "Gas" ;
-    ns11:unit <http://qudt.org/vocab/unit/PH> .
+<http://data.example.com/condition/17914> a ns1:PreasureCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/BAR> .
 
-<http://data.example.com/condition/17918> a ns21:WavelengthCondition ;
-    ns21:conditionType "Visible" ;
-    ns21:lightSourceType "Visible" ;
-    ns11:numericValue "400-780" ;
-    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+<http://data.example.com/condition/17915> a ns1:SpaceVelocityCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/PER-HR> .
 
-<http://data.example.com/condition/17919> a ns21:IlluminatedAreaCondition ;
-    ns21:conditionType "Visible" ;
-    ns21:lightSourceType "Visible" ;
-    ns11:unit <http://qudt.org/vocab/unit/M2> .
+<http://data.example.com/condition/17916> a ns1:ReactionTimeCondition ;
+    ns2:numericValue "10.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/HR> .
 
-<http://data.example.com/journal/513> a ns2:Journal ;
+<http://data.example.com/condition/17917> a ns1:ReactionMediumCondition ;
+    ns1:conditionTypeAsText "Gas" ;
+    ns1:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Gas> ;
+    ns2:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/17918> a ns1:WavelengthCondition ;
+    ns1:conditionTypeAsText "Visible" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns2:numericValue "400-780" ;
+    ns2:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/17919> a ns1:IlluminatedAreaCondition ;
+    ns1:conditionTypeAsText "Visible" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns2:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/input/4405> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/258> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/4406> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/79> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Dopant> .
+
+<http://data.example.com/input/4407> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/3> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/journal/513> a ns21:Journal ;
     dcterms:title "JOURNAL OF CO2 UTILIZATION" .
 
-<http://data.example.com/materialTransformastionProcess/2480> a ns21:MaterialTransformationProcess ;
+<http://data.example.com/materialTransformastionProcess/2480> a ns1:MaterialTransformationProcess ;
     rdfs:label "SrTiO3" ;
-    ns21:hasBET <http://data.example.com/bet/2480> ;
-    ns21:hasCondition <http://data.example.com/condition/17909>,
+    ns1:hasBET <http://data.example.com/bet/2480> ;
+    ns1:hasCondition <http://data.example.com/condition/17909>,
         <http://data.example.com/condition/17910>,
         <http://data.example.com/condition/17911>,
         <http://data.example.com/condition/17912>,
@@ -94,30 +115,57 @@
         <http://data.example.com/condition/17917>,
         <http://data.example.com/condition/17918>,
         <http://data.example.com/condition/17919> ;
-    ns21:hasInput <http://data.example.com/input/4405>,
+    ns1:hasInput <http://data.example.com/input/4405>,
         <http://data.example.com/input/4406>,
         <http://data.example.com/input/4407> ;
-    ns21:hasOutput <http://data.example.com/output/5645>,
+    ns1:hasOutput <http://data.example.com/output/5645>,
         <http://data.example.com/output/5646>,
         <http://data.example.com/output/5647> ;
-    ns21:hasReactionEg <http://data.example.com/eg/2480> ;
-    ns21:operationMode "Batch" ;
-    ns21:reportedIn <https://doi.org/10.1016%2Fj.jcou.2015.10.004> .
+    ns1:hasReactionEg <http://data.example.com/eg/2480> ;
+    ns1:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns1:reportedIn <https://doi.org/10.1016%2Fj.jcou.2015.10.004> .
 
-<https://doi.org/10.1016%2Fj.jcou.2015.10.004> a ns2:Article ;
-    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/2480> ;
-    dcterms:creator <http://data.example.com/author/J.%20Jin-1515>,
-        <http://data.example.com/author/M.F.%20Ehsan-1513>,
-        <http://data.example.com/author/T.%20He-1516>,
-        <http://data.example.com/author/Y.%20Bi-1512>,
-        <http://data.example.com/author/Y.%20Huang-1514> ;
+<http://data.example.com/output/5645> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/6> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/5645-gh> .
+
+<http://data.example.com/output/5646> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/6> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/5646-g> .
+
+<http://data.example.com/output/5647> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/6> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/5647-m2h> .
+
+<http://data.example.com/output_quantity/5645-gh> a ns1:OutputQuantity ;
+    ns1:numericValue "0.8800"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/5646-g> a ns1:OutputQuantity ;
+    ns1:numericValue "8.8000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/5647-m2h> a ns1:OutputQuantity ;
+    ns1:numericValue "0.0162"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-M2-HR> .
+
+<https://doi.org/10.1016%2Fj.jcou.2015.10.004> a ns21:Article ;
+    ns1:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/2480> ;
+    dcterms:creator <http://data.example.com/author/J.%20Jin-1519>,
+        <http://data.example.com/author/M.F.%20Ehsan-1517>,
+        <http://data.example.com/author/T.%20He-1520>,
+        <http://data.example.com/author/Y.%20Bi-1516>,
+        <http://data.example.com/author/Y.%20Huang-1518> ;
     dcterms:date "2015-01-01"^^xsd:date ;
     dcterms:isPartOf <http://data.example.com/journal/513> ;
     dcterms:title "Synthesis of Cr-doped SrTiO3 photocatalyst and its application in visible-light-driven transformation of CO2 into CH4" ;
-    ns2:abstract "Visible-light-driven Cr-doped SrTiO3 was synthesized through ultrasonic chemical method. Its specific surface area is 54.3 m2 g-1 due to the relatively small particle size. X-ray diffraction pattern and X-ray photoelectron spectra confirmed the crystal structure and Sr substitution. UV-vis absorption spectra indicated that the Cr doping can lead to visible-light absorption. In addition, the oxygen vacancy in Cr-doped SrTiO3 also showed visible-light absorption. The obtained Cr-doped SrTiO3 was used to photocatalytically reduce CO2 into CH4 with a yield of 8.8 ?mol g-1 after 10-h reaction. Moreover, the Cr-doped SrTiO3 exhibited good photostability." ;
-    ns2:doi "10.1016/j.jcou.2015.10.004" ;
-    ns2:pageStart "43"^^xsd:positiveInteger ;
-    ns2:volume "12"^^xsd:positiveInteger .
+    ns21:abstract "Visible-light-driven Cr-doped SrTiO3 was synthesized through ultrasonic chemical method. Its specific surface area is 54.3 m2 g-1 due to the relatively small particle size. X-ray diffraction pattern and X-ray photoelectron spectra confirmed the crystal structure and Sr substitution. UV-vis absorption spectra indicated that the Cr doping can lead to visible-light absorption. In addition, the oxygen vacancy in Cr-doped SrTiO3 also showed visible-light absorption. The obtained Cr-doped SrTiO3 was used to photocatalytically reduce CO2 into CH4 with a yield of 8.8 ?mol g-1 after 10-h reaction. Moreover, the Cr-doped SrTiO3 exhibited good photostability." ;
+    ns21:doi "10.1016/j.jcou.2015.10.004" ;
+    ns21:pageStart "43"^^xsd:positiveInteger ;
+    ns21:volume "12"^^xsd:positiveInteger .
+
+<http://data.example.com/chemical/6> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CH4" .
 
 <https://en.wikipedia.org/wiki/China> a schema:Country .
 

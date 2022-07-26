@@ -1,94 +1,112 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
-@prefix ns2: <http://purl.org/ontology/bibo/> .
-@prefix ns21: <http://base.namespace.com/> .
+@prefix ns1: <http://base.namespace.com/> .
+@prefix ns2: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://data.example.com/author/E.%20Pierce-817> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/United%20Kingdom> ;
+<http://data.example.com/author/E.%20Pierce-824> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/United%20Kingdom> ;
     schema:name "E. Pierce" .
 
-<http://data.example.com/author/E.%20Reisner-816> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/United%20Kingdom> ;
+<http://data.example.com/author/E.%20Reisner-823> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/United%20Kingdom> ;
     schema:name "E. Reisner" .
 
-<http://data.example.com/author/F.A.%20Armstrong-819> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/United%20Kingdom> ;
+<http://data.example.com/author/F.A.%20Armstrong-826> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/United%20Kingdom> ;
     schema:name "F.A. Armstrong" .
 
-<http://data.example.com/author/S.%20Sheard-815> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/United%20Kingdom> ;
+<http://data.example.com/author/S.%20Sheard-822> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/United%20Kingdom> ;
     schema:name "S. Sheard" .
 
-<http://data.example.com/author/S.W.%20Ragsdale-818> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/United%20Kingdom> ;
+<http://data.example.com/author/S.W.%20Ragsdale-825> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/United%20Kingdom> ;
     schema:name "S.W. Ragsdale" .
 
-<http://data.example.com/author/T.W.%20Woolerton-814> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/United%20Kingdom> ;
+<http://data.example.com/author/T.W.%20Woolerton-821> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/United%20Kingdom> ;
     schema:name "T.W. Woolerton" .
 
-<http://data.example.com/condition/463> a ns21:ReactorCondition ;
-    ns21:conditionType "Fixed-bed" ;
-    ns21:reactorType "Fixed-bed" ;
-    ns11:unit <http://qudt.org/vocab/unit/L> .
+<http://data.example.com/chemical/1> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TiO2" .
 
-<http://data.example.com/condition/464> a ns21:CatalystSetUpCondition ;
-    ns21:conditionType "Powder(Supported)" ;
-    ns21:setUpType "Powder(Supported)" ;
-    ns11:unit <http://qudt.org/vocab/unit/GM> .
+<http://data.example.com/chemical/15> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CODH-Enzime" .
 
-<http://data.example.com/condition/465> a ns21:LampPowerCondition ;
-    ns21:conditionType "Halogen" ;
-    ns21:lampType "Halogen" ;
-    ns11:numericValue "250.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/W> .
+<http://data.example.com/chemical/379> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TiO2" .
 
-<http://data.example.com/condition/466> a ns21:LampIrradianceCondition ;
-    ns21:conditionType "Halogen" ;
-    ns21:lampType "Halogen" ;
-    ns11:numericValue "450.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+<http://data.example.com/condition/463> a ns1:ReactorCondition ;
+    ns1:conditionTypeAsText "Fixed-bed" ;
+    ns1:reactorType "Fixed-bed" ;
+    ns2:unit <http://qudt.org/vocab/unit/L> .
 
-<http://data.example.com/condition/467> a ns21:TemperatureCondition ;
-    ns11:numericValue "20.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+<http://data.example.com/condition/464> a ns1:CatalystSetUpCondition ;
+    ns1:conditionTypeAsText "Powder(Supported)" ;
+    ns1:setUpType "Powder(Supported)" ;
+    ns2:unit <http://qudt.org/vocab/unit/GM> .
 
-<http://data.example.com/condition/468> a ns21:PreasureCondition ;
-    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+<http://data.example.com/condition/465> a ns1:LampPowerCondition ;
+    ns1:conditionTypeAsText "Halogen" ;
+    ns1:lampType "Halogen" ;
+    ns2:numericValue "250.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W> .
 
-<http://data.example.com/condition/469> a ns21:SpaceVelocityCondition ;
-    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+<http://data.example.com/condition/466> a ns1:LampIrradianceCondition ;
+    ns1:conditionTypeAsText "Halogen" ;
+    ns1:lampType "Halogen" ;
+    ns2:numericValue "450.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W-PER-M2> .
 
-<http://data.example.com/condition/470> a ns21:ReactionTimeCondition ;
-    ns11:numericValue "4.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/HR> .
+<http://data.example.com/condition/467> a ns1:TemperatureCondition ;
+    ns2:numericValue "20.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/DEG_C> .
 
-<http://data.example.com/condition/471> a ns21:ReactionMediumCondition ;
-    ns21:conditionType "Gas" ;
-    ns21:reactionMediumType "Gas" ;
-    ns11:unit <http://qudt.org/vocab/unit/PH> .
+<http://data.example.com/condition/468> a ns1:PreasureCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/BAR> .
 
-<http://data.example.com/condition/472> a ns21:WavelengthCondition ;
-    ns21:conditionType "Visible" ;
-    ns21:lightSourceType "Visible" ;
-    ns11:numericValue "400-780" ;
-    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+<http://data.example.com/condition/469> a ns1:SpaceVelocityCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/PER-HR> .
 
-<http://data.example.com/condition/473> a ns21:IlluminatedAreaCondition ;
-    ns21:conditionType "Visible" ;
-    ns21:lightSourceType "Visible" ;
-    ns11:unit <http://qudt.org/vocab/unit/M2> .
+<http://data.example.com/condition/470> a ns1:ReactionTimeCondition ;
+    ns2:numericValue "4.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/HR> .
 
-<http://data.example.com/journal/657> a ns2:Journal ;
+<http://data.example.com/condition/471> a ns1:ReactionMediumCondition ;
+    ns1:conditionTypeAsText "Gas" ;
+    ns1:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Gas> ;
+    ns2:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/472> a ns1:WavelengthCondition ;
+    ns1:conditionTypeAsText "Visible" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns2:numericValue "400-780" ;
+    ns2:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/473> a ns1:IlluminatedAreaCondition ;
+    ns1:conditionTypeAsText "Visible" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns2:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/input/108> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/1>,
+        <http://data.example.com/chemical/379> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/109> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/15> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Dye> .
+
+<http://data.example.com/journal/657> a ns21:Journal ;
     dcterms:title "JOURNAL OF THE AMERICAN CHEMICAL SOCIETY" .
 
-<http://data.example.com/materialTransformastionProcess/43> a ns21:MaterialTransformationProcess ;
+<http://data.example.com/materialTransformastionProcess/43> a ns1:MaterialTransformationProcess ;
     rdfs:label "TiO2" ;
-    ns21:hasBET <http://data.example.com/bet/43> ;
-    ns21:hasCondition <http://data.example.com/condition/463>,
+    ns1:hasBET <http://data.example.com/bet/43> ;
+    ns1:hasCondition <http://data.example.com/condition/463>,
         <http://data.example.com/condition/464>,
         <http://data.example.com/condition/465>,
         <http://data.example.com/condition/466>,
@@ -99,29 +117,48 @@
         <http://data.example.com/condition/471>,
         <http://data.example.com/condition/472>,
         <http://data.example.com/condition/473> ;
-    ns21:hasInput <http://data.example.com/input/108>,
+    ns1:hasInput <http://data.example.com/input/108>,
         <http://data.example.com/input/109> ;
-    ns21:hasOutput <http://data.example.com/output/170>,
+    ns1:hasOutput <http://data.example.com/output/170>,
         <http://data.example.com/output/171> ;
-    ns21:hasReactionEg <http://data.example.com/eg/43> ;
-    ns21:operationMode "Batch" ;
-    ns21:reportedIn <https://doi.org/10.1021%2Fja910091z> .
+    ns1:hasReactionEg <http://data.example.com/eg/43> ;
+    ns1:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns1:reportedIn <https://doi.org/10.1021%2Fja910091z> .
 
-<https://doi.org/10.1021%2Fja910091z> a ns2:Article ;
-    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/43> ;
-    dcterms:creator <http://data.example.com/author/E.%20Pierce-817>,
-        <http://data.example.com/author/E.%20Reisner-816>,
-        <http://data.example.com/author/F.A.%20Armstrong-819>,
-        <http://data.example.com/author/S.%20Sheard-815>,
-        <http://data.example.com/author/S.W.%20Ragsdale-818>,
-        <http://data.example.com/author/T.W.%20Woolerton-814> ;
+<http://data.example.com/output/170> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/170-gh> .
+
+<http://data.example.com/output/171> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/171-g> .
+
+<http://data.example.com/output_quantity/170-gh> a ns1:OutputQuantity ;
+    ns1:numericValue "250.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/171-g> a ns1:OutputQuantity ;
+    ns1:numericValue "1000.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<https://doi.org/10.1021%2Fja910091z> a ns21:Article ;
+    ns1:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/43> ;
+    dcterms:creator <http://data.example.com/author/E.%20Pierce-824>,
+        <http://data.example.com/author/E.%20Reisner-823>,
+        <http://data.example.com/author/F.A.%20Armstrong-826>,
+        <http://data.example.com/author/S.%20Sheard-822>,
+        <http://data.example.com/author/S.W.%20Ragsdale-825>,
+        <http://data.example.com/author/T.W.%20Woolerton-821> ;
     dcterms:date "2010-01-01"^^xsd:date ;
     dcterms:isPartOf <http://data.example.com/journal/657> ;
     dcterms:title "Efficient and Clean Photoreduction of CO2 to CO by Enzyme-Modified TiO2 Nanoparticles Using Visible Light" ;
-    ns2:abstract "A hybrid enzyme&minus;nanoparticle system is described for achieving clean reduction of CO2 to CO using visible light as the energy source. An aqueous dispersion of TiO2 nanoparticles modified by attachment of carbon monoxide dehydrogenase (CODH) and a Ru photosensitizer produces CO at a rate of 250 &mu;mol of CO (g of TiO2)&minus;1 h&minus;1 when illuminated with visible light at pH 6 and 20 &deg;C." ;
-    ns2:doi "10.1021/ja910091z" ;
-    ns2:pageStart "2132"^^xsd:positiveInteger ;
-    ns2:volume "132"^^xsd:positiveInteger .
+    ns21:abstract "A hybrid enzyme&minus;nanoparticle system is described for achieving clean reduction of CO2 to CO using visible light as the energy source. An aqueous dispersion of TiO2 nanoparticles modified by attachment of carbon monoxide dehydrogenase (CODH) and a Ru photosensitizer produces CO at a rate of 250 &mu;mol of CO (g of TiO2)&minus;1 h&minus;1 when illuminated with visible light at pH 6 and 20 &deg;C." ;
+    ns21:doi "10.1021/ja910091z" ;
+    ns21:pageStart "2132"^^xsd:positiveInteger ;
+    ns21:volume "132"^^xsd:positiveInteger .
+
+<http://data.example.com/chemical/927> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CO" .
 
 <https://en.wikipedia.org/wiki/United%20Kingdom> a schema:Country .
 

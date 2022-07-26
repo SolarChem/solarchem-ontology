@@ -1,547 +1,646 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <http://purl.org/ontology/bibo/> .
-@prefix ns12: <http://qudt.org/2.1/schema/qudt/> .
-@prefix ns2: <http://base.namespace.com/> .
+@prefix ns1: <http://base.namespace.com/> .
+@prefix ns2: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://data.example.com/author/Chen%20Zhou-4111> a schema:Person ;
+<http://data.example.com/author/Chen%20Zhou-4125> a schema:Person ;
     schema:name "Chen Zhou" .
 
-<http://data.example.com/author/Haowei%20Huang-4108> a schema:Person ;
-    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/Haowei%20Huang-4122> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "Haowei Huang" .
 
-<http://data.example.com/author/Jinlin%20Long-4115> a schema:Person ;
+<http://data.example.com/author/Jinlin%20Long-4129> a schema:Person ;
     schema:name "Jinlin Long" .
 
-<http://data.example.com/author/Jiwu%20Zhao-4109> a schema:Person ;
+<http://data.example.com/author/Jiwu%20Zhao-4123> a schema:Person ;
     schema:name "Jiwu Zhao" .
 
-<http://data.example.com/author/Johan%20Hofkens-4116> a schema:Person ;
+<http://data.example.com/author/Johan%20Hofkens-4130> a schema:Person ;
     schema:name "Johan Hofkens" .
 
-<http://data.example.com/author/Julian%20A.%20Steele-4117> a schema:Person ;
+<http://data.example.com/author/Julian%20A.%20Steele-4131> a schema:Person ;
     schema:name "Julian A. Steele" .
 
-<http://data.example.com/author/Menglong%20Zhang-4112> a schema:Person ;
+<http://data.example.com/author/Menglong%20Zhang-4126> a schema:Person ;
     schema:name "Menglong Zhang" .
 
-<http://data.example.com/author/Yijie%20Du-4110> a schema:Person ;
+<http://data.example.com/author/Yijie%20Du-4124> a schema:Person ;
     schema:name "Yijie Du" .
 
-<http://data.example.com/author/YuXiang%20Weng-4114> a schema:Person ;
+<http://data.example.com/author/YuXiang%20Weng-4128> a schema:Person ;
     schema:name "YuXiang Weng" .
 
-<http://data.example.com/author/Zhuan%20Wang-4113> a schema:Person ;
+<http://data.example.com/author/Zhuan%20Wang-4127> a schema:Person ;
     schema:name "Zhuan Wang" .
 
-<http://data.example.com/author/and%20Maarten%20B.J.%20Roeffaers-4118> a schema:Person ;
+<http://data.example.com/author/and%20Maarten%20B.J.%20Roeffaers-4132> a schema:Person ;
     schema:name "and Maarten B.J. Roeffaers" .
 
-<http://data.example.com/condition/50975> a ns2:ReactorCondition ;
-    ns2:conditionType "Slurry" ;
-    ns2:reactorType "Slurry" ;
-    ns12:numericValue "0.02" ;
-    ns12:unit <http://qudt.org/vocab/unit/L> .
-
-<http://data.example.com/condition/50976> a ns2:CatalystSetUpCondition ;
-    ns2:conditionType "Powder(Suspended)" ;
-    ns2:setUpType "Powder(Suspended)" ;
-    ns12:numericValue "0.01" ;
-    ns12:unit <http://qudt.org/vocab/unit/GM> .
-
-<http://data.example.com/condition/50977> a ns2:LampPowerCondition ;
-    ns2:conditionType "Xenon(Xe)" ;
-    ns2:lampType "Xenon(Xe)" ;
-    ns12:numericValue "150.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/W> .
-
-<http://data.example.com/condition/50978> a ns2:LampIrradianceCondition ;
-    ns2:conditionType "Xenon(Xe)" ;
-    ns2:lampType "Xenon(Xe)" ;
-    ns12:numericValue "1000.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/W-PER-M2> .
-
-<http://data.example.com/condition/50979> a ns2:TemperatureCondition ;
-    ns12:numericValue "0.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/DEG_C> .
-
-<http://data.example.com/condition/50980> a ns2:PreasureCondition ;
-    ns12:numericValue "0.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/BAR> .
-
-<http://data.example.com/condition/50981> a ns2:SpaceVelocityCondition ;
-    ns12:unit <http://qudt.org/vocab/unit/PER-HR> .
-
-<http://data.example.com/condition/50982> a ns2:ReactionTimeCondition ;
-    ns12:numericValue "4.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/HR> .
-
-<http://data.example.com/condition/50983> a ns2:ReactionMediumCondition ;
-    ns2:conditionType "Liquid" ;
-    ns2:reactionMediumType "Liquid" ;
-    ns12:numericValue "0" ;
-    ns12:unit <http://qudt.org/vocab/unit/PH> .
-
-<http://data.example.com/condition/50984> a ns2:WavelengthCondition ;
-    ns2:conditionType "Solar Simulator" ;
-    ns2:lightSourceType "Solar Simulator" ;
-    ns12:unit <http://qudt.org/vocab/unit/NanoM> .
-
-<http://data.example.com/condition/50985> a ns2:IlluminatedAreaCondition ;
-    ns2:conditionType "Solar Simulator" ;
-    ns2:lightSourceType "Solar Simulator" ;
-    ns12:unit <http://qudt.org/vocab/unit/M2> .
-
-<http://data.example.com/condition/50986> a ns2:ReactorCondition ;
-    ns2:conditionType "Slurry" ;
-    ns2:reactorType "Slurry" ;
-    ns12:numericValue "0.02" ;
-    ns12:unit <http://qudt.org/vocab/unit/L> .
-
-<http://data.example.com/condition/50987> a ns2:CatalystSetUpCondition ;
-    ns2:conditionType "Powder(Suspended)" ;
-    ns2:setUpType "Powder(Suspended)" ;
-    ns12:numericValue "0.01" ;
-    ns12:unit <http://qudt.org/vocab/unit/GM> .
-
-<http://data.example.com/condition/50988> a ns2:LampPowerCondition ;
-    ns2:conditionType "Xenon(Xe)" ;
-    ns2:lampType "Xenon(Xe)" ;
-    ns12:numericValue "150.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/W> .
-
-<http://data.example.com/condition/50989> a ns2:LampIrradianceCondition ;
-    ns2:conditionType "Xenon(Xe)" ;
-    ns2:lampType "Xenon(Xe)" ;
-    ns12:numericValue "1000.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/W-PER-M2> .
-
-<http://data.example.com/condition/50990> a ns2:TemperatureCondition ;
-    ns12:numericValue "0.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/DEG_C> .
-
-<http://data.example.com/condition/50991> a ns2:PreasureCondition ;
-    ns12:numericValue "0.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/BAR> .
-
-<http://data.example.com/condition/50992> a ns2:SpaceVelocityCondition ;
-    ns12:unit <http://qudt.org/vocab/unit/PER-HR> .
-
-<http://data.example.com/condition/50993> a ns2:ReactionTimeCondition ;
-    ns12:numericValue "4.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/HR> .
-
-<http://data.example.com/condition/50994> a ns2:ReactionMediumCondition ;
-    ns2:conditionType "Liquid" ;
-    ns2:reactionMediumType "Liquid" ;
-    ns12:numericValue "0" ;
-    ns12:unit <http://qudt.org/vocab/unit/PH> .
-
-<http://data.example.com/condition/50995> a ns2:WavelengthCondition ;
-    ns2:conditionType "Solar Simulator" ;
-    ns2:lightSourceType "Solar Simulator" ;
-    ns12:unit <http://qudt.org/vocab/unit/NanoM> .
-
-<http://data.example.com/condition/50996> a ns2:IlluminatedAreaCondition ;
-    ns2:conditionType "Solar Simulator" ;
-    ns2:lightSourceType "Solar Simulator" ;
-    ns12:unit <http://qudt.org/vocab/unit/M2> .
-
-<http://data.example.com/condition/50997> a ns2:ReactorCondition ;
-    ns2:conditionType "Slurry" ;
-    ns2:reactorType "Slurry" ;
-    ns12:numericValue "0.02" ;
-    ns12:unit <http://qudt.org/vocab/unit/L> .
-
-<http://data.example.com/condition/50998> a ns2:CatalystSetUpCondition ;
-    ns2:conditionType "Powder(Suspended)" ;
-    ns2:setUpType "Powder(Suspended)" ;
-    ns12:numericValue "0.01" ;
-    ns12:unit <http://qudt.org/vocab/unit/GM> .
-
-<http://data.example.com/condition/50999> a ns2:LampPowerCondition ;
-    ns2:conditionType "Xenon(Xe)" ;
-    ns2:lampType "Xenon(Xe)" ;
-    ns12:numericValue "150.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/W> .
-
-<http://data.example.com/condition/51000> a ns2:LampIrradianceCondition ;
-    ns2:conditionType "Xenon(Xe)" ;
-    ns2:lampType "Xenon(Xe)" ;
-    ns12:numericValue "1000.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/W-PER-M2> .
-
-<http://data.example.com/condition/51001> a ns2:TemperatureCondition ;
-    ns12:numericValue "0.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/DEG_C> .
-
-<http://data.example.com/condition/51002> a ns2:PreasureCondition ;
-    ns12:numericValue "0.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/BAR> .
-
-<http://data.example.com/condition/51003> a ns2:SpaceVelocityCondition ;
-    ns12:unit <http://qudt.org/vocab/unit/PER-HR> .
-
-<http://data.example.com/condition/51004> a ns2:ReactionTimeCondition ;
-    ns12:numericValue "4.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/HR> .
-
-<http://data.example.com/condition/51005> a ns2:ReactionMediumCondition ;
-    ns2:conditionType "Liquid" ;
-    ns2:reactionMediumType "Liquid" ;
-    ns12:numericValue "0" ;
-    ns12:unit <http://qudt.org/vocab/unit/PH> .
-
-<http://data.example.com/condition/51006> a ns2:WavelengthCondition ;
-    ns2:conditionType "Solar Simulator" ;
-    ns2:lightSourceType "Solar Simulator" ;
-    ns12:unit <http://qudt.org/vocab/unit/NanoM> .
-
-<http://data.example.com/condition/51007> a ns2:IlluminatedAreaCondition ;
-    ns2:conditionType "Solar Simulator" ;
-    ns2:lightSourceType "Solar Simulator" ;
-    ns12:unit <http://qudt.org/vocab/unit/M2> .
-
-<http://data.example.com/condition/51008> a ns2:ReactorCondition ;
-    ns2:conditionType "Slurry" ;
-    ns2:reactorType "Slurry" ;
-    ns12:numericValue "0.02" ;
-    ns12:unit <http://qudt.org/vocab/unit/L> .
-
-<http://data.example.com/condition/51009> a ns2:CatalystSetUpCondition ;
-    ns2:conditionType "Powder(Suspended)" ;
-    ns2:setUpType "Powder(Suspended)" ;
-    ns12:numericValue "0.01" ;
-    ns12:unit <http://qudt.org/vocab/unit/GM> .
-
-<http://data.example.com/condition/51010> a ns2:LampPowerCondition ;
-    ns2:conditionType "Xenon(Xe)" ;
-    ns2:lampType "Xenon(Xe)" ;
-    ns12:numericValue "150.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/W> .
-
-<http://data.example.com/condition/51011> a ns2:LampIrradianceCondition ;
-    ns2:conditionType "Xenon(Xe)" ;
-    ns2:lampType "Xenon(Xe)" ;
-    ns12:numericValue "1000.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/W-PER-M2> .
-
-<http://data.example.com/condition/51012> a ns2:TemperatureCondition ;
-    ns12:numericValue "0.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/DEG_C> .
-
-<http://data.example.com/condition/51013> a ns2:PreasureCondition ;
-    ns12:numericValue "0.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/BAR> .
-
-<http://data.example.com/condition/51014> a ns2:SpaceVelocityCondition ;
-    ns12:unit <http://qudt.org/vocab/unit/PER-HR> .
-
-<http://data.example.com/condition/51015> a ns2:ReactionTimeCondition ;
-    ns12:numericValue "4.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/HR> .
-
-<http://data.example.com/condition/51016> a ns2:ReactionMediumCondition ;
-    ns2:conditionType "Liquid" ;
-    ns2:reactionMediumType "Liquid" ;
-    ns12:numericValue "0" ;
-    ns12:unit <http://qudt.org/vocab/unit/PH> .
-
-<http://data.example.com/condition/51017> a ns2:WavelengthCondition ;
-    ns2:conditionType "Solar Simulator" ;
-    ns2:lightSourceType "Solar Simulator" ;
-    ns12:unit <http://qudt.org/vocab/unit/NanoM> .
-
-<http://data.example.com/condition/51018> a ns2:IlluminatedAreaCondition ;
-    ns2:conditionType "Solar Simulator" ;
-    ns2:lightSourceType "Solar Simulator" ;
-    ns12:unit <http://qudt.org/vocab/unit/M2> .
-
-<http://data.example.com/condition/51019> a ns2:ReactorCondition ;
-    ns2:conditionType "Slurry" ;
-    ns2:reactorType "Slurry" ;
-    ns12:numericValue "0.02" ;
-    ns12:unit <http://qudt.org/vocab/unit/L> .
-
-<http://data.example.com/condition/51020> a ns2:CatalystSetUpCondition ;
-    ns2:conditionType "Powder(Suspended)" ;
-    ns2:setUpType "Powder(Suspended)" ;
-    ns12:numericValue "0.01" ;
-    ns12:unit <http://qudt.org/vocab/unit/GM> .
-
-<http://data.example.com/condition/51021> a ns2:LampPowerCondition ;
-    ns2:conditionType "Xenon(Xe)" ;
-    ns2:lampType "Xenon(Xe)" ;
-    ns12:numericValue "150.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/W> .
-
-<http://data.example.com/condition/51022> a ns2:LampIrradianceCondition ;
-    ns2:conditionType "Xenon(Xe)" ;
-    ns2:lampType "Xenon(Xe)" ;
-    ns12:numericValue "1000.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/W-PER-M2> .
-
-<http://data.example.com/condition/51023> a ns2:TemperatureCondition ;
-    ns12:numericValue "0.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/DEG_C> .
-
-<http://data.example.com/condition/51024> a ns2:PreasureCondition ;
-    ns12:numericValue "0.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/BAR> .
-
-<http://data.example.com/condition/51025> a ns2:SpaceVelocityCondition ;
-    ns12:unit <http://qudt.org/vocab/unit/PER-HR> .
-
-<http://data.example.com/condition/51026> a ns2:ReactionTimeCondition ;
-    ns12:numericValue "4.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/HR> .
-
-<http://data.example.com/condition/51027> a ns2:ReactionMediumCondition ;
-    ns2:conditionType "Liquid" ;
-    ns2:reactionMediumType "Liquid" ;
-    ns12:numericValue "0" ;
-    ns12:unit <http://qudt.org/vocab/unit/PH> .
-
-<http://data.example.com/condition/51028> a ns2:WavelengthCondition ;
-    ns2:conditionType "Solar Simulator" ;
-    ns2:lightSourceType "Solar Simulator" ;
-    ns12:unit <http://qudt.org/vocab/unit/NanoM> .
-
-<http://data.example.com/condition/51029> a ns2:IlluminatedAreaCondition ;
-    ns2:conditionType "Solar Simulator" ;
-    ns2:lightSourceType "Solar Simulator" ;
-    ns12:unit <http://qudt.org/vocab/unit/M2> .
-
-<http://data.example.com/condition/51030> a ns2:ReactorCondition ;
-    ns2:conditionType "Slurry" ;
-    ns2:reactorType "Slurry" ;
-    ns12:numericValue "0.02" ;
-    ns12:unit <http://qudt.org/vocab/unit/L> .
-
-<http://data.example.com/condition/51031> a ns2:CatalystSetUpCondition ;
-    ns2:conditionType "Powder(Suspended)" ;
-    ns2:setUpType "Powder(Suspended)" ;
-    ns12:numericValue "0.01" ;
-    ns12:unit <http://qudt.org/vocab/unit/GM> .
-
-<http://data.example.com/condition/51032> a ns2:LampPowerCondition ;
-    ns2:conditionType "Xenon(Xe)" ;
-    ns2:lampType "Xenon(Xe)" ;
-    ns12:numericValue "150.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/W> .
-
-<http://data.example.com/condition/51033> a ns2:LampIrradianceCondition ;
-    ns2:conditionType "Xenon(Xe)" ;
-    ns2:lampType "Xenon(Xe)" ;
-    ns12:numericValue "1000.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/W-PER-M2> .
-
-<http://data.example.com/condition/51034> a ns2:TemperatureCondition ;
-    ns12:numericValue "0.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/DEG_C> .
-
-<http://data.example.com/condition/51035> a ns2:PreasureCondition ;
-    ns12:numericValue "0.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/BAR> .
-
-<http://data.example.com/condition/51036> a ns2:SpaceVelocityCondition ;
-    ns12:unit <http://qudt.org/vocab/unit/PER-HR> .
-
-<http://data.example.com/condition/51037> a ns2:ReactionTimeCondition ;
-    ns12:numericValue "4.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/HR> .
-
-<http://data.example.com/condition/51038> a ns2:ReactionMediumCondition ;
-    ns2:conditionType "Liquid" ;
-    ns2:reactionMediumType "Liquid" ;
-    ns12:numericValue "0" ;
-    ns12:unit <http://qudt.org/vocab/unit/PH> .
-
-<http://data.example.com/condition/51039> a ns2:WavelengthCondition ;
-    ns2:conditionType "Solar Simulator" ;
-    ns2:lightSourceType "Solar Simulator" ;
-    ns12:unit <http://qudt.org/vocab/unit/NanoM> .
-
-<http://data.example.com/condition/51040> a ns2:IlluminatedAreaCondition ;
-    ns2:conditionType "Solar Simulator" ;
-    ns2:lightSourceType "Solar Simulator" ;
-    ns12:unit <http://qudt.org/vocab/unit/M2> .
-
-<http://data.example.com/condition/51041> a ns2:ReactorCondition ;
-    ns2:conditionType "Slurry" ;
-    ns2:reactorType "Slurry" ;
-    ns12:numericValue "0.02" ;
-    ns12:unit <http://qudt.org/vocab/unit/L> .
-
-<http://data.example.com/condition/51042> a ns2:CatalystSetUpCondition ;
-    ns2:conditionType "Powder(Suspended)" ;
-    ns2:setUpType "Powder(Suspended)" ;
-    ns12:numericValue "0.01" ;
-    ns12:unit <http://qudt.org/vocab/unit/GM> .
-
-<http://data.example.com/condition/51043> a ns2:LampPowerCondition ;
-    ns2:conditionType "Xenon(Xe)" ;
-    ns2:lampType "Xenon(Xe)" ;
-    ns12:numericValue "150.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/W> .
-
-<http://data.example.com/condition/51044> a ns2:LampIrradianceCondition ;
-    ns2:conditionType "Xenon(Xe)" ;
-    ns2:lampType "Xenon(Xe)" ;
-    ns12:numericValue "1000.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/W-PER-M2> .
-
-<http://data.example.com/condition/51045> a ns2:TemperatureCondition ;
-    ns12:numericValue "0.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/DEG_C> .
-
-<http://data.example.com/condition/51046> a ns2:PreasureCondition ;
-    ns12:numericValue "0.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/BAR> .
-
-<http://data.example.com/condition/51047> a ns2:SpaceVelocityCondition ;
-    ns12:unit <http://qudt.org/vocab/unit/PER-HR> .
-
-<http://data.example.com/condition/51048> a ns2:ReactionTimeCondition ;
-    ns12:numericValue "4.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/HR> .
-
-<http://data.example.com/condition/51049> a ns2:ReactionMediumCondition ;
-    ns2:conditionType "Liquid" ;
-    ns2:reactionMediumType "Liquid" ;
-    ns12:numericValue "0" ;
-    ns12:unit <http://qudt.org/vocab/unit/PH> .
-
-<http://data.example.com/condition/51050> a ns2:WavelengthCondition ;
-    ns2:conditionType "Solar Simulator" ;
-    ns2:lightSourceType "Solar Simulator" ;
-    ns12:unit <http://qudt.org/vocab/unit/NanoM> .
-
-<http://data.example.com/condition/51051> a ns2:IlluminatedAreaCondition ;
-    ns2:conditionType "Solar Simulator" ;
-    ns2:lightSourceType "Solar Simulator" ;
-    ns12:unit <http://qudt.org/vocab/unit/M2> .
-
-<http://data.example.com/condition/51052> a ns2:ReactorCondition ;
-    ns2:conditionType "Slurry" ;
-    ns2:reactorType "Slurry" ;
-    ns12:numericValue "0.02" ;
-    ns12:unit <http://qudt.org/vocab/unit/L> .
-
-<http://data.example.com/condition/51053> a ns2:CatalystSetUpCondition ;
-    ns2:conditionType "Powder(Suspended)" ;
-    ns2:setUpType "Powder(Suspended)" ;
-    ns12:numericValue "0.01" ;
-    ns12:unit <http://qudt.org/vocab/unit/GM> .
-
-<http://data.example.com/condition/51054> a ns2:LampPowerCondition ;
-    ns2:conditionType "Xenon(Xe)" ;
-    ns2:lampType "Xenon(Xe)" ;
-    ns12:numericValue "150.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/W> .
-
-<http://data.example.com/condition/51055> a ns2:LampIrradianceCondition ;
-    ns2:conditionType "Xenon(Xe)" ;
-    ns2:lampType "Xenon(Xe)" ;
-    ns12:numericValue "1000.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/W-PER-M2> .
-
-<http://data.example.com/condition/51056> a ns2:TemperatureCondition ;
-    ns12:numericValue "0.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/DEG_C> .
-
-<http://data.example.com/condition/51057> a ns2:PreasureCondition ;
-    ns12:numericValue "0.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/BAR> .
-
-<http://data.example.com/condition/51058> a ns2:SpaceVelocityCondition ;
-    ns12:unit <http://qudt.org/vocab/unit/PER-HR> .
-
-<http://data.example.com/condition/51059> a ns2:ReactionTimeCondition ;
-    ns12:numericValue "4.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/HR> .
-
-<http://data.example.com/condition/51060> a ns2:ReactionMediumCondition ;
-    ns2:conditionType "Liquid" ;
-    ns2:reactionMediumType "Liquid" ;
-    ns12:numericValue "0" ;
-    ns12:unit <http://qudt.org/vocab/unit/PH> .
-
-<http://data.example.com/condition/51061> a ns2:WavelengthCondition ;
-    ns2:conditionType "Solar Simulator" ;
-    ns2:lightSourceType "Solar Simulator" ;
-    ns12:unit <http://qudt.org/vocab/unit/NanoM> .
-
-<http://data.example.com/condition/51062> a ns2:IlluminatedAreaCondition ;
-    ns2:conditionType "Solar Simulator" ;
-    ns2:lightSourceType "Solar Simulator" ;
-    ns12:unit <http://qudt.org/vocab/unit/M2> .
-
-<http://data.example.com/condition/51063> a ns2:ReactorCondition ;
-    ns2:conditionType "Slurry" ;
-    ns2:reactorType "Slurry" ;
-    ns12:numericValue "0.02" ;
-    ns12:unit <http://qudt.org/vocab/unit/L> .
-
-<http://data.example.com/condition/51064> a ns2:CatalystSetUpCondition ;
-    ns2:conditionType "Powder(Suspended)" ;
-    ns2:setUpType "Powder(Suspended)" ;
-    ns12:numericValue "0.01" ;
-    ns12:unit <http://qudt.org/vocab/unit/GM> .
-
-<http://data.example.com/condition/51065> a ns2:LampPowerCondition ;
-    ns2:conditionType "Xenon(Xe)" ;
-    ns2:lampType "Xenon(Xe)" ;
-    ns12:numericValue "150.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/W> .
-
-<http://data.example.com/condition/51066> a ns2:LampIrradianceCondition ;
-    ns2:conditionType "Xenon(Xe)" ;
-    ns2:lampType "Xenon(Xe)" ;
-    ns12:numericValue "1000.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/W-PER-M2> .
-
-<http://data.example.com/condition/51067> a ns2:TemperatureCondition ;
-    ns12:numericValue "0.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/DEG_C> .
-
-<http://data.example.com/condition/51068> a ns2:PreasureCondition ;
-    ns12:numericValue "0.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/BAR> .
-
-<http://data.example.com/condition/51069> a ns2:SpaceVelocityCondition ;
-    ns12:unit <http://qudt.org/vocab/unit/PER-HR> .
-
-<http://data.example.com/condition/51070> a ns2:ReactionTimeCondition ;
-    ns12:numericValue "4.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/HR> .
-
-<http://data.example.com/condition/51071> a ns2:ReactionMediumCondition ;
-    ns2:conditionType "Liquid" ;
-    ns2:reactionMediumType "Liquid" ;
-    ns12:numericValue "0" ;
-    ns12:unit <http://qudt.org/vocab/unit/PH> .
-
-<http://data.example.com/condition/51072> a ns2:WavelengthCondition ;
-    ns2:conditionType "Solar Simulator" ;
-    ns2:lightSourceType "Solar Simulator" ;
-    ns12:unit <http://qudt.org/vocab/unit/NanoM> .
-
-<http://data.example.com/condition/51073> a ns2:IlluminatedAreaCondition ;
-    ns2:conditionType "Solar Simulator" ;
-    ns2:lightSourceType "Solar Simulator" ;
-    ns12:unit <http://qudt.org/vocab/unit/M2> .
-
-<http://data.example.com/journal/10> a ns1:Journal ;
+<http://data.example.com/condition/50975> a ns1:ReactorCondition ;
+    ns1:conditionTypeAsText "Slurry" ;
+    ns1:reactorType "Slurry" ;
+    ns2:numericValue "0.02" ;
+    ns2:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/50976> a ns1:CatalystSetUpCondition ;
+    ns1:conditionTypeAsText "Powder(Suspended)" ;
+    ns1:setUpType "Powder(Suspended)" ;
+    ns2:numericValue "0.01" ;
+    ns2:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/50977> a ns1:LampPowerCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "150.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/50978> a ns1:LampIrradianceCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "1000.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/50979> a ns1:TemperatureCondition ;
+    ns2:numericValue "0.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/50980> a ns1:PreasureCondition ;
+    ns2:numericValue "0.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/50981> a ns1:SpaceVelocityCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/50982> a ns1:ReactionTimeCondition ;
+    ns2:numericValue "4.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/50983> a ns1:ReactionMediumCondition ;
+    ns1:conditionTypeAsText "Liquid" ;
+    ns1:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns2:numericValue "0" ;
+    ns2:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/50984> a ns1:WavelengthCondition ;
+    ns1:conditionTypeAsText "Solar Simulator" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Solar%20Simulator> ;
+    ns2:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/50985> a ns1:IlluminatedAreaCondition ;
+    ns1:conditionTypeAsText "Solar Simulator" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Solar%20Simulator> ;
+    ns2:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/condition/50986> a ns1:ReactorCondition ;
+    ns1:conditionTypeAsText "Slurry" ;
+    ns1:reactorType "Slurry" ;
+    ns2:numericValue "0.02" ;
+    ns2:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/50987> a ns1:CatalystSetUpCondition ;
+    ns1:conditionTypeAsText "Powder(Suspended)" ;
+    ns1:setUpType "Powder(Suspended)" ;
+    ns2:numericValue "0.01" ;
+    ns2:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/50988> a ns1:LampPowerCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "150.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/50989> a ns1:LampIrradianceCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "1000.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/50990> a ns1:TemperatureCondition ;
+    ns2:numericValue "0.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/50991> a ns1:PreasureCondition ;
+    ns2:numericValue "0.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/50992> a ns1:SpaceVelocityCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/50993> a ns1:ReactionTimeCondition ;
+    ns2:numericValue "4.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/50994> a ns1:ReactionMediumCondition ;
+    ns1:conditionTypeAsText "Liquid" ;
+    ns1:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns2:numericValue "0" ;
+    ns2:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/50995> a ns1:WavelengthCondition ;
+    ns1:conditionTypeAsText "Solar Simulator" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Solar%20Simulator> ;
+    ns2:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/50996> a ns1:IlluminatedAreaCondition ;
+    ns1:conditionTypeAsText "Solar Simulator" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Solar%20Simulator> ;
+    ns2:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/condition/50997> a ns1:ReactorCondition ;
+    ns1:conditionTypeAsText "Slurry" ;
+    ns1:reactorType "Slurry" ;
+    ns2:numericValue "0.02" ;
+    ns2:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/50998> a ns1:CatalystSetUpCondition ;
+    ns1:conditionTypeAsText "Powder(Suspended)" ;
+    ns1:setUpType "Powder(Suspended)" ;
+    ns2:numericValue "0.01" ;
+    ns2:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/50999> a ns1:LampPowerCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "150.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/51000> a ns1:LampIrradianceCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "1000.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/51001> a ns1:TemperatureCondition ;
+    ns2:numericValue "0.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/51002> a ns1:PreasureCondition ;
+    ns2:numericValue "0.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/51003> a ns1:SpaceVelocityCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/51004> a ns1:ReactionTimeCondition ;
+    ns2:numericValue "4.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/51005> a ns1:ReactionMediumCondition ;
+    ns1:conditionTypeAsText "Liquid" ;
+    ns1:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns2:numericValue "0" ;
+    ns2:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/51006> a ns1:WavelengthCondition ;
+    ns1:conditionTypeAsText "Solar Simulator" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Solar%20Simulator> ;
+    ns2:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/51007> a ns1:IlluminatedAreaCondition ;
+    ns1:conditionTypeAsText "Solar Simulator" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Solar%20Simulator> ;
+    ns2:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/condition/51008> a ns1:ReactorCondition ;
+    ns1:conditionTypeAsText "Slurry" ;
+    ns1:reactorType "Slurry" ;
+    ns2:numericValue "0.02" ;
+    ns2:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/51009> a ns1:CatalystSetUpCondition ;
+    ns1:conditionTypeAsText "Powder(Suspended)" ;
+    ns1:setUpType "Powder(Suspended)" ;
+    ns2:numericValue "0.01" ;
+    ns2:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/51010> a ns1:LampPowerCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "150.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/51011> a ns1:LampIrradianceCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "1000.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/51012> a ns1:TemperatureCondition ;
+    ns2:numericValue "0.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/51013> a ns1:PreasureCondition ;
+    ns2:numericValue "0.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/51014> a ns1:SpaceVelocityCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/51015> a ns1:ReactionTimeCondition ;
+    ns2:numericValue "4.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/51016> a ns1:ReactionMediumCondition ;
+    ns1:conditionTypeAsText "Liquid" ;
+    ns1:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns2:numericValue "0" ;
+    ns2:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/51017> a ns1:WavelengthCondition ;
+    ns1:conditionTypeAsText "Solar Simulator" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Solar%20Simulator> ;
+    ns2:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/51018> a ns1:IlluminatedAreaCondition ;
+    ns1:conditionTypeAsText "Solar Simulator" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Solar%20Simulator> ;
+    ns2:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/condition/51019> a ns1:ReactorCondition ;
+    ns1:conditionTypeAsText "Slurry" ;
+    ns1:reactorType "Slurry" ;
+    ns2:numericValue "0.02" ;
+    ns2:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/51020> a ns1:CatalystSetUpCondition ;
+    ns1:conditionTypeAsText "Powder(Suspended)" ;
+    ns1:setUpType "Powder(Suspended)" ;
+    ns2:numericValue "0.01" ;
+    ns2:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/51021> a ns1:LampPowerCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "150.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/51022> a ns1:LampIrradianceCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "1000.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/51023> a ns1:TemperatureCondition ;
+    ns2:numericValue "0.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/51024> a ns1:PreasureCondition ;
+    ns2:numericValue "0.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/51025> a ns1:SpaceVelocityCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/51026> a ns1:ReactionTimeCondition ;
+    ns2:numericValue "4.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/51027> a ns1:ReactionMediumCondition ;
+    ns1:conditionTypeAsText "Liquid" ;
+    ns1:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns2:numericValue "0" ;
+    ns2:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/51028> a ns1:WavelengthCondition ;
+    ns1:conditionTypeAsText "Solar Simulator" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Solar%20Simulator> ;
+    ns2:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/51029> a ns1:IlluminatedAreaCondition ;
+    ns1:conditionTypeAsText "Solar Simulator" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Solar%20Simulator> ;
+    ns2:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/condition/51030> a ns1:ReactorCondition ;
+    ns1:conditionTypeAsText "Slurry" ;
+    ns1:reactorType "Slurry" ;
+    ns2:numericValue "0.02" ;
+    ns2:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/51031> a ns1:CatalystSetUpCondition ;
+    ns1:conditionTypeAsText "Powder(Suspended)" ;
+    ns1:setUpType "Powder(Suspended)" ;
+    ns2:numericValue "0.01" ;
+    ns2:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/51032> a ns1:LampPowerCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "150.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/51033> a ns1:LampIrradianceCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "1000.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/51034> a ns1:TemperatureCondition ;
+    ns2:numericValue "0.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/51035> a ns1:PreasureCondition ;
+    ns2:numericValue "0.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/51036> a ns1:SpaceVelocityCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/51037> a ns1:ReactionTimeCondition ;
+    ns2:numericValue "4.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/51038> a ns1:ReactionMediumCondition ;
+    ns1:conditionTypeAsText "Liquid" ;
+    ns1:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns2:numericValue "0" ;
+    ns2:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/51039> a ns1:WavelengthCondition ;
+    ns1:conditionTypeAsText "Solar Simulator" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Solar%20Simulator> ;
+    ns2:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/51040> a ns1:IlluminatedAreaCondition ;
+    ns1:conditionTypeAsText "Solar Simulator" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Solar%20Simulator> ;
+    ns2:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/condition/51041> a ns1:ReactorCondition ;
+    ns1:conditionTypeAsText "Slurry" ;
+    ns1:reactorType "Slurry" ;
+    ns2:numericValue "0.02" ;
+    ns2:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/51042> a ns1:CatalystSetUpCondition ;
+    ns1:conditionTypeAsText "Powder(Suspended)" ;
+    ns1:setUpType "Powder(Suspended)" ;
+    ns2:numericValue "0.01" ;
+    ns2:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/51043> a ns1:LampPowerCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "150.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/51044> a ns1:LampIrradianceCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "1000.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/51045> a ns1:TemperatureCondition ;
+    ns2:numericValue "0.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/51046> a ns1:PreasureCondition ;
+    ns2:numericValue "0.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/51047> a ns1:SpaceVelocityCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/51048> a ns1:ReactionTimeCondition ;
+    ns2:numericValue "4.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/51049> a ns1:ReactionMediumCondition ;
+    ns1:conditionTypeAsText "Liquid" ;
+    ns1:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns2:numericValue "0" ;
+    ns2:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/51050> a ns1:WavelengthCondition ;
+    ns1:conditionTypeAsText "Solar Simulator" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Solar%20Simulator> ;
+    ns2:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/51051> a ns1:IlluminatedAreaCondition ;
+    ns1:conditionTypeAsText "Solar Simulator" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Solar%20Simulator> ;
+    ns2:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/condition/51052> a ns1:ReactorCondition ;
+    ns1:conditionTypeAsText "Slurry" ;
+    ns1:reactorType "Slurry" ;
+    ns2:numericValue "0.02" ;
+    ns2:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/51053> a ns1:CatalystSetUpCondition ;
+    ns1:conditionTypeAsText "Powder(Suspended)" ;
+    ns1:setUpType "Powder(Suspended)" ;
+    ns2:numericValue "0.01" ;
+    ns2:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/51054> a ns1:LampPowerCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "150.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/51055> a ns1:LampIrradianceCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "1000.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/51056> a ns1:TemperatureCondition ;
+    ns2:numericValue "0.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/51057> a ns1:PreasureCondition ;
+    ns2:numericValue "0.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/51058> a ns1:SpaceVelocityCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/51059> a ns1:ReactionTimeCondition ;
+    ns2:numericValue "4.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/51060> a ns1:ReactionMediumCondition ;
+    ns1:conditionTypeAsText "Liquid" ;
+    ns1:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns2:numericValue "0" ;
+    ns2:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/51061> a ns1:WavelengthCondition ;
+    ns1:conditionTypeAsText "Solar Simulator" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Solar%20Simulator> ;
+    ns2:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/51062> a ns1:IlluminatedAreaCondition ;
+    ns1:conditionTypeAsText "Solar Simulator" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Solar%20Simulator> ;
+    ns2:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/condition/51063> a ns1:ReactorCondition ;
+    ns1:conditionTypeAsText "Slurry" ;
+    ns1:reactorType "Slurry" ;
+    ns2:numericValue "0.02" ;
+    ns2:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/51064> a ns1:CatalystSetUpCondition ;
+    ns1:conditionTypeAsText "Powder(Suspended)" ;
+    ns1:setUpType "Powder(Suspended)" ;
+    ns2:numericValue "0.01" ;
+    ns2:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/51065> a ns1:LampPowerCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "150.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/51066> a ns1:LampIrradianceCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "1000.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/51067> a ns1:TemperatureCondition ;
+    ns2:numericValue "0.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/51068> a ns1:PreasureCondition ;
+    ns2:numericValue "0.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/51069> a ns1:SpaceVelocityCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/51070> a ns1:ReactionTimeCondition ;
+    ns2:numericValue "4.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/51071> a ns1:ReactionMediumCondition ;
+    ns1:conditionTypeAsText "Liquid" ;
+    ns1:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns2:numericValue "0" ;
+    ns2:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/51072> a ns1:WavelengthCondition ;
+    ns1:conditionTypeAsText "Solar Simulator" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Solar%20Simulator> ;
+    ns2:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/51073> a ns1:IlluminatedAreaCondition ;
+    ns1:conditionTypeAsText "Solar Simulator" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Solar%20Simulator> ;
+    ns2:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/input/12698> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/120> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/12699> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/813> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Co-catalyst> ;
+    ns1:percentage 2.5e+01 .
+
+<http://data.example.com/input/12700> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/814> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/input/12701> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/120> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/12702> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/813> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Co-catalyst> ;
+    ns1:percentage 2e+01 .
+
+<http://data.example.com/input/12703> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/814> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/input/12704> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/120> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/12705> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/813> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Co-catalyst> ;
+    ns1:percentage 1.5e+01 .
+
+<http://data.example.com/input/12706> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/814> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/input/12707> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/120> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/12708> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/813> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Co-catalyst> ;
+    ns1:percentage 1.25e+01 .
+
+<http://data.example.com/input/12709> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/814> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/input/12710> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/120> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/12711> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/813> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Co-catalyst> ;
+    ns1:percentage 1e+01 .
+
+<http://data.example.com/input/12712> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/814> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/input/12713> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/120> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/12714> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/813> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Co-catalyst> ;
+    ns1:percentage 7.5e+00 .
+
+<http://data.example.com/input/12715> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/814> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/input/12716> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/120> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/12717> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/813> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Co-catalyst> ;
+    ns1:percentage 5e+00 .
+
+<http://data.example.com/input/12718> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/814> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/input/12719> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/813> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/12720> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/814> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/journal/10> a ns21:Journal ;
     dcterms:title "ACS NANO" .
 
-<http://data.example.com/materialTransformastionProcess/5934> a ns2:MaterialTransformationProcess ;
+<http://data.example.com/materialTransformastionProcess/5934> a ns1:MaterialTransformationProcess ;
     rdfs:label "25%FA/Bi" ;
-    ns2:hasBET <http://data.example.com/bet/5934> ;
-    ns2:hasCondition <http://data.example.com/condition/50975>,
+    ns1:hasBET <http://data.example.com/bet/5934> ;
+    ns1:hasCondition <http://data.example.com/condition/50975>,
         <http://data.example.com/condition/50976>,
         <http://data.example.com/condition/50977>,
         <http://data.example.com/condition/50978>,
@@ -552,19 +651,19 @@
         <http://data.example.com/condition/50983>,
         <http://data.example.com/condition/50984>,
         <http://data.example.com/condition/50985> ;
-    ns2:hasInput <http://data.example.com/input/12698>,
+    ns1:hasInput <http://data.example.com/input/12698>,
         <http://data.example.com/input/12699>,
         <http://data.example.com/input/12700> ;
-    ns2:hasOutput <http://data.example.com/output/13872>,
+    ns1:hasOutput <http://data.example.com/output/13872>,
         <http://data.example.com/output/13873> ;
-    ns2:hasReactionEg <http://data.example.com/eg/5934> ;
-    ns2:operationMode "Batch" ;
-    ns2:reportedIn <https://doi.org/10.1021%2Facsnano.0c03146> .
+    ns1:hasReactionEg <http://data.example.com/eg/5934> ;
+    ns1:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns1:reportedIn <https://doi.org/10.1021%2Facsnano.0c03146> .
 
-<http://data.example.com/materialTransformastionProcess/5935> a ns2:MaterialTransformationProcess ;
+<http://data.example.com/materialTransformastionProcess/5935> a ns1:MaterialTransformationProcess ;
     rdfs:label "20%Fa/Bi" ;
-    ns2:hasBET <http://data.example.com/bet/5935> ;
-    ns2:hasCondition <http://data.example.com/condition/50986>,
+    ns1:hasBET <http://data.example.com/bet/5935> ;
+    ns1:hasCondition <http://data.example.com/condition/50986>,
         <http://data.example.com/condition/50987>,
         <http://data.example.com/condition/50988>,
         <http://data.example.com/condition/50989>,
@@ -575,19 +674,19 @@
         <http://data.example.com/condition/50994>,
         <http://data.example.com/condition/50995>,
         <http://data.example.com/condition/50996> ;
-    ns2:hasInput <http://data.example.com/input/12701>,
+    ns1:hasInput <http://data.example.com/input/12701>,
         <http://data.example.com/input/12702>,
         <http://data.example.com/input/12703> ;
-    ns2:hasOutput <http://data.example.com/output/13874>,
+    ns1:hasOutput <http://data.example.com/output/13874>,
         <http://data.example.com/output/13875> ;
-    ns2:hasReactionEg <http://data.example.com/eg/5935> ;
-    ns2:operationMode "Batch" ;
-    ns2:reportedIn <https://doi.org/10.1021%2Facsnano.0c03146> .
+    ns1:hasReactionEg <http://data.example.com/eg/5935> ;
+    ns1:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns1:reportedIn <https://doi.org/10.1021%2Facsnano.0c03146> .
 
-<http://data.example.com/materialTransformastionProcess/5936> a ns2:MaterialTransformationProcess ;
+<http://data.example.com/materialTransformastionProcess/5936> a ns1:MaterialTransformationProcess ;
     rdfs:label "15%FA/Bi" ;
-    ns2:hasBET <http://data.example.com/bet/5936> ;
-    ns2:hasCondition <http://data.example.com/condition/50997>,
+    ns1:hasBET <http://data.example.com/bet/5936> ;
+    ns1:hasCondition <http://data.example.com/condition/50997>,
         <http://data.example.com/condition/50998>,
         <http://data.example.com/condition/50999>,
         <http://data.example.com/condition/51000>,
@@ -598,19 +697,19 @@
         <http://data.example.com/condition/51005>,
         <http://data.example.com/condition/51006>,
         <http://data.example.com/condition/51007> ;
-    ns2:hasInput <http://data.example.com/input/12704>,
+    ns1:hasInput <http://data.example.com/input/12704>,
         <http://data.example.com/input/12705>,
         <http://data.example.com/input/12706> ;
-    ns2:hasOutput <http://data.example.com/output/13876>,
+    ns1:hasOutput <http://data.example.com/output/13876>,
         <http://data.example.com/output/13877> ;
-    ns2:hasReactionEg <http://data.example.com/eg/5936> ;
-    ns2:operationMode "Batch" ;
-    ns2:reportedIn <https://doi.org/10.1021%2Facsnano.0c03146> .
+    ns1:hasReactionEg <http://data.example.com/eg/5936> ;
+    ns1:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns1:reportedIn <https://doi.org/10.1021%2Facsnano.0c03146> .
 
-<http://data.example.com/materialTransformastionProcess/5937> a ns2:MaterialTransformationProcess ;
+<http://data.example.com/materialTransformastionProcess/5937> a ns1:MaterialTransformationProcess ;
     rdfs:label "12.5%FA/Bi" ;
-    ns2:hasBET <http://data.example.com/bet/5937> ;
-    ns2:hasCondition <http://data.example.com/condition/51008>,
+    ns1:hasBET <http://data.example.com/bet/5937> ;
+    ns1:hasCondition <http://data.example.com/condition/51008>,
         <http://data.example.com/condition/51009>,
         <http://data.example.com/condition/51010>,
         <http://data.example.com/condition/51011>,
@@ -621,19 +720,19 @@
         <http://data.example.com/condition/51016>,
         <http://data.example.com/condition/51017>,
         <http://data.example.com/condition/51018> ;
-    ns2:hasInput <http://data.example.com/input/12707>,
+    ns1:hasInput <http://data.example.com/input/12707>,
         <http://data.example.com/input/12708>,
         <http://data.example.com/input/12709> ;
-    ns2:hasOutput <http://data.example.com/output/13878>,
+    ns1:hasOutput <http://data.example.com/output/13878>,
         <http://data.example.com/output/13879> ;
-    ns2:hasReactionEg <http://data.example.com/eg/5937> ;
-    ns2:operationMode "Batch" ;
-    ns2:reportedIn <https://doi.org/10.1021%2Facsnano.0c03146> .
+    ns1:hasReactionEg <http://data.example.com/eg/5937> ;
+    ns1:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns1:reportedIn <https://doi.org/10.1021%2Facsnano.0c03146> .
 
-<http://data.example.com/materialTransformastionProcess/5938> a ns2:MaterialTransformationProcess ;
+<http://data.example.com/materialTransformastionProcess/5938> a ns1:MaterialTransformationProcess ;
     rdfs:label "10%FA/Bi" ;
-    ns2:hasBET <http://data.example.com/bet/5938> ;
-    ns2:hasCondition <http://data.example.com/condition/51019>,
+    ns1:hasBET <http://data.example.com/bet/5938> ;
+    ns1:hasCondition <http://data.example.com/condition/51019>,
         <http://data.example.com/condition/51020>,
         <http://data.example.com/condition/51021>,
         <http://data.example.com/condition/51022>,
@@ -644,19 +743,19 @@
         <http://data.example.com/condition/51027>,
         <http://data.example.com/condition/51028>,
         <http://data.example.com/condition/51029> ;
-    ns2:hasInput <http://data.example.com/input/12710>,
+    ns1:hasInput <http://data.example.com/input/12710>,
         <http://data.example.com/input/12711>,
         <http://data.example.com/input/12712> ;
-    ns2:hasOutput <http://data.example.com/output/13880>,
+    ns1:hasOutput <http://data.example.com/output/13880>,
         <http://data.example.com/output/13881> ;
-    ns2:hasReactionEg <http://data.example.com/eg/5938> ;
-    ns2:operationMode "Batch" ;
-    ns2:reportedIn <https://doi.org/10.1021%2Facsnano.0c03146> .
+    ns1:hasReactionEg <http://data.example.com/eg/5938> ;
+    ns1:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns1:reportedIn <https://doi.org/10.1021%2Facsnano.0c03146> .
 
-<http://data.example.com/materialTransformastionProcess/5939> a ns2:MaterialTransformationProcess ;
+<http://data.example.com/materialTransformastionProcess/5939> a ns1:MaterialTransformationProcess ;
     rdfs:label "7.5%FA/Bi" ;
-    ns2:hasBET <http://data.example.com/bet/5939> ;
-    ns2:hasCondition <http://data.example.com/condition/51030>,
+    ns1:hasBET <http://data.example.com/bet/5939> ;
+    ns1:hasCondition <http://data.example.com/condition/51030>,
         <http://data.example.com/condition/51031>,
         <http://data.example.com/condition/51032>,
         <http://data.example.com/condition/51033>,
@@ -667,19 +766,19 @@
         <http://data.example.com/condition/51038>,
         <http://data.example.com/condition/51039>,
         <http://data.example.com/condition/51040> ;
-    ns2:hasInput <http://data.example.com/input/12713>,
+    ns1:hasInput <http://data.example.com/input/12713>,
         <http://data.example.com/input/12714>,
         <http://data.example.com/input/12715> ;
-    ns2:hasOutput <http://data.example.com/output/13882>,
+    ns1:hasOutput <http://data.example.com/output/13882>,
         <http://data.example.com/output/13883> ;
-    ns2:hasReactionEg <http://data.example.com/eg/5939> ;
-    ns2:operationMode "Batch" ;
-    ns2:reportedIn <https://doi.org/10.1021%2Facsnano.0c03146> .
+    ns1:hasReactionEg <http://data.example.com/eg/5939> ;
+    ns1:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns1:reportedIn <https://doi.org/10.1021%2Facsnano.0c03146> .
 
-<http://data.example.com/materialTransformastionProcess/5940> a ns2:MaterialTransformationProcess ;
+<http://data.example.com/materialTransformastionProcess/5940> a ns1:MaterialTransformationProcess ;
     rdfs:label "5%FA/Bi" ;
-    ns2:hasBET <http://data.example.com/bet/5940> ;
-    ns2:hasCondition <http://data.example.com/condition/51041>,
+    ns1:hasBET <http://data.example.com/bet/5940> ;
+    ns1:hasCondition <http://data.example.com/condition/51041>,
         <http://data.example.com/condition/51042>,
         <http://data.example.com/condition/51043>,
         <http://data.example.com/condition/51044>,
@@ -690,19 +789,19 @@
         <http://data.example.com/condition/51049>,
         <http://data.example.com/condition/51050>,
         <http://data.example.com/condition/51051> ;
-    ns2:hasInput <http://data.example.com/input/12716>,
+    ns1:hasInput <http://data.example.com/input/12716>,
         <http://data.example.com/input/12717>,
         <http://data.example.com/input/12718> ;
-    ns2:hasOutput <http://data.example.com/output/13884>,
+    ns1:hasOutput <http://data.example.com/output/13884>,
         <http://data.example.com/output/13885> ;
-    ns2:hasReactionEg <http://data.example.com/eg/5940> ;
-    ns2:operationMode "Batch" ;
-    ns2:reportedIn <https://doi.org/10.1021%2Facsnano.0c03146> .
+    ns1:hasReactionEg <http://data.example.com/eg/5940> ;
+    ns1:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns1:reportedIn <https://doi.org/10.1021%2Facsnano.0c03146> .
 
-<http://data.example.com/materialTransformastionProcess/5941> a ns2:MaterialTransformationProcess ;
+<http://data.example.com/materialTransformastionProcess/5941> a ns1:MaterialTransformationProcess ;
     rdfs:label "FAPbBr3" ;
-    ns2:hasBET <http://data.example.com/bet/5941> ;
-    ns2:hasCondition <http://data.example.com/condition/51052>,
+    ns1:hasBET <http://data.example.com/bet/5941> ;
+    ns1:hasCondition <http://data.example.com/condition/51052>,
         <http://data.example.com/condition/51053>,
         <http://data.example.com/condition/51054>,
         <http://data.example.com/condition/51055>,
@@ -713,18 +812,18 @@
         <http://data.example.com/condition/51060>,
         <http://data.example.com/condition/51061>,
         <http://data.example.com/condition/51062> ;
-    ns2:hasInput <http://data.example.com/input/12719>,
+    ns1:hasInput <http://data.example.com/input/12719>,
         <http://data.example.com/input/12720> ;
-    ns2:hasOutput <http://data.example.com/output/13886>,
+    ns1:hasOutput <http://data.example.com/output/13886>,
         <http://data.example.com/output/13887> ;
-    ns2:hasReactionEg <http://data.example.com/eg/5941> ;
-    ns2:operationMode "Batch" ;
-    ns2:reportedIn <https://doi.org/10.1021%2Facsnano.0c03146> .
+    ns1:hasReactionEg <http://data.example.com/eg/5941> ;
+    ns1:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns1:reportedIn <https://doi.org/10.1021%2Facsnano.0c03146> .
 
-<http://data.example.com/materialTransformastionProcess/5942> a ns2:MaterialTransformationProcess ;
+<http://data.example.com/materialTransformastionProcess/5942> a ns1:MaterialTransformationProcess ;
     rdfs:label "Bi2WO6" ;
-    ns2:hasBET <http://data.example.com/bet/5942> ;
-    ns2:hasCondition <http://data.example.com/condition/51063>,
+    ns1:hasBET <http://data.example.com/bet/5942> ;
+    ns1:hasCondition <http://data.example.com/condition/51063>,
         <http://data.example.com/condition/51064>,
         <http://data.example.com/condition/51065>,
         <http://data.example.com/condition/51066>,
@@ -735,16 +834,153 @@
         <http://data.example.com/condition/51071>,
         <http://data.example.com/condition/51072>,
         <http://data.example.com/condition/51073> ;
-    ns2:hasInput <http://data.example.com/input/12721>,
+    ns1:hasInput <http://data.example.com/input/12721>,
         <http://data.example.com/input/12722> ;
-    ns2:hasReactionEg <http://data.example.com/eg/5942> ;
-    ns2:operationMode "Batch" ;
-    ns2:reportedIn <https://doi.org/10.1021%2Facsnano.0c03146> .
+    ns1:hasReactionEg <http://data.example.com/eg/5942> ;
+    ns1:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns1:reportedIn <https://doi.org/10.1021%2Facsnano.0c03146> .
+
+<http://data.example.com/output/13872> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/13872-gh> .
+
+<http://data.example.com/output/13873> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/13873-g> .
+
+<http://data.example.com/output/13874> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/13874-gh> .
+
+<http://data.example.com/output/13875> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/13875-g> .
+
+<http://data.example.com/output/13876> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/13876-gh> .
+
+<http://data.example.com/output/13877> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/13877-g> .
+
+<http://data.example.com/output/13878> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/13878-gh> .
+
+<http://data.example.com/output/13879> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/13879-g> .
+
+<http://data.example.com/output/13880> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/13880-gh> .
+
+<http://data.example.com/output/13881> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/13881-g> .
+
+<http://data.example.com/output/13882> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/13882-gh> .
+
+<http://data.example.com/output/13883> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/13883-g> .
+
+<http://data.example.com/output/13884> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/13884-gh> .
+
+<http://data.example.com/output/13885> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/13885-g> .
+
+<http://data.example.com/output/13886> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/13886-gh> .
+
+<http://data.example.com/output/13887> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/13887-g> .
+
+<http://data.example.com/output_quantity/13872-gh> a ns1:OutputQuantity ;
+    ns1:numericValue "90.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/13873-g> a ns1:OutputQuantity ;
+    ns1:numericValue "360.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/13874-gh> a ns1:OutputQuantity ;
+    ns1:numericValue "110.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/13875-g> a ns1:OutputQuantity ;
+    ns1:numericValue "440.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/13876-gh> a ns1:OutputQuantity ;
+    ns1:numericValue "145.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/13877-g> a ns1:OutputQuantity ;
+    ns1:numericValue "580.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/13878-gh> a ns1:OutputQuantity ;
+    ns1:numericValue "170.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/13879-g> a ns1:OutputQuantity ;
+    ns1:numericValue "680.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/13880-gh> a ns1:OutputQuantity ;
+    ns1:numericValue "160.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/13881-g> a ns1:OutputQuantity ;
+    ns1:numericValue "640.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/13882-gh> a ns1:OutputQuantity ;
+    ns1:numericValue "80.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/13883-g> a ns1:OutputQuantity ;
+    ns1:numericValue "320.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/13884-gh> a ns1:OutputQuantity ;
+    ns1:numericValue "58.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/13885-g> a ns1:OutputQuantity ;
+    ns1:numericValue "232.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/13886-gh> a ns1:OutputQuantity ;
+    ns1:numericValue "10.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/13887-g> a ns1:OutputQuantity ;
+    ns1:numericValue "40.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
 
 <https://en.wikipedia.org/wiki/China> a schema:Country .
 
-<https://doi.org/10.1021%2Facsnano.0c03146> a ns1:Article ;
-    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/5934>,
+<http://data.example.com/chemical/120> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "Bi2WO6" .
+
+<http://data.example.com/chemical/813> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "FAPbBr3" .
+
+<http://data.example.com/chemical/814> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "Benzyl Alcohol" .
+
+<https://doi.org/10.1021%2Facsnano.0c03146> a ns21:Article ;
+    ns1:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/5934>,
         <http://data.example.com/materialTransformastionProcess/5935>,
         <http://data.example.com/materialTransformastionProcess/5936>,
         <http://data.example.com/materialTransformastionProcess/5937>,
@@ -753,23 +989,26 @@
         <http://data.example.com/materialTransformastionProcess/5940>,
         <http://data.example.com/materialTransformastionProcess/5941>,
         <http://data.example.com/materialTransformastionProcess/5942> ;
-    dcterms:creator <http://data.example.com/author/Chen%20Zhou-4111>,
-        <http://data.example.com/author/Haowei%20Huang-4108>,
-        <http://data.example.com/author/Jinlin%20Long-4115>,
-        <http://data.example.com/author/Jiwu%20Zhao-4109>,
-        <http://data.example.com/author/Johan%20Hofkens-4116>,
-        <http://data.example.com/author/Julian%20A.%20Steele-4117>,
-        <http://data.example.com/author/Menglong%20Zhang-4112>,
-        <http://data.example.com/author/Yijie%20Du-4110>,
-        <http://data.example.com/author/YuXiang%20Weng-4114>,
-        <http://data.example.com/author/Zhuan%20Wang-4113>,
-        <http://data.example.com/author/and%20Maarten%20B.J.%20Roeffaers-4118> ;
+    dcterms:creator <http://data.example.com/author/Chen%20Zhou-4125>,
+        <http://data.example.com/author/Haowei%20Huang-4122>,
+        <http://data.example.com/author/Jinlin%20Long-4129>,
+        <http://data.example.com/author/Jiwu%20Zhao-4123>,
+        <http://data.example.com/author/Johan%20Hofkens-4130>,
+        <http://data.example.com/author/Julian%20A.%20Steele-4131>,
+        <http://data.example.com/author/Menglong%20Zhang-4126>,
+        <http://data.example.com/author/Yijie%20Du-4124>,
+        <http://data.example.com/author/YuXiang%20Weng-4128>,
+        <http://data.example.com/author/Zhuan%20Wang-4127>,
+        <http://data.example.com/author/and%20Maarten%20B.J.%20Roeffaers-4132> ;
     dcterms:date "2020-01-01"^^xsd:date ;
     dcterms:isPartOf <http://data.example.com/journal/10> ;
     dcterms:title "Direct Z-Scheme Heterojunction of Semicoherent FAPbBr3\\/Bi2WO6 Interface for Photoredox Reaction with Large Driving Force" ;
-    ns1:abstract "Metal halide perovskites with direct band gap and strong light absorption are promising materials for harvesting solar energy; however, their relatively narrow band gap limits their redox ability when used as a photocatalyst. Adding a second semiconductor component with the appropriate band structure offsets can generate a Z-scheme photocatalytic system, taking full advantage of the perovskite’s intrinsic properties. In this work, we develop a direct Z-scheme photocatalyst based on formamidinium lead bromide and bismuth tungstate (FAPbBr3\\/Bi2WO6) with strong redox ability for artificial solar-to-chemical energy conversion. With desirable band offsets and strong joint redox potential, the dual photocatalyst is shown to form a semicoherent heterointerface. Ultrafast transient infrared absorption studies employing selective excitation reveal synergetic photocarrier dynamics and demonstrate Z-scheme charge transfer mechanisms. Under simulated solar irradiation, a large driving force photoredox reaction (∼2.57 eV) of CO2 reduction coupled with benzyl alcohol oxidation to benzaldehyde is achieved on the Z-scheme FAPbBr3\\/Bi2WO6 photocatalyst, harnessing the full synergetic potential of the combined system." ;
-    ns1:doi "10.1021/acsnano.0c03146" ;
-    ns1:issue "0" ;
-    ns1:pageStart "0"^^xsd:positiveInteger ;
-    ns1:volume "0"^^xsd:positiveInteger .
+    ns21:abstract "Metal halide perovskites with direct band gap and strong light absorption are promising materials for harvesting solar energy; however, their relatively narrow band gap limits their redox ability when used as a photocatalyst. Adding a second semiconductor component with the appropriate band structure offsets can generate a Z-scheme photocatalytic system, taking full advantage of the perovskiteâ€™s intrinsic properties. In this work, we develop a direct Z-scheme photocatalyst based on formamidinium lead bromide and bismuth tungstate (FAPbBr3\\/Bi2WO6) with strong redox ability for artificial solar-to-chemical energy conversion. With desirable band offsets and strong joint redox potential, the dual photocatalyst is shown to form a semicoherent heterointerface. Ultrafast transient infrared absorption studies employing selective excitation reveal synergetic photocarrier dynamics and demonstrate Z-scheme charge transfer mechanisms. Under simulated solar irradiation, a large driving force photoredox reaction (âˆ¼2.57 eV) of CO2 reduction coupled with benzyl alcohol oxidation to benzaldehyde is achieved on the Z-scheme FAPbBr3\\/Bi2WO6 photocatalyst, harnessing the full synergetic potential of the combined system." ;
+    ns21:doi "10.1021/acsnano.0c03146" ;
+    ns21:issue "0" ;
+    ns21:pageStart "0"^^xsd:positiveInteger ;
+    ns21:volume "0"^^xsd:positiveInteger .
+
+<http://data.example.com/chemical/927> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CO" .
 

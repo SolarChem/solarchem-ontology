@@ -1,88 +1,110 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
-@prefix ns2: <http://purl.org/ontology/bibo/> .
-@prefix ns21: <http://base.namespace.com/> .
+@prefix ns1: <http://base.namespace.com/> .
+@prefix ns2: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://data.example.com/author/K.%20Teramura-2064> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+<http://data.example.com/author/K.%20Teramura-2082> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
     schema:name "K. Teramura" .
 
-<http://data.example.com/author/S.Hosokawa-2065> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+<http://data.example.com/author/S.Hosokawa-2083> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
     schema:name "S.Hosokawa" .
 
-<http://data.example.com/author/T.%20Tanaka-2066> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+<http://data.example.com/author/T.%20Tanaka-2084> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
     schema:name "T. Tanaka" .
 
-<http://data.example.com/author/Z.%20Huang-2063> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+<http://data.example.com/author/Z.%20Huang-2081> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
     schema:name "Z. Huang" .
 
-<http://data.example.com/condition/20813> a ns21:ReactorCondition ;
-    ns21:conditionType "Slurry" ;
-    ns21:reactorType "Slurry" ;
-    ns11:unit <http://qudt.org/vocab/unit/L> .
+<http://data.example.com/chemical/2> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "Ag" .
 
-<http://data.example.com/condition/20814> a ns21:CatalystSetUpCondition ;
-    ns21:conditionType "Other" ;
-    ns21:setUpType "Other" ;
-    ns11:numericValue "1.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/GM> .
+<http://data.example.com/chemical/3> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "H2O" .
 
-<http://data.example.com/condition/20815> a ns21:LampPowerCondition ;
-    ns21:conditionType "Mercury(Hg)" ;
-    ns21:lampType "Mercury(Hg)" ;
-    ns11:numericValue "400.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/W> .
+<http://data.example.com/chemical/366> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "Sr2KTa5O15" .
 
-<http://data.example.com/condition/20816> a ns21:LampIrradianceCondition ;
-    ns21:conditionType "Mercury(Hg)" ;
-    ns21:lampType "Mercury(Hg)" ;
-    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+<http://data.example.com/condition/20813> a ns1:ReactorCondition ;
+    ns1:conditionTypeAsText "Slurry" ;
+    ns1:reactorType "Slurry" ;
+    ns2:unit <http://qudt.org/vocab/unit/L> .
 
-<http://data.example.com/condition/20817> a ns21:TemperatureCondition ;
-    ns11:numericValue "25.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+<http://data.example.com/condition/20814> a ns1:CatalystSetUpCondition ;
+    ns1:conditionTypeAsText "Other" ;
+    ns1:setUpType "Other" ;
+    ns2:numericValue "1.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/GM> .
 
-<http://data.example.com/condition/20818> a ns21:PreasureCondition ;
-    ns11:numericValue "1.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+<http://data.example.com/condition/20815> a ns1:LampPowerCondition ;
+    ns1:conditionTypeAsText "Mercury(Hg)" ;
+    ns1:lampType "Mercury(Hg)" ;
+    ns2:numericValue "400.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W> .
 
-<http://data.example.com/condition/20819> a ns21:SpaceVelocityCondition ;
-    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+<http://data.example.com/condition/20816> a ns1:LampIrradianceCondition ;
+    ns1:conditionTypeAsText "Mercury(Hg)" ;
+    ns1:lampType "Mercury(Hg)" ;
+    ns2:unit <http://qudt.org/vocab/unit/W-PER-M2> .
 
-<http://data.example.com/condition/20820> a ns21:ReactionTimeCondition ;
-    ns11:numericValue "5.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/HR> .
+<http://data.example.com/condition/20817> a ns1:TemperatureCondition ;
+    ns2:numericValue "25.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/DEG_C> .
 
-<http://data.example.com/condition/20821> a ns21:ReactionMediumCondition ;
-    ns21:conditionType "Liquid" ;
-    ns21:reactionMediumType "Liquid" ;
-    ns11:numericValue "0" ;
-    ns11:unit <http://qudt.org/vocab/unit/PH> .
+<http://data.example.com/condition/20818> a ns1:PreasureCondition ;
+    ns2:numericValue "1.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/BAR> .
 
-<http://data.example.com/condition/20822> a ns21:WavelengthCondition ;
-    ns21:conditionType "UV" ;
-    ns21:lightSourceType "UV" ;
-    ns11:numericValue "280-315(UV-B)" ;
-    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+<http://data.example.com/condition/20819> a ns1:SpaceVelocityCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/PER-HR> .
 
-<http://data.example.com/condition/20823> a ns21:IlluminatedAreaCondition ;
-    ns21:conditionType "UV" ;
-    ns21:lightSourceType "UV" ;
-    ns11:unit <http://qudt.org/vocab/unit/M2> .
+<http://data.example.com/condition/20820> a ns1:ReactionTimeCondition ;
+    ns2:numericValue "5.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/HR> .
 
-<http://data.example.com/journal/99> a ns2:Journal ;
+<http://data.example.com/condition/20821> a ns1:ReactionMediumCondition ;
+    ns1:conditionTypeAsText "Liquid" ;
+    ns1:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns2:numericValue "0" ;
+    ns2:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/20822> a ns1:WavelengthCondition ;
+    ns1:conditionTypeAsText "UV" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns2:numericValue "280-315(UV-B)" ;
+    ns2:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/20823> a ns1:IlluminatedAreaCondition ;
+    ns1:conditionTypeAsText "UV" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns2:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/input/5066> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/366> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/5067> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/2> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Co-catalyst> ;
+    ns1:percentage 1e+00 .
+
+<http://data.example.com/input/5068> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/3> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/journal/99> a ns21:Journal ;
     dcterms:title "APPLIED CATALYSIS B-ENVIRONMENTAL" .
 
-<http://data.example.com/materialTransformastionProcess/2849> a ns21:MaterialTransformationProcess ;
+<http://data.example.com/materialTransformastionProcess/2849> a ns1:MaterialTransformationProcess ;
     rdfs:label "Ag/Sr2KTaO15" ;
-    ns21:hasBET <http://data.example.com/bet/2849> ;
-    ns21:hasCondition <http://data.example.com/condition/20813>,
+    ns1:hasBET <http://data.example.com/bet/2849> ;
+    ns1:hasCondition <http://data.example.com/condition/20813>,
         <http://data.example.com/condition/20814>,
         <http://data.example.com/condition/20815>,
         <http://data.example.com/condition/20816>,
@@ -93,32 +115,86 @@
         <http://data.example.com/condition/20821>,
         <http://data.example.com/condition/20822>,
         <http://data.example.com/condition/20823> ;
-    ns21:hasInput <http://data.example.com/input/5066>,
+    ns1:hasInput <http://data.example.com/input/5066>,
         <http://data.example.com/input/5067>,
         <http://data.example.com/input/5068> ;
-    ns21:hasOutput <http://data.example.com/output/6884>,
+    ns1:hasOutput <http://data.example.com/output/6884>,
         <http://data.example.com/output/6885>,
         <http://data.example.com/output/6886>,
         <http://data.example.com/output/6887>,
         <http://data.example.com/output/6888>,
         <http://data.example.com/output/6889> ;
-    ns21:hasReactionEg <http://data.example.com/eg/2849> ;
-    ns21:operationMode "Batch" ;
-    ns21:reportedIn <https://doi.org/10.1016%2Fj.apcatb.2016.06.039> .
+    ns1:hasReactionEg <http://data.example.com/eg/2849> ;
+    ns1:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns1:reportedIn <https://doi.org/10.1016%2Fj.apcatb.2016.06.039> .
 
-<https://doi.org/10.1016%2Fj.apcatb.2016.06.039> a ns2:Article ;
-    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/2849> ;
-    dcterms:creator <http://data.example.com/author/K.%20Teramura-2064>,
-        <http://data.example.com/author/S.Hosokawa-2065>,
-        <http://data.example.com/author/T.%20Tanaka-2066>,
-        <http://data.example.com/author/Z.%20Huang-2063> ;
+<http://data.example.com/output/6884> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/8> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/6884-gh> .
+
+<http://data.example.com/output/6885> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/6885-gh> .
+
+<http://data.example.com/output/6886> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/8> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/6886-g> .
+
+<http://data.example.com/output/6887> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/6887-g> .
+
+<http://data.example.com/output/6888> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/8> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/6888-m2h> .
+
+<http://data.example.com/output/6889> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/6889-m2h> .
+
+<http://data.example.com/output_quantity/6884-gh> a ns1:OutputQuantity ;
+    ns1:numericValue "18.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/6885-gh> a ns1:OutputQuantity ;
+    ns1:numericValue "59.8000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/6886-g> a ns1:OutputQuantity ;
+    ns1:numericValue "90.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/6887-g> a ns1:OutputQuantity ;
+    ns1:numericValue "299.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/6888-m2h> a ns1:OutputQuantity ;
+    ns1:numericValue "3.9650"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-M2-HR> .
+
+<http://data.example.com/output_quantity/6889-m2h> a ns1:OutputQuantity ;
+    ns1:numericValue "13.1720"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-M2-HR> .
+
+<https://doi.org/10.1016%2Fj.apcatb.2016.06.039> a ns21:Article ;
+    ns1:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/2849> ;
+    dcterms:creator <http://data.example.com/author/K.%20Teramura-2082>,
+        <http://data.example.com/author/S.Hosokawa-2083>,
+        <http://data.example.com/author/T.%20Tanaka-2084>,
+        <http://data.example.com/author/Z.%20Huang-2081> ;
     dcterms:date "2016-01-01"^^xsd:date ;
     dcterms:isPartOf <http://data.example.com/journal/99> ;
     dcterms:title "Fabrication of well-shaped Sr2KTa5O15 nanorods with a tetragonal tungsten bronze structure by a flux method for artificial photosynthesis" ;
-    ns2:abstract "Sr2KTa5O15 nanorods with a tetragonal tungsten bronze structure were synthesized by a facile one-pot method using potassium chloride (KCl) as flux. Only the flux method obtained pure nanorods under the same calcination temperature and time comparing with that of solid-state reaction (SSR) and polymerized complex (PC) methods. The as-fabricated Sr2KTa5O15 nanorods with a Ag cocatalyst showed relatively high activity and good selectivity toward CO evolution in the photocatalytic conversion of CO2 by H2O. Stoichiometric amounts of O2 as an oxidation product together with those of CO and H2 as reduction products were obtained, indicating that H2O worked as an electron donor in the photocatalytic conversion of CO2. The Sr2KTa5O15 nanorods fabricated at 1173 K for 3 h in the mass ratio of KCl flux to precursors at 1.0 afforded the highest formation rate of CO evolution (65.5 μmol h−1) and good selectivity toward CO evolution (88.7%)." ;
-    ns2:doi "10.1016/j.apcatb.2016.06.039" ;
-    ns2:pageStart "272"^^xsd:positiveInteger ;
-    ns2:volume "199"^^xsd:positiveInteger .
+    ns21:abstract "Sr2KTa5O15 nanorods with a tetragonal tungsten bronze structure were synthesized by a facile one-pot method using potassium chloride (KCl) as flux. Only the flux method obtained pure nanorods under the same calcination temperature and time comparing with that of solid-state reaction (SSR) and polymerized complex (PC) methods. The as-fabricated Sr2KTa5O15 nanorods with a Ag cocatalyst showed relatively high activity and good selectivity toward CO evolution in the photocatalytic conversion of CO2 by H2O. Stoichiometric amounts of O2 as an oxidation product together with those of CO and H2 as reduction products were obtained, indicating that H2O worked as an electron donor in the photocatalytic conversion of CO2. The Sr2KTa5O15 nanorods fabricated at 1173 K for 3 h in the mass ratio of KCl flux to precursors at 1.0 afforded the highest formation rate of CO evolution (65.5 Î¼mol hâˆ’1) and good selectivity toward CO evolution (88.7%)." ;
+    ns21:doi "10.1016/j.apcatb.2016.06.039" ;
+    ns21:pageStart "272"^^xsd:positiveInteger ;
+    ns21:volume "199"^^xsd:positiveInteger .
+
+<http://data.example.com/chemical/8> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "H2" .
+
+<http://data.example.com/chemical/927> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CO" .
 
 <https://en.wikipedia.org/wiki/Japan> a schema:Country .
 

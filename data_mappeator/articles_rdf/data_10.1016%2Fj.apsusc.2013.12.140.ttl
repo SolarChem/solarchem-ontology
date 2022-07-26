@@ -1,101 +1,101 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <http://purl.org/ontology/bibo/> .
-@prefix ns12: <http://qudt.org/2.1/schema/qudt/> .
-@prefix ns2: <http://base.namespace.com/> .
+@prefix ns1: <http://base.namespace.com/> .
+@prefix ns2: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://data.example.com/author/G.%20Padmanabham-1189> a schema:Person ;
-    ns2:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
     schema:name "G. Padmanabham" .
 
 <http://data.example.com/author/G.%20Sundararajan-1190> a schema:Person ;
-    ns2:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
     schema:name "G. Sundararajan" .
 
 <http://data.example.com/author/I.%20Annapoorna-1185> a schema:Person ;
-    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
     schema:name "I. Annapoorna" .
 
 <http://data.example.com/author/I.%20Ganesh-1183> a schema:Person ;
-    ns2:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
     schema:name "I. Ganesh" .
 
 <http://data.example.com/author/J.%20M.%20Sumliner-1186> a schema:Person ;
-    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
     schema:name "J. M. Sumliner" .
 
 <http://data.example.com/author/M.%20Ramakrishna-1187> a schema:Person ;
-    ns2:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
     schema:name "M. Ramakrishna" .
 
 <http://data.example.com/author/N.Y.%20Hebalkar-1188> a schema:Person ;
-    ns2:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
     schema:name "N.Y. Hebalkar" .
 
 <http://data.example.com/author/P.%20P.%20Kumar-1184> a schema:Person ;
-    ns2:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
     schema:name "P. P. Kumar" .
 
-<http://data.example.com/condition/11969> a ns2:ReactorCondition ;
-    ns2:conditionType "Slurry" ;
-    ns2:reactorType "Slurry" ;
-    ns12:unit <http://qudt.org/vocab/unit/L> .
+<http://data.example.com/condition/11969> a ns1:ReactorCondition ;
+    ns1:conditionTypeAsText "Slurry" ;
+    ns1:reactorType "Slurry" ;
+    ns2:unit <http://qudt.org/vocab/unit/L> .
 
-<http://data.example.com/condition/11970> a ns2:CatalystSetUpCondition ;
-    ns2:conditionType "Other" ;
-    ns2:setUpType "Other" ;
-    ns12:numericValue "0.24" ;
-    ns12:unit <http://qudt.org/vocab/unit/GM> .
+<http://data.example.com/condition/11970> a ns1:CatalystSetUpCondition ;
+    ns1:conditionTypeAsText "Other" ;
+    ns1:setUpType "Other" ;
+    ns2:numericValue "0.24" ;
+    ns2:unit <http://qudt.org/vocab/unit/GM> .
 
-<http://data.example.com/condition/11971> a ns2:LampPowerCondition ;
-    ns2:conditionType "Solar" ;
-    ns2:lampType "Solar" ;
-    ns12:unit <http://qudt.org/vocab/unit/W> .
+<http://data.example.com/condition/11971> a ns1:LampPowerCondition ;
+    ns1:conditionTypeAsText "Solar" ;
+    ns1:lampType "Solar" ;
+    ns2:unit <http://qudt.org/vocab/unit/W> .
 
-<http://data.example.com/condition/11972> a ns2:LampIrradianceCondition ;
-    ns2:conditionType "Solar" ;
-    ns2:lampType "Solar" ;
-    ns12:numericValue "44.42" ;
-    ns12:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+<http://data.example.com/condition/11972> a ns1:LampIrradianceCondition ;
+    ns1:conditionTypeAsText "Solar" ;
+    ns1:lampType "Solar" ;
+    ns2:numericValue "44.42" ;
+    ns2:unit <http://qudt.org/vocab/unit/W-PER-M2> .
 
-<http://data.example.com/condition/11973> a ns2:TemperatureCondition ;
-    ns12:unit <http://qudt.org/vocab/unit/DEG_C> .
+<http://data.example.com/condition/11973> a ns1:TemperatureCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/DEG_C> .
 
-<http://data.example.com/condition/11974> a ns2:PreasureCondition ;
-    ns12:unit <http://qudt.org/vocab/unit/BAR> .
+<http://data.example.com/condition/11974> a ns1:PreasureCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/BAR> .
 
-<http://data.example.com/condition/11975> a ns2:SpaceVelocityCondition ;
-    ns12:unit <http://qudt.org/vocab/unit/PER-HR> .
+<http://data.example.com/condition/11975> a ns1:SpaceVelocityCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/PER-HR> .
 
-<http://data.example.com/condition/11976> a ns2:ReactionTimeCondition ;
-    ns12:unit <http://qudt.org/vocab/unit/HR> .
+<http://data.example.com/condition/11976> a ns1:ReactionTimeCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/HR> .
 
-<http://data.example.com/condition/11977> a ns2:ReactionMediumCondition ;
-    ns2:conditionType "Liquid" ;
-    ns2:reactionMediumType "Liquid" ;
-    ns12:numericValue "0" ;
-    ns12:unit <http://qudt.org/vocab/unit/PH> .
+<http://data.example.com/condition/11977> a ns1:ReactionMediumCondition ;
+    ns1:conditionTypeAsText "Liquid" ;
+    ns1:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns2:numericValue "0" ;
+    ns2:unit <http://qudt.org/vocab/unit/PH> .
 
-<http://data.example.com/condition/11978> a ns2:WavelengthCondition ;
-    ns2:conditionType "Solar" ;
-    ns2:lightSourceType "Solar" ;
-    ns12:numericValue "0" ;
-    ns12:unit <http://qudt.org/vocab/unit/NanoM> .
+<http://data.example.com/condition/11978> a ns1:WavelengthCondition ;
+    ns1:conditionTypeAsText "Solar" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Solar> ;
+    ns2:numericValue "0" ;
+    ns2:unit <http://qudt.org/vocab/unit/NanoM> .
 
-<http://data.example.com/condition/11979> a ns2:IlluminatedAreaCondition ;
-    ns2:conditionType "Solar" ;
-    ns2:lightSourceType "Solar" ;
-    ns12:unit <http://qudt.org/vocab/unit/M2> .
+<http://data.example.com/condition/11979> a ns1:IlluminatedAreaCondition ;
+    ns1:conditionTypeAsText "Solar" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Solar> ;
+    ns2:unit <http://qudt.org/vocab/unit/M2> .
 
-<http://data.example.com/journal/116> a ns1:Journal ;
+<http://data.example.com/journal/116> a ns21:Journal ;
     dcterms:title "APPLIED SURFACE SCIENCE" .
 
-<http://data.example.com/materialTransformastionProcess/1939> a ns2:MaterialTransformationProcess ;
+<http://data.example.com/materialTransformastionProcess/1939> a ns1:MaterialTransformationProcess ;
     rdfs:label "TiO2" ;
-    ns2:hasBET <http://data.example.com/bet/1939> ;
-    ns2:hasCondition <http://data.example.com/condition/11969>,
+    ns1:hasBET <http://data.example.com/bet/1939> ;
+    ns1:hasCondition <http://data.example.com/condition/11969>,
         <http://data.example.com/condition/11970>,
         <http://data.example.com/condition/11971>,
         <http://data.example.com/condition/11972>,
@@ -106,14 +106,14 @@
         <http://data.example.com/condition/11977>,
         <http://data.example.com/condition/11978>,
         <http://data.example.com/condition/11979> ;
-    ns2:hasInput <http://data.example.com/input/2930>,
+    ns1:hasInput <http://data.example.com/input/2930>,
         <http://data.example.com/input/2931> ;
-    ns2:hasReactionEg <http://data.example.com/eg/1939> ;
-    ns2:operationMode "Batch" ;
-    ns2:reportedIn <https://doi.org/10.1016%2Fj.apsusc.2013.12.140> .
+    ns1:hasReactionEg <http://data.example.com/eg/1939> ;
+    ns1:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns1:reportedIn <https://doi.org/10.1016%2Fj.apsusc.2013.12.140> .
 
-<https://doi.org/10.1016%2Fj.apsusc.2013.12.140> a ns1:Article ;
-    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/1939> ;
+<https://doi.org/10.1016%2Fj.apsusc.2013.12.140> a ns21:Article ;
+    ns1:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/1939> ;
     dcterms:creator <http://data.example.com/author/G.%20Padmanabham-1189>,
         <http://data.example.com/author/G.%20Sundararajan-1190>,
         <http://data.example.com/author/I.%20Annapoorna-1185>,
@@ -125,10 +125,10 @@
     dcterms:date "2014-01-01"^^xsd:date ;
     dcterms:isPartOf <http://data.example.com/journal/116> ;
     dcterms:title "Preparation and characterization of Cu-doped TiO2 materials for electrochemical, photoelectrochemical, and photocatalytic applications" ;
-    ns1:abstract "The Cu-doped TiO2 (Cu = 0-50 wt.%) powders and thin films were prepared by following a homogeneous co-precipitation method and sol-gel dip-coating technique, respectively, and were treated through 400-800 C, and then thoroughly investigated by following various characterization techniques. The characterization results suggest that the pure TiO2 powder formed at 550 C is in rutile phase, whereas the 0.1-10 wt.% Cu-doped TiO2 powders formed at 550 C are mainly in anatase phase. These latter powders possess low band-gap energies (3.247-3.265 eV) and flat-band potentials amenable to water oxidation reaction. The 0.5-wt.% Cu-doped TiO2 thin film formed at 550 C exhibited n-type semiconducting behavior and considerable photocurrent among various investigated powders. The CO2 reduction with a Faradaic efficiency of 82% and ? 96% CO selectivity in a two-compartment electrochemical cell was noted at -2500 mV (vs. AgAg +) on pre-reduced (at -2000 mV vs. AgAgCl) 50 wt.% Cu-doped TiO 2 thin film electrode in conjunction with an ionic liquid. The UV-light-induced TiO2 was found to be responsible for photocatalytic methylene blue (MB) degradation, and TiO2 is not sensitized by MB. The in situ formed compounds of TiO2 and CuOCu2O were found to absorb visible light, but showed little visible-light-induced photocatalytic activity." ;
-    ns1:doi "10.1016/j.apsusc.2013.12.140" ;
-    ns1:pageStart "229"^^xsd:positiveInteger ;
-    ns1:volume "293"^^xsd:positiveInteger .
+    ns21:abstract "The Cu-doped TiO2 (Cu = 0-50 wt.%) powders and thin films were prepared by following a homogeneous co-precipitation method and sol-gel dip-coating technique, respectively, and were treated through 400-800 C, and then thoroughly investigated by following various characterization techniques. The characterization results suggest that the pure TiO2 powder formed at 550 C is in rutile phase, whereas the 0.1-10 wt.% Cu-doped TiO2 powders formed at 550 C are mainly in anatase phase. These latter powders possess low band-gap energies (3.247-3.265 eV) and flat-band potentials amenable to water oxidation reaction. The 0.5-wt.% Cu-doped TiO2 thin film formed at 550 C exhibited n-type semiconducting behavior and considerable photocurrent among various investigated powders. The CO2 reduction with a Faradaic efficiency of 82% and ? 96% CO selectivity in a two-compartment electrochemical cell was noted at -2500 mV (vs. AgAg +) on pre-reduced (at -2000 mV vs. AgAgCl) 50 wt.% Cu-doped TiO 2 thin film electrode in conjunction with an ionic liquid. The UV-light-induced TiO2 was found to be responsible for photocatalytic methylene blue (MB) degradation, and TiO2 is not sensitized by MB. The in situ formed compounds of TiO2 and CuOCu2O were found to absorb visible light, but showed little visible-light-induced photocatalytic activity." ;
+    ns21:doi "10.1016/j.apsusc.2013.12.140" ;
+    ns21:pageStart "229"^^xsd:positiveInteger ;
+    ns21:volume "293"^^xsd:positiveInteger .
 
 <https://en.wikipedia.org/wiki/United%20States> a schema:Country .
 

@@ -1,97 +1,127 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
-@prefix ns2: <http://purl.org/ontology/bibo/> .
-@prefix ns21: <http://base.namespace.com/> .
+@prefix ns1: <http://base.namespace.com/> .
+@prefix ns2: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://data.example.com/author/Huilin%20Tao-4286> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/Huilin%20Tao-4300> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "Huilin Tao" .
 
-<http://data.example.com/author/Maria-Magdalena%20Titirici-4288> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/United%20Kingdom> ;
+<http://data.example.com/author/Maria-Magdalena%20Titirici-4302> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/United%20Kingdom> ;
     schema:name "Maria-Magdalena Titirici" .
 
-<http://data.example.com/author/Pengju%20Yang-4284> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/Pengju%20Yang-4298> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "Pengju Yang" .
 
-<http://data.example.com/author/Ruirui%20Wang-4285> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/Ruirui%20Wang-4299> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "Ruirui Wang" .
 
-<http://data.example.com/author/Xinchen%20Wang-4289> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/Xinchen%20Wang-4303> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "Xinchen Wang" .
 
-<http://data.example.com/author/Yongfan%20Zhang-4287> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/Yongfan%20Zhang-4301> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "Yongfan Zhang" .
 
-<http://data.example.com/condition/52658> a ns21:ReactorCondition ;
-    ns21:conditionType "Slurry" ;
-    ns21:reactorType "Slurry" ;
-    ns11:numericValue "0.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/L> .
+<http://data.example.com/chemical/578> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TEOA" .
 
-<http://data.example.com/condition/52659> a ns21:CatalystSetUpCondition ;
-    ns21:conditionType "Powder(Suspended)" ;
-    ns21:setUpType "Powder(Suspended)" ;
-    ns11:numericValue "0.00001" ;
-    ns11:unit <http://qudt.org/vocab/unit/GM> .
+<http://data.example.com/chemical/602> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "[Ru(bpy)3]Cl2Ã‚Â·6H2O" .
 
-<http://data.example.com/condition/52660> a ns21:LampPowerCondition ;
-    ns21:conditionType "Xenon(Xe)" ;
-    ns21:lampType "Xenon(Xe)" ;
-    ns11:numericValue "300.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/W> .
+<http://data.example.com/chemical/794> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "N-C" .
 
-<http://data.example.com/condition/52661> a ns21:LampIrradianceCondition ;
-    ns21:conditionType "Xenon(Xe)" ;
-    ns21:lampType "Xenon(Xe)" ;
-    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+<http://data.example.com/chemical/853> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "Co4N" .
 
-<http://data.example.com/condition/52662> a ns21:TemperatureCondition ;
-    ns11:numericValue "30.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+<http://data.example.com/condition/52658> a ns1:ReactorCondition ;
+    ns1:conditionTypeAsText "Slurry" ;
+    ns1:reactorType "Slurry" ;
+    ns2:numericValue "0.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/L> .
 
-<http://data.example.com/condition/52663> a ns21:PreasureCondition ;
-    ns11:numericValue "1.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+<http://data.example.com/condition/52659> a ns1:CatalystSetUpCondition ;
+    ns1:conditionTypeAsText "Powder(Suspended)" ;
+    ns1:setUpType "Powder(Suspended)" ;
+    ns2:numericValue "0.00001" ;
+    ns2:unit <http://qudt.org/vocab/unit/GM> .
 
-<http://data.example.com/condition/52664> a ns21:SpaceVelocityCondition ;
-    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+<http://data.example.com/condition/52660> a ns1:LampPowerCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "300.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W> .
 
-<http://data.example.com/condition/52665> a ns21:ReactionTimeCondition ;
-    ns11:numericValue "0.50" ;
-    ns11:unit <http://qudt.org/vocab/unit/HR> .
+<http://data.example.com/condition/52661> a ns1:LampIrradianceCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:unit <http://qudt.org/vocab/unit/W-PER-M2> .
 
-<http://data.example.com/condition/52666> a ns21:ReactionMediumCondition ;
-    ns21:conditionType "Liquid" ;
-    ns21:reactionMediumType "Liquid" ;
-    ns11:numericValue "0" ;
-    ns11:unit <http://qudt.org/vocab/unit/PH> .
+<http://data.example.com/condition/52662> a ns1:TemperatureCondition ;
+    ns2:numericValue "30.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/DEG_C> .
 
-<http://data.example.com/condition/52667> a ns21:WavelengthCondition ;
-    ns21:conditionType "Visible" ;
-    ns21:lightSourceType "Visible" ;
-    ns11:numericValue "400-780" ;
-    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+<http://data.example.com/condition/52663> a ns1:PreasureCondition ;
+    ns2:numericValue "1.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/BAR> .
 
-<http://data.example.com/condition/52668> a ns21:IlluminatedAreaCondition ;
-    ns21:conditionType "Visible" ;
-    ns21:lightSourceType "Visible" ;
-    ns11:unit <http://qudt.org/vocab/unit/M2> .
+<http://data.example.com/condition/52664> a ns1:SpaceVelocityCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/PER-HR> .
 
-<http://data.example.com/journal/99> a ns2:Journal ;
+<http://data.example.com/condition/52665> a ns1:ReactionTimeCondition ;
+    ns2:numericValue "0.50" ;
+    ns2:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/52666> a ns1:ReactionMediumCondition ;
+    ns1:conditionTypeAsText "Liquid" ;
+    ns1:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns2:numericValue "0" ;
+    ns2:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/52667> a ns1:WavelengthCondition ;
+    ns1:conditionTypeAsText "Visible" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns2:numericValue "400-780" ;
+    ns2:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/52668> a ns1:IlluminatedAreaCondition ;
+    ns1:conditionTypeAsText "Visible" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns2:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/input/13142> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/794> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/13143> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/853> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Co-catalyst> ;
+    ns1:percentage 0e+00 .
+
+<http://data.example.com/input/13144> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/602> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Dye> ;
+    ns1:percentage 0e+00 .
+
+<http://data.example.com/input/13145> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/578> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/journal/99> a ns21:Journal ;
     dcterms:title "APPLIED CATALYSIS B-ENVIRONMENTAL" .
 
-<http://data.example.com/materialTransformastionProcess/6087> a ns21:MaterialTransformationProcess ;
+<http://data.example.com/materialTransformastionProcess/6087> a ns1:MaterialTransformationProcess ;
     rdfs:label "Co4N/NCs" ;
-    ns21:hasBET <http://data.example.com/bet/6087> ;
-    ns21:hasCondition <http://data.example.com/condition/52658>,
+    ns1:hasBET <http://data.example.com/bet/6087> ;
+    ns1:hasCondition <http://data.example.com/condition/52658>,
         <http://data.example.com/condition/52659>,
         <http://data.example.com/condition/52660>,
         <http://data.example.com/condition/52661>,
@@ -102,35 +132,73 @@
         <http://data.example.com/condition/52666>,
         <http://data.example.com/condition/52667>,
         <http://data.example.com/condition/52668> ;
-    ns21:hasInput <http://data.example.com/input/13142>,
+    ns1:hasInput <http://data.example.com/input/13142>,
         <http://data.example.com/input/13143>,
         <http://data.example.com/input/13144>,
         <http://data.example.com/input/13145> ;
-    ns21:hasOutput <http://data.example.com/output/14239>,
+    ns1:hasOutput <http://data.example.com/output/14239>,
         <http://data.example.com/output/14240>,
         <http://data.example.com/output/14241>,
         <http://data.example.com/output/14242> ;
-    ns21:hasReactionEg <http://data.example.com/eg/6087> ;
-    ns21:operationMode "Batch" ;
-    ns21:reportedIn <https://doi.org/10.1016%2Fj.apcatb.2020.119454> .
+    ns1:hasReactionEg <http://data.example.com/eg/6087> ;
+    ns1:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns1:reportedIn <https://doi.org/10.1016%2Fj.apcatb.2020.119454> .
 
-<https://doi.org/10.1016%2Fj.apcatb.2020.119454> a ns2:Article ;
-    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/6087> ;
-    dcterms:creator <http://data.example.com/author/Huilin%20Tao-4286>,
-        <http://data.example.com/author/Maria-Magdalena%20Titirici-4288>,
-        <http://data.example.com/author/Pengju%20Yang-4284>,
-        <http://data.example.com/author/Ruirui%20Wang-4285>,
-        <http://data.example.com/author/Xinchen%20Wang-4289>,
-        <http://data.example.com/author/Yongfan%20Zhang-4287> ;
+<http://data.example.com/output/14239> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/8> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/14239-gh> .
+
+<http://data.example.com/output/14240> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/14240-gh> .
+
+<http://data.example.com/output/14241> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/8> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/14241-g> .
+
+<http://data.example.com/output/14242> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/14242-g> .
+
+<http://data.example.com/output_quantity/14239-gh> a ns1:OutputQuantity ;
+    ns1:numericValue "30000.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/14240-gh> a ns1:OutputQuantity ;
+    ns1:numericValue "86000.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/14241-g> a ns1:OutputQuantity ;
+    ns1:numericValue "15000.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/14242-g> a ns1:OutputQuantity ;
+    ns1:numericValue "43000.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<https://doi.org/10.1016%2Fj.apcatb.2020.119454> a ns21:Article ;
+    ns1:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/6087> ;
+    dcterms:creator <http://data.example.com/author/Huilin%20Tao-4300>,
+        <http://data.example.com/author/Maria-Magdalena%20Titirici-4302>,
+        <http://data.example.com/author/Pengju%20Yang-4298>,
+        <http://data.example.com/author/Ruirui%20Wang-4299>,
+        <http://data.example.com/author/Xinchen%20Wang-4303>,
+        <http://data.example.com/author/Yongfan%20Zhang-4301> ;
     dcterms:date "2020-01-01"^^xsd:date ;
     dcterms:isPartOf <http://data.example.com/journal/99> ;
     dcterms:title "Cobalt Nitride Anchored on Nitrogen-Rich Carbons for Efficient Carbon Dioxide Reduction with Visible Light" ;
-    ns2:abstract "Utilizing solar energy to convert CO2 into fuels and chemicals represents a promising solution to reduce reliance on fossil fuels, but it is hampered by the lack of highly-efficient catalysts. Herein, we report unique cobalt nitride\\/nitrogen-rich carbons (Co4N\\/NCs), which can work as noble-metal-free catalysts for CO2-to-CO conversion. The mass activity of Co4N\\/NCs is two orders of magnitude higher than those of previously reported CO2 photoreduction catalysts. The quantum yield for CO production at 450 nm reaches 7.2% with a turnover frequency per Co atom of 0.97 s-1. The electronic structure and coordinated environment of catalysts are analyzed by X-ray absorption fine structure spectroscopy and X-ray photoelectron spectroscopy. The reaction processes are investigated by in-situ diffuse reflectance infrared fourier transform spectroscopy and density functional theory calculations. Results suggest that the synergetic effects between the Co4N and the NCs can consolidate the adsorption and activation of CO2 and accelerate the interfacial electron-transfer kinetics between the Co4N\\/NCs catalysts and light-harvesting antenna, thereby resulting in the outstanding activity for synthesizing CO from CO2. This work offers the possibility to design Co-based host-guest topology for highly-efficient CO2 reduction." ;
-    ns2:doi "10.1016/j.apcatb.2020.119454" ;
-    ns2:pageStart "119454"^^xsd:positiveInteger ;
-    ns2:volume "280"^^xsd:positiveInteger .
+    ns21:abstract "Utilizing solar energy to convert CO2 into fuels and chemicals represents a promising solution to reduce reliance on fossil fuels, but it is hampered by the lack of highly-efficient catalysts. Herein, we report unique cobalt nitride\\/nitrogen-rich carbons (Co4N\\/NCs), which can work as noble-metal-free catalysts for CO2-to-CO conversion. The mass activity of Co4N\\/NCs is two orders of magnitude higher than those of previously reported CO2 photoreduction catalysts. The quantum yield for CO production at 450 nm reaches 7.2% with a turnover frequency per Co atom of 0.97 s-1. The electronic structure and coordinated environment of catalysts are analyzed by X-ray absorption fine structure spectroscopy and X-ray photoelectron spectroscopy. The reaction processes are investigated by in-situ diffuse reflectance infrared fourier transform spectroscopy and density functional theory calculations. Results suggest that the synergetic effects between the Co4N and the NCs can consolidate the adsorption and activation of CO2 and accelerate the interfacial electron-transfer kinetics between the Co4N\\/NCs catalysts and light-harvesting antenna, thereby resulting in the outstanding activity for synthesizing CO from CO2. This work offers the possibility to design Co-based host-guest topology for highly-efficient CO2 reduction." ;
+    ns21:doi "10.1016/j.apcatb.2020.119454" ;
+    ns21:pageStart "119454"^^xsd:positiveInteger ;
+    ns21:volume "280"^^xsd:positiveInteger .
 
 <https://en.wikipedia.org/wiki/United%20Kingdom> a schema:Country .
+
+<http://data.example.com/chemical/8> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "H2" .
+
+<http://data.example.com/chemical/927> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CO" .
 
 <https://en.wikipedia.org/wiki/China> a schema:Country .
 

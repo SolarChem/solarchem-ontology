@@ -1,152 +1,168 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <http://purl.org/ontology/bibo/> .
-@prefix ns12: <http://qudt.org/2.1/schema/qudt/> .
-@prefix ns2: <http://base.namespace.com/> .
+@prefix ns1: <http://base.namespace.com/> .
+@prefix ns2: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://data.example.com/author/C.%20Cui-3662> a schema:Person ;
-    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/C.%20Cui-3669> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "C. Cui" .
 
-<http://data.example.com/author/J.%20Wang-3661> a schema:Person ;
-    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/J.%20Wang-3668> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "J. Wang" .
 
-<http://data.example.com/author/J.%20Wang-3663> a schema:Person ;
-    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/J.%20Wang-3670> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "J. Wang" .
 
-<http://data.example.com/author/L.%20Xiao-3659> a schema:Person ;
-    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/L.%20Xiao-3666> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "L. Xiao" .
 
-<http://data.example.com/author/R.%20Lin-3660> a schema:Person ;
-    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/R.%20Lin-3667> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "R. Lin" .
 
-<http://data.example.com/author/Z.%20Li-3664> a schema:Person ;
-    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/Z.%20Li-3671> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "Z. Li" .
 
-<http://data.example.com/condition/39898> a ns2:ReactorCondition ;
-    ns2:conditionType "Slurry" ;
-    ns2:reactorType "Slurry" ;
-    ns12:numericValue "0.10" ;
-    ns12:unit <http://qudt.org/vocab/unit/L> .
+<http://data.example.com/condition/39898> a ns1:ReactorCondition ;
+    ns1:conditionTypeAsText "Slurry" ;
+    ns1:reactorType "Slurry" ;
+    ns2:numericValue "0.10" ;
+    ns2:unit <http://qudt.org/vocab/unit/L> .
 
-<http://data.example.com/condition/39899> a ns2:CatalystSetUpCondition ;
-    ns2:conditionType "Powder(Suspended)" ;
-    ns2:setUpType "Powder(Suspended)" ;
-    ns12:numericValue "0.01" ;
-    ns12:unit <http://qudt.org/vocab/unit/GM> .
+<http://data.example.com/condition/39899> a ns1:CatalystSetUpCondition ;
+    ns1:conditionTypeAsText "Powder(Suspended)" ;
+    ns1:setUpType "Powder(Suspended)" ;
+    ns2:numericValue "0.01" ;
+    ns2:unit <http://qudt.org/vocab/unit/GM> .
 
-<http://data.example.com/condition/39900> a ns2:LampPowerCondition ;
-    ns2:conditionType "Xenon(Xe)" ;
-    ns2:lampType "Xenon(Xe)" ;
-    ns12:numericValue "300.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/W> .
+<http://data.example.com/condition/39900> a ns1:LampPowerCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "300.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W> .
 
-<http://data.example.com/condition/39901> a ns2:LampIrradianceCondition ;
-    ns2:conditionType "Xenon(Xe)" ;
-    ns2:lampType "Xenon(Xe)" ;
-    ns12:numericValue "1000.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+<http://data.example.com/condition/39901> a ns1:LampIrradianceCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "1000.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W-PER-M2> .
 
-<http://data.example.com/condition/39902> a ns2:TemperatureCondition ;
-    ns12:numericValue "25.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/DEG_C> .
+<http://data.example.com/condition/39902> a ns1:TemperatureCondition ;
+    ns2:numericValue "25.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/DEG_C> .
 
-<http://data.example.com/condition/39903> a ns2:PreasureCondition ;
-    ns12:numericValue "1.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/BAR> .
+<http://data.example.com/condition/39903> a ns1:PreasureCondition ;
+    ns2:numericValue "1.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/BAR> .
 
-<http://data.example.com/condition/39904> a ns2:SpaceVelocityCondition ;
-    ns12:unit <http://qudt.org/vocab/unit/PER-HR> .
+<http://data.example.com/condition/39904> a ns1:SpaceVelocityCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/PER-HR> .
 
-<http://data.example.com/condition/39905> a ns2:ReactionTimeCondition ;
-    ns12:numericValue "6.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/HR> .
+<http://data.example.com/condition/39905> a ns1:ReactionTimeCondition ;
+    ns2:numericValue "6.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/HR> .
 
-<http://data.example.com/condition/39906> a ns2:ReactionMediumCondition ;
-    ns2:conditionType "Liquid" ;
-    ns2:reactionMediumType "Liquid" ;
-    ns12:unit <http://qudt.org/vocab/unit/PH> .
+<http://data.example.com/condition/39906> a ns1:ReactionMediumCondition ;
+    ns1:conditionTypeAsText "Liquid" ;
+    ns1:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns2:unit <http://qudt.org/vocab/unit/PH> .
 
-<http://data.example.com/condition/39907> a ns2:WavelengthCondition ;
-    ns2:conditionType "Visible" ;
-    ns2:lightSourceType "Visible" ;
-    ns12:numericValue "400-780" ;
-    ns12:unit <http://qudt.org/vocab/unit/NanoM> .
+<http://data.example.com/condition/39907> a ns1:WavelengthCondition ;
+    ns1:conditionTypeAsText "Visible" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns2:numericValue "400-780" ;
+    ns2:unit <http://qudt.org/vocab/unit/NanoM> .
 
-<http://data.example.com/condition/39908> a ns2:IlluminatedAreaCondition ;
-    ns2:conditionType "Visible" ;
-    ns2:lightSourceType "Visible" ;
-    ns12:unit <http://qudt.org/vocab/unit/M2> .
+<http://data.example.com/condition/39908> a ns1:IlluminatedAreaCondition ;
+    ns1:conditionTypeAsText "Visible" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns2:unit <http://qudt.org/vocab/unit/M2> .
 
-<http://data.example.com/condition/39909> a ns2:ReactorCondition ;
-    ns2:conditionType "Slurry" ;
-    ns2:reactorType "Slurry" ;
-    ns12:numericValue "0.10" ;
-    ns12:unit <http://qudt.org/vocab/unit/L> .
+<http://data.example.com/condition/39909> a ns1:ReactorCondition ;
+    ns1:conditionTypeAsText "Slurry" ;
+    ns1:reactorType "Slurry" ;
+    ns2:numericValue "0.10" ;
+    ns2:unit <http://qudt.org/vocab/unit/L> .
 
-<http://data.example.com/condition/39910> a ns2:CatalystSetUpCondition ;
-    ns2:conditionType "Powder(Suspended)" ;
-    ns2:setUpType "Powder(Suspended)" ;
-    ns12:numericValue "0.01" ;
-    ns12:unit <http://qudt.org/vocab/unit/GM> .
+<http://data.example.com/condition/39910> a ns1:CatalystSetUpCondition ;
+    ns1:conditionTypeAsText "Powder(Suspended)" ;
+    ns1:setUpType "Powder(Suspended)" ;
+    ns2:numericValue "0.01" ;
+    ns2:unit <http://qudt.org/vocab/unit/GM> .
 
-<http://data.example.com/condition/39911> a ns2:LampPowerCondition ;
-    ns2:conditionType "Xenon(Xe)" ;
-    ns2:lampType "Xenon(Xe)" ;
-    ns12:numericValue "300.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/W> .
+<http://data.example.com/condition/39911> a ns1:LampPowerCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "300.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W> .
 
-<http://data.example.com/condition/39912> a ns2:LampIrradianceCondition ;
-    ns2:conditionType "Xenon(Xe)" ;
-    ns2:lampType "Xenon(Xe)" ;
-    ns12:numericValue "1000.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+<http://data.example.com/condition/39912> a ns1:LampIrradianceCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "1000.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W-PER-M2> .
 
-<http://data.example.com/condition/39913> a ns2:TemperatureCondition ;
-    ns12:numericValue "25.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/DEG_C> .
+<http://data.example.com/condition/39913> a ns1:TemperatureCondition ;
+    ns2:numericValue "25.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/DEG_C> .
 
-<http://data.example.com/condition/39914> a ns2:PreasureCondition ;
-    ns12:numericValue "1.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/BAR> .
+<http://data.example.com/condition/39914> a ns1:PreasureCondition ;
+    ns2:numericValue "1.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/BAR> .
 
-<http://data.example.com/condition/39915> a ns2:SpaceVelocityCondition ;
-    ns12:unit <http://qudt.org/vocab/unit/PER-HR> .
+<http://data.example.com/condition/39915> a ns1:SpaceVelocityCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/PER-HR> .
 
-<http://data.example.com/condition/39916> a ns2:ReactionTimeCondition ;
-    ns12:numericValue "6.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/HR> .
+<http://data.example.com/condition/39916> a ns1:ReactionTimeCondition ;
+    ns2:numericValue "6.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/HR> .
 
-<http://data.example.com/condition/39917> a ns2:ReactionMediumCondition ;
-    ns2:conditionType "Liquid" ;
-    ns2:reactionMediumType "Liquid" ;
-    ns12:unit <http://qudt.org/vocab/unit/PH> .
+<http://data.example.com/condition/39917> a ns1:ReactionMediumCondition ;
+    ns1:conditionTypeAsText "Liquid" ;
+    ns1:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns2:unit <http://qudt.org/vocab/unit/PH> .
 
-<http://data.example.com/condition/39918> a ns2:WavelengthCondition ;
-    ns2:conditionType "Visible" ;
-    ns2:lightSourceType "Visible" ;
-    ns12:numericValue "400-780" ;
-    ns12:unit <http://qudt.org/vocab/unit/NanoM> .
+<http://data.example.com/condition/39918> a ns1:WavelengthCondition ;
+    ns1:conditionTypeAsText "Visible" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns2:numericValue "400-780" ;
+    ns2:unit <http://qudt.org/vocab/unit/NanoM> .
 
-<http://data.example.com/condition/39919> a ns2:IlluminatedAreaCondition ;
-    ns2:conditionType "Visible" ;
-    ns2:lightSourceType "Visible" ;
-    ns12:unit <http://qudt.org/vocab/unit/M2> .
+<http://data.example.com/condition/39919> a ns1:IlluminatedAreaCondition ;
+    ns1:conditionTypeAsText "Visible" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns2:unit <http://qudt.org/vocab/unit/M2> .
 
-<http://data.example.com/journal/514> a ns1:Journal ;
+<http://data.example.com/input/9894> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/120> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/9895> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/3> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/input/9896> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/120> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/9897> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/3> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/journal/514> a ns21:Journal ;
     dcterms:title "JOURNAL OF COLLOID AND INTERFACE SCIENCE" .
 
-<http://data.example.com/materialTransformastionProcess/4927> a ns2:MaterialTransformationProcess ;
+<http://data.example.com/materialTransformastionProcess/4927> a ns1:MaterialTransformationProcess ;
     rdfs:label "Bulk-Bi2WO6" ;
-    ns2:hasBET <http://data.example.com/bet/4927> ;
-    ns2:hasCondition <http://data.example.com/condition/39898>,
+    ns1:hasBET <http://data.example.com/bet/4927> ;
+    ns1:hasCondition <http://data.example.com/condition/39898>,
         <http://data.example.com/condition/39899>,
         <http://data.example.com/condition/39900>,
         <http://data.example.com/condition/39901>,
@@ -157,18 +173,18 @@
         <http://data.example.com/condition/39906>,
         <http://data.example.com/condition/39907>,
         <http://data.example.com/condition/39908> ;
-    ns2:hasInput <http://data.example.com/input/9894>,
+    ns1:hasInput <http://data.example.com/input/9894>,
         <http://data.example.com/input/9895> ;
-    ns2:hasOutput <http://data.example.com/output/11027>,
+    ns1:hasOutput <http://data.example.com/output/11027>,
         <http://data.example.com/output/11028> ;
-    ns2:hasReactionEg <http://data.example.com/eg/4927> ;
-    ns2:operationMode "Continuous" ;
-    ns2:reportedIn <https://doi.org/10.1016%2Fj.jcis.2018.03.064> .
+    ns1:hasReactionEg <http://data.example.com/eg/4927> ;
+    ns1:operationMode <http://vocab.example.com/condition/operationMode/Continuous> ;
+    ns1:reportedIn <https://doi.org/10.1016%2Fj.jcis.2018.03.064> .
 
-<http://data.example.com/materialTransformastionProcess/4928> a ns2:MaterialTransformationProcess ;
+<http://data.example.com/materialTransformastionProcess/4928> a ns1:MaterialTransformationProcess ;
     rdfs:label "Bi2WO6 HNRs" ;
-    ns2:hasBET <http://data.example.com/bet/4928> ;
-    ns2:hasCondition <http://data.example.com/condition/39909>,
+    ns1:hasBET <http://data.example.com/bet/4928> ;
+    ns1:hasCondition <http://data.example.com/condition/39909>,
         <http://data.example.com/condition/39910>,
         <http://data.example.com/condition/39911>,
         <http://data.example.com/condition/39912>,
@@ -179,30 +195,71 @@
         <http://data.example.com/condition/39917>,
         <http://data.example.com/condition/39918>,
         <http://data.example.com/condition/39919> ;
-    ns2:hasInput <http://data.example.com/input/9896>,
+    ns1:hasInput <http://data.example.com/input/9896>,
         <http://data.example.com/input/9897> ;
-    ns2:hasOutput <http://data.example.com/output/11029>,
+    ns1:hasOutput <http://data.example.com/output/11029>,
         <http://data.example.com/output/11030> ;
-    ns2:hasReactionEg <http://data.example.com/eg/4928> ;
-    ns2:operationMode "Continuous" ;
-    ns2:reportedIn <https://doi.org/10.1016%2Fj.jcis.2018.03.064> .
+    ns1:hasReactionEg <http://data.example.com/eg/4928> ;
+    ns1:operationMode <http://vocab.example.com/condition/operationMode/Continuous> ;
+    ns1:reportedIn <https://doi.org/10.1016%2Fj.jcis.2018.03.064> .
 
-<https://doi.org/10.1016%2Fj.jcis.2018.03.064> a ns1:Article ;
-    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/4927>,
+<http://data.example.com/output/11027> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/6> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/11027-gh> .
+
+<http://data.example.com/output/11028> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/6> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/11028-m2h> .
+
+<http://data.example.com/output/11029> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/6> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/11029-gh> .
+
+<http://data.example.com/output/11030> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/6> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/11030-m2h> .
+
+<http://data.example.com/output_quantity/11027-gh> a ns1:OutputQuantity ;
+    ns1:numericValue "0.3300"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/11028-m2h> a ns1:OutputQuantity ;
+    ns1:numericValue "1.9800"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-M2-HR> .
+
+<http://data.example.com/output_quantity/11029-gh> a ns1:OutputQuantity ;
+    ns1:numericValue "2.6000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/11030-m2h> a ns1:OutputQuantity ;
+    ns1:numericValue "15.6000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-M2-HR> .
+
+<http://data.example.com/chemical/120> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "Bi2WO6" .
+
+<http://data.example.com/chemical/3> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "H2O" .
+
+<https://doi.org/10.1016%2Fj.jcis.2018.03.064> a ns21:Article ;
+    ns1:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/4927>,
         <http://data.example.com/materialTransformastionProcess/4928> ;
-    dcterms:creator <http://data.example.com/author/C.%20Cui-3662>,
-        <http://data.example.com/author/J.%20Wang-3661>,
-        <http://data.example.com/author/J.%20Wang-3663>,
-        <http://data.example.com/author/L.%20Xiao-3659>,
-        <http://data.example.com/author/R.%20Lin-3660>,
-        <http://data.example.com/author/Z.%20Li-3664> ;
+    dcterms:creator <http://data.example.com/author/C.%20Cui-3669>,
+        <http://data.example.com/author/J.%20Wang-3668>,
+        <http://data.example.com/author/J.%20Wang-3670>,
+        <http://data.example.com/author/L.%20Xiao-3666>,
+        <http://data.example.com/author/R.%20Lin-3667>,
+        <http://data.example.com/author/Z.%20Li-3671> ;
     dcterms:date "2018-01-01"^^xsd:date ;
     dcterms:isPartOf <http://data.example.com/journal/514> ;
     dcterms:title "A novel hollow-hierarchical structured Bi2WO6 with enhanced photocatalytic activity for CO2 photoreduction" ;
-    ns1:abstract "Converting CO2 into high-valued chemicals with sunlight i s regarded as a promising way\\\\r\\\\nto solve the impending energy and environmental crisis. Development of efficient photocatalysts \\\\r\\\\nwith suitable energy band gap, high stability and favorable structure is thus of very importance. \\\\r\\\\nHerein, a novel hierarchical Bi2WO6 photocatalyst assembled by Bi2WO6 nanosheets with a hollow \\\\r\\\\nand rod-shaped appearance has been developed via a facile hydrothermal process. Interestingly, we \\\\r\\\\nfound that the hydrolysis of Bi(NO3)3 in water can produce solid Bi6O5(OH)\\\\r\\\\n3(NO\\\\r\\\\n3)5·3H\\\\r\\\\n2O microrods \\\\r\\\\nwhich can be transformed to hollow-hierarchical Bi2WO6 nanosheets by virtue of the Kirkendall \\\\r\\\\neffect. The developed Bi2WO6 nanosheets exhibit a 58 times higher specific surface area than that of \\\\r\\\\nbulk Bi2WO6 and a remarkable enhancement in electrochemical performance such as photocurrent \\\\r\\\\nand charge transfer . As a result, the hollow-hierarchical structured Bi\\\\r\\\\n2WO6 photocatalysts achieve a \\\\r\\\\nhigh CH4 yield of 2.6 μmol g\\\\r\\\\n-1 \\\\r\\\\nh\\\\r\\\\n-1\\\\r\\\\n, 8 times higher than that of bulk Bi2WO6. Moreover, the developed \\\\r\\\\nphotocatalysts exhibit a high stability during the recycling experiments. This work may present a \\\\r\\\\nnew strategy to attain hierarchical structured photocatalysts with high activity and stability toward\\\\r\\\\nCO2 reduction." ;
-    ns1:doi "10.1016/j.jcis.2018.03.064" ;
-    ns1:pageStart "151"^^xsd:positiveInteger ;
-    ns1:volume "523"^^xsd:positiveInteger .
+    ns21:abstract "Converting CO2 into high-valued chemicals with sunlight i s regarded as a promising way\\\\r\\\\nto solve the impending energy and environmental crisis. Development of efficient photocatalysts \\\\r\\\\nwith suitable energy band gap, high stability and favorable structure is thus of very importance. \\\\r\\\\nHerein, a novel hierarchical Bi2WO6 photocatalyst assembled by Bi2WO6 nanosheets with a hollow \\\\r\\\\nand rod-shaped appearance has been developed via a facile hydrothermal process. Interestingly, we \\\\r\\\\nfound that the hydrolysis of Bi(NO3)3 in water can produce solid Bi6O5(OH)\\\\r\\\\n3(NO\\\\r\\\\n3)5Â·3H\\\\r\\\\n2O microrods \\\\r\\\\nwhich can be transformed to hollow-hierarchical Bi2WO6 nanosheets by virtue of the Kirkendall \\\\r\\\\neffect. The developed Bi2WO6 nanosheets exhibit a 58 times higher specific surface area than that of \\\\r\\\\nbulk Bi2WO6 and a remarkable enhancement in electrochemical performance such as photocurrent \\\\r\\\\nand charge transfer . As a result, the hollow-hierarchical structured Bi\\\\r\\\\n2WO6 photocatalysts achieve a \\\\r\\\\nhigh CH4 yield of 2.6 Î¼mol g\\\\r\\\\n-1 \\\\r\\\\nh\\\\r\\\\n-1\\\\r\\\\n, 8 times higher than that of bulk Bi2WO6. Moreover, the developed \\\\r\\\\nphotocatalysts exhibit a high stability during the recycling experiments. This work may present a \\\\r\\\\nnew strategy to attain hierarchical structured photocatalysts with high activity and stability toward\\\\r\\\\nCO2 reduction." ;
+    ns21:doi "10.1016/j.jcis.2018.03.064" ;
+    ns21:pageStart "151"^^xsd:positiveInteger ;
+    ns21:volume "523"^^xsd:positiveInteger .
+
+<http://data.example.com/chemical/6> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CH4" .
 
 <https://en.wikipedia.org/wiki/China> a schema:Country .
 

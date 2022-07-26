@@ -1,136 +1,136 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
-@prefix ns2: <http://purl.org/ontology/bibo/> .
-@prefix ns21: <http://base.namespace.com/> .
+@prefix ns1: <http://base.namespace.com/> .
+@prefix ns2: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://data.example.com/author/Byeong-Kyu%20Lee-2567> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Korea%2C%20Republic%20of> ;
+<http://data.example.com/author/Byeong-Kyu%20Lee-2581> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/Korea%2C%20Republic%20of> ;
     schema:name "Byeong-Kyu Lee" .
 
-<http://data.example.com/author/T.%20Soltani-2566> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Korea%2C%20Republic%20of> ;
+<http://data.example.com/author/T.%20Soltani-2580> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/Korea%2C%20Republic%20of> ;
     schema:name "T. Soltani" .
 
-<http://data.example.com/condition/20439> a ns21:ReactorCondition ;
-    ns21:conditionType "Slurry" ;
-    ns21:reactorType "Slurry" ;
-    ns11:numericValue "0.10" ;
-    ns11:unit <http://qudt.org/vocab/unit/L> .
+<http://data.example.com/condition/20439> a ns1:ReactorCondition ;
+    ns1:conditionTypeAsText "Slurry" ;
+    ns1:reactorType "Slurry" ;
+    ns2:numericValue "0.10" ;
+    ns2:unit <http://qudt.org/vocab/unit/L> .
 
-<http://data.example.com/condition/20440> a ns21:CatalystSetUpCondition ;
-    ns21:conditionType "non-uniform grains" ;
-    ns21:setUpType "non-uniform grains" ;
-    ns11:numericValue "0.050" ;
-    ns11:unit <http://qudt.org/vocab/unit/GM> .
+<http://data.example.com/condition/20440> a ns1:CatalystSetUpCondition ;
+    ns1:conditionTypeAsText "non-uniform grains" ;
+    ns1:setUpType "non-uniform grains" ;
+    ns2:numericValue "0.050" ;
+    ns2:unit <http://qudt.org/vocab/unit/GM> .
 
-<http://data.example.com/condition/20441> a ns21:LampPowerCondition ;
-    ns21:conditionType "Fluorescent" ;
-    ns21:lampType "Fluorescent" ;
-    ns11:numericValue "55.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/W> .
+<http://data.example.com/condition/20441> a ns1:LampPowerCondition ;
+    ns1:conditionTypeAsText "Fluorescent" ;
+    ns1:lampType "Fluorescent" ;
+    ns2:numericValue "55.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W> .
 
-<http://data.example.com/condition/20442> a ns21:LampIrradianceCondition ;
-    ns21:conditionType "Fluorescent" ;
-    ns21:lampType "Fluorescent" ;
-    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+<http://data.example.com/condition/20442> a ns1:LampIrradianceCondition ;
+    ns1:conditionTypeAsText "Fluorescent" ;
+    ns1:lampType "Fluorescent" ;
+    ns2:unit <http://qudt.org/vocab/unit/W-PER-M2> .
 
-<http://data.example.com/condition/20443> a ns21:TemperatureCondition ;
-    ns11:numericValue "25.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+<http://data.example.com/condition/20443> a ns1:TemperatureCondition ;
+    ns2:numericValue "25.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/DEG_C> .
 
-<http://data.example.com/condition/20444> a ns21:PreasureCondition ;
-    ns11:numericValue "1.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+<http://data.example.com/condition/20444> a ns1:PreasureCondition ;
+    ns2:numericValue "1.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/BAR> .
 
-<http://data.example.com/condition/20445> a ns21:SpaceVelocityCondition ;
-    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+<http://data.example.com/condition/20445> a ns1:SpaceVelocityCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/PER-HR> .
 
-<http://data.example.com/condition/20446> a ns21:ReactionTimeCondition ;
-    ns11:numericValue "1.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/HR> .
+<http://data.example.com/condition/20446> a ns1:ReactionTimeCondition ;
+    ns2:numericValue "1.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/HR> .
 
-<http://data.example.com/condition/20447> a ns21:ReactionMediumCondition ;
-    ns21:conditionType "Liquid" ;
-    ns21:reactionMediumType "Liquid" ;
-    ns11:numericValue "0" ;
-    ns11:unit <http://qudt.org/vocab/unit/PH> .
+<http://data.example.com/condition/20447> a ns1:ReactionMediumCondition ;
+    ns1:conditionTypeAsText "Liquid" ;
+    ns1:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns2:numericValue "0" ;
+    ns2:unit <http://qudt.org/vocab/unit/PH> .
 
-<http://data.example.com/condition/20448> a ns21:WavelengthCondition ;
-    ns21:conditionType "UV-Vis" ;
-    ns21:lightSourceType "UV-Vis" ;
-    ns11:numericValue "315-780" ;
-    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+<http://data.example.com/condition/20448> a ns1:WavelengthCondition ;
+    ns1:conditionTypeAsText "UV-Vis" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV-Vis> ;
+    ns2:numericValue "315-780" ;
+    ns2:unit <http://qudt.org/vocab/unit/NanoM> .
 
-<http://data.example.com/condition/20449> a ns21:IlluminatedAreaCondition ;
-    ns21:conditionType "UV-Vis" ;
-    ns21:lightSourceType "UV-Vis" ;
-    ns11:unit <http://qudt.org/vocab/unit/M2> .
+<http://data.example.com/condition/20449> a ns1:IlluminatedAreaCondition ;
+    ns1:conditionTypeAsText "UV-Vis" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV-Vis> ;
+    ns2:unit <http://qudt.org/vocab/unit/M2> .
 
-<http://data.example.com/condition/20450> a ns21:ReactorCondition ;
-    ns21:conditionType "Slurry" ;
-    ns21:reactorType "Slurry" ;
-    ns11:numericValue "0.10" ;
-    ns11:unit <http://qudt.org/vocab/unit/L> .
+<http://data.example.com/condition/20450> a ns1:ReactorCondition ;
+    ns1:conditionTypeAsText "Slurry" ;
+    ns1:reactorType "Slurry" ;
+    ns2:numericValue "0.10" ;
+    ns2:unit <http://qudt.org/vocab/unit/L> .
 
-<http://data.example.com/condition/20451> a ns21:CatalystSetUpCondition ;
-    ns21:conditionType "non-uniform grains" ;
-    ns21:setUpType "non-uniform grains" ;
-    ns11:numericValue "0.050" ;
-    ns11:unit <http://qudt.org/vocab/unit/GM> .
+<http://data.example.com/condition/20451> a ns1:CatalystSetUpCondition ;
+    ns1:conditionTypeAsText "non-uniform grains" ;
+    ns1:setUpType "non-uniform grains" ;
+    ns2:numericValue "0.050" ;
+    ns2:unit <http://qudt.org/vocab/unit/GM> .
 
-<http://data.example.com/condition/20452> a ns21:LampPowerCondition ;
-    ns21:conditionType "Fluorescent" ;
-    ns21:lampType "Fluorescent" ;
-    ns11:numericValue "55.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/W> .
+<http://data.example.com/condition/20452> a ns1:LampPowerCondition ;
+    ns1:conditionTypeAsText "Fluorescent" ;
+    ns1:lampType "Fluorescent" ;
+    ns2:numericValue "55.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W> .
 
-<http://data.example.com/condition/20453> a ns21:LampIrradianceCondition ;
-    ns21:conditionType "Fluorescent" ;
-    ns21:lampType "Fluorescent" ;
-    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+<http://data.example.com/condition/20453> a ns1:LampIrradianceCondition ;
+    ns1:conditionTypeAsText "Fluorescent" ;
+    ns1:lampType "Fluorescent" ;
+    ns2:unit <http://qudt.org/vocab/unit/W-PER-M2> .
 
-<http://data.example.com/condition/20454> a ns21:TemperatureCondition ;
-    ns11:numericValue "25.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+<http://data.example.com/condition/20454> a ns1:TemperatureCondition ;
+    ns2:numericValue "25.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/DEG_C> .
 
-<http://data.example.com/condition/20455> a ns21:PreasureCondition ;
-    ns11:numericValue "1.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+<http://data.example.com/condition/20455> a ns1:PreasureCondition ;
+    ns2:numericValue "1.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/BAR> .
 
-<http://data.example.com/condition/20456> a ns21:SpaceVelocityCondition ;
-    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+<http://data.example.com/condition/20456> a ns1:SpaceVelocityCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/PER-HR> .
 
-<http://data.example.com/condition/20457> a ns21:ReactionTimeCondition ;
-    ns11:numericValue "1.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/HR> .
+<http://data.example.com/condition/20457> a ns1:ReactionTimeCondition ;
+    ns2:numericValue "1.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/HR> .
 
-<http://data.example.com/condition/20458> a ns21:ReactionMediumCondition ;
-    ns21:conditionType "Liquid" ;
-    ns21:reactionMediumType "Liquid" ;
-    ns11:numericValue "0" ;
-    ns11:unit <http://qudt.org/vocab/unit/PH> .
+<http://data.example.com/condition/20458> a ns1:ReactionMediumCondition ;
+    ns1:conditionTypeAsText "Liquid" ;
+    ns1:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns2:numericValue "0" ;
+    ns2:unit <http://qudt.org/vocab/unit/PH> .
 
-<http://data.example.com/condition/20459> a ns21:WavelengthCondition ;
-    ns21:conditionType "UV-Vis" ;
-    ns21:lightSourceType "UV-Vis" ;
-    ns11:numericValue "315-780" ;
-    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+<http://data.example.com/condition/20459> a ns1:WavelengthCondition ;
+    ns1:conditionTypeAsText "UV-Vis" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV-Vis> ;
+    ns2:numericValue "315-780" ;
+    ns2:unit <http://qudt.org/vocab/unit/NanoM> .
 
-<http://data.example.com/condition/20460> a ns21:IlluminatedAreaCondition ;
-    ns21:conditionType "UV-Vis" ;
-    ns21:lightSourceType "UV-Vis" ;
-    ns11:unit <http://qudt.org/vocab/unit/M2> .
+<http://data.example.com/condition/20460> a ns1:IlluminatedAreaCondition ;
+    ns1:conditionTypeAsText "UV-Vis" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV-Vis> ;
+    ns2:unit <http://qudt.org/vocab/unit/M2> .
 
-<http://data.example.com/journal/551> a ns2:Journal ;
+<http://data.example.com/journal/551> a ns21:Journal ;
     dcterms:title "JOURNAL OF HAZARDOUS MATERIALS" .
 
-<http://data.example.com/materialTransformastionProcess/2812> a ns21:MaterialTransformationProcess ;
+<http://data.example.com/materialTransformastionProcess/2812> a ns1:MaterialTransformationProcess ;
     rdfs:label "0.2mol% Ba-doped BFO" ;
-    ns21:hasBET <http://data.example.com/bet/2812> ;
-    ns21:hasCondition <http://data.example.com/condition/20439>,
+    ns1:hasBET <http://data.example.com/bet/2812> ;
+    ns1:hasCondition <http://data.example.com/condition/20439>,
         <http://data.example.com/condition/20440>,
         <http://data.example.com/condition/20441>,
         <http://data.example.com/condition/20442>,
@@ -141,16 +141,16 @@
         <http://data.example.com/condition/20447>,
         <http://data.example.com/condition/20448>,
         <http://data.example.com/condition/20449> ;
-    ns21:hasInput <http://data.example.com/input/4977>,
+    ns1:hasInput <http://data.example.com/input/4977>,
         <http://data.example.com/input/4978> ;
-    ns21:hasReactionEg <http://data.example.com/eg/2812> ;
-    ns21:operationMode "Batch" ;
-    ns21:reportedIn <https://doi.org/10.1016%2Fj.jhazmat.2016.03.052> .
+    ns1:hasReactionEg <http://data.example.com/eg/2812> ;
+    ns1:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns1:reportedIn <https://doi.org/10.1016%2Fj.jhazmat.2016.03.052> .
 
-<http://data.example.com/materialTransformastionProcess/2813> a ns21:MaterialTransformationProcess ;
+<http://data.example.com/materialTransformastionProcess/2813> a ns1:MaterialTransformationProcess ;
     rdfs:label "0.05mol% Ba-doped BFO" ;
-    ns21:hasBET <http://data.example.com/bet/2813> ;
-    ns21:hasCondition <http://data.example.com/condition/20450>,
+    ns1:hasBET <http://data.example.com/bet/2813> ;
+    ns1:hasCondition <http://data.example.com/condition/20450>,
         <http://data.example.com/condition/20451>,
         <http://data.example.com/condition/20452>,
         <http://data.example.com/condition/20453>,
@@ -161,24 +161,24 @@
         <http://data.example.com/condition/20458>,
         <http://data.example.com/condition/20459>,
         <http://data.example.com/condition/20460> ;
-    ns21:hasInput <http://data.example.com/input/4979>,
+    ns1:hasInput <http://data.example.com/input/4979>,
         <http://data.example.com/input/4980> ;
-    ns21:hasReactionEg <http://data.example.com/eg/2813> ;
-    ns21:operationMode "Batch" ;
-    ns21:reportedIn <https://doi.org/10.1016%2Fj.jhazmat.2016.03.052> .
+    ns1:hasReactionEg <http://data.example.com/eg/2813> ;
+    ns1:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns1:reportedIn <https://doi.org/10.1016%2Fj.jhazmat.2016.03.052> .
 
-<https://doi.org/10.1016%2Fj.jhazmat.2016.03.052> a ns2:Article ;
-    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/2812>,
+<https://doi.org/10.1016%2Fj.jhazmat.2016.03.052> a ns21:Article ;
+    ns1:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/2812>,
         <http://data.example.com/materialTransformastionProcess/2813> ;
-    dcterms:creator <http://data.example.com/author/Byeong-Kyu%20Lee-2567>,
-        <http://data.example.com/author/T.%20Soltani-2566> ;
+    dcterms:creator <http://data.example.com/author/Byeong-Kyu%20Lee-2581>,
+        <http://data.example.com/author/T.%20Soltani-2580> ;
     dcterms:date "2016-01-01"^^xsd:date ;
     dcterms:isPartOf <http://data.example.com/journal/551> ;
     dcterms:title "Novel and facile synthesis of Ba-doped BiFeO3 nanoparticles and enhancement of their magnetic and photocatalytic activities for complete degradation of benzene in aqueous solution" ;
-    ns2:abstract "In this work, Bi1-x Bax FeO3 (x = 0.05, 0.1 and 0.2 mol %) multiferroic materials as visible-light photocatalysts were successfully synthesized via a simple and rapid sol-gel method, at a low temperature and with rapid calcination. Ba loading brought about a distorted structure of BiFeO3 magnetic nanoparticles (BFO MNPs) consisting of small, randomly oriented and non-uniform grains, leading to increased surface area and improved magnetic and photocatalytic activities. Doping of Ba2+ into pure BFO (Bi1_x Bax FeO3, x = 0.2 mol %) greatly increased magnetic saturation to 3.0 emu\\/g and significantly decreased the band-gap energy to 1.79 eV, as compared to 2.1 emu\\/g and 2.1 eV, respectively, for pure BFO. Bi1-xBa xFeO3 of x = 0.2 mol % exhibited the greatest photocatalytic degradation effect after 60 min of visible light irradiation, and reached 97% benzene removal efficiency, leading to production of a high concentration of carbon dioxide (CO2), with 93% and 82% reductions in chemical oxygen demand (COD) and total organic carbon (TOC), respectively. The identified major intermediate products of photodegradation enabled prediction of the proposed benzene degradation pathway. The enhanced photocatalytic activity of benzene removal is due to both mechanisms, photocatalytic and photo-Fenton catalytic degradation." ;
-    ns2:doi "10.1016/j.jhazmat.2016.03.052" ;
-    ns2:pageStart "122"^^xsd:positiveInteger ;
-    ns2:volume "316"^^xsd:positiveInteger .
+    ns21:abstract "In this work, Bi1-x Bax FeO3 (x = 0.05, 0.1 and 0.2 mol %) multiferroic materials as visible-light photocatalysts were successfully synthesized via a simple and rapid sol-gel method, at a low temperature and with rapid calcination. Ba loading brought about a distorted structure of BiFeO3 magnetic nanoparticles (BFO MNPs) consisting of small, randomly oriented and non-uniform grains, leading to increased surface area and improved magnetic and photocatalytic activities. Doping of Ba2+ into pure BFO (Bi1_x Bax FeO3, x = 0.2 mol %) greatly increased magnetic saturation to 3.0 emu\\/g and significantly decreased the band-gap energy to 1.79 eV, as compared to 2.1 emu\\/g and 2.1 eV, respectively, for pure BFO. Bi1-xBa xFeO3 of x = 0.2 mol % exhibited the greatest photocatalytic degradation effect after 60 min of visible light irradiation, and reached 97% benzene removal efficiency, leading to production of a high concentration of carbon dioxide (CO2), with 93% and 82% reductions in chemical oxygen demand (COD) and total organic carbon (TOC), respectively. The identified major intermediate products of photodegradation enabled prediction of the proposed benzene degradation pathway. The enhanced photocatalytic activity of benzene removal is due to both mechanisms, photocatalytic and photo-Fenton catalytic degradation." ;
+    ns21:doi "10.1016/j.jhazmat.2016.03.052" ;
+    ns21:pageStart "122"^^xsd:positiveInteger ;
+    ns21:volume "316"^^xsd:positiveInteger .
 
 <https://en.wikipedia.org/wiki/Korea%2C%20Republic%20of> a schema:Country .
 

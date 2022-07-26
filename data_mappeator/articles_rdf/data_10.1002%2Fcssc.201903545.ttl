@@ -1,94 +1,108 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
-@prefix ns2: <http://purl.org/ontology/bibo/> .
-@prefix ns21: <http://base.namespace.com/> .
+@prefix ns1: <http://base.namespace.com/> .
+@prefix ns2: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://data.example.com/author/Di%20Wang-3557> a schema:Person ;
+<http://data.example.com/author/Di%20Wang-3564> a schema:Person ;
     schema:name "Di Wang" .
 
-<http://data.example.com/author/Kai%20Lei-3556> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+<http://data.example.com/author/Kai%20Lei-3563> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
     schema:name "Kai Lei" .
 
-<http://data.example.com/author/Li%20Wang-3561> a schema:Person ;
+<http://data.example.com/author/Li%20Wang-3568> a schema:Person ;
     schema:name "Li Wang" .
 
-<http://data.example.com/author/Liqun%20Ye-3558> a schema:Person ;
+<http://data.example.com/author/Liqun%20Ye-3565> a schema:Person ;
     schema:name "Liqun Ye" .
 
-<http://data.example.com/author/Mingpu%20Kou-3559> a schema:Person ;
+<http://data.example.com/author/Mingpu%20Kou-3566> a schema:Person ;
     schema:name "Mingpu Kou" .
 
-<http://data.example.com/author/Yan%20Kong-3562> a schema:Person ;
+<http://data.example.com/author/Yan%20Kong-3569> a schema:Person ;
     schema:name "Yan Kong" .
 
-<http://data.example.com/author/Zhaoyu%20Ma-3560> a schema:Person ;
+<http://data.example.com/author/Zhaoyu%20Ma-3567> a schema:Person ;
     schema:name "Zhaoyu Ma" .
 
-<http://data.example.com/condition/45816> a ns21:ReactorCondition ;
-    ns21:conditionType "Fixed-bed" ;
-    ns21:reactorType "Fixed-bed" ;
-    ns11:numericValue "0.35" ;
-    ns11:unit <http://qudt.org/vocab/unit/L> .
+<http://data.example.com/chemical/3> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "H2O" .
 
-<http://data.example.com/condition/45817> a ns21:CatalystSetUpCondition ;
-    ns21:conditionType "Powder(Supported)" ;
-    ns21:setUpType "Powder(Supported)" ;
-    ns11:numericValue "0.05" ;
-    ns11:unit <http://qudt.org/vocab/unit/GM> .
+<http://data.example.com/chemical/711> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "Carbazole-Triazine COF" .
 
-<http://data.example.com/condition/45818> a ns21:LampPowerCondition ;
-    ns21:conditionType "Xenon(Xe)" ;
-    ns21:lampType "Xenon(Xe)" ;
-    ns11:numericValue "300.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/W> .
+<http://data.example.com/condition/45816> a ns1:ReactorCondition ;
+    ns1:conditionTypeAsText "Fixed-bed" ;
+    ns1:reactorType "Fixed-bed" ;
+    ns2:numericValue "0.35" ;
+    ns2:unit <http://qudt.org/vocab/unit/L> .
 
-<http://data.example.com/condition/45819> a ns21:LampIrradianceCondition ;
-    ns21:conditionType "Xenon(Xe)" ;
-    ns21:lampType "Xenon(Xe)" ;
-    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+<http://data.example.com/condition/45817> a ns1:CatalystSetUpCondition ;
+    ns1:conditionTypeAsText "Powder(Supported)" ;
+    ns1:setUpType "Powder(Supported)" ;
+    ns2:numericValue "0.05" ;
+    ns2:unit <http://qudt.org/vocab/unit/GM> .
 
-<http://data.example.com/condition/45820> a ns21:TemperatureCondition ;
-    ns11:numericValue "25.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+<http://data.example.com/condition/45818> a ns1:LampPowerCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "300.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W> .
 
-<http://data.example.com/condition/45821> a ns21:PreasureCondition ;
-    ns11:numericValue "1.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+<http://data.example.com/condition/45819> a ns1:LampIrradianceCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:unit <http://qudt.org/vocab/unit/W-PER-M2> .
 
-<http://data.example.com/condition/45822> a ns21:SpaceVelocityCondition ;
-    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+<http://data.example.com/condition/45820> a ns1:TemperatureCondition ;
+    ns2:numericValue "25.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/DEG_C> .
 
-<http://data.example.com/condition/45823> a ns21:ReactionTimeCondition ;
-    ns11:numericValue "20.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/HR> .
+<http://data.example.com/condition/45821> a ns1:PreasureCondition ;
+    ns2:numericValue "1.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/BAR> .
 
-<http://data.example.com/condition/45824> a ns21:ReactionMediumCondition ;
-    ns21:conditionType "Gas" ;
-    ns21:reactionMediumType "Gas" ;
-    ns11:unit <http://qudt.org/vocab/unit/PH> .
+<http://data.example.com/condition/45822> a ns1:SpaceVelocityCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/PER-HR> .
 
-<http://data.example.com/condition/45825> a ns21:WavelengthCondition ;
-    ns21:conditionType "Visible" ;
-    ns21:lightSourceType "Visible" ;
-    ns11:numericValue "400-780" ;
-    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+<http://data.example.com/condition/45823> a ns1:ReactionTimeCondition ;
+    ns2:numericValue "20.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/HR> .
 
-<http://data.example.com/condition/45826> a ns21:IlluminatedAreaCondition ;
-    ns21:conditionType "Visible" ;
-    ns21:lightSourceType "Visible" ;
-    ns11:unit <http://qudt.org/vocab/unit/M2> .
+<http://data.example.com/condition/45824> a ns1:ReactionMediumCondition ;
+    ns1:conditionTypeAsText "Gas" ;
+    ns1:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Gas> ;
+    ns2:unit <http://qudt.org/vocab/unit/PH> .
 
-<http://data.example.com/journal/239> a ns2:Journal ;
+<http://data.example.com/condition/45825> a ns1:WavelengthCondition ;
+    ns1:conditionTypeAsText "Visible" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns2:numericValue "400-780" ;
+    ns2:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/45826> a ns1:IlluminatedAreaCondition ;
+    ns1:conditionTypeAsText "Visible" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns2:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/input/11364> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/711> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/11365> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/3> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/journal/239> a ns21:Journal ;
     dcterms:title "CHEMSUSCHEM" .
 
-<http://data.example.com/materialTransformastionProcess/5465> a ns21:MaterialTransformationProcess ;
+<http://data.example.com/materialTransformastionProcess/5465> a ns1:MaterialTransformationProcess ;
     rdfs:label "CT-COF" ;
-    ns21:hasBET <http://data.example.com/bet/5465> ;
-    ns21:hasCondition <http://data.example.com/condition/45816>,
+    ns1:hasBET <http://data.example.com/bet/5465> ;
+    ns1:hasCondition <http://data.example.com/condition/45816>,
         <http://data.example.com/condition/45817>,
         <http://data.example.com/condition/45818>,
         <http://data.example.com/condition/45819>,
@@ -99,30 +113,49 @@
         <http://data.example.com/condition/45824>,
         <http://data.example.com/condition/45825>,
         <http://data.example.com/condition/45826> ;
-    ns21:hasInput <http://data.example.com/input/11364>,
+    ns1:hasInput <http://data.example.com/input/11364>,
         <http://data.example.com/input/11365> ;
-    ns21:hasOutput <http://data.example.com/output/12666>,
+    ns1:hasOutput <http://data.example.com/output/12666>,
         <http://data.example.com/output/12667> ;
-    ns21:hasReactionEg <http://data.example.com/eg/5465> ;
-    ns21:operationMode "Batch" ;
-    ns21:reportedIn <https://doi.org/10.1002%2Fcssc.201903545> .
+    ns1:hasReactionEg <http://data.example.com/eg/5465> ;
+    ns1:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns1:reportedIn <https://doi.org/10.1002%2Fcssc.201903545> .
 
-<https://doi.org/10.1002%2Fcssc.201903545> a ns2:Article ;
-    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/5465> ;
-    dcterms:creator <http://data.example.com/author/Di%20Wang-3557>,
-        <http://data.example.com/author/Kai%20Lei-3556>,
-        <http://data.example.com/author/Li%20Wang-3561>,
-        <http://data.example.com/author/Liqun%20Ye-3558>,
-        <http://data.example.com/author/Mingpu%20Kou-3559>,
-        <http://data.example.com/author/Yan%20Kong-3562>,
-        <http://data.example.com/author/Zhaoyu%20Ma-3560> ;
+<http://data.example.com/output/12666> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/12666-gh> .
+
+<http://data.example.com/output/12667> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/12667-g> .
+
+<http://data.example.com/output_quantity/12666-gh> a ns1:OutputQuantity ;
+    ns1:numericValue "92.5000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/12667-g> a ns1:OutputQuantity ;
+    ns1:numericValue "1850.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<https://doi.org/10.1002%2Fcssc.201903545> a ns21:Article ;
+    ns1:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/5465> ;
+    dcterms:creator <http://data.example.com/author/Di%20Wang-3564>,
+        <http://data.example.com/author/Kai%20Lei-3563>,
+        <http://data.example.com/author/Li%20Wang-3568>,
+        <http://data.example.com/author/Liqun%20Ye-3565>,
+        <http://data.example.com/author/Mingpu%20Kou-3566>,
+        <http://data.example.com/author/Yan%20Kong-3569>,
+        <http://data.example.com/author/Zhaoyu%20Ma-3567> ;
     dcterms:date "2020-01-01"^^xsd:date ;
     dcterms:isPartOf <http://data.example.com/journal/239> ;
-    dcterms:title "A Metal-Free Donor–Acceptor Covalent Organic Framework Photocatalyst for Visible-Light-Driven Reduction of CO2 with H2O" ;
-    ns2:abstract "Visible‐light‐driven CO2 reduction to valuable chemicals without sacrificial agents and cocatalysts remains challenging, especially for metal‐free photocatalytic systems. Herein, a novel donor–acceptor (D–A) covalent organic framework (CT‐COF) was constructed by the Schiff‐base reaction of carbazole‐triazine based D–A monomers and possessed a suitable energy band structure, strong visible‐light‐harvesting, and abundant nitrogen sites. CT‐COF as a metal‐free photocatalyst could reduce CO2 with gaseous H2O to CO as the main carbonaceous product with approximately stoichiometric O2 evolution under visible‐light irradiation and without cocatalyst. The CO evolution rate (102.7 μmol g−1 h−1) was 68.5 times that of g‐C3N4 under the same conditions. In situ Fourier‐transform (FT)IR analysis indicated that CT‐COF could adsorb and activate the CO2 and H2O molecules and that COOH* species may be a key intermediate. DFT calculations suggested that nitrogen atoms in the triazine rings may be photocatalytically active sites." ;
-    ns2:doi "10.1002/cssc.201903545" ;
-    ns2:pageStart "1"^^xsd:positiveInteger ;
-    ns2:volume "13"^^xsd:positiveInteger .
+    dcterms:title "A Metal-Free Donorâ€“Acceptor Covalent Organic Framework Photocatalyst for Visible-Light-Driven Reduction of CO2 with H2O" ;
+    ns21:abstract "Visibleâ€�lightâ€�driven CO2 reduction to valuable chemicals without sacrificial agents and cocatalysts remains challenging, especially for metalâ€�free photocatalytic systems. Herein, a novel donorâ€“acceptor (Dâ€“A) covalent organic framework (CTâ€�COF) was constructed by the Schiffâ€�base reaction of carbazoleâ€�triazine based Dâ€“A monomers and possessed a suitable energy band structure, strong visibleâ€�lightâ€�harvesting, and abundant nitrogen sites. CTâ€�COF as a metalâ€�free photocatalyst could reduce CO2 with gaseous H2O to CO as the main carbonaceous product with approximately stoichiometric O2 evolution under visibleâ€�light irradiation and without cocatalyst. The CO evolution rate (102.7 Î¼mol gâˆ’1 hâˆ’1) was 68.5 times that of gâ€�C3N4 under the same conditions. In situ Fourierâ€�transform (FT)IR analysis indicated that CTâ€�COF could adsorb and activate the CO2 and H2O molecules and that COOH* species may be a key intermediate. DFT calculations suggested that nitrogen atoms in the triazine rings may be photocatalytically active sites." ;
+    ns21:doi "10.1002/cssc.201903545" ;
+    ns21:pageStart "1"^^xsd:positiveInteger ;
+    ns21:volume "13"^^xsd:positiveInteger .
 
 <https://en.wikipedia.org/wiki/China> a schema:Country .
+
+<http://data.example.com/chemical/927> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CO" .
 

@@ -41,7 +41,6 @@ def query_construct_material_transformation(iri) -> str:
                 ?yield ?yield_prop ?yield_val .
                 ?eg ?eg_prop ?eg_val .
                 ?bet ?bet_prop ?bet_val .
-                ?condition ?condition_prop ?condition_val .
             }
             WHERE { 
                 ?mat_trans ?mat_trans_prop ?mat_trans_val ;
@@ -50,13 +49,11 @@ def query_construct_material_transformation(iri) -> str:
                 OPTIONAL { 
                     ?mat_trans phcat:hasYield ?yield ;
                             phcat:hasReactionEg ?eg ;
-                            phcat:hasBET ?bet ;
-                            phcat:hasCondition ?condition .
+                            phcat:hasBET ?bet .
 
                     ?yield ?yield_prop ?yield_val .
                     ?eg ?eg_prop ?eg_val .
                     ?bet ?bet_prop ?bet_val .
-                    ?condition ?condition_prop ?condition_val .
                 }
             }
         """ % (iri)

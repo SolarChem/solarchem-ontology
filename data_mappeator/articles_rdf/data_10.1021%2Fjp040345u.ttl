@@ -1,81 +1,81 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <http://purl.org/ontology/bibo/> .
-@prefix ns12: <http://qudt.org/2.1/schema/qudt/> .
-@prefix ns2: <http://base.namespace.com/> .
+@prefix ns1: <http://base.namespace.com/> .
+@prefix ns2: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://data.example.com/author/H.%20Frei-765> a schema:Person ;
-    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+<http://data.example.com/author/H.%20Frei-772> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
     schema:name "H. Frei" .
 
-<http://data.example.com/author/H.%20Han-764> a schema:Person ;
-    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+<http://data.example.com/author/H.%20Han-771> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
     schema:name "H. Han" .
 
-<http://data.example.com/author/W.%20Lin-763> a schema:Person ;
-    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+<http://data.example.com/author/W.%20Lin-770> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
     schema:name "W. Lin" .
 
-<http://data.example.com/condition/1596> a ns2:ReactorCondition ;
-    ns2:conditionType "Optical Fiber" ;
-    ns2:reactorType "Optical Fiber" ;
-    ns12:unit <http://qudt.org/vocab/unit/L> .
+<http://data.example.com/condition/1596> a ns1:ReactorCondition ;
+    ns1:conditionTypeAsText "Optical Fiber" ;
+    ns1:reactorType "Optical Fiber" ;
+    ns2:unit <http://qudt.org/vocab/unit/L> .
 
-<http://data.example.com/condition/1597> a ns2:CatalystSetUpCondition ;
-    ns2:conditionType "Powder(Supported)" ;
-    ns2:setUpType "Powder(Supported)" ;
-    ns12:numericValue "0.01" ;
-    ns12:unit <http://qudt.org/vocab/unit/GM> .
+<http://data.example.com/condition/1597> a ns1:CatalystSetUpCondition ;
+    ns1:conditionTypeAsText "Powder(Supported)" ;
+    ns1:setUpType "Powder(Supported)" ;
+    ns2:numericValue "0.01" ;
+    ns2:unit <http://qudt.org/vocab/unit/GM> .
 
-<http://data.example.com/condition/1598> a ns2:LampPowerCondition ;
-    ns2:conditionType "Other" ;
-    ns2:lampType "Other" ;
-    ns12:unit <http://qudt.org/vocab/unit/W> .
+<http://data.example.com/condition/1598> a ns1:LampPowerCondition ;
+    ns1:conditionTypeAsText "Other" ;
+    ns1:lampType "Other" ;
+    ns2:unit <http://qudt.org/vocab/unit/W> .
 
-<http://data.example.com/condition/1599> a ns2:LampIrradianceCondition ;
-    ns2:conditionType "Other" ;
-    ns2:lampType "Other" ;
-    ns12:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+<http://data.example.com/condition/1599> a ns1:LampIrradianceCondition ;
+    ns1:conditionTypeAsText "Other" ;
+    ns1:lampType "Other" ;
+    ns2:unit <http://qudt.org/vocab/unit/W-PER-M2> .
 
-<http://data.example.com/condition/1600> a ns2:TemperatureCondition ;
-    ns12:numericValue "25.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/DEG_C> .
+<http://data.example.com/condition/1600> a ns1:TemperatureCondition ;
+    ns2:numericValue "25.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/DEG_C> .
 
-<http://data.example.com/condition/1601> a ns2:PreasureCondition ;
-    ns12:unit <http://qudt.org/vocab/unit/BAR> .
+<http://data.example.com/condition/1601> a ns1:PreasureCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/BAR> .
 
-<http://data.example.com/condition/1602> a ns2:SpaceVelocityCondition ;
-    ns12:numericValue "230.00" ;
-    ns12:unit <http://qudt.org/vocab/unit/PER-HR> .
+<http://data.example.com/condition/1602> a ns1:SpaceVelocityCondition ;
+    ns2:numericValue "230.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/PER-HR> .
 
-<http://data.example.com/condition/1603> a ns2:ReactionTimeCondition ;
-    ns12:unit <http://qudt.org/vocab/unit/HR> .
+<http://data.example.com/condition/1603> a ns1:ReactionTimeCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/HR> .
 
-<http://data.example.com/condition/1604> a ns2:ReactionMediumCondition ;
-    ns2:conditionType "Gas" ;
-    ns2:reactionMediumType "Gas" ;
-    ns12:unit <http://qudt.org/vocab/unit/PH> .
+<http://data.example.com/condition/1604> a ns1:ReactionMediumCondition ;
+    ns1:conditionTypeAsText "Gas" ;
+    ns1:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Gas> ;
+    ns2:unit <http://qudt.org/vocab/unit/PH> .
 
-<http://data.example.com/condition/1605> a ns2:WavelengthCondition ;
-    ns2:conditionType "UV" ;
-    ns2:lightSourceType "UV" ;
-    ns12:numericValue "192-280(UV-A)" ;
-    ns12:unit <http://qudt.org/vocab/unit/NanoM> .
+<http://data.example.com/condition/1605> a ns1:WavelengthCondition ;
+    ns1:conditionTypeAsText "UV" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns2:numericValue "192-280(UV-A)" ;
+    ns2:unit <http://qudt.org/vocab/unit/NanoM> .
 
-<http://data.example.com/condition/1606> a ns2:IlluminatedAreaCondition ;
-    ns2:conditionType "UV" ;
-    ns2:lightSourceType "UV" ;
-    ns12:unit <http://qudt.org/vocab/unit/M2> .
+<http://data.example.com/condition/1606> a ns1:IlluminatedAreaCondition ;
+    ns1:conditionTypeAsText "UV" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns2:unit <http://qudt.org/vocab/unit/M2> .
 
-<http://data.example.com/journal/605> a ns1:Journal ;
+<http://data.example.com/journal/605> a ns21:Journal ;
     dcterms:title "JOURNAL OF PHYSICAL CHEMISTRY B" .
 
-<http://data.example.com/materialTransformastionProcess/150> a ns2:MaterialTransformationProcess ;
+<http://data.example.com/materialTransformastionProcess/150> a ns1:MaterialTransformationProcess ;
     rdfs:label "Ti-MCM-41" ;
-    ns2:hasBET <http://data.example.com/bet/150> ;
-    ns2:hasCondition <http://data.example.com/condition/1596>,
+    ns1:hasBET <http://data.example.com/bet/150> ;
+    ns1:hasCondition <http://data.example.com/condition/1596>,
         <http://data.example.com/condition/1597>,
         <http://data.example.com/condition/1598>,
         <http://data.example.com/condition/1599>,
@@ -86,24 +86,24 @@
         <http://data.example.com/condition/1604>,
         <http://data.example.com/condition/1605>,
         <http://data.example.com/condition/1606> ;
-    ns2:hasInput <http://data.example.com/input/404>,
+    ns1:hasInput <http://data.example.com/input/404>,
         <http://data.example.com/input/405> ;
-    ns2:hasReactionEg <http://data.example.com/eg/150> ;
-    ns2:operationMode "Batch" ;
-    ns2:reportedIn <https://doi.org/10.1021%2Fjp040345u> .
+    ns1:hasReactionEg <http://data.example.com/eg/150> ;
+    ns1:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns1:reportedIn <https://doi.org/10.1021%2Fjp040345u> .
 
-<https://doi.org/10.1021%2Fjp040345u> a ns1:Article ;
-    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/150> ;
-    dcterms:creator <http://data.example.com/author/H.%20Frei-765>,
-        <http://data.example.com/author/H.%20Han-764>,
-        <http://data.example.com/author/W.%20Lin-763> ;
+<https://doi.org/10.1021%2Fjp040345u> a ns21:Article ;
+    ns1:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/150> ;
+    dcterms:creator <http://data.example.com/author/H.%20Frei-772>,
+        <http://data.example.com/author/H.%20Han-771>,
+        <http://data.example.com/author/W.%20Lin-770> ;
     dcterms:date "2004-01-01"^^xsd:date ;
     dcterms:isPartOf <http://data.example.com/journal/605> ;
     dcterms:title "CO2 Splitting by H2O to CO and O2 under UV Light in TiMCM-41 Silicate Sieve" ;
-    ns1:abstract "The 266-nm light-induced reaction of CO2 and H2O gas mixtures (including isotopic modifications 13CO2, C18O2, and D2O) in framework TiMCM-41 silicate sieve was monitored by in situ FT-IR spectroscopy at room temperature. Carbon monoxide gas was observed as the sole product by infrared, and the growth depended linearly on the photolysis laser power. H2O was confirmed as the stoichiometric electron donor. The work identifies CO as the single-photon, 2-electron-transfer product of CO2 at framework Ti centers with H2O acting as an electron donor, which has not been established before. O2 was detected as coproduct by mass spectrometric analysis of the photolysis gas mixture. These results are explained by single UV photon-induced splitting of CO2 by H2O to CO and surface OH radical." ;
-    ns1:doi "10.1021/jp040345u" ;
-    ns1:pageStart "18269"^^xsd:positiveInteger ;
-    ns1:volume "108"^^xsd:positiveInteger .
+    ns21:abstract "The 266-nm light-induced reaction of CO2 and H2O gas mixtures (including isotopic modifications 13CO2, C18O2, and D2O) in framework TiMCM-41 silicate sieve was monitored by in situ FT-IR spectroscopy at room temperature. Carbon monoxide gas was observed as the sole product by infrared, and the growth depended linearly on the photolysis laser power. H2O was confirmed as the stoichiometric electron donor. The work identifies CO as the single-photon, 2-electron-transfer product of CO2 at framework Ti centers with H2O acting as an electron donor, which has not been established before. O2 was detected as coproduct by mass spectrometric analysis of the photolysis gas mixture. These results are explained by single UV photon-induced splitting of CO2 by H2O to CO and surface OH radical." ;
+    ns21:doi "10.1021/jp040345u" ;
+    ns21:pageStart "18269"^^xsd:positiveInteger ;
+    ns21:volume "108"^^xsd:positiveInteger .
 
 <https://en.wikipedia.org/wiki/United%20States> a schema:Country .
 

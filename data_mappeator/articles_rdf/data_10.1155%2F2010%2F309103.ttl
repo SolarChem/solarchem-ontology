@@ -1,89 +1,115 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
-@prefix ns2: <http://purl.org/ontology/bibo/> .
-@prefix ns21: <http://base.namespace.com/> .
+@prefix ns1: <http://base.namespace.com/> .
+@prefix ns2: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://data.example.com/author/A.%20Nishimura-449> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+<http://data.example.com/author/A.%20Nishimura-456> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
     schema:name "A. Nishimura" .
 
-<http://data.example.com/author/E.%20Hu-452> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Australia> ;
+<http://data.example.com/author/E.%20Hu-459> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/Australia> ;
     schema:name "E. Hu" .
 
-<http://data.example.com/author/G.%20Mitsui-450> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+<http://data.example.com/author/G.%20Mitsui-457> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
     schema:name "G. Mitsui" .
 
-<http://data.example.com/author/M.%20Hirota-451> a schema:Person ;
-    ns21:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+<http://data.example.com/author/M.%20Hirota-458> a schema:Person ;
+    ns1:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
     schema:name "M. Hirota" .
 
-<http://data.example.com/condition/3059> a ns21:ReactorCondition ;
-    ns21:conditionType "Fixed-bed" ;
-    ns21:reactorType "Fixed-bed" ;
-    ns11:numericValue "0.13" ;
-    ns11:unit <http://qudt.org/vocab/unit/L> .
+<http://data.example.com/chemical/1> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TiO2" .
 
-<http://data.example.com/condition/3060> a ns21:CatalystSetUpCondition ;
-    ns21:conditionType "Film" ;
-    ns21:setUpType "Film" ;
-    ns11:numericValue "0.0004" ;
-    ns11:unit <http://qudt.org/vocab/unit/GM> .
+<http://data.example.com/chemical/3> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "H2O" .
 
-<http://data.example.com/condition/3061> a ns21:LampPowerCondition ;
-    ns21:conditionType "Xenon(Xe)" ;
-    ns21:lampType "Xenon(Xe)" ;
-    ns11:numericValue "150.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/W> .
+<http://data.example.com/chemical/379> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TiO2" .
 
-<http://data.example.com/condition/3062> a ns21:LampIrradianceCondition ;
-    ns21:conditionType "Xenon(Xe)" ;
-    ns21:lampType "Xenon(Xe)" ;
-    ns11:numericValue "436.70" ;
-    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+<http://data.example.com/chemical/79> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "Cr" .
 
-<http://data.example.com/condition/3063> a ns21:TemperatureCondition ;
-    ns11:numericValue "70.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+<http://data.example.com/condition/3059> a ns1:ReactorCondition ;
+    ns1:conditionTypeAsText "Fixed-bed" ;
+    ns1:reactorType "Fixed-bed" ;
+    ns2:numericValue "0.13" ;
+    ns2:unit <http://qudt.org/vocab/unit/L> .
 
-<http://data.example.com/condition/3064> a ns21:PreasureCondition ;
-    ns11:numericValue "1.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+<http://data.example.com/condition/3060> a ns1:CatalystSetUpCondition ;
+    ns1:conditionTypeAsText "Film" ;
+    ns1:setUpType "Film" ;
+    ns2:numericValue "0.0004" ;
+    ns2:unit <http://qudt.org/vocab/unit/GM> .
 
-<http://data.example.com/condition/3065> a ns21:SpaceVelocityCondition ;
-    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+<http://data.example.com/condition/3061> a ns1:LampPowerCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "150.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/W> .
 
-<http://data.example.com/condition/3066> a ns21:ReactionTimeCondition ;
-    ns11:numericValue "72.00" ;
-    ns11:unit <http://qudt.org/vocab/unit/HR> .
+<http://data.example.com/condition/3062> a ns1:LampIrradianceCondition ;
+    ns1:conditionTypeAsText "Xenon(Xe)" ;
+    ns1:lampType "Xenon(Xe)" ;
+    ns2:numericValue "436.70" ;
+    ns2:unit <http://qudt.org/vocab/unit/W-PER-M2> .
 
-<http://data.example.com/condition/3067> a ns21:ReactionMediumCondition ;
-    ns21:conditionType "Gas" ;
-    ns21:reactionMediumType "Gas" ;
-    ns11:unit <http://qudt.org/vocab/unit/PH> .
+<http://data.example.com/condition/3063> a ns1:TemperatureCondition ;
+    ns2:numericValue "70.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/DEG_C> .
 
-<http://data.example.com/condition/3068> a ns21:WavelengthCondition ;
-    ns21:conditionType "UV" ;
-    ns21:lightSourceType "UV" ;
-    ns11:numericValue "315-400(UV-C)" ;
-    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+<http://data.example.com/condition/3064> a ns1:PreasureCondition ;
+    ns2:numericValue "1.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/BAR> .
 
-<http://data.example.com/condition/3069> a ns21:IlluminatedAreaCondition ;
-    ns21:conditionType "UV" ;
-    ns21:lightSourceType "UV" ;
-    ns11:unit <http://qudt.org/vocab/unit/M2> .
+<http://data.example.com/condition/3065> a ns1:SpaceVelocityCondition ;
+    ns2:unit <http://qudt.org/vocab/unit/PER-HR> .
 
-<http://data.example.com/journal/196> a ns2:Journal ;
+<http://data.example.com/condition/3066> a ns1:ReactionTimeCondition ;
+    ns2:numericValue "72.00" ;
+    ns2:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/3067> a ns1:ReactionMediumCondition ;
+    ns1:conditionTypeAsText "Gas" ;
+    ns1:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Gas> ;
+    ns2:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/3068> a ns1:WavelengthCondition ;
+    ns1:conditionTypeAsText "UV" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns2:numericValue "315-400(UV-C)" ;
+    ns2:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/3069> a ns1:IlluminatedAreaCondition ;
+    ns1:conditionTypeAsText "UV" ;
+    ns1:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns2:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/input/754> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/1>,
+        <http://data.example.com/chemical/379> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/755> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/79> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Co-catalyst> ;
+    ns1:percentage 2.24e+01 .
+
+<http://data.example.com/input/756> a ns1:Input ;
+    ns1:hasChemical <http://data.example.com/chemical/3> ;
+    ns1:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/journal/196> a ns21:Journal ;
     dcterms:title "CHEMICAL ENGINEERING" .
 
-<http://data.example.com/materialTransformastionProcess/289> a ns21:MaterialTransformationProcess ;
+<http://data.example.com/materialTransformastionProcess/289> a ns1:MaterialTransformationProcess ;
     rdfs:label "Cr/TiO2" ;
-    ns21:hasBET <http://data.example.com/bet/289> ;
-    ns21:hasCondition <http://data.example.com/condition/3059>,
+    ns1:hasBET <http://data.example.com/bet/289> ;
+    ns1:hasCondition <http://data.example.com/condition/3059>,
         <http://data.example.com/condition/3060>,
         <http://data.example.com/condition/3061>,
         <http://data.example.com/condition/3062>,
@@ -94,10 +120,10 @@
         <http://data.example.com/condition/3067>,
         <http://data.example.com/condition/3068>,
         <http://data.example.com/condition/3069> ;
-    ns21:hasInput <http://data.example.com/input/754>,
+    ns1:hasInput <http://data.example.com/input/754>,
         <http://data.example.com/input/755>,
         <http://data.example.com/input/756> ;
-    ns21:hasOutput <http://data.example.com/output/939>,
+    ns1:hasOutput <http://data.example.com/output/939>,
         <http://data.example.com/output/940>,
         <http://data.example.com/output/941>,
         <http://data.example.com/output/942>,
@@ -106,25 +132,106 @@
         <http://data.example.com/output/945>,
         <http://data.example.com/output/946>,
         <http://data.example.com/output/947> ;
-    ns21:hasReactionEg <http://data.example.com/eg/289> ;
-    ns21:operationMode "Batch" ;
-    ns21:reportedIn <https://doi.org/10.1155%2F2010%2F309103> .
+    ns1:hasReactionEg <http://data.example.com/eg/289> ;
+    ns1:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns1:reportedIn <https://doi.org/10.1155%2F2010%2F309103> .
 
-<https://doi.org/10.1155%2F2010%2F309103> a ns2:Article ;
-    ns21:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/289> ;
-    dcterms:creator <http://data.example.com/author/A.%20Nishimura-449>,
-        <http://data.example.com/author/E.%20Hu-452>,
-        <http://data.example.com/author/G.%20Mitsui-450>,
-        <http://data.example.com/author/M.%20Hirota-451> ;
+<http://data.example.com/output/939> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/939-gh> .
+
+<http://data.example.com/output/940> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/6> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/940-gh> .
+
+<http://data.example.com/output/941> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/929> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/941-gh> .
+
+<http://data.example.com/output/942> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/942-g> .
+
+<http://data.example.com/output/943> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/6> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/943-g> .
+
+<http://data.example.com/output/944> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/929> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/944-g> .
+
+<http://data.example.com/output/945> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/927> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/945-m2h> .
+
+<http://data.example.com/output/946> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/6> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/946-m2h> .
+
+<http://data.example.com/output/947> a ns1:Output ;
+    ns1:hasChemical <http://data.example.com/chemical/929> ;
+    ns1:hasOutputQuantity <http://data.example.com/output_quantity/947-m2h> .
+
+<http://data.example.com/output_quantity/939-gh> a ns1:OutputQuantity ;
+    ns1:numericValue "1284.7222"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/940-gh> a ns1:OutputQuantity ;
+    ns1:numericValue "211.1111"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/941-gh> a ns1:OutputQuantity ;
+    ns1:numericValue "265.2778"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/942-g> a ns1:OutputQuantity ;
+    ns1:numericValue "92500.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/943-g> a ns1:OutputQuantity ;
+    ns1:numericValue "15200.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/944-g> a ns1:OutputQuantity ;
+    ns1:numericValue "19100.0000"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/945-m2h> a ns1:OutputQuantity ;
+    ns1:numericValue "270.4678"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-M2-HR> .
+
+<http://data.example.com/output_quantity/946-m2h> a ns1:OutputQuantity ;
+    ns1:numericValue "44.4444"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-M2-HR> .
+
+<http://data.example.com/output_quantity/947-m2h> a ns1:OutputQuantity ;
+    ns1:numericValue "55.8480"^^xsd:positiveInteger ;
+    ns2:unit <http://qudt.org/vocab/unit/MicroMOL-PER-M2-HR> .
+
+<https://doi.org/10.1155%2F2010%2F309103> a ns21:Article ;
+    ns1:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/289> ;
+    dcterms:creator <http://data.example.com/author/A.%20Nishimura-456>,
+        <http://data.example.com/author/E.%20Hu-459>,
+        <http://data.example.com/author/G.%20Mitsui-457>,
+        <http://data.example.com/author/M.%20Hirota-458> ;
     dcterms:date "2010-01-01"^^xsd:date ;
     dcterms:isPartOf <http://data.example.com/journal/196> ;
     dcterms:title "Reforming Performance and Visible Light Responsibility of Cr-Doped Prepared by Sol-Gel and Dip-Coating Method" ;
-    ns2:abstract "A Cr-doped TiO2 film was prepared by sol-gel and dip-coating method and used as the photocatalyst for CO2 reforming under the visible light. The ratio of amount of Cr added to amount of Ti in TiO2 sol solution (R) varied from 0 to 100 wt%. The total layer number of Cr-doped TiO2 film (N) coated was up to 7. The CO2 reforming performance with the Cr-doped TiO2 film was evaluated by illuminating under a Xe lamp with or without ultraviolet (UV) light. The concentration of CO which was a product from CO2 reforming was maximized for R=70 wt% when N equals to 1. The visible light responsibility was also maximized for R=70 wt%. The amount of Cr within TiO2 film coated on copper disc was increased with the increase in R up to 70 wt% and started to decrease when R is over 70 wt%. The CO2 reforming performance of TiO2 film with one layer Cr-doped was found better than that of TiO2 film with multi Cr-doped layers under illuminating of UV light. Under the visible light, the performance was maximized at R=70 wt% and N=7 with one layer Cr-doped." ;
-    ns2:doi "10.1155/2010/309103" ;
-    ns2:pageStart "1"^^xsd:positiveInteger ;
-    ns2:volume "2010"^^xsd:positiveInteger .
+    ns21:abstract "A Cr-doped TiO2 film was prepared by sol-gel and dip-coating method and used as the photocatalyst for CO2 reforming under the visible light. The ratio of amount of Cr added to amount of Ti in TiO2 sol solution (R) varied from 0 to 100 wt%. The total layer number of Cr-doped TiO2 film (N) coated was up to 7. The CO2 reforming performance with the Cr-doped TiO2 film was evaluated by illuminating under a Xe lamp with or without ultraviolet (UV) light. The concentration of CO which was a product from CO2 reforming was maximized for R=70 wt% when N equals to 1. The visible light responsibility was also maximized for R=70 wt%. The amount of Cr within TiO2 film coated on copper disc was increased with the increase in R up to 70 wt% and started to decrease when R is over 70 wt%. The CO2 reforming performance of TiO2 film with one layer Cr-doped was found better than that of TiO2 film with multi Cr-doped layers under illuminating of UV light. Under the visible light, the performance was maximized at R=70 wt% and N=7 with one layer Cr-doped." ;
+    ns21:doi "10.1155/2010/309103" ;
+    ns21:pageStart "1"^^xsd:positiveInteger ;
+    ns21:volume "2010"^^xsd:positiveInteger .
 
 <https://en.wikipedia.org/wiki/Australia> a schema:Country .
+
+<http://data.example.com/chemical/6> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CH4" .
+
+<http://data.example.com/chemical/927> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CO" .
+
+<http://data.example.com/chemical/929> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "C2H6" .
 
 <https://en.wikipedia.org/wiki/Japan> a schema:Country .
 
