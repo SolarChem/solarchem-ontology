@@ -152,7 +152,7 @@
     ];
     rr:predicateObjectMap [
     	rr:predicateMap	[ rr:constant phcat:operationMode];
-    	rr:objectMap	[ rr:column "OPERATION_MODE"; rr:termType rr:Literal; rr:datatype xsd:string ]
+    	rr:objectMap	[ rr:template "http://vocab.example.com/condition/operationMode/{OPERATION_MODE}"; rr:termType rr:IRI ]
     ];
     rr:predicateObjectMap [
         rr:predicateMap	[ rr:constant phcat:reportedIn ];
@@ -266,7 +266,7 @@
     	rr:template "http://data.example.com/condition/{ID}";
     ];
     rr:predicateObjectMap [
-    	rr:predicateMap	[ rr:constant phcat:conditionType];
+    	rr:predicateMap	[ rr:constant phcat:conditionTypeAsText];
     	rr:objectMap	[ rr:column "TYPE"; rr:termType rr:Literal; rr:datatype xsd:string ]
     ];
     rr:predicateObjectMap [
@@ -283,11 +283,11 @@
     ];
     rr:predicateObjectMap [
     	rr:predicateMap	[ rr:constant phcat:reactionMediumType];
-    	rr:objectMap	[ rr:column "REACTION_MEDIUM_TYPE"; rr:termType rr:Literal; rr:datatype xsd:string ]
+    	rr:objectMap	[ rr:template "http://vocab.example.com/condition/reactionMediumType/{REACTION_MEDIUM_TYPE}"; rr:termType rr:IRI ]
     ];
     rr:predicateObjectMap [
     	rr:predicateMap	[ rr:constant phcat:lightSourceType];
-    	rr:objectMap	[ rr:column "LIGHT_SOURCE_TYPE"; rr:termType rr:Literal; rr:datatype xsd:string ]
+    	rr:objectMap	[ rr:template "http://vocab.example.com/condition/lightSourceType/{LIGHT_SOURCE_TYPE}"; rr:termType rr:IRI ]
     ];
     rr:predicateObjectMap [
     	rr:predicateMap	[ rr:constant qudt:value];
