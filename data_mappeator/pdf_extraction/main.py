@@ -1,10 +1,9 @@
-from fileinput import filename
 import os
 from conf.config import parser
 import requests
 import csv
 from colorama import Fore, Style
-import uuid
+import urllib.parse
 
 output_directory = parser.get('files', 'output_directory')
 page_url = parser.get('files', 'webpage')
@@ -22,10 +21,12 @@ with open(parser.get('files', 'data'), encoding = 'cp850') as csvfile:
     for row in reader:
         filename = row['filename']
         doi = row['DOI']
+        parsed_doi = urllib.parse.quote(doi, safe='')
         url = page_url+filename
         response = requests.get(url)
-        new_filename = f"{uuid.uuid4()}.pdf"
+        new_filename = f"{parsed_doi}.pdf"
         dir = rf"{output_directory}/{new_filename}"
+
         try:
             with open(dir, 'wb') as f:
                 f.write(response.content)
