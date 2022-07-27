@@ -30,6 +30,7 @@ def unicodeToPlain(s):
     return s
 
 def cleanText(s: str):
+    s = s.strip()
     s = dequote(s)
     s = unicodeToPlain(s)
     s = s.replace('\r', '').replace('\n', ' ') # remove the line breaks

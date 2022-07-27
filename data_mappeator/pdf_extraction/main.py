@@ -4,6 +4,7 @@ import requests
 import csv
 from colorama import Fore, Style
 import urllib.parse
+from tqdm import tqdm
 
 output_directory = parser.get('files', 'output_directory')
 page_url = parser.get('files', 'webpage')
@@ -18,7 +19,7 @@ if not os.path.exists(output_directory):
 print("Start downloading from Artleafs...")
 with open(parser.get('files', 'data'), encoding = 'cp850') as csvfile:
     reader = csv.DictReader(csvfile)
-    for row in reader:
+    for row in tqdm(reader):
         filename = row['filename']
         doi = row['DOI']
         parsed_doi = urllib.parse.quote(doi, safe='')
@@ -30,12 +31,13 @@ with open(parser.get('files', 'data'), encoding = 'cp850') as csvfile:
         try:
             with open(dir, 'wb') as f:
                 f.write(response.content)
-                file_id_map.append({'DOI': row['DOI'], 'file': new_filename})
+                file_id_map.append({'DOI': doi, 'file': new_filename})
         except Exception:
             print(f"\tError downloading {Fore.RED}{doi}{Style.RESET_ALL}: {filename}")
 
     fieldnames = list(file_id_map[0].keys())
-    with open(parser.get('files', 'map_file'), 'w', errors='surrogatepass', encoding="utf8", newline='') as csvfile:
+    map_file = parser.get('files', 'map_file')
+    with open(map_file, 'w', errors='surrogatepass', encoding="utf8", newline='') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames = fieldnames)
         writer.writeheader()
         writer.writerows(file_id_map)
