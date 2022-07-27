@@ -23,9 +23,9 @@ for row in qarticles:
     doi = row.doi
     try:
         article_graph = g.create_article_rdf(row.individual) # row.individual = article iri
-        filename = get_file_directory_name(doi)
-        article_graph.serialize(filename)
-        file_id_map.append({'DOI': doi, 'file': filename})
+        file_dir = get_file_directory_name(doi)
+        article_graph.serialize(file_dir)
+        file_id_map.append({'DOI': doi, 'file': get_filename(doi)})
     except Exception:
         print(f"\tError in: {Fore.RED}{doi}{Style.RESET_ALL}\n")
 
