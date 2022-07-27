@@ -1,0 +1,184 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/S.%20Wang-1357> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "S. Wang" .
+
+<http://data.example.com/author/X.%20Wang-1359> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "X. Wang" .
+
+<http://data.example.com/author/Z.%20Ding-1358> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Z. Ding" .
+
+<http://data.example.com/chemical/193> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "na" .
+
+<http://data.example.com/chemical/284> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "ZnCo2O4" .
+
+<http://data.example.com/condition/15291> a ns2:ReactorCondition ;
+    ns2:conditionTypeAsText "Slurry" ;
+    ns2:reactorType "Slurry" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/15292> a ns2:CatalystSetUpCondition ;
+    ns2:conditionTypeAsText "Other" ;
+    ns2:setUpType "Other" ;
+    ns11:numericValue "0.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/15293> a ns2:LampPowerCondition ;
+    ns2:conditionTypeAsText "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/15294> a ns2:LampIrradianceCondition ;
+    ns2:conditionTypeAsText "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/15295> a ns2:TemperatureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/15296> a ns2:PreasureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/15297> a ns2:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/15298> a ns2:ReactionTimeCondition ;
+    ns11:numericValue "3.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/15299> a ns2:ReactionMediumCondition ;
+    ns2:conditionTypeAsText "Liquid" ;
+    ns2:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/15300> a ns2:WavelengthCondition ;
+    ns2:conditionTypeAsText "Visible" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/15301> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionTypeAsText "Visible" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/input/3759> a ns2:Input ;
+    ns2:hasChemical <http://data.example.com/chemical/284> ;
+    ns2:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/3760> a ns2:Input ;
+    ns2:hasChemical <http://data.example.com/chemical/193> ;
+    ns2:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/journal/195> a ns21:Journal ;
+    dcterms:title "CHEMICAL COMMUNICATIONS" .
+
+<http://data.example.com/materialTransformastionProcess/2242> a ns2:MaterialTransformationProcess ;
+    rdfs:label "ZnCo2O4" ;
+    ns2:hasBET <http://data.example.com/bet/2242> ;
+    ns2:hasCondition <http://data.example.com/condition/15291>,
+        <http://data.example.com/condition/15292>,
+        <http://data.example.com/condition/15293>,
+        <http://data.example.com/condition/15294>,
+        <http://data.example.com/condition/15295>,
+        <http://data.example.com/condition/15296>,
+        <http://data.example.com/condition/15297>,
+        <http://data.example.com/condition/15298>,
+        <http://data.example.com/condition/15299>,
+        <http://data.example.com/condition/15300>,
+        <http://data.example.com/condition/15301> ;
+    ns2:hasInput <http://data.example.com/input/3759>,
+        <http://data.example.com/input/3760> ;
+    ns2:hasOutput <http://data.example.com/output/4593>,
+        <http://data.example.com/output/4594>,
+        <http://data.example.com/output/4595>,
+        <http://data.example.com/output/4596>,
+        <http://data.example.com/output/4597>,
+        <http://data.example.com/output/4598> ;
+    ns2:hasReactionEg <http://data.example.com/eg/2242> ;
+    ns2:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns2:reportedIn <https://doi.org/10.1039%2FC4CC07225A> .
+
+<http://data.example.com/output/4593> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/8> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/4593-gh> .
+
+<http://data.example.com/output/4594> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/927> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/4594-gh> .
+
+<http://data.example.com/output/4595> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/8> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/4595-g> .
+
+<http://data.example.com/output/4596> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/927> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/4596-g> .
+
+<http://data.example.com/output/4597> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/8> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/4597-m2h> .
+
+<http://data.example.com/output/4598> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/927> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/4598-m2h> .
+
+<http://data.example.com/output_quantity/4593-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "2.6667"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/4594-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "13.3333"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/4595-g> a ns2:OutputQuantity ;
+    ns2:numericValue "8.0000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/4596-g> a ns2:OutputQuantity ;
+    ns2:numericValue "40.0000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/4597-m2h> a ns2:OutputQuantity ;
+    ns2:numericValue "0.0533"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-M2-HR> .
+
+<http://data.example.com/output_quantity/4598-m2h> a ns2:OutputQuantity ;
+    ns2:numericValue "0.2667"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-M2-HR> .
+
+<https://doi.org/10.1039%2FC4CC07225A> a ns21:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/2242> ;
+    dcterms:creator <http://data.example.com/author/S.%20Wang-1357>,
+        <http://data.example.com/author/X.%20Wang-1359>,
+        <http://data.example.com/author/Z.%20Ding-1358> ;
+    dcterms:date "2015-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/195> ;
+    dcterms:title "A stable ZnCo2O4 cocatalyst for photocatalytic CO2 reduction" ;
+    ns21:abstract "Spinel ZnCo<inf>2<inf>O<inf>4<inf> nanostructures have shown great opportunities in energy related areas. However, the applications of ZnCo<inf>2<inf>O<inf>4<inf> for the conversion of CO<inf>2<inf> are much less reported. Herein, we present the use of mesoporous ZnCo<inf>2<inf>O<inf>4<inf> nanorods as efficient and high stable cocatalysts for the photochemical reduction of CO<inf>2<inf> under mild reaction conditions." ;
+    ns21:doi "10.1039/C4CC07225A" ;
+    ns21:issue "8" ;
+    ns21:pageStart "1517"^^xsd:positiveInteger ;
+    ns21:volume "51"^^xsd:positiveInteger .
+
+<http://data.example.com/chemical/8> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "H2" .
+
+<http://data.example.com/chemical/927> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CO" .
+
+<https://en.wikipedia.org/wiki/China> a schema:Country .
+

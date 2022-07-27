@@ -1,0 +1,116 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/G.%20Li-1673> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "G. Li" .
+
+<http://data.example.com/author/J.%20Xu-1674> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Australia> ;
+    schema:name "J. Xu" .
+
+<http://data.example.com/author/Y.%20Sun-1672> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Y. Sun" .
+
+<http://data.example.com/author/Z.%20Sun-1675> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Z. Sun" .
+
+<http://data.example.com/condition/19119> a ns2:ReactorCondition ;
+    ns2:conditionTypeAsText "Fixed-bed" ;
+    ns2:reactorType "Fixed-bed" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/19120> a ns2:CatalystSetUpCondition ;
+    ns2:conditionTypeAsText "powder" ;
+    ns2:setUpType "powder" ;
+    ns11:numericValue "0.050" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/19121> a ns2:LampPowerCondition ;
+    ns2:conditionTypeAsText "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/19122> a ns2:LampIrradianceCondition ;
+    ns2:conditionTypeAsText "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/19123> a ns2:TemperatureCondition ;
+    ns11:numericValue "25.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/19124> a ns2:PreasureCondition ;
+    ns11:numericValue "1.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/19125> a ns2:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/19126> a ns2:ReactionTimeCondition ;
+    ns11:numericValue "8.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/19127> a ns2:ReactionMediumCondition ;
+    ns2:conditionTypeAsText "Gas" ;
+    ns2:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Gas> ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/19128> a ns2:WavelengthCondition ;
+    ns2:conditionTypeAsText "UV-Vis" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV-Vis> ;
+    ns11:numericValue "315-780" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/19129> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionTypeAsText "UV-Vis" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV-Vis> ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/740> a ns21:Journal ;
+    dcterms:title "MATERIALS LETTERS" .
+
+<http://data.example.com/materialTransformastionProcess/2654> a ns2:MaterialTransformationProcess ;
+    rdfs:label "SnS2" ;
+    ns2:hasBET <http://data.example.com/bet/2654> ;
+    ns2:hasCondition <http://data.example.com/condition/19119>,
+        <http://data.example.com/condition/19120>,
+        <http://data.example.com/condition/19121>,
+        <http://data.example.com/condition/19122>,
+        <http://data.example.com/condition/19123>,
+        <http://data.example.com/condition/19124>,
+        <http://data.example.com/condition/19125>,
+        <http://data.example.com/condition/19126>,
+        <http://data.example.com/condition/19127>,
+        <http://data.example.com/condition/19128>,
+        <http://data.example.com/condition/19129> ;
+    ns2:hasInput <http://data.example.com/input/4687> ;
+    ns2:hasReactionEg <http://data.example.com/eg/2654> ;
+    ns2:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns2:reportedIn <https://doi.org/10.1016%2Fj.matlet.2016.03.122> .
+
+<https://doi.org/10.1016%2Fj.matlet.2016.03.122> a ns21:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/2654> ;
+    dcterms:creator <http://data.example.com/author/G.%20Li-1673>,
+        <http://data.example.com/author/J.%20Xu-1674>,
+        <http://data.example.com/author/Y.%20Sun-1672>,
+        <http://data.example.com/author/Z.%20Sun-1675> ;
+    dcterms:date "2016-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/740> ;
+    dcterms:title "Visible-light photocatalytic reduction of carbon dioxide over SnS2" ;
+    ns21:abstract "The reduction of CO2 to CO over SnS2 was firstly reported. In this paper, the SnS2 was synthesized successfully via a hydrothermal method and characterized by XRD, DRS and electrochemical equipment. The results indicate that it can respond to visible light and be probably capable of reducing CO2 to CO without external bias. The property of reducing CO2 was further checked out on GS analysis. The CO output reached 80 ppm at the temperature of 25 Â°C, but without temperature control, the yield came to 200 ppm, revealing the temperature plays a very important role in reducing CO2 to CO. Except trace amount of CH4, the CO was the main product with nearly 100% selectivity. These attractive results make us believe that SnS2 is promising candidate for the reduction of CO2." ;
+    ns21:doi "10.1016/j.matlet.2016.03.122" ;
+    ns21:pageStart "238"^^xsd:positiveInteger ;
+    ns21:volume "174"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/Australia> a schema:Country .
+
+<https://en.wikipedia.org/wiki/China> a schema:Country .
+

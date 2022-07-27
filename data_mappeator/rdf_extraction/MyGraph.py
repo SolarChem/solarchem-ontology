@@ -7,7 +7,7 @@ class MyGraph:
         self.__graph = Graph()
         self.__graph.parse(filename, format="turtle")
 
-    def get_all_article_iris(self):
+    def get_all_article_ids(self):
         return self.__graph.query(query_select_all_articles()) # get all the article instances
 
 

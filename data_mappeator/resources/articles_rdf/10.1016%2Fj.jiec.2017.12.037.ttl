@@ -1,0 +1,187 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/A.%20Kumar-3730> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
+    schema:name "A. Kumar" .
+
+<http://data.example.com/author/A.%20M.S-3732> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
+    schema:name "A. M.S" .
+
+<http://data.example.com/author/B.%20Behera-3734> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
+    schema:name "B. Behera" .
+
+<http://data.example.com/author/D.%20Pratap-3733> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/France> ;
+    schema:name "D. Pratap" .
+
+<http://data.example.com/author/P.%20Kumar-3731> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
+    schema:name "P. Kumar" .
+
+<http://data.example.com/author/S.%20L.%20Jain-3735> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
+    schema:name "S. L. Jain" .
+
+<http://data.example.com/chemical/307> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TEA" .
+
+<http://data.example.com/chemical/605> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "[Ru(bpy)2(bpm)Ru(CO)2Cl2]" .
+
+<http://data.example.com/condition/42109> a ns2:ReactorCondition ;
+    ns2:conditionTypeAsText "Slurry" ;
+    ns2:reactorType "Slurry" ;
+    ns11:numericValue "0.06" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/42110> a ns2:CatalystSetUpCondition ;
+    ns2:conditionTypeAsText "Powder(Suspended)" ;
+    ns2:setUpType "Powder(Suspended)" ;
+    ns11:numericValue "0.002" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/42111> a ns2:LampPowerCondition ;
+    ns2:conditionTypeAsText "LED" ;
+    ns2:lampType "LED" ;
+    ns11:numericValue "20.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/42112> a ns2:LampIrradianceCondition ;
+    ns2:conditionTypeAsText "LED" ;
+    ns2:lampType "LED" ;
+    ns11:numericValue "75.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/42113> a ns2:TemperatureCondition ;
+    ns11:numericValue "20.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/42114> a ns2:PreasureCondition ;
+    ns11:numericValue "0.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/42115> a ns2:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/42116> a ns2:ReactionTimeCondition ;
+    ns11:numericValue "12.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/42117> a ns2:ReactionMediumCondition ;
+    ns2:conditionTypeAsText "Liquid" ;
+    ns2:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns11:numericValue "7" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/42118> a ns2:WavelengthCondition ;
+    ns2:conditionTypeAsText "Visible" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns11:numericValue "400-780" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/42119> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionTypeAsText "Visible" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/input/10407> a ns2:Input ;
+    ns2:hasChemical <http://data.example.com/chemical/605> ;
+    ns2:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/10408> a ns2:Input ;
+    ns2:hasChemical <http://data.example.com/chemical/307> ;
+    ns2:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/journal/552> a ns21:Journal ;
+    dcterms:title "JOURNAL OF INDUSTRIAL AND ENGINEERING CHEMISTRY" .
+
+<http://data.example.com/materialTransformastionProcess/5128> a ns2:MaterialTransformationProcess ;
+    rdfs:label "Ru-Ru" ;
+    ns2:hasBET <http://data.example.com/bet/5128> ;
+    ns2:hasCondition <http://data.example.com/condition/42109>,
+        <http://data.example.com/condition/42110>,
+        <http://data.example.com/condition/42111>,
+        <http://data.example.com/condition/42112>,
+        <http://data.example.com/condition/42113>,
+        <http://data.example.com/condition/42114>,
+        <http://data.example.com/condition/42115>,
+        <http://data.example.com/condition/42116>,
+        <http://data.example.com/condition/42117>,
+        <http://data.example.com/condition/42118>,
+        <http://data.example.com/condition/42119> ;
+    ns2:hasInput <http://data.example.com/input/10407>,
+        <http://data.example.com/input/10408> ;
+    ns2:hasOutput <http://data.example.com/output/11762>,
+        <http://data.example.com/output/11763>,
+        <http://data.example.com/output/11764>,
+        <http://data.example.com/output/11765> ;
+    ns2:hasReactionEg <http://data.example.com/eg/5128> ;
+    ns2:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns2:reportedIn <https://doi.org/10.1016%2Fj.jiec.2017.12.037> .
+
+<http://data.example.com/output/11762> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/927> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/11762-gh> .
+
+<http://data.example.com/output/11763> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/7> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/11763-gh> .
+
+<http://data.example.com/output/11764> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/927> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/11764-g> .
+
+<http://data.example.com/output/11765> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/7> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/11765-g> .
+
+<http://data.example.com/output_quantity/11762-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "0.1600"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/11763-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "0.0500"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/11764-g> a ns2:OutputQuantity ;
+    ns2:numericValue "1.9300"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/11765-g> a ns2:OutputQuantity ;
+    ns2:numericValue "0.6100"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<https://doi.org/10.1016%2Fj.jiec.2017.12.037> a ns21:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/5128> ;
+    dcterms:creator <http://data.example.com/author/A.%20Kumar-3730>,
+        <http://data.example.com/author/A.%20M.S-3732>,
+        <http://data.example.com/author/B.%20Behera-3734>,
+        <http://data.example.com/author/D.%20Pratap-3733>,
+        <http://data.example.com/author/P.%20Kumar-3731>,
+        <http://data.example.com/author/S.%20L.%20Jain-3735> ;
+    dcterms:date "2018-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/552> ;
+    dcterms:title "A bridged ruthenium dimer (Ruâ€“Ru) for photoreduction of CO 2 under visible light irradiation" ;
+    ns21:abstract "A bridged binuclear complex consisting of two ruthenium units (Ruâ€“Ru) connected through a bridging ligand was synthesized, in which one unit serves as a photosensitizer, while another unit works as a catalyst. The synthesized Ruâ€“Ru photocatalyst was tested for photoreduction of CO2 to give CO and HCOOH under visible light irradiation in the presence of triethanolamine as a sacrificial donor. The yield of CO and HCOOH was found to be 54 ppm and 28 ppm respectively after 12 h of irradiation. Due to the binding of photosensitizer and catalyst units in a single molecule via bridging ligand provides faster and efficient electron transfer from sensitizer to catalyst unit which resulted in the higher activity and better product yields." ;
+    ns21:doi "10.1016/j.jiec.2017.12.037" ;
+    ns21:pageStart "381"^^xsd:positiveInteger ;
+    ns21:volume "61"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/France> a schema:Country .
+
+<http://data.example.com/chemical/7> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "HCOOH" .
+
+<http://data.example.com/chemical/927> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CO" .
+
+<https://en.wikipedia.org/wiki/India> a schema:Country .
+

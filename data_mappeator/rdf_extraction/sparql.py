@@ -2,8 +2,9 @@ def query_select_all_articles() -> str:
     return """
             PREFIX bibo: <http://purl.org/ontology/bibo/>
 
-            SELECT ?individual
-            WHERE { ?individual a bibo:Article . }
+            SELECT ?individual ?doi
+            WHERE { ?individual a bibo:Article ;
+                                bibo:doi ?doi . }
         """
 
 def query_construct_article(iri) -> str:

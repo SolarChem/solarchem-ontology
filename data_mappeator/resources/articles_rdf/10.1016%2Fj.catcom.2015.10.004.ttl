@@ -1,0 +1,180 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/C.%20B.%20Liu-1253> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "C. B. Liu" .
+
+<http://data.example.com/author/F.%20Chen-1254> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "F. Chen" .
+
+<http://data.example.com/author/S.%20Q.%20Liu-1250> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "S. Q. Liu" .
+
+<http://data.example.com/author/S.%20S.%20Zhou-1251> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "S. S. Zhou" .
+
+<http://data.example.com/author/Z.%20G.%20Chen-1252> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Z. G. Chen" .
+
+<http://data.example.com/author/Z.%20Y.%20Wu-1255> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Z. Y. Wu" .
+
+<http://data.example.com/chemical/112> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CeO2" .
+
+<http://data.example.com/chemical/316> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "H2O + NaHCO3 + Na2SO3" .
+
+<http://data.example.com/chemical/4> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "Cu" .
+
+<http://data.example.com/chemical/97> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "Graphene" .
+
+<http://data.example.com/condition/16985> a ns2:ReactorCondition ;
+    ns2:conditionTypeAsText "Slurry" ;
+    ns2:reactorType "Slurry" ;
+    ns11:numericValue "0.25" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/16986> a ns2:CatalystSetUpCondition ;
+    ns2:conditionTypeAsText "Other" ;
+    ns2:setUpType "Other" ;
+    ns11:numericValue "0.1" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/16987> a ns2:LampPowerCondition ;
+    ns2:conditionTypeAsText "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns11:numericValue "250.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/16988> a ns2:LampIrradianceCondition ;
+    ns2:conditionTypeAsText "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/16989> a ns2:TemperatureCondition ;
+    ns11:numericValue "25.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/16990> a ns2:PreasureCondition ;
+    ns11:numericValue "1.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/16991> a ns2:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/16992> a ns2:ReactionTimeCondition ;
+    ns11:numericValue "1.33" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/16993> a ns2:ReactionMediumCondition ;
+    ns2:conditionTypeAsText "Liquid" ;
+    ns2:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/16994> a ns2:WavelengthCondition ;
+    ns2:conditionTypeAsText "UV-Vis" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV-Vis> ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/16995> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionTypeAsText "UV-Vis" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV-Vis> ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/input/4168> a ns2:Input ;
+    ns2:hasChemical <http://data.example.com/chemical/97> ;
+    ns2:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/4169> a ns2:Input ;
+    ns2:hasChemical <http://data.example.com/chemical/112> ;
+    ns2:hasRole <http://base.namespace.com/material_transformation_role/Co-catalyst> ;
+    ns2:percentage 0e+00 .
+
+<http://data.example.com/input/4170> a ns2:Input ;
+    ns2:hasChemical <http://data.example.com/chemical/4> ;
+    ns2:hasRole <http://base.namespace.com/material_transformation_role/Dopant> .
+
+<http://data.example.com/input/4171> a ns2:Input ;
+    ns2:hasChemical <http://data.example.com/chemical/316> ;
+    ns2:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/journal/175> a ns21:Journal ;
+    dcterms:title "CATALYSIS COMMUNICATIONS" .
+
+<http://data.example.com/materialTransformastionProcess/2396> a ns2:MaterialTransformationProcess ;
+    rdfs:label "CeO2/Cu-Graphene" ;
+    ns2:hasBET <http://data.example.com/bet/2396> ;
+    ns2:hasCondition <http://data.example.com/condition/16985>,
+        <http://data.example.com/condition/16986>,
+        <http://data.example.com/condition/16987>,
+        <http://data.example.com/condition/16988>,
+        <http://data.example.com/condition/16989>,
+        <http://data.example.com/condition/16990>,
+        <http://data.example.com/condition/16991>,
+        <http://data.example.com/condition/16992>,
+        <http://data.example.com/condition/16993>,
+        <http://data.example.com/condition/16994>,
+        <http://data.example.com/condition/16995> ;
+    ns2:hasInput <http://data.example.com/input/4168>,
+        <http://data.example.com/input/4169>,
+        <http://data.example.com/input/4170>,
+        <http://data.example.com/input/4171> ;
+    ns2:hasOutput <http://data.example.com/output/5228>,
+        <http://data.example.com/output/5229> ;
+    ns2:hasReactionEg <http://data.example.com/eg/2396> ;
+    ns2:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns2:reportedIn <https://doi.org/10.1016%2Fj.catcom.2015.10.004> .
+
+<http://data.example.com/output/5228> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/184> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/5228-gh> .
+
+<http://data.example.com/output/5229> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/184> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/5229-g> .
+
+<http://data.example.com/output_quantity/5228-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "5.8000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/5229-g> a ns2:OutputQuantity ;
+    ns2:numericValue "507.3000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<https://doi.org/10.1016%2Fj.catcom.2015.10.004> a ns21:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/2396> ;
+    dcterms:creator <http://data.example.com/author/C.%20B.%20Liu-1253>,
+        <http://data.example.com/author/F.%20Chen-1254>,
+        <http://data.example.com/author/S.%20Q.%20Liu-1250>,
+        <http://data.example.com/author/S.%20S.%20Zhou-1251>,
+        <http://data.example.com/author/Z.%20G.%20Chen-1252>,
+        <http://data.example.com/author/Z.%20Y.%20Wu-1255> ;
+    dcterms:date "2016-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/175> ;
+    dcterms:title "An artificial photosynthesis system based on CeO2 as light harvester and N-doped graphene Cu(II) complex as artificial metalloenzyme for CO2 reduction to methanol fuel" ;
+    ns21:abstract "An artificial photosynthesis catalyst composed of CeO2, N-doped graphene and copper ions (CeO2-NG-Cu2 +) was fabricated. The light-harvesting CeO2-NG was characterized by X-ray diffraction, transmission electron microscopy, Raman spectroscopy, and X-ray photoelectron spectroscopy. The photocatalytic reduction of CO2 was conducted in an aqueous solution of Na2SO3. Results indicated that the reduction rate of CO2 to methanol approached 507.3 ?mol " ;
+    ns21:doi "10.1016/j.catcom.2015.10.004" ;
+    ns21:pageStart "7"^^xsd:positiveInteger ;
+    ns21:volume "73"^^xsd:positiveInteger .
+
+<http://data.example.com/chemical/184> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CH3OH" .
+
+<https://en.wikipedia.org/wiki/China> a schema:Country .
+
