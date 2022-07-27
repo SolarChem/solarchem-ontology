@@ -1,0 +1,178 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/B.%20Cai-1564> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "B. Cai" .
+
+<http://data.example.com/author/D.%20Han-1567> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "D. Han" .
+
+<http://data.example.com/author/J.%20Wang-1565> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "J. Wang" .
+
+<http://data.example.com/author/L.%20Niu-1569> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "L. Niu" .
+
+<http://data.example.com/author/S.%20Gan-1566> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "S. Gan" .
+
+<http://data.example.com/author/Z.%20Wu-1568> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Z. Wu" .
+
+<http://data.example.com/chemical/124> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "AgCl" .
+
+<http://data.example.com/chemical/2> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "Ag" .
+
+<http://data.example.com/chemical/232> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "NaHCO3 0,1 M" .
+
+<http://data.example.com/condition/11606> a ns2:ReactorCondition ;
+    ns2:conditionTypeAsText "Slurry" ;
+    ns2:reactorType "Slurry" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/11607> a ns2:CatalystSetUpCondition ;
+    ns2:conditionTypeAsText "Other" ;
+    ns2:setUpType "Other" ;
+    ns11:numericValue "0.05" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/11608> a ns2:LampPowerCondition ;
+    ns2:conditionTypeAsText "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns11:numericValue "500.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/11609> a ns2:LampIrradianceCondition ;
+    ns2:conditionTypeAsText "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/11610> a ns2:TemperatureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/11611> a ns2:PreasureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/11612> a ns2:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/11613> a ns2:ReactionTimeCondition ;
+    ns11:numericValue "5.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/11614> a ns2:ReactionMediumCondition ;
+    ns2:conditionTypeAsText "Liquid" ;
+    ns2:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/11615> a ns2:WavelengthCondition ;
+    ns2:conditionTypeAsText "UV" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/11616> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionTypeAsText "UV" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/input/2840> a ns2:Input ;
+    ns2:hasChemical <http://data.example.com/chemical/124> ;
+    ns2:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/2841> a ns2:Input ;
+    ns2:hasChemical <http://data.example.com/chemical/2> ;
+    ns2:hasRole <http://base.namespace.com/material_transformation_role/Co-catalyst> .
+
+<http://data.example.com/input/2842> a ns2:Input ;
+    ns2:hasChemical <http://data.example.com/chemical/232> ;
+    ns2:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/journal/565> a ns21:Journal ;
+    dcterms:title "JOURNAL OF MATERIALS CHEMISTRY A" .
+
+<http://data.example.com/materialTransformastionProcess/1905> a ns2:MaterialTransformationProcess ;
+    rdfs:label "AgAgCl" ;
+    ns2:hasBET <http://data.example.com/bet/1905> ;
+    ns2:hasCondition <http://data.example.com/condition/11606>,
+        <http://data.example.com/condition/11607>,
+        <http://data.example.com/condition/11608>,
+        <http://data.example.com/condition/11609>,
+        <http://data.example.com/condition/11610>,
+        <http://data.example.com/condition/11611>,
+        <http://data.example.com/condition/11612>,
+        <http://data.example.com/condition/11613>,
+        <http://data.example.com/condition/11614>,
+        <http://data.example.com/condition/11615>,
+        <http://data.example.com/condition/11616> ;
+    ns2:hasInput <http://data.example.com/input/2840>,
+        <http://data.example.com/input/2841>,
+        <http://data.example.com/input/2842> ;
+    ns2:hasOutput <http://data.example.com/output/3492>,
+        <http://data.example.com/output/3493>,
+        <http://data.example.com/output/3494> ;
+    ns2:hasReactionEg <http://data.example.com/eg/1905> ;
+    ns2:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns2:reportedIn <https://doi.org/10.1039%2FC3TA15262F> .
+
+<http://data.example.com/output/3492> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/184> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/3492-gh> .
+
+<http://data.example.com/output/3493> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/184> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/3493-g> .
+
+<http://data.example.com/output/3494> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/184> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/3494-m2h> .
+
+<http://data.example.com/output_quantity/3492-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "28.0000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/3493-g> a ns2:OutputQuantity ;
+    ns2:numericValue "140.0000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/3494-m2h> a ns2:OutputQuantity ;
+    ns2:numericValue "20.2605"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-M2-HR> .
+
+<https://doi.org/10.1039%2FC3TA15262F> a ns21:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/1905> ;
+    dcterms:creator <http://data.example.com/author/B.%20Cai-1564>,
+        <http://data.example.com/author/D.%20Han-1567>,
+        <http://data.example.com/author/J.%20Wang-1565>,
+        <http://data.example.com/author/L.%20Niu-1569>,
+        <http://data.example.com/author/S.%20Gan-1566>,
+        <http://data.example.com/author/Z.%20Wu-1568> ;
+    dcterms:date "2014-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/565> ;
+    dcterms:title "A distinctive red AgAgCl photocatalyst with efficient photocatalytic oxidative and reductive activities" ;
+    ns21:abstract "Optical absorption, as the fundamental requirement of photocatalysts, still has immense space for development. Herein, we design a novel kind of red AgAgCl photocatalyst, by which a large improvement of visible-light harvesting was obtained. These strongly coloured semiconductor materials can be facilely prepared using a versatile glycerol-mediated method and exhibit a uniform coaxial tri-cubic morphology. The enhancement of optical absorption is not only ascribed to the synergy of Ag and AgCl but also attributed to the Mie scattering effect due to the distinct morphology. As expected, the as-prepared red AgAgCl photocatalysts exhibit highly enhanced photocatalytic activities in the degradation of organic dyes, reduction of hexavalent chromium and conversion of CO2 into liquid hydrocarbon fuels. By means of theoretical calculations, furthermore, this work provides an in-depth perspective for understanding the physical photocatalytic mechanism of the red AgAgCl system and should stimulate the development of silver halide-based photocatalysts for the exploitation and utilization of solar energy." ;
+    ns21:doi "10.1039/C3TA15262F" ;
+    ns21:issue "15" ;
+    ns21:pageStart "5280"^^xsd:positiveInteger ;
+    ns21:volume "2"^^xsd:positiveInteger .
+
+<http://data.example.com/chemical/184> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CH3OH" .
+
+<https://en.wikipedia.org/wiki/China> a schema:Country .
+

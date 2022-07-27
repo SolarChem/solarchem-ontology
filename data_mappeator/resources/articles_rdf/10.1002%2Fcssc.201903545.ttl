@@ -1,0 +1,161 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/Di%20Wang-3564> a schema:Person ;
+    schema:name "Di Wang" .
+
+<http://data.example.com/author/Kai%20Lei-3563> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Kai Lei" .
+
+<http://data.example.com/author/Li%20Wang-3568> a schema:Person ;
+    schema:name "Li Wang" .
+
+<http://data.example.com/author/Liqun%20Ye-3565> a schema:Person ;
+    schema:name "Liqun Ye" .
+
+<http://data.example.com/author/Mingpu%20Kou-3566> a schema:Person ;
+    schema:name "Mingpu Kou" .
+
+<http://data.example.com/author/Yan%20Kong-3569> a schema:Person ;
+    schema:name "Yan Kong" .
+
+<http://data.example.com/author/Zhaoyu%20Ma-3567> a schema:Person ;
+    schema:name "Zhaoyu Ma" .
+
+<http://data.example.com/chemical/3> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "H2O" .
+
+<http://data.example.com/chemical/711> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "Carbazole-Triazine COF" .
+
+<http://data.example.com/condition/45816> a ns2:ReactorCondition ;
+    ns2:conditionTypeAsText "Fixed-bed" ;
+    ns2:reactorType "Fixed-bed" ;
+    ns11:numericValue "0.35" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/45817> a ns2:CatalystSetUpCondition ;
+    ns2:conditionTypeAsText "Powder(Supported)" ;
+    ns2:setUpType "Powder(Supported)" ;
+    ns11:numericValue "0.05" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/45818> a ns2:LampPowerCondition ;
+    ns2:conditionTypeAsText "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns11:numericValue "300.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/45819> a ns2:LampIrradianceCondition ;
+    ns2:conditionTypeAsText "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/45820> a ns2:TemperatureCondition ;
+    ns11:numericValue "25.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/45821> a ns2:PreasureCondition ;
+    ns11:numericValue "1.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/45822> a ns2:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/45823> a ns2:ReactionTimeCondition ;
+    ns11:numericValue "20.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/45824> a ns2:ReactionMediumCondition ;
+    ns2:conditionTypeAsText "Gas" ;
+    ns2:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Gas> ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/45825> a ns2:WavelengthCondition ;
+    ns2:conditionTypeAsText "Visible" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns11:numericValue "400-780" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/45826> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionTypeAsText "Visible" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/input/11364> a ns2:Input ;
+    ns2:hasChemical <http://data.example.com/chemical/711> ;
+    ns2:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/11365> a ns2:Input ;
+    ns2:hasChemical <http://data.example.com/chemical/3> ;
+    ns2:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/journal/239> a ns21:Journal ;
+    dcterms:title "CHEMSUSCHEM" .
+
+<http://data.example.com/materialTransformastionProcess/5465> a ns2:MaterialTransformationProcess ;
+    rdfs:label "CT-COF" ;
+    ns2:hasBET <http://data.example.com/bet/5465> ;
+    ns2:hasCondition <http://data.example.com/condition/45816>,
+        <http://data.example.com/condition/45817>,
+        <http://data.example.com/condition/45818>,
+        <http://data.example.com/condition/45819>,
+        <http://data.example.com/condition/45820>,
+        <http://data.example.com/condition/45821>,
+        <http://data.example.com/condition/45822>,
+        <http://data.example.com/condition/45823>,
+        <http://data.example.com/condition/45824>,
+        <http://data.example.com/condition/45825>,
+        <http://data.example.com/condition/45826> ;
+    ns2:hasInput <http://data.example.com/input/11364>,
+        <http://data.example.com/input/11365> ;
+    ns2:hasOutput <http://data.example.com/output/12666>,
+        <http://data.example.com/output/12667> ;
+    ns2:hasReactionEg <http://data.example.com/eg/5465> ;
+    ns2:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns2:reportedIn <https://doi.org/10.1002%2Fcssc.201903545> .
+
+<http://data.example.com/output/12666> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/927> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/12666-gh> .
+
+<http://data.example.com/output/12667> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/927> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/12667-g> .
+
+<http://data.example.com/output_quantity/12666-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "92.5000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/12667-g> a ns2:OutputQuantity ;
+    ns2:numericValue "1850.0000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<https://doi.org/10.1002%2Fcssc.201903545> a ns21:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/5465> ;
+    dcterms:creator <http://data.example.com/author/Di%20Wang-3564>,
+        <http://data.example.com/author/Kai%20Lei-3563>,
+        <http://data.example.com/author/Li%20Wang-3568>,
+        <http://data.example.com/author/Liqun%20Ye-3565>,
+        <http://data.example.com/author/Mingpu%20Kou-3566>,
+        <http://data.example.com/author/Yan%20Kong-3569>,
+        <http://data.example.com/author/Zhaoyu%20Ma-3567> ;
+    dcterms:date "2020-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/239> ;
+    dcterms:title "A Metal-Free Donorâ€“Acceptor Covalent Organic Framework Photocatalyst for Visible-Light-Driven Reduction of CO2 with H2O" ;
+    ns21:abstract "Visibleâ€�lightâ€�driven CO2 reduction to valuable chemicals without sacrificial agents and cocatalysts remains challenging, especially for metalâ€�free photocatalytic systems. Herein, a novel donorâ€“acceptor (Dâ€“A) covalent organic framework (CTâ€�COF) was constructed by the Schiffâ€�base reaction of carbazoleâ€�triazine based Dâ€“A monomers and possessed a suitable energy band structure, strong visibleâ€�lightâ€�harvesting, and abundant nitrogen sites. CTâ€�COF as a metalâ€�free photocatalyst could reduce CO2 with gaseous H2O to CO as the main carbonaceous product with approximately stoichiometric O2 evolution under visibleâ€�light irradiation and without cocatalyst. The CO evolution rate (102.7 Î¼mol gâˆ’1 hâˆ’1) was 68.5 times that of gâ€�C3N4 under the same conditions. In situ Fourierâ€�transform (FT)IR analysis indicated that CTâ€�COF could adsorb and activate the CO2 and H2O molecules and that COOH* species may be a key intermediate. DFT calculations suggested that nitrogen atoms in the triazine rings may be photocatalytically active sites." ;
+    ns21:doi "10.1002/cssc.201903545" ;
+    ns21:pageStart "1"^^xsd:positiveInteger ;
+    ns21:volume "13"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/China> a schema:Country .
+
+<http://data.example.com/chemical/927> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CO" .
+

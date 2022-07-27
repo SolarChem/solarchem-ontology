@@ -87,7 +87,7 @@
         rr:objectMap 	[
             rr:parentTriplesMap <#MaterialTransformationProcess>;
             rr:joinCondition	[
-                rr:child	"ID";
+                rr:child	"NO_DE_REF";
                 rr:parent	"NO_DE_REF";
             ];
         ];
@@ -160,7 +160,7 @@
             rr:parentTriplesMap <#Article>;
             rr:joinCondition	[
                 rr:child	"NO_DE_REF";
-                rr:parent	"ID";
+                rr:parent	"NO_DE_REF";
             ];
         ];
     ];
@@ -331,9 +331,9 @@
         ];
     ];
     rr:predicateObjectMap [
-        rr:predicateMap	[ rr:constant phcat:hasOutputCuantity ];
+        rr:predicateMap	[ rr:constant phcat:hasOutputQuantity ];
         rr:objectMap 	[
-            rr:parentTriplesMap <#OutputCuantity>;
+            rr:parentTriplesMap <#OutputQuantity>;
             rr:joinCondition	[
                 rr:child	"ID";
                 rr:parent	"ID";
@@ -409,7 +409,7 @@
 
 
 
-<#OutputCuantity>
+<#OutputQuantity>
     a rr:TriplesMap;
     rr:logicalTable [
     	rr:tableName "outputs"
@@ -418,7 +418,7 @@
     	a rr:Subject;
     	rr:termType rr:IRI;
     	rr:template "http://data.example.com/output_quantity/{ID}-{UNIT}";
-    	rr:class phcat:OutputCuantity;
+    	rr:class phcat:OutputQuantity;
     ];
     rr:predicateObjectMap [
     	rr:predicateMap	[ rr:constant phcat:numericValue];

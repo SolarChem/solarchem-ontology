@@ -1,0 +1,129 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/H.%20Fujiwara-777> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "H. Fujiwara" .
+
+<http://data.example.com/author/H.%20Hosokawa-778> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "H. Hosokawa" .
+
+<http://data.example.com/author/H.%20Kobayashi-783> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "H. Kobayashi" .
+
+<http://data.example.com/author/K.%20Murakoshi-779> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "K. Murakoshi" .
+
+<http://data.example.com/author/S.%20Yanagida-781> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "S. Yanagida" .
+
+<http://data.example.com/author/T.%20Okada-782> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "T. Okada" .
+
+<http://data.example.com/author/Y.%20Wada-780> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "Y. Wada" .
+
+<http://data.example.com/condition/6392> a ns2:ReactorCondition ;
+    ns2:conditionTypeAsText "Slurry" ;
+    ns2:reactorType "Slurry" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/6393> a ns2:CatalystSetUpCondition ;
+    ns2:conditionTypeAsText "Powder(Suspended)" ;
+    ns2:setUpType "Powder(Suspended)" ;
+    ns11:numericValue "0.00072" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/6394> a ns2:LampPowerCondition ;
+    ns2:conditionTypeAsText "Halogen" ;
+    ns2:lampType "Halogen" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/6395> a ns2:LampIrradianceCondition ;
+    ns2:conditionTypeAsText "Halogen" ;
+    ns2:lampType "Halogen" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/6396> a ns2:TemperatureCondition ;
+    ns11:numericValue "25.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/6397> a ns2:PreasureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/6398> a ns2:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/6399> a ns2:ReactionTimeCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/6400> a ns2:ReactionMediumCondition ;
+    ns2:conditionTypeAsText "Liquid" ;
+    ns2:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/6401> a ns2:WavelengthCondition ;
+    ns2:conditionTypeAsText "Visible" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/6402> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionTypeAsText "Visible" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/605> a ns21:Journal ;
+    dcterms:title "JOURNAL OF PHYSICAL CHEMISTRY B" .
+
+<http://data.example.com/materialTransformastionProcess/633> a ns2:MaterialTransformationProcess ;
+    rdfs:label "CdS" ;
+    ns2:hasBET <http://data.example.com/bet/633> ;
+    ns2:hasCondition <http://data.example.com/condition/6392>,
+        <http://data.example.com/condition/6393>,
+        <http://data.example.com/condition/6394>,
+        <http://data.example.com/condition/6395>,
+        <http://data.example.com/condition/6396>,
+        <http://data.example.com/condition/6397>,
+        <http://data.example.com/condition/6398>,
+        <http://data.example.com/condition/6399>,
+        <http://data.example.com/condition/6400>,
+        <http://data.example.com/condition/6401>,
+        <http://data.example.com/condition/6402> ;
+    ns2:hasInput <http://data.example.com/input/1574>,
+        <http://data.example.com/input/1575> ;
+    ns2:hasReactionEg <http://data.example.com/eg/633> ;
+    ns2:operationMode <http://vocab.example.com/condition/operationMode/Batch> ;
+    ns2:reportedIn <https://doi.org/10.1021%2Fjp971621q> .
+
+<https://doi.org/10.1021%2Fjp971621q> a ns21:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/633> ;
+    dcterms:creator <http://data.example.com/author/H.%20Fujiwara-777>,
+        <http://data.example.com/author/H.%20Hosokawa-778>,
+        <http://data.example.com/author/H.%20Kobayashi-783>,
+        <http://data.example.com/author/K.%20Murakoshi-779>,
+        <http://data.example.com/author/S.%20Yanagida-781>,
+        <http://data.example.com/author/T.%20Okada-782>,
+        <http://data.example.com/author/Y.%20Wada-780> ;
+    dcterms:date "1997-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/605> ;
+    dcterms:title "Effect of surface structures on photocatalytic CO2 reduction using quantized CdS nanocrystallites" ;
+    ns21:abstract "A mechanistic investigation on the photocatalytic reduction of CO2 with hexagonal CdS nanocrystallites prepared in N,N-dimethylformamide (DMF) was carried out from the standpoint of surface structures of the nanocrystallites. A remarkable increase of photocatalytic activity could be achieved by addition of excess Cd2+ to the system. Analysis of the emission behavior depending on the amount of excess Cd2+ in the system suggests that the Cd2+ addition results in the formation of sulfur vacancies on the surface of nanocrystallites due to the adsorption of excess Cd2+ to the surface. The formation of the sulfur vacancies on the surface was supported by in situ Cd K-edge EXAFS analysis of the nanocrystallites in solution as changes in the coordination numbers of cadmiumâˆ’sulfur and cadmiumâˆ’oxygen. Theoretical MO calculations using a density functional (DF) method supported the preferential bidentate-type absorption of CO2 with the Cd atom in the vicinity of the sulfur vacancy." ;
+    ns21:doi "10.1021/jp971621q" ;
+    ns21:pageStart "8270"^^xsd:positiveInteger ;
+    ns21:volume "101"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/Japan> a schema:Country .
+

@@ -1,0 +1,123 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/A.%20KnÃ­Å¾ek-1803> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Czechia> ;
+    schema:name "A. KnÃ­Å¾ek" .
+
+<http://data.example.com/author/L.%20Kavan-1805> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Czechia> ;
+    schema:name "L. Kavan" .
+
+<http://data.example.com/author/M.%20Ferus-1802> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Czechia> ;
+    schema:name "M. Ferus" .
+
+<http://data.example.com/author/M.%20ZukalovÃ¡-1806> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Czechia> ;
+    schema:name "M. ZukalovÃ¡" .
+
+<http://data.example.com/author/P.%20KubelÃ­k-1804> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Czechia> ;
+    schema:name "P. KubelÃ­k" .
+
+<http://data.example.com/author/S.%20CiviÅ¡-1801> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Czechia> ;
+    schema:name "S. CiviÅ¡" .
+
+<http://data.example.com/condition/18987> a ns2:ReactorCondition ;
+    ns2:conditionTypeAsText "Fixed-bed" ;
+    ns2:reactorType "Fixed-bed" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/18988> a ns2:CatalystSetUpCondition ;
+    ns2:conditionTypeAsText "Powder(Supported)" ;
+    ns2:setUpType "Powder(Supported)" ;
+    ns11:numericValue "1.000" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/18989> a ns2:LampPowerCondition ;
+    ns2:conditionTypeAsText "Tungsten(W)" ;
+    ns2:lampType "Tungsten(W)" ;
+    ns11:numericValue "160.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/18990> a ns2:LampIrradianceCondition ;
+    ns2:conditionTypeAsText "Tungsten(W)" ;
+    ns2:lampType "Tungsten(W)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/18991> a ns2:TemperatureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/18992> a ns2:PreasureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/18993> a ns2:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/18994> a ns2:ReactionTimeCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/18995> a ns2:ReactionMediumCondition ;
+    ns2:conditionTypeAsText "Gas" ;
+    ns2:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Gas> ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/18996> a ns2:WavelengthCondition ;
+    ns2:conditionTypeAsText "UV" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns11:numericValue "315-400(UV-C)" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/18997> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionTypeAsText "UV" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/821> a ns21:Journal ;
+    dcterms:title "OPTICAL MATERIALS" .
+
+<http://data.example.com/materialTransformastionProcess/2642> a ns2:MaterialTransformationProcess ;
+    rdfs:label "TiO2" ;
+    ns2:hasBET <http://data.example.com/bet/2642> ;
+    ns2:hasCondition <http://data.example.com/condition/18987>,
+        <http://data.example.com/condition/18988>,
+        <http://data.example.com/condition/18989>,
+        <http://data.example.com/condition/18990>,
+        <http://data.example.com/condition/18991>,
+        <http://data.example.com/condition/18992>,
+        <http://data.example.com/condition/18993>,
+        <http://data.example.com/condition/18994>,
+        <http://data.example.com/condition/18995>,
+        <http://data.example.com/condition/18996>,
+        <http://data.example.com/condition/18997> ;
+    ns2:hasInput <http://data.example.com/input/4665>,
+        <http://data.example.com/input/4666> ;
+    ns2:hasReactionEg <http://data.example.com/eg/2642> ;
+    ns2:operationMode <http://vocab.example.com/condition/operationMode/Continuous> ;
+    ns2:reportedIn <https://doi.org/10.1016%2Fj.optmat.2015.11.015> .
+
+<https://doi.org/10.1016%2Fj.optmat.2015.11.015> a ns21:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/2642> ;
+    dcterms:creator <http://data.example.com/author/A.%20KnÃ­Å¾ek-1803>,
+        <http://data.example.com/author/L.%20Kavan-1805>,
+        <http://data.example.com/author/M.%20Ferus-1802>,
+        <http://data.example.com/author/M.%20ZukalovÃ¡-1806>,
+        <http://data.example.com/author/P.%20KubelÃ­k-1804>,
+        <http://data.example.com/author/S.%20CiviÅ¡-1801> ;
+    dcterms:date "2016-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/821> ;
+    dcterms:title "Photocatalytic transformation of CO2 to CH4 and CO on acidic surface of TiO2 anatase" ;
+    ns21:abstract "Recently, many studies have demonstrated that carbon dioxide can be converted to methane on TiO2 surface by a photocatalytic process. We show that such a photo-reduction can be significantly affected by the presence of an acidic proton in powder samples of titania. Using in situ absorption gas-phase rovibrational spectroscopic detection of CH4, CO and CO2, we demonstrate that proton enhancement positively affects transformation of intermediate derivatives to methane during the photo-irradiation process via several reactions in which the electron transfer inside titania is coupled to oxygen transfer to the Ti3+ centers of TiO2 structure. The yield of CH4 or CO depends on the surface conditioning of titania: the formation of CH4 is boosted by a presence of adsorbed HCl, while the formation of CO is boosted by adsorbed H2SO4." ;
+    ns21:doi "10.1016/j.optmat.2015.11.015" ;
+    ns21:pageStart "80"^^xsd:positiveInteger ;
+    ns21:volume "56"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/Czechia> a schema:Country .
+

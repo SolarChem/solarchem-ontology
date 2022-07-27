@@ -2,13 +2,13 @@
 
 START=$(date +%s)
 
-echo "Starting with data extraction..."
-python3 db_data__extraction/main.py
+echo "Starting with data conversion from db..."
+python3 db_data_conversion/main.py
 
 END=$(date +%s)
 DIFF=$(( $END - $START ))
 
-echo "Data extraction done. Time needed: $DIFF seconds"
+echo "Data conversion done. Time needed: $DIFF seconds"
 
 START=$(date +%s)
 
