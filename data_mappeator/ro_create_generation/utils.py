@@ -7,7 +7,6 @@ def create_ro_crate(doi, pdf_filename):
     output_folder = parser.get('files', 'output_directory')
     parsed_doi = urllib.parse.quote(doi, safe='')
 
-
     pdf_dir = parser.get('files', 'pdf_directory')+pdf_filename
     rdf_dir = parser.get('files', 'rdf_directory')+parsed_doi+".ttl"
     print(rdf_dir)

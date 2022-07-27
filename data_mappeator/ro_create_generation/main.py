@@ -8,7 +8,7 @@ os.chdir(os.path.dirname(__file__))
 map_file = {}
 
 # Adding data to map
-with open(parser.get('files', 'map_file')) as csvfile:
+with open(parser.get('files', 'map_file_pdf')) as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
         map_file[row['DOI']] = row['file']
