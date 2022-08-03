@@ -19,6 +19,8 @@ def prepare_articles(limit = -1):
     if limit > 0:
         query = query + " LIMIT " + str(limit)
 
+    # TODO: hay datos en el paginas y volumen que no son números
+
     return prepare_from_query(query)
 
 def prepare_journals(articles):
@@ -112,6 +114,7 @@ def prepare_material_transformations(articles = None):
             except Exception:
                 row['percent'] = None
 
+        # TODO: hay datos en el Catalyst Set Up Condition (medida en GM) que no son números
         result[i] = row
 
     return result
@@ -195,7 +198,7 @@ def prepare_conditions(mtplist):
                 elif cond_id == 'WavelengthCondition':
                     condition['Light_source_type'] = cond[0]
                     condition['Quantity'] = condition['Numeric_quantity']
-                    condition['Quantity'] = None
+                    condition['Numeric_quantity'] = None
                 
                 result.append(condition)
 
