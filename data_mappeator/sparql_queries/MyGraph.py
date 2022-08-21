@@ -1,4 +1,6 @@
 from rdflib import Graph
+from queries import *
+from const import *
 
 class MyGraph:
 
@@ -7,15 +9,15 @@ class MyGraph:
         self.__graph.parse(filename, format="turtle")
 
     def get_processes_by_year(self):
-        query = """
-            PREFIX phcat: <http://base.namespace.com/>
-            PREFIX dcterms: <http://purl.org/dc/terms/>
+        return self.__graph.query(processes_by_year())
 
-            SELECT ?year (COUNT(DISTINCT ?mat_trans) AS ?num_process)
-            WHERE { ?individual phcat:hasMaterialTransformationProcess ?mat_trans ;
-                                dcterms:date ?year . }
-            GROUP BY ?year
-        """
-        return self.__graph.query(query)
+    def get_processes_by_country(self):
+        return self.__graph.query(processes_by_country())
+
+    def get_processes_by_catalyst(self):
+        return self.__graph.query(processes_by_catalyst())
+
+    def get_articles_from_journal(self, journal, year = None, volume = None):
+        return self.__graph.query(articles_from_journal(journal, year, volume))
 
 
