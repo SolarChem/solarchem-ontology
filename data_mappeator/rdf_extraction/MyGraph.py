@@ -29,3 +29,9 @@ class MyGraph:
 
         result_graph = g_article + g_material_trans_process + g_input_output + g_condition
         return result_graph
+
+    def get_num_elements(self):
+        return self.__graph.query(query_select_count_elements())
+
+    def get_num_properties(self):
+        return self.__graph.query(query_select_count_properties())

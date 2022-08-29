@@ -102,3 +102,9 @@ def query_construct_condition(iri) -> str:
                 }
             }
         """ % (iri)
+
+def query_select_count_elements() -> str:
+    return """SELECT (COUNT(?s) AS ?triples) WHERE { ?s a ?o }"""
+
+def query_select_count_properties() -> str:
+    return """SELECT (COUNT(?p) AS ?properties) WHERE { ?s ?p ?o }"""
