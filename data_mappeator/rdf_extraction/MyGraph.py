@@ -35,3 +35,6 @@ class MyGraph:
 
     def get_num_properties(self):
         return self.__graph.query(query_select_count_properties())
+    
+    def get_num_processes(self):
+        return self.__graph.query(query_select_count_processes())

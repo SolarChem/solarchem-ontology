@@ -108,3 +108,11 @@ def query_select_count_elements() -> str:
 
 def query_select_count_properties() -> str:
     return """SELECT (COUNT(?p) AS ?properties) WHERE { ?s ?p ?o }"""
+
+def query_select_count_processes() -> str:
+    return """
+            PREFIX phcat: <http://base.namespace.com/>
+
+            SELECT ?individual
+            WHERE { ?individual a phcat:MaterialTransformationProcess . }
+        """
