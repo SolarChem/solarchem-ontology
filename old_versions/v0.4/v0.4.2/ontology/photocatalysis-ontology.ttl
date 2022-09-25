@@ -1,0 +1,380 @@
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix chebi: <http://purl.obolibrary.org/obo/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix phcat: <http://base.namespace.com/> .
+@prefix qudt: <http://qudt.org//2.1/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://base.namespace.com> a owl:Ontology ;
+    dc:creator "Oier Beaskoetxea" ;
+    dc:description "Ontology code created by Chowlk" ;
+    dc:title "Photocatalysis Ontology" ;
+    owl:versionInfo "0.4.2" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+phcat:hasBET a owl:ObjectProperty ;
+    rdfs:range phcat:BET ;
+    rdfs:label "has bet" .
+
+phcat:hasCondition a owl:ObjectProperty ;
+     rdfs:range phcat:Condition ;
+    rdfs:label "has condition" .
+
+phcat:hasEg a owl:ObjectProperty ;
+    rdfs:range phcat:Eg ;
+    rdfs:label "has eg" .
+
+phcat:hasOutputCuantity a owl:ObjectProperty ;
+    rdfs:range phcat:OutputQuantity;
+    rdfs:label "has output cuantity" .
+
+phcat:hasReactionMedium a owl:ObjectProperty ;
+    rdfs:range phcat:ReactionMedium ;
+    rdfs:label "has reaction medium" .
+
+phcat:hasReductant a owl:ObjectProperty ;
+    rdfs:range chebi:CHEBI:24431 ;
+    rdfs:label "has reductant" .
+
+phcat:hasRole a owl:ObjectProperty ;
+    rdfs:label "has role" ;
+    rdfs:range phcat:MaterialTransformationRole .
+
+schema:nationality a owl:ObjectProperty ;
+    rdfs:label "nationality" .
+
+phcat:reportedIn a owl:ObjectProperty ;
+    rdfs:range bibo:Article ;
+    rdfs:label "reported in" .
+
+dc:isPartOf a owl:ObjectProperty ;
+    rdfs:label "is part of" .
+
+phcat:hasChemical a owl:ObjectProperty ;
+    rdfs:range chebi:CHEBI:24431 ;
+    rdfs:label "has chemical" .
+
+phcat:hasInput a owl:ObjectProperty ;
+    rdfs:range phcat:Input ;
+    rdfs:label "has input" .
+
+phcat:hasMaterialTransformationProcess a owl:ObjectProperty ;
+    rdfs:range phcat:MaterialTransformationProcess ;
+    rdfs:label "has material transformation process" .
+
+phcat:hasOutput a owl:ObjectProperty ;
+    rdfs:range phcat:Output ;
+    rdfs:label "has output" .
+
+dc:creator a owl:ObjectProperty ;
+    rdfs:range schema:Person ;
+    rdfs:label "creator" .
+
+qudt:unit a owl:ObjectProperty ;
+    rdfs:range qudt:Unit ;
+    rdfs:label "unit" .
+
+#################################################################
+#    Data Properties
+#################################################################
+
+phcat:conditionType a owl:DatatypeProperty ;
+    rdfs:label "condition type" ;
+    rdfs:range xsd:string .
+
+phcat:cristalStructure a owl:DatatypeProperty ;
+    rdfs:label "cristal structure" ;
+    rdfs:range xsd:string .
+
+phcat:lampType a owl:DatatypeProperty ;
+    rdfs:label "lamp type" ;
+    rdfs:range xsd:string .
+
+phcat:lightSourceType a owl:DatatypeProperty ;
+    rdfs:label "light source type" ;
+    rdfs:range xsd:string .
+
+phcat:operationMode a owl:DatatypeProperty ;
+    rdfs:label "operation mode" ;
+    rdfs:range xsd:string .
+
+phcat:pH a owl:DatatypeProperty ;
+    rdfs:label "pH" ;
+    rdfs:range xsd:double .
+
+phcat:percentage a owl:DatatypeProperty ;
+    rdfs:label "percentage" ;
+    rdfs:range xsd:double .
+
+phcat:reactorType a owl:DatatypeProperty ;
+    rdfs:label "reactor type" ;
+    rdfs:range xsd:string .
+
+phcat:setUpType a owl:DatatypeProperty ;
+    rdfs:label "set up type" ;
+    rdfs:range xsd:string .
+
+chebi:formula a owl:DatatypeProperty ;
+    rdfs:label "formula" ;
+    rdfs:range xsd:string .
+
+dc:date a owl:DatatypeProperty ;
+    rdfs:label "date" .
+
+dc:title a owl:DatatypeProperty ;
+    rdfs:label "title" .
+
+bibo:abstract a owl:DatatypeProperty ;
+    rdfs:label "abstract" .
+
+bibo:doi a owl:DatatypeProperty ;
+    rdfs:label "doi" .
+
+bibo:issue a owl:DatatypeProperty ;
+    rdfs:label "issue" .
+
+bibo:pageStart a owl:DatatypeProperty ;
+    rdfs:label "page start" .
+
+bibo:volume a owl:DatatypeProperty ;
+    rdfs:label "volume" .
+    
+qudt:numericValue a owl:DatatypeProperty ;
+    rdfs:label "numeric value" .
+
+qudt:value a owl:DatatypeProperty ;
+    rdfs:label "value" .
+
+rdfs:label a owl:DatatypeProperty ;
+    rdfs:label "label" ;
+    rdfs:range xsd:string .
+
+schema:email a owl:DatatypeProperty ;
+    rdfs:label "email" .
+
+schema:name a owl:DatatypeProperty ;
+    rdfs:label "name" .
+
+#################################################################
+#    Classes
+#################################################################
+
+phcat:BET a owl:Class ;
+    rdfs:label "BET" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty qudt:unit ] .
+
+phcat:Catalyst a phcat:MaterialTransformationRole ; # a owl:Class
+    rdfs:label "Catalyst" .
+
+phcat:CatalystSetUpCondition a owl:Class ;
+    rdfs:label "Catalyst Set Up Condition" ;
+    rdfs:subClassOf phcat:Condition .
+
+phcat:Co-catalyst a phcat:MaterialTransformationRole ;
+    rdfs:label "Co-catalyst" .
+
+phcat:Condition a owl:Class ;
+    rdfs:label "Condition" .
+
+phcat:Dopant a phcat:MaterialTransformationRole ;
+    rdfs:label "Dopant" .
+
+phcat:Dye a phcat:MaterialTransformationRole ;
+    rdfs:label "Dye" .
+
+phcat:Eg a owl:Class ;
+    rdfs:label "Eg" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty qudt:unit ] .
+
+phcat:Gas a phcat:ReactionMedium ;
+    rdfs:label "Gas" .
+
+phcat:IluminatedAreaCondition a owl:Class ;
+    rdfs:label "Iluminated Area Condition" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty qudt:unit ],
+        phcat:LightSourceCondition .
+
+phcat:Input a owl:Class ;
+    rdfs:label "Input" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty phcat:hasRole ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty phcat:hasChemical ] .
+
+phcat:IrradianceCondition a owl:Class ;
+    rdfs:label "Irradiance Condition" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty qudt:unit ],
+        phcat:LampCondition .
+
+phcat:LampCondition a owl:Class ;
+    rdfs:label "Lamp Condition" ;
+    rdfs:subClassOf phcat:Condition .
+
+phcat:LightSourceCondition a owl:Class ;
+    rdfs:label "Light Source Condition" ;
+    rdfs:subClassOf phcat:Condition .
+
+phcat:Liquid a phcat:ReactionMedium ;
+    rdfs:label "Liquid" .
+
+phcat:MaterialTransformationProcess a owl:Class ;
+    rdfs:label "Material Transformation Process" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty phcat:hasOutput ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "n"^^xsd:nonNegativeInteger ;
+            owl:onProperty phcat:hasOutput ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty phcat:hasInput ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "n"^^xsd:nonNegativeInteger ;
+            owl:onProperty phcat:hasInput ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty phcat:reportedIn ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "n"^^xsd:nonNegativeInteger ;
+            owl:onProperty phcat:hasCondition ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty phcat:hasReactionMedium ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty phcat:hasReactionEg ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty phcat:hasBET ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty phcat:hasReductant ] .
+
+phcat:MaterialTransformationRole a owl:Class ;
+    rdfs:label "Material Transformation Role" .
+
+phcat:Output a owl:Class ;
+    rdfs:label "Output" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty phcat:hasChemical ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty phcat:hasOutputCuantity ] .
+
+phcat:OutputQuantity a owl:Class ;
+    rdfs:label "Output Quantity" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty qudt:unit ] .
+
+phcat:PowerCondition a owl:Class ;
+    rdfs:label "Power Condition" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty qudt:unit ],
+        phcat:LampCondition .
+
+phcat:PressureCondition a owl:Class ;
+    rdfs:label "Pressure Condition" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty qudt:unit ],
+        phcat:Condition .
+
+phcat:ReactionMedium a owl:Class ;
+    rdfs:label "Reaction Medium" .
+
+phcat:ReactionTimeCondition a owl:Class ;
+    rdfs:label "Reaction Time Condition" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty qudt:unit ],
+        phcat:Condition .
+
+phcat:ReactorCondition a owl:Class ;
+    rdfs:label "Reactor Condition" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty qudt:unit ],
+        phcat:Condition .
+
+phcat:SpaceVelocityCondition a owl:Class ;
+    rdfs:label "Space Velocity Condition" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty qudt:unit ],
+        phcat:Condition .
+
+phcat:Support a phcat:MaterialTransformationRole ;
+    rdfs:label "Support" .
+
+phcat:TemperatureCondition a owl:Class ;
+    rdfs:label "Temperature Condition" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty qudt:unit ],
+        phcat:Condition .
+
+phcat:WavelengthCondition a owl:Class ;
+    rdfs:label "Wavelength Condition" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty qudt:unit ],
+        phcat:LightSourceCondition .
+
+chebi:ChemicalEntity a owl:Class ;
+    rdfs:label "Chemical Entity" .
+
+bibo:Article a owl:Class ;
+    rdfs:label "Article" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty dc:isPartOf ] .
+
+bibo:Journal a owl:Class ;
+    rdfs:label "Journal" .
+
+qudt:Unit a owl:Class ;
+    rdfs:label "Unit" .
+
+schema:Country a owl:Class ;
+    rdfs:label "Country" .
+
+schema:Person a owl:Class ;
+    rdfs:label "Person" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty dc:creator ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "*"^^xsd:nonNegativeInteger ;
+            owl:onProperty dc:creator ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty schema:nationality ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty phcat:hasMaterialTransformationProcess ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "n"^^xsd:nonNegativeInteger ;
+            owl:onProperty phcat:hasMaterialTransformationProcess ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty qudt:unit ] .
+

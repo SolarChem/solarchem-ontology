@@ -1,0 +1,825 @@
+<http://base.namespace.com/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://base.namespace.com/> <http://purl.org/dc/terms/creator> "Oier Beaskoetxea" .
+<http://base.namespace.com/> <http://purl.org/dc/terms/description> "Vocabulario para la representación de datos sobre los procesos de fotocatálisis descritos en las publicaciones científicas."@es .
+<http://base.namespace.com/> <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by/4.0/" .
+<http://base.namespace.com/> <http://purl.org/dc/terms/title> "The Photocatalysis Ontology" .
+<http://base.namespace.com/> <http://www.w3.org/2000/01/rdf-schema#comment> "Esta ontología ha sido diseñada en conjunto con el instituto IMDEA Energía de Madrid. Para generar las bases de este vocabulario se ha utilizado como base su proyecto \"Artleafs\" que consiste en una plataforma web para recavar información sobre experimentos en el campo de la fotocatásilis para posibilitar y facilitar la reproducibilidad de los procesos explicados en los artículos cientificos."@es .
+<http://base.namespace.com/> <http://www.w3.org/2000/01/rdf-schema#comment> "This ontology has been designed in conjunction with the IMDEA Energy Institute of Madrid. To generate the bases of this vocabulary, the \"Artleafs\" project has been used as a basis, which consists of a web platform to collect information on experiments in the field of photocatalysis to enable and facilitate the reproducibility of the processes explained in scientific articles."@en .
+<http://base.namespace.com/> <http://www.w3.org/2002/07/owl#versionInfo> "0.6" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/dc/terms/title> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://www.w3.org/2000/01/rdf-schema#label
+<http://www.w3.org/2000/01/rdf-schema#label> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://www.w3.org/2000/01/rdf-schema#label> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://www.w3.org/2002/07/owl#maxCardinality
+<http://www.w3.org/2002/07/owl#maxCardinality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#example
+<http://www.w3.org/2004/02/skos/core#example> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://base.namespace.com/affiliationCountry
+<http://base.namespace.com/affiliationCountry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/affiliationCountry> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/Person> .
+<http://base.namespace.com/affiliationCountry> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.org/Country> .
+<http://base.namespace.com/affiliationCountry> <http://www.w3.org/2000/01/rdf-schema#comment> "Reference to the country in which the organization the author works for resides when submitting the article."@en .
+<http://base.namespace.com/affiliationCountry> <http://www.w3.org/2000/01/rdf-schema#comment> "Referencia al país en el que reside la organización para la que el autor trabaja cuando presenta el artículo."@es .
+<http://base.namespace.com/affiliationCountry> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "https://schema.org/" .
+<http://base.namespace.com/affiliationCountry> <http://www.w3.org/2000/01/rdf-schema#label> "affiliation country" .
+# 
+# http://base.namespace.com/conditionTypeAsSKOSConcept
+<http://base.namespace.com/conditionTypeAsSKOSConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/conditionTypeAsSKOSConcept> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/Condition> .
+<http://base.namespace.com/conditionTypeAsSKOSConcept> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://base.namespace.com/conditionTypeAsSKOSConcept> <http://www.w3.org/2000/01/rdf-schema#comment> "A condition type in which the material transformation is performed. Here only SKOS concepts can be written." .
+<http://base.namespace.com/conditionTypeAsSKOSConcept> <http://www.w3.org/2000/01/rdf-schema#label> "condition type as SKOS concept" .
+# 
+# http://base.namespace.com/hasBET
+<http://base.namespace.com/hasBET> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/hasBET> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/MaterialTransformationProcess> .
+<http://base.namespace.com/hasBET> <http://www.w3.org/2000/01/rdf-schema#range> <http://base.namespace.com/BET> .
+<http://base.namespace.com/hasBET> <http://www.w3.org/2000/01/rdf-schema#comment> "The reference to the specif surface area of a process." .
+<http://base.namespace.com/hasBET> <http://www.w3.org/2000/01/rdf-schema#label> "has bet" .
+# 
+# http://base.namespace.com/hasChemical
+<http://base.namespace.com/hasChemical> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/hasChemical> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://base.namespace.com/Output> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://base.namespace.com/Input> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/hasChemical> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.obolibrary.org/obo/CHEBI_24431> .
+<http://base.namespace.com/hasChemical> <http://www.w3.org/2000/01/rdf-schema#comment> "The reference of a chemical entity." .
+<http://base.namespace.com/hasChemical> <http://www.w3.org/2000/01/rdf-schema#label> "has chemical" .
+# 
+# http://base.namespace.com/hasCondition
+<http://base.namespace.com/hasCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/hasCondition> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/MaterialTransformationProcess> .
+<http://base.namespace.com/hasCondition> <http://www.w3.org/2000/01/rdf-schema#range> <http://base.namespace.com/Condition> .
+<http://base.namespace.com/hasCondition> <http://www.w3.org/2000/01/rdf-schema#comment> "The reference of a condition in which the process is made." .
+<http://base.namespace.com/hasCondition> <http://www.w3.org/2000/01/rdf-schema#label> "has condition" .
+# 
+# http://base.namespace.com/hasEg
+<http://base.namespace.com/hasEg> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/hasEg> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/MaterialTransformationProcess> .
+<http://base.namespace.com/hasEg> <http://www.w3.org/2000/01/rdf-schema#range> <http://base.namespace.com/Eg> .
+<http://base.namespace.com/hasEg> <http://www.w3.org/2000/01/rdf-schema#comment> "The reference of an energy gap of a process." .
+<http://base.namespace.com/hasEg> <http://www.w3.org/2000/01/rdf-schema#label> "has eg" .
+# 
+# http://base.namespace.com/hasInput
+<http://base.namespace.com/hasInput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/hasInput> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/MaterialTransformationProcess> .
+<http://base.namespace.com/hasInput> <http://www.w3.org/2000/01/rdf-schema#range> <http://base.namespace.com/Input> .
+<http://base.namespace.com/hasInput> <http://www.w3.org/2000/01/rdf-schema#comment> "The reference to an input material of the process." .
+<http://base.namespace.com/hasInput> <http://www.w3.org/2000/01/rdf-schema#label> "has input" .
+# 
+# http://base.namespace.com/hasMaterialTransformationProcess
+<http://base.namespace.com/hasMaterialTransformationProcess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/hasMaterialTransformationProcess> <http://www.w3.org/2002/07/owl#inverseOf> <http://base.namespace.com/reportedIn> .
+<http://base.namespace.com/hasMaterialTransformationProcess> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/bibo/Article> .
+<http://base.namespace.com/hasMaterialTransformationProcess> <http://www.w3.org/2000/01/rdf-schema#range> <http://base.namespace.com/MaterialTransformationProcess> .
+<http://base.namespace.com/hasMaterialTransformationProcess> <http://www.w3.org/2000/01/rdf-schema#comment> "The reference to a transformation process mentioned in the article." .
+<http://base.namespace.com/hasMaterialTransformationProcess> <http://www.w3.org/2000/01/rdf-schema#label> "has material transformation process" .
+# 
+# http://base.namespace.com/hasOutput
+<http://base.namespace.com/hasOutput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/hasOutput> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/MaterialTransformationProcess> .
+<http://base.namespace.com/hasOutput> <http://www.w3.org/2000/01/rdf-schema#range> <http://base.namespace.com/Output> .
+<http://base.namespace.com/hasOutput> <http://www.w3.org/2000/01/rdf-schema#comment> "The reference to an input material of the process." .
+<http://base.namespace.com/hasOutput> <http://www.w3.org/2000/01/rdf-schema#label> "has output" .
+# 
+# http://base.namespace.com/hasOutputQuantity
+<http://base.namespace.com/hasOutputQuantity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/hasOutputQuantity> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/Output> .
+<http://base.namespace.com/hasOutputQuantity> <http://www.w3.org/2000/01/rdf-schema#range> <http://base.namespace.com/OutputQuantity> .
+<http://base.namespace.com/hasOutputQuantity> <http://www.w3.org/2000/01/rdf-schema#comment> "The reference of a quantity (unit and value) in an output." .
+<http://base.namespace.com/hasOutputQuantity> <http://www.w3.org/2000/01/rdf-schema#label> "has output quantity" .
+# 
+# http://base.namespace.com/hasRole
+<http://base.namespace.com/hasRole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/hasRole> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/Input> .
+<http://base.namespace.com/hasRole> <http://www.w3.org/2000/01/rdf-schema#range> <http://base.namespace.com/MaterialTransformationRole> .
+<http://base.namespace.com/hasRole> <http://www.w3.org/2000/01/rdf-schema#comment> "The reference to a role of the input material." .
+<http://base.namespace.com/hasRole> <http://www.w3.org/2000/01/rdf-schema#label> "has role" .
+# 
+# http://base.namespace.com/hasYield
+<http://base.namespace.com/hasYield> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/hasYield> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/MaterialTransformationProcess> .
+<http://base.namespace.com/hasYield> <http://www.w3.org/2000/01/rdf-schema#range> <http://base.namespace.com/Yield> .
+<http://base.namespace.com/hasYield> <http://www.w3.org/2000/01/rdf-schema#comment> "The reference to the yield (efficiency) of the transformation process." .
+<http://base.namespace.com/hasYield> <http://www.w3.org/2000/01/rdf-schema#label> "has yield" .
+# 
+# http://base.namespace.com/lightSourceType
+<http://base.namespace.com/lightSourceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/lightSourceType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://base.namespace.com/conditionTypeAsSKOSConcept> .
+<http://base.namespace.com/lightSourceType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/LightSourceCondition> .
+<http://base.namespace.com/lightSourceType> <http://www.w3.org/2000/01/rdf-schema#range> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid4 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid6 .
+_:genid6 <http://www.w3.org/2002/07/owl#hasValue> <http://vocab.example.com/condition/lightSourceType> .
+_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2004/02/skos/core#inScheme> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2004/02/skos/core#Concept> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://base.namespace.com/lightSourceType> <http://www.w3.org/2000/01/rdf-schema#comment> "Light source used in the material transformation." .
+<http://base.namespace.com/lightSourceType> <http://www.w3.org/2000/01/rdf-schema#label> "light source type" .
+# 
+# http://base.namespace.com/operationMode
+<http://base.namespace.com/operationMode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/operationMode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/MaterialTransformationProcess> .
+<http://base.namespace.com/operationMode> <http://www.w3.org/2000/01/rdf-schema#range> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid8 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid10 .
+_:genid10 <http://www.w3.org/2002/07/owl#hasValue> <http://vocab.example.com/operationMode> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2004/02/skos/core#inScheme> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2004/02/skos/core#Concept> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://base.namespace.com/operationMode> <http://www.w3.org/2000/01/rdf-schema#comment> "The operation mode of the material transformation process. It can be continuous or in batch." .
+<http://base.namespace.com/operationMode> <http://www.w3.org/2000/01/rdf-schema#label> "operation mode" .
+# 
+# http://base.namespace.com/reactionMediumType
+<http://base.namespace.com/reactionMediumType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/reactionMediumType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://base.namespace.com/conditionTypeAsSKOSConcept> .
+<http://base.namespace.com/reactionMediumType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/ReactionMediumCondition> .
+<http://base.namespace.com/reactionMediumType> <http://www.w3.org/2000/01/rdf-schema#range> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid12 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#hasValue> <http://vocab.example.com/condition/reactionMediumType> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2004/02/skos/core#inScheme> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2004/02/skos/core#Concept> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://base.namespace.com/reactionMediumType> <http://www.w3.org/2000/01/rdf-schema#comment> "The reaction medium in which the material transformation is performed. It can be liquid or gas." .
+<http://base.namespace.com/reactionMediumType> <http://www.w3.org/2000/01/rdf-schema#label> "reaction medium type" .
+# 
+# http://base.namespace.com/reportedIn
+<http://base.namespace.com/reportedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://base.namespace.com/reportedIn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/MaterialTransformationProcess> .
+<http://base.namespace.com/reportedIn> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/ontology/bibo/Article> .
+<http://base.namespace.com/reportedIn> <http://www.w3.org/2000/01/rdf-schema#comment> "The reference of the article in which the process is mentioned." .
+<http://base.namespace.com/reportedIn> <http://www.w3.org/2000/01/rdf-schema#label> "reported in" .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/bibo/Article> .
+<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.org/Person> .
+# 
+# http://purl.org/dc/terms/isPartOf
+<http://purl.org/dc/terms/isPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/dc/terms/isPartOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/bibo/Article> .
+<http://purl.org/dc/terms/isPartOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/ontology/bibo/Journal> .
+<http://purl.org/dc/terms/isPartOf> <http://www.w3.org/2000/01/rdf-schema#comment> "The reference of the journal of the article." .
+<http://purl.org/dc/terms/isPartOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://purl.org/dc/terms/" .
+<http://purl.org/dc/terms/isPartOf> <http://www.w3.org/2000/01/rdf-schema#label> "is part of" .
+# 
+# http://qudt.org/2.1/schema/qudt/unit
+<http://qudt.org/2.1/schema/qudt/unit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://qudt.org/2.1/schema/qudt/unit> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid16 .
+_:genid16 <http://www.w3.org/2002/07/owl#unionOf> _:genid20 .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid19 .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://base.namespace.com/OutputQuantity> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://base.namespace.com/Eg> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://base.namespace.com/Condition> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://base.namespace.com/BET> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://qudt.org/2.1/schema/qudt/unit> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/2.1/schema/qudt/Unit> .
+<http://qudt.org/2.1/schema/qudt/unit> <http://www.w3.org/2000/01/rdf-schema#comment> "The reference to an unit of measure." .
+<http://qudt.org/2.1/schema/qudt/unit> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://qudt.org/2.1/schema/qudt/" .
+<http://qudt.org/2.1/schema/qudt/unit> <http://www.w3.org/2000/01/rdf-schema#label> "unit" .
+# 
+# http://www.w3.org/2004/02/skos/core#inScheme
+<http://www.w3.org/2004/02/skos/core#inScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/2004/02/skos/core#inScheme> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+<http://www.w3.org/2004/02/skos/core#inScheme> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos/core> .
+<http://www.w3.org/2004/02/skos/core#inScheme> <http://www.w3.org/2000/01/rdf-schema#label> "is in scheme"@en .
+<http://www.w3.org/2004/02/skos/core#inScheme> <http://www.w3.org/2004/02/skos/core#definition> "Relates a resource (for example a concept) to a concept scheme in which it is included."@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://base.namespace.com/conditionTypeAsText
+<http://base.namespace.com/conditionTypeAsText> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://base.namespace.com/conditionTypeAsText> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/Condition> .
+<http://base.namespace.com/conditionTypeAsText> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://base.namespace.com/conditionTypeAsText> <http://www.w3.org/2000/01/rdf-schema#comment> "A condition type in which the material transformation is performed. Here any kind of text can be written." .
+<http://base.namespace.com/conditionTypeAsText> <http://www.w3.org/2000/01/rdf-schema#label> "condition type as text" .
+# 
+# http://base.namespace.com/crystalStructure
+<http://base.namespace.com/crystalStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://base.namespace.com/crystalStructure> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/Input> .
+<http://base.namespace.com/crystalStructure> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://base.namespace.com/crystalStructure> <http://www.w3.org/2000/01/rdf-schema#comment> "The crystal structure of the catalyst. It is mandatory when TiO2 is used as catalyst material." .
+<http://base.namespace.com/crystalStructure> <http://www.w3.org/2000/01/rdf-schema#label> "crystal structure" .
+# 
+# http://base.namespace.com/lampType
+<http://base.namespace.com/lampType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://base.namespace.com/lampType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://base.namespace.com/conditionTypeAsText> .
+<http://base.namespace.com/lampType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/LampCondition> .
+<http://base.namespace.com/lampType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://base.namespace.com/lampType> <http://www.w3.org/2000/01/rdf-schema#comment> "The lamp type used in the material transformation." .
+<http://base.namespace.com/lampType> <http://www.w3.org/2000/01/rdf-schema#label> "lamp type" .
+# 
+# http://base.namespace.com/percentage
+<http://base.namespace.com/percentage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://base.namespace.com/percentage> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/Input> .
+<http://base.namespace.com/percentage> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<http://base.namespace.com/percentage> <http://www.w3.org/2000/01/rdf-schema#comment> "The percentage of the input material used in the process. The sum of all the percentages in the process can not be more than 100%." .
+<http://base.namespace.com/percentage> <http://www.w3.org/2000/01/rdf-schema#label> "percentage" .
+# 
+# http://base.namespace.com/reactorType
+<http://base.namespace.com/reactorType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://base.namespace.com/reactorType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://base.namespace.com/conditionTypeAsText> .
+<http://base.namespace.com/reactorType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/ReactorCondition> .
+<http://base.namespace.com/reactorType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://base.namespace.com/reactorType> <http://www.w3.org/2000/01/rdf-schema#comment> "The reactor used in the material transformation process." .
+<http://base.namespace.com/reactorType> <http://www.w3.org/2000/01/rdf-schema#label> "reactor type" .
+# 
+# http://base.namespace.com/setUpType
+<http://base.namespace.com/setUpType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://base.namespace.com/setUpType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://base.namespace.com/conditionTypeAsText> .
+<http://base.namespace.com/setUpType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/CatalystSetUpCondition> .
+<http://base.namespace.com/setUpType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://base.namespace.com/setUpType> <http://www.w3.org/2000/01/rdf-schema#comment> "The set up used in the material transformation." .
+<http://base.namespace.com/setUpType> <http://www.w3.org/2000/01/rdf-schema#label> "set up type" .
+# 
+# http://purl.obolibrary.org/obo/formula
+<http://purl.obolibrary.org/obo/formula> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.obolibrary.org/obo/formula> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.obolibrary.org/obo/CHEBI_24431> .
+<http://purl.obolibrary.org/obo/formula> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://purl.obolibrary.org/obo/formula> <http://www.w3.org/2000/01/rdf-schema#comment> "The chemical formula of the material." .
+<http://purl.obolibrary.org/obo/formula> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://purl.obolibrary.org/obo/" .
+<http://purl.obolibrary.org/obo/formula> <http://www.w3.org/2000/01/rdf-schema#label> "formula" .
+# 
+# http://purl.org/dc/terms/date
+<http://purl.org/dc/terms/date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/dc/terms/date> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/bibo/Article> .
+<http://purl.org/dc/terms/date> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://purl.org/dc/terms/date> <http://www.w3.org/2000/01/rdf-schema#comment> "The date when the article was published." .
+<http://purl.org/dc/terms/date> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://purl.org/dc/terms/" .
+<http://purl.org/dc/terms/date> <http://www.w3.org/2000/01/rdf-schema#label> "date" .
+# 
+# http://purl.org/ontology/bibo/abstract
+<http://purl.org/ontology/bibo/abstract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/ontology/bibo/abstract> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/bibo/Article> .
+<http://purl.org/ontology/bibo/abstract> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://purl.org/ontology/bibo/abstract> <http://www.w3.org/2000/01/rdf-schema#comment> "The abstract of an article." .
+<http://purl.org/ontology/bibo/abstract> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://purl.org/ontology/bibo/" .
+<http://purl.org/ontology/bibo/abstract> <http://www.w3.org/2000/01/rdf-schema#label> "abstract"@en .
+<http://purl.org/ontology/bibo/abstract> <http://www.w3.org/2000/01/rdf-schema#label> "resumen"@es .
+# 
+# http://purl.org/ontology/bibo/doi
+<http://purl.org/ontology/bibo/doi> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/ontology/bibo/doi> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/bibo/Article> .
+<http://purl.org/ontology/bibo/doi> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://purl.org/ontology/bibo/doi> <http://www.w3.org/2000/01/rdf-schema#comment> "The DOI of the article." .
+<http://purl.org/ontology/bibo/doi> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://purl.org/ontology/bibo/" .
+<http://purl.org/ontology/bibo/doi> <http://www.w3.org/2000/01/rdf-schema#label> "doi" .
+# 
+# http://purl.org/ontology/bibo/issue
+<http://purl.org/ontology/bibo/issue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/ontology/bibo/issue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/bibo/Article> .
+<http://purl.org/ontology/bibo/issue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://purl.org/ontology/bibo/issue> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://purl.org/ontology/bibo/" .
+<http://purl.org/ontology/bibo/issue> <http://www.w3.org/2000/01/rdf-schema#label> "issue" .
+# 
+# http://purl.org/ontology/bibo/pageStart
+<http://purl.org/ontology/bibo/pageStart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/ontology/bibo/pageStart> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/bibo/Article> .
+<http://purl.org/ontology/bibo/pageStart> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://purl.org/ontology/bibo/pageStart> <http://www.w3.org/2000/01/rdf-schema#comment> "The page on which the article begins." .
+<http://purl.org/ontology/bibo/pageStart> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://purl.org/ontology/bibo/" .
+<http://purl.org/ontology/bibo/pageStart> <http://www.w3.org/2000/01/rdf-schema#label> "page start" .
+# 
+# http://purl.org/ontology/bibo/volume
+<http://purl.org/ontology/bibo/volume> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/ontology/bibo/volume> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/bibo/Article> .
+<http://purl.org/ontology/bibo/volume> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://purl.org/ontology/bibo/volume> <http://www.w3.org/2000/01/rdf-schema#comment> "The volume in which the article was published." .
+<http://purl.org/ontology/bibo/volume> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://purl.org/ontology/bibo/" .
+<http://purl.org/ontology/bibo/volume> <http://www.w3.org/2000/01/rdf-schema#label> "volume" .
+# 
+# http://qudt.org/2.1/schema/qudt/floatPercentage
+<http://qudt.org/2.1/schema/qudt/floatPercentage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://qudt.org/2.1/schema/qudt/floatPercentage> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/Yield> .
+<http://qudt.org/2.1/schema/qudt/floatPercentage> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<http://qudt.org/2.1/schema/qudt/floatPercentage> <http://www.w3.org/2000/01/rdf-schema#comment> "The percentage taht indicates the efficiency of the material transformation process." .
+<http://qudt.org/2.1/schema/qudt/floatPercentage> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://qudt.org/2.1/schema/qudt/" .
+<http://qudt.org/2.1/schema/qudt/floatPercentage> <http://www.w3.org/2000/01/rdf-schema#label> "float percentage" .
+# 
+# http://qudt.org/2.1/schema/qudt/numericValue
+<http://qudt.org/2.1/schema/qudt/numericValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://qudt.org/2.1/schema/qudt/numericValue> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://qudt.org/2.1/schema/qudt/value> .
+<http://qudt.org/2.1/schema/qudt/numericValue> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid21 .
+_:genid21 <http://www.w3.org/2002/07/owl#unionOf> _:genid33 .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid32 .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid31 .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid30 .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid29 .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid27 .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid26 .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid25 .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid24 .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid23 .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid22 .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://base.namespace.com/TemperatureCondition> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://base.namespace.com/SpaceVelocityCondition> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://base.namespace.com/ReactorCondition> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://base.namespace.com/ReactionTimeCondition> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://base.namespace.com/ReactionMediumCondition> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://base.namespace.com/PressureCondition> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://base.namespace.com/PowerCondition> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://base.namespace.com/OutputQuantity> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://base.namespace.com/IrradianceCondition> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://base.namespace.com/IluminatedAreaCondition> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://base.namespace.com/Eg> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://base.namespace.com/BET> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://qudt.org/2.1/schema/qudt/numericValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#double> .
+<http://qudt.org/2.1/schema/qudt/numericValue> <http://www.w3.org/2000/01/rdf-schema#comment> "The numeric value of the measured property." .
+<http://qudt.org/2.1/schema/qudt/numericValue> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://qudt.org/2.1/schema/qudt/" .
+<http://qudt.org/2.1/schema/qudt/numericValue> <http://www.w3.org/2000/01/rdf-schema#label> "numeric value" .
+# 
+# http://qudt.org/2.1/schema/qudt/value
+<http://qudt.org/2.1/schema/qudt/value> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://qudt.org/2.1/schema/qudt/value> <http://www.w3.org/2000/01/rdf-schema#domain> <http://base.namespace.com/Condition> .
+<http://qudt.org/2.1/schema/qudt/value> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://qudt.org/2.1/schema/qudt/value> <http://www.w3.org/2000/01/rdf-schema#comment> "The value of the measured property." .
+<http://qudt.org/2.1/schema/qudt/value> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://qudt.org/2.1/schema/qudt/" .
+<http://qudt.org/2.1/schema/qudt/value> <http://www.w3.org/2000/01/rdf-schema#label> "value" .
+# 
+# https://schema.org/email
+<https://schema.org/email> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://schema.org/email> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/Person> .
+<https://schema.org/email> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://schema.org/email> <http://www.w3.org/2000/01/rdf-schema#comment> "The email of the author." .
+<https://schema.org/email> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "https://schema.org/" .
+<https://schema.org/email> <http://www.w3.org/2000/01/rdf-schema#label> "email" .
+# 
+# https://schema.org/name
+<https://schema.org/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/Person> .
+<https://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#comment> "The name of the author." .
+<https://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "https://schema.org/" .
+<https://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#label> "name" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://base.namespace.com/BET
+<http://base.namespace.com/BET> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/BET> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid34 .
+_:genid34 <http://www.w3.org/2002/07/owl#onClass> <http://qudt.org/2.1/schema/qudt/Unit> .
+_:genid34 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid34 <http://www.w3.org/2002/07/owl#onProperty> <http://qudt.org/2.1/schema/qudt/unit> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://base.namespace.com/BET> <http://www.w3.org/2000/01/rdf-schema#comment> "It describes the relationship between the number of gas molecules adsorbed at a given relative pressure." .
+<http://base.namespace.com/BET> <http://www.w3.org/2000/01/rdf-schema#label> "Specific Surface Area"@en .
+<http://base.namespace.com/BET> <http://www.w3.org/2000/01/rdf-schema#label> "Superficie específica"@es .
+<http://base.namespace.com/BET> <http://www.w3.org/2000/01/rdf-schema#label> "BET" .
+# 
+# http://base.namespace.com/CatalystSetUpCondition
+<http://base.namespace.com/CatalystSetUpCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/CatalystSetUpCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://base.namespace.com/Condition> .
+<http://base.namespace.com/CatalystSetUpCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid35 .
+_:genid35 <http://www.w3.org/2002/07/owl#onClass> <http://qudt.org/2.1/schema/qudt/Unit> .
+_:genid35 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid35 <http://www.w3.org/2002/07/owl#onProperty> <http://qudt.org/2.1/schema/qudt/unit> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://base.namespace.com/CatalystSetUpCondition> <http://www.w3.org/2000/01/rdf-schema#comment> "It describes which is the configuration of the catalyst." .
+<http://base.namespace.com/CatalystSetUpCondition> <http://www.w3.org/2000/01/rdf-schema#label> "Catalyst Set Up Condition" .
+# 
+# http://base.namespace.com/Condition
+<http://base.namespace.com/Condition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/Condition> <http://www.w3.org/2000/01/rdf-schema#comment> "It describes the conditions in which the material transformation process is done." .
+<http://base.namespace.com/Condition> <http://www.w3.org/2000/01/rdf-schema#label> "Condition" .
+# 
+# http://base.namespace.com/Eg
+<http://base.namespace.com/Eg> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/Eg> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid36 .
+_:genid36 <http://www.w3.org/2002/07/owl#onClass> <http://qudt.org/2.1/schema/qudt/Unit> .
+_:genid36 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid36 <http://www.w3.org/2002/07/owl#onProperty> <http://qudt.org/2.1/schema/qudt/unit> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://base.namespace.com/Eg> <http://www.w3.org/2000/01/rdf-schema#comment> "The difference of energy between the bottom of the conduction band and the top of the valence band of the electrons in a crystalline solid." .
+<http://base.namespace.com/Eg> <http://www.w3.org/2000/01/rdf-schema#label> "Band gap" .
+<http://base.namespace.com/Eg> <http://www.w3.org/2000/01/rdf-schema#label> "Eg" .
+<http://base.namespace.com/Eg> <http://www.w3.org/2000/01/rdf-schema#label> "Energy gap" .
+# 
+# http://base.namespace.com/IluminatedAreaCondition
+<http://base.namespace.com/IluminatedAreaCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/IluminatedAreaCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://base.namespace.com/LightSourceCondition> .
+<http://base.namespace.com/IluminatedAreaCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid37 .
+_:genid37 <http://www.w3.org/2002/07/owl#onClass> <http://qudt.org/2.1/schema/qudt/Unit> .
+_:genid37 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid37 <http://www.w3.org/2002/07/owl#onProperty> <http://qudt.org/2.1/schema/qudt/unit> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://base.namespace.com/IluminatedAreaCondition> <http://www.w3.org/2000/01/rdf-schema#comment> "It describes how large the illuminated area is in the process." .
+<http://base.namespace.com/IluminatedAreaCondition> <http://www.w3.org/2000/01/rdf-schema#label> "Iluminated Area Condition" .
+# 
+# http://base.namespace.com/Input
+<http://base.namespace.com/Input> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/Input> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid38 .
+_:genid38 <http://www.w3.org/2002/07/owl#onClass> <http://purl.obolibrary.org/obo/CHEBI_24431> .
+_:genid38 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid38 <http://www.w3.org/2002/07/owl#onProperty> <http://base.namespace.com/hasChemical> .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://base.namespace.com/Input> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid39 .
+_:genid39 <http://www.w3.org/2002/07/owl#onClass> <http://base.namespace.com/MaterialTransformationRole> .
+_:genid39 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid39 <http://www.w3.org/2002/07/owl#onProperty> <http://base.namespace.com/hasRole> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://base.namespace.com/Input> <http://www.w3.org/2000/01/rdf-schema#comment> "The material that takes part in the process as an input." .
+<http://base.namespace.com/Input> <http://www.w3.org/2000/01/rdf-schema#label> "Input" .
+# 
+# http://base.namespace.com/IrradianceCondition
+<http://base.namespace.com/IrradianceCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/IrradianceCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://base.namespace.com/LampCondition> .
+<http://base.namespace.com/IrradianceCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid40 .
+_:genid40 <http://www.w3.org/2002/07/owl#onClass> <http://qudt.org/2.1/schema/qudt/Unit> .
+_:genid40 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid40 <http://www.w3.org/2002/07/owl#onProperty> <http://qudt.org/2.1/schema/qudt/unit> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://base.namespace.com/IrradianceCondition> <http://www.w3.org/2000/01/rdf-schema#comment> "It describes the irradiance of the lamp on the process" .
+<http://base.namespace.com/IrradianceCondition> <http://www.w3.org/2000/01/rdf-schema#label> "Irradiance Condition" .
+# 
+# http://base.namespace.com/LampCondition
+<http://base.namespace.com/LampCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/LampCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://base.namespace.com/Condition> .
+<http://base.namespace.com/LampCondition> <http://www.w3.org/2000/01/rdf-schema#comment> "It describes what kind of lamp is used in the process." .
+<http://base.namespace.com/LampCondition> <http://www.w3.org/2000/01/rdf-schema#label> "Lamp Condition" .
+# 
+# http://base.namespace.com/LightSourceCondition
+<http://base.namespace.com/LightSourceCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/LightSourceCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://base.namespace.com/Condition> .
+<http://base.namespace.com/LightSourceCondition> <http://www.w3.org/2000/01/rdf-schema#comment> "It describes what kind of light source is used in the process." .
+<http://base.namespace.com/LightSourceCondition> <http://www.w3.org/2000/01/rdf-schema#label> "Light Source Condition" .
+# 
+# http://base.namespace.com/MaterialTransformationProcess
+<http://base.namespace.com/MaterialTransformationProcess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/MaterialTransformationProcess> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid41 .
+_:genid41 <http://www.w3.org/2002/07/owl#onClass> <http://base.namespace.com/Input> .
+_:genid41 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid41 <http://www.w3.org/2002/07/owl#onProperty> <http://base.namespace.com/hasInput> .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://base.namespace.com/MaterialTransformationProcess> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid42 .
+_:genid42 <http://www.w3.org/2002/07/owl#onClass> <http://base.namespace.com/Output> .
+_:genid42 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid42 <http://www.w3.org/2002/07/owl#onProperty> <http://base.namespace.com/hasOutput> .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://base.namespace.com/MaterialTransformationProcess> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid43 .
+_:genid43 <http://www.w3.org/2002/07/owl#onClass> <http://purl.org/ontology/bibo/Article> .
+_:genid43 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid43 <http://www.w3.org/2002/07/owl#onProperty> <http://base.namespace.com/reportedIn> .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://base.namespace.com/MaterialTransformationProcess> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid44 .
+_:genid44 <http://www.w3.org/2002/07/owl#onClass> <http://base.namespace.com/BET> .
+_:genid44 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid44 <http://www.w3.org/2002/07/owl#onProperty> <http://base.namespace.com/hasBET> .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://base.namespace.com/MaterialTransformationProcess> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid45 .
+_:genid45 <http://www.w3.org/2002/07/owl#onClass> <http://base.namespace.com/Yield> .
+_:genid45 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid45 <http://www.w3.org/2002/07/owl#onProperty> <http://base.namespace.com/hasYield> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://base.namespace.com/MaterialTransformationProcess> <http://www.w3.org/2000/01/rdf-schema#comment> "The process that transforms some input chemicals into other ones when energy is applied." .
+<http://base.namespace.com/MaterialTransformationProcess> <http://www.w3.org/2000/01/rdf-schema#label> "Material Transformation Process" .
+# 
+# http://base.namespace.com/MaterialTransformationRole
+<http://base.namespace.com/MaterialTransformationRole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/MaterialTransformationRole> <http://www.w3.org/2000/01/rdf-schema#comment> "The role that an input material can have in the transformation process." .
+<http://base.namespace.com/MaterialTransformationRole> <http://www.w3.org/2000/01/rdf-schema#label> "Material Transformation Role" .
+# 
+# http://base.namespace.com/Output
+<http://base.namespace.com/Output> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/Output> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid46 .
+_:genid46 <http://www.w3.org/2002/07/owl#onClass> <http://purl.obolibrary.org/obo/CHEBI_24431> .
+_:genid46 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid46 <http://www.w3.org/2002/07/owl#onProperty> <http://base.namespace.com/hasChemical> .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://base.namespace.com/Output> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid47 .
+_:genid47 <http://www.w3.org/2002/07/owl#onClass> <http://base.namespace.com/OutputQuantity> .
+_:genid47 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid47 <http://www.w3.org/2002/07/owl#onProperty> <http://base.namespace.com/hasOutputQuantity> .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://base.namespace.com/Output> <http://www.w3.org/2000/01/rdf-schema#comment> "The resultant material of the process after transformation." .
+<http://base.namespace.com/Output> <http://www.w3.org/2000/01/rdf-schema#label> "Output" .
+# 
+# http://base.namespace.com/OutputQuantity
+<http://base.namespace.com/OutputQuantity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/OutputQuantity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid48 .
+_:genid48 <http://www.w3.org/2002/07/owl#onClass> <http://qudt.org/2.1/schema/qudt/Unit> .
+_:genid48 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid48 <http://www.w3.org/2002/07/owl#onProperty> <http://qudt.org/2.1/schema/qudt/unit> .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://base.namespace.com/OutputQuantity> <http://www.w3.org/2000/01/rdf-schema#comment> "The amount of output material produced from the transformation." .
+<http://base.namespace.com/OutputQuantity> <http://www.w3.org/2000/01/rdf-schema#label> "Output Quantity" .
+# 
+# http://base.namespace.com/PowerCondition
+<http://base.namespace.com/PowerCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/PowerCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://base.namespace.com/LampCondition> .
+<http://base.namespace.com/PowerCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid49 .
+_:genid49 <http://www.w3.org/2002/07/owl#onClass> <http://qudt.org/2.1/schema/qudt/Unit> .
+_:genid49 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid49 <http://www.w3.org/2002/07/owl#onProperty> <http://qudt.org/2.1/schema/qudt/unit> .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://base.namespace.com/PowerCondition> <http://www.w3.org/2000/01/rdf-schema#comment> "Describe cual es la energía emitida por la lampara en el proceso."@es .
+<http://base.namespace.com/PowerCondition> <http://www.w3.org/2000/01/rdf-schema#comment> "It describes how much energy is emitted by the lamp in the process."@en .
+<http://base.namespace.com/PowerCondition> <http://www.w3.org/2000/01/rdf-schema#label> "Power Condition" .
+# 
+# http://base.namespace.com/PressureCondition
+<http://base.namespace.com/PressureCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/PressureCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://base.namespace.com/Condition> .
+<http://base.namespace.com/PressureCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid50 .
+_:genid50 <http://www.w3.org/2002/07/owl#onClass> <http://qudt.org/2.1/schema/qudt/Unit> .
+_:genid50 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid50 <http://www.w3.org/2002/07/owl#onProperty> <http://qudt.org/2.1/schema/qudt/unit> .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://base.namespace.com/PressureCondition> <http://www.w3.org/2000/01/rdf-schema#comment> "The pressupre in which the process is made." .
+<http://base.namespace.com/PressureCondition> <http://www.w3.org/2000/01/rdf-schema#label> "Pressure Condition" .
+# 
+# http://base.namespace.com/ReactionMediumCondition
+<http://base.namespace.com/ReactionMediumCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/ReactionMediumCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://base.namespace.com/Condition> .
+<http://base.namespace.com/ReactionMediumCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid51 .
+_:genid51 <http://www.w3.org/2002/07/owl#onClass> <http://qudt.org/2.1/schema/qudt/Unit> .
+_:genid51 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid51 <http://www.w3.org/2002/07/owl#onProperty> <http://qudt.org/2.1/schema/qudt/unit> .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://base.namespace.com/ReactionMediumCondition> <http://www.w3.org/2000/01/rdf-schema#comment> "The medium used in the reaction is made." .
+<http://base.namespace.com/ReactionMediumCondition> <http://www.w3.org/2000/01/rdf-schema#label> "Reaction Medium Condition" .
+# 
+# http://base.namespace.com/ReactionTimeCondition
+<http://base.namespace.com/ReactionTimeCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/ReactionTimeCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://base.namespace.com/Condition> .
+<http://base.namespace.com/ReactionTimeCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid52 .
+_:genid52 <http://www.w3.org/2002/07/owl#onClass> <http://qudt.org/2.1/schema/qudt/Unit> .
+_:genid52 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid52 <http://www.w3.org/2002/07/owl#onProperty> <http://qudt.org/2.1/schema/qudt/unit> .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://base.namespace.com/ReactionTimeCondition> <http://www.w3.org/2000/01/rdf-schema#comment> "It describes how long the transformation has been going on." .
+<http://base.namespace.com/ReactionTimeCondition> <http://www.w3.org/2000/01/rdf-schema#label> "Reaction Time Condition" .
+# 
+# http://base.namespace.com/ReactorCondition
+<http://base.namespace.com/ReactorCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/ReactorCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://base.namespace.com/Condition> .
+<http://base.namespace.com/ReactorCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid53 .
+_:genid53 <http://www.w3.org/2002/07/owl#onClass> <http://qudt.org/2.1/schema/qudt/Unit> .
+_:genid53 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid53 <http://www.w3.org/2002/07/owl#onProperty> <http://qudt.org/2.1/schema/qudt/unit> .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://base.namespace.com/ReactorCondition> <http://www.w3.org/2000/01/rdf-schema#comment> "It describes the reactor type used in the process and its size" .
+<http://base.namespace.com/ReactorCondition> <http://www.w3.org/2000/01/rdf-schema#label> "Reactor Condition" .
+# 
+# http://base.namespace.com/SpaceVelocityCondition
+<http://base.namespace.com/SpaceVelocityCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/SpaceVelocityCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://base.namespace.com/Condition> .
+<http://base.namespace.com/SpaceVelocityCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid54 .
+_:genid54 <http://www.w3.org/2002/07/owl#onClass> <http://qudt.org/2.1/schema/qudt/Unit> .
+_:genid54 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid54 <http://www.w3.org/2002/07/owl#onProperty> <http://qudt.org/2.1/schema/qudt/unit> .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://base.namespace.com/SpaceVelocityCondition> <http://www.w3.org/2000/01/rdf-schema#comment> "It is the ratio of the volumetric flow rate (hourly) of the catalyst present in the reactor." .
+<http://base.namespace.com/SpaceVelocityCondition> <http://www.w3.org/2000/01/rdf-schema#label> "Space Velocity Condition" .
+# 
+# http://base.namespace.com/TemperatureCondition
+<http://base.namespace.com/TemperatureCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/TemperatureCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://base.namespace.com/Condition> .
+<http://base.namespace.com/TemperatureCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid55 .
+_:genid55 <http://www.w3.org/2002/07/owl#onClass> <http://qudt.org/2.1/schema/qudt/Unit> .
+_:genid55 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid55 <http://www.w3.org/2002/07/owl#onProperty> <http://qudt.org/2.1/schema/qudt/unit> .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://base.namespace.com/TemperatureCondition> <http://www.w3.org/2000/01/rdf-schema#comment> "The temperature in which the process is made." .
+<http://base.namespace.com/TemperatureCondition> <http://www.w3.org/2000/01/rdf-schema#label> "Temperature Condition" .
+# 
+# http://base.namespace.com/WavelengthCondition
+<http://base.namespace.com/WavelengthCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/WavelengthCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://base.namespace.com/LightSourceCondition> .
+<http://base.namespace.com/WavelengthCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid56 .
+_:genid56 <http://www.w3.org/2002/07/owl#onClass> <http://qudt.org/2.1/schema/qudt/Unit> .
+_:genid56 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid56 <http://www.w3.org/2002/07/owl#onProperty> <http://qudt.org/2.1/schema/qudt/unit> .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://base.namespace.com/WavelengthCondition> <http://www.w3.org/2000/01/rdf-schema#comment> "This describes what is wavelength of the light soruce used in the process." .
+<http://base.namespace.com/WavelengthCondition> <http://www.w3.org/2000/01/rdf-schema#label> "Wavelength Condition" .
+# 
+# http://base.namespace.com/Yield
+<http://base.namespace.com/Yield> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://base.namespace.com/Yield> <http://www.w3.org/2000/01/rdf-schema#comment> "El rendimiento (yield) indica lo buena que ha sido la transformación en terminos de rendimiento."@es .
+<http://base.namespace.com/Yield> <http://www.w3.org/2000/01/rdf-schema#comment> "The yield indicates how good the transformation has been in terms of performance."@en .
+<http://base.namespace.com/Yield> <http://www.w3.org/2000/01/rdf-schema#label> "Yield" .
+# 
+# http://purl.obolibrary.org/obo/CHEBI_24431
+<http://purl.obolibrary.org/obo/CHEBI_24431> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/CHEBI_24431> <http://www.w3.org/2000/01/rdf-schema#comment> "The chemical that participates in process input/output." .
+<http://purl.obolibrary.org/obo/CHEBI_24431> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://purl.obolibrary.org/obo/"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://purl.obolibrary.org/obo/CHEBI_24431> <http://www.w3.org/2000/01/rdf-schema#label> "CHEBI:24431" .
+<http://purl.obolibrary.org/obo/CHEBI_24431> <http://www.w3.org/2000/01/rdf-schema#label> "Chemical entity" .
+# 
+# http://purl.org/ontology/bibo/Article
+<http://purl.org/ontology/bibo/Article> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/ontology/bibo/Article> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid57 .
+_:genid57 <http://www.w3.org/2002/07/owl#onClass> <https://schema.org/Person> .
+_:genid57 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid57 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/creator> .
+_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/ontology/bibo/Article> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid58 .
+_:genid58 <http://www.w3.org/2002/07/owl#onClass> <http://purl.org/ontology/bibo/Journal> .
+_:genid58 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid58 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/isPartOf> .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/ontology/bibo/Article> <http://www.w3.org/2000/01/rdf-schema#comment> "The article that describes the catalytic processes." .
+<http://purl.org/ontology/bibo/Article> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://purl.org/ontology/bibo/"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://purl.org/ontology/bibo/Article> <http://www.w3.org/2000/01/rdf-schema#label> "Article"@en .
+<http://purl.org/ontology/bibo/Article> <http://www.w3.org/2000/01/rdf-schema#label> "Artículo"@es .
+# 
+# http://purl.org/ontology/bibo/Journal
+<http://purl.org/ontology/bibo/Journal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/ontology/bibo/Journal> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://purl.org/ontology/bibo/"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://purl.org/ontology/bibo/Journal> <http://www.w3.org/2000/01/rdf-schema#label> "Journal" .
+# 
+# http://qudt.org/2.1/schema/qudt/Unit
+<http://qudt.org/2.1/schema/qudt/Unit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://qudt.org/2.1/schema/qudt/Unit> <http://www.w3.org/2000/01/rdf-schema#comment> "The unit of measure of a quantity." .
+<http://qudt.org/2.1/schema/qudt/Unit> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://qudt.org/2.1/schema/qudt/"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://qudt.org/2.1/schema/qudt/Unit> <http://www.w3.org/2000/01/rdf-schema#label> "Unit" .
+# 
+# http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+<http://www.w3.org/2004/02/skos/core#Concept> <http://purl.org/dc/terms/issued> "2004-02-xx" .
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos/core#> .
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/2000/01/rdf-schema#label> "Concept"@en .
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/2004/02/skos/core#definition> "An abstract idea or notion; a unit of thought." .
+# 
+# http://www.w3.org/2004/02/skos/core#ConceptScheme
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> <http://purl.org/dc/terms/issued> "2004-02-xx" .
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> <http://www.w3.org/2000/01/rdf-schema#comment> "A concept scheme may be defined to include concepts from different sources."@en .
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> <http://www.w3.org/2000/01/rdf-schema#comment> "Thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', and other types of controlled vocabulary are all examples of concept schemes.  Concept schemes are also embedded in glossaries and terminologies."@en .
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2004/02/skos/core#> .
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> <http://www.w3.org/2000/01/rdf-schema#label> "Concept Scheme"@en .
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> <http://www.w3.org/2004/02/skos/core#definition> "A set of concepts, optionally including statements about semantic relationships between those concepts."@en .
+# 
+# https://schema.org/Country
+<https://schema.org/Country> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.org/Country> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "https://schema.org/"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://schema.org/Country> <http://www.w3.org/2000/01/rdf-schema#label> "Country" .
+# 
+# https://schema.org/Person
+<https://schema.org/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.org/Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid59 .
+_:genid59 <http://www.w3.org/2002/07/owl#onClass> <https://schema.org/Country> .
+_:genid59 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid59 <http://www.w3.org/2002/07/owl#onProperty> <http://base.namespace.com/affiliationCountry> .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://schema.org/Person> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "https://schema.org/"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://schema.org/Person> <http://www.w3.org/2000/01/rdf-schema#label> "Person" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://base.namespace.com/Catalyst
+<http://base.namespace.com/Catalyst> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://base.namespace.com/Catalyst> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://base.namespace.com/MaterialTransformationRole> .
+<http://base.namespace.com/Catalyst> <http://www.w3.org/2000/01/rdf-schema#label> "Catalyst" .
+# 
+# http://base.namespace.com/CoCatalyst
+<http://base.namespace.com/CoCatalyst> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://base.namespace.com/CoCatalyst> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://base.namespace.com/MaterialTransformationRole> .
+<http://base.namespace.com/CoCatalyst> <http://www.w3.org/2000/01/rdf-schema#label> "Co-catalyst" .
+# 
+# http://base.namespace.com/Dopant
+<http://base.namespace.com/Dopant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://base.namespace.com/Dopant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://base.namespace.com/MaterialTransformationRole> .
+<http://base.namespace.com/Dopant> <http://www.w3.org/2000/01/rdf-schema#label> "Dopant" .
+# 
+# http://base.namespace.com/Dye
+<http://base.namespace.com/Dye> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://base.namespace.com/Dye> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://base.namespace.com/MaterialTransformationRole> .
+<http://base.namespace.com/Dye> <http://www.w3.org/2000/01/rdf-schema#label> "Dye" .
+# 
+# http://base.namespace.com/Reductant
+<http://base.namespace.com/Reductant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://base.namespace.com/Reductant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://base.namespace.com/MaterialTransformationRole> .
+<http://base.namespace.com/Reductant> <http://www.w3.org/2000/01/rdf-schema#label> "Reductant" .
+# 
+# http://base.namespace.com/Support
+<http://base.namespace.com/Support> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://base.namespace.com/Support> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://base.namespace.com/MaterialTransformationRole> .
+<http://base.namespace.com/Support> <http://www.w3.org/2000/01/rdf-schema#label> "Support" .
+# 
+# http://vocab.example.com/condition/lightSourceType
+<http://vocab.example.com/condition/lightSourceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://vocab.example.com/condition/lightSourceType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+# 
+# http://vocab.example.com/operationMode
+<http://vocab.example.com/operationMode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://vocab.example.com/operationMode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+# 
+# http://vocab.example.com/condition/reactionMediumType
+<http://vocab.example.com/condition/reactionMediumType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://vocab.example.com/condition/reactionMediumType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://purl.org/dc/terms/" .
+<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#label> "creator" .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

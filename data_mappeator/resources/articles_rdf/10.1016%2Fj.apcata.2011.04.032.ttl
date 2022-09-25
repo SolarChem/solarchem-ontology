@@ -1,0 +1,170 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/E.A.%20Ackerman-78> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "E.A. Ackerman" .
+
+<http://data.example.com/author/H.%20Li-80> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "H. Li" .
+
+<http://data.example.com/author/M.%20Gajdardziska-Josifovska-79> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "M. Gajdardziska-Josifovska" .
+
+<http://data.example.com/author/Q.%20Zhang-76> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "Q. Zhang" .
+
+<http://data.example.com/author/Y.%20Li-77> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "Y. Li" .
+
+<http://data.example.com/chemical/1> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TiO2" .
+
+<http://data.example.com/chemical/108> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "I" .
+
+<http://data.example.com/chemical/109> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "H2O,V/V%= 2.3" .
+
+<http://data.example.com/chemical/379> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TiO2" .
+
+<http://data.example.com/condition/4434> a ns2:ReactorCondition ;
+    ns2:conditionTypeAsText "Fixed-bed" ;
+    ns2:reactorType "Fixed-bed" ;
+    ns11:numericValue "0.06" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/4435> a ns2:CatalystSetUpCondition ;
+    ns2:conditionTypeAsText "Powder(Supported)" ;
+    ns2:setUpType "Powder(Supported)" ;
+    ns11:numericValue "0.2" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/4436> a ns2:LampPowerCondition ;
+    ns2:conditionTypeAsText "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns11:numericValue "450.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/4437> a ns2:LampIrradianceCondition ;
+    ns2:conditionTypeAsText "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/4438> a ns2:TemperatureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/4439> a ns2:PreasureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/4440> a ns2:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/4441> a ns2:ReactionTimeCondition ;
+    ns11:numericValue "3.50" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/4442> a ns2:ReactionMediumCondition ;
+    ns2:conditionTypeAsText "Gas" ;
+    ns2:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Gas> ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/4443> a ns2:WavelengthCondition ;
+    ns2:conditionTypeAsText "Visible" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns11:numericValue "400-780" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/4444> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionTypeAsText "Visible" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/input/1069> a ns2:Input ;
+    ns2:cristalStructure "Mix" ;
+    ns2:hasChemical <http://data.example.com/chemical/1>,
+        <http://data.example.com/chemical/379> ;
+    ns2:hasRole <http://base.namespace.com/Catalyst> .
+
+<http://data.example.com/input/1070> a ns2:Input ;
+    ns2:cristalStructure "Mix" ;
+    ns2:hasChemical <http://data.example.com/chemical/108> ;
+    ns2:hasRole <http://base.namespace.com/Dopant> .
+
+<http://data.example.com/input/1071> a ns2:Input ;
+    ns2:cristalStructure "Mix" ;
+    ns2:hasChemical <http://data.example.com/chemical/109> ;
+    ns2:hasRole <http://base.namespace.com/Reductant> .
+
+<http://data.example.com/journal/98> a ns21:Journal ;
+    dcterms:title "APPLIED CATALYSIS A-GENERAL" .
+
+<http://data.example.com/materialTransformastionProcess/424> a ns2:MaterialTransformationProcess ;
+    rdfs:label "I-TiO2" ;
+    ns2:hasBET <http://data.example.com/bet/424> ;
+    ns2:hasCondition <http://data.example.com/condition/4434>,
+        <http://data.example.com/condition/4435>,
+        <http://data.example.com/condition/4436>,
+        <http://data.example.com/condition/4437>,
+        <http://data.example.com/condition/4438>,
+        <http://data.example.com/condition/4439>,
+        <http://data.example.com/condition/4440>,
+        <http://data.example.com/condition/4441>,
+        <http://data.example.com/condition/4442>,
+        <http://data.example.com/condition/4443>,
+        <http://data.example.com/condition/4444> ;
+    ns2:hasInput <http://data.example.com/input/1069>,
+        <http://data.example.com/input/1070>,
+        <http://data.example.com/input/1071> ;
+    ns2:hasOutput <http://data.example.com/output/1279>,
+        <http://data.example.com/output/1280> ;
+    ns2:hasReactionEg <http://data.example.com/eg/424> ;
+    ns2:operationMode <http://vocab.example.com/operationMode/Batch> ;
+    ns2:reportedIn <https://doi.org/10.1016%2Fj.apcata.2011.04.032> .
+
+<http://data.example.com/output/1279> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/927> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/1279-gh> .
+
+<http://data.example.com/output/1280> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/927> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/1280-g> .
+
+<http://data.example.com/output_quantity/1279-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "2.4000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/1280-g> a ns2:OutputQuantity ;
+    ns2:numericValue "8.4000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<https://doi.org/10.1016%2Fj.apcata.2011.04.032> a ns21:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/424> ;
+    dcterms:creator <http://data.example.com/author/E.A.%20Ackerman-78>,
+        <http://data.example.com/author/H.%20Li-80>,
+        <http://data.example.com/author/M.%20Gajdardziska-Josifovska-79>,
+        <http://data.example.com/author/Q.%20Zhang-76>,
+        <http://data.example.com/author/Y.%20Li-77> ;
+    dcterms:date "2011-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/98> ;
+    dcterms:title "Visible light responsive iodine-doped TiO2 for photocatalytic reduction of CO2 to fuels" ;
+    ns21:abstract "Iodine-doped titanium oxide (I-TiO2) nanoparticles that are photocatalitically responsive to visible light illumination have been synthesized by hydrothermal method. The structure and properties of I-TiO2 nanocrystals prepared with different iodine doping levels and/or calcination temperatures were characterized by X-ray diffraction, transmission electron microscopy and diffraction, X-ray photoelectron spectroscopy, and UV&ndash;vis diffuse reflectance spectra. The three nominal iodine dopant levels (5, 10, 15wt.%) and the two lower calcination temperatures (375, 450&deg;C) produced mixture of anatase and brookite nanocrystals, with small fraction of rutile found at 550&deg;C. The anatase phase of TiO2 increased in volume fraction with increased calcination temperature and iodine levels. The photocatalytic activities of the I-TiO2 powders were investigated by photocatalytic reduction of CO2 with H2O under visible light (&lambda;&gt;400nm) and also under UV&ndash;vis illumination. CO was found to be the major photoreduction product using both undoped and doped TiO2. A high CO2 reduction activity was observed for I-TiO2 catalysts (highest CO yield equivalent to 2.4&mu;molg&minus;1h&minus;1) under visible light, and they also had much higher CO2 photoreduction efficiency than undoped TiO2 under UV&ndash;vis irradiation. I-TiO2 calcined at 375&deg;C has superior activity to those calcined at higher temperatures. Optimal doping levels of iodine were identified under visible and UV&ndash;vis irradiations, respectively. This is the first study that investigates nonmetal doped TiO2 without other co-catalysts for CO2 photoreduction to fuels under visible light." ;
+    ns21:doi "10.1016/j.apcata.2011.04.032" ;
+    ns21:pageStart "195"^^xsd:positiveInteger ;
+    ns21:volume "400"^^xsd:positiveInteger .
+
+<http://data.example.com/chemical/927> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CO" .
+
+<https://en.wikipedia.org/wiki/United%20States> a schema:Country .
+

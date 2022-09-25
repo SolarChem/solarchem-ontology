@@ -1,0 +1,240 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/C.%20Zhao-105> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "C. Zhao" .
+
+<http://data.example.com/author/D.%20T.%20Pitts-103> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "D. T. Pitts" .
+
+<http://data.example.com/author/H.%20Zhao-104> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "H. Zhao" .
+
+<http://data.example.com/author/L.%20Liu-102> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "L. Liu" .
+
+<http://data.example.com/author/Y.%20Li-106> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "Y. Li" .
+
+<http://data.example.com/chemical/1> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TiO2" .
+
+<http://data.example.com/chemical/2> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "Ag" .
+
+<http://data.example.com/chemical/3> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "H2O" .
+
+<http://data.example.com/chemical/379> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TiO2" .
+
+<http://data.example.com/condition/9087> a ns2:ReactorCondition ;
+    ns2:conditionTypeAsText "Fixed-bed" ;
+    ns2:reactorType "Fixed-bed" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/9088> a ns2:CatalystSetUpCondition ;
+    ns2:conditionTypeAsText "Other" ;
+    ns2:setUpType "Other" ;
+    ns11:numericValue "0.03" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/9089> a ns2:LampPowerCondition ;
+    ns2:conditionTypeAsText "Solar" ;
+    ns2:lampType "Solar" ;
+    ns11:numericValue "150.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/9090> a ns2:LampIrradianceCondition ;
+    ns2:conditionTypeAsText "Solar" ;
+    ns2:lampType "Solar" ;
+    ns11:numericValue "90.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/9091> a ns2:TemperatureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/9092> a ns2:PreasureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/9093> a ns2:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/9094> a ns2:ReactionTimeCondition ;
+    ns11:numericValue "6.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/9095> a ns2:ReactionMediumCondition ;
+    ns2:conditionTypeAsText "Gas" ;
+    ns2:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Gas> ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/9096> a ns2:WavelengthCondition ;
+    ns2:conditionTypeAsText "Solar" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/Solar> ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/9097> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionTypeAsText "Solar" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/Solar> ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/input/2227> a ns2:Input ;
+    ns2:cristalStructure "Anatase" ;
+    ns2:hasChemical <http://data.example.com/chemical/1>,
+        <http://data.example.com/chemical/379> ;
+    ns2:hasRole <http://base.namespace.com/Catalyst> .
+
+<http://data.example.com/input/2228> a ns2:Input ;
+    ns2:cristalStructure "Anatase" ;
+    ns2:hasChemical <http://data.example.com/chemical/2> ;
+    ns2:hasRole <http://base.namespace.com/Co-catalyst> ;
+    ns2:percentage 0e+00 .
+
+<http://data.example.com/input/2229> a ns2:Input ;
+    ns2:cristalStructure "Anatase" ;
+    ns2:hasChemical <http://data.example.com/chemical/3> ;
+    ns2:hasRole <http://base.namespace.com/Reductant> .
+
+<http://data.example.com/journal/98> a ns21:Journal ;
+    dcterms:title "APPLIED CATALYSIS A-GENERAL" .
+
+<http://data.example.com/materialTransformastionProcess/1649> a ns2:MaterialTransformationProcess ;
+    rdfs:label "TiO2" ;
+    ns2:hasBET <http://data.example.com/bet/1649> ;
+    ns2:hasCondition <http://data.example.com/condition/9087>,
+        <http://data.example.com/condition/9088>,
+        <http://data.example.com/condition/9089>,
+        <http://data.example.com/condition/9090>,
+        <http://data.example.com/condition/9091>,
+        <http://data.example.com/condition/9092>,
+        <http://data.example.com/condition/9093>,
+        <http://data.example.com/condition/9094>,
+        <http://data.example.com/condition/9095>,
+        <http://data.example.com/condition/9096>,
+        <http://data.example.com/condition/9097> ;
+    ns2:hasInput <http://data.example.com/input/2227>,
+        <http://data.example.com/input/2228>,
+        <http://data.example.com/input/2229> ;
+    ns2:hasOutput <http://data.example.com/output/2627>,
+        <http://data.example.com/output/2628>,
+        <http://data.example.com/output/2629>,
+        <http://data.example.com/output/2630>,
+        <http://data.example.com/output/2631>,
+        <http://data.example.com/output/2632>,
+        <http://data.example.com/output/2633>,
+        <http://data.example.com/output/2634>,
+        <http://data.example.com/output/2635> ;
+    ns2:hasReactionEg <http://data.example.com/eg/1649> ;
+    ns2:operationMode <http://vocab.example.com/operationMode/Batch> ;
+    ns2:reportedIn <https://doi.org/10.1016%2Fj.apcata.2013.08.019> .
+
+<http://data.example.com/output/2627> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/8> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/2627-gh> .
+
+<http://data.example.com/output/2628> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/927> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/2628-gh> .
+
+<http://data.example.com/output/2629> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/6> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/2629-gh> .
+
+<http://data.example.com/output/2630> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/8> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/2630-g> .
+
+<http://data.example.com/output/2631> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/927> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/2631-g> .
+
+<http://data.example.com/output/2632> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/6> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/2632-g> .
+
+<http://data.example.com/output/2633> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/8> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/2633-m2h> .
+
+<http://data.example.com/output/2634> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/927> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/2634-m2h> .
+
+<http://data.example.com/output/2635> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/6> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/2635-m2h> .
+
+<http://data.example.com/output_quantity/2627-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "1500.0000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/2628-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "140.0000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/2629-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "5.0000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/2630-g> a ns2:OutputQuantity ;
+    ns2:numericValue "9000.0000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/2631-g> a ns2:OutputQuantity ;
+    ns2:numericValue "0.5000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/2632-g> a ns2:OutputQuantity ;
+    ns2:numericValue "30.0000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/2633-m2h> a ns2:OutputQuantity ;
+    ns2:numericValue "7.9787"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-M2-HR> .
+
+<http://data.example.com/output_quantity/2634-m2h> a ns2:OutputQuantity ;
+    ns2:numericValue "0.7447"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-M2-HR> .
+
+<http://data.example.com/output_quantity/2635-m2h> a ns2:OutputQuantity ;
+    ns2:numericValue "0.0266"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-M2-HR> .
+
+<https://doi.org/10.1016%2Fj.apcata.2013.08.019> a ns21:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/1649> ;
+    dcterms:creator <http://data.example.com/author/C.%20Zhao-105>,
+        <http://data.example.com/author/D.%20T.%20Pitts-103>,
+        <http://data.example.com/author/H.%20Zhao-104>,
+        <http://data.example.com/author/L.%20Liu-102>,
+        <http://data.example.com/author/Y.%20Li-106> ;
+    dcterms:date "2013-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/98> ;
+    dcterms:title "Silver-incorporated bicrystalline (anatasebrookite) TiO2 microspheres for CO2 photoreduction with water in the presence of methanol" ;
+    ns21:abstract "Ag nanoparticles deposited on porous TiO2 microspheres with controllable Ag valence and TiO2 crystal phase were prepared through a sequential hydrothermal, ultrasonic spray pyrolysis and in situ photoreduction process. The crystal phase of TiO2, i.e., pure anatase (A), an anatase-rich anatase\\/brookite mixture (AB), or a brookite-rich anatase\\/brookite mixture (BA), was controlled by varying the hydrothermal reaction environment. The as-prepared Ag\\/TiO2 was dominated by the Ag(I) species, while Ag(0) was the major Ag species upon in situ photoreduction of the as-prepared Ag(I)\\/TiO2. The Ag\\/TiO2 composites were applied as photocatalysts for CO2 reduction with H2O, using methanol as a hole scavenger under UV-vis irradiation. Simultaneous production of hydrogen (H-2) and carbon-containing fuels (CO, CH4) was observed. The CH4 and H-2 production rates by Ag(0)\\/TiO2 exhibited a two-fold enhancement compared with Ag(I)\\/TiO2. The Ag(0)\\/TiO2 catalysts using TiO2(AB) as the support demonstrated 50% higher activity than using TiO2(A) as the support and more than three times higher activity than using TiO2(BA) and TiO2(P25) as the supports. In addition, the novel in situ photoreduction method of producing Ag(0) nanoparticles was superior to conventional ex situ photo-deposition and wet-impregnation methods, as evidenced by one order of magnitude higher activity of the catalysts prepared by the novel method. The superb activity of the Ag(0)\\/Ti(AB) catalysts was ascribed to their large surface area, small and well-dispersed Ag(0) nanoparticles, and an enhanced interfacial charge transfer between the anatase and brookite nanocrystals." ;
+    ns21:doi "10.1016/j.apcata.2013.08.019" ;
+    ns21:pageStart "474"^^xsd:positiveInteger ;
+    ns21:volume "467"^^xsd:positiveInteger .
+
+<http://data.example.com/chemical/6> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CH4" .
+
+<http://data.example.com/chemical/8> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "H2" .
+
+<http://data.example.com/chemical/927> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CO" .
+
+<https://en.wikipedia.org/wiki/United%20States> a schema:Country .
+

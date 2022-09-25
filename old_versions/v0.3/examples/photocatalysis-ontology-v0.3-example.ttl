@@ -1,0 +1,401 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix artleafs: <http://base.namespace.com> .
+@prefix qudt: <http://qudt.org//2.1/schema/qudt/> .
+@prefix unit: <http://qudt.org/2.1/vocab/unit> .
+@prefix bibo: <http://purl.org/ontology/bibo> .
+@prefix dc: <http://purl.org/dc/terms> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix chebi: <http://purl.obolibrary.org/obo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@base <http://base.namespace.com> .
+
+<http://base.namespace.com> rdf:type owl:Ontology ;
+			dc:creator "Oier Beaskoetxea" ;
+			owl:versionInfo "0.0.1" ;
+			dc:title "Photocatalysis Ontology" ;
+			dc:description "Ontology code created by Chowlk" .
+
+#################################################################
+#    Instances
+#################################################################
+
+<https://portal.issn.org/resource/ISSN/1571-1013>
+	a bibo:Journal ;
+	dc:title "CATALYSIS SURVEYS FROM ASIA" ;
+.
+<https://orcid.org/0000-0002-2231-3118>
+	a foaf:Person ;
+	foaf:mbox "cswu@ntu.edu.tw"^^xsd:string ;
+	artleafs:isFrom dbr:Taiwan^^dbo:Country ;
+.
+<#catalyst_TiO2_P25> a artleafs:Input ;
+	artleafs:hasChemical chebi:CHEBI:32234^^chebi:CHEBI:24431 ;
+	artleafs:cristalStructure "P25"^^xsd:string ;
+	artleafs:hasRole artleafs:Catalyst ;
+.
+<#co-catalyst_Cu> a artleafs:Input ;
+	artleafs:hasChemical chebi:CHEBI:28694^^chebi:CHEBI:24431 ;
+	artleafs:percentage 0.5^^xsd:double ;
+	artleafs:hasRole artleafs:Co-catalyst ;
+.
+<#co-catalyst_Fe> a artleafs:Input ;
+	artleafs:hasChemical chebi:CHEBI:18248^^chebi:CHEBI:24431 ;
+	artleafs:percentage 0.5^^xsd:double ;
+	artleafs:hasRole artleafs:Co-catalyst ;
+.
+<#dye_N3> a artleafs:Input ;
+	artleafs:hasChemical chebi:CHEBI:29448^^chebi:CHEBI:24431 ;
+	artleafs:hasRole artleafs:Dye ;
+.
+<#catalyst_setup1> a artleafs:CatalystSetUp ;
+	artleafs:setUpType "Film" ;
+.
+<#MT1_temperature> a artleafs:Temperature ;
+	qudt:value 75.00 ;
+	qudt:unit unit:DEG_C ;
+.
+<#MT1_pressure> a artleafs:Pressure ;
+	qudt:value 1.22 ;
+	qudt:unit unit:BAR ;
+.
+<#MT1_space_velocity> a artleafs:SpaceVelocity ;
+	qudt:value 83.3 ;
+	qudt:unit unit:PER-HR ;
+.
+<#MT1_reactor> a artleafs:Reactor ;
+	artleafs:reactorType "Fixed-bed" ;
+.
+<#MT1_reaction_time> a artleafs:ReactionTime ;
+	qudt:value 4.00 ;
+	qudt:unit unit:HR ;
+.
+<#MT1_wavelength> a artleafs:Wavelength ;
+	qudt:value "315-400(UV-C)" ;
+	qudt:unit unit:NanoM ;
+.
+<#MT1_light_source> a artleafs:LightSource ;
+	artleafs:lightSourceType "UV" ;
+	artleafs:hasWavelength <#MT1_wavelength> ;
+.
+<#MT1_power> a artleafs:Power ;
+	qudt:value 100.00 ;
+	qudt:unit unit:W ;
+.
+<#MT1_irradiance> a artleafs:Irradiance ;
+	qudt:value 2250.00 ;
+	qudt:unit unit:W-PER-M2 ;
+.
+<#MT1_lamp> a artleafs:Lamp ;
+	artleafs:lampType "Mercury(Hg)" ;
+	artleafs:hasPower <#MT1_power> ;
+	artleafs:hasIrradiance <#MT1_irradiance> ;
+.
+<#condition1> a artleafs:Condition ;
+	artleafs:operationMode "Continuous" ;
+	artleafs:hasReactionMedium artelafs:Gas ;
+	artleafs:hasCataystSetUp <#catalyst_setup1> ;
+	artleafs:hasTemperature <#MT1_temperature> ;
+	artleafs:hasPressure <#MT1_pressure> ;
+	artleafs:hasSpaceVelocity <#MT1_space_velocity> ;
+	artleafs:hasReactionTime <#MT1_reaction_time> ;
+	artleafs:hasReactor <#MT1_reactor> ;
+	artleafs:hasLightSource <#MT1_light_source> ;
+	artleafs:hasReductant chebi:CHEBI:15377 ;
+	artleafs:hasLamp <#MT1_lamp> ;
+.
+<#MT1_output1_quantity1> a artleafs:OutputQuantity ;
+	qudt:value 3.388 ;
+	qudt:unit unit:MicroMOL-PER-GM ;
+.
+<#MT1_output1_quantity2> a artleafs:OutputQuantity ;
+	qudt:value 0.847 ;
+	qudt:unit unit:MicroMOL-PER-GM-HR ;
+.
+<#MT1_output1> a artleafs:Output ;
+	artleafs:hasChemical chebi:CHEBI:16183 ;
+	artleafs:hasOutputQuantity <#MT1_output1_quantity1>;
+	artleafs:hasOutputQuantity <#MT1_output1_quantity2>;
+.
+<#MT1_output2_quantity1> a artleafs:OutputQuantity ;
+	qudt:value 2.248 ;
+	qudt:unit unit:MicroMOL-PER-GM ;
+.
+<#MT1_output2_quantity2> a artleafs:OutputQuantity ;
+	qudt:value 0.562 ;
+	qudt:unit unit:MicroMOL-PER-GM-HR ;
+.
+<#MT1_output2> a artleafs:Output ;
+	artleafs:hasChemical chebi:CHEBI:18153 ;
+	artleafs:hasOutputQuantity <#MT1_output2_quantity1>;
+	artleafs:hasOutputQuantity <#MT1_output2_quantity2>;
+.
+<#MT1>
+	a artleafs:MaterialTransformation ;
+	artleafs:materialTransformationName "N3-dye-Cu-Fe/TiO2"xsd:string ;
+	artleafs:hasInput <#catalyst_TiO2_P25>^^artleafs:Input ;
+	artleafs:hasInput <#co-catalyst_Cu> ;
+	artleafs:hasInput <#co-catalyst_Fe> ;
+	artleafs:hasInput <#dye_N3> ;
+	artleafs:hasCondition <#condition1> ;
+	artelafs:hasOutput <#MT1_output1> ;
+	artelafs:hasOutput <#MT1_output2> ;
+.
+<#MT2_reaction_time> a artleafs:ReactionTime ;
+	qudt:value 5.50 ;
+	qudt:unit unit:HR ;
+.
+<#MT2_light_source> a artleafs:LightSource ;
+	artleafs:lightSourceType "Solar" ;
+.
+<#MT2_irradiance> a artleafs:Irradiance ;
+	qudt:value 200.00 ;
+	qudt:unit unit:W-PER-M2 ;
+.
+<#MT2_lamp> a artleafs:Lamp ;
+	artleafs:lampType "Solar" ;
+	artleafs:hasIrradiance <#MT1_irradiance> ;
+.
+<#condition2> a artleafs:Condition ;
+	artleafs:operationMode "Continuous" ;
+	artleafs:hasReactionMedium artelafs:Gas ;
+	artleafs:hasCataystSetUp <#catalyst_setup1> ;
+	artleafs:hasTemperature <#MT1_temperature> ;
+	artleafs:hasPressure <#MT1_pressure> ;
+	artleafs:hasSpaceVelocity <#MT1_space_velocity> ;
+	artleafs:hasReactionTime <#MT2_reaction_time> ;
+	artleafs:hasReactor <#MT1_reactor> ;
+	artleafs:hasLightSource <#MT2_light_source> ;
+	artleafs:hasReductant chebi:CHEBI:15377 ;
+	artleafs:hasLamp <#MT2_lamp> ;
+.
+<#MT2_output1_quantity1> a artleafs:OutputQuantity ;
+	qudt:value 3.3935 ;
+	qudt:unit unit:MicroMOL-PER-GM ;
+.
+<#MT2_output1_quantity2> a artleafs:OutputQuantity ;
+	qudt:value 0.617 ;
+	qudt:unit unit:MicroMOL-PER-GM-HR ;
+.
+<#MT2_output1> a artleafs:Output ;
+	artleafs:hasChemical chebi:CHEBI:16183 ;
+	artleafs:hasOutputQuantity <#MT2_output1_quantity1>;
+	artleafs:hasOutputQuantity <#MT2_output1_quantity2>;
+.
+<#MT2>
+	a artleafs:MaterialTransformation ;
+	artleafs:materialTransformationName "N3-dye-Cu-Fe/TiO2"xsd:string ;
+	artleafs:hasInput <#catalyst_TiO2_P25>^^artleafs:Input ;
+	artleafs:hasInput <#co-catalyst_Cu> ;
+	artleafs:hasInput <#co-catalyst_Fe> ;
+	artleafs:hasInput <#dye_N3> ;
+	artleafs:hasCondition <#condition2> ;
+	artelafs:hasOutput <#MT2_output1> ;
+.
+<#catalyst_TiO2_Anatase> a artleafs:Input ;
+	artleafs:hasChemical chebi:CHEBI:32234 ;
+	artleafs:cristalStructure "Anatase" ;
+	artleafs:hasRole artleafs:Catalyst ;
+.
+<#NiO2> a chebi:CHEBI:24431
+	chebi:formula "NiO2" ;
+.
+<#support_NiO2> a artleafs:Input ;
+	artleafs:hasChemical <#NiO2> ;
+	artleafs:hasRole artleafs:Support ;
+.
+<#MT3_light_source> a artleafs:LightSource ;
+	artleafs:lightSourceType "Solar" ;
+.
+<#MT3_irradiance> a artleafs:Irradiance ;
+	qudt:value 20.50 ;
+	qudt:unit unit:W-PER-M2 ;
+.
+<#condition3> a artleafs:Condition ;
+	artleafs:operationMode "Continuous" ;
+	artleafs:hasReactionMedium artelafs:Gas ;
+	artleafs:hasCataystSetUp <#catalyst_setup1> ;
+	artleafs:hasTemperature <#MT1_temperature> ;
+	artleafs:hasPressure <#MT1_pressure> ;
+	artleafs:hasSpaceVelocity <#MT1_space_velocity> ;
+	artleafs:hasReactionTime <#MT2_reaction_time> ;
+	artleafs:hasReactor <#MT1_reactor> ;
+	artleafs:hasLightSource <#MT3_light_source> ;
+	artleafs:hasReductant chebi:CHEBI:15377 ;
+	artleafs:hasLamp <#MT2_lamp> ;
+.
+<#MT3_output1_quantity1> a artleafs:OutputQuantity ;
+	qudt:value 1.5345 ;
+	qudt:unit unit:MicroMOL-PER-GM ;
+.
+<#MT3_output1_quantity2> a artleafs:OutputQuantity ;
+	qudt:value 0.279 ;
+	qudt:unit unit:MicroMOL-PER-GM-HR ;
+.
+<#MT3_output1> a artleafs:Output ;
+	artleafs:hasChemical chebi:CHEBI:16183 ;
+	artleafs:hasOutputQuantity <#MT3_output1_quantity1>;
+	artleafs:hasOutputQuantity <#MT3_output1_quantity2>;
+.
+<#MT3>
+	a artleafs:MaterialTransformation ;
+	artleafs:materialTransformationName "Cu-Fe/TiO2/SiO2-acac" ;
+	artleafs:hasInput <#catalyst_TiO2_Anatase> ;
+	artleafs:hasInput <#co-catalyst_Cu> ;
+	artleafs:hasInput <#co-catalyst_Fe> ;
+	artleafs:hasInput <#support_NiO2> ;
+	artleafs:hasCondition <#condition3> ;
+	artelafs:hasOutput <#MT3_output1> ;
+.
+<https://doi.org/10.1007/s10563-009-9065-9>
+	a bibo:Article ;
+	bibo:doi "10.1007/s10563-009-9065-9"^^xsd:string ;
+	bibo:abstract "Sun is the Earth&rsquo;s ultimate and inexhaustible energy source. One of the best routes to remedy the CO2 problem is to convert it to valuable hydrocarbons using solar energy. In this study, CO2 was photocatalytically reduced to produce methanol, methane and ethylene in a steady-state optical-fiber reactor under artificial light and real sunlight irradiation. The photocatalyst was dip-coated on the optical fibers that enable the light to transmit and spread uniformly inside the reactor. The optical-fiber photoreactor, comprised of nearly 120 photocatalyst-coated fibers, was designed and assembled. The XRD spectra indicated the anatase phase for all photocatalysts. It is found that the methanol yield increased with UV light intensity. A maximum methanol yield of 4.12 &mu;mole/g-cat h is obtained when 1.0 wt% Ag/TiO2 photocatalyst was used under a light intensity of 10 W/cm2. When mixed oxide, TiO2&ndash;SiO2, is doped with Cu and Fe metals, the resulting photocatalysts show substantial difference in hydrocarbon production as well as product selectivity. Methane and ethylene were produced on Cu&ndash;Fe loaded TiO2&ndash;SiO2 photocatalyst. Since dye-sensitized Cu&ndash;Fe/P25 photocatalyst can fully harvest the light energy of 400&ndash;800 nm from sunlight, its photoactivity was significantly enhanced. Finally, CO2 photoreduction was studied by in situ IR spectroscopy and possible mechanism for the photoreaction was proposed."^^xsd:string ;
+	bibo:volume 13^^xsd:nonNegativeInteger ;
+	dc:title "Photocatalytic reduction of greenhouse gas CO2 to fuel"^^xsd:string ;
+	dc:date 2009^^xsd:date ;
+	bibo:pageStart 30^^xsd:nonNegativeInteger ;
+	dc:isPartOf  <https://portal.issn.org/resource/ISSN/1571-1013>^^bibo:Journal;
+	dc:creator  <https://orcid.org/0000-0002-2231-3118>^^foaf:Person;
+	artleafs:hasMaterialTransformationProcess <#MT1>^^artleafs:MaterialTransformation ;
+	artleafs:hasMaterialTransformationProcess <#MT2>^^artleafs:MaterialTransformation ;
+	artleafs:hasMaterialTransformationProcess <#MT3>^^artleafs:MaterialTransformation ;
+.
+#########################################################################################################
+<https://portal.issn.org/resource/ISSN/0959-9428>
+	a bibo:Journal ;
+	dc:title "Journal of Materials Chemistry" ;
+.
+<https://orcid.org/0000-0003-2227-5008>
+	a foaf:Person ;
+	foaf:mbox "qhzhang@upc.edu.cn" ;
+	artleafs:isFrom dbr:China ;
+.
+<https://orcid.org/0000-0002-4106-9093>
+	a foaf:Person ;
+	foaf:mbox "jizhuang@jnu.edu.cn" ;
+	artleafs:isFrom dbr:China ;
+.
+<https://scholar.google.com/citations?user=GZOJpwYAAAAJ&hl=es&oi=sra>
+	a foaf:Person ;
+	artleafs:isFrom dbr:China ;
+.
+<https://orcid.org/0000-0003-3030-2440>
+	a foaf:Person ;
+	artleafs:isFrom dbr:China ;
+.
+<#AgBr> a chebi:CHEBI:24431
+	chebi:formula "AgBr" ;
+.
+<#catalyst_AgCl> a artleafs:Input ;
+	artleafs:hasChemical chebi:CHEBI:30341 ;
+	artleafs:hasRole artleafs:Catalyst ;
+.
+<#co-catalyst_AgBr> a artleafs:Input ;
+	artleafs:hasChemical <#AgBr> ;
+	artleafs:hasRole artleafs:Co-catalyst ;
+.
+<#co-catalyst_Ag> a artleafs:Input ;
+	artleafs:hasChemical chebi:CHEBI:30512 ;
+	artleafs:hasRole artleafs:Co-catalyst ;
+.
+<#catalyst_setup2> a artleafs:CatalystSetUp ;
+	artleafs:setUpType "Powder(Suspended)" ;
+.
+<#MT4_reactor> a artleafs:Reactor ;
+	artleafs:reactorType "Slurry" ;
+.
+<#MT4_reaction_time> a artleafs:ReactionTime ;
+	qudt:value 5.00 ;
+	qudt:unit unit:HR ;
+.
+<#MT4_wavelength> a artleafs:Wavelength ;
+	qudt:value "400-780" ;
+	qudt:unit unit:NanoM ;
+.
+<#MT4_light_source> a artleafs:LightSource ;
+	artleafs:lightSourceType "Visual" ;
+	artleafs:hasWavelength <#MT4_wavelength> ;
+.
+<#MT4_power> a artleafs:Power ;
+	qudt:value 300.00 ;
+	qudt:unit unit:W ;
+.
+<#MT4_lamp> a artleafs:Lamp ;
+	artleafs:lampType "Xenon(Xe)" ;
+	artleafs:hasPower <#MT4_power> ;
+.
+<#condition4> a artleafs:Condition ;
+	artleafs:operationMode "Batch" ;
+	artleafs:hasReactionMedium artelafs:Liquid ;
+	artleafs:hasCataystSetUp <#catalyst_setup2> ;
+	artleafs:hasReactionTime <#MT4_reaction_time> ;
+	artleafs:hasReactor <#MT4_reactor> ;
+	artleafs:hasLightSource <#MT4_light_source> ;
+	artleafs:hasReductant chebi:CHEBI:15377 ;
+	artleafs:hasLamp <#MT4_lamp> ;
+.
+<#CH3OH> a chebi:CHEBI:24431
+	chebi:formula "CH3OH" ;
+.
+<#MT4_output1_quantity1> a artleafs:OutputQuantity ;
+	qudt:value 44 ;
+	qudt:unit unit:MicroMOL-PER-GM-HR ;
+.
+<#MT4_output1_quantity2> a artleafs:OutputQuantity ;
+	qudt:value 220 ;
+	qudt:unit unit:MicroMOL-PER-GM ;
+.
+<#MT4_output1> a artleafs:Output ;
+	artleafs:hasChemical <#CH3OH> ;
+	artleafs:hasOutputQuantity <#MT4_output1_quantity1>;
+	artleafs:hasOutputQuantity <#MT4_output1_quantity2>;
+.
+<#MT4_output2_quantity1> a artleafs:OutputQuantity ;
+	qudt:value 62 ;
+	qudt:unit unit:MicroMOL-PER-GM-HR ;
+.
+<#MT4_output2_quantity2> a artleafs:OutputQuantity ;
+	qudt:value 310 ;
+	qudt:unit unit:MicroMOL-PER-GM ;
+.
+<#MT4_output2> a artleafs:Output ;
+	artleafs:hasChemical chebi:CHEBI:16236 ;
+	artleafs:hasOutputQuantity <#MT4_output2_quantity1>;
+	artleafs:hasOutputQuantity <#MT4_output2_quantity2>;
+.
+<#MT4>
+	a artleafs:MaterialTransformation ;
+	artleafs:materialTransformationName "Ag@AgBr/AgCl" ;
+	artleafs:hasInput <#catalyst_AgCl> ;
+	artleafs:hasInput <#co-catalyst_AgBr> ;
+	artleafs:hasInput <#co-catalyst_Ag> ;
+	artleafs:hasInput <#support_NiO2> ;
+	artleafs:hasCondition <#condition4> ;
+	artelafs:hasOutput <#MT4_output1> ;
+	artelafs:hasOutput <#MT4_output2> ;
+.
+<https://doi.org/10.1039/C2JM31736B>
+	a bibo:Article ;
+	bibo:doi "10.1039/C2JM31736B" ;
+	bibo:abstract "Heterostructured Ag@AgBr/AgCl nanocashews have been synthesized by an anion-exchange reaction between AgCl nanocubes and Br&minus; ions followed by photoreduction. Compared to polyhedral Ag@AgBr nanoparticles, the obtained nanostructures exhibit enhanced photocatalytic activity towards decomposition of organic pollutants, i.e., rhodamine-B (RhB). For example, only 2 min is taken to completely decompose RhB molecules with the assistance of these novel heterostructured nanoparticles under visible light irradiation. Furthermore, the as-synthesized nanocatalyst can be reused 20 times without losing activity, showing its high stability. Interestingly, the novel heterostructured Ag@AgBr/AgCl nanophotocatalyst also shows efficient visible light conversion of CO2 to energetic fuels, e.g. methanol/ethanol. Therefore, the present route opens an avenue to achieve highly efficient visible-light-driven nanophotocatalysts for applications in environmental remediation and resourceful use of CO2." ;
+	bibo:volume 22 ;
+	dc:title "Synthesis of Ag@AgBr/AgCl heterostructured nanocashews with enhanced photocatalytic performance via anion exchange" ;
+	dc:date 2012 ;
+	bibo:pageStart 13153 ;
+	dc:isPartOf  <https://portal.issn.org/resource/ISSN/1571-1013>;
+	#NOTE: no se ha podido encontrar a todos los autores
+	dc:creator  <https://orcid.org/0000-0003-2227-5008> ;
+	dc:creator  <https://orcid.org/0000-0002-4106-9093> ;
+	dc:creator  <https://scholar.google.com/citations?user=GZOJpwYAAAAJ&hl=es&oi=sra> ;
+	dc:creator  <https://orcid.org/0000-0003-3030-2440> ;
+	artleafs:hasMaterialTransformationProcess <#MT4> ;

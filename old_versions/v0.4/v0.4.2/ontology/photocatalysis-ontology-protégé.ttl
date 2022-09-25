@@ -1,0 +1,1076 @@
+@prefix : <http://base.namespace.com#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix qudt: <http://qudt.org//2.1/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix chebi: <http://purl.obolibrary.org/obo/> .
+@prefix phcat: <http://base.namespace.com/> .
+@prefix schema: <https://schema.org/> .
+@base <http://base.namespace.com> .
+
+<http://base.namespace.com> rdf:type owl:Ontology ;
+                             dc:creator "Oier Beaskoetxea" ;
+                             dc:description "Ontology code created by Chowlk" ;
+                             dc:title "The Photocatalysis Ontology"^^xsd:string ;
+                             owl:versionInfo "0.4.2" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/creator
+dc:creator rdf:type owl:AnnotationProperty ;
+           rdfs:range schema:Person .
+
+
+###  http://purl.org/dc/terms/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dc:title rdf:type owl:AnnotationProperty ;
+         rdfs:range xsd:string ;
+         rdfs:domain bibo:Article .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdfs:range xsd:string ;
+           rdfs:domain phcat:MaterialTransformationProcess ,
+                       chebi:CHEBI_24431 .
+
+
+###  http://www.w3.org/2002/07/owl#maxCardinality
+owl:maxCardinality rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://base.namespace.com/hasBET
+phcat:hasBET rdf:type owl:ObjectProperty ;
+             rdfs:domain phcat:MaterialTransformationProcess ;
+             rdfs:range phcat:BET .
+
+
+###  http://base.namespace.com/hasChemical
+phcat:hasChemical rdf:type owl:ObjectProperty ;
+                  rdfs:domain phcat:Input ,
+                              phcat:Output ;
+                  rdfs:range chebi:CHEBI_24431 .
+
+
+###  http://base.namespace.com/hasCondition
+phcat:hasCondition rdf:type owl:ObjectProperty ;
+                   rdfs:domain phcat:MaterialTransformationProcess ;
+                   rdfs:range phcat:Condition .
+
+
+###  http://base.namespace.com/hasEg
+phcat:hasEg rdf:type owl:ObjectProperty ;
+            rdfs:domain phcat:MaterialTransformationProcess ;
+            rdfs:range phcat:Eg .
+
+
+###  http://base.namespace.com/hasInput
+phcat:hasInput rdf:type owl:ObjectProperty ;
+               rdfs:domain phcat:MaterialTransformationProcess ;
+               rdfs:range phcat:Input .
+
+
+###  http://base.namespace.com/hasMaterialTransformationProcess
+phcat:hasMaterialTransformationProcess rdf:type owl:ObjectProperty ;
+                                       owl:inverseOf phcat:reportedIn ;
+                                       rdfs:domain bibo:Article ;
+                                       rdfs:range phcat:MaterialTransformationProcess .
+
+
+###  http://base.namespace.com/hasOutput
+phcat:hasOutput rdf:type owl:ObjectProperty ;
+                rdfs:domain phcat:MaterialTransformationProcess ;
+                rdfs:range phcat:Output .
+
+
+###  http://base.namespace.com/hasOutputCuantity
+phcat:hasOutputCuantity rdf:type owl:ObjectProperty ;
+                        rdfs:domain phcat:Output ;
+                        rdfs:range phcat:OutputQuantity .
+
+
+###  http://base.namespace.com/hasReactionMedium
+phcat:hasReactionMedium rdf:type owl:ObjectProperty ;
+                        rdfs:domain phcat:MaterialTransformationProcess ;
+                        rdfs:range phcat:ReactionMedium .
+
+
+###  http://base.namespace.com/hasReductant
+phcat:hasReductant rdf:type owl:ObjectProperty ;
+                   rdfs:domain phcat:MaterialTransformationProcess ;
+                   rdfs:range chebi:CHEBI_24431 .
+
+
+###  http://base.namespace.com/hasRole
+phcat:hasRole rdf:type owl:ObjectProperty ;
+              rdfs:domain phcat:Input ;
+              rdfs:range phcat:MaterialTransformationRole .
+
+
+###  http://base.namespace.com/reportedIn
+phcat:reportedIn rdf:type owl:ObjectProperty ;
+                 rdfs:domain phcat:MaterialTransformationProcess ;
+                 rdfs:range bibo:Article .
+
+
+###  http://purl.org/dc/terms/creator
+dc:creator rdf:type owl:ObjectProperty ;
+           rdfs:domain bibo:Article ;
+           rdfs:range schema:Person .
+
+
+###  http://purl.org/dc/terms/isPartOf
+dc:isPartOf rdf:type owl:ObjectProperty ;
+            rdfs:domain bibo:Article ;
+            rdfs:range bibo:Journal .
+
+
+###  http://qudt.org//2.1/schema/qudt/unit
+qudt:unit rdf:type owl:ObjectProperty ;
+          rdfs:domain phcat:BET ,
+                      phcat:CatalystSetUpCondition ,
+                      phcat:Eg ,
+                      phcat:IluminatedAreaCondition ,
+                      phcat:IrradianceCondition ,
+                      phcat:OutputQuantity ,
+                      phcat:PowerCondition ,
+                      phcat:PressureCondition ,
+                      phcat:ReactionTimeCondition ,
+                      phcat:ReactorCondition ,
+                      phcat:SpaceVelocityCondition ,
+                      phcat:TemperatureCondition ,
+                      phcat:WavelengthCondition ;
+          rdfs:range qudt:Unit .
+
+
+###  https://schema.org/nationality
+schema:nationality rdf:type owl:ObjectProperty ;
+                   rdfs:domain schema:Person ;
+                   rdfs:range schema:Country .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://base.namespace.com/conditionType
+phcat:conditionType rdf:type owl:DatatypeProperty ;
+                    rdfs:domain phcat:Condition ;
+                    rdfs:range xsd:string .
+
+
+###  http://base.namespace.com/cristalStructure
+phcat:cristalStructure rdf:type owl:DatatypeProperty ;
+                       rdfs:domain phcat:Input ;
+                       rdfs:range xsd:string .
+
+
+###  http://base.namespace.com/lampType
+phcat:lampType rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf phcat:conditionType ;
+               rdfs:domain phcat:LampCondition ;
+               rdfs:range xsd:string .
+
+
+###  http://base.namespace.com/lightSourceType
+phcat:lightSourceType rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf phcat:conditionType ;
+                      rdfs:domain phcat:LightSourceCondition ;
+                      rdfs:range xsd:string .
+
+
+###  http://base.namespace.com/operationMode
+phcat:operationMode rdf:type owl:DatatypeProperty ;
+                    rdfs:domain phcat:MaterialTransformationProcess ;
+                    rdfs:range xsd:string .
+
+
+###  http://base.namespace.com/pH
+phcat:pH rdf:type owl:DatatypeProperty ;
+         rdfs:domain phcat:ReactionMedium ;
+         rdfs:range xsd:nonNegativeInteger .
+
+
+###  http://base.namespace.com/percentage
+phcat:percentage rdf:type owl:DatatypeProperty ;
+                 rdfs:domain phcat:Input ;
+                 rdfs:range xsd:double .
+
+
+###  http://base.namespace.com/reactorType
+phcat:reactorType rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf phcat:conditionType ;
+                  rdfs:domain phcat:ReactorCondition ;
+                  rdfs:range xsd:string .
+
+
+###  http://base.namespace.com/setUpType
+phcat:setUpType rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf phcat:conditionType ;
+                rdfs:domain phcat:CatalystSetUpCondition ;
+                rdfs:range xsd:string .
+
+
+###  http://purl.obolibrary.org/obo/formula
+chebi:formula rdf:type owl:DatatypeProperty ;
+              rdfs:domain chebi:CHEBI_24431 ;
+              rdfs:range xsd:string .
+
+
+###  http://purl.org/dc/terms/date
+dc:date rdf:type owl:DatatypeProperty ;
+        rdfs:domain bibo:Article ;
+        rdfs:range xsd:dateTime .
+
+
+###  http://purl.org/dc/terms/title
+dc:title rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/ontology/bibo/abstract
+bibo:abstract rdf:type owl:DatatypeProperty ;
+              rdfs:domain bibo:Article ;
+              rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/ontology/bibo/doi
+bibo:doi rdf:type owl:DatatypeProperty ;
+         rdfs:domain bibo:Article ;
+         rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/ontology/bibo/issue
+bibo:issue rdf:type owl:DatatypeProperty ;
+           rdfs:domain bibo:Article ;
+           rdfs:range xsd:string .
+
+
+###  http://purl.org/ontology/bibo/pageStart
+bibo:pageStart rdf:type owl:DatatypeProperty ;
+               rdfs:domain bibo:Article ;
+               rdfs:range rdfs:Literal .
+
+
+###  http://purl.org/ontology/bibo/volume
+bibo:volume rdf:type owl:DatatypeProperty ;
+            rdfs:domain bibo:Article ;
+            rdfs:range rdfs:Literal .
+
+
+###  http://qudt.org//2.1/schema/qudt/numericValue
+qudt:numericValue rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf qudt:value ;
+                  rdfs:domain phcat:BET ,
+                              phcat:CatalystSetUpCondition ,
+                              phcat:Eg ,
+                              phcat:IluminatedAreaCondition ,
+                              phcat:IrradianceCondition ,
+                              phcat:OutputQuantity ,
+                              phcat:PowerCondition ,
+                              phcat:PressureCondition ,
+                              phcat:ReactionTimeCondition ,
+                              phcat:ReactorCondition ,
+                              phcat:SpaceVelocityCondition ,
+                              phcat:TemperatureCondition ;
+                  rdfs:range xsd:double .
+
+
+###  http://qudt.org//2.1/schema/qudt/value
+qudt:value rdf:type owl:DatatypeProperty ;
+           rdfs:domain phcat:Condition ;
+           rdfs:range rdfs:Literal .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:DatatypeProperty .
+
+
+###  https://schema.org/email
+schema:email rdf:type owl:DatatypeProperty ;
+             rdfs:domain schema:Person ;
+             rdfs:range xsd:string .
+
+
+###  https://schema.org/name
+schema:name rdf:type owl:DatatypeProperty ;
+            rdfs:domain schema:Person ;
+            rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://base.namespace.com/BET
+phcat:BET rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty qudt:unit ;
+                            owl:cardinality "1"^^xsd:nonNegativeInteger
+                          ] .
+
+
+###  http://base.namespace.com/CatalystSetUpCondition
+phcat:CatalystSetUpCondition rdf:type owl:Class ;
+                             rdfs:subClassOf phcat:Condition .
+
+
+###  http://base.namespace.com/Condition
+phcat:Condition rdf:type owl:Class .
+
+
+###  http://base.namespace.com/Eg
+phcat:Eg rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty qudt:unit ;
+                           owl:cardinality "1"^^xsd:nonNegativeInteger
+                         ] .
+
+
+###  http://base.namespace.com/IluminatedAreaCondition
+phcat:IluminatedAreaCondition rdf:type owl:Class ;
+                              rdfs:subClassOf phcat:LightSourceCondition ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty qudt:unit ;
+                                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                                              ] .
+
+
+###  http://base.namespace.com/Input
+phcat:Input rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty phcat:hasChemical ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty phcat:hasRole ;
+                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                            ] .
+
+
+###  http://base.namespace.com/IrradianceCondition
+phcat:IrradianceCondition rdf:type owl:Class ;
+                          rdfs:subClassOf phcat:LampCondition ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty qudt:unit ;
+                                            owl:cardinality "1"^^xsd:nonNegativeInteger
+                                          ] .
+
+
+###  http://base.namespace.com/LampCondition
+phcat:LampCondition rdf:type owl:Class ;
+                    rdfs:subClassOf phcat:Condition .
+
+
+###  http://base.namespace.com/LightSourceCondition
+phcat:LightSourceCondition rdf:type owl:Class ;
+                           rdfs:subClassOf phcat:Condition .
+
+
+###  http://base.namespace.com/MaterialTransformationProcess
+phcat:MaterialTransformationProcess rdf:type owl:Class ;
+                                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                      owl:onProperty phcat:hasInput ;
+                                                      owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                    ] ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty phcat:hasOutput ;
+                                                      owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                    ] ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty phcat:hasReactionMedium ;
+                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                    ] ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty phcat:hasReductant ;
+                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                    ] ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty phcat:reportedIn ;
+                                                      owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                    ] ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty phcat:hasBET ;
+                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                    ] .
+
+
+###  http://base.namespace.com/MaterialTransformationRole
+phcat:MaterialTransformationRole rdf:type owl:Class .
+
+
+###  http://base.namespace.com/Output
+phcat:Output rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty phcat:hasChemical ;
+                               owl:cardinality "1"^^xsd:nonNegativeInteger
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty phcat:hasOutputCuantity ;
+                               owl:cardinality "1"^^xsd:nonNegativeInteger
+                             ] .
+
+
+###  http://base.namespace.com/OutputQuantity
+phcat:OutputQuantity rdf:type owl:Class ;
+                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                       owl:onProperty qudt:unit ;
+                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                     ] .
+
+
+###  http://base.namespace.com/PowerCondition
+phcat:PowerCondition rdf:type owl:Class ;
+                     rdfs:subClassOf phcat:LampCondition ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty qudt:unit ;
+                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                     ] .
+
+
+###  http://base.namespace.com/PressureCondition
+phcat:PressureCondition rdf:type owl:Class ;
+                        rdfs:subClassOf phcat:Condition ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty qudt:unit ;
+                                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                                        ] .
+
+
+###  http://base.namespace.com/ReactionMedium
+phcat:ReactionMedium rdf:type owl:Class .
+
+
+###  http://base.namespace.com/ReactionTimeCondition
+phcat:ReactionTimeCondition rdf:type owl:Class ;
+                            rdfs:subClassOf phcat:Condition ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty qudt:unit ;
+                                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                                            ] .
+
+
+###  http://base.namespace.com/ReactorCondition
+phcat:ReactorCondition rdf:type owl:Class ;
+                       rdfs:subClassOf phcat:Condition ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty qudt:unit ;
+                                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                                       ] .
+
+
+###  http://base.namespace.com/SpaceVelocityCondition
+phcat:SpaceVelocityCondition rdf:type owl:Class ;
+                             rdfs:subClassOf phcat:Condition ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty qudt:unit ;
+                                               owl:cardinality "1"^^xsd:nonNegativeInteger
+                                             ] .
+
+
+###  http://base.namespace.com/TemperatureCondition
+phcat:TemperatureCondition rdf:type owl:Class ;
+                           rdfs:subClassOf phcat:Condition ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty qudt:unit ;
+                                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                                           ] .
+
+
+###  http://base.namespace.com/WavelengthCondition
+phcat:WavelengthCondition rdf:type owl:Class ;
+                          rdfs:subClassOf phcat:LightSourceCondition ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty qudt:unit ;
+                                            owl:cardinality "1"^^xsd:nonNegativeInteger
+                                          ] .
+
+
+###  http://purl.obolibrary.org/obo/CHEBI_24431
+chebi:CHEBI_24431 rdf:type owl:Class ;
+                  rdfs:isDefinedBy "http://purl.obolibrary.org/obo/"^^xsd:anyURI ;
+                  rdfs:label "Chemical Entity" .
+
+
+###  http://purl.org/ontology/bibo/Article
+bibo:Article rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty dc:isPartOf ;
+                               owl:cardinality "1"^^xsd:nonNegativeInteger
+                             ] .
+
+
+###  http://purl.org/ontology/bibo/Journal
+bibo:Journal rdf:type owl:Class .
+
+
+###  http://qudt.org//2.1/schema/qudt/Unit
+qudt:Unit rdf:type owl:Class .
+
+
+###  https://schema.org/Country
+schema:Country rdf:type owl:Class .
+
+
+###  https://schema.org/Person
+schema:Person rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty phcat:hasMaterialTransformationProcess ;
+                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty dc:creator ;
+                                owl:minCardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty qudt:unit ;
+                                owl:cardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty schema:nationality ;
+                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                              ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://base.namespace.com
+<http://base.namespace.com> rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/BET
+phcat:BET rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/Catalyst
+phcat:Catalyst rdf:type owl:NamedIndividual ,
+                        phcat:MaterialTransformationRole ;
+               rdfs:label "Catalyst" .
+
+
+###  http://base.namespace.com/CatalystSetUpCondition
+phcat:CatalystSetUpCondition rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/Co-catalyst
+phcat:Co-catalyst rdf:type owl:NamedIndividual ,
+                           phcat:MaterialTransformationRole ;
+                  rdfs:label "Co-catalyst" .
+
+
+###  http://base.namespace.com/Condition
+phcat:Condition rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/Dopant
+phcat:Dopant rdf:type owl:NamedIndividual ,
+                      phcat:MaterialTransformationRole ;
+             rdfs:label "Dopant" .
+
+
+###  http://base.namespace.com/Dye
+phcat:Dye rdf:type owl:NamedIndividual ,
+                   phcat:MaterialTransformationRole ;
+          rdfs:label "Dye" .
+
+
+###  http://base.namespace.com/Eg
+phcat:Eg rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/Gas
+phcat:Gas rdf:type owl:NamedIndividual ,
+                   phcat:ReactionMedium ;
+          rdfs:label "Gas" .
+
+
+###  http://base.namespace.com/IluminatedAreaCondition
+phcat:IluminatedAreaCondition rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/Input
+phcat:Input rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/IrradianceCondition
+phcat:IrradianceCondition rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/LampCondition
+phcat:LampCondition rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/LightSourceCondition
+phcat:LightSourceCondition rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/Liquid
+phcat:Liquid rdf:type owl:NamedIndividual ,
+                      phcat:ReactionMedium ;
+             rdfs:label "Liquid" .
+
+
+###  http://base.namespace.com/MaterialTransformationProcess
+phcat:MaterialTransformationProcess rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/MaterialTransformationRole
+phcat:MaterialTransformationRole rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/Output
+phcat:Output rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/OutputQuantity
+phcat:OutputQuantity rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/PowerCondition
+phcat:PowerCondition rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/PressureCondition
+phcat:PressureCondition rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/ReactionMedium
+phcat:ReactionMedium rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/ReactionTimeCondition
+phcat:ReactionTimeCondition rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/ReactorCondition
+phcat:ReactorCondition rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/SpaceVelocityCondition
+phcat:SpaceVelocityCondition rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/Support
+phcat:Support rdf:type owl:NamedIndividual ,
+                       phcat:MaterialTransformationRole ;
+              rdfs:label "Support" .
+
+
+###  http://base.namespace.com/TemperatureCondition
+phcat:TemperatureCondition rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/WavelengthCondition
+phcat:WavelengthCondition rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/conditionType
+phcat:conditionType rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/cristalStructure
+phcat:cristalStructure rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/hasBET
+phcat:hasBET rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/hasChemical
+phcat:hasChemical rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/hasCondition
+phcat:hasCondition rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/hasEg
+phcat:hasEg rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/hasInput
+phcat:hasInput rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/hasMaterialTransformationProcess
+phcat:hasMaterialTransformationProcess rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/hasOutput
+phcat:hasOutput rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/hasOutputCuantity
+phcat:hasOutputCuantity rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/hasReactionMedium
+phcat:hasReactionMedium rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/hasReductant
+phcat:hasReductant rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/hasRole
+phcat:hasRole rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/lampType
+phcat:lampType rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/lightSourceType
+phcat:lightSourceType rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/operationMode
+phcat:operationMode rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/pH
+phcat:pH rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/percentage
+phcat:percentage rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/reactorType
+phcat:reactorType rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/reportedIn
+phcat:reportedIn rdf:type owl:NamedIndividual .
+
+
+###  http://base.namespace.com/setUpType
+phcat:setUpType rdf:type owl:NamedIndividual .
+
+
+###  http://purl.obolibrary.org/obo/ChemicalEntity
+chebi:ChemicalEntity rdf:type owl:NamedIndividual .
+
+
+###  http://purl.obolibrary.org/obo/formula
+chebi:formula rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/dc/terms/creator
+dc:creator rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/dc/terms/date
+dc:date rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/dc/terms/isPartOf
+dc:isPartOf rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/dc/terms/title
+dc:title rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/ontology/bibo/Article
+bibo:Article rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/ontology/bibo/Journal
+bibo:Journal rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/ontology/bibo/abstract
+bibo:abstract rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/ontology/bibo/doi
+bibo:doi rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/ontology/bibo/issue
+bibo:issue rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/ontology/bibo/pageStart
+bibo:pageStart rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/ontology/bibo/volume
+bibo:volume rdf:type owl:NamedIndividual .
+
+
+###  http://qudt.org//2.1/schema/qudt/Unit
+qudt:Unit rdf:type owl:NamedIndividual .
+
+
+###  http://qudt.org//2.1/schema/qudt/numericValue
+qudt:numericValue rdf:type owl:NamedIndividual .
+
+
+###  http://qudt.org//2.1/schema/qudt/unit
+qudt:unit rdf:type owl:NamedIndividual .
+
+
+###  http://qudt.org//2.1/schema/qudt/value
+qudt:value rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:NamedIndividual .
+
+
+###  https://schema.org/Country
+schema:Country rdf:type owl:NamedIndividual .
+
+
+###  https://schema.org/Person
+schema:Person rdf:type owl:NamedIndividual .
+
+
+###  https://schema.org/email
+schema:email rdf:type owl:NamedIndividual .
+
+
+###  https://schema.org/name
+schema:name rdf:type owl:NamedIndividual .
+
+
+###  https://schema.org/nationality
+schema:nationality rdf:type owl:NamedIndividual .
+
+
+[ owl:maxCardinality "n"^^xsd:nonNegativeInteger
+] .
+
+[ owl:maxCardinality "*"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:maxCardinality "n"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:maxCardinality "n"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:maxCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:maxCardinality "n"^^xsd:nonNegativeInteger
+ ] .
+
+#################################################################
+#    Annotations
+#################################################################
+
+phcat:BET rdfs:label "BET" .
+
+
+phcat:CatalystSetUpCondition rdfs:label "Catalyst Set Up Condition" .
+
+
+phcat:Condition rdfs:label "Condition" .
+
+
+phcat:Eg rdfs:label "Eg" .
+
+
+phcat:IluminatedAreaCondition rdfs:label "Iluminated Area Condition" .
+
+
+phcat:Input rdfs:label "Input" .
+
+
+phcat:IrradianceCondition rdfs:label "Irradiance Condition" .
+
+
+phcat:LampCondition rdfs:label "Lamp Condition" .
+
+
+phcat:LightSourceCondition rdfs:label "Light Source Condition" .
+
+
+phcat:MaterialTransformationProcess rdfs:label "Material Transformation Process" .
+
+
+phcat:MaterialTransformationRole rdfs:label "Material Transformation Role" .
+
+
+phcat:Output rdfs:label "Output" .
+
+
+phcat:OutputQuantity rdfs:label "Output Quantity" .
+
+
+phcat:PowerCondition rdfs:label "Power Condition" .
+
+
+phcat:PressureCondition rdfs:label "Pressure Condition" .
+
+
+phcat:ReactionMedium rdfs:label "Reaction Medium" .
+
+
+phcat:ReactionTimeCondition rdfs:label "Reaction Time Condition" .
+
+
+phcat:ReactorCondition rdfs:label "Reactor Condition" .
+
+
+phcat:SpaceVelocityCondition rdfs:label "Space Velocity Condition" .
+
+
+phcat:TemperatureCondition rdfs:label "Temperature Condition" .
+
+
+phcat:WavelengthCondition rdfs:label "Wavelength Condition" .
+
+
+phcat:conditionType rdfs:label "condition type" .
+
+
+phcat:cristalStructure rdfs:label "cristal structure" .
+
+
+phcat:hasBET rdfs:label "has bet" .
+
+
+phcat:hasChemical rdfs:label "has chemical" .
+
+
+phcat:hasCondition rdfs:label "has condition" .
+
+
+phcat:hasEg rdfs:label "has eg" .
+
+
+phcat:hasInput rdfs:label "has input" .
+
+
+phcat:hasMaterialTransformationProcess rdfs:label "has material transformation process" .
+
+
+phcat:hasOutput rdfs:label "has output" .
+
+
+phcat:hasOutputCuantity rdfs:label "has output cuantity" .
+
+
+phcat:hasReactionMedium rdfs:label "has reaction medium" .
+
+
+phcat:hasReductant rdfs:label "has reductant" .
+
+
+phcat:hasRole rdfs:label "has role" .
+
+
+phcat:lampType rdfs:label "lamp type" .
+
+
+phcat:lightSourceType rdfs:label "light source type" .
+
+
+phcat:operationMode rdfs:label "operation mode" .
+
+
+phcat:pH rdfs:label "pH" .
+
+
+phcat:percentage rdfs:label "percentage" .
+
+
+phcat:reactorType rdfs:label "reactor type" .
+
+
+phcat:reportedIn rdfs:label "reported in" .
+
+
+phcat:setUpType rdfs:label "set up type" .
+
+
+chebi:formula rdfs:label "formula" .
+
+
+dc:creator rdfs:label "creator" .
+
+
+dc:date rdfs:label "date" .
+
+
+dc:isPartOf rdfs:label "is part of" .
+
+
+dc:title rdfs:label "title" .
+
+
+bibo:Article rdfs:isDefinedBy "http://purl.org/ontology/bibo/"^^xsd:anyURI ;
+             rdfs:label "Article"@en ,
+                        "Artículo"@es .
+
+
+bibo:Journal rdfs:label "Journal" ;
+             rdfs:isDefinedBy "http://purl.org/ontology/bibo/"^^xsd:anyURI .
+
+
+bibo:abstract rdfs:label "abstract" .
+
+
+bibo:doi rdfs:label "doi" .
+
+
+bibo:issue rdfs:label "issue" .
+
+
+bibo:pageStart rdfs:label "page start" .
+
+
+bibo:volume rdfs:label "volume" .
+
+
+qudt:Unit rdfs:label "Unit" ;
+          rdfs:isDefinedBy "http://qudt.org//2.1/schema/qudt/"^^xsd:anyURI .
+
+
+qudt:numericValue rdfs:label "numeric value" .
+
+
+qudt:unit rdfs:label "unit" .
+
+
+qudt:value rdfs:label "value" .
+
+
+rdfs:label rdfs:label "label" .
+
+
+schema:Country rdfs:label "Country" ;
+               rdfs:isDefinedBy "https://schema.org/"^^xsd:anyURI .
+
+
+schema:Person rdfs:label "Person" ;
+              rdfs:isDefinedBy "https://schema.org/"^^xsd:anyURI .
+
+
+schema:email rdfs:label "email" .
+
+
+schema:name rdfs:label "name" .
+
+
+schema:nationality rdfs:label "nationality" .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

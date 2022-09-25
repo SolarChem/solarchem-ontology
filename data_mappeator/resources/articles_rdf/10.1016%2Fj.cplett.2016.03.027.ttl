@@ -1,0 +1,116 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/W.%20Xinb-1384> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "W. Xinb" .
+
+<http://data.example.com/author/X.%20Shaoa-1386> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "X. Shaoa" .
+
+<http://data.example.com/author/X.%20Yanga-1383> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "X. Yanga" .
+
+<http://data.example.com/author/X.%20Yina-1385> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "X. Yina" .
+
+<http://data.example.com/condition/19130> a ns2:ReactorCondition ;
+    ns2:conditionTypeAsText "Fixed-bed" ;
+    ns2:reactorType "Fixed-bed" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/19131> a ns2:CatalystSetUpCondition ;
+    ns2:conditionTypeAsText "Flaky g-C3N4 and uniformly loaded CdS nanospheres." ;
+    ns2:setUpType "Flaky g-C3N4 and uniformly loaded CdS nanospheres." ;
+    ns11:numericValue "0.020" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/19132> a ns2:LampPowerCondition ;
+    ns2:conditionTypeAsText "Other" ;
+    ns2:lampType "Other" ;
+    ns11:numericValue "250.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/19133> a ns2:LampIrradianceCondition ;
+    ns2:conditionTypeAsText "Other" ;
+    ns2:lampType "Other" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/19134> a ns2:TemperatureCondition ;
+    ns11:numericValue "20.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/19135> a ns2:PreasureCondition ;
+    ns11:numericValue "1.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/19136> a ns2:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/19137> a ns2:ReactionTimeCondition ;
+    ns11:numericValue "10.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/19138> a ns2:ReactionMediumCondition ;
+    ns2:conditionTypeAsText "Gas" ;
+    ns2:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Gas> ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/19139> a ns2:WavelengthCondition ;
+    ns2:conditionTypeAsText "UV-Vis" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV-Vis> ;
+    ns11:numericValue "315-780" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/19140> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionTypeAsText "UV-Vis" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV-Vis> ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/210> a ns21:Journal ;
+    dcterms:title "CHEMICAL PHYSICS LETTERS" .
+
+<http://data.example.com/materialTransformastionProcess/2655> a ns2:MaterialTransformationProcess ;
+    rdfs:label "CdS/g-C3N4" ;
+    ns2:hasBET <http://data.example.com/bet/2655> ;
+    ns2:hasCondition <http://data.example.com/condition/19130>,
+        <http://data.example.com/condition/19131>,
+        <http://data.example.com/condition/19132>,
+        <http://data.example.com/condition/19133>,
+        <http://data.example.com/condition/19134>,
+        <http://data.example.com/condition/19135>,
+        <http://data.example.com/condition/19136>,
+        <http://data.example.com/condition/19137>,
+        <http://data.example.com/condition/19138>,
+        <http://data.example.com/condition/19139>,
+        <http://data.example.com/condition/19140> ;
+    ns2:hasInput <http://data.example.com/input/4688>,
+        <http://data.example.com/input/4689> ;
+    ns2:hasReactionEg <http://data.example.com/eg/2655> ;
+    ns2:operationMode <http://vocab.example.com/operationMode/Batch> ;
+    ns2:reportedIn <https://doi.org/10.1016%2Fj.cplett.2016.03.027> .
+
+<https://doi.org/10.1016%2Fj.cplett.2016.03.027> a ns21:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/2655> ;
+    dcterms:creator <http://data.example.com/author/W.%20Xinb-1384>,
+        <http://data.example.com/author/X.%20Shaoa-1386>,
+        <http://data.example.com/author/X.%20Yanga-1383>,
+        <http://data.example.com/author/X.%20Yina-1385> ;
+    dcterms:date "2016-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/210> ;
+    dcterms:title "Enhancement of photocatalytic activity in reducing CO2 over CdS\\/g-C3N4 composite catalysts under UV light irradiation" ;
+    ns21:abstract "The polymeric graphite-like carbon nitride (g-C3N4) and CdS\\/g-C3N4 composites of different mass fractions were synthesized via polycondensation and hydrothermal methods, respectively. XRD, SEM-EDS, TEM, UV-vis and PL were applied to characterize the structure, morphology and optical properties of the as-prepared CdS\\/g-C3N4 composites. The photocatalytic activities of the catalysts were evaluated by the reduction of CO2 in methanol solution to form methyl formate. The results indicated that the photocatalytic activities of the CdS\\/g-C3N4 composites were improved significantly compared with that of the pure CdS and g-C3N4. The highest activity appeared at mass ratio 1:2 of CdS:g-C3N4." ;
+    ns21:doi "10.1016/j.cplett.2016.03.027" ;
+    ns21:pageStart "127"^^xsd:positiveInteger ;
+    ns21:volume "651"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/China> a schema:Country .
+

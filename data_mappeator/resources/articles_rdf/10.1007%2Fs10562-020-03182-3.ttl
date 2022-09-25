@@ -1,0 +1,158 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/Caimei%20Fan-3409> a schema:Person ;
+    schema:name "Caimei Fan" .
+
+<http://data.example.com/author/Changming%20Zhang-3406> a schema:Person ;
+    schema:name "Changming Zhang" .
+
+<http://data.example.com/author/Guangmin%20Ren-3405> a schema:Person ;
+    schema:name "Guangmin Ren" .
+
+<http://data.example.com/author/Qiang%20Zhao-3408> a schema:Person ;
+    schema:name "Qiang Zhao" .
+
+<http://data.example.com/author/Rui%20Li-3407> a schema:Person ;
+    schema:name "Rui Li" .
+
+<http://data.example.com/author/Xiaochao%20Zhang-3404> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Xiaochao Zhang" .
+
+<http://data.example.com/chemical/3> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "H2O" .
+
+<http://data.example.com/chemical/350> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "Bi2MoO6" .
+
+<http://data.example.com/condition/46080> a ns2:ReactorCondition ;
+    ns2:conditionTypeAsText "Slurry" ;
+    ns2:reactorType "Slurry" ;
+    ns11:numericValue "0.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/46081> a ns2:CatalystSetUpCondition ;
+    ns2:conditionTypeAsText "Powder(Suspended)" ;
+    ns2:setUpType "Powder(Suspended)" ;
+    ns11:numericValue "0.0345" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/46082> a ns2:LampPowerCondition ;
+    ns2:conditionTypeAsText "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns11:numericValue "300.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/46083> a ns2:LampIrradianceCondition ;
+    ns2:conditionTypeAsText "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/46084> a ns2:TemperatureCondition ;
+    ns11:numericValue "3.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/46085> a ns2:PreasureCondition ;
+    ns11:numericValue "0.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/46086> a ns2:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/46087> a ns2:ReactionTimeCondition ;
+    ns11:numericValue "6.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/46088> a ns2:ReactionMediumCondition ;
+    ns2:conditionTypeAsText "Liquid" ;
+    ns2:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/46089> a ns2:WavelengthCondition ;
+    ns2:conditionTypeAsText "Visible" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns11:numericValue "400-780" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/46090> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionTypeAsText "Visible" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/input/11437> a ns2:Input ;
+    ns2:hasChemical <http://data.example.com/chemical/350> ;
+    ns2:hasRole <http://base.namespace.com/Catalyst> .
+
+<http://data.example.com/input/11438> a ns2:Input ;
+    ns2:hasChemical <http://data.example.com/chemical/3> ;
+    ns2:hasRole <http://base.namespace.com/Reductant> .
+
+<http://data.example.com/journal/176> a ns21:Journal ;
+    dcterms:title "CATALYSIS LETTERS" .
+
+<http://data.example.com/materialTransformastionProcess/5489> a ns2:MaterialTransformationProcess ;
+    rdfs:label "Bi2MoO6" ;
+    ns2:hasBET <http://data.example.com/bet/5489> ;
+    ns2:hasCondition <http://data.example.com/condition/46080>,
+        <http://data.example.com/condition/46081>,
+        <http://data.example.com/condition/46082>,
+        <http://data.example.com/condition/46083>,
+        <http://data.example.com/condition/46084>,
+        <http://data.example.com/condition/46085>,
+        <http://data.example.com/condition/46086>,
+        <http://data.example.com/condition/46087>,
+        <http://data.example.com/condition/46088>,
+        <http://data.example.com/condition/46089>,
+        <http://data.example.com/condition/46090> ;
+    ns2:hasInput <http://data.example.com/input/11437>,
+        <http://data.example.com/input/11438> ;
+    ns2:hasOutput <http://data.example.com/output/12721>,
+        <http://data.example.com/output/12722> ;
+    ns2:hasReactionEg <http://data.example.com/eg/5489> ;
+    ns2:operationMode <http://vocab.example.com/operationMode/Batch> ;
+    ns2:reportedIn <https://doi.org/10.1007%2Fs10562-020-03182-3> .
+
+<http://data.example.com/output/12721> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/927> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/12721-gh> .
+
+<http://data.example.com/output/12722> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/927> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/12722-g> .
+
+<http://data.example.com/output_quantity/12721-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "41.7000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/12722-g> a ns2:OutputQuantity ;
+    ns2:numericValue "250.0000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<https://doi.org/10.1007%2Fs10562-020-03182-3> a ns21:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/5489> ;
+    dcterms:creator <http://data.example.com/author/Caimei%20Fan-3409>,
+        <http://data.example.com/author/Changming%20Zhang-3406>,
+        <http://data.example.com/author/Guangmin%20Ren-3405>,
+        <http://data.example.com/author/Qiang%20Zhao-3408>,
+        <http://data.example.com/author/Rui%20Li-3407>,
+        <http://data.example.com/author/Xiaochao%20Zhang-3404> ;
+    dcterms:date "2020-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/176> ;
+    dcterms:title "Photocatalytic Reduction of CO2 to CO over 3D Bi2MoO6 Microspheres: Simple Synthesis, High Efficiency and Selectivity, Reaction Mechanism" ;
+    ns21:abstract "It has been a promising approach for directly utilizing solar energy to convert CO2 into clean renewable chemical fuels over photocatalysts with excellent photoreactivity, CO2 adsorption capacity and reasonable redox potentials. In this work, as-synthesized 3D Bi2MoO6 microspheres with cross-stacking nanosheets via a simple hydrothermal method have been investigated for photocatalytic CO2 reduction, and characterized by XRD, UVâ€“Vis DRS, SEM, HRTEM and BET. It was found that as-prepared samples exhibited high Bi2MoO6 purity, large specific surface area, excellent light response and CO2 adsorption capacity, achieving superior photocatalytic CO2 reduction activity and selectivity of CO yield (41.5 Î¼mol gâˆ’1 hâˆ’1). Moreover, the photocatalytic reaction mechanism for CO2 reduction to CO over 3D Bi2MoO6 microspheres was investigated and proposed. Finally, COOH* was verified to be a key intermediate for photocatalytic CO2 reduction to CO by the analysis of in-situ FTIR. Our findings should provide excellent foundation and guidance for boosting photocatalytic CO2 conversion to CO with enhanced effective and selective ability." ;
+    ns21:doi "10.1007/s10562-020-03182-3" ;
+    ns21:pageStart "0"^^xsd:positiveInteger ;
+    ns21:volume "0"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/China> a schema:Country .
+
+<http://data.example.com/chemical/927> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CO" .
+

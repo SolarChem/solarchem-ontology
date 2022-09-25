@@ -1,0 +1,116 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/C.%20Li-1181> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "C. Li" .
+
+<http://data.example.com/author/J.%20Yang-1182> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "J. Yang" .
+
+<http://data.example.com/author/L.%20Zong-1180> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "L. Zong" .
+
+<http://data.example.com/author/Q.%20Li-1179> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Q. Li" .
+
+<http://data.example.com/condition/10407> a ns2:ReactorCondition ;
+    ns2:conditionTypeAsText "Slurry" ;
+    ns2:reactorType "Slurry" ;
+    ns11:numericValue "0.36" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/10408> a ns2:CatalystSetUpCondition ;
+    ns2:conditionTypeAsText "Other" ;
+    ns2:setUpType "Other" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/10409> a ns2:LampPowerCondition ;
+    ns2:conditionTypeAsText "Mercury(Hg)" ;
+    ns2:lampType "Mercury(Hg)" ;
+    ns11:numericValue "300.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/10410> a ns2:LampIrradianceCondition ;
+    ns2:conditionTypeAsText "Mercury(Hg)" ;
+    ns2:lampType "Mercury(Hg)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/10411> a ns2:TemperatureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/10412> a ns2:PreasureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/10413> a ns2:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/10414> a ns2:ReactionTimeCondition ;
+    ns11:numericValue "6.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/10415> a ns2:ReactionMediumCondition ;
+    ns2:conditionTypeAsText "Liquid" ;
+    ns2:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/10416> a ns2:WavelengthCondition ;
+    ns2:conditionTypeAsText "UV" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/10417> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionTypeAsText "UV" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/116> a ns21:Journal ;
+    dcterms:title "APPLIED SURFACE SCIENCE" .
+
+<http://data.example.com/materialTransformastionProcess/1787> a ns2:MaterialTransformationProcess ;
+    rdfs:label "TiO2" ;
+    ns2:hasBET <http://data.example.com/bet/1787> ;
+    ns2:hasCondition <http://data.example.com/condition/10407>,
+        <http://data.example.com/condition/10408>,
+        <http://data.example.com/condition/10409>,
+        <http://data.example.com/condition/10410>,
+        <http://data.example.com/condition/10411>,
+        <http://data.example.com/condition/10412>,
+        <http://data.example.com/condition/10413>,
+        <http://data.example.com/condition/10414>,
+        <http://data.example.com/condition/10415>,
+        <http://data.example.com/condition/10416>,
+        <http://data.example.com/condition/10417> ;
+    ns2:hasInput <http://data.example.com/input/2548>,
+        <http://data.example.com/input/2549>,
+        <http://data.example.com/input/2550> ;
+    ns2:hasReactionEg <http://data.example.com/eg/1787> ;
+    ns2:operationMode <http://vocab.example.com/operationMode/Batch> ;
+    ns2:reportedIn <https://doi.org/10.1016%2Fj.apsusc.2014.07.019> .
+
+<https://doi.org/10.1016%2Fj.apsusc.2014.07.019> a ns21:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/1787> ;
+    dcterms:creator <http://data.example.com/author/C.%20Li-1181>,
+        <http://data.example.com/author/J.%20Yang-1182>,
+        <http://data.example.com/author/L.%20Zong-1180>,
+        <http://data.example.com/author/Q.%20Li-1179> ;
+    dcterms:date "2014-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/116> ;
+    dcterms:title "Photocatalytic reduction of CO2 on MgOTiO2 nanotube films" ;
+    ns21:abstract "A facile development of highly efficient MgOTiO2 nanotubes network (MgOTNTs) films is described. These MgOTNTs films have a unique one-dimensional (1D) network nanotubular structure, and the different contents of MgO existed as amorphous thin layers located on the surfaces of TiO 2 nanotubes. They exhibited excellent photoreduction efficiency of CO2 to methane compared with the bare TiO2 film. MgO plays a critical role in CO2 methanation, because it has the strong adsorption ability of CO2 and initiates the reaction by binding a CO2 molecule, forming a magnesium carbonate species on the surface. For further improve the photocatalytic activity, Pt nanoparticles were loaded on MgOTNTs films by the photo-reduction method. It was found that the loading of Pt notably improved the transformation efficiency of CO2 to methane, and the highest evolution rate of methane reached 100.22 ppmh cm2. The fast electron-transfer rate in MgOTNTs film and the efficient electron-hole separation by the Pt nanoparticals were the main reasons for the enhancement of the photoreduction activity. The synergy effect of Pt nanoparticles and MgO in the nanocomposites played an important role in CO2 photoreduction." ;
+    ns21:doi "10.1016/j.apsusc.2014.07.019" ;
+    ns21:pageStart "458"^^xsd:positiveInteger ;
+    ns21:volume "314"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/China> a schema:Country .
+
