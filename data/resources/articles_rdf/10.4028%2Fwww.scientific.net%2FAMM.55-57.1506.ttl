@@ -1,0 +1,166 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/T.%20Xin-186> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "T. Xin" .
+
+<http://data.example.com/author/W.%20Jing-185> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "W. Jing" .
+
+<http://data.example.com/author/Y.%20Tao-187> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Y. Tao" .
+
+<http://data.example.com/author/Z.%20Lin-188> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Z. Lin" .
+
+<http://data.example.com/chemical/1> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TiO2" .
+
+<http://data.example.com/chemical/30> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "NaOH" .
+
+<http://data.example.com/chemical/379> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TiO2" .
+
+<http://data.example.com/chemical/49> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "Y-zeolite" .
+
+<http://data.example.com/condition/4093> a ns2:ReactorCondition ;
+    ns2:conditionTypeAsText "Slurry" ;
+    ns2:reactorType "Slurry" ;
+    ns11:numericValue "0.05" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/4094> a ns2:CatalystSetUpCondition ;
+    ns2:conditionTypeAsText "Powder(Suspended)" ;
+    ns2:setUpType "Powder(Suspended)" ;
+    ns11:numericValue "0.005" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/4095> a ns2:LampPowerCondition ;
+    ns2:conditionTypeAsText "Mercury(Hg)" ;
+    ns2:lampType "Mercury(Hg)" ;
+    ns11:numericValue "300.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/4096> a ns2:LampIrradianceCondition ;
+    ns2:conditionTypeAsText "Mercury(Hg)" ;
+    ns2:lampType "Mercury(Hg)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/4097> a ns2:TemperatureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/4098> a ns2:PreasureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/4099> a ns2:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/4100> a ns2:ReactionTimeCondition ;
+    ns11:numericValue "6.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/4101> a ns2:ReactionMediumCondition ;
+    ns2:conditionTypeAsText "Liquid" ;
+    ns2:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/4102> a ns2:WavelengthCondition ;
+    ns2:conditionTypeAsText "UV" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns11:numericValue "315-400(UV-C)" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/4103> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionTypeAsText "UV" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/input/988> a ns2:Input ;
+    ns2:cristalStructure "Anatase" ;
+    ns2:hasChemical <http://data.example.com/chemical/1>,
+        <http://data.example.com/chemical/379> ;
+    ns2:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/989> a ns2:Input ;
+    ns2:cristalStructure "Anatase" ;
+    ns2:hasChemical <http://data.example.com/chemical/49> ;
+    ns2:hasRole <http://base.namespace.com/material_transformation_role/Support> .
+
+<http://data.example.com/input/990> a ns2:Input ;
+    ns2:cristalStructure "Anatase" ;
+    ns2:hasChemical <http://data.example.com/chemical/30> ;
+    ns2:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/journal/105> a ns21:Journal ;
+    dcterms:title "APPLIED MECHANICS AND MATERIALS" .
+
+<http://data.example.com/materialTransformastionProcess/393> a ns2:MaterialTransformationProcess ;
+    rdfs:label "TiO2/Y-Zeolite" ;
+    ns2:hasBET <http://data.example.com/bet/393> ;
+    ns2:hasCondition <http://data.example.com/condition/4093>,
+        <http://data.example.com/condition/4094>,
+        <http://data.example.com/condition/4095>,
+        <http://data.example.com/condition/4096>,
+        <http://data.example.com/condition/4097>,
+        <http://data.example.com/condition/4098>,
+        <http://data.example.com/condition/4099>,
+        <http://data.example.com/condition/4100>,
+        <http://data.example.com/condition/4101>,
+        <http://data.example.com/condition/4102>,
+        <http://data.example.com/condition/4103> ;
+    ns2:hasInput <http://data.example.com/input/988>,
+        <http://data.example.com/input/989>,
+        <http://data.example.com/input/990> ;
+    ns2:hasOutput <http://data.example.com/output/1173>,
+        <http://data.example.com/output/1174> ;
+    ns2:hasReactionEg <http://data.example.com/eg/393> ;
+    ns2:operationMode <http://vocab.example.com/operationMode/Batch> ;
+    ns2:reportedIn <https://doi.org/10.4028%2Fwww.scientific.net%2FAMM.55-57.1506> .
+
+<http://data.example.com/output/1173> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/932> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/1173-gh> .
+
+<http://data.example.com/output/1174> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/932> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/1174-g> .
+
+<http://data.example.com/output_quantity/1173-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "64.1033"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/1174-g> a ns2:OutputQuantity ;
+    ns2:numericValue "384.6200"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<https://doi.org/10.4028%2Fwww.scientific.net%2FAMM.55-57.1506> a ns21:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/393> ;
+    dcterms:creator <http://data.example.com/author/T.%20Xin-186>,
+        <http://data.example.com/author/W.%20Jing-185>,
+        <http://data.example.com/author/Y.%20Tao-187>,
+        <http://data.example.com/author/Z.%20Lin-188> ;
+    dcterms:date "2011-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/105> ;
+    dcterms:title "Characterization of Y/TiO2 nanoparticles and their reactivity for CO2 photoreduction" ;
+    ns21:abstract "A series of Y/TiO2 nanoparticles (NPs) were synthesized via sol-gel method. The crystal structures, morphologies and chemical properties were characterized using X-ray diffraction (XRD), high resolution transmission electron microscopy (HR-TEM) and X-ray photoelectron spectroscopy (XPS). We investigated the effects of different doping amounts of Y on the reaction of CO2 photoreduction. The results shown that 0.1 wt.%Y/TiO2 (0.1YT) performed the highest photocatalytic activity, which yielded 384.62 &micro;mol/gcat. formaldehyde after 6 h of UV illumination." ;
+    ns21:doi "10.4028/www.scientific.net/AMM.55-57.1506" ;
+    ns21:pageStart "1506"^^xsd:positiveInteger ;
+    ns21:volume "55"^^xsd:positiveInteger .
+
+<http://data.example.com/chemical/932> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CH2O" .
+
+<https://en.wikipedia.org/wiki/China> a schema:Country .
+

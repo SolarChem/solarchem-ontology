@@ -1,0 +1,116 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/L.%20Castillo-586> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "L. Castillo" .
+
+<http://data.example.com/author/M.%20J.%20Meziani-585> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "M. J. Meziani" .
+
+<http://data.example.com/author/P.%20Pathak-584> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "P. Pathak" .
+
+<http://data.example.com/author/Y.-P.%20Sun-587> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "Y.-P. Sun" .
+
+<http://data.example.com/condition/3763> a ns2:ReactorCondition ;
+    ns2:conditionTypeAsText "Slurry" ;
+    ns2:reactorType "Slurry" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/3764> a ns2:CatalystSetUpCondition ;
+    ns2:conditionTypeAsText "Film" ;
+    ns2:setUpType "Film" ;
+    ns11:numericValue "2 films" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/3765> a ns2:LampPowerCondition ;
+    ns2:conditionTypeAsText "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns11:numericValue "990.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/3766> a ns2:LampIrradianceCondition ;
+    ns2:conditionTypeAsText "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/3767> a ns2:TemperatureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/3768> a ns2:PreasureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/3769> a ns2:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/3770> a ns2:ReactionTimeCondition ;
+    ns11:numericValue "20.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/3771> a ns2:ReactionMediumCondition ;
+    ns2:conditionTypeAsText "Liquid" ;
+    ns2:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/3772> a ns2:WavelengthCondition ;
+    ns2:conditionTypeAsText "Visible" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns11:numericValue "400-780" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/3773> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionTypeAsText "Visible" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/396> a ns21:Journal ;
+    dcterms:title "GREEN CHEMISTRY" .
+
+<http://data.example.com/materialTransformastionProcess/362> a ns2:MaterialTransformationProcess ;
+    rdfs:label "Ag/TiO2" ;
+    ns2:hasBET <http://data.example.com/bet/362> ;
+    ns2:hasCondition <http://data.example.com/condition/3763>,
+        <http://data.example.com/condition/3764>,
+        <http://data.example.com/condition/3765>,
+        <http://data.example.com/condition/3766>,
+        <http://data.example.com/condition/3767>,
+        <http://data.example.com/condition/3768>,
+        <http://data.example.com/condition/3769>,
+        <http://data.example.com/condition/3770>,
+        <http://data.example.com/condition/3771>,
+        <http://data.example.com/condition/3772>,
+        <http://data.example.com/condition/3773> ;
+    ns2:hasInput <http://data.example.com/input/908>,
+        <http://data.example.com/input/909>,
+        <http://data.example.com/input/910> ;
+    ns2:hasReactionEg <http://data.example.com/eg/362> ;
+    ns2:operationMode <http://vocab.example.com/operationMode/Batch> ;
+    ns2:reportedIn <https://doi.org/10.1039%2FB507103H> .
+
+<https://doi.org/10.1039%2FB507103H> a ns21:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/362> ;
+    dcterms:creator <http://data.example.com/author/L.%20Castillo-586>,
+        <http://data.example.com/author/M.%20J.%20Meziani-585>,
+        <http://data.example.com/author/P.%20Pathak-584>,
+        <http://data.example.com/author/Y.-P.%20Sun-587> ;
+    dcterms:date "2005-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/396> ;
+    dcterms:title "Metal-coated nanoscale TiO2 catalysts for enhanced CO2 photoreduction" ;
+    ns21:abstract "Nanoscale TiO2 particles embedded in the hydrophilic cavities of Nafion membrane films were coated with silver for significantly improved photoconversion of CO2. The primary product from the photocatalytic reduction became methanol, with the overall conversion efficiency higher than that without the silver coating. These catalytic films are also stable chemically and photochemically, reusable in repeated reactions. The results from the characterization of the nanoparticles and the use of films with different silver loadings are presented and discussed." ;
+    ns21:doi "10.1039/B507103H" ;
+    ns21:pageStart "667"^^xsd:positiveInteger ;
+    ns21:volume "7"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/United%20States> a schema:Country .
+

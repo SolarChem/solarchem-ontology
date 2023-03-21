@@ -1,0 +1,188 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/B.%20Li-553> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "B. Li" .
+
+<http://data.example.com/author/C.%20Zhang-550> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "C. Zhang" .
+
+<http://data.example.com/author/Q.%20Zhang-551> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Q. Zhang" .
+
+<http://data.example.com/author/S.%20Kang-552> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "S. Kang" .
+
+<http://data.example.com/author/X.%20Li-554> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "X. Li" .
+
+<http://data.example.com/author/Y.%20Wang-555> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Y. Wang" .
+
+<http://data.example.com/chemical/1> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TiO2" .
+
+<http://data.example.com/chemical/3> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "H2O" .
+
+<http://data.example.com/chemical/379> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TiO2" .
+
+<http://data.example.com/chemical/927> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CO" .
+
+<http://data.example.com/condition/9208> a ns2:ReactorCondition ;
+    ns2:conditionTypeAsText "Fixed-bed" ;
+    ns2:reactorType "Fixed-bed" ;
+    ns11:numericValue "1.50" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/9209> a ns2:CatalystSetUpCondition ;
+    ns2:conditionTypeAsText "Other" ;
+    ns2:setUpType "Other" ;
+    ns11:numericValue "0.1" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/9210> a ns2:LampPowerCondition ;
+    ns2:conditionTypeAsText "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns11:numericValue "300.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/9211> a ns2:LampIrradianceCondition ;
+    ns2:conditionTypeAsText "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/9212> a ns2:TemperatureCondition ;
+    ns11:numericValue "30.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/9213> a ns2:PreasureCondition ;
+    ns11:numericValue "1.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/9214> a ns2:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/9215> a ns2:ReactionTimeCondition ;
+    ns11:numericValue "5.42" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/9216> a ns2:ReactionMediumCondition ;
+    ns2:conditionTypeAsText "Gas" ;
+    ns2:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Gas> ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/9217> a ns2:WavelengthCondition ;
+    ns2:conditionTypeAsText "Solar" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/Solar> ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/9218> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionTypeAsText "Solar" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/Solar> ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/input/2253> a ns2:Input ;
+    ns2:hasChemical <http://data.example.com/chemical/1>,
+        <http://data.example.com/chemical/379> ;
+    ns2:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/2254> a ns2:Input ;
+    ns2:hasChemical <http://data.example.com/chemical/3> ;
+    ns2:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/journal/319> a ns21:Journal ;
+    dcterms:title "ECS SOLID STATE LETTERS" .
+
+<http://data.example.com/materialTransformastionProcess/1660> a ns2:MaterialTransformationProcess ;
+    rdfs:label "TiO2" ;
+    ns2:hasBET <http://data.example.com/bet/1660> ;
+    ns2:hasCondition <http://data.example.com/condition/9208>,
+        <http://data.example.com/condition/9209>,
+        <http://data.example.com/condition/9210>,
+        <http://data.example.com/condition/9211>,
+        <http://data.example.com/condition/9212>,
+        <http://data.example.com/condition/9213>,
+        <http://data.example.com/condition/9214>,
+        <http://data.example.com/condition/9215>,
+        <http://data.example.com/condition/9216>,
+        <http://data.example.com/condition/9217>,
+        <http://data.example.com/condition/9218> ;
+    ns2:hasInput <http://data.example.com/input/2253>,
+        <http://data.example.com/input/2254> ;
+    ns2:hasOutput <http://data.example.com/output/2675>,
+        <http://data.example.com/output/2676>,
+        <http://data.example.com/output/2677>,
+        <http://data.example.com/output/2678> ;
+    ns2:hasReactionEg <http://data.example.com/eg/1660> ;
+    ns2:operationMode <http://vocab.example.com/operationMode/Continuous> ;
+    ns2:reportedIn <https://doi.org/10.1149%2F2.003309ssl> .
+
+<http://data.example.com/output/2675> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/6> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/2675-gh> .
+
+<http://data.example.com/output/2676> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/927> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/2676-g> .
+
+<http://data.example.com/output/2677> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/6> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/2677-g> .
+
+<http://data.example.com/output/2678> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/6> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/2678-m2h> .
+
+<http://data.example.com/output_quantity/2675-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "1.8462"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/2676-g> a ns2:OutputQuantity ;
+    ns2:numericValue "1.9000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/2677-g> a ns2:OutputQuantity ;
+    ns2:numericValue "10.0000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/2678-m2h> a ns2:OutputQuantity ;
+    ns2:numericValue "0.0074"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-M2-HR> .
+
+<https://doi.org/10.1149%2F2.003309ssl> a ns21:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/1660> ;
+    dcterms:creator <http://data.example.com/author/B.%20Li-553>,
+        <http://data.example.com/author/C.%20Zhang-550>,
+        <http://data.example.com/author/Q.%20Zhang-551>,
+        <http://data.example.com/author/S.%20Kang-552>,
+        <http://data.example.com/author/X.%20Li-554>,
+        <http://data.example.com/author/Y.%20Wang-555> ;
+    dcterms:date "2013-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/319> ;
+    dcterms:title "Route to mesoporous TiO2graphitic carbon microspheres for photocatalytic reduction of CO2 under simulated solar irradiation" ;
+    ns21:abstract "Mesoporous TiO2graphitic carbon microspheres were synthesized by a simple nanocasting route using monodisperse SiO2 microspheres as the template. X-ray diffraction, nitrogen adsorption-desorption, scanning electron microscopy, transmission electron microscope and thermogravimetric analysis techniques were used to characterize the sample. It was observed that anatase TiO2 nanoparticles of 8-14 nm in diameter were highly dispersed in the graphitic carbon microspheres, and the resulting composite with hierarchical mesostructure and high specific surface area exhibited exceptionally high activity in the photocatalytic reduction of CO2 with H2O under simulated solar irradiation." ;
+    ns21:doi "10.1149/2.003309ssl" ;
+    ns21:issue "9" ;
+    ns21:pageStart "M49"^^xsd:positiveInteger ;
+    ns21:volume "2"^^xsd:positiveInteger .
+
+<http://data.example.com/chemical/6> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CH4" .
+
+<https://en.wikipedia.org/wiki/China> a schema:Country .
+

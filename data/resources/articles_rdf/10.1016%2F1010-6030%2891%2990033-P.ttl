@@ -1,0 +1,113 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/D.%20Chatterjee-1600> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
+    schema:name "D. Chatterjee" .
+
+<http://data.example.com/author/M.M.%20Taqui%20Khan-1598> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
+    schema:name "M.M. Taqui Khan" .
+
+<http://data.example.com/author/N.%20Nageswara%20Rao-1599> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/India> ;
+    schema:name "N. Nageswara Rao" .
+
+<http://data.example.com/condition/16369> a ns2:ReactorCondition ;
+    ns2:conditionTypeAsText "Slurry" ;
+    ns2:reactorType "Slurry" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/16370> a ns2:CatalystSetUpCondition ;
+    ns2:conditionTypeAsText "Other" ;
+    ns2:setUpType "Other" ;
+    ns11:numericValue "0.05" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/16371> a ns2:LampPowerCondition ;
+    ns2:conditionTypeAsText "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns11:numericValue "250.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/16372> a ns2:LampIrradianceCondition ;
+    ns2:conditionTypeAsText "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/16373> a ns2:TemperatureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/16374> a ns2:PreasureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/16375> a ns2:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/16376> a ns2:ReactionTimeCondition ;
+    ns11:numericValue "6.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/16377> a ns2:ReactionMediumCondition ;
+    ns2:conditionTypeAsText "Liquid" ;
+    ns2:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/16378> a ns2:WavelengthCondition ;
+    ns2:conditionTypeAsText "UV-Vis" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV-Vis> ;
+    ns11:numericValue "315-780" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/16379> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionTypeAsText "UV-Vis" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV-Vis> ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/597> a ns21:Journal ;
+    dcterms:title "JOURNAL OF PHOTOCHEMISTRY" .
+
+<http://data.example.com/materialTransformastionProcess/2340> a ns2:MaterialTransformationProcess ;
+    rdfs:label "Pt-RuO2/CdS" ;
+    ns2:hasBET <http://data.example.com/bet/2340> ;
+    ns2:hasCondition <http://data.example.com/condition/16369>,
+        <http://data.example.com/condition/16370>,
+        <http://data.example.com/condition/16371>,
+        <http://data.example.com/condition/16372>,
+        <http://data.example.com/condition/16373>,
+        <http://data.example.com/condition/16374>,
+        <http://data.example.com/condition/16375>,
+        <http://data.example.com/condition/16376>,
+        <http://data.example.com/condition/16377>,
+        <http://data.example.com/condition/16378>,
+        <http://data.example.com/condition/16379> ;
+    ns2:hasInput <http://data.example.com/input/4019>,
+        <http://data.example.com/input/4020>,
+        <http://data.example.com/input/4021>,
+        <http://data.example.com/input/4022> ;
+    ns2:hasReactionEg <http://data.example.com/eg/2340> ;
+    ns2:operationMode <http://vocab.example.com/operationMode/Batch> ;
+    ns2:reportedIn <https://doi.org/10.1016%2F1010-6030%2891%2990033-P> .
+
+<https://doi.org/10.1016%2F1010-6030%2891%2990033-P> a ns21:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/2340> ;
+    dcterms:creator <http://data.example.com/author/D.%20Chatterjee-1600>,
+        <http://data.example.com/author/M.M.%20Taqui%20Khan-1598>,
+        <http://data.example.com/author/N.%20Nageswara%20Rao-1599> ;
+    dcterms:date "1991-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/597> ;
+    dcterms:title "A novel photosynthetic mimic reaction catalysed by K[Ru(H-EDTA)Cl] Â· 2H2O; reduction of carbon dioxide to formate and formaldehyde in the presence of an aqueous suspension of Ptâ€”CdSâ€”RuO2" ;
+    ns21:abstract "An efficient photocatalytic reduction of carbon dioxide to HCOOH and HCHO is reported using K[Ru(H-EDTAC)Cl].2H2O (1) as homogeneous catalyst and particulate Pt-CdS-RuO2 as photon absorber at 505 nm. This system produces 0.22 M of HCOOH and 0.10 M of HCHO in 6 h of photolysis at rates of 3.05 x 10(-2) M h-1 and 2.0 x 10(-2) M h-1 respectively. Trace amounts of CH3OH, CH4 and CO are detected in the reaction vessel. The rates of formation of HCOOH and HCHO exhibit a first-order dependence on the catalyst and dissolved CO2 concentrations. The reaction shows deuterium isotpe effects (k(H)\\/k(D) of 1.5 and 2.00 for the formation of HCOOH and HCHO respectively. Under identical experimental conditions, the rate of decomposition of formate was studied. The rate of decomposition of formate is slower (by two orders of magnitude compared with the formation of formate) even at high formate concentrations. A mechanism for the formation of HCOOH and HCHO is proposed." ;
+    ns21:doi "10.1016/1010-6030(91)90033-P" ;
+    ns21:issue "3" ;
+    ns21:pageStart "311"^^xsd:positiveInteger ;
+    ns21:volume "60"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/India> a schema:Country .
+

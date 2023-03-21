@@ -1,0 +1,171 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/J.C.S.%20Wu-71> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Taiwan%2C%20Province%20of%20China> ;
+    schema:name "J.C.S. Wu" .
+
+<http://data.example.com/author/T-V.%20Nguyen-70> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Taiwan%2C%20Province%20of%20China> ;
+    schema:name "T-V. Nguyen" .
+
+<http://data.example.com/chemical/1> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TiO2" .
+
+<http://data.example.com/chemical/12> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "Fe" .
+
+<http://data.example.com/chemical/3> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "H2O" .
+
+<http://data.example.com/chemical/379> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TiO2" .
+
+<http://data.example.com/chemical/4> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "Cu" .
+
+<http://data.example.com/chemical/6> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CH4" .
+
+<http://data.example.com/chemical/930> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "C2H4" .
+
+<http://data.example.com/condition/3048> a ns2:ReactorCondition ;
+    ns2:conditionTypeAsText "Fixed-bed" ;
+    ns2:reactorType "Fixed-bed" ;
+    ns11:numericValue "0.22" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/3049> a ns2:CatalystSetUpCondition ;
+    ns2:conditionTypeAsText "Optical Fiber" ;
+    ns2:setUpType "Optical Fiber" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/3050> a ns2:LampPowerCondition ;
+    ns2:conditionTypeAsText "Mercury(Hg)" ;
+    ns2:lampType "Mercury(Hg)" ;
+    ns11:numericValue "150.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/3051> a ns2:LampIrradianceCondition ;
+    ns2:conditionTypeAsText "Mercury(Hg)" ;
+    ns2:lampType "Mercury(Hg)" ;
+    ns11:numericValue "2250.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/3052> a ns2:TemperatureCondition ;
+    ns11:numericValue "75.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/3053> a ns2:PreasureCondition ;
+    ns11:numericValue "1.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/3054> a ns2:SpaceVelocityCondition ;
+    ns11:numericValue "0.72" ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/3055> a ns2:ReactionTimeCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/3056> a ns2:ReactionMediumCondition ;
+    ns2:conditionTypeAsText "Gas" ;
+    ns2:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Gas> ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/3057> a ns2:WavelengthCondition ;
+    ns2:conditionTypeAsText "UV" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns11:numericValue "192-280(UV-A)" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/3058> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionTypeAsText "UV" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/input/750> a ns2:Input ;
+    ns2:cristalStructure "P25" ;
+    ns2:hasChemical <http://data.example.com/chemical/1>,
+        <http://data.example.com/chemical/379> ;
+    ns2:hasRole <http://base.namespace.com/Catalyst> .
+
+<http://data.example.com/input/751> a ns2:Input ;
+    ns2:cristalStructure "P25" ;
+    ns2:hasChemical <http://data.example.com/chemical/4> ;
+    ns2:hasRole <http://base.namespace.com/Co-catalyst> ;
+    ns2:percentage 5e-01 .
+
+<http://data.example.com/input/752> a ns2:Input ;
+    ns2:cristalStructure "P25" ;
+    ns2:hasChemical <http://data.example.com/chemical/12> ;
+    ns2:hasRole <http://base.namespace.com/Co-catalyst> ;
+    ns2:percentage 5e-01 .
+
+<http://data.example.com/input/753> a ns2:Input ;
+    ns2:cristalStructure "P25" ;
+    ns2:hasChemical <http://data.example.com/chemical/3> ;
+    ns2:hasRole <http://base.namespace.com/Reductant> .
+
+<http://data.example.com/journal/98> a ns21:Journal ;
+    dcterms:title "APPLIED CATALYSIS A-GENERAL" .
+
+<http://data.example.com/materialTransformastionProcess/287> a ns2:MaterialTransformationProcess ;
+    rdfs:label "Cu-Fe/TiO2" ;
+    ns2:hasBET <http://data.example.com/bet/287> ;
+    ns2:hasCondition <http://data.example.com/condition/3048>,
+        <http://data.example.com/condition/3049>,
+        <http://data.example.com/condition/3050>,
+        <http://data.example.com/condition/3051>,
+        <http://data.example.com/condition/3052>,
+        <http://data.example.com/condition/3053>,
+        <http://data.example.com/condition/3054>,
+        <http://data.example.com/condition/3055>,
+        <http://data.example.com/condition/3056>,
+        <http://data.example.com/condition/3057>,
+        <http://data.example.com/condition/3058> ;
+    ns2:hasInput <http://data.example.com/input/750>,
+        <http://data.example.com/input/751>,
+        <http://data.example.com/input/752>,
+        <http://data.example.com/input/753> ;
+    ns2:hasOutput <http://data.example.com/output/937>,
+        <http://data.example.com/output/938> ;
+    ns2:hasReactionEg <http://data.example.com/eg/287> ;
+    ns2:operationMode <http://vocab.example.com/operationMode/Continuous> ;
+    ns2:reportedIn <https://doi.org/10.1016%2Fj.apcata.2007.11.022> .
+
+<http://data.example.com/output/937> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/6> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/937-gh> .
+
+<http://data.example.com/output/938> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/930> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/938-gh> .
+
+<http://data.example.com/output_quantity/937-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "0.9100"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/938-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "0.5800"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<https://doi.org/10.1016%2Fj.apcata.2007.11.022> a ns21:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/287> ;
+    dcterms:creator <http://data.example.com/author/J.C.S.%20Wu-71>,
+        <http://data.example.com/author/T-V.%20Nguyen-70> ;
+    dcterms:date "2008-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/98> ;
+    dcterms:title "Photoreduction of CO2 in an optical-fiber photo: Effects of metals addition and catalyst carrier" ;
+    ns21:abstract "The transformation of CO2 to hydrocarbons using sunlight is one of best routes to produce renewable energy. Photocatalytic reduction of CO2 with H2O in the gaseous phase is studied by using Cu-Fe/TiO2 catalyst coated on optical fibers under UVA and UVC irradiation. Catalyst coated optical fibers are assembled in the reactor such that the UV light can enter along the fibers to conduct the photocatalytic reaction on its surface. Methane and ethylene as main products are observed to evolve from this photoreactor. The presence of Fe as a co-dopant in Cu/TiO2 catalyst is found to synergistically reduce CO2 with H2O to ethylene at the quantum yield and total energy efficiency of 0.024% and 0.016%, respectively. This phenomenon is well explained by an efficient charge transfer mechanism between TiO2 as a support and Cu as well as Fe as co-dopants. Methane is formed more favorably than ethylene on Cu/TiO2. Meanwhile, Fe as a co-dopant on Cu/TiO2 catalyst is found to depress the methane formation. The photo production of ethylene over catalysts supported on optical fibers presents yields that are one order of magnitude higher than that on the glass plate counterpart. For a given amount of catalyst and light energy, the optical-fiber reactor can utilize light energy efficiently. Many photo-driven reactions will have advantage using such optical-fiber system." ;
+    ns21:doi "10.1016/j.apcata.2007.11.022" ;
+    ns21:pageStart "112"^^xsd:positiveInteger ;
+    ns21:volume "335"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/Taiwan%2C%20Province%20of%20China> a schema:Country .
+

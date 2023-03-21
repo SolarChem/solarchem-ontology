@@ -1,0 +1,252 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/J.%20Fan-461> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "J. Fan" .
+
+<http://data.example.com/author/S.%20Liu-462> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "S. Liu" .
+
+<http://data.example.com/author/Z.%20Wang-463> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Z. Wang" .
+
+<http://data.example.com/author/Z.%20Zhihuan-460> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Z. Zhihuan" .
+
+<http://data.example.com/chemical/1> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TiO2" .
+
+<http://data.example.com/chemical/23> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CoPc" .
+
+<http://data.example.com/chemical/30> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "NaOH" .
+
+<http://data.example.com/chemical/379> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TiO2" .
+
+<http://data.example.com/condition/1266> a ns2:ReactorCondition ;
+    ns2:conditionTypeAsText "Slurry" ;
+    ns2:reactorType "Slurry" ;
+    ns11:numericValue "0.10" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/1267> a ns2:CatalystSetUpCondition ;
+    ns2:conditionTypeAsText "Powder(Suspended)" ;
+    ns2:setUpType "Powder(Suspended)" ;
+    ns11:numericValue "0.15" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/1268> a ns2:LampPowerCondition ;
+    ns2:conditionTypeAsText "Halogen" ;
+    ns2:lampType "Halogen" ;
+    ns11:numericValue "500.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/1269> a ns2:LampIrradianceCondition ;
+    ns2:conditionTypeAsText "Halogen" ;
+    ns2:lampType "Halogen" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/1270> a ns2:TemperatureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/1271> a ns2:PreasureCondition ;
+    ns11:numericValue "1.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/1272> a ns2:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/1273> a ns2:ReactionTimeCondition ;
+    ns11:numericValue "20.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/1274> a ns2:ReactionMediumCondition ;
+    ns2:conditionTypeAsText "Liquid" ;
+    ns2:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/1275> a ns2:WavelengthCondition ;
+    ns2:conditionTypeAsText "Visible" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns11:numericValue "400-780" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/1276> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionTypeAsText "Visible" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/input/324> a ns2:Input ;
+    ns2:cristalStructure "Anatase" ;
+    ns2:hasChemical <http://data.example.com/chemical/1>,
+        <http://data.example.com/chemical/379> ;
+    ns2:hasRole <http://base.namespace.com/Catalyst> .
+
+<http://data.example.com/input/325> a ns2:Input ;
+    ns2:cristalStructure "Anatase" ;
+    ns2:hasChemical <http://data.example.com/chemical/23> ;
+    ns2:hasRole <http://base.namespace.com/Dye> ;
+    ns2:percentage 5e-01 .
+
+<http://data.example.com/input/326> a ns2:Input ;
+    ns2:cristalStructure "Anatase" ;
+    ns2:hasChemical <http://data.example.com/chemical/30> ;
+    ns2:hasRole <http://base.namespace.com/Reductant> .
+
+<http://data.example.com/journal/200> a ns21:Journal ;
+    dcterms:title "CHEMICAL ENGINEERING JOURNAL" .
+
+<http://data.example.com/materialTransformastionProcess/120> a ns2:MaterialTransformationProcess ;
+    rdfs:label "CoPc/TiO2" ;
+    ns2:hasBET <http://data.example.com/bet/120> ;
+    ns2:hasCondition <http://data.example.com/condition/1266>,
+        <http://data.example.com/condition/1267>,
+        <http://data.example.com/condition/1268>,
+        <http://data.example.com/condition/1269>,
+        <http://data.example.com/condition/1270>,
+        <http://data.example.com/condition/1271>,
+        <http://data.example.com/condition/1272>,
+        <http://data.example.com/condition/1273>,
+        <http://data.example.com/condition/1274>,
+        <http://data.example.com/condition/1275>,
+        <http://data.example.com/condition/1276> ;
+    ns2:hasInput <http://data.example.com/input/324>,
+        <http://data.example.com/input/325>,
+        <http://data.example.com/input/326> ;
+    ns2:hasOutput <http://data.example.com/output/417>,
+        <http://data.example.com/output/418>,
+        <http://data.example.com/output/419>,
+        <http://data.example.com/output/420>,
+        <http://data.example.com/output/421>,
+        <http://data.example.com/output/422>,
+        <http://data.example.com/output/423>,
+        <http://data.example.com/output/424>,
+        <http://data.example.com/output/425>,
+        <http://data.example.com/output/426> ;
+    ns2:hasReactionEg <http://data.example.com/eg/120> ;
+    ns2:operationMode <http://vocab.example.com/operationMode/Batch> ;
+    ns2:reportedIn <https://doi.org/10.1016%2Fj.cej.2009.02.005> .
+
+<http://data.example.com/output/417> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/927> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/417-gh> .
+
+<http://data.example.com/output/418> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/6> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/418-gh> .
+
+<http://data.example.com/output/419> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/184> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/419-gh> .
+
+<http://data.example.com/output/420> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/7> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/420-gh> .
+
+<http://data.example.com/output/421> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/932> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/421-gh> .
+
+<http://data.example.com/output/422> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/927> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/422-g> .
+
+<http://data.example.com/output/423> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/6> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/423-g> .
+
+<http://data.example.com/output/424> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/184> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/424-g> .
+
+<http://data.example.com/output/425> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/7> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/425-g> .
+
+<http://data.example.com/output/426> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/932> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/426-g> .
+
+<http://data.example.com/output_quantity/417-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "1.2500"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/418-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "0.7500"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/419-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "0.2500"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/420-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "15.7500"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/421-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "2.5000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/422-g> a ns2:OutputQuantity ;
+    ns2:numericValue "25.0000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/423-g> a ns2:OutputQuantity ;
+    ns2:numericValue "15.0000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/424-g> a ns2:OutputQuantity ;
+    ns2:numericValue "5.0000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/425-g> a ns2:OutputQuantity ;
+    ns2:numericValue "315.0000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/426-g> a ns2:OutputQuantity ;
+    ns2:numericValue "50.0000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<https://doi.org/10.1016%2Fj.cej.2009.02.005> a ns21:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/120> ;
+    dcterms:creator <http://data.example.com/author/J.%20Fan-461>,
+        <http://data.example.com/author/S.%20Liu-462>,
+        <http://data.example.com/author/Z.%20Wang-463>,
+        <http://data.example.com/author/Z.%20Zhihuan-460> ;
+    dcterms:date "2009-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/200> ;
+    dcterms:title "Optimal design and preparation of titania-supported CoPc using solâ€“gel for the photo-reduction of CO2" ;
+    ns21:abstract "CoPc-loading titania (CoPc/TiO2) was synthesized by an improved sol&ndash;gel method using a homogeneous hydrolysis technique. In order to increase C1 products in the photo-reduction of CO2, preparation conditions of photo-catalysts were optimized using a four-level OAD16 (45) matrix in which molar ratio of reacting species, solvent, pH, mass ratio of CoPc to TiO2, and calcining temperature were chosen as main parameters. The results obtained by orthogonal array design (OAD) method indicate that calcining temperature was the most important parameter influencing the photo-reduction of CO2. Under optimal experimental conditions the total yield of reduction products of CO2 in NaOH aqueous solutions was 406.65&mu;mol/g-catal. The grain size of CoPc/TiO2 was uniform with an average diameter of approximately 11nm. In addition, the catalyst was characterized by X-ray powder diffraction, scanning electron microscopy, UV&ndash;vis DRS, BET and FT-IR spectroscopy. CoPc/TiO2 catalyst synthesized by sol&ndash;gel exhibited relatively high photochemical activity for the reduction of CO2 compared with TiO2 prepared by sol&ndash;gel method." ;
+    ns21:doi "10.1016/j.cej.2009.02.005" ;
+    ns21:pageStart "134"^^xsd:positiveInteger ;
+    ns21:volume "151"^^xsd:positiveInteger .
+
+<http://data.example.com/chemical/184> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CH3OH" .
+
+<http://data.example.com/chemical/6> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CH4" .
+
+<http://data.example.com/chemical/7> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "HCOOH" .
+
+<http://data.example.com/chemical/927> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CO" .
+
+<http://data.example.com/chemical/932> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CH2O" .
+
+<https://en.wikipedia.org/wiki/China> a schema:Country .
+

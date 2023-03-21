@@ -1,0 +1,122 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/A.%20Iwaszuk-789> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Ireland> ;
+    schema:name "A. Iwaszuk" .
+
+<http://data.example.com/author/H.%20Tada-793> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "H. Tada" .
+
+<http://data.example.com/author/M.%20Fujishima-792> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "M. Fujishima" .
+
+<http://data.example.com/author/M.%20Nolan-790> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Ireland> ;
+    schema:name "M. Nolan" .
+
+<http://data.example.com/author/Q.%20Jin-791> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "Q. Jin" .
+
+<http://data.example.com/condition/5512> a ns2:ReactorCondition ;
+    ns2:conditionTypeAsText "Slurry" ;
+    ns2:reactorType "Slurry" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/5513> a ns2:CatalystSetUpCondition ;
+    ns2:conditionTypeAsText "Powder(Suspended)" ;
+    ns2:setUpType "Powder(Suspended)" ;
+    ns11:numericValue "0.1" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/5514> a ns2:LampPowerCondition ;
+    ns2:conditionTypeAsText "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/5515> a ns2:LampIrradianceCondition ;
+    ns2:conditionTypeAsText "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/5516> a ns2:TemperatureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/5517> a ns2:PreasureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/5518> a ns2:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/5519> a ns2:ReactionTimeCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/5520> a ns2:ReactionMediumCondition ;
+    ns2:conditionTypeAsText "Liquid" ;
+    ns2:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/5521> a ns2:WavelengthCondition ;
+    ns2:conditionTypeAsText "UV" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns11:numericValue "315-400(UV-C)" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/5522> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionTypeAsText "UV" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/606> a ns21:Journal ;
+    dcterms:title "JOURNAL OF PHYSICAL CHEMISTRY C" .
+
+<http://data.example.com/materialTransformastionProcess/523> a ns2:MaterialTransformationProcess ;
+    rdfs:label "NiO/TiO2" ;
+    ns2:hasBET <http://data.example.com/bet/523> ;
+    ns2:hasCondition <http://data.example.com/condition/5512>,
+        <http://data.example.com/condition/5513>,
+        <http://data.example.com/condition/5514>,
+        <http://data.example.com/condition/5515>,
+        <http://data.example.com/condition/5516>,
+        <http://data.example.com/condition/5517>,
+        <http://data.example.com/condition/5518>,
+        <http://data.example.com/condition/5519>,
+        <http://data.example.com/condition/5520>,
+        <http://data.example.com/condition/5521>,
+        <http://data.example.com/condition/5522> ;
+    ns2:hasInput <http://data.example.com/input/1343>,
+        <http://data.example.com/input/1344>,
+        <http://data.example.com/input/1345> ;
+    ns2:hasReactionEg <http://data.example.com/eg/523> ;
+    ns2:operationMode <http://vocab.example.com/operationMode/Batch> ;
+    ns2:reportedIn <https://doi.org/10.1021%2Fjp306793r> .
+
+<https://doi.org/10.1021%2Fjp306793r> a ns21:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/523> ;
+    dcterms:creator <http://data.example.com/author/A.%20Iwaszuk-789>,
+        <http://data.example.com/author/H.%20Tada-793>,
+        <http://data.example.com/author/M.%20Fujishima-792>,
+        <http://data.example.com/author/M.%20Nolan-790>,
+        <http://data.example.com/author/Q.%20Jin-791> ;
+    dcterms:date "2013-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/606> ;
+    dcterms:title "Origin of the visible-light response of Nickel(II) oxide cluster surface modified titanium(IV) dioxide" ;
+    ns21:abstract "A number of NiO clusters have been formed on TiO2 (anatase/rutile = 4/1 w/w, P-25, Degussa) in a highly dispersed state (NiO/TiO2) by the chemisorption&ndash;calcination cycle technique. The NiO/TiO2 causes high visible-light activities for the degradations of 2-naphthol and p-cresol exceeding those of FeOx/TiO2 (Tada Angew. Chem., Int. Ed. 2011, 50, 3501&minus;3505). The main purpose of this study is to clarify the origin at an electronic level by the density functional simulation for NiO, Ni2O2, Ni3O3, and Ni4O4 clusters supported on TiO2 rutile (110) and anatase (001) surfaces. The clusters adsorb strongly on both rutile and anatase with adsorption energies ranging from &minus;3.18 to &minus;6.15 eV, creating new interfacial bonds between the clusters and both surfaces. On rutile, intermetallic Ni&ndash;Ti bonds facilitate stronger binding compared with anatase. The electronic structure shows that the top of the valence bands (VBs) of rutile and anatase arises from electronic states on the NiO cluster. On the other hand, the conduction band of rutile is from the Ti 3d states, whereas NiO cluster levels are generated near the conduction band minimum of anatase. This is in contrast to the SnO2/rutile TiO2 system, where the density of states near the conduction band minimum increases with the VB unmodified. In the NiO/TiO2 system, the band gaps of both rutile and anatase are narrowed by up to 0.8 eV compared with pristine TiO2, which pushes the photoactivity into the visible region. In view of the calculated electronic structure, we have attributed the enhanced photocataltyic activity both to the charge separation due to the excitation from the Ni 3d surface sub-band to the TiO2 conduction band and the action of the NiO species as a mediator for the electron transfer from the TiO2 conduction band to O2." ;
+    ns21:doi "10.1021/jp306793r" ;
+    ns21:issue "6" ;
+    ns21:pageStart "2709"^^xsd:positiveInteger ;
+    ns21:volume "117"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/Ireland> a schema:Country .
+
+<https://en.wikipedia.org/wiki/Japan> a schema:Country .
+
