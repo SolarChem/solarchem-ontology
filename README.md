@@ -2,7 +2,7 @@
 
 Authors: Oier Beaskoetxea
 
-Contributors: Ana Iglesias, Oscar Corcho, Daniel Garijo, Victor de la Peña
+Contributors: Ana Iglesias, Oscar Corcho, Daniel Garijo, Victor de la Peña.
 
 Vocabulary for the representation of photocatalysis processes mentioned in scientific papers. These experiments serve to define how a photocatalysis experiment has been done; under what circumstances, what products were used and what have been the results in order to analyze and reproduce the experiments mentioned in the articles. This vocabulary has been created in collaboration with the [IMDEA Energía](https://www.energia.imdea.org/) institute of Madrid.
 
