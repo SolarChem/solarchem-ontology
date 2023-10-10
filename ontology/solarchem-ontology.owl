@@ -1,5 +1,5 @@
 @prefix : <http://w3id.org/solarchem/sc/> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dc: <http://purl.org/dc/terms/> .
 @prefix sc: <http://w3id.org/solarchem/sc#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -17,29 +17,39 @@
 @base <http://w3id.org/solarchem/sc/> .
 
 <http://w3id.org/solarchem/sc/> rdf:type owl:Ontology ;
-                                 dc:author "Oier Beaskoetxea" ;
-                                 dc:contributor "Ana Iglesias-Molina" ,
-                                                "Daniel Garijo" ,
-                                                "Laura Collado" ,
-                                                "Miguel Tecedor" ,
-                                                "Víctor de la Peña" ;
-                                 dc:description "Ontology code created by Chowlk" ;
-                                 owl:versionInfo "0.8" .
+                                 <http://purl.org/dc/elements/1.1/author> "Oier Beaskoetxea" ;
+                                 <http://purl.org/dc/elements/1.1/contributor> "Ana Iglesias-Molina" ,
+                                                                               "Daniel Garijo" ,
+                                                                               "Laura Collado" ,
+                                                                               "Miguel Tecedor" ,
+                                                                               "Víctor de la Peña" ;
+                                 <http://purl.org/dc/elements/1.1/description> "This ontology represents the execution of experiments related to electrocatalysis, photocatalysis and photoelectrocatalysis with inputs, outputs, and experimental conditions." ;
+                                 dc:license "http://purl.org/NET/rdflicense/cc-by4.0" ;
+                                 dc:title "The SolarChem Ontology" ;
+                                 owl:versionInfo "v0.8.0" .
 
 #################################################################
 #    Annotation properties
 #################################################################
 
 ###  http://purl.org/dc/elements/1.1/author
-dc:author rdf:type owl:AnnotationProperty .
+<http://purl.org/dc/elements/1.1/author> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/elements/1.1/contributor
-dc:contributor rdf:type owl:AnnotationProperty .
+<http://purl.org/dc/elements/1.1/contributor> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/elements/1.1/description
-dc:description rdf:type owl:AnnotationProperty .
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dc:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dc:title rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -47,17 +57,17 @@ dc:description rdf:type owl:AnnotationProperty .
 #################################################################
 
 ###  http://purl.org/dc/elements/1.1/creator
-dc:creator rdf:type owl:ObjectProperty ;
-           rdfs:domain bibo:Article ;
-           rdfs:range schema:Person ;
-           rdfs:label "creator" .
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:ObjectProperty ;
+                                          rdfs:domain bibo:Article ;
+                                          rdfs:range schema:Person ;
+                                          rdfs:label "creator" .
 
 
 ###  http://purl.org/dc/elements/1.1/isPartOf
-dc:isPartOf rdf:type owl:ObjectProperty ;
-            rdfs:domain bibo:Article ;
-            rdfs:range bibo:Journal ;
-            rdfs:label "is part of" .
+<http://purl.org/dc/elements/1.1/isPartOf> rdf:type owl:ObjectProperty ;
+                                           rdfs:domain bibo:Article ;
+                                           rdfs:range bibo:Journal ;
+                                           rdfs:label "is part of" .
 
 
 ###  http://qudt.org/2.1/schema/qudt/unit
@@ -214,13 +224,13 @@ prov:wasGeneratedBy rdf:type owl:ObjectProperty ;
 
 
 ###  http://purl.org/dc/elements/1.1/date
-dc:date rdf:type owl:DatatypeProperty ;
-        rdfs:label "date" .
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:DatatypeProperty ;
+                                       rdfs:label "date" .
 
 
 ###  http://purl.org/dc/elements/1.1/title
-dc:title rdf:type owl:DatatypeProperty ;
-         rdfs:label "title" .
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:DatatypeProperty ;
+                                        rdfs:label "title" .
 
 
 ###  http://purl.org/ontology/bibo/abstract
