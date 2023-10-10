@@ -1,0 +1,907 @@
+@prefix : <http://w3id.org/solarchem/sc/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix sc: <http://w3id.org/solarchem/sc#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qudt: <http://qudt.org/2.1/schema/qudt#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix scec: <http://w3id.org/solarchem/scec#> .
+@prefix scpc: <http://w3id.org/solarchem/scpc#> .
+@prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_> .
+@prefix scpec: <http://w3id.org/solarchem/scpec#> .
+@prefix schema: <https://schema.org/> .
+@base <http://w3id.org/solarchem/sc/> .
+
+<http://w3id.org/solarchem/sc/> rdf:type owl:Ontology ;
+                                 dc:author "Oier Beaskoetxea" ;
+                                 dc:contributor "Ana Iglesias-Molina" ,
+                                                "Daniel Garijo" ,
+                                                "Laura Collado" ,
+                                                "Miguel Tecedor" ,
+                                                "Víctor de la Peña" ;
+                                 dc:description "Ontology code created by Chowlk" ;
+                                 owl:versionInfo "0.8" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/author
+dc:author rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/contributor
+dc:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:ObjectProperty ;
+           rdfs:domain bibo:Article ;
+           rdfs:range schema:Person ;
+           rdfs:label "creator" .
+
+
+###  http://purl.org/dc/elements/1.1/isPartOf
+dc:isPartOf rdf:type owl:ObjectProperty ;
+            rdfs:domain bibo:Article ;
+            rdfs:range bibo:Journal ;
+            rdfs:label "is part of" .
+
+
+###  http://qudt.org/2.1/schema/qudt/unit
+<http://qudt.org/2.1/schema/qudt/unit> rdf:type owl:ObjectProperty ;
+                                       rdfs:domain [ owl:intersectionOf ( sc:BandGap
+                                                                          sc:IlluminatedArea
+                                                                          sc:Irradiance
+                                                                          sc:Output
+                                                                          sc:Power
+                                                                          sc:PressureCondition
+                                                                          sc:ReactionTimeCondition
+                                                                          sc:SurfaceArea
+                                                                          sc:TemperatureCondition
+                                                                          sc:pHCondition
+                                                                          scpc:ReactorCondition
+                                                                          scpec:ElectrochemicalMetric
+                                                                          scpec:QEMetric
+                                                                        ) ;
+                                                     rdf:type owl:Class
+                                                   ] ;
+                                       rdfs:range <http://qudt.org/2.1/schema/qudt/Unit> ;
+                                       rdfs:label "unit" .
+
+
+###  http://w3id.org/solarchem/sc#affiliationCountry
+sc:affiliationCountry rdf:type owl:ObjectProperty ;
+                      rdfs:domain schema:Person ;
+                      rdfs:range schema:Country ;
+                      rdfs:label "affiliation country" .
+
+
+###  http://w3id.org/solarchem/sc#hasBandGap
+sc:hasBandGap rdf:type owl:ObjectProperty ;
+              rdfs:domain sc:Input ;
+              rdfs:range sc:BandGap ;
+              rdfs:label "has band gap" .
+
+
+###  http://w3id.org/solarchem/sc#hasChemical
+sc:hasChemical rdf:type owl:ObjectProperty ;
+               rdfs:domain [ owl:intersectionOf ( sc:Input
+                                                  sc:Output
+                                                ) ;
+                             rdf:type owl:Class
+                           ] ;
+               rdfs:range <http://purl.obolibrary.org/obo/24431> ;
+               rdfs:label "has chemical" .
+
+
+###  http://w3id.org/solarchem/sc#hasCondition
+sc:hasCondition rdf:type owl:ObjectProperty ;
+                rdfs:domain sc:ExperimentExecution ;
+                rdfs:range sc:Condition ;
+                rdfs:label "has condition" .
+
+
+###  http://w3id.org/solarchem/sc#hasConversionMetric
+sc:hasConversionMetric rdf:type owl:ObjectProperty ;
+                       rdfs:domain sc:Output ;
+                       rdfs:range sc:ConversionMetric ;
+                       rdfs:label "has conversion metric" .
+
+
+###  http://w3id.org/solarchem/sc#hasExperiment
+sc:hasExperiment rdf:type owl:ObjectProperty ;
+                 rdfs:domain bibo:Article ;
+                 rdfs:range sc:ExperimentExecution ;
+                 rdfs:label "has experiment" .
+
+
+###  http://w3id.org/solarchem/sc#hasIlluminatedArea
+sc:hasIlluminatedArea rdf:type owl:ObjectProperty ;
+                      rdfs:domain sc:LightSource ;
+                      rdfs:range sc:IlluminatedArea ;
+                      rdfs:label "has illuminated area" .
+
+
+###  http://w3id.org/solarchem/sc#hasIrradiance
+sc:hasIrradiance rdf:type owl:ObjectProperty ;
+                 rdfs:domain sc:LightSource ;
+                 rdfs:range sc:Irradiance ;
+                 rdfs:label "has irradiance" .
+
+
+###  http://w3id.org/solarchem/sc#hasLightSource
+sc:hasLightSource rdf:type owl:ObjectProperty ;
+                  rdfs:domain [ owl:intersectionOf ( scpc:PhotocatalysisExperiment
+                                                     scpec:PhotoelectrocatalysisExperiment
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+                  rdfs:range sc:LightSource ;
+                  rdfs:label "has light source" .
+
+
+###  http://w3id.org/solarchem/sc#hasPower
+sc:hasPower rdf:type owl:ObjectProperty ;
+            rdfs:domain sc:LightSource ;
+            rdfs:range sc:Power ;
+            rdfs:label "has power" .
+
+
+###  http://w3id.org/solarchem/sc#hasWavelength
+sc:hasWavelength rdf:type owl:ObjectProperty ;
+                 rdfs:domain sc:LightSource ;
+                 rdfs:range sc:Wavelenght ;
+                 rdfs:label "has wavelength" .
+
+
+###  http://w3id.org/solarchem/sc#reportedIn
+sc:reportedIn rdf:type owl:ObjectProperty ;
+              rdfs:domain sc:ExperimentExecution ;
+              rdfs:range bibo:Article ;
+              rdfs:label "reported in" .
+
+
+###  http://w3id.org/solarchem/scpec#hasElectrochemicalMetric
+scpec:hasElectrochemicalMetric rdf:type owl:ObjectProperty ;
+                               rdfs:domain sc:Output ;
+                               rdfs:range scpec:ElectrochemicalMetric ;
+                               rdfs:label "has electrochemical metric" .
+
+
+###  http://w3id.org/solarchem/scpec#hasQEMetric
+scpec:hasQEMetric rdf:type owl:ObjectProperty ;
+                  rdfs:domain sc:Output ;
+                  rdfs:range scpec:QEMetric ;
+                  rdfs:label "has QE metric" .
+
+
+###  http://www.w3.org/ns/prov#used
+prov:used rdf:type owl:ObjectProperty ;
+          rdfs:domain sc:ExperimentExecution ;
+          rdfs:range sc:Input ;
+          rdfs:label "used" .
+
+
+###  http://www.w3.org/ns/prov#wasGeneratedBy
+prov:wasGeneratedBy rdf:type owl:ObjectProperty ;
+                    rdfs:domain sc:Output ;
+                    rdfs:range sc:ExperimentExecution ;
+                    rdfs:label "was generated by" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/formula
+<http://purl.obolibrary.org/obo/formula> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <http://purl.obolibrary.org/obo/24431> ;
+                                         rdfs:range xsd:string ;
+                                         rdfs:label "formula" .
+
+
+###  http://purl.org/dc/elements/1.1/date
+dc:date rdf:type owl:DatatypeProperty ;
+        rdfs:label "date" .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:DatatypeProperty ;
+         rdfs:label "title" .
+
+
+###  http://purl.org/ontology/bibo/abstract
+bibo:abstract rdf:type owl:DatatypeProperty ;
+              rdfs:label "abstract" .
+
+
+###  http://purl.org/ontology/bibo/doi
+bibo:doi rdf:type owl:DatatypeProperty ;
+         rdfs:label "doi" .
+
+
+###  http://purl.org/ontology/bibo/issue
+bibo:issue rdf:type owl:DatatypeProperty ;
+           rdfs:label "issue" .
+
+
+###  http://purl.org/ontology/bibo/pageStart
+bibo:pageStart rdf:type owl:DatatypeProperty ;
+               rdfs:label "page start" .
+
+
+###  http://qudt.org/2.1/schema/qudt#numericValue
+qudt:numericValue rdf:type owl:DatatypeProperty ;
+                  rdfs:domain [ owl:intersectionOf ( sc:BandGap
+                                                     sc:IlluminatedArea
+                                                     sc:Irradiance
+                                                     sc:Output
+                                                     sc:Power
+                                                     sc:PressureCondition
+                                                     sc:ReactionTimeCondition
+                                                     sc:SurfaceArea
+                                                     sc:TemperatureCondition
+                                                     sc:pHCondition
+                                                     scpec:ElectrochemicalMetric
+                                                     scpec:QEMetric
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+                  rdfs:label "numeric value" .
+
+
+###  http://w3id.org/solarchem/sc/crystalStructure
+:crystalStructure rdf:type owl:DatatypeProperty ;
+                  rdfs:domain sc:Input ;
+                  rdfs:range xsd:string .
+
+
+###  http://w3id.org/solarchem/scpc#reactorVolume
+scpc:reactorVolume rdf:type owl:DatatypeProperty ;
+                   rdfs:domain scpc:ReactorCondition ;
+                   rdfs:label "reactor volume" .
+
+
+###  https://qudt.org/2.1/schema/qudt#floatPercentage
+<https://qudt.org/2.1/schema/qudt#floatPercentage> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain [ owl:intersectionOf ( sc:ConversionMetric
+                                                                                      sc:Input
+                                                                                    ) ;
+                                                                 rdf:type owl:Class
+                                                               ] ;
+                                                   rdfs:label "float percentage" .
+
+
+###  https://schema.org/email
+schema:email rdf:type owl:DatatypeProperty ;
+             rdfs:label "email" .
+
+
+###  https://schema.org/name
+schema:name rdf:type owl:DatatypeProperty ;
+            rdfs:label "name" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.obolibrary.org/obo/24431
+<http://purl.obolibrary.org/obo/24431> rdf:type owl:Class ;
+                                       rdfs:label "chemical entity" .
+
+
+###  http://purl.org/ontology/bibo/Article
+bibo:Article rdf:type owl:Class ;
+             rdfs:label "Article" .
+
+
+###  http://purl.org/ontology/bibo/Journal
+bibo:Journal rdf:type owl:Class ;
+             rdfs:label "Journal" .
+
+
+###  http://qudt.org/2.1/schema/qudt/Unit
+<http://qudt.org/2.1/schema/qudt/Unit> rdf:type owl:Class ;
+                                       rdfs:label "Unit" .
+
+
+###  http://w3id.org/solarchem/sc#BandGap
+sc:BandGap rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty <http://qudt.org/2.1/schema/qudt/unit> ;
+                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                           ] ;
+           rdfs:label "Band Gap" .
+
+
+###  http://w3id.org/solarchem/sc#Condition
+sc:Condition rdf:type owl:Class ;
+             rdfs:label "Condition" .
+
+
+###  http://w3id.org/solarchem/sc#ConversionMetric
+sc:ConversionMetric rdf:type owl:Class ;
+                    rdfs:label "Conversion Metric" .
+
+
+###  http://w3id.org/solarchem/sc#ElectrochemicalConfiguration
+sc:ElectrochemicalConfiguration rdf:type owl:Class ;
+                                rdfs:subClassOf sc:Condition ;
+                                rdfs:label "Electrochemical Configuration" .
+
+
+###  http://w3id.org/solarchem/sc#ExperimentExecution
+sc:ExperimentExecution rdf:type owl:Class ;
+                       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                         owl:onProperty prov:used ;
+                                         owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty sc:reportedIn ;
+                                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                                       ] ;
+                       rdfs:label "Experiment Execution" .
+
+
+###  http://w3id.org/solarchem/sc#FaradaicEfficiency
+sc:FaradaicEfficiency rdf:type owl:Class ;
+                      rdfs:subClassOf sc:ConversionMetric ;
+                      rdfs:label "Faradaic Efficiency" .
+
+
+###  http://w3id.org/solarchem/sc#IlluminatedArea
+sc:IlluminatedArea rdf:type owl:Class ;
+                   rdfs:label "Illuminated Area" .
+
+
+###  http://w3id.org/solarchem/sc#Input
+sc:Input rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty sc:hasBandGap ;
+                           owl:cardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty sc:hasChemical ;
+                           owl:cardinality "1"^^xsd:nonNegativeInteger
+                         ] ;
+         rdfs:label "Input" .
+
+
+###  http://w3id.org/solarchem/sc#Irradiance
+sc:Irradiance rdf:type owl:Class ;
+              rdfs:label "Irradiance" .
+
+
+###  http://w3id.org/solarchem/sc#Lamp
+sc:Lamp rdf:type owl:Class ;
+        rdfs:label "Lamp" .
+
+
+###  http://w3id.org/solarchem/sc#LightSource
+sc:LightSource rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty sc:hasIlluminatedArea ;
+                                 owl:cardinality "1"^^xsd:nonNegativeInteger
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty sc:hasIrradiance ;
+                                 owl:cardinality "1"^^xsd:nonNegativeInteger
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty sc:hasWavelength ;
+                                 owl:cardinality "1"^^xsd:nonNegativeInteger
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty sc:hasPower ;
+                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                               ] ;
+               rdfs:label "Light Source" .
+
+
+###  http://w3id.org/solarchem/sc#MaterialTransformationRole
+sc:MaterialTransformationRole rdf:type owl:Class ;
+                              rdfs:label "Material Transformation Role" .
+
+
+###  http://w3id.org/solarchem/sc#MonochromaticLight
+sc:MonochromaticLight rdf:type owl:Class ;
+                      rdfs:subClassOf sc:LightSource ;
+                      rdfs:label "Monochromatic Light" .
+
+
+###  http://w3id.org/solarchem/sc#OperationModeCondition
+sc:OperationModeCondition rdf:type owl:Class ;
+                          rdfs:subClassOf sc:Condition ;
+                          rdfs:label "Operation Mode Condition" .
+
+
+###  http://w3id.org/solarchem/sc#Output
+sc:Output rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty sc:hasExperiment ;
+                            owl:minCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty <http://qudt.org/2.1/schema/qudt/unit> ;
+                            owl:cardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty sc:hasChemical ;
+                            owl:cardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty prov:wasGeneratedBy ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ;
+          rdfs:label "Output" .
+
+
+###  http://w3id.org/solarchem/sc#Overpotential
+sc:Overpotential rdf:type owl:Class ;
+                 rdfs:subClassOf scpec:ElectrochemicalMetric ;
+                 rdfs:label "Overpotential" .
+
+
+###  http://w3id.org/solarchem/sc#Power
+sc:Power rdf:type owl:Class ;
+         rdfs:label "Power" .
+
+
+###  http://w3id.org/solarchem/sc#PressureCondition
+sc:PressureCondition rdf:type owl:Class ;
+                     rdfs:subClassOf sc:Condition ;
+                     rdfs:label "Pressure Condition" .
+
+
+###  http://w3id.org/solarchem/sc#ReactionMediumCondition
+sc:ReactionMediumCondition rdf:type owl:Class ;
+                           rdfs:subClassOf sc:Condition ;
+                           rdfs:label "Reaction Medium Condition" .
+
+
+###  http://w3id.org/solarchem/sc#ReactionTimeCondition
+sc:ReactionTimeCondition rdf:type owl:Class ;
+                         rdfs:subClassOf sc:Condition ;
+                         rdfs:label "Reaction Time Condition" .
+
+
+###  http://w3id.org/solarchem/sc#SolarSimulatorLight
+sc:SolarSimulatorLight rdf:type owl:Class ;
+                       rdfs:subClassOf sc:LightSource ;
+                       rdfs:label "Solar Simulator Light" .
+
+
+###  http://w3id.org/solarchem/sc#SolarToFuel
+sc:SolarToFuel rdf:type owl:Class ;
+               rdfs:subClassOf sc:ConversionMetric ;
+               rdfs:label "Solar To Fuel" .
+
+
+###  http://w3id.org/solarchem/sc#SunLight
+sc:SunLight rdf:type owl:Class ;
+            rdfs:subClassOf sc:LightSource ;
+            rdfs:label "Sun Light" .
+
+
+###  http://w3id.org/solarchem/sc#SurfaceArea
+sc:SurfaceArea rdf:type owl:Class ;
+               rdfs:label "Surface Area" .
+
+
+###  http://w3id.org/solarchem/sc#TemperatureCondition
+sc:TemperatureCondition rdf:type owl:Class ;
+                        rdfs:subClassOf sc:Condition ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <http://qudt.org/2.1/schema/qudt/unit> ;
+                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                        ] ;
+                        rdfs:label "Temperature Condition" .
+
+
+###  http://w3id.org/solarchem/sc#UltravioletLight
+sc:UltravioletLight rdf:type owl:Class ;
+                    rdfs:subClassOf sc:LightSource ;
+                    rdfs:label "Ultraviolet Light" .
+
+
+###  http://w3id.org/solarchem/sc#UltravioletVisibleLight
+sc:UltravioletVisibleLight rdf:type owl:Class ;
+                           rdfs:subClassOf sc:LightSource ;
+                           rdfs:label "Ultraviolet Visible Light" .
+
+
+###  http://w3id.org/solarchem/sc#VisibleLight
+sc:VisibleLight rdf:type owl:Class ;
+                rdfs:subClassOf sc:LightSource ;
+                rdfs:label "Visible Light" .
+
+
+###  http://w3id.org/solarchem/sc#Wavelenght
+sc:Wavelenght rdf:type owl:Class ;
+              rdfs:label "Wavelenght" .
+
+
+###  http://w3id.org/solarchem/sc#pHCondition
+sc:pHCondition rdf:type owl:Class ;
+               rdfs:subClassOf sc:Condition ;
+               rdfs:label "p H Condition" .
+
+
+###  http://w3id.org/solarchem/sc/SolarToHydrogen
+:SolarToHydrogen rdf:type owl:Class ;
+                 rdfs:subClassOf sc:ConversionMetric ;
+                 rdfs:label "Solar To Hydrogen" .
+
+
+###  http://w3id.org/solarchem/scec#ElectrocatalysisExperiment
+scec:ElectrocatalysisExperiment rdf:type owl:Class ;
+                                rdfs:subClassOf sc:ExperimentExecution ;
+                                rdfs:label "Electrocatalysis Experiment" .
+
+
+###  http://w3id.org/solarchem/scec#TafelSlope
+scec:TafelSlope rdf:type owl:Class ;
+                rdfs:subClassOf scpec:ElectrochemicalMetric ;
+                rdfs:label "Tafel Slope" .
+
+
+###  http://w3id.org/solarchem/scec#TurnOverFrequency
+scec:TurnOverFrequency rdf:type owl:Class ;
+                       rdfs:subClassOf scpec:ElectrochemicalMetric ;
+                       rdfs:label "Turn Over Frequency" .
+
+
+###  http://w3id.org/solarchem/scpc#ApparentQuantumYield
+scpc:ApparentQuantumYield rdf:type owl:Class ;
+                          rdfs:subClassOf sc:ConversionMetric ;
+                          rdfs:label "Apparent Quantum Yield" .
+
+
+###  http://w3id.org/solarchem/scpc#Fixed-bedReactor
+scpc:Fixed-bedReactor rdf:type owl:Class ;
+                      rdfs:subClassOf scpc:ReactorCondition ;
+                      rdfs:label "Fixed-bed Reactor" .
+
+
+###  http://w3id.org/solarchem/scpc#Fluidised-bedReactor
+scpc:Fluidised-bedReactor rdf:type owl:Class ;
+                          rdfs:subClassOf scpc:ReactorCondition ;
+                          rdfs:label "Fluidised-bed Reactor" .
+
+
+###  http://w3id.org/solarchem/scpc#MembraneReactor
+scpc:MembraneReactor rdf:type owl:Class ;
+                     rdfs:subClassOf scpc:ReactorCondition ;
+                     rdfs:label "Membrane Reactor" .
+
+
+###  http://w3id.org/solarchem/scpc#MonolithicReactor
+scpc:MonolithicReactor rdf:type owl:Class ;
+                       rdfs:subClassOf scpc:ReactorCondition ;
+                       rdfs:label "Monolithic Reactor" .
+
+
+###  http://w3id.org/solarchem/scpc#OpticalFiberReactor
+scpc:OpticalFiberReactor rdf:type owl:Class ;
+                         rdfs:subClassOf scpc:ReactorCondition ;
+                         rdfs:label "Optical Fiber Reactor" .
+
+
+###  http://w3id.org/solarchem/scpc#PhotocatalysisExperiment
+scpc:PhotocatalysisExperiment rdf:type owl:Class ;
+                              rdfs:subClassOf sc:ExperimentExecution ;
+                              rdfs:label "Photocatalysis Experiment" .
+
+
+###  http://w3id.org/solarchem/scpc#PhotonicEfficiency
+scpc:PhotonicEfficiency rdf:type owl:Class ;
+                        rdfs:subClassOf sc:ConversionMetric ;
+                        rdfs:label "Photonic Efficiency" .
+
+
+###  http://w3id.org/solarchem/scpc#QuantumYield
+scpc:QuantumYield rdf:type owl:Class ;
+                  rdfs:subClassOf sc:ConversionMetric ;
+                  rdfs:label "Quantum Yield" .
+
+
+###  http://w3id.org/solarchem/scpc#ReactorCondition
+scpc:ReactorCondition rdf:type owl:Class ;
+                      rdfs:subClassOf sc:Condition ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty <http://qudt.org/2.1/schema/qudt/unit> ;
+                                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                      ] ;
+                      rdfs:label "Reactor Condition" .
+
+
+###  http://w3id.org/solarchem/scpc#SlurryReactor
+scpc:SlurryReactor rdf:type owl:Class ;
+                   rdfs:subClassOf scpc:ReactorCondition ;
+                   rdfs:label "Slurry Reactor" .
+
+
+###  http://w3id.org/solarchem/scpec#ABPE
+scpec:ABPE rdf:type owl:Class ;
+           rdfs:subClassOf scpec:QEMetric ;
+           rdfs:label "ABPE" .
+
+
+###  http://w3id.org/solarchem/scpec#ElectrochemicalMetric
+scpec:ElectrochemicalMetric rdf:type owl:Class ;
+                            rdfs:label "Electrochemical Metric" .
+
+
+###  http://w3id.org/solarchem/scpec#FF
+scpec:FF rdf:type owl:Class ;
+         rdfs:subClassOf scpec:ElectrochemicalMetric ;
+         rdfs:label "F F" .
+
+
+###  http://w3id.org/solarchem/scpec#IPCE
+scpec:IPCE rdf:type owl:Class ;
+           rdfs:subClassOf scpec:QEMetric ;
+           rdfs:label "IPCE" .
+
+
+###  http://w3id.org/solarchem/scpec#Onset
+scpec:Onset rdf:type owl:Class ;
+            rdfs:subClassOf scpec:ElectrochemicalMetric ;
+            rdfs:label "Onset" .
+
+
+###  http://w3id.org/solarchem/scpec#PhotoelectrocatalysisExperiment
+scpec:PhotoelectrocatalysisExperiment rdf:type owl:Class ;
+                                      rdfs:subClassOf sc:ExperimentExecution ;
+                                      rdfs:label "Photoelectrocatalysis Experiment" .
+
+
+###  http://w3id.org/solarchem/scpec#QEMetric
+scpec:QEMetric rdf:type owl:Class ;
+               rdfs:label "QE Metric" .
+
+
+###  http://w3id.org/solarchem/scpec#j_ph
+scpec:j_ph rdf:type owl:Class ;
+           rdfs:subClassOf scpec:ElectrochemicalMetric ;
+           rdfs:label "j_ph" .
+
+
+###  https://schema.org/Country
+schema:Country rdf:type owl:Class ;
+               rdfs:label "Country" .
+
+
+###  https://schema.org/Person
+schema:Person rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty sc:affiliationCountry ;
+                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                              ] ;
+              rdfs:label "Person" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://w3id.org/solarchem/sc#BatchMode
+sc:BatchMode rdf:type owl:NamedIndividual ,
+                      sc:OperationModeCondition .
+
+
+###  http://w3id.org/solarchem/sc#Catalysts
+sc:Catalysts rdf:type owl:NamedIndividual ,
+                      sc:MaterialTransformationRole .
+
+
+###  http://w3id.org/solarchem/sc#Co-catalysts
+sc:Co-catalysts rdf:type owl:NamedIndividual ,
+                         sc:MaterialTransformationRole .
+
+
+###  http://w3id.org/solarchem/sc#ContinuousMode
+sc:ContinuousMode rdf:type owl:NamedIndividual ,
+                           sc:OperationModeCondition .
+
+
+###  http://w3id.org/solarchem/sc#Dopant
+sc:Dopant rdf:type owl:NamedIndividual ,
+                   sc:MaterialTransformationRole .
+
+
+###  http://w3id.org/solarchem/sc#DoubleCell
+sc:DoubleCell rdf:type owl:NamedIndividual ,
+                       sc:ElectrochemicalConfiguration .
+
+
+###  http://w3id.org/solarchem/sc#FlowCell
+sc:FlowCell rdf:type owl:NamedIndividual ,
+                     sc:ElectrochemicalConfiguration .
+
+
+###  http://w3id.org/solarchem/sc#FluorescentLamp
+sc:FluorescentLamp rdf:type owl:NamedIndividual ,
+                            sc:Lamp .
+
+
+###  http://w3id.org/solarchem/sc#GasMedium
+sc:GasMedium rdf:type owl:NamedIndividual ,
+                      sc:ReactionMediumCondition .
+
+
+###  http://w3id.org/solarchem/sc#HalogenLamp
+sc:HalogenLamp rdf:type owl:NamedIndividual ,
+                        sc:Lamp .
+
+
+###  http://w3id.org/solarchem/sc#LEDLamp
+sc:LEDLamp rdf:type owl:NamedIndividual ,
+                    sc:Lamp .
+
+
+###  http://w3id.org/solarchem/sc#LiquidMedium
+sc:LiquidMedium rdf:type owl:NamedIndividual ,
+                         sc:ReactionMediumCondition .
+
+
+###  http://w3id.org/solarchem/sc#Mercury-XenonLamp
+sc:Mercury-XenonLamp rdf:type owl:NamedIndividual ,
+                              sc:Lamp .
+
+
+###  http://w3id.org/solarchem/sc#MercuryLamp
+sc:MercuryLamp rdf:type owl:NamedIndividual ,
+                        sc:Lamp .
+
+
+###  http://w3id.org/solarchem/sc#OtherLamp
+sc:OtherLamp rdf:type owl:NamedIndividual ,
+                      sc:Lamp .
+
+
+###  http://w3id.org/solarchem/sc#Reagent
+sc:Reagent rdf:type owl:NamedIndividual ,
+                    sc:MaterialTransformationRole .
+
+
+###  http://w3id.org/solarchem/sc#SingleCell
+sc:SingleCell rdf:type owl:NamedIndividual ,
+                       sc:ElectrochemicalConfiguration .
+
+
+###  http://w3id.org/solarchem/sc#StackCell
+sc:StackCell rdf:type owl:NamedIndividual ,
+                      sc:ElectrochemicalConfiguration .
+
+
+###  http://w3id.org/solarchem/sc#Tungsten-HalideLamp
+sc:Tungsten-HalideLamp rdf:type owl:NamedIndividual ,
+                                sc:Lamp .
+
+
+###  http://w3id.org/solarchem/sc#TungstenLamp
+sc:TungstenLamp rdf:type owl:NamedIndividual ,
+                         sc:Lamp .
+
+
+###  http://w3id.org/solarchem/sc#XenonLamp
+sc:XenonLamp rdf:type owl:NamedIndividual ,
+                      sc:Lamp .
+
+
+###  http://w3id.org/solarchem/sc#192-280WL
+<http://w3id.org/solarchem/sc#192-280WL> rdf:type owl:NamedIndividual ,
+                                                  sc:Wavelenght .
+
+
+###  http://w3id.org/solarchem/sc#192-780WL
+<http://w3id.org/solarchem/sc#192-780WL> rdf:type owl:NamedIndividual ,
+                                                  sc:Wavelenght .
+
+
+###  http://w3id.org/solarchem/sc#280-315WL
+<http://w3id.org/solarchem/sc#280-315WL> rdf:type owl:NamedIndividual ,
+                                                  sc:Wavelenght .
+
+
+###  http://w3id.org/solarchem/sc#280-780WL
+<http://w3id.org/solarchem/sc#280-780WL> rdf:type owl:NamedIndividual ,
+                                                  sc:Wavelenght .
+
+
+###  http://w3id.org/solarchem/sc#315-400WL
+<http://w3id.org/solarchem/sc#315-400WL> rdf:type owl:NamedIndividual ,
+                                                  sc:Wavelenght .
+
+
+###  http://w3id.org/solarchem/sc#315-780WL
+<http://w3id.org/solarchem/sc#315-780WL> rdf:type owl:NamedIndividual ,
+                                                  sc:Wavelenght .
+
+
+###  http://w3id.org/solarchem/sc#400-780WL
+<http://w3id.org/solarchem/sc#400-780WL> rdf:type owl:NamedIndividual ,
+                                                  sc:Wavelenght .
+
+
+###  http://w3id.org/solarchem/scpc#Dye
+scpc:Dye rdf:type owl:NamedIndividual ,
+                  sc:MaterialTransformationRole .
+
+
+###  http://w3id.org/solarchem/scpc#Reductant
+scpc:Reductant rdf:type owl:NamedIndividual ,
+                        sc:MaterialTransformationRole .
+
+
+###  http://w3id.org/solarchem/scpc#Support
+scpc:Support rdf:type owl:NamedIndividual ,
+                      sc:MaterialTransformationRole .
+
+
+###  http://w3id.org/solarchem/scpec#Anode
+scpec:Anode rdf:type owl:NamedIndividual ,
+                     sc:MaterialTransformationRole .
+
+
+###  http://w3id.org/solarchem/scpec#Cathode
+scpec:Cathode rdf:type owl:NamedIndividual ,
+                       sc:MaterialTransformationRole .
+
+
+###  http://w3id.org/solarchem/scpec#Overlayer
+scpec:Overlayer rdf:type owl:NamedIndividual ,
+                         sc:MaterialTransformationRole .
+
+
+###  http://w3id.org/solarchem/scpec#PEC
+scpec:PEC rdf:type owl:NamedIndividual ,
+                   sc:ElectrochemicalConfiguration .
+
+
+###  http://w3id.org/solarchem/scpec#PV-EC
+scpec:PV-EC rdf:type owl:NamedIndividual ,
+                     sc:ElectrochemicalConfiguration .
+
+
+###  http://w3id.org/solarchem/scpec#PV-PEC
+scpec:PV-PEC rdf:type owl:NamedIndividual ,
+                      sc:ElectrochemicalConfiguration .
+
+
+###  http://w3id.org/solarchem/scpec#Photoabsorber
+scpec:Photoabsorber rdf:type owl:NamedIndividual ,
+                             sc:MaterialTransformationRole .
+
+
+###  http://w3id.org/solarchem/scpec#Photocatalyst
+scpec:Photocatalyst rdf:type owl:NamedIndividual ,
+                             sc:MaterialTransformationRole .
+
+
+###  http://w3id.org/solarchem/scpec#Substrate
+scpec:Substrate rdf:type owl:NamedIndividual ,
+                         sc:MaterialTransformationRole .
+
+
+###  http://w3id.org/solarchem/scpec#TransparentConductiveContact
+scpec:TransparentConductiveContact rdf:type owl:NamedIndividual ,
+                                            sc:MaterialTransformationRole .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
