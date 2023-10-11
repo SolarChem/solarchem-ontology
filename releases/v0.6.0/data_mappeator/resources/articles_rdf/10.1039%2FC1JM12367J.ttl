@@ -1,0 +1,211 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/C.%20Matranga-673> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "C. Matranga" .
+
+<http://data.example.com/author/C.%20Wang-669> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "C. Wang" .
+
+<http://data.example.com/author/J.%20Baltrus-672> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "J. Baltrus" .
+
+<http://data.example.com/author/P.%20Ohodnicki-671> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "P. Ohodnicki" .
+
+<http://data.example.com/author/R.L.%20Thompson-670> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "R.L. Thompson" .
+
+<http://data.example.com/chemical/1> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TiO2" .
+
+<http://data.example.com/chemical/106> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "PbS" .
+
+<http://data.example.com/chemical/379> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TiO2" .
+
+<http://data.example.com/chemical/63> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "deionized H2O" .
+
+<http://data.example.com/condition/4412> a ns2:ReactorCondition ;
+    ns2:conditionTypeAsText "Fixed-bed" ;
+    ns2:reactorType "Fixed-bed" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/4413> a ns2:CatalystSetUpCondition ;
+    ns2:conditionTypeAsText "Powder(Supported)" ;
+    ns2:setUpType "Powder(Supported)" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/4414> a ns2:LampPowerCondition ;
+    ns2:conditionTypeAsText "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns11:numericValue "300.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/4415> a ns2:LampIrradianceCondition ;
+    ns2:conditionTypeAsText "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/4416> a ns2:TemperatureCondition ;
+    ns11:numericValue "38.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/4417> a ns2:PreasureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/4418> a ns2:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/4419> a ns2:ReactionTimeCondition ;
+    ns11:numericValue "8.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/4420> a ns2:ReactionMediumCondition ;
+    ns2:conditionTypeAsText "Gas" ;
+    ns2:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Gas> ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/4421> a ns2:WavelengthCondition ;
+    ns2:conditionTypeAsText "Visible" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns11:numericValue "400-780" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/4422> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionTypeAsText "Visible" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/Visible> ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/input/1063> a ns2:Input ;
+    ns2:cristalStructure "P25" ;
+    ns2:hasChemical <http://data.example.com/chemical/1>,
+        <http://data.example.com/chemical/379> ;
+    ns2:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/1064> a ns2:Input ;
+    ns2:cristalStructure "P25" ;
+    ns2:hasChemical <http://data.example.com/chemical/106> ;
+    ns2:hasRole <http://base.namespace.com/material_transformation_role/Co-catalyst> .
+
+<http://data.example.com/input/1065> a ns2:Input ;
+    ns2:cristalStructure "P25" ;
+    ns2:hasChemical <http://data.example.com/chemical/63> ;
+    ns2:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/journal/564> a ns21:Journal ;
+    dcterms:title "JOURNAL OF MATERIALS CHEMISTRY" .
+
+<http://data.example.com/materialTransformastionProcess/422> a ns2:MaterialTransformationProcess ;
+    rdfs:label "4nm PbS/Cu/TiO2" ;
+    ns2:hasBET <http://data.example.com/bet/422> ;
+    ns2:hasCondition <http://data.example.com/condition/4412>,
+        <http://data.example.com/condition/4413>,
+        <http://data.example.com/condition/4414>,
+        <http://data.example.com/condition/4415>,
+        <http://data.example.com/condition/4416>,
+        <http://data.example.com/condition/4417>,
+        <http://data.example.com/condition/4418>,
+        <http://data.example.com/condition/4419>,
+        <http://data.example.com/condition/4420>,
+        <http://data.example.com/condition/4421>,
+        <http://data.example.com/condition/4422> ;
+    ns2:hasInput <http://data.example.com/input/1063>,
+        <http://data.example.com/input/1064>,
+        <http://data.example.com/input/1065> ;
+    ns2:hasOutput <http://data.example.com/output/1267>,
+        <http://data.example.com/output/1268>,
+        <http://data.example.com/output/1269>,
+        <http://data.example.com/output/1270>,
+        <http://data.example.com/output/1271>,
+        <http://data.example.com/output/1272> ;
+    ns2:hasReactionEg <http://data.example.com/eg/422> ;
+    ns2:operationMode <http://vocab.example.com/operationMode/Continuous> ;
+    ns2:reportedIn <https://doi.org/10.1039%2FC1JM12367J> .
+
+<http://data.example.com/output/1267> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/927> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/1267-gh> .
+
+<http://data.example.com/output/1268> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/6> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/1268-gh> .
+
+<http://data.example.com/output/1269> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/929> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/1269-gh> .
+
+<http://data.example.com/output/1270> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/927> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/1270-g> .
+
+<http://data.example.com/output/1271> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/6> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/1271-g> .
+
+<http://data.example.com/output/1272> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/929> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/1272-g> .
+
+<http://data.example.com/output_quantity/1267-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "0.8200"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/1268-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "0.5800"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/1269-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "0.3100"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/1270-g> a ns2:OutputQuantity ;
+    ns2:numericValue "6.5600"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/1271-g> a ns2:OutputQuantity ;
+    ns2:numericValue "4.6400"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/1272-g> a ns2:OutputQuantity ;
+    ns2:numericValue "2.4800"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<https://doi.org/10.1039%2FC1JM12367J> a ns21:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/422> ;
+    dcterms:creator <http://data.example.com/author/C.%20Matranga-673>,
+        <http://data.example.com/author/C.%20Wang-669>,
+        <http://data.example.com/author/J.%20Baltrus-672>,
+        <http://data.example.com/author/P.%20Ohodnicki-671>,
+        <http://data.example.com/author/R.L.%20Thompson-670> ;
+    dcterms:date "2011-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/564> ;
+    dcterms:title "Size-dependent photocatalytic reduction of CO2 with PbS quantum dot sensitized TiO2 heterostructured photocatalysts" ;
+    ns21:abstract "The photocatalytic reduction of CO2 to value-added chemicals, such as CH4, is a promising carbon management approach which can generate revenue from chemical sales to offset the cost of implementing CO2 capture technologies. To make photocatalytic conversion approaches efficient, economically practical, and industrially scalable, catalysts capable of utilizing visible and near infrared (IR) photons need to be developed. Here we investigate the sensitization of TiO2 catalysts using PbS quantum dots (QDs) which lead to the size dependent photocatalytic reduction of CO2 at frequencies ranging from the violet to the orange-red edge of the electromagnetic spectrum (&lambda; &sim; 420 to 610 nm). Under broad band illumination (UV- NIR), the PbS QDs enhance CO2 photoreduction rates with TiO2 by a factor of &sim;5 in comparison to unsensitized photocatalysts. X-ray photoelectron spectroscopy (XPS) is used to investigate the deactivation mechanism of the QD sensitizers after prolonged photoexcitation. The synthesis, characterization, and catalytic testing of these PbS sensitized TiO2 heterostructures will aid the development of more robust, visible light active photocatalysts for carbon management applications." ;
+    ns21:doi "10.1039/C1JM12367J" ;
+    ns21:pageStart "13452"^^xsd:positiveInteger ;
+    ns21:volume "21"^^xsd:positiveInteger .
+
+<http://data.example.com/chemical/6> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CH4" .
+
+<http://data.example.com/chemical/927> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CO" .
+
+<http://data.example.com/chemical/929> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "C2H6" .
+
+<https://en.wikipedia.org/wiki/United%20States> a schema:Country .
+

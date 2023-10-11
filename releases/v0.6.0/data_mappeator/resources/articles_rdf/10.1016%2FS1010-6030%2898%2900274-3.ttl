@@ -1,0 +1,160 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/K.%20Ohta-748> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "K. Ohta" .
+
+<http://data.example.com/author/S.%20Kaneco-746> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "S. Kaneco" .
+
+<http://data.example.com/author/T.%20Mizuno-749> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "T. Mizuno" .
+
+<http://data.example.com/author/Y.%20Shimizu-747> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Japan> ;
+    schema:name "Y. Shimizu" .
+
+<http://data.example.com/chemical/1> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TiO2" .
+
+<http://data.example.com/chemical/379> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TiO2" .
+
+<http://data.example.com/chemical/71> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "2-propanol" .
+
+<http://data.example.com/condition/3070> a ns2:ReactorCondition ;
+    ns2:conditionTypeAsText "Slurry" ;
+    ns2:reactorType "Slurry" ;
+    ns11:numericValue "0.04" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/3071> a ns2:CatalystSetUpCondition ;
+    ns2:conditionTypeAsText "Powder(Suspended)" ;
+    ns2:setUpType "Powder(Suspended)" ;
+    ns11:numericValue "0.1" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/3072> a ns2:LampPowerCondition ;
+    ns2:conditionTypeAsText "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns11:numericValue "4200.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/3073> a ns2:LampIrradianceCondition ;
+    ns2:conditionTypeAsText "Xenon(Xe)" ;
+    ns2:lampType "Xenon(Xe)" ;
+    ns11:numericValue "620.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/3074> a ns2:TemperatureCondition ;
+    ns11:numericValue "20.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/3075> a ns2:PreasureCondition ;
+    ns11:numericValue "28.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/3076> a ns2:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/3077> a ns2:ReactionTimeCondition ;
+    ns11:numericValue "3.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/3078> a ns2:ReactionMediumCondition ;
+    ns2:conditionTypeAsText "Liquid" ;
+    ns2:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/3079> a ns2:WavelengthCondition ;
+    ns2:conditionTypeAsText "UV" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns11:numericValue "315-400(UV-C)" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/3080> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionTypeAsText "UV" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/input/757> a ns2:Input ;
+    ns2:cristalStructure "P25" ;
+    ns2:hasChemical <http://data.example.com/chemical/1>,
+        <http://data.example.com/chemical/379> ;
+    ns2:hasRole <http://base.namespace.com/material_transformation_role/Catalyst> .
+
+<http://data.example.com/input/758> a ns2:Input ;
+    ns2:cristalStructure "P25" ;
+    ns2:hasChemical <http://data.example.com/chemical/71> ;
+    ns2:hasRole <http://base.namespace.com/material_transformation_role/Reductant> .
+
+<http://data.example.com/journal/598> a ns21:Journal ;
+    dcterms:title "JOURNAL OF PHOTOCHEMISTRY AND PHOTOBIOLOGY A-CHEMISTRY" .
+
+<http://data.example.com/materialTransformastionProcess/290> a ns2:MaterialTransformationProcess ;
+    rdfs:label "TiO2" ;
+    ns2:hasBET <http://data.example.com/bet/290> ;
+    ns2:hasCondition <http://data.example.com/condition/3070>,
+        <http://data.example.com/condition/3071>,
+        <http://data.example.com/condition/3072>,
+        <http://data.example.com/condition/3073>,
+        <http://data.example.com/condition/3074>,
+        <http://data.example.com/condition/3075>,
+        <http://data.example.com/condition/3076>,
+        <http://data.example.com/condition/3077>,
+        <http://data.example.com/condition/3078>,
+        <http://data.example.com/condition/3079>,
+        <http://data.example.com/condition/3080> ;
+    ns2:hasInput <http://data.example.com/input/757>,
+        <http://data.example.com/input/758> ;
+    ns2:hasOutput <http://data.example.com/output/948>,
+        <http://data.example.com/output/949> ;
+    ns2:hasReactionEg <http://data.example.com/eg/290> ;
+    ns2:operationMode <http://vocab.example.com/operationMode/Batch> ;
+    ns2:reportedIn <https://doi.org/10.1016%2FS1010-6030%2898%2900274-3> .
+
+<http://data.example.com/output/948> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/6> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/948-gh> .
+
+<http://data.example.com/output/949> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/6> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/949-g> .
+
+<http://data.example.com/output_quantity/948-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "0.4333"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/949-g> a ns2:OutputQuantity ;
+    ns2:numericValue "1.3000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<https://doi.org/10.1016%2FS1010-6030%2898%2900274-3> a ns21:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/290> ;
+    dcterms:creator <http://data.example.com/author/K.%20Ohta-748>,
+        <http://data.example.com/author/S.%20Kaneco-746>,
+        <http://data.example.com/author/T.%20Mizuno-749>,
+        <http://data.example.com/author/Y.%20Shimizu-747> ;
+    dcterms:date "1998-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/598> ;
+    dcterms:title "Photocatalytic reduction of high pressure carbon dioxide using TiO2 powders with a positive hole scavenger" ;
+    ns21:abstract "The photocatalytic reduction of high pressure CO2 using Ti02 powders with a positive hole scavenger has been reported. The Ti02 powders suspended in iso-propyl alcohol solution were irradiated with a Xe lamp. The main reduction product from CO2 by photocatalytic reduction was methane. Iso-propyl alcohol acted as the positive hole scavenger. Under the optimum experimental conditions, 1.3 &mu;mol (g-Ti)-1 of methane was obtained by the photochemical reduction of high pressure CO2 , corresponding to 0.43 &mu;mol (g-Ti)-1 h-1 of the formation rate. The C02 -reduction system developed may become of practical interest for the efficient C02 -conversion and fixation system, storage of solar energy and the production of raw materials for the photochemical industry." ;
+    ns21:doi "10.1016/S1010-6030(98)00274-3" ;
+    ns21:pageStart "223"^^xsd:positiveInteger ;
+    ns21:volume "115"^^xsd:positiveInteger .
+
+<http://data.example.com/chemical/6> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CH4" .
+
+<https://en.wikipedia.org/wiki/Japan> a schema:Country .
+

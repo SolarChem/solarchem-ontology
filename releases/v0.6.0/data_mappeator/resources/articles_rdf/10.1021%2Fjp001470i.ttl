@@ -1,0 +1,104 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/H.%20Frei-769> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "H. Frei" .
+
+<http://data.example.com/author/N.%20Ulagappan-768> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/United%20States> ;
+    schema:name "N. Ulagappan" .
+
+<http://data.example.com/condition/2157> a ns2:ReactorCondition ;
+    ns2:conditionTypeAsText "Fixed-bed" ;
+    ns2:reactorType "Fixed-bed" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/2158> a ns2:CatalystSetUpCondition ;
+    ns2:conditionTypeAsText "Powder(Supported)" ;
+    ns2:setUpType "Powder(Supported)" ;
+    ns11:numericValue "0.022" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/2159> a ns2:LampPowerCondition ;
+    ns2:conditionTypeAsText "Other" ;
+    ns2:lampType "Other" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/2160> a ns2:LampIrradianceCondition ;
+    ns2:conditionTypeAsText "Other" ;
+    ns2:lampType "Other" ;
+    ns11:numericValue "300.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/2161> a ns2:TemperatureCondition ;
+    ns11:numericValue "25.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/2162> a ns2:PreasureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/2163> a ns2:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/2164> a ns2:ReactionTimeCondition ;
+    ns11:numericValue "4.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/2165> a ns2:ReactionMediumCondition ;
+    ns2:conditionTypeAsText "Gas" ;
+    ns2:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Gas> ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/2166> a ns2:WavelengthCondition ;
+    ns2:conditionTypeAsText "UV" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns11:numericValue "192-280(UV-A)" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/2167> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionTypeAsText "UV" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/journal/604> a ns21:Journal ;
+    dcterms:title "JOURNAL OF PHYSICAL CHEMISTRY A" .
+
+<http://data.example.com/materialTransformastionProcess/205> a ns2:MaterialTransformationProcess ;
+    rdfs:label "TS-1" ;
+    ns2:hasBET <http://data.example.com/bet/205> ;
+    ns2:hasCondition <http://data.example.com/condition/2157>,
+        <http://data.example.com/condition/2158>,
+        <http://data.example.com/condition/2159>,
+        <http://data.example.com/condition/2160>,
+        <http://data.example.com/condition/2161>,
+        <http://data.example.com/condition/2162>,
+        <http://data.example.com/condition/2163>,
+        <http://data.example.com/condition/2164>,
+        <http://data.example.com/condition/2165>,
+        <http://data.example.com/condition/2166>,
+        <http://data.example.com/condition/2167> ;
+    ns2:hasInput <http://data.example.com/input/538> ;
+    ns2:hasReactionEg <http://data.example.com/eg/205> ;
+    ns2:operationMode <http://vocab.example.com/operationMode/Batch> ;
+    ns2:reportedIn <https://doi.org/10.1021%2Fjp001470i> .
+
+<https://doi.org/10.1021%2Fjp001470i> a ns21:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/205> ;
+    dcterms:creator <http://data.example.com/author/H.%20Frei-769>,
+        <http://data.example.com/author/N.%20Ulagappan-768> ;
+    dcterms:date "2000-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/604> ;
+    dcterms:title "Mechanistic Study of CO2 Photoreduction in Ti Silicalite Molecular Sieve by FT-IR Spectroscopy" ;
+    ns21:abstract "The initial products of the photoreduction of gaseous CO2 in Ti silicalite molecular sieve using methanol as electron donor have been monitored by in-situ FT-IR spectroscopy. Reaction was induced by 266 nm excitation of the Ti+IV&minus;O-II &rarr; Ti+III&minus;O-I ligand-to-metal charge-transfer transition of the framework center. HCO2H, CO, and HCO2CH3 were the observed products. CO escaped instantaneously into the gas phase and was recorded at high spectral resolution. The origin of the products was elucidated by infrared analysis of experiments with C18O2, 13CO2, and 13CH3OH. The results show that CO originates from secondary photolysis of HCO2H, while HCO2CH3 emerges mainly from spontaneous Tishchenko reaction of CH2O, the initial oxidation product of methanol. The key finding is that formic acid is the primary 2-electron reduction product of CO2 at the LMCT-excited Ti centers. This implies that C&minus;H bond formation occurs in the initial steps of CO2 activation at the gas&minus;micropore interface." ;
+    ns21:doi "10.1021/jp001470i" ;
+    ns21:pageStart "7834"^^xsd:positiveInteger ;
+    ns21:volume "104"^^xsd:positiveInteger .
+
+<https://en.wikipedia.org/wiki/United%20States> a schema:Country .
+

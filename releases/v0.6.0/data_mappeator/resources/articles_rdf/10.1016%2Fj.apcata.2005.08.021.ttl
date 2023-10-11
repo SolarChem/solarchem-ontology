@@ -1,0 +1,162 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/C-L.%20Lai-59> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Taiwan%2C%20Province%20of%20China> ;
+    schema:name "C-L. Lai" .
+
+<http://data.example.com/author/H-M.%20Lin-58> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Taiwan%2C%20Province%20of%20China> ;
+    schema:name "H-M. Lin" .
+
+<http://data.example.com/author/J.C.S.%20Wu-57> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/Taiwan%2C%20Province%20of%20China> ;
+    schema:name "J.C.S. Wu" .
+
+<http://data.example.com/chemical/1> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TiO2" .
+
+<http://data.example.com/chemical/3> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "H2O" .
+
+<http://data.example.com/chemical/379> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "TiO2" .
+
+<http://data.example.com/chemical/4> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "Cu" .
+
+<http://data.example.com/condition/78> a ns2:ReactorCondition ;
+    ns2:conditionTypeAsText "Fixed-bed" ;
+    ns2:reactorType "Fixed-bed" ;
+    ns11:numericValue "0.13" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/79> a ns2:CatalystSetUpCondition ;
+    ns2:conditionTypeAsText "Film" ;
+    ns2:setUpType "Film" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/80> a ns2:LampPowerCondition ;
+    ns2:conditionTypeAsText "Mercury(Hg)" ;
+    ns2:lampType "Mercury(Hg)" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/81> a ns2:LampIrradianceCondition ;
+    ns2:conditionTypeAsText "Mercury(Hg)" ;
+    ns2:lampType "Mercury(Hg)" ;
+    ns11:numericValue "9999.99" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/82> a ns2:TemperatureCondition ;
+    ns11:numericValue "75.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/83> a ns2:PreasureCondition ;
+    ns11:numericValue "1.32" ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/84> a ns2:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/85> a ns2:ReactionTimeCondition ;
+    ns11:numericValue "1.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/86> a ns2:ReactionMediumCondition ;
+    ns2:conditionTypeAsText "Gas" ;
+    ns2:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Gas> ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/87> a ns2:WavelengthCondition ;
+    ns2:conditionTypeAsText "UV" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns11:numericValue "315-400(UV-C)" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/88> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionTypeAsText "UV" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV> ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/input/14> a ns2:Input ;
+    ns2:cristalStructure "Anatase" ;
+    ns2:hasChemical <http://data.example.com/chemical/1>,
+        <http://data.example.com/chemical/379> ;
+    ns2:hasRole <http://base.namespace.com/Catalyst> .
+
+<http://data.example.com/input/15> a ns2:Input ;
+    ns2:cristalStructure "Anatase" ;
+    ns2:hasChemical <http://data.example.com/chemical/4> ;
+    ns2:hasRole <http://base.namespace.com/Co-catalyst> ;
+    ns2:percentage 1.2e+00 .
+
+<http://data.example.com/input/16> a ns2:Input ;
+    ns2:cristalStructure "Anatase" ;
+    ns2:hasChemical <http://data.example.com/chemical/3> ;
+    ns2:hasRole <http://base.namespace.com/Reductant> .
+
+<http://data.example.com/journal/98> a ns21:Journal ;
+    dcterms:title "APPLIED CATALYSIS A-GENERAL" .
+
+<http://data.example.com/materialTransformastionProcess/8> a ns2:MaterialTransformationProcess ;
+    rdfs:label "Cu/TiO2" ;
+    ns2:hasBET <http://data.example.com/bet/8> ;
+    ns2:hasCondition <http://data.example.com/condition/78>,
+        <http://data.example.com/condition/79>,
+        <http://data.example.com/condition/80>,
+        <http://data.example.com/condition/81>,
+        <http://data.example.com/condition/82>,
+        <http://data.example.com/condition/83>,
+        <http://data.example.com/condition/84>,
+        <http://data.example.com/condition/85>,
+        <http://data.example.com/condition/86>,
+        <http://data.example.com/condition/87>,
+        <http://data.example.com/condition/88> ;
+    ns2:hasInput <http://data.example.com/input/14>,
+        <http://data.example.com/input/15>,
+        <http://data.example.com/input/16> ;
+    ns2:hasOutput <http://data.example.com/output/63>,
+        <http://data.example.com/output/64> ;
+    ns2:hasReactionEg <http://data.example.com/eg/8> ;
+    ns2:operationMode <http://vocab.example.com/operationMode/Continuous> ;
+    ns2:reportedIn <https://doi.org/10.1016%2Fj.apcata.2005.08.021> .
+
+<http://data.example.com/output/63> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/184> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/63-gh> .
+
+<http://data.example.com/output/64> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/184> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/64-g> .
+
+<http://data.example.com/output_quantity/63-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "0.4500"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/64-g> a ns2:OutputQuantity ;
+    ns2:numericValue "0.4500"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<https://doi.org/10.1016%2Fj.apcata.2005.08.021> a ns21:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/8> ;
+    dcterms:creator <http://data.example.com/author/C-L.%20Lai-59>,
+        <http://data.example.com/author/H-M.%20Lin-58>,
+        <http://data.example.com/author/J.C.S.%20Wu-57> ;
+    dcterms:date "2005-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/98> ;
+    dcterms:title "Photo reduction of CO2 to methanol using optical-fiber photo" ;
+    ns21:abstract "Greenhouse gases such as CO2 are the primary cause of global warming. One of the best routes to remedy CO2 is to transform it to hydrocarbons using photo reduction. CO2 was photocatalytically reduced to produce methanol using a Hg lamp with wavelength 365 nm in a steady-state optical-fiber photoreactor. The optical-fiber photoreactor, comprised of nearly 120 Cu\\/TiO2-coated fibers, was designed and assembled to transmit and spread light uniformly inside the reactor. TiO2 film was coated on optical fiber using a dip-coating method. Cu-loaded titania solutions were prepared by a thermal hydrolysis method. The thickness of Cu\\/TiO2 film was 53 nm. The coating film consisted of very fine spherical particles with diameters of near 14 nm. The XRD spectra indicated the anatase phase for all TiO2 and Cu\\/TiO2 films. The wavelength of absorption edge on Cu\\/TiO2 was near 367 nm, equivalent to a bandgap of 3.3 eV. The most active Cu species on TiO2 surface were Cu2O clusters, and they played an important role for the formation of methanol. The methanol yield increased with UV irradiative intensity. Maximum methanol rate was 0.45 Î¼mole\\/g cat h using 1.2 wt.%-Cu\\/TiO2 catalyst at 1.29 bar of CO2, 0.026 bar of H2O, and 5000 s mean residence time under 16 W\\/cm2 UV irradiation. Higher than 1.2 wt.% Cu loading gave a lower rate of methanol yield because of the masking effect of Cu2O clusters on the TiO2 surface. The Langmuirâ€“Hinshelwood model was established by correlating experimental data to describe the kinetic behavior. An optimum pressure ratio of H2O\\/CO2 was found in the photo reduction of CO2 for maximum methanol yield." ;
+    ns21:doi "10.1016/j.apcata.2005.08.021" ;
+    ns21:pageStart "194"^^xsd:positiveInteger ;
+    ns21:volume "269"^^xsd:positiveInteger .
+
+<http://data.example.com/chemical/184> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CH3OH" .
+
+<https://en.wikipedia.org/wiki/Taiwan%2C%20Province%20of%20China> a schema:Country .
+

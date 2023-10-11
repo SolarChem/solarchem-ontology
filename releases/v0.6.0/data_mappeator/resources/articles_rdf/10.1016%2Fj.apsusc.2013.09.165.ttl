@@ -1,0 +1,170 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns11: <http://qudt.org/2.1/schema/qudt/> .
+@prefix ns2: <http://base.namespace.com/> .
+@prefix ns21: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.example.com/author/F.%20Xin-1201> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "F. Xin" .
+
+<http://data.example.com/author/W.%20Jiang-1199> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "W. Jiang" .
+
+<http://data.example.com/author/X.%20Li-1204> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "X. Li" .
+
+<http://data.example.com/author/X.%20Yin-1200> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "X. Yin" .
+
+<http://data.example.com/author/Y.%20Bi-1202> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Y. Bi" .
+
+<http://data.example.com/author/Y.%20Liu-1203> a schema:Person ;
+    ns2:affiliationCountry <https://en.wikipedia.org/wiki/China> ;
+    schema:name "Y. Liu" .
+
+<http://data.example.com/chemical/196> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "Methanol" .
+
+<http://data.example.com/chemical/241> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "CdIn2S4" .
+
+<http://data.example.com/condition/12233> a ns2:ReactorCondition ;
+    ns2:conditionTypeAsText "Slurry" ;
+    ns2:reactorType "Slurry" ;
+    ns11:unit <http://qudt.org/vocab/unit/L> .
+
+<http://data.example.com/condition/12234> a ns2:CatalystSetUpCondition ;
+    ns2:conditionTypeAsText "Other" ;
+    ns2:setUpType "Other" ;
+    ns11:numericValue "0.02" ;
+    ns11:unit <http://qudt.org/vocab/unit/GM> .
+
+<http://data.example.com/condition/12235> a ns2:LampPowerCondition ;
+    ns2:conditionTypeAsText "Mercury(Hg)" ;
+    ns2:lampType "Mercury(Hg)" ;
+    ns11:numericValue "250.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W> .
+
+<http://data.example.com/condition/12236> a ns2:LampIrradianceCondition ;
+    ns2:conditionTypeAsText "Mercury(Hg)" ;
+    ns2:lampType "Mercury(Hg)" ;
+    ns11:numericValue "25.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/W-PER-M2> .
+
+<http://data.example.com/condition/12237> a ns2:TemperatureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/DEG_C> .
+
+<http://data.example.com/condition/12238> a ns2:PreasureCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/BAR> .
+
+<http://data.example.com/condition/12239> a ns2:SpaceVelocityCondition ;
+    ns11:unit <http://qudt.org/vocab/unit/PER-HR> .
+
+<http://data.example.com/condition/12240> a ns2:ReactionTimeCondition ;
+    ns11:numericValue "10.00" ;
+    ns11:unit <http://qudt.org/vocab/unit/HR> .
+
+<http://data.example.com/condition/12241> a ns2:ReactionMediumCondition ;
+    ns2:conditionTypeAsText "Liquid" ;
+    ns2:reactionMediumType <http://vocab.example.com/condition/reactionMediumType/Liquid> ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/PH> .
+
+<http://data.example.com/condition/12242> a ns2:WavelengthCondition ;
+    ns2:conditionTypeAsText "UV-Vis" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV-Vis> ;
+    ns11:numericValue "0" ;
+    ns11:unit <http://qudt.org/vocab/unit/NanoM> .
+
+<http://data.example.com/condition/12243> a ns2:IlluminatedAreaCondition ;
+    ns2:conditionTypeAsText "UV-Vis" ;
+    ns2:lightSourceType <http://vocab.example.com/condition/lightSourceType/UV-Vis> ;
+    ns11:unit <http://qudt.org/vocab/unit/M2> .
+
+<http://data.example.com/input/2996> a ns2:Input ;
+    ns2:hasChemical <http://data.example.com/chemical/241> ;
+    ns2:hasRole <http://base.namespace.com/Catalyst> .
+
+<http://data.example.com/input/2997> a ns2:Input ;
+    ns2:hasChemical <http://data.example.com/chemical/196> ;
+    ns2:hasRole <http://base.namespace.com/Reductant> .
+
+<http://data.example.com/journal/116> a ns21:Journal ;
+    dcterms:title "APPLIED SURFACE SCIENCE" .
+
+<http://data.example.com/materialTransformastionProcess/1963> a ns2:MaterialTransformationProcess ;
+    rdfs:label "CdIn2S4" ;
+    ns2:hasBET <http://data.example.com/bet/1963> ;
+    ns2:hasCondition <http://data.example.com/condition/12233>,
+        <http://data.example.com/condition/12234>,
+        <http://data.example.com/condition/12235>,
+        <http://data.example.com/condition/12236>,
+        <http://data.example.com/condition/12237>,
+        <http://data.example.com/condition/12238>,
+        <http://data.example.com/condition/12239>,
+        <http://data.example.com/condition/12240>,
+        <http://data.example.com/condition/12241>,
+        <http://data.example.com/condition/12242>,
+        <http://data.example.com/condition/12243> ;
+    ns2:hasInput <http://data.example.com/input/2996>,
+        <http://data.example.com/input/2997> ;
+    ns2:hasOutput <http://data.example.com/output/3638>,
+        <http://data.example.com/output/3639>,
+        <http://data.example.com/output/3640> ;
+    ns2:hasReactionEg <http://data.example.com/eg/1963> ;
+    ns2:operationMode <http://vocab.example.com/operationMode/Batch> ;
+    ns2:reportedIn <https://doi.org/10.1016%2Fj.apsusc.2013.09.165> .
+
+<http://data.example.com/output/3638> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/928> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/3638-gh> .
+
+<http://data.example.com/output/3639> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/928> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/3639-g> .
+
+<http://data.example.com/output/3640> a ns2:Output ;
+    ns2:hasChemical <http://data.example.com/chemical/928> ;
+    ns2:hasOutputQuantity <http://data.example.com/output_quantity/3640-m2h> .
+
+<http://data.example.com/output_quantity/3638-gh> a ns2:OutputQuantity ;
+    ns2:numericValue "2857.0000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM-HR> .
+
+<http://data.example.com/output_quantity/3639-g> a ns2:OutputQuantity ;
+    ns2:numericValue "28570.0000"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-GM> .
+
+<http://data.example.com/output_quantity/3640-m2h> a ns2:OutputQuantity ;
+    ns2:numericValue "68653.7100"^^xsd:positiveInteger ;
+    ns11:unit <http://qudt.org/vocab/unit/MicroMOL-PER-M2-HR> .
+
+<https://doi.org/10.1016%2Fj.apsusc.2013.09.165> a ns21:Article ;
+    ns2:hasMaterialTransformationProcess <http://data.example.com/materialTransformastionProcess/1963> ;
+    dcterms:creator <http://data.example.com/author/F.%20Xin-1201>,
+        <http://data.example.com/author/W.%20Jiang-1199>,
+        <http://data.example.com/author/X.%20Li-1204>,
+        <http://data.example.com/author/X.%20Yin-1200>,
+        <http://data.example.com/author/Y.%20Bi-1202>,
+        <http://data.example.com/author/Y.%20Liu-1203> ;
+    dcterms:date "2014-01-01"^^xsd:date ;
+    dcterms:isPartOf <http://data.example.com/journal/116> ;
+    dcterms:title "Preparation of CdIn2S4 microspheres and application for photocatalytic reduction of carbon dioxide" ;
+    ns21:abstract "A series of novel microspheres of CdIn2S4 were prepared by hydrothermal process, among them the CdIn2S4 synthesized from l-cysteine exhibited higher photocatalytic activity for CO 2 reduction and has potential application for using visible light. Characterization of X-ray diffractometer (XRD), UV-vis absorption spectrometry (UV-vis), field emission scanning electron microscopy (FE-SEM), transmission electron microscope (TEM) and N2 sorption analysis resulted in the crystal morphology, light absorption band and porous geometry. The mechanism of photocatalytic reduction of CO2 in methanol over CdIn 2S4 was also proposed. The narrow band gap of the as prepared catalyst promoted reducing CO2 to dimethoxymethane and methyl formate in methanol." ;
+    ns21:doi "10.1016/j.apsusc.2013.09.165" ;
+    ns21:pageStart "138"^^xsd:positiveInteger ;
+    ns21:volume "288"^^xsd:positiveInteger .
+
+<http://data.example.com/chemical/928> a <http://purl.obolibrary.org/obo/CHEBI_24431> ;
+    rdfs:label "C2H4O2" .
+
+<https://en.wikipedia.org/wiki/China> a schema:Country .
+

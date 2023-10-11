@@ -1,0 +1,517 @@
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix chebi: <http://purl.obolibrary.org/obo/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix phcat: <http://base.namespace.com/> .
+@prefix qudt: <http://qudt.org//2.1/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://base.namespace.com> a owl:Ontology ;
+    dc:creator "Oier Beaskoetxea" ;
+    dc:description "Ontology code created by Chowlk" ;
+    dc:title "Photocatalysis Ontology" ;
+    owl:versionInfo "0.4.0" .
+
+#################################################################
+#    Instances
+#################################################################
+
+## Articulo1
+<https://doi.org/10.1007/s10563-009-9065-9>
+	a bibo:Article ;
+	bibo:doi "10.1007/s10563-009-9065-9"^^xsd:string ;
+	bibo:abstract "Sun is the Earth&rsquo;s ultimate and inexhaustible energy source. One of the best routes to remedy the CO2 problem is to convert it to valuable hydrocarbons using solar energy. In this study, CO2 was photocatalytically reduced to produce methanol, methane and ethylene in a steady-state optical-fiber reactor under artificial light and real sunlight irradiation. The photocatalyst was dip-coated on the optical fibers that enable the light to transmit and spread uniformly inside the reactor. The optical-fiber photoreactor, comprised of nearly 120 photocatalyst-coated fibers, was designed and assembled. The XRD spectra indicated the anatase phase for all photocatalysts. It is found that the methanol yield increased with UV light intensity. A maximum methanol yield of 4.12 &mu;mole/g-cat h is obtained when 1.0 wt% Ag/TiO2 photocatalyst was used under a light intensity of 10 W/cm2. When mixed oxide, TiO2&ndash;SiO2, is doped with Cu and Fe metals, the resulting photocatalysts show substantial difference in hydrocarbon production as well as product selectivity. Methane and ethylene were produced on Cu&ndash;Fe loaded TiO2&ndash;SiO2 photocatalyst. Since dye-sensitized Cu&ndash;Fe/P25 photocatalyst can fully harvest the light energy of 400&ndash;800 nm from sunlight, its photoactivity was significantly enhanced. Finally, CO2 photoreduction was studied by in situ IR spectroscopy and possible mechanism for the photoreaction was proposed."^^xsd:string ;
+	bibo:volume 13^^xsd:nonNegativeInteger ;
+	dc:title "Photocatalytic reduction of greenhouse gas CO2 to fuel"^^xsd:string ;
+	dc:date 2009^^xsd:date ;
+	bibo:pageStart 30^^xsd:nonNegativeInteger ;
+	dc:isPartOf  <https://portal.issn.org/resource/ISSN/1571-1013>^^bibo:Journal;
+	dc:creator  <https://orcid.org/0000-0002-2231-3118>^^schema:Person;
+	phcat:hasMaterialTransformationProcess <#process1>^^phcat:MaterialTransformation ;
+	phcat:hasMaterialTransformationProcess <#process2>^^phcat:MaterialTransformation ;
+	phcat:hasMaterialTransformationProcess <#process3>^^phcat:MaterialTransformation ;
+.
+
+<https://portal.issn.org/resource/ISSN/1571-1013>
+	a bibo:Journal ;
+	dc:title "CATALYSIS SURVEYS FROM ASIA" ;
+.
+<https://orcid.org/0000-0002-2231-3118>
+	a schema:Person ;
+	schema:email "cswu@ntu.edu.tw"^^xsd:string ;
+	schema:name "Jeffrey C. S. Wu"^^xsd:string ;
+	schema:nationality <https://en.wikipedia.org/wiki/Taiwan>^^schema:Country ;
+.
+
+## Proceso 1 ## 
+<#process1>
+	a phcat:MaterialTransformation ;
+	rdfs:label "N3-dye-Cu-Fe/TiO2"xsd:string ;
+	phcat:hasInput <#process1/catalyst_TiO2_P25>^^phcat:Input ;
+	phcat:hasInput <#process1/co-catalyst_Cu> ;
+	phcat:hasInput <#process1/co-catalyst_Fe> ;
+	phcat:hasInput <#process1/dye_N3> ;
+	phcat:reportedIn <https://doi.org/10.1007/s10563-009-9065-9>
+	phcat:operationMode "Continuous"
+	phcat:hasReactionMedium phcat:Gas ;
+	phcat:hasReductant chebi:CHEBI:15377 ; # water
+	phcat:hasCondition <#process1/reactor-condition> ;
+	phcat:hasCondition <#process1/lightsource> ;
+	phcat:hasCondition <#process1/lamppirradiance> ;
+	phcat:hasCondition <#process1/lampppower> ;
+	phcat:hasCondition <#process1/catalyst-set-up> ;
+	phcat:hasCondition <#process1/temperature> ;
+	phcat:hasCondition <#process1/pressure> ;
+	phcat:hasCondition <#process1/space-velocity> ;
+	phcat:hasCondition <#process1/reaction-time> ;
+	phcat:hasOutput <#process1/output1> ;
+	phcat:hasOutput <#process1/output2> ;
+	phcat:hasOutput <#process1/output3> ;
+	phcat:hasOutput <#process1/output4> ;
+.
+<#process1/catalyst_TiO2_P25> a phcat:Input ;
+	phcat:hasChemical chebi:CHEBI:32234^^chebi:CHEBI:24431 ;
+	phcat:cristalStructure "P25"^^xsd:string ;
+	phcat:hasRole phcat:Catalyst ;
+.
+<#process1/co-catalyst_Cu> a phcat:Input ;
+	phcat:hasChemical chebi:CHEBI:28694^^chebi:CHEBI:24431 ;
+	phcat:percentage 0.5^^xsd:double ;
+	phcat:hasRole phcat:Co-catalyst ;
+.
+<#process1/co-catalyst_Fe> a phcat:Input ;
+	phcat:hasChemical chebi:CHEBI:18248^^chebi:CHEBI:24431 ;
+	phcat:percentage 0.5^^xsd:double ;
+	phcat:hasRole phcat:Co-catalyst ;
+.
+<#process1/dye_N3> a phcat:Input ;
+	phcat:hasChemical chebi:CHEBI:29448^^chebi:CHEBI:24431 ;
+	phcat:hasRole phcat:Dye ;
+.
+<#process1/reactor-condition> a phcat:ReactorCondition ;
+	phcat:reactorType "Fixed-bed" ;
+	# qudt:unit unit:L ; # NOTE: Revisar - no aparece en la bd entonces es obligatorio?
+	# qudt:value 0 ;
+.
+<#process1/lightsource> a phcat:WavelengthCondition ;
+	phcat:lightSourceType "UV" ;
+	qudt:unit unit:NanoM ;
+	qudt:value "315-400(UV-C)" ;
+.
+# NOTE: Revisar - las dos unidades son caracteristicas de la lampara
+# 		lo de las subclases no tiene mucho sentido
+<#process1/lampppower> a phcat:PowerCondition ;
+	phcat:lampType "Mercury(Hg)" ;
+	qudt:unit unit:W ;
+	qudt:value "100"^^xsd:double ;
+.
+<#process1/lamppirradiance> a phcat:IrradianceCondition ;
+	phcat:lampType "Mercury(Hg)" ;
+	qudt:unit unit:W-PER-M2 ;
+	qudt:value "2250"^^xsd:double ;
+.
+<#process1/catalyst-set-up> a phcat:CatalystSetUpCondition ;
+	phcat:setUpType "Film" ;
+	# qudt:unit unit:GM ;
+	# qudt:value 0 ;
+.
+<#process1/temperature> a phcat:WavelengthCondition ;
+	qudt:unit unit:DEG_C ;
+	qudt:value 75.00 ;
+.
+<#process1/pressure> a phcat:PressureCondition ;
+	qudt:unit unit:BAR ;
+	qudt:value 1.22 ;
+.
+<#process1/space-velocity> a phcat:SpaceVelocityCondition ;
+	qudt:unit unit:PER-HR ;
+	qudt:value 83.3 ;
+.
+<#process1/reaction-time> a phcat:ReactionTimeCondition ;
+	qudt:unit unit:HR ;
+	qudt:value 4.00 ;
+.
+<#process1/output1> a phcat:Output ;
+	phcat:hasChemical chebi:CHEBI:16183 ;
+	phcat:hasOutputQuantity <#process1/output1/cuantity>;
+.
+<#process1/output1/cuantity> a phcat:OutputQuantity ;
+	qudt:numericValue 3.388 ;
+	qudt:unit unit:MicroMOL-PER-GM ;
+.
+<#process1/output2> a phcat:Output ;
+	phcat:hasChemical chebi:CHEBI:16183 ;
+	phcat:hasOutputQuantity <#process1/output2/cuantity>;
+.
+<#process1/output2/cuantity> a phcat:OutputQuantity ;
+	qudt:value 0.847 ;
+	qudt:unit unit:MicroMOL-PER-GM-HR ;
+.
+<#process1/output3> a phcat:Output ;
+	phcat:hasChemical chebi:CHEBI:18153 ;
+	phcat:hasOutputQuantity <#process1/output1/cuantity>;
+.
+<#process1/output3/cuantity> a phcat:OutputQuantity ;
+	qudt:numericValue 2.248 ;
+	qudt:unit unit:MicroMOL-PER-GM ;
+.
+<#process1/output4> a phcat:Output ;
+	phcat:hasChemical chebi:CHEBI:18153 ;
+	phcat:hasOutputQuantity <#process1/output2/cuantity>;
+.
+<#process1/output4/cuantity> a phcat:OutputQuantity ;
+	qudt:value 0.562 ;
+	qudt:unit unit:MicroMOL-PER-GM-HR ;
+.
+## Proceso 2 ## 
+<#process2>
+	a phcat:MaterialTransformation ;
+	rdfs:label "N3-dye-Cu-Fe/TiO2"xsd:string ;
+	phcat:hasInput <#process2/catalyst_TiO2_P25>^^phcat:Input ;
+	phcat:hasInput <#process2/co-catalyst_Cu> ;
+	phcat:hasInput <#process2/co-catalyst_Fe> ;
+	phcat:hasInput <#process2/dye_N3> ;
+	phcat:reportedIn <https://doi.org/10.1007/s10563-009-9065-9>
+	phcat:operationMode "Continuous"
+	phcat:hasReactionMedium phcat:Gas ;
+	phcat:hasReductant chebi:CHEBI:15377 ; # water
+	phcat:hasCondition <#process2/reactor-condition> ;
+	phcat:hasCondition <#process2/lightsource> ;
+	phcat:hasCondition <#process2/lamppirradiance> ;
+	phcat:hasCondition <#process2/catalyst-set-up> ;
+	phcat:hasCondition <#process2/temperature> ;
+	phcat:hasCondition <#process2/pressure> ;
+	phcat:hasCondition <#process2/space-velocity> ;
+	phcat:hasCondition <#process2/reaction-time> ;
+	phcat:hasOutput <#process2/output1> ;
+	phcat:hasOutput <#process2/output2> ;
+.
+<#process2/catalyst_TiO2_P25> a phcat:Input ;
+	phcat:hasChemical chebi:CHEBI:32234^^chebi:CHEBI:24431 ;
+	phcat:cristalStructure "P25"^^xsd:string ;
+	phcat:hasRole phcat:Catalyst ;
+.
+<#process2/co-catalyst_Cu> a phcat:Input ;
+	phcat:hasChemical chebi:CHEBI:28694^^chebi:CHEBI:24431 ;
+	phcat:percentage 0.5^^xsd:double ;
+	phcat:hasRole phcat:Co-catalyst ;
+.
+<#process2/co-catalyst_Fe> a phcat:Input ;
+	phcat:hasChemical chebi:CHEBI:18248^^chebi:CHEBI:24431 ;
+	phcat:percentage 0.5^^xsd:double ;
+	phcat:hasRole phcat:Co-catalyst ;
+.
+<#process2/dye_N3> a phcat:Input ;
+	phcat:hasChemical chebi:CHEBI:29448^^chebi:CHEBI:24431 ;
+	phcat:hasRole phcat:Dye ;
+.
+<#process2/reactor-condition> a phcat:ReactorCondition ;
+	phcat:reactorType "Fixed-bed" ;
+	# qudt:unit unit:L ; # NOTE: Revisar - no aparece en la bd entonces es obligatorio?
+	# qudt:value 0 ;
+.
+<#process2/lightsource> a phcat:WavelengthCondition ;
+	phcat:lightSourceType "Solar" ;
+	# qudt:unit unit:NanoM ;
+	# qudt:value "315-400(UV-C)" ;
+.
+# NOTE: Revisar - las dos unidades son caracteristicas de la lampara
+# 		lo de las subclases no tiene mucho sentido
+<#process2/lamppirradiance> a phcat:IrradianceCondition ;
+	phcat:lampType "Solar" ;
+	qudt:unit unit:W-PER-M2 ;
+	qudt:value "200"^^xsd:double ;
+.
+<#process2/catalyst-set-up> a phcat:CatalystSetUpCondition ;
+	phcat:setUpType "Film" ;
+	# qudt:unit unit:GM ;
+	# qudt:value 0 ;
+.
+<#process2/temperature> a phcat:WavelengthCondition ;
+	qudt:unit unit:DEG_C ;
+	qudt:value 75.00 ;
+.
+<#process2/pressure> a phcat:PressureCondition ;
+	qudt:unit unit:BAR ;
+	qudt:value 1.22 ;
+.
+<#process2/space-velocity> a phcat:SpaceVelocityCondition ;
+	qudt:unit unit:PER-HR ;
+	qudt:value 83.3 ;
+.
+<#process2/reaction-time> a phcat:ReactionTimeCondition ;
+	qudt:unit unit:HR ;
+	qudt:value 5.50 ;
+.
+<#process2/output1> a phcat:Output ;
+	phcat:hasChemical chebi:CHEBI:16183 ;
+	phcat:hasOutputQuantity <#process2/output1/cuantity>;
+.
+<#process2/output1/cuantity> a phcat:OutputQuantity ;
+	qudt:numericValue 3.3935 ;
+	qudt:unit unit:MicroMOL-PER-GM ;
+.
+<#process2/output2> a phcat:Output ;
+	phcat:hasChemical chebi:CHEBI:16183 ;
+	phcat:hasOutputQuantity <#process2/output2/cuantity>;
+.
+<#process2/output2/cuantity> a phcat:OutputQuantity ;
+	qudt:value 0.617 ;
+	qudt:unit unit:MicroMOL-PER-GM-HR ;
+.
+## Proceso 3 ## 
+<#process3>
+	a phcat:MaterialTransformation ;
+	rdfs:label "Cu-Fe/TiO2/SiO2-acac"xsd:string ;
+	phcat:hasInput <#process3/catalyst_Anatase> ;
+	phcat:hasInput <#process3/co-catalyst_Cu> ;
+	phcat:hasInput <#process3/co-catalyst_Fe> ;
+	phcat:hasInput <#process3/support_NiO2> ;
+	phcat:reportedIn <https://doi.org/10.1007/s10563-009-9065-9>
+	phcat:operationMode "Continuous"
+	phcat:hasReactionMedium phcat:Gas ;
+	phcat:hasReductant chebi:CHEBI:15377 ; # water
+	phcat:hasCondition <#process3/reactor-condition> ;
+	phcat:hasCondition <#process3/lightsource> ;
+	phcat:hasCondition <#process3/lamppirradiance> ;
+	phcat:hasCondition <#process3/catalyst-set-up> ;
+	phcat:hasCondition <#process3/temperature> ;
+	phcat:hasCondition <#process3/pressure> ;
+	phcat:hasCondition <#process3/space-velocity> ;
+	phcat:hasCondition <#process3/reaction-time> ;
+	phcat:hasOutput <#process3/output1> ;
+	phcat:hasOutput <#process3/output2> ;
+.
+<#process3/catalyst_TiO2_Anatase> a phcat:Input ;
+	phcat:hasChemical chebi:CHEBI:32234^^chebi:CHEBI:24431 ;
+	phcat:cristalStructure "Anatase"^^xsd:string ;
+	phcat:hasRole phcat:Catalyst ;
+.
+<#process3/co-catalyst_Cu> a phcat:Input ;
+	phcat:hasChemical chebi:CHEBI:28694^^chebi:CHEBI:24431 ;
+	phcat:percentage 0.5^^xsd:double ;
+	phcat:hasRole phcat:Co-catalyst ;
+.
+<#process3/co-catalyst_Fe> a phcat:Input ;
+	phcat:hasChemical chebi:CHEBI:18248^^chebi:CHEBI:24431 ;
+	phcat:percentage 0.5^^xsd:double ;
+	phcat:hasRole phcat:Co-catalyst ;
+.
+<#process3/support_NiO2/chemical> a chebi:CHEBI:24431
+	chebi:formula "NiO2" ;
+	rdfs:label "Nickel dioxide" ;
+.
+<#process3/support_NiO2> a phcat:Input ;
+	phcat:hasChemical <#process3/support_NiO2/chemical> ;
+	phcat:hasRole phcat:Support ;
+.
+<#process3/reactor-condition> a phcat:ReactorCondition ;
+	phcat:reactorType "Fixed-bed" ;
+	# qudt:unit unit:L ; # NOTE: Revisar - no aparece en la bd entonces es obligatorio?
+	# qudt:value 0 ;
+.
+<#process3/lightsource> a phcat:WavelengthCondition ;
+	phcat:lightSourceType "Solar" ;
+	# qudt:unit unit:NanoM ;
+	# qudt:value "315-400(UV-C)" ;
+.
+# NOTE: Revisar - las dos unidades son caracteristicas de la lampara
+# 		lo de las subclases no tiene mucho sentido
+<#process3/lamppirradiance> a phcat:IrradianceCondition ;
+	phcat:lampType "Solar" ;
+	qudt:unit unit:W-PER-M2 ;
+	qudt:value "200"^^xsd:double ;
+.
+<#process3/catalyst-set-up> a phcat:CatalystSetUpCondition ;
+	phcat:setUpType "Film" ;
+	# qudt:unit unit:GM ;
+	# qudt:value 0 ;
+.
+<#process3/temperature> a phcat:WavelengthCondition ;
+	qudt:unit unit:DEG_C ;
+	qudt:value 75.00 ;
+.
+<#process3/pressure> a phcat:PressureCondition ;
+	qudt:unit unit:BAR ;
+	qudt:value 1.22 ;
+.
+<#process3/space-velocity> a phcat:SpaceVelocityCondition ;
+	qudt:unit unit:PER-HR ;
+	qudt:value 83.3 ;
+.
+<#process3/reaction-time> a phcat:ReactionTimeCondition ;
+	qudt:unit unit:HR ;
+	qudt:value 5.50 ;
+.
+<#process3/output1> a phcat:Output ;
+	phcat:hasChemical chebi:CHEBI:16183 ;
+	phcat:hasOutputQuantity <#process3/output1/cuantity>;
+.
+<#process3/output1/cuantity> a phcat:OutputQuantity ;
+	qudt:numericValue 1.5345 ;
+	qudt:unit unit:MicroMOL-PER-GM ;
+.
+<#process3/output2> a phcat:Output ;
+	phcat:hasChemical chebi:CHEBI:16183 ;
+	phcat:hasOutputQuantity <#process3/output2/cuantity>;
+.
+<#process3/output2/cuantity> a phcat:OutputQuantity ;
+	qudt:value 0.279 ;
+	qudt:unit unit:MicroMOL-PER-GM-HR ;
+.
+
+## Articulo 2 ##
+<https://doi.org/10.1039/C2JM31736B>
+	a bibo:Article ;
+	bibo:doi "10.1039/C2JM31736B" ;
+	bibo:abstract "Heterostructured Ag@AgBr/AgCl nanocashews have been synthesized by an anion-exchange reaction between AgCl nanocubes and Br&minus; ions followed by photoreduction. Compared to polyhedral Ag@AgBr nanoparticles, the obtained nanostructures exhibit enhanced photocatalytic activity towards decomposition of organic pollutants, i.e., rhodamine-B (RhB). For example, only 2 min is taken to completely decompose RhB molecules with the assistance of these novel heterostructured nanoparticles under visible light irradiation. Furthermore, the as-synthesized nanocatalyst can be reused 20 times without losing activity, showing its high stability. Interestingly, the novel heterostructured Ag@AgBr/AgCl nanophotocatalyst also shows efficient visible light conversion of CO2 to energetic fuels, e.g. methanol/ethanol. Therefore, the present route opens an avenue to achieve highly efficient visible-light-driven nanophotocatalysts for applications in environmental remediation and resourceful use of CO2." ;
+	bibo:volume 22 ;
+	dc:title "Synthesis of Ag@AgBr/AgCl heterostructured nanocashews with enhanced photocatalytic performance via anion exchange" ;
+	dc:date 2012 ;
+	bibo:pageStart 13153 ;
+	dc:isPartOf  <https://portal.issn.org/resource/ISSN/1571-1013>;
+	#NOTE: no se ha podido encontrar a todos los autores
+	dc:creator  <https://orcid.org/0000-0003-2227-5008> ;
+	dc:creator  <https://orcid.org/0000-0002-4106-9093> ;
+	dc:creator  <https://scholar.google.com/citations?user=GZOJpwYAAAAJ&hl=es&oi=sra> ;
+	dc:creator  <https://orcid.org/0000-0003-3030-2440> ;
+	dc:creator	<#WenJiang> ;
+	phcat:hasMaterialTransformationProcess <#process4> ;
+.
+<https://portal.issn.org/resource/ISSN/0959-9428>
+	a bibo:Journal ;
+	dc:title "Journal of Materials Chemistry" ;
+.
+<https://orcid.org/0000-0003-2227-5008>
+	a schema:Person ;
+	schema:email "qhzhang@upc.edu.cn" ;
+	schema:nationality <https://en.wikipedia.org/wiki/China>^^schema:Country ;
+.
+<https://orcid.org/0000-0002-4106-9093>
+	a schema:Person ;
+	schema:email "jizhuang@jnu.edu.cn" ;
+	schema:nationality <https://en.wikipedia.org/wiki/China>^^schema:Country ;
+.
+<https://scholar.google.com/citations?user=GZOJpwYAAAAJ&hl=es&oi=sra>
+	a schema:Person ;
+	schema:nationality <https://en.wikipedia.org/wiki/China>^^schema:Country ;
+.
+<https://orcid.org/0000-0003-3030-2440>
+	a schema:Person ;
+	schema:nationality <https://en.wikipedia.org/wiki/China>^^schema:Country ;
+.
+<#WenJiang>
+	a schema:Person ;
+	schema:name "Wen Jiang" ;
+.
+## Proceso 3 ## 
+<#process4>
+	a phcat:MaterialTransformation ;
+	rdfs:label "Ag@AgBr/AgCl"xsd:string ;
+	phcat:hasInput <#process4/catalyst_AgCl> ;
+	phcat:hasInput <#process4/co-catalyst_AgBr> ;
+	phcat:hasInput <#process4/co-catalyst_Ag> ;
+	phcat:hasInput <#process4/support_NiO2> ;
+	phcat:reportedIn <https://doi.org/10.1039/C2JM31736B>
+	phcat:operationMode "Continuous"
+	phcat:hasReactionMedium <#process4/reaction-medium> ;
+	phcat:hasReductant chebi:CHEBI:15377 ; # water
+	phcat:hasCondition <#process4/reactor-condition> ;
+	phcat:hasCondition <#process4/lightsource> ;
+	phcat:hasCondition <#process4/lampppower> ;
+	phcat:hasCondition <#process4/catalyst-set-up> ;
+	phcat:hasCondition <#process4/reaction-time> ;
+	phcat:hasOutput <#process4/output1> ;
+	phcat:hasOutput <#process4/output2> ;
+	phcat:hasOutput <#process4/output3> ;
+	phcat:hasOutput <#process4/output4> ;
+.
+<#process4/reaction-medium> a phcat:Liquid ;
+	phcat:pH 0 ; # NOTE: puede ser 0 una medida valida o deberia ignorarse la propiedad?
+.
+<#process4/catalyst_AgCl> a phcat:Input ;
+	phcat:hasChemical chebi:CHEBI:30341 ;
+	phcat:hasRole phcat:Catalyst ;
+.
+<#AgBr> a chebi:CHEBI:24431
+	chebi:formula "AgBr" ;
+.
+<#process4/co-catalyst_AgBr> a phcat:Input ;
+	phcat:hasChemical <#AgBr> ;
+	phcat:hasRole phcat:Co-catalyst ;
+.
+<#process4/co-catalyst_Ag> a phcat:Input ;
+	phcat:hasChemical chebi:CHEBI:30512 ;
+	phcat:hasRole phcat:Co-catalyst ;
+.
+<#process4/support_NiO2/chemical> a chebi:CHEBI:24431
+	chebi:formula "NiO2" ;
+.
+<#process4/support_NiO2> a phcat:Input ;
+	phcat:hasChemical <#process4/support_NiO2/chemical> ;
+	phcat:hasRole phcat:Support ;
+.
+<#process4/reactor-condition> a phcat:ReactorCondition ;
+	phcat:reactorType "Slurry" ;
+	# qudt:unit unit:L ; # NOTE: Revisar - no aparece en la bd entonces es obligatorio?
+	# qudt:value 0 ;
+.
+<#process4/lightsource> a phcat:WavelengthCondition ;
+	phcat:lightSourceType "Visual" ;
+	qudt:unit unit:NanoM ;
+	qudt:value "400-780" ;
+.
+# NOTE: Revisar - las dos unidades son caracteristicas de la lampara
+# 		lo de las subclases no tiene mucho sentido
+<#process4/lampppower> a phcat:IrradianceCondition ;
+	phcat:lampType "Xenon(Xe)" ;
+	qudt:unit unit:W ;
+	qudt:value "300"^^xsd:double ;
+.
+<#process4/catalyst-set-up> a phcat:CatalystSetUpCondition ;
+	phcat:setUpType "Powder(Suspended)" ;
+	# qudt:unit unit:GM ;
+	# qudt:value 0 ;
+.
+<#process4/reaction-time> a phcat:ReactionTimeCondition ;
+	qudt:unit unit:HR ;
+	qudt:value 5.00 ;
+.
+<#CH3OH> a chebi:CHEBI:24431
+	chebi:formula "CH3OH" ;
+	rdfs:label "metanol" ;
+.
+<#process4/output1> a phcat:Output ;
+	phcat:hasChemical <#CH3OH> ;
+	phcat:hasOutputQuantity <#process4/output1/cuantity>;
+.
+<#process4/output1/cuantity> a phcat:OutputQuantity ;
+	qudt:numericValue 220 ;
+	qudt:unit unit:MicroMOL-PER-GM ;
+.
+<#process4/output2> a phcat:Output ;
+	phcat:hasChemical chebi:<#CH3OH> ;
+	phcat:hasOutputQuantity <#process4/output2/cuantity>;
+.
+<#process4/output2/cuantity> a phcat:OutputQuantity ;
+	qudt:value 44 ;
+	qudt:unit unit:MicroMOL-PER-GM-HR ;
+.
+<#process4/output3> a phcat:Output ;
+	phcat:hasChemical chebi:CHEBI:16236 ;
+	phcat:hasOutputQuantity <#process4/output3/cuantity>;
+.
+<#process4/output3/cuantity> a phcat:OutputQuantity ;
+	qudt:value 310 ;
+	qudt:unit unit:MicroMOL-PER-GM-HR ;
+.
+<#process4/output4> a phcat:Output ;
+	phcat:hasChemical chebi:CHEBI:16236 ;
+	phcat:hasOutputQuantity <#process4/output4/cuantity>;
+.
+<#process4/output4/cuantity> a phcat:OutputQuantity ;
+	qudt:value 62 ;
+	qudt:unit unit:MicroMOL-PER-GM-HR ;
+.
