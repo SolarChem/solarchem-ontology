@@ -1,0 +1,77 @@
+<http://w3id.org/solarchem/scec> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://w3id.org/solarchem/scec> <http://www.w3.org/2002/07/owl#imports> <http://w3id.org/solarchem/sc> .
+<http://w3id.org/solarchem/scec> <http://purl.org/dc/terms/contributor> "Ana Iglesias-Molina" .
+<http://w3id.org/solarchem/scec> <http://purl.org/dc/terms/contributor> "Daniel Garijo" .
+<http://w3id.org/solarchem/scec> <http://purl.org/dc/terms/contributor> "Laura Collado" .
+<http://w3id.org/solarchem/scec> <http://purl.org/dc/terms/contributor> "Miguel Tecedor" .
+<http://w3id.org/solarchem/scec> <http://purl.org/dc/terms/contributor> "Oier Beaskoetxea" .
+<http://w3id.org/solarchem/scec> <http://purl.org/dc/terms/contributor> "Víctor de la Peña" .
+<http://w3id.org/solarchem/scec> <http://purl.org/dc/terms/description> "This ontology represents the execution of experiments related to electrocatalysis, photocatalysis and photoelectrocatalysis with inputs, outputs, and experimental conditions." .
+<http://w3id.org/solarchem/scec> <http://purl.org/dc/terms/license> "http://purl.org/NET/rdflicense/cc-by4.0" .
+<http://w3id.org/solarchem/scec> <http://purl.org/dc/terms/title> "The SolarChem Ontology: Electrocatalysis Experiments" .
+<http://w3id.org/solarchem/scec> <http://purl.org/vocab/vann/preferredNamespacePrefix> "scec" .
+<http://w3id.org/solarchem/scec> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/solarchem/scec#" .
+<http://w3id.org/solarchem/scec> <http://www.w3.org/2002/07/owl#versionInfo> "v0.7.0" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/author
+<http://purl.org/dc/terms/author> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://w3id.org/solarchem/sc#ExperimentExecution
+<http://w3id.org/solarchem/sc#ExperimentExecution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#ExperimentExecution> <http://www.w3.org/2000/01/rdf-schema#label> "Experiment Execution" .
+# 
+# http://w3id.org/solarchem/scec#ElectrocatalysisExperiment
+<http://w3id.org/solarchem/scec#ElectrocatalysisExperiment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/scec#ElectrocatalysisExperiment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/solarchem/sc#ExperimentExecution> .
+<http://w3id.org/solarchem/scec#ElectrocatalysisExperiment> <http://www.w3.org/2000/01/rdf-schema#label> "Electrocatalysis Experiment" .
+# 
+# http://w3id.org/solarchem/scec#TafelSlope
+<http://w3id.org/solarchem/scec#TafelSlope> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/scec#TafelSlope> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/solarchem/scpec#ElectrochemicalMetric> .
+<http://w3id.org/solarchem/scec#TafelSlope> <http://www.w3.org/2000/01/rdf-schema#label> "Tafel Slope" .
+# 
+# http://w3id.org/solarchem/scec#TurnOverFrequency
+<http://w3id.org/solarchem/scec#TurnOverFrequency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/scec#TurnOverFrequency> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/solarchem/scpec#ElectrochemicalMetric> .
+<http://w3id.org/solarchem/scec#TurnOverFrequency> <http://www.w3.org/2000/01/rdf-schema#label> "Turn Over Frequency" .
+# 
+# http://w3id.org/solarchem/scpec#ElectrochemicalMetric
+<http://w3id.org/solarchem/scpec#ElectrochemicalMetric> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/scpec#ElectrochemicalMetric> <http://www.w3.org/2000/01/rdf-schema#label> "Electrochemical Metric" .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

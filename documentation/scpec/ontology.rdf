@@ -1,0 +1,344 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://w3id.org/solarchem/scpec/"
+     xml:base="http://w3id.org/solarchem/scpec/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://w3id.org/solarchem/scpec/">
+        <owl:imports rdf:resource="http://w3id.org/solarchem/sc"/>
+        <terms:contributor>Ana Iglesias-Molina</terms:contributor>
+        <terms:contributor>Daniel Garijo</terms:contributor>
+        <terms:contributor>Laura Collado</terms:contributor>
+        <terms:contributor>Miguel Tecedor</terms:contributor>
+        <terms:contributor>Oier Beaskoetxea</terms:contributor>
+        <terms:contributor>Víctor de la Peña</terms:contributor>
+        <terms:description>This ontology represents the execution of experiments related to electrocatalysis, photocatalysis and photoelectrocatalysis with inputs, outputs, and experimental conditions.</terms:description>
+        <terms:license>http://purl.org/NET/rdflicense/cc-by4.0</terms:license>
+        <terms:title>The SolarChem Ontology: Photoelectrocatalysis Experiments</terms:title>
+        <vann:preferredNamespacePrefix>scpec</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>https://w3id.org/solarchem/scpec#</vann:preferredNamespaceUri>
+        <owl:versionInfo>v0.7.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/author -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/author"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://w3id.org/solarchem/scpec#hasQEMetric -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/solarchem/scpec#hasQEMetric">
+        <rdfs:range rdf:resource="http://w3id.org/solarchem/scpec#QEMetric"/>
+        <rdfs:label>has QE metric</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://w3id.org/solarchem/sc#Condition -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/sc#Condition">
+        <rdfs:label>Condition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/solarchem/sc#ElectrochemicalConfiguration -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/sc#ElectrochemicalConfiguration">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/solarchem/sc#Condition"/>
+        <rdfs:label>Electrochemical Configuration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/solarchem/sc#ExperimentExecution -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/sc#ExperimentExecution">
+        <rdfs:label>Experiment Execution</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/solarchem/sc#MaterialTransformationRole -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/sc#MaterialTransformationRole">
+        <rdfs:label>Material Transformation Role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpec#ABPE -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/scpec#ABPE">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/solarchem/scpec#QEMetric"/>
+        <rdfs:label>ABPE</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpec#ElectrochemicalMetric -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/scpec#ElectrochemicalMetric">
+        <rdfs:label>Electrochemical Metric</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpec#FF -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/scpec#FF">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/solarchem/scpec#ElectrochemicalMetric"/>
+        <rdfs:label>F F</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpec#IPCE -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/scpec#IPCE">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/solarchem/scpec#QEMetric"/>
+        <rdfs:label>IPCE</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpec#Onset -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/scpec#Onset">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/solarchem/scpec#ElectrochemicalMetric"/>
+        <rdfs:label>Onset</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpec#PhotoelectrocatalysisExperiment -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/scpec#PhotoelectrocatalysisExperiment">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/solarchem/sc#ExperimentExecution"/>
+        <rdfs:label>Photoelectrocatalysis Experiment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpec#QEMetric -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/scpec#QEMetric">
+        <rdfs:label>QE Metric</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpec#j_ph -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/scpec#j_ph">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/solarchem/scpec#ElectrochemicalMetric"/>
+        <rdfs:label>j_ph</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://w3id.org/solarchem/scpec#Anode -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/solarchem/scpec#Anode">
+        <rdf:type rdf:resource="http://w3id.org/solarchem/sc#MaterialTransformationRole"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpec#Cathode -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/solarchem/scpec#Cathode">
+        <rdf:type rdf:resource="http://w3id.org/solarchem/sc#MaterialTransformationRole"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpec#Overlayer -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/solarchem/scpec#Overlayer">
+        <rdf:type rdf:resource="http://w3id.org/solarchem/sc#MaterialTransformationRole"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpec#PEC -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/solarchem/scpec#PEC">
+        <rdf:type rdf:resource="http://w3id.org/solarchem/sc#ElectrochemicalConfiguration"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpec#PV-EC -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/solarchem/scpec#PV-EC">
+        <rdf:type rdf:resource="http://w3id.org/solarchem/sc#ElectrochemicalConfiguration"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpec#PV-PEC -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/solarchem/scpec#PV-PEC">
+        <rdf:type rdf:resource="http://w3id.org/solarchem/sc#ElectrochemicalConfiguration"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpec#Photoabsorber -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/solarchem/scpec#Photoabsorber">
+        <rdf:type rdf:resource="http://w3id.org/solarchem/sc#MaterialTransformationRole"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpec#Photocatalyst -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/solarchem/scpec#Photocatalyst">
+        <rdf:type rdf:resource="http://w3id.org/solarchem/sc#MaterialTransformationRole"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpec#Substrate -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/solarchem/scpec#Substrate">
+        <rdf:type rdf:resource="http://w3id.org/solarchem/sc#MaterialTransformationRole"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpec#TransparentConductiveContact -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/solarchem/scpec#TransparentConductiveContact">
+        <rdf:type rdf:resource="http://w3id.org/solarchem/sc#MaterialTransformationRole"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

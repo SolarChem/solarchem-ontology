@@ -1,0 +1,609 @@
+<http://w3id.org/solarchem/sc/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://w3id.org/solarchem/sc/> <http://purl.org/dc/terms/author> "Oier Beaskoetxea" .
+<http://w3id.org/solarchem/sc/> <http://purl.org/dc/terms/contributor> "Ana Iglesias-Molina" .
+<http://w3id.org/solarchem/sc/> <http://purl.org/dc/terms/contributor> "Daniel Garijo" .
+<http://w3id.org/solarchem/sc/> <http://purl.org/dc/terms/contributor> "Laura Collado" .
+<http://w3id.org/solarchem/sc/> <http://purl.org/dc/terms/contributor> "Miguel Tecedor" .
+<http://w3id.org/solarchem/sc/> <http://purl.org/dc/terms/contributor> "Víctor de la Peña" .
+<http://w3id.org/solarchem/sc/> <http://purl.org/dc/terms/description> "This ontology represents the execution of experiments related to electrocatalysis, photocatalysis and photoelectrocatalysis with inputs, outputs, and experimental conditions." .
+<http://w3id.org/solarchem/sc/> <http://purl.org/dc/terms/license> "http://purl.org/NET/rdflicense/cc-by4.0" .
+<http://w3id.org/solarchem/sc/> <http://purl.org/dc/terms/title> "The SolarChem Ontology" .
+<http://w3id.org/solarchem/sc/> <http://purl.org/vocab/vann/preferredNamespacePrefix> "sc" .
+<http://w3id.org/solarchem/sc/> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/solarchem/sc#" .
+<http://w3id.org/solarchem/sc/> <http://www.w3.org/2002/07/owl#versionInfo> "v0.7.0" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/author
+<http://purl.org/dc/terms/author> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/bibo/Article> .
+<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.org/Person> .
+<http://purl.org/dc/terms/creator> <http://www.w3.org/2000/01/rdf-schema#label> "creator" .
+# 
+# http://purl.org/dc/terms/isPartOf
+<http://purl.org/dc/terms/isPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/dc/terms/isPartOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/bibo/Article> .
+<http://purl.org/dc/terms/isPartOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/ontology/bibo/Journal> .
+<http://purl.org/dc/terms/isPartOf> <http://www.w3.org/2000/01/rdf-schema#label> "is part of" .
+# 
+# http://qudt.org/2.1/schema/qudt/unit
+<http://qudt.org/2.1/schema/qudt/unit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://qudt.org/2.1/schema/qudt/unit> <http://www.w3.org/2000/01/rdf-schema#range> <http://qudt.org/2.1/schema/qudt/Unit> .
+<http://qudt.org/2.1/schema/qudt/unit> <http://www.w3.org/2000/01/rdf-schema#label> "unit" .
+# 
+# http://w3id.org/solarchem/sc#affiliationCountry
+<http://w3id.org/solarchem/sc#affiliationCountry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/solarchem/sc#affiliationCountry> <http://www.w3.org/2000/01/rdf-schema#domain> <https://schema.org/Person> .
+<http://w3id.org/solarchem/sc#affiliationCountry> <http://www.w3.org/2000/01/rdf-schema#range> <https://schema.org/Country> .
+<http://w3id.org/solarchem/sc#affiliationCountry> <http://www.w3.org/2000/01/rdf-schema#label> "affiliation country" .
+# 
+# http://w3id.org/solarchem/sc#hasBandGap
+<http://w3id.org/solarchem/sc#hasBandGap> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/solarchem/sc#hasBandGap> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/solarchem/sc#Input> .
+<http://w3id.org/solarchem/sc#hasBandGap> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/solarchem/sc#BandGap> .
+<http://w3id.org/solarchem/sc#hasBandGap> <http://www.w3.org/2000/01/rdf-schema#label> "has band gap" .
+# 
+# http://w3id.org/solarchem/sc#hasChemical
+<http://w3id.org/solarchem/sc#hasChemical> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/solarchem/sc#hasChemical> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid1 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/solarchem/sc#Output> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/solarchem/sc#Input> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://w3id.org/solarchem/sc#hasChemical> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.obolibrary.org/obo/24431> .
+<http://w3id.org/solarchem/sc#hasChemical> <http://www.w3.org/2000/01/rdf-schema#label> "has chemical" .
+# 
+# http://w3id.org/solarchem/sc#hasCondition
+<http://w3id.org/solarchem/sc#hasCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/solarchem/sc#hasCondition> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/solarchem/sc#ExperimentExecution> .
+<http://w3id.org/solarchem/sc#hasCondition> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/solarchem/sc#Condition> .
+<http://w3id.org/solarchem/sc#hasCondition> <http://www.w3.org/2000/01/rdf-schema#label> "has condition" .
+# 
+# http://w3id.org/solarchem/sc#hasConversionMetric
+<http://w3id.org/solarchem/sc#hasConversionMetric> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/solarchem/sc#hasConversionMetric> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/solarchem/sc#Output> .
+<http://w3id.org/solarchem/sc#hasConversionMetric> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/solarchem/sc#ConversionMetric> .
+<http://w3id.org/solarchem/sc#hasConversionMetric> <http://www.w3.org/2000/01/rdf-schema#label> "has conversion metric" .
+# 
+# http://w3id.org/solarchem/sc#hasElectrochemicalMetric
+<http://w3id.org/solarchem/sc#hasElectrochemicalMetric> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/solarchem/sc#hasElectrochemicalMetric> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/solarchem/sc#Output> .
+<http://w3id.org/solarchem/sc#hasElectrochemicalMetric> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/solarchem/sc#ElectrochemicalMetric> .
+<http://w3id.org/solarchem/sc#hasElectrochemicalMetric> <http://www.w3.org/2000/01/rdf-schema#label> "has electrochemical metric" .
+# 
+# http://w3id.org/solarchem/sc#hasExperiment
+<http://w3id.org/solarchem/sc#hasExperiment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/solarchem/sc#hasExperiment> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/ontology/bibo/Article> .
+<http://w3id.org/solarchem/sc#hasExperiment> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/solarchem/sc#ExperimentExecution> .
+<http://w3id.org/solarchem/sc#hasExperiment> <http://www.w3.org/2000/01/rdf-schema#label> "has experiment" .
+# 
+# http://w3id.org/solarchem/sc#hasIlluminatedArea
+<http://w3id.org/solarchem/sc#hasIlluminatedArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/solarchem/sc#hasIlluminatedArea> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/solarchem/sc#LightSource> .
+<http://w3id.org/solarchem/sc#hasIlluminatedArea> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/solarchem/sc#IlluminatedArea> .
+<http://w3id.org/solarchem/sc#hasIlluminatedArea> <http://www.w3.org/2000/01/rdf-schema#label> "has illuminated area" .
+# 
+# http://w3id.org/solarchem/sc#hasIrradiance
+<http://w3id.org/solarchem/sc#hasIrradiance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/solarchem/sc#hasIrradiance> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/solarchem/sc#LightSource> .
+<http://w3id.org/solarchem/sc#hasIrradiance> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/solarchem/sc#Irradiance> .
+<http://w3id.org/solarchem/sc#hasIrradiance> <http://www.w3.org/2000/01/rdf-schema#label> "has irradiance" .
+# 
+# http://w3id.org/solarchem/sc#hasLightSource
+<http://w3id.org/solarchem/sc#hasLightSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/solarchem/sc#hasLightSource> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/solarchem/sc#LightSource> .
+<http://w3id.org/solarchem/sc#hasLightSource> <http://www.w3.org/2000/01/rdf-schema#label> "has light source" .
+# 
+# http://w3id.org/solarchem/sc#hasPower
+<http://w3id.org/solarchem/sc#hasPower> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/solarchem/sc#hasPower> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/solarchem/sc#LightSource> .
+<http://w3id.org/solarchem/sc#hasPower> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/solarchem/sc#Power> .
+<http://w3id.org/solarchem/sc#hasPower> <http://www.w3.org/2000/01/rdf-schema#label> "has power" .
+# 
+# http://w3id.org/solarchem/sc#hasWavelength
+<http://w3id.org/solarchem/sc#hasWavelength> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/solarchem/sc#hasWavelength> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/solarchem/sc#LightSource> .
+<http://w3id.org/solarchem/sc#hasWavelength> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/solarchem/sc#Wavelenght> .
+<http://w3id.org/solarchem/sc#hasWavelength> <http://www.w3.org/2000/01/rdf-schema#label> "has wavelength" .
+# 
+# http://w3id.org/solarchem/sc#reportedIn
+<http://w3id.org/solarchem/sc#reportedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://w3id.org/solarchem/sc#reportedIn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/solarchem/sc#ExperimentExecution> .
+<http://w3id.org/solarchem/sc#reportedIn> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/ontology/bibo/Article> .
+<http://w3id.org/solarchem/sc#reportedIn> <http://www.w3.org/2000/01/rdf-schema#label> "reported in" .
+# 
+# http://www.w3.org/ns/prov#used
+<http://www.w3.org/ns/prov#used> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/prov#used> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/solarchem/sc#ExperimentExecution> .
+<http://www.w3.org/ns/prov#used> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/solarchem/sc#Input> .
+<http://www.w3.org/ns/prov#used> <http://www.w3.org/2000/01/rdf-schema#label> "used" .
+# 
+# http://www.w3.org/ns/prov#wasGeneratedBy
+<http://www.w3.org/ns/prov#wasGeneratedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/prov#wasGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/solarchem/sc#Output> .
+<http://www.w3.org/ns/prov#wasGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://w3id.org/solarchem/sc#ExperimentExecution> .
+<http://www.w3.org/ns/prov#wasGeneratedBy> <http://www.w3.org/2000/01/rdf-schema#label> "was generated by" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.obolibrary.org/obo/formula
+<http://purl.obolibrary.org/obo/formula> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.obolibrary.org/obo/formula> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.obolibrary.org/obo/24431> .
+<http://purl.obolibrary.org/obo/formula> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://purl.obolibrary.org/obo/formula> <http://www.w3.org/2000/01/rdf-schema#label> "formula" .
+# 
+# http://purl.org/dc/terms/date
+<http://purl.org/dc/terms/date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/dc/terms/date> <http://www.w3.org/2000/01/rdf-schema#label> "date" .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# http://purl.org/ontology/bibo/abstract
+<http://purl.org/ontology/bibo/abstract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/ontology/bibo/abstract> <http://www.w3.org/2000/01/rdf-schema#label> "abstract" .
+# 
+# http://purl.org/ontology/bibo/doi
+<http://purl.org/ontology/bibo/doi> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/ontology/bibo/doi> <http://www.w3.org/2000/01/rdf-schema#label> "doi" .
+# 
+# http://purl.org/ontology/bibo/issue
+<http://purl.org/ontology/bibo/issue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/ontology/bibo/issue> <http://www.w3.org/2000/01/rdf-schema#label> "issue" .
+# 
+# http://purl.org/ontology/bibo/pageStart
+<http://purl.org/ontology/bibo/pageStart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/ontology/bibo/pageStart> <http://www.w3.org/2000/01/rdf-schema#label> "page start" .
+# 
+# http://qudt.org/2.1/schema/qudt#numericValue
+<http://qudt.org/2.1/schema/qudt#numericValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://qudt.org/2.1/schema/qudt#numericValue> <http://www.w3.org/2000/01/rdf-schema#label> "numeric value" .
+# 
+# http://w3id.org/solarchem/sc/crystalStructure
+<http://w3id.org/solarchem/sc/crystalStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/solarchem/sc/crystalStructure> <http://www.w3.org/2000/01/rdf-schema#domain> <http://w3id.org/solarchem/sc#Input> .
+<http://w3id.org/solarchem/sc/crystalStructure> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://w3id.org/solarchem/scpc#reactorVolume
+<http://w3id.org/solarchem/scpc#reactorVolume> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://w3id.org/solarchem/scpc#reactorVolume> <http://www.w3.org/2000/01/rdf-schema#label> "reactor volume" .
+# 
+# https://qudt.org/2.1/schema/qudt#floatPercentage
+<https://qudt.org/2.1/schema/qudt#floatPercentage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://qudt.org/2.1/schema/qudt#floatPercentage> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid4 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/solarchem/sc#Input> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://w3id.org/solarchem/sc#ConversionMetric> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://qudt.org/2.1/schema/qudt#floatPercentage> <http://www.w3.org/2000/01/rdf-schema#label> "float percentage" .
+# 
+# https://schema.org/email
+<https://schema.org/email> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://schema.org/email> <http://www.w3.org/2000/01/rdf-schema#label> "email" .
+# 
+# https://schema.org/name
+<https://schema.org/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#label> "name" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://purl.obolibrary.org/obo/24431
+<http://purl.obolibrary.org/obo/24431> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/24431> <http://www.w3.org/2000/01/rdf-schema#label> "chemical entity" .
+# 
+# http://purl.org/ontology/bibo/Article
+<http://purl.org/ontology/bibo/Article> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/ontology/bibo/Article> <http://www.w3.org/2000/01/rdf-schema#label> "Article" .
+# 
+# http://purl.org/ontology/bibo/Journal
+<http://purl.org/ontology/bibo/Journal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/ontology/bibo/Journal> <http://www.w3.org/2000/01/rdf-schema#label> "Journal" .
+# 
+# http://qudt.org/2.1/schema/qudt/Unit
+<http://qudt.org/2.1/schema/qudt/Unit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://qudt.org/2.1/schema/qudt/Unit> <http://www.w3.org/2000/01/rdf-schema#label> "Unit" .
+# 
+# http://w3id.org/solarchem/sc#BandGap
+<http://w3id.org/solarchem/sc#BandGap> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#BandGap> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid7 .
+_:genid7 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid7 <http://www.w3.org/2002/07/owl#onProperty> <http://qudt.org/2.1/schema/qudt/unit> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/solarchem/sc#BandGap> <http://www.w3.org/2000/01/rdf-schema#label> "Band Gap" .
+# 
+# http://w3id.org/solarchem/sc#Condition
+<http://w3id.org/solarchem/sc#Condition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#Condition> <http://www.w3.org/2000/01/rdf-schema#label> "Condition" .
+# 
+# http://w3id.org/solarchem/sc#ConversionMetric
+<http://w3id.org/solarchem/sc#ConversionMetric> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#ConversionMetric> <http://www.w3.org/2000/01/rdf-schema#label> "Conversion Metric" .
+# 
+# http://w3id.org/solarchem/sc#ElectrochemicalConfiguration
+<http://w3id.org/solarchem/sc#ElectrochemicalConfiguration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#ElectrochemicalConfiguration> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/solarchem/sc#Condition> .
+<http://w3id.org/solarchem/sc#ElectrochemicalConfiguration> <http://www.w3.org/2000/01/rdf-schema#label> "Electrochemical Configuration" .
+# 
+# http://w3id.org/solarchem/sc#ElectrochemicalMetric
+<http://w3id.org/solarchem/sc#ElectrochemicalMetric> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#ElectrochemicalMetric> <http://www.w3.org/2000/01/rdf-schema#label> "Electrochemical Metric" .
+# 
+# http://w3id.org/solarchem/sc#ExperimentExecution
+<http://w3id.org/solarchem/sc#ExperimentExecution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#ExperimentExecution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
+_:genid8 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#used> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/solarchem/sc#ExperimentExecution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
+_:genid9 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/solarchem/sc#reportedIn> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/solarchem/sc#ExperimentExecution> <http://www.w3.org/2000/01/rdf-schema#label> "Experiment Execution" .
+# 
+# http://w3id.org/solarchem/sc#FaradaicEfficiency
+<http://w3id.org/solarchem/sc#FaradaicEfficiency> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#FaradaicEfficiency> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/solarchem/sc#ConversionMetric> .
+<http://w3id.org/solarchem/sc#FaradaicEfficiency> <http://www.w3.org/2000/01/rdf-schema#label> "Faradaic Efficiency" .
+# 
+# http://w3id.org/solarchem/sc#IlluminatedArea
+<http://w3id.org/solarchem/sc#IlluminatedArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#IlluminatedArea> <http://www.w3.org/2000/01/rdf-schema#label> "Illuminated Area" .
+# 
+# http://w3id.org/solarchem/sc#Input
+<http://w3id.org/solarchem/sc#Input> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#Input> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
+_:genid10 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/solarchem/sc#hasBandGap> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/solarchem/sc#Input> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/solarchem/sc#hasChemical> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/solarchem/sc#Input> <http://www.w3.org/2000/01/rdf-schema#label> "Input" .
+# 
+# http://w3id.org/solarchem/sc#Irradiance
+<http://w3id.org/solarchem/sc#Irradiance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#Irradiance> <http://www.w3.org/2000/01/rdf-schema#label> "Irradiance" .
+# 
+# http://w3id.org/solarchem/sc#Lamp
+<http://w3id.org/solarchem/sc#Lamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#Lamp> <http://www.w3.org/2000/01/rdf-schema#label> "Lamp" .
+# 
+# http://w3id.org/solarchem/sc#LightSource
+<http://w3id.org/solarchem/sc#LightSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#LightSource> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+_:genid12 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/solarchem/sc#hasIlluminatedArea> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/solarchem/sc#LightSource> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
+_:genid13 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/solarchem/sc#hasIrradiance> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/solarchem/sc#LightSource> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/solarchem/sc#hasWavelength> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/solarchem/sc#LightSource> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
+_:genid15 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/solarchem/sc#hasPower> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/solarchem/sc#LightSource> <http://www.w3.org/2000/01/rdf-schema#label> "Light Source" .
+# 
+# http://w3id.org/solarchem/sc#MaterialTransformationRole
+<http://w3id.org/solarchem/sc#MaterialTransformationRole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#MaterialTransformationRole> <http://www.w3.org/2000/01/rdf-schema#label> "Material Transformation Role" .
+# 
+# http://w3id.org/solarchem/sc#MonochromaticLight
+<http://w3id.org/solarchem/sc#MonochromaticLight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#MonochromaticLight> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/solarchem/sc#LightSource> .
+<http://w3id.org/solarchem/sc#MonochromaticLight> <http://www.w3.org/2000/01/rdf-schema#label> "Monochromatic Light" .
+# 
+# http://w3id.org/solarchem/sc#OperationModeCondition
+<http://w3id.org/solarchem/sc#OperationModeCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#OperationModeCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/solarchem/sc#Condition> .
+<http://w3id.org/solarchem/sc#OperationModeCondition> <http://www.w3.org/2000/01/rdf-schema#label> "Operation Mode Condition" .
+# 
+# http://w3id.org/solarchem/sc#Output
+<http://w3id.org/solarchem/sc#Output> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#Output> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
+_:genid16 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/solarchem/sc#hasExperiment> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/solarchem/sc#Output> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid17 .
+_:genid17 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <http://qudt.org/2.1/schema/qudt/unit> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/solarchem/sc#Output> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
+_:genid18 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/solarchem/sc#hasChemical> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/solarchem/sc#Output> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
+_:genid19 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/prov#wasGeneratedBy> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/solarchem/sc#Output> <http://www.w3.org/2000/01/rdf-schema#label> "Output" .
+# 
+# http://w3id.org/solarchem/sc#Overpotential
+<http://w3id.org/solarchem/sc#Overpotential> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#Overpotential> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/solarchem/sc#ElectrochemicalMetric> .
+<http://w3id.org/solarchem/sc#Overpotential> <http://www.w3.org/2000/01/rdf-schema#label> "Overpotential" .
+# 
+# http://w3id.org/solarchem/sc#Power
+<http://w3id.org/solarchem/sc#Power> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#Power> <http://www.w3.org/2000/01/rdf-schema#label> "Power" .
+# 
+# http://w3id.org/solarchem/sc#PressureCondition
+<http://w3id.org/solarchem/sc#PressureCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#PressureCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/solarchem/sc#Condition> .
+<http://w3id.org/solarchem/sc#PressureCondition> <http://www.w3.org/2000/01/rdf-schema#label> "Pressure Condition" .
+# 
+# http://w3id.org/solarchem/sc#ReactionMediumCondition
+<http://w3id.org/solarchem/sc#ReactionMediumCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#ReactionMediumCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/solarchem/sc#Condition> .
+<http://w3id.org/solarchem/sc#ReactionMediumCondition> <http://www.w3.org/2000/01/rdf-schema#label> "Reaction Medium Condition" .
+# 
+# http://w3id.org/solarchem/sc#ReactionTimeCondition
+<http://w3id.org/solarchem/sc#ReactionTimeCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#ReactionTimeCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/solarchem/sc#Condition> .
+<http://w3id.org/solarchem/sc#ReactionTimeCondition> <http://www.w3.org/2000/01/rdf-schema#label> "Reaction Time Condition" .
+# 
+# http://w3id.org/solarchem/sc#SolarSimulatorLight
+<http://w3id.org/solarchem/sc#SolarSimulatorLight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#SolarSimulatorLight> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/solarchem/sc#LightSource> .
+<http://w3id.org/solarchem/sc#SolarSimulatorLight> <http://www.w3.org/2000/01/rdf-schema#label> "Solar Simulator Light" .
+# 
+# http://w3id.org/solarchem/sc#SolarToFuel
+<http://w3id.org/solarchem/sc#SolarToFuel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#SolarToFuel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/solarchem/sc#ConversionMetric> .
+<http://w3id.org/solarchem/sc#SolarToFuel> <http://www.w3.org/2000/01/rdf-schema#label> "Solar To Fuel" .
+# 
+# http://w3id.org/solarchem/sc#SunLight
+<http://w3id.org/solarchem/sc#SunLight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#SunLight> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/solarchem/sc#LightSource> .
+<http://w3id.org/solarchem/sc#SunLight> <http://www.w3.org/2000/01/rdf-schema#label> "Sun Light" .
+# 
+# http://w3id.org/solarchem/sc#SurfaceArea
+<http://w3id.org/solarchem/sc#SurfaceArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#SurfaceArea> <http://www.w3.org/2000/01/rdf-schema#label> "Surface Area" .
+# 
+# http://w3id.org/solarchem/sc#TemperatureCondition
+<http://w3id.org/solarchem/sc#TemperatureCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#TemperatureCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/solarchem/sc#Condition> .
+<http://w3id.org/solarchem/sc#TemperatureCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid20 .
+_:genid20 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <http://qudt.org/2.1/schema/qudt/unit> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://w3id.org/solarchem/sc#TemperatureCondition> <http://www.w3.org/2000/01/rdf-schema#label> "Temperature Condition" .
+# 
+# http://w3id.org/solarchem/sc#UltravioletLight
+<http://w3id.org/solarchem/sc#UltravioletLight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#UltravioletLight> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/solarchem/sc#LightSource> .
+<http://w3id.org/solarchem/sc#UltravioletLight> <http://www.w3.org/2000/01/rdf-schema#label> "Ultraviolet Light" .
+# 
+# http://w3id.org/solarchem/sc#UltravioletVisibleLight
+<http://w3id.org/solarchem/sc#UltravioletVisibleLight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#UltravioletVisibleLight> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/solarchem/sc#LightSource> .
+<http://w3id.org/solarchem/sc#UltravioletVisibleLight> <http://www.w3.org/2000/01/rdf-schema#label> "Ultraviolet Visible Light" .
+# 
+# http://w3id.org/solarchem/sc#VisibleLight
+<http://w3id.org/solarchem/sc#VisibleLight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#VisibleLight> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/solarchem/sc#LightSource> .
+<http://w3id.org/solarchem/sc#VisibleLight> <http://www.w3.org/2000/01/rdf-schema#label> "Visible Light" .
+# 
+# http://w3id.org/solarchem/sc#Wavelenght
+<http://w3id.org/solarchem/sc#Wavelenght> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#Wavelenght> <http://www.w3.org/2000/01/rdf-schema#label> "Wavelenght" .
+# 
+# http://w3id.org/solarchem/sc#pHCondition
+<http://w3id.org/solarchem/sc#pHCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc#pHCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/solarchem/sc#Condition> .
+<http://w3id.org/solarchem/sc#pHCondition> <http://www.w3.org/2000/01/rdf-schema#label> "pH Condition" .
+# 
+# http://w3id.org/solarchem/sc/SolarToHydrogen
+<http://w3id.org/solarchem/sc/SolarToHydrogen> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/solarchem/sc/SolarToHydrogen> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/solarchem/sc#ConversionMetric> .
+<http://w3id.org/solarchem/sc/SolarToHydrogen> <http://www.w3.org/2000/01/rdf-schema#label> "Solar To Hydrogen" .
+# 
+# https://schema.org/Country
+<https://schema.org/Country> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.org/Country> <http://www.w3.org/2000/01/rdf-schema#label> "Country" .
+# 
+# https://schema.org/Person
+<https://schema.org/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://schema.org/Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
+_:genid21 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <http://w3id.org/solarchem/sc#affiliationCountry> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://schema.org/Person> <http://www.w3.org/2000/01/rdf-schema#label> "Person" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://w3id.org/solarchem/sc#BatchMode
+<http://w3id.org/solarchem/sc#BatchMode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#BatchMode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#OperationModeCondition> .
+# 
+# http://w3id.org/solarchem/sc#Catalysts
+<http://w3id.org/solarchem/sc#Catalysts> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#Catalysts> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#MaterialTransformationRole> .
+# 
+# http://w3id.org/solarchem/sc#Co-catalysts
+<http://w3id.org/solarchem/sc#Co-catalysts> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#Co-catalysts> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#MaterialTransformationRole> .
+# 
+# http://w3id.org/solarchem/sc#ContinuousMode
+<http://w3id.org/solarchem/sc#ContinuousMode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#ContinuousMode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#OperationModeCondition> .
+# 
+# http://w3id.org/solarchem/sc#Dopant
+<http://w3id.org/solarchem/sc#Dopant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#Dopant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#MaterialTransformationRole> .
+# 
+# http://w3id.org/solarchem/sc#DoubleCell
+<http://w3id.org/solarchem/sc#DoubleCell> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#DoubleCell> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#ElectrochemicalConfiguration> .
+# 
+# http://w3id.org/solarchem/sc#FlowCell
+<http://w3id.org/solarchem/sc#FlowCell> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#FlowCell> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#ElectrochemicalConfiguration> .
+# 
+# http://w3id.org/solarchem/sc#FluorescentLamp
+<http://w3id.org/solarchem/sc#FluorescentLamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#FluorescentLamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#Lamp> .
+# 
+# http://w3id.org/solarchem/sc#GasMedium
+<http://w3id.org/solarchem/sc#GasMedium> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#GasMedium> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#ReactionMediumCondition> .
+# 
+# http://w3id.org/solarchem/sc#HalogenLamp
+<http://w3id.org/solarchem/sc#HalogenLamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#HalogenLamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#Lamp> .
+# 
+# http://w3id.org/solarchem/sc#LEDLamp
+<http://w3id.org/solarchem/sc#LEDLamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#LEDLamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#Lamp> .
+# 
+# http://w3id.org/solarchem/sc#LiquidMedium
+<http://w3id.org/solarchem/sc#LiquidMedium> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#LiquidMedium> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#ReactionMediumCondition> .
+# 
+# http://w3id.org/solarchem/sc#Mercury-XenonLamp
+<http://w3id.org/solarchem/sc#Mercury-XenonLamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#Mercury-XenonLamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#Lamp> .
+# 
+# http://w3id.org/solarchem/sc#MercuryLamp
+<http://w3id.org/solarchem/sc#MercuryLamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#MercuryLamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#Lamp> .
+# 
+# http://w3id.org/solarchem/sc#OtherLamp
+<http://w3id.org/solarchem/sc#OtherLamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#OtherLamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#Lamp> .
+# 
+# http://w3id.org/solarchem/sc#Reagent
+<http://w3id.org/solarchem/sc#Reagent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#Reagent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#MaterialTransformationRole> .
+# 
+# http://w3id.org/solarchem/sc#SingleCell
+<http://w3id.org/solarchem/sc#SingleCell> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#SingleCell> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#ElectrochemicalConfiguration> .
+# 
+# http://w3id.org/solarchem/sc#StackCell
+<http://w3id.org/solarchem/sc#StackCell> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#StackCell> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#ElectrochemicalConfiguration> .
+# 
+# http://w3id.org/solarchem/sc#Tungsten-HalideLamp
+<http://w3id.org/solarchem/sc#Tungsten-HalideLamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#Tungsten-HalideLamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#Lamp> .
+# 
+# http://w3id.org/solarchem/sc#TungstenLamp
+<http://w3id.org/solarchem/sc#TungstenLamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#TungstenLamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#Lamp> .
+# 
+# http://w3id.org/solarchem/sc#XenonLamp
+<http://w3id.org/solarchem/sc#XenonLamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#XenonLamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#Lamp> .
+# 
+# http://w3id.org/solarchem/sc#192-280WL
+<http://w3id.org/solarchem/sc#192-280WL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#192-280WL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#Wavelenght> .
+# 
+# http://w3id.org/solarchem/sc#192-780WL
+<http://w3id.org/solarchem/sc#192-780WL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#192-780WL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#Wavelenght> .
+# 
+# http://w3id.org/solarchem/sc#280-315WL
+<http://w3id.org/solarchem/sc#280-315WL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#280-315WL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#Wavelenght> .
+# 
+# http://w3id.org/solarchem/sc#280-780WL
+<http://w3id.org/solarchem/sc#280-780WL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#280-780WL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#Wavelenght> .
+# 
+# http://w3id.org/solarchem/sc#315-400WL
+<http://w3id.org/solarchem/sc#315-400WL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#315-400WL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#Wavelenght> .
+# 
+# http://w3id.org/solarchem/sc#315-780WL
+<http://w3id.org/solarchem/sc#315-780WL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#315-780WL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#Wavelenght> .
+# 
+# http://w3id.org/solarchem/sc#400-780WL
+<http://w3id.org/solarchem/sc#400-780WL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://w3id.org/solarchem/sc#400-780WL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://w3id.org/solarchem/sc#Wavelenght> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<http://purl.org/dc/terms/title> <http://www.w3.org/2000/01/rdf-schema#label> "title" .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

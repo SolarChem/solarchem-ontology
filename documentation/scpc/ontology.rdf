@@ -1,0 +1,311 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://w3id.org/solarchem/scpc/"
+     xml:base="http://w3id.org/solarchem/scpc/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://w3id.org/solarchem/scpc/">
+        <terms:author>Oier Beaskoetxea</terms:author>
+        <terms:contributor>Ana Iglesias-Molina</terms:contributor>
+        <terms:contributor>Daniel Garijo</terms:contributor>
+        <terms:contributor>Laura Collado</terms:contributor>
+        <terms:contributor>Miguel Tecedor</terms:contributor>
+        <terms:contributor>Víctor de la Peña</terms:contributor>
+        <terms:description>This ontology represents the execution of experiments related to electrocatalysis, photocatalysis and photoelectrocatalysis with inputs, outputs, and experimental conditions.</terms:description>
+        <terms:license>http://purl.org/NET/rdflicense/cc-by4.0</terms:license>
+        <terms:title>The SolarChem Ontology: Photocatalysis Experiments</terms:title>
+        <vann:preferredNamespacePrefix>scpc</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>https://w3id.org/solarchem/scpc#</vann:preferredNamespaceUri>
+        <owl:versionInfo>v0.7.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/author -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/author"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://w3id.org/solarchem/scpc#reactorVolume -->
+
+
+    <owl:DatatypeProperty rdf:about="http://w3id.org/solarchem/scpc#reactorVolume">
+        <rdfs:domain rdf:resource="http://w3id.org/solarchem/scpc#ReactorCondition"/>
+        <rdfs:label>reactor volume</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://w3id.org/solarchem/sc#Condition -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/sc#Condition">
+        <rdfs:label>Condition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/solarchem/sc#ConversionMetric -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/sc#ConversionMetric">
+        <rdfs:label>Conversion Metric</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/solarchem/sc#ExperimentExecution -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/sc#ExperimentExecution">
+        <rdfs:label>Experiment Execution</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/solarchem/sc#MaterialTransformationRole -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/sc#MaterialTransformationRole">
+        <rdfs:label>Material Transformation Role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpc#ApparentQuantumYield -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/scpc#ApparentQuantumYield">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/solarchem/sc#ConversionMetric"/>
+        <rdfs:label>Apparent Quantum Yield</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpc#Fixed-bedReactor -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/scpc#Fixed-bedReactor">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/solarchem/scpc#ReactorCondition"/>
+        <rdfs:label>Fixed-bed Reactor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpc#Fluidised-bedReactor -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/scpc#Fluidised-bedReactor">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/solarchem/scpc#ReactorCondition"/>
+        <rdfs:label>Fluidised-bed Reactor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpc#MembraneReactor -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/scpc#MembraneReactor">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/solarchem/scpc#ReactorCondition"/>
+        <rdfs:label>Membrane Reactor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpc#MonolithicReactor -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/scpc#MonolithicReactor">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/solarchem/scpc#ReactorCondition"/>
+        <rdfs:label>Monolithic Reactor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpc#OpticalFiberReactor -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/scpc#OpticalFiberReactor">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/solarchem/scpc#ReactorCondition"/>
+        <rdfs:label>Optical Fiber Reactor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpc#PhotocatalysisExperiment -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/scpc#PhotocatalysisExperiment">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/solarchem/sc#ExperimentExecution"/>
+        <rdfs:label>Photocatalysis Experiment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpc#PhotonicEfficiency -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/scpc#PhotonicEfficiency">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/solarchem/sc#ConversionMetric"/>
+        <rdfs:label>Photonic Efficiency</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpc#QuantumYield -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/scpc#QuantumYield">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/solarchem/sc#ConversionMetric"/>
+        <rdfs:label>Quantum Yield</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpc#ReactorCondition -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/scpc#ReactorCondition">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/solarchem/sc#Condition"/>
+        <rdfs:label>Reactor Condition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpc#SlurryReactor -->
+
+
+    <owl:Class rdf:about="http://w3id.org/solarchem/scpc#SlurryReactor">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/solarchem/scpc#ReactorCondition"/>
+        <rdfs:label>Slurry Reactor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://w3id.org/solarchem/scpc#Dye -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/solarchem/scpc#Dye">
+        <rdf:type rdf:resource="http://w3id.org/solarchem/sc#MaterialTransformationRole"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpc#Reductant -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/solarchem/scpc#Reductant">
+        <rdf:type rdf:resource="http://w3id.org/solarchem/sc#MaterialTransformationRole"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/solarchem/scpc#Support -->
+
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/solarchem/scpc#Support">
+        <rdf:type rdf:resource="http://w3id.org/solarchem/sc#MaterialTransformationRole"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+
