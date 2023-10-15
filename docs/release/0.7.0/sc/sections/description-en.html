@@ -1,4 +1,46 @@
 <h2 id="desc" class="list">The SolarChem Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
-This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.</span>
+Figure 1 depicts the SolarChem ontology and its three associated modules: SolarChem
+Photocatalysis, SolarChem Electrocatalysis and SolarChem Photoelectrocatalysis.
+The three modules import this core ontology to extend it with specific terms about
+the type of catalysis experiment regarding input product role, conditions, conversion metrics, etc.
 
+
+</span>
+
+<center>
+  <img src="../../../vocab/images/solarchem-diagram.svg" alt="General overview of the SolarChem Ontology and modules" width="90%"> <figcaption><b>Figure 1.</b> - General overview of the SolarChem Ontology and modules.</figcaption>
+</center>
+
+<span class="markdown">
+
+The ontology revolves about the concept `sc:ExperimentExecution`, that refers to
+the execution of a catalysis experiment and its characteristics reported from a
+scientific article. The articles where the experiments information is extracted
+are described with `bibo:Article`, which in turn include its authors (`schema:Person`),
+their affiliation country (`schema:Country`) and the journal where it is published
+(`bibo:Journal`).
+
+Experiments are performed under specific conditions (`sc:Condition`), such as temperature
+(`sc:TemperatureCondition`), pressure (`sc:PressureCondition`), pH (`sc:pHCondition`),
+reaction time (`sc:ReactionTimeCondition`), reaction medium (`sc:ReactionMediumCondition`,
+which can be either liquid or gas), operation mode (`sc:OperationModeCondition`,
+which can be either batch or continuous), and electrochemical configuration
+(`sc:ElectrochemicalConfiguration`). Additionally, for photocatalysis and photoelectrocatalysis
+experiments, the type of light source (`sc:LightSource`) is also described, as it plays an essential
+role in the experiment execution. Light sources may be of a particular type (e.g.
+ultraviolet, sun light, etc), be produced by a lamp (`sc:Lamp`), have a certain
+wavelength (`sc:Wavelength`), irradiance (`sc:Irradiance`), power (`sc:Power`)
+and illuminated area (`sc:IlluminatedArea`).
+
+Experiments use chemical entities (`chebi:24431`) as input (`sc:Input`), and produce others as
+output products (`sc:Output`). The input substances play a certain role (`sc:MaterialTransformationRole`)
+in experiments (e.g. catalyst, reagent, co-catalyst), and are displayed with a
+specific band gap (`sc:BandGap`) and surface area (`sc:SurfaceArea`) of reaction.
+The output substances produced are measured with their quantity, and described
+further with conversion metrics (`sc:ConversionMetric`) and electrochemical metrics
+(`sc:ElectrochemicalMetric`). 
+
+
+
+</span>
