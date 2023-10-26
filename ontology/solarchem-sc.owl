@@ -1,6 +1,6 @@
 @prefix : <http://w3id.org/solarchem/sc/> .
 @prefix dc: <http://purl.org/dc/terms/> .
-@prefix sc: <http://w3id.org/solarchem/sc#> .
+@prefix sc: <https://w3id.org/solar/o/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -9,26 +9,26 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix qudt: <http://qudt.org/2.1/schema/qudt#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix scec: <http://w3id.org/solarchem/scec#> .
-@prefix scpc: <http://w3id.org/solarchem/scpc#> .
+@prefix scec: <https://w3id.org/solar/o/ec#> .
+@prefix scpc: <https://w3id.org/solar/o/pc#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_> .
-@prefix scpec: <http://w3id.org/solarchem/scpec#> .
+@prefix scpec: <https://w3id.org/solar/o/pec#> .
 @prefix schema: <https://schema.org/> .
 @base <http://w3id.org/solarchem/sc/> .
 
 <http://w3id.org/solarchem/sc/> rdf:type owl:Ontology ;
-                                 <http://purl.org/dc/terms/author> "Oier Beaskoetxea" ;
-                                 <http://purl.org/dc/terms/contributor> "Ana Iglesias-Molina" ,
-                                                                               "Daniel Garijo" ,
-                                                                               "Laura Collado" ,
-                                                                               "Miguel Tecedor" ,
-                                                                               "Víctor de la Peña" ;
+                                 <http://purl.org/dc/terms/author> "Ana Iglesias-Molina" ,
+                                                                   "Oier Beaskoetxea" ;
+                                 <http://purl.org/dc/terms/contributor>  "Daniel Garijo" ,
+                                                                         "Laura Collado" ,
+                                                                         "Miguel Tecedor" ,
+                                                                         "Víctor de la Peña" ;
                                  <http://purl.org/dc/terms/description> "This ontology represents the execution of experiments related to electrocatalysis, photocatalysis and photoelectrocatalysis with inputs, outputs, and experimental conditions." ;
                                  dc:license "http://purl.org/NET/rdflicense/cc-by4.0" ;
                                  dc:title "The SolarChem Ontology" ;
-                                 vann:preferredNamespacePrefix "sc" ;
-                                 vann:preferredNamespaceUri "https://w3id.org/solarchem/sc#" ;
+                                 vann:preferredNamespacePrefix "solar" ;
+                                 vann:preferredNamespaceUri "https://w3id.org/solar/o/core#" ;
                                  owl:versionInfo "v0.7.0" .
 
 #################################################################
@@ -87,21 +87,21 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                                        rdfs:label "unit" .
 
 
-###  http://w3id.org/solarchem/sc#affiliationCountry
+###  https://w3id.org/solar/o/core#affiliationCountry
 sc:affiliationCountry rdf:type owl:ObjectProperty ;
                       rdfs:domain schema:Person ;
                       rdfs:range schema:Country ;
                       rdfs:label "affiliation country" .
 
 
-###  http://w3id.org/solarchem/sc#hasBandGap
+###  https://w3id.org/solar/o/core#hasBandGap
 sc:hasBandGap rdf:type owl:ObjectProperty ;
               rdfs:domain sc:Input ;
               rdfs:range sc:BandGap ;
               rdfs:label "has band gap" .
 
 
-###  http://w3id.org/solarchem/sc#hasChemical
+###  https://w3id.org/solar/o/core#hasChemical
 sc:hasChemical rdf:type owl:ObjectProperty ;
                rdfs:domain [ owl:intersectionOf ( sc:Input
                                                   sc:Output
@@ -112,69 +112,69 @@ sc:hasChemical rdf:type owl:ObjectProperty ;
                rdfs:label "has chemical" .
 
 
-###  http://w3id.org/solarchem/sc#hasCondition
+###  https://w3id.org/solar/o/core#hasCondition
 sc:hasCondition rdf:type owl:ObjectProperty ;
                 rdfs:domain sc:ExperimentExecution ;
                 rdfs:range sc:Condition ;
                 rdfs:label "has condition" .
 
 
-###  http://w3id.org/solarchem/sc#hasConversionMetric
+###  https://w3id.org/solar/o/core#hasConversionMetric
 sc:hasConversionMetric rdf:type owl:ObjectProperty ;
                        rdfs:domain sc:Output ;
                        rdfs:range sc:ConversionMetric ;
                        rdfs:label "has conversion metric" .
 
 
-###  http://w3id.org/solarchem/sc#hasElectrochemicalMetric
+###  https://w3id.org/solar/o/core#hasElectrochemicalMetric
 sc:hasElectrochemicalMetric rdf:type owl:ObjectProperty ;
                             rdfs:domain sc:Output ;
                             rdfs:range sc:ElectrochemicalMetric ;
                             rdfs:label "has electrochemical metric" .
 
 
-###  http://w3id.org/solarchem/sc#hasExperiment
+###  https://w3id.org/solar/o/core#hasExperiment
 sc:hasExperiment rdf:type owl:ObjectProperty ;
                  rdfs:domain bibo:Article ;
                  rdfs:range sc:ExperimentExecution ;
                  rdfs:label "has experiment" .
 
 
-###  http://w3id.org/solarchem/sc#hasIlluminatedArea
+###  https://w3id.org/solar/o/core#hasIlluminatedArea
 sc:hasIlluminatedArea rdf:type owl:ObjectProperty ;
                       rdfs:domain sc:LightSource ;
                       rdfs:range sc:IlluminatedArea ;
                       rdfs:label "has illuminated area" .
 
 
-###  http://w3id.org/solarchem/sc#hasIrradiance
+###  https://w3id.org/solar/o/core#hasIrradiance
 sc:hasIrradiance rdf:type owl:ObjectProperty ;
                  rdfs:domain sc:LightSource ;
                  rdfs:range sc:Irradiance ;
                  rdfs:label "has irradiance" .
 
 
-###  http://w3id.org/solarchem/sc#hasLightSource
+###  https://w3id.org/solar/o/core#hasLightSource
 sc:hasLightSource rdf:type owl:ObjectProperty ;
                   rdfs:range sc:LightSource ;
                   rdfs:label "has light source" .
 
 
-###  http://w3id.org/solarchem/sc#hasPower
+###  https://w3id.org/solar/o/core#hasPower
 sc:hasPower rdf:type owl:ObjectProperty ;
             rdfs:domain sc:LightSource ;
             rdfs:range sc:Power ;
             rdfs:label "has power" .
 
 
-###  http://w3id.org/solarchem/sc#hasWavelength
+###  https://w3id.org/solar/o/core#hasWavelength
 sc:hasWavelength rdf:type owl:ObjectProperty ;
                  rdfs:domain sc:LightSource ;
                  rdfs:range sc:Wavelength ;
                  rdfs:label "has wavelength" .
 
 
-###  http://w3id.org/solarchem/sc#reportedIn
+###  https://w3id.org/solar/o/core#reportedIn
 sc:reportedIn rdf:type owl:ObjectProperty ;
               rdfs:domain sc:ExperimentExecution ;
               rdfs:range bibo:Article ;
@@ -247,7 +247,7 @@ qudt:numericValue rdf:type owl:DatatypeProperty ;
                   rdfs:range xsd:string .
 
 
-###  http://w3id.org/solarchem/scpc#reactorVolume
+###  https://w3id.org/solar/o/pc#reactorVolume
 scpc:reactorVolume rdf:type owl:DatatypeProperty ;
                    rdfs:label "reactor volume" .
 
@@ -296,7 +296,7 @@ bibo:Journal rdf:type owl:Class ;
                                        rdfs:label "Unit" .
 
 
-###  http://w3id.org/solarchem/sc#BandGap
+###  https://w3id.org/solar/o/core#BandGap
 sc:BandGap rdf:type owl:Class ;
            rdfs:subClassOf [ rdf:type owl:Restriction ;
                              owl:onProperty <http://qudt.org/2.1/schema/qudt/unit> ;
@@ -305,28 +305,28 @@ sc:BandGap rdf:type owl:Class ;
            rdfs:label "Band Gap" .
 
 
-###  http://w3id.org/solarchem/sc#Condition
+###  https://w3id.org/solar/o/core#Condition
 sc:Condition rdf:type owl:Class ;
              rdfs:label "Condition" .
 
 
-###  http://w3id.org/solarchem/sc#ConversionMetric
+###  https://w3id.org/solar/o/core#ConversionMetric
 sc:ConversionMetric rdf:type owl:Class ;
                     rdfs:label "Conversion Metric" .
 
 
-###  http://w3id.org/solarchem/sc#ElectrochemicalConfiguration
+###  https://w3id.org/solar/o/core#ElectrochemicalConfiguration
 sc:ElectrochemicalConfiguration rdf:type owl:Class ;
                                 rdfs:subClassOf sc:Condition ;
                                 rdfs:label "Electrochemical Configuration" .
 
 
-###  http://w3id.org/solarchem/sc#ElectrochemicalMetric
+###  https://w3id.org/solar/o/core#ElectrochemicalMetric
 sc:ElectrochemicalMetric rdf:type owl:Class ;
                          rdfs:label "Electrochemical Metric" .
 
 
-###  http://w3id.org/solarchem/sc#ExperimentExecution
+###  https://w3id.org/solar/o/core#ExperimentExecution
 sc:ExperimentExecution rdf:type owl:Class ;
                        rdfs:subClassOf [ rdf:type owl:Restriction ;
                                          owl:onProperty prov:used ;
@@ -339,18 +339,18 @@ sc:ExperimentExecution rdf:type owl:Class ;
                        rdfs:label "Experiment Execution" .
 
 
-###  http://w3id.org/solarchem/sc#FaradaicEfficiency
+###  https://w3id.org/solar/o/core#FaradaicEfficiency
 sc:FaradaicEfficiency rdf:type owl:Class ;
                       rdfs:subClassOf sc:ConversionMetric ;
                       rdfs:label "Faradaic Efficiency" .
 
 
-###  http://w3id.org/solarchem/sc#IlluminatedArea
+###  https://w3id.org/solar/o/core#IlluminatedArea
 sc:IlluminatedArea rdf:type owl:Class ;
                    rdfs:label "Illuminated Area" .
 
 
-###  http://w3id.org/solarchem/sc#Input
+###  https://w3id.org/solar/o/core#Input
 sc:Input rdf:type owl:Class ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
                            owl:onProperty sc:hasBandGap ;
@@ -363,17 +363,17 @@ sc:Input rdf:type owl:Class ;
          rdfs:label "Input" .
 
 
-###  http://w3id.org/solarchem/sc#Irradiance
+###  https://w3id.org/solar/o/core#Irradiance
 sc:Irradiance rdf:type owl:Class ;
               rdfs:label "Irradiance" .
 
 
-###  http://w3id.org/solarchem/sc#Lamp
+###  https://w3id.org/solar/o/core#Lamp
 sc:Lamp rdf:type owl:Class ;
         rdfs:label "Lamp" .
 
 
-###  http://w3id.org/solarchem/sc#LightSource
+###  https://w3id.org/solar/o/core#LightSource
 sc:LightSource rdf:type owl:Class ;
                rdfs:subClassOf [ rdf:type owl:Restriction ;
                                  owl:onProperty sc:hasIlluminatedArea ;
@@ -394,24 +394,24 @@ sc:LightSource rdf:type owl:Class ;
                rdfs:label "Light Source" .
 
 
-###  http://w3id.org/solarchem/sc#MaterialTransformationRole
+###  https://w3id.org/solar/o/core#MaterialTransformationRole
 sc:MaterialTransformationRole rdf:type owl:Class ;
                               rdfs:label "Material Transformation Role" .
 
 
-###  http://w3id.org/solarchem/sc#MonochromaticLight
+###  https://w3id.org/solar/o/core#MonochromaticLight
 sc:MonochromaticLight rdf:type owl:Class ;
                       rdfs:subClassOf sc:LightSource ;
                       rdfs:label "Monochromatic Light" .
 
 
-###  http://w3id.org/solarchem/sc#OperationModeCondition
+###  https://w3id.org/solar/o/core#OperationModeCondition
 sc:OperationModeCondition rdf:type owl:Class ;
                           rdfs:subClassOf sc:Condition ;
                           rdfs:label "Operation Mode Condition" .
 
 
-###  http://w3id.org/solarchem/sc#Output
+###  https://w3id.org/solar/o/core#Output
 sc:Output rdf:type owl:Class ;
           rdfs:subClassOf [ rdf:type owl:Restriction ;
                             owl:onProperty sc:hasExperiment ;
@@ -432,59 +432,59 @@ sc:Output rdf:type owl:Class ;
           rdfs:label "Output" .
 
 
-###  http://w3id.org/solarchem/sc#Overpotential
+###  https://w3id.org/solar/o/core#Overpotential
 sc:Overpotential rdf:type owl:Class ;
                  rdfs:subClassOf sc:ElectrochemicalMetric ;
                  rdfs:label "Overpotential" .
 
 
-###  http://w3id.org/solarchem/sc#Power
+###  https://w3id.org/solar/o/core#Power
 sc:Power rdf:type owl:Class ;
          rdfs:label "Power" .
 
 
-###  http://w3id.org/solarchem/sc#PressureCondition
+###  https://w3id.org/solar/o/core#PressureCondition
 sc:PressureCondition rdf:type owl:Class ;
                      rdfs:subClassOf sc:Condition ;
                      rdfs:label "Pressure Condition" .
 
 
-###  http://w3id.org/solarchem/sc#ReactionMediumCondition
+###  https://w3id.org/solar/o/core#ReactionMediumCondition
 sc:ReactionMediumCondition rdf:type owl:Class ;
                            rdfs:subClassOf sc:Condition ;
                            rdfs:label "Reaction Medium Condition" .
 
 
-###  http://w3id.org/solarchem/sc#ReactionTimeCondition
+###  https://w3id.org/solar/o/core#ReactionTimeCondition
 sc:ReactionTimeCondition rdf:type owl:Class ;
                          rdfs:subClassOf sc:Condition ;
                          rdfs:label "Reaction Time Condition" .
 
 
-###  http://w3id.org/solarchem/sc#SolarSimulatorLight
+###  https://w3id.org/solar/o/core#SolarSimulatorLight
 sc:SolarSimulatorLight rdf:type owl:Class ;
                        rdfs:subClassOf sc:LightSource ;
                        rdfs:label "Solar Simulator Light" .
 
 
-###  http://w3id.org/solarchem/sc#SolarToFuel
+###  https://w3id.org/solar/o/core#SolarToFuel
 sc:SolarToFuel rdf:type owl:Class ;
                rdfs:subClassOf sc:ConversionMetric ;
                rdfs:label "Solar To Fuel" .
 
 
-###  http://w3id.org/solarchem/sc#SunLight
+###  https://w3id.org/solar/o/core#SunLight
 sc:SunLight rdf:type owl:Class ;
             rdfs:subClassOf sc:LightSource ;
             rdfs:label "Sun Light" .
 
 
-###  http://w3id.org/solarchem/sc#SurfaceArea
+###  https://w3id.org/solar/o/core#SurfaceArea
 sc:SurfaceArea rdf:type owl:Class ;
                rdfs:label "Surface Area" .
 
 
-###  http://w3id.org/solarchem/sc#TemperatureCondition
+###  https://w3id.org/solar/o/core#TemperatureCondition
 sc:TemperatureCondition rdf:type owl:Class ;
                         rdfs:subClassOf sc:Condition ,
                                         [ rdf:type owl:Restriction ;
@@ -494,30 +494,30 @@ sc:TemperatureCondition rdf:type owl:Class ;
                         rdfs:label "Temperature Condition" .
 
 
-###  http://w3id.org/solarchem/sc#UltravioletLight
+###  https://w3id.org/solar/o/core#UltravioletLight
 sc:UltravioletLight rdf:type owl:Class ;
                     rdfs:subClassOf sc:LightSource ;
                     rdfs:label "Ultraviolet Light" .
 
 
-###  http://w3id.org/solarchem/sc#UltravioletVisibleLight
+###  https://w3id.org/solar/o/core#UltravioletVisibleLight
 sc:UltravioletVisibleLight rdf:type owl:Class ;
                            rdfs:subClassOf sc:LightSource ;
                            rdfs:label "Ultraviolet Visible Light" .
 
 
-###  http://w3id.org/solarchem/sc#VisibleLight
+###  https://w3id.org/solar/o/core#VisibleLight
 sc:VisibleLight rdf:type owl:Class ;
                 rdfs:subClassOf sc:LightSource ;
                 rdfs:label "Visible Light" .
 
 
-###  http://w3id.org/solarchem/sc#Wavelength
+###  https://w3id.org/solar/o/core#Wavelength
 sc:Wavelength rdf:type owl:Class ;
               rdfs:label "Wavelength" .
 
 
-###  http://w3id.org/solarchem/sc#pHCondition
+###  https://w3id.org/solar/o/core#pHCondition
 sc:pHCondition rdf:type owl:Class ;
                rdfs:subClassOf sc:Condition ;
                rdfs:label "pH Condition" .
@@ -547,143 +547,143 @@ schema:Person rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
-###  http://w3id.org/solarchem/sc#BatchMode
+###  https://w3id.org/solar/o/core#BatchMode
 sc:BatchMode rdf:type owl:NamedIndividual ,
                       sc:OperationModeCondition .
 
 
-###  http://w3id.org/solarchem/sc#Catalysts
+###  https://w3id.org/solar/o/core#Catalysts
 sc:Catalysts rdf:type owl:NamedIndividual ,
                       sc:MaterialTransformationRole .
 
 
-###  http://w3id.org/solarchem/sc#Co-catalysts
+###  https://w3id.org/solar/o/core#Co-catalysts
 sc:Co-catalysts rdf:type owl:NamedIndividual ,
                          sc:MaterialTransformationRole .
 
 
-###  http://w3id.org/solarchem/sc#ContinuousMode
+###  https://w3id.org/solar/o/core#ContinuousMode
 sc:ContinuousMode rdf:type owl:NamedIndividual ,
                            sc:OperationModeCondition .
 
 
-###  http://w3id.org/solarchem/sc#Dopant
+###  https://w3id.org/solar/o/core#Dopant
 sc:Dopant rdf:type owl:NamedIndividual ,
                    sc:MaterialTransformationRole .
 
 
-###  http://w3id.org/solarchem/sc#DoubleCell
+###  https://w3id.org/solar/o/core#DoubleCell
 sc:DoubleCell rdf:type owl:NamedIndividual ,
                        sc:ElectrochemicalConfiguration .
 
 
-###  http://w3id.org/solarchem/sc#FlowCell
+###  https://w3id.org/solar/o/core#FlowCell
 sc:FlowCell rdf:type owl:NamedIndividual ,
                      sc:ElectrochemicalConfiguration .
 
 
-###  http://w3id.org/solarchem/sc#FluorescentLamp
+###  https://w3id.org/solar/o/core#FluorescentLamp
 sc:FluorescentLamp rdf:type owl:NamedIndividual ,
                             sc:Lamp .
 
 
-###  http://w3id.org/solarchem/sc#GasMedium
+###  https://w3id.org/solar/o/core#GasMedium
 sc:GasMedium rdf:type owl:NamedIndividual ,
                       sc:ReactionMediumCondition .
 
 
-###  http://w3id.org/solarchem/sc#HalogenLamp
+###  https://w3id.org/solar/o/core#HalogenLamp
 sc:HalogenLamp rdf:type owl:NamedIndividual ,
                         sc:Lamp .
 
 
-###  http://w3id.org/solarchem/sc#LEDLamp
+###  https://w3id.org/solar/o/core#LEDLamp
 sc:LEDLamp rdf:type owl:NamedIndividual ,
                     sc:Lamp .
 
 
-###  http://w3id.org/solarchem/sc#LiquidMedium
+###  https://w3id.org/solar/o/core#LiquidMedium
 sc:LiquidMedium rdf:type owl:NamedIndividual ,
                          sc:ReactionMediumCondition .
 
 
-###  http://w3id.org/solarchem/sc#Mercury-XenonLamp
+###  https://w3id.org/solar/o/core#Mercury-XenonLamp
 sc:Mercury-XenonLamp rdf:type owl:NamedIndividual ,
                               sc:Lamp .
 
 
-###  http://w3id.org/solarchem/sc#MercuryLamp
+###  https://w3id.org/solar/o/core#MercuryLamp
 sc:MercuryLamp rdf:type owl:NamedIndividual ,
                         sc:Lamp .
 
 
-###  http://w3id.org/solarchem/sc#OtherLamp
+###  https://w3id.org/solar/o/core#OtherLamp
 sc:OtherLamp rdf:type owl:NamedIndividual ,
                       sc:Lamp .
 
 
-###  http://w3id.org/solarchem/sc#Reagent
+###  https://w3id.org/solar/o/core#Reagent
 sc:Reagent rdf:type owl:NamedIndividual ,
                     sc:MaterialTransformationRole .
 
 
-###  http://w3id.org/solarchem/sc#SingleCell
+###  https://w3id.org/solar/o/core#SingleCell
 sc:SingleCell rdf:type owl:NamedIndividual ,
                        sc:ElectrochemicalConfiguration .
 
 
-###  http://w3id.org/solarchem/sc#StackCell
+###  https://w3id.org/solar/o/core#StackCell
 sc:StackCell rdf:type owl:NamedIndividual ,
                       sc:ElectrochemicalConfiguration .
 
 
-###  http://w3id.org/solarchem/sc#Tungsten-HalideLamp
+###  https://w3id.org/solar/o/core#Tungsten-HalideLamp
 sc:Tungsten-HalideLamp rdf:type owl:NamedIndividual ,
                                 sc:Lamp .
 
 
-###  http://w3id.org/solarchem/sc#TungstenLamp
+###  https://w3id.org/solar/o/core#TungstenLamp
 sc:TungstenLamp rdf:type owl:NamedIndividual ,
                          sc:Lamp .
 
 
-###  http://w3id.org/solarchem/sc#XenonLamp
+###  https://w3id.org/solar/o/core#XenonLamp
 sc:XenonLamp rdf:type owl:NamedIndividual ,
                       sc:Lamp .
 
 
-###  http://w3id.org/solarchem/sc#192-280WL
-<http://w3id.org/solarchem/sc#192-280WL> rdf:type owl:NamedIndividual ,
+###  https://w3id.org/solar/o/core#192-280WL
+<https://w3id.org/solar/o/core#192-280WL> rdf:type owl:NamedIndividual ,
                                                   sc:Wavelength .
 
 
-###  http://w3id.org/solarchem/sc#192-780WL
-<http://w3id.org/solarchem/sc#192-780WL> rdf:type owl:NamedIndividual ,
+###  https://w3id.org/solar/o/core#192-780WL
+<https://w3id.org/solar/o/core#192-780WL> rdf:type owl:NamedIndividual ,
                                                   sc:Wavelength .
 
 
-###  http://w3id.org/solarchem/sc#280-315WL
-<http://w3id.org/solarchem/sc#280-315WL> rdf:type owl:NamedIndividual ,
+###  https://w3id.org/solar/o/core#280-315WL
+<https://w3id.org/solar/o/core#280-315WL> rdf:type owl:NamedIndividual ,
                                                   sc:Wavelength .
 
 
-###  http://w3id.org/solarchem/sc#280-780WL
-<http://w3id.org/solarchem/sc#280-780WL> rdf:type owl:NamedIndividual ,
+###  https://w3id.org/solar/o/core#280-780WL
+<https://w3id.org/solar/o/core#280-780WL> rdf:type owl:NamedIndividual ,
                                                   sc:Wavelength .
 
 
-###  http://w3id.org/solarchem/sc#315-400WL
-<http://w3id.org/solarchem/sc#315-400WL> rdf:type owl:NamedIndividual ,
+###  https://w3id.org/solar/o/core#315-400WL
+<https://w3id.org/solar/o/core#315-400WL> rdf:type owl:NamedIndividual ,
                                                   sc:Wavelength .
 
 
-###  http://w3id.org/solarchem/sc#315-780WL
-<http://w3id.org/solarchem/sc#315-780WL> rdf:type owl:NamedIndividual ,
+###  https://w3id.org/solar/o/core#315-780WL
+<https://w3id.org/solar/o/core#315-780WL> rdf:type owl:NamedIndividual ,
                                                   sc:Wavelength .
 
 
-###  http://w3id.org/solarchem/sc#400-780WL
-<http://w3id.org/solarchem/sc#400-780WL> rdf:type owl:NamedIndividual ,
+###  https://w3id.org/solar/o/core#400-780WL
+<https://w3id.org/solar/o/core#400-780WL> rdf:type owl:NamedIndividual ,
                                                   sc:Wavelength .
 
 

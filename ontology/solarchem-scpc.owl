@@ -1,6 +1,6 @@
 @prefix : <http://w3id.org/solarchem/sc/> .
 @prefix dc: <http://purl.org/dc/terms/> .
-@prefix sc: <http://w3id.org/solarchem/sc#> .
+@prefix sc: <https://w3id.org/solar/o/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -9,27 +9,27 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix qudt: <http://qudt.org/2.1/schema/qudt#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix scec: <http://w3id.org/solarchem/scec#> .
-@prefix scpc: <http://w3id.org/solarchem/scpc#> .
+@prefix scec: <https://w3id.org/solar/o/ec#> .
+@prefix scpc: <https://w3id.org/solar/o/pc#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_> .
-@prefix scpec: <http://w3id.org/solarchem/scpec#> .
+@prefix scpec: <https://w3id.org/solar/o/pec#> .
 @prefix schema: <https://schema.org/> .
 @base <http://w3id.org/solarchem/scpc/> .
 
 <http://w3id.org/solarchem/scpc/> rdf:type owl:Ontology ;
                                    owl:imports <http://w3id.org/solarchem/sc/0.7.0> ;
-                                   <http://purl.org/dc/terms/author> "Oier Beaskoetxea" ;
-                                   <http://purl.org/dc/terms/contributor> "Ana Iglesias-Molina" ,
-                                                                                 "Daniel Garijo" ,
-                                                                                 "Laura Collado" ,
-                                                                                 "Miguel Tecedor" ,
-                                                                                 "Víctor de la Peña" ;
+                                  <http://purl.org/dc/terms/author> "Ana Iglesias-Molina" ,
+                                                                    "Oier Beaskoetxea" ;
+                                  <http://purl.org/dc/terms/contributor>  "Daniel Garijo" ,
+                                                                    "Laura Collado" ,
+                                                                    "Miguel Tecedor" ,
+                                                                    "Víctor de la Peña" ;
                                    <http://purl.org/dc/terms/description> "This ontology represents the execution of experiments related to electrocatalysis, photocatalysis and photoelectrocatalysis with inputs, outputs, and experimental conditions." ;
                                    dc:license "http://purl.org/NET/rdflicense/cc-by4.0" ;
                                    dc:title "The SolarChem Ontology: Photocatalysis Experiments" ;
-                                   vann:preferredNamespacePrefix "scpc" ;
-                                   vann:preferredNamespaceUri "https://w3id.org/solarchem/scpc#" ;
+                                   vann:preferredNamespacePrefix "solarpc" ;
+                                   vann:preferredNamespaceUri "https://w3id.org/solar/o/pc#" ;
                                    owl:versionInfo "v0.7.0" .
 
 #################################################################
@@ -68,7 +68,7 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 #    Data properties
 #################################################################
 
-###  http://w3id.org/solarchem/scpc#reactorVolume
+###  https://w3id.org/solar/o/pc#reactorVolume
 scpc:reactorVolume rdf:type owl:DatatypeProperty ;
                    rdfs:domain scpc:ReactorCondition ;
                    rdfs:label "reactor volume" .
@@ -78,87 +78,87 @@ scpc:reactorVolume rdf:type owl:DatatypeProperty ;
 #    Classes
 #################################################################
 
-###  http://w3id.org/solarchem/sc#Condition
+###  https://w3id.org/solar/o/core#Condition
 sc:Condition rdf:type owl:Class ;
              rdfs:label "Condition" .
 
 
-###  http://w3id.org/solarchem/sc#ConversionMetric
+###  https://w3id.org/solar/o/core#ConversionMetric
 sc:ConversionMetric rdf:type owl:Class ;
                     rdfs:label "Conversion Metric" .
 
 
-###  http://w3id.org/solarchem/sc#ExperimentExecution
+###  https://w3id.org/solar/o/core#ExperimentExecution
 sc:ExperimentExecution rdf:type owl:Class ;
                        rdfs:label "Experiment Execution" .
 
 
-###  http://w3id.org/solarchem/sc#MaterialTransformationRole
+###  https://w3id.org/solar/o/core#MaterialTransformationRole
 sc:MaterialTransformationRole rdf:type owl:Class ;
                               rdfs:label "Material Transformation Role" .
 
 
-###  http://w3id.org/solarchem/scpc#ApparentQuantumYield
+###  https://w3id.org/solar/o/pc#ApparentQuantumYield
 scpc:ApparentQuantumYield rdf:type owl:Class ;
                           rdfs:subClassOf sc:ConversionMetric ;
                           rdfs:label "Apparent Quantum Yield" .
 
 
-###  http://w3id.org/solarchem/scpc#Fixed-bedReactor
+###  https://w3id.org/solar/o/pc#Fixed-bedReactor
 scpc:Fixed-bedReactor rdf:type owl:Class ;
                       rdfs:subClassOf scpc:ReactorCondition ;
                       rdfs:label "Fixed-bed Reactor" .
 
 
-###  http://w3id.org/solarchem/scpc#Fluidised-bedReactor
+###  https://w3id.org/solar/o/pc#Fluidised-bedReactor
 scpc:Fluidised-bedReactor rdf:type owl:Class ;
                           rdfs:subClassOf scpc:ReactorCondition ;
                           rdfs:label "Fluidised-bed Reactor" .
 
 
-###  http://w3id.org/solarchem/scpc#MembraneReactor
+###  https://w3id.org/solar/o/pc#MembraneReactor
 scpc:MembraneReactor rdf:type owl:Class ;
                      rdfs:subClassOf scpc:ReactorCondition ;
                      rdfs:label "Membrane Reactor" .
 
 
-###  http://w3id.org/solarchem/scpc#MonolithicReactor
+###  https://w3id.org/solar/o/pc#MonolithicReactor
 scpc:MonolithicReactor rdf:type owl:Class ;
                        rdfs:subClassOf scpc:ReactorCondition ;
                        rdfs:label "Monolithic Reactor" .
 
 
-###  http://w3id.org/solarchem/scpc#OpticalFiberReactor
+###  https://w3id.org/solar/o/pc#OpticalFiberReactor
 scpc:OpticalFiberReactor rdf:type owl:Class ;
                          rdfs:subClassOf scpc:ReactorCondition ;
                          rdfs:label "Optical Fiber Reactor" .
 
 
-###  http://w3id.org/solarchem/scpc#PhotocatalysisExperiment
+###  https://w3id.org/solar/o/pc#PhotocatalysisExperiment
 scpc:PhotocatalysisExperiment rdf:type owl:Class ;
                               rdfs:subClassOf sc:ExperimentExecution ;
                               rdfs:label "Photocatalysis Experiment" .
 
 
-###  http://w3id.org/solarchem/scpc#PhotonicEfficiency
+###  https://w3id.org/solar/o/pc#PhotonicEfficiency
 scpc:PhotonicEfficiency rdf:type owl:Class ;
                         rdfs:subClassOf sc:ConversionMetric ;
                         rdfs:label "Photonic Efficiency" .
 
 
-###  http://w3id.org/solarchem/scpc#QuantumYield
+###  https://w3id.org/solar/o/pc#QuantumYield
 scpc:QuantumYield rdf:type owl:Class ;
                   rdfs:subClassOf sc:ConversionMetric ;
                   rdfs:label "Quantum Yield" .
 
 
-###  http://w3id.org/solarchem/scpc#ReactorCondition
+###  https://w3id.org/solar/o/pc#ReactorCondition
 scpc:ReactorCondition rdf:type owl:Class ;
                       rdfs:subClassOf sc:Condition ;
                       rdfs:label "Reactor Condition" .
 
 
-###  http://w3id.org/solarchem/scpc#SlurryReactor
+###  https://w3id.org/solar/o/pc#SlurryReactor
 scpc:SlurryReactor rdf:type owl:Class ;
                    rdfs:subClassOf scpc:ReactorCondition ;
                    rdfs:label "Slurry Reactor" .
@@ -168,17 +168,17 @@ scpc:SlurryReactor rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
-###  http://w3id.org/solarchem/scpc#Dye
+###  https://w3id.org/solar/o/pc#Dye
 scpc:Dye rdf:type owl:NamedIndividual ,
                   sc:MaterialTransformationRole .
 
 
-###  http://w3id.org/solarchem/scpc#Reductant
+###  https://w3id.org/solar/o/pc#Reductant
 scpc:Reductant rdf:type owl:NamedIndividual ,
                         sc:MaterialTransformationRole .
 
 
-###  http://w3id.org/solarchem/scpc#Support
+###  https://w3id.org/solar/o/pc#Support
 scpc:Support rdf:type owl:NamedIndividual ,
                       sc:MaterialTransformationRole .
 
