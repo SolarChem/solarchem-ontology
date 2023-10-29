@@ -73,8 +73,8 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 #################################################################
 
 ###  https://w3id.org/solar/o/pec#hasQEMetric
-scpec:hasQEMetric rdf:type owl:ObjectProperty ;
-                  rdfs:range scpec:QEMetric ;
+solarpec:hasQEMetric rdf:type owl:ObjectProperty ;
+                  rdfs:range solarpec:QEMetric ;
                   rdfs:label "has QE metric" .
 
 
@@ -83,69 +83,69 @@ scpec:hasQEMetric rdf:type owl:ObjectProperty ;
 #################################################################
 
 ###  https://w3id.org/solar/o/core#Condition
-sc:Condition rdf:type owl:Class ;
+solar:Condition rdf:type owl:Class ;
              rdfs:label "Condition" .
 
 
 ###  https://w3id.org/solar/o/core#ElectrochemicalConfiguration
-sc:ElectrochemicalConfiguration rdf:type owl:Class ;
-                                rdfs:subClassOf sc:Condition ;
+solar:ElectrochemicalConfiguration rdf:type owl:Class ;
+                                rdfs:subClassOf solar:Condition ;
                                 rdfs:label "Electrochemical Configuration" .
 
 
 ###  https://w3id.org/solar/o/core#ExperimentExecution
-sc:ExperimentExecution rdf:type owl:Class ;
+solar:ExperimentExecution rdf:type owl:Class ;
                        rdfs:label "Experiment Execution" .
 
 
 ###  https://w3id.org/solar/o/core#MaterialTransformationRole
-sc:MaterialTransformationRole rdf:type owl:Class ;
+solar:MaterialTransformationRole rdf:type owl:Class ;
                               rdfs:label "Material Transformation Role" .
 
 
 ###  https://w3id.org/solar/o/pec#ABPE
-scpec:ABPE rdf:type owl:Class ;
-           rdfs:subClassOf scpec:QEMetric ;
+solarpec:ABPE rdf:type owl:Class ;
+           rdfs:subClassOf solarpec:QEMetric ;
            rdfs:label "ABPE" .
 
 
 ###  https://w3id.org/solar/o/pec#ElectrochemicalMetric
-scpec:ElectrochemicalMetric rdf:type owl:Class ;
+solarpec:ElectrochemicalMetric rdf:type owl:Class ;
                             rdfs:label "Electrochemical Metric" .
 
 
 ###  https://w3id.org/solar/o/pec#FF
-scpec:FF rdf:type owl:Class ;
-         rdfs:subClassOf scpec:ElectrochemicalMetric ;
+solarpec:FF rdf:type owl:Class ;
+         rdfs:subClassOf solarpec:ElectrochemicalMetric ;
          rdfs:label "F F" .
 
 
 ###  https://w3id.org/solar/o/pec#IPCE
-scpec:IPCE rdf:type owl:Class ;
-           rdfs:subClassOf scpec:QEMetric ;
+solarpec:IPCE rdf:type owl:Class ;
+           rdfs:subClassOf solarpec:QEMetric ;
            rdfs:label "IPCE" .
 
 
 ###  https://w3id.org/solar/o/pec#Onset
-scpec:Onset rdf:type owl:Class ;
-            rdfs:subClassOf scpec:ElectrochemicalMetric ;
+solarpec:Onset rdf:type owl:Class ;
+            rdfs:subClassOf solarpec:ElectrochemicalMetric ;
             rdfs:label "Onset" .
 
 
 ###  https://w3id.org/solar/o/pec#PhotoelectrocatalysisExperiment
-scpec:PhotoelectrocatalysisExperiment rdf:type owl:Class ;
-                                      rdfs:subClassOf sc:ExperimentExecution ;
+solarpec:PhotoelectrocatalysisExperiment rdf:type owl:Class ;
+                                      rdfs:subClassOf solar:ExperimentExecution ;
                                       rdfs:label "Photoelectrocatalysis Experiment" .
 
 
 ###  https://w3id.org/solar/o/pec#QEMetric
-scpec:QEMetric rdf:type owl:Class ;
+solarpec:QEMetric rdf:type owl:Class ;
                rdfs:label "QE Metric" .
 
 
 ###  https://w3id.org/solar/o/pec#j_ph
-scpec:j_ph rdf:type owl:Class ;
-           rdfs:subClassOf scpec:ElectrochemicalMetric ;
+solarpec:j_ph rdf:type owl:Class ;
+           rdfs:subClassOf solarpec:ElectrochemicalMetric ;
            rdfs:label "j_ph" .
 
 
@@ -154,59 +154,59 @@ scpec:j_ph rdf:type owl:Class ;
 #################################################################
 
 ###  https://w3id.org/solar/o/pec#Anode
-scpec:Anode rdf:type owl:NamedIndividual ,
-                     sc:MaterialTransformationRole ;
+solarpec:Anode rdf:type owl:NamedIndividual ,
+                     solar:MaterialTransformationRole ;
             rdfs:label "Anode" .
 
 
 ###  https://w3id.org/solar/o/pec#Cathode
-scpec:Cathode rdf:type owl:NamedIndividual ,
-                       sc:MaterialTransformationRole ;
+solarpec:Cathode rdf:type owl:NamedIndividual ,
+                       solar:MaterialTransformationRole ;
               rdfs:label "Cathode" .
 
 
 ###  https://w3id.org/solar/o/pec#Overlayer
-scpec:Overlayer rdf:type owl:NamedIndividual ,
-                         sc:MaterialTransformationRole ;
+solarpec:Overlayer rdf:type owl:NamedIndividual ,
+                         solar:MaterialTransformationRole ;
                 rdfs:label "Overlayer" .
 
 
 ###  https://w3id.org/solar/o/pec#PEC
-scpec:PEC rdf:type owl:NamedIndividual ,
-                   sc:ElectrochemicalConfiguration .
+solarpec:PEC rdf:type owl:NamedIndividual ,
+                   solar:ElectrochemicalConfiguration .
 
 
 ###  https://w3id.org/solar/o/pec#PV-EC
-scpec:PV-EC rdf:type owl:NamedIndividual ,
-                     sc:ElectrochemicalConfiguration .
+solarpec:PV-EC rdf:type owl:NamedIndividual ,
+                     solar:ElectrochemicalConfiguration .
 
 
 ###  https://w3id.org/solar/o/pec#PV-PEC
-scpec:PV-PEC rdf:type owl:NamedIndividual ,
-                      sc:ElectrochemicalConfiguration .
+solarpec:PV-PEC rdf:type owl:NamedIndividual ,
+                      solar:ElectrochemicalConfiguration .
 
 
 ###  https://w3id.org/solar/o/pec#Photoabsorber
-scpec:Photoabsorber rdf:type owl:NamedIndividual ,
-                             sc:MaterialTransformationRole ;
+solarpec:Photoabsorber rdf:type owl:NamedIndividual ,
+                             solar:MaterialTransformationRole ;
                     rdfs:label "Photoabsorber" .
 
 
 ###  https://w3id.org/solar/o/pec#Photocatalyst
-scpec:Photocatalyst rdf:type owl:NamedIndividual ,
-                             sc:MaterialTransformationRole ;
+solarpec:Photocatalyst rdf:type owl:NamedIndividual ,
+                             solar:MaterialTransformationRole ;
                     rdfs:label "Photocatalyst" .
 
 
 ###  https://w3id.org/solar/o/pec#Substrate
-scpec:Substrate rdf:type owl:NamedIndividual ,
-                         sc:MaterialTransformationRole ;
+solarpec:Substrate rdf:type owl:NamedIndividual ,
+                         solar:MaterialTransformationRole ;
                 rdfs:label "Substrate" .
 
 
 ###  https://w3id.org/solar/o/pec#TransparentConductiveContact
-scpec:TransparentConductiveContact rdf:type owl:NamedIndividual ,
-                                            sc:MaterialTransformationRole ;
+solarpec:TransparentConductiveContact rdf:type owl:NamedIndividual ,
+                                            solar:MaterialTransformationRole ;
                                    rdfs:label "Transparent Conductive Contact" .
 
 

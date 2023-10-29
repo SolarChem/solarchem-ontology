@@ -73,8 +73,8 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 #################################################################
 
 ###  https://w3id.org/solar/o/pc#reactorVolume
-scpc:reactorVolume rdf:type owl:DatatypeProperty ;
-                   rdfs:domain scpc:ReactorCondition ;
+solarpc:reactorVolume rdf:type owl:DatatypeProperty ;
+                   rdfs:domain solarpc:ReactorCondition ;
                    rdfs:label "reactor volume" .
 
 
@@ -83,88 +83,88 @@ scpc:reactorVolume rdf:type owl:DatatypeProperty ;
 #################################################################
 
 ###  https://w3id.org/solar/o/core#Condition
-sc:Condition rdf:type owl:Class ;
+solar:Condition rdf:type owl:Class ;
              rdfs:label "Condition" .
 
 
 ###  https://w3id.org/solar/o/core#ConversionMetric
-sc:ConversionMetric rdf:type owl:Class ;
+solar:ConversionMetric rdf:type owl:Class ;
                     rdfs:label "Conversion Metric" .
 
 
 ###  https://w3id.org/solar/o/core#ExperimentExecution
-sc:ExperimentExecution rdf:type owl:Class ;
+solar:ExperimentExecution rdf:type owl:Class ;
                        rdfs:label "Experiment Execution" .
 
 
 ###  https://w3id.org/solar/o/core#MaterialTransformationRole
-sc:MaterialTransformationRole rdf:type owl:Class ;
+solar:MaterialTransformationRole rdf:type owl:Class ;
                               rdfs:label "Material Transformation Role" .
 
 
 ###  https://w3id.org/solar/o/pc#ApparentQuantumYield
-scpc:ApparentQuantumYield rdf:type owl:Class ;
-                          rdfs:subClassOf sc:ConversionMetric ;
+solarpc:ApparentQuantumYield rdf:type owl:Class ;
+                          rdfs:subClassOf solar:ConversionMetric ;
                           rdfs:label "Apparent Quantum Yield" .
 
 
 ###  https://w3id.org/solar/o/pc#Fixed-bedReactor
-scpc:Fixed-bedReactor rdf:type owl:Class ;
-                      rdfs:subClassOf scpc:ReactorCondition ;
+solarpc:Fixed-bedReactor rdf:type owl:Class ;
+                      rdfs:subClassOf solarpc:ReactorCondition ;
                       rdfs:label "Fixed-bed Reactor" .
 
 
 ###  https://w3id.org/solar/o/pc#Fluidised-bedReactor
-scpc:Fluidised-bedReactor rdf:type owl:Class ;
-                          rdfs:subClassOf scpc:ReactorCondition ;
+solarpc:Fluidised-bedReactor rdf:type owl:Class ;
+                          rdfs:subClassOf solarpc:ReactorCondition ;
                           rdfs:label "Fluidised-bed Reactor" .
 
 
 ###  https://w3id.org/solar/o/pc#MembraneReactor
-scpc:MembraneReactor rdf:type owl:Class ;
-                     rdfs:subClassOf scpc:ReactorCondition ;
+solarpc:MembraneReactor rdf:type owl:Class ;
+                     rdfs:subClassOf solarpc:ReactorCondition ;
                      rdfs:label "Membrane Reactor" .
 
 
 ###  https://w3id.org/solar/o/pc#MonolithicReactor
-scpc:MonolithicReactor rdf:type owl:Class ;
-                       rdfs:subClassOf scpc:ReactorCondition ;
+solarpc:MonolithicReactor rdf:type owl:Class ;
+                       rdfs:subClassOf solarpc:ReactorCondition ;
                        rdfs:label "Monolithic Reactor" .
 
 
 ###  https://w3id.org/solar/o/pc#OpticalFiberReactor
-scpc:OpticalFiberReactor rdf:type owl:Class ;
-                         rdfs:subClassOf scpc:ReactorCondition ;
+solarpc:OpticalFiberReactor rdf:type owl:Class ;
+                         rdfs:subClassOf solarpc:ReactorCondition ;
                          rdfs:label "Optical Fiber Reactor" .
 
 
 ###  https://w3id.org/solar/o/pc#PhotocatalysisExperiment
-scpc:PhotocatalysisExperiment rdf:type owl:Class ;
-                              rdfs:subClassOf sc:ExperimentExecution ;
+solarpc:PhotocatalysisExperiment rdf:type owl:Class ;
+                              rdfs:subClassOf solar:ExperimentExecution ;
                               rdfs:label "Photocatalysis Experiment" .
 
 
 ###  https://w3id.org/solar/o/pc#PhotonicEfficiency
-scpc:PhotonicEfficiency rdf:type owl:Class ;
-                        rdfs:subClassOf sc:ConversionMetric ;
+solarpc:PhotonicEfficiency rdf:type owl:Class ;
+                        rdfs:subClassOf solar:ConversionMetric ;
                         rdfs:label "Photonic Efficiency" .
 
 
 ###  https://w3id.org/solar/o/pc#QuantumYield
-scpc:QuantumYield rdf:type owl:Class ;
-                  rdfs:subClassOf sc:ConversionMetric ;
+solarpc:QuantumYield rdf:type owl:Class ;
+                  rdfs:subClassOf solar:ConversionMetric ;
                   rdfs:label "Quantum Yield" .
 
 
 ###  https://w3id.org/solar/o/pc#ReactorCondition
-scpc:ReactorCondition rdf:type owl:Class ;
-                      rdfs:subClassOf sc:Condition ;
+solarpc:ReactorCondition rdf:type owl:Class ;
+                      rdfs:subClassOf solar:Condition ;
                       rdfs:label "Reactor Condition" .
 
 
 ###  https://w3id.org/solar/o/pc#SlurryReactor
-scpc:SlurryReactor rdf:type owl:Class ;
-                   rdfs:subClassOf scpc:ReactorCondition ;
+solarpc:SlurryReactor rdf:type owl:Class ;
+                   rdfs:subClassOf solarpc:ReactorCondition ;
                    rdfs:label "Slurry Reactor" .
 
 
@@ -173,20 +173,20 @@ scpc:SlurryReactor rdf:type owl:Class ;
 #################################################################
 
 ###  https://w3id.org/solar/o/pc#Dye
-scpc:Dye rdf:type owl:NamedIndividual ,
-                  sc:MaterialTransformationRole ;
+solarpc:Dye rdf:type owl:NamedIndividual ,
+                  solar:MaterialTransformationRole ;
          rdfs:label "Dye" .
 
 
 ###  https://w3id.org/solar/o/pc#Reductant
-scpc:Reductant rdf:type owl:NamedIndividual ,
-                        sc:MaterialTransformationRole ;
+solarpc:Reductant rdf:type owl:NamedIndividual ,
+                        solar:MaterialTransformationRole ;
                rdfs:label "Reductant" .
 
 
 ###  https://w3id.org/solar/o/pc#Support
-scpc:Support rdf:type owl:NamedIndividual ,
-                      sc:MaterialTransformationRole ;
+solarpc:Support rdf:type owl:NamedIndividual ,
+                      solar:MaterialTransformationRole ;
              rdfs:label "Support" .
 
 
