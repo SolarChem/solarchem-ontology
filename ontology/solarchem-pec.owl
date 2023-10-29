@@ -1,6 +1,6 @@
-@prefix : <http://w3id.org/solarchem/sc/> .
+@prefix : <https://w3id.org/solar/o/pec#> .
 @prefix dc: <http://purl.org/dc/terms/> .
-@prefix sc: <https://w3id.org/solar/o/core#> .
+@prefix solar: <https://w3id.org/solar/o/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -9,43 +9,47 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix qudt: <http://qudt.org/2.1/schema/qudt#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix scec: <https://w3id.org/solar/o/ec#> .
-@prefix scpc: <https://w3id.org/solar/o/pc#> .
+@prefix solarec: <https://w3id.org/solar/o/ec#> .
+@prefix solarpc: <https://w3id.org/solar/o/pc#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_> .
-@prefix scpec: <https://w3id.org/solar/o/pec#> .
+@prefix solarpec: <https://w3id.org/solar/o/pec#> .
 @prefix schema: <https://schema.org/> .
-@base <http://w3id.org/solarchem/scpec/> .
+@base <https://w3id.org/solar/o/pec#> .
 
-<http://w3id.org/solarchem/scpec/> rdf:type owl:Ontology ;
-                                    owl:imports <http://w3id.org/solarchem/sc/0.7.0> ;
-                                    <http://purl.org/dc/terms/author> "Ana Iglesias-Molina" ;
-                                    <http://purl.org/dc/terms/contributor> "Daniel Garijo" ,
-                                                                           "Laura Collado" ,
-                                                                           "Miguel Tecedor" ,
-                                                                           "Víctor de la Peña",
-                                                                           "Oier Beaskoetxea"  ;
-                                    <http://purl.org/dc/terms/description> "This ontology represents the execution of experiments related to electrocatalysis, photocatalysis and photoelectrocatalysis with inputs, outputs, and experimental conditions." ;
+<https://w3id.org/solar/o/pec#> rdf:type owl:Ontology ;
+                                    owl:imports <https://w3id.org/solar/o/core/0.7.0> ;
+                                    dc:creator "Ana Iglesias-Molina" ;
+                                    dc:contributor "Daniel Garijo" ,
+                                                   "Laura Collado" ,
+                                                   "Miguel Tecedor" ,
+                                                   "Oier Beaskoetxea" ,
+                                                   "Víctor de la Peña" ;
+                                    dc:description "This ontology represents the execution of experiments related to electrocatalysis, photocatalysis and photoelectrocatalysis with inputs, outputs, and experimental conditions." ;
                                     dc:license "http://purl.org/NET/rdflicense/cc-by4.0" ;
                                     dc:title "The SolarChem Ontology: Photoelectrocatalysis Experiments" ;
                                     vann:preferredNamespacePrefix "solarpec" ;
                                     vann:preferredNamespaceUri "https://w3id.org/solar/o/pec#" ;
-                                    owl:versionInfo "v0.7.0" .
+                                    owl:versionInfo "v0.7.0" ;
+                                    owl:versionIRI <https://w3id.org/solar/o/pec/0.7.0> ;
+                                    dc:created "2023-10-11"^^xsd:date ;
+                                    dc:modified "2023-10-29"^^xsd:date ;
+                                    dc:publisher <https://oeg.fi.upm.es/> .
 
 #################################################################
 #    Annotation properties
 #################################################################
 
 ###  http://purl.org/dc/terms/author
-<http://purl.org/dc/terms/author> rdf:type owl:AnnotationProperty .
+dc:author rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/contributor
-<http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty .
+dc:contributor rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/description
-<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+dc:description rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/license
@@ -105,7 +109,7 @@ scpec:ABPE rdf:type owl:Class ;
            rdfs:label "ABPE" .
 
 
-###  https://w3id.org/solar/o/core#ElectrochemicalMetric
+###  https://w3id.org/solar/o/pec#ElectrochemicalMetric
 scpec:ElectrochemicalMetric rdf:type owl:Class ;
                             rdfs:label "Electrochemical Metric" .
 
@@ -151,17 +155,20 @@ scpec:j_ph rdf:type owl:Class ;
 
 ###  https://w3id.org/solar/o/pec#Anode
 scpec:Anode rdf:type owl:NamedIndividual ,
-                     sc:MaterialTransformationRole .
+                     sc:MaterialTransformationRole ;
+            rdfs:label "Anode" .
 
 
 ###  https://w3id.org/solar/o/pec#Cathode
 scpec:Cathode rdf:type owl:NamedIndividual ,
-                       sc:MaterialTransformationRole .
+                       sc:MaterialTransformationRole ;
+              rdfs:label "Cathode" .
 
 
 ###  https://w3id.org/solar/o/pec#Overlayer
 scpec:Overlayer rdf:type owl:NamedIndividual ,
-                         sc:MaterialTransformationRole .
+                         sc:MaterialTransformationRole ;
+                rdfs:label "Overlayer" .
 
 
 ###  https://w3id.org/solar/o/pec#PEC
@@ -181,22 +188,26 @@ scpec:PV-PEC rdf:type owl:NamedIndividual ,
 
 ###  https://w3id.org/solar/o/pec#Photoabsorber
 scpec:Photoabsorber rdf:type owl:NamedIndividual ,
-                             sc:MaterialTransformationRole .
+                             sc:MaterialTransformationRole ;
+                    rdfs:label "Photoabsorber" .
 
 
 ###  https://w3id.org/solar/o/pec#Photocatalyst
 scpec:Photocatalyst rdf:type owl:NamedIndividual ,
-                             sc:MaterialTransformationRole .
+                             sc:MaterialTransformationRole ;
+                    rdfs:label "Photocatalyst" .
 
 
 ###  https://w3id.org/solar/o/pec#Substrate
 scpec:Substrate rdf:type owl:NamedIndividual ,
-                         sc:MaterialTransformationRole .
+                         sc:MaterialTransformationRole ;
+                rdfs:label "Substrate" .
 
 
 ###  https://w3id.org/solar/o/pec#TransparentConductiveContact
 scpec:TransparentConductiveContact rdf:type owl:NamedIndividual ,
-                                            sc:MaterialTransformationRole .
+                                            sc:MaterialTransformationRole ;
+                                   rdfs:label "Transparent Conductive Contact" .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

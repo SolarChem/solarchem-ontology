@@ -1,6 +1,6 @@
-@prefix : <http://w3id.org/solarchem/sc/> .
+@prefix : <https://w3id.org/solar/o/ec#> .
 @prefix dc: <http://purl.org/dc/terms/> .
-@prefix sc: <https://w3id.org/solar/o/core#> .
+@prefix solar: <https://w3id.org/solar/o/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -9,28 +9,32 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix qudt: <http://qudt.org/2.1/schema/qudt#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix scec: <https://w3id.org/solar/o/ec#> .
-@prefix scpc: <https://w3id.org/solar/o/pc#> .
+@prefix solarec: <https://w3id.org/solar/o/ec#> .
+@prefix solarpc: <https://w3id.org/solar/o/pc#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_> .
-@prefix scpec: <https://w3id.org/solar/o/pec#> .
+@prefix solarpec: <https://w3id.org/solar/o/pec#> .
 @prefix schema: <https://schema.org/> .
-@base <http://w3id.org/solarchem/sc/> .
+@base <https://w3id.org/solar/o/ec#> .
 
-<http://w3id.org/solarchem/scec> rdf:type owl:Ontology ;
-                                 <http://purl.org/dc/terms/author> "Ana Iglesias-Molina" ;
-                                 <http://purl.org/dc/terms/contributor> "Daniel Garijo" ,
-                                                                        "Laura Collado" ,
-                                                                        "Miguel Tecedor" ,
-                                                                        "Víctor de la Peña",
-                                                                        "Oier Beaskoetxea"  ;
-                                 <http://purl.org/dc/terms/description> "This ontology represents the execution of experiments related to electrocatalysis, photocatalysis and photoelectrocatalysis with inputs, outputs, and experimental conditions." ;
+<https://w3id.org/solar/o/ec#> rdf:type owl:Ontology ;
+                                dc:creator "Ana Iglesias-Molina" ,
+                                          "Oier Beaskoetxea" ;
+                                dc:contributor "Daniel Garijo" ,
+                                               "Laura Collado" ,
+                                               "Miguel Tecedor" ,
+                                               "Víctor de la Peña" ;
+                                 dc:description "This ontology represents the execution of experiments related to electrocatalysis, photocatalysis and photoelectrocatalysis with inputs, outputs, and experimental conditions." ;
                                  dc:license "http://purl.org/NET/rdflicense/cc-by4.0" ;
                                  dc:title "The SolarChem Ontology: Electrocatalysis Experiments" ;
-                                 owl:imports <http://w3id.org/solarchem/sc/0.7.0> ;
+                                 owl:imports <https://w3id.org/solar/o/core/0.7.0> ;
                                  vann:preferredNamespacePrefix "solarec" ;
                                  vann:preferredNamespaceUri "https://w3id.org/solar/o/ec#" ;
-                                 owl:versionInfo "v0.7.0" .
+                                 owl:versionInfo "v0.7.0" ;
+                                 owl:versionIRI <https://w3id.org/solar/o/ec/0.7.0> ;
+                                 dc:created "2023-10-11"^^xsd:date ;
+                                 dc:modified "2023-10-29"^^xsd:date ;
+                                 dc:publisher <https://oeg.fi.upm.es/> .
 
 #################################################################
 #    Annotation properties
