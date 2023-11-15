@@ -1,6 +1,5 @@
 @prefix : <https://w3id.org/solar/o/ec#> .
 @prefix dc: <http://purl.org/dc/terms/> .
-@prefix solar: <https://w3id.org/solar/o/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -9,51 +8,67 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix qudt: <http://qudt.org/2.1/schema/qudt#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix solarec: <https://w3id.org/solar/o/ec#> .
-@prefix solarpc: <https://w3id.org/solar/o/pc#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_> .
-@prefix solarpec: <https://w3id.org/solar/o/pec#> .
+@prefix solar: <https://w3id.org/solar/o/core#> .
 @prefix schema: <https://schema.org/> .
+@prefix solarec: <https://w3id.org/solar/o/ec#> .
+@prefix solarpc: <https://w3id.org/solar/o/pc#> .
+@prefix solarpec: <https://w3id.org/solar/o/pec#> .
 @base <https://w3id.org/solar/o/ec#> .
 
 <https://w3id.org/solar/o/ec#> rdf:type owl:Ontology ;
-                                dc:creator "Ana Iglesias-Molina" ,
-                                          "Oier Beaskoetxea" ;
+                                owl:versionIRI <https://w3id.org/solar/o/ec/1.0.0> ;
+                                owl:imports <https://w3id.org/solar/o/core/1.0.0> ;
                                 dc:contributor "Daniel Garijo" ,
                                                "Laura Collado" ,
                                                "Miguel Tecedor" ,
                                                "Víctor de la Peña" ;
-                                 dc:description "This ontology represents the execution of experiments related to electrocatalysis, photocatalysis and photoelectrocatalysis with inputs, outputs, and experimental conditions." ;
-                                 dc:license "http://purl.org/NET/rdflicense/cc-by4.0" ;
-                                 dc:title "The SolarChem Ontology: Electrocatalysis Experiments" ;
-                                 owl:imports <https://w3id.org/solar/o/core/0.7.0> ;
-                                 vann:preferredNamespacePrefix "solarec" ;
-                                 vann:preferredNamespaceUri "https://w3id.org/solar/o/ec#" ;
-                                 owl:versionInfo "v0.7.0" ;
-                                 owl:versionIRI <https://w3id.org/solar/o/ec/0.7.0> ;
-                                 dc:created "2023-10-11"^^xsd:date ;
-                                 dc:modified "2023-10-29"^^xsd:date ;
-                                 dc:publisher <https://oeg.fi.upm.es/> .
+                                dc:created "2023-10-11"^^xsd:date ;
+                                dc:creator "Ana Iglesias-Molina" ;
+                                dc:description "This ontology represents the execution of experiments related to electrocatalysis, photocatalysis and photoelectrocatalysis with inputs, outputs, and experimental conditions." ;
+                                dc:license "http://purl.org/NET/rdflicense/cc-by4.0" ;
+                                dc:modified "2023-10-29"^^xsd:date ;
+                                dc:publisher <https://oeg.fi.upm.es/> ;
+                                dc:title "The SolarChem Ontology: Electrocatalysis Experiments" ;
+                                vann:preferredNamespacePrefix "solarec" ;
+                                vann:preferredNamespaceUri "https://w3id.org/solar/o/ec#" ;
+                                owl:versionInfo "v1.0.0" .
 
 #################################################################
 #    Annotation properties
 #################################################################
 
 ###  http://purl.org/dc/terms/author
-<http://purl.org/dc/terms/author> rdf:type owl:AnnotationProperty .
+dc:author rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/contributor
-<http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty .
+dc:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+dc:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dc:creator rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/description
-<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+dc:description rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/license
 dc:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+dc:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+dc:publisher rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/title
@@ -74,30 +89,33 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/solar/o/core#ExperimentExecution
 solar:ExperimentExecution rdf:type owl:Class ;
-                       rdfs:label "Experiment Execution" .
+                          rdfs:label "Experiment Execution" .
 
 
 ###  https://w3id.org/solar/o/ec#ElectrocatalysisExperiment
 solarec:ElectrocatalysisExperiment rdf:type owl:Class ;
-                                rdfs:subClassOf solar:ExperimentExecution ;
-                                rdfs:label "Electrocatalysis Experiment" .
+                                   rdfs:subClassOf solar:ExperimentExecution ;
+                                   rdfs:comment "Experiment of a catalytic process involving oxidation and reduction reactions through the direct transfer of electrons" ;
+                                   rdfs:label "Electrocatalysis Experiment" .
 
 
 ###  https://w3id.org/solar/o/ec#TafelSlope
 solarec:TafelSlope rdf:type owl:Class ;
-                rdfs:subClassOf solarpec:ElectrochemicalMetric ;
-                rdfs:label "Tafel Slope" .
+                   rdfs:subClassOf solarpec:ElectrochemicalMetric ;
+                   rdfs:comment "A parameter that quantifies the amount of electrochemical driving force required to produce a logarithmic increase in the observed current" ;
+                   rdfs:label "Tafel Slope" .
 
 
 ###  https://w3id.org/solar/o/ec#TurnOverFrequency
 solarec:TurnOverFrequency rdf:type owl:Class ;
-                       rdfs:subClassOf solarpec:ElectrochemicalMetric ;
-                       rdfs:label "Turn Over Frequency" .
+                          rdfs:subClassOf solarpec:ElectrochemicalMetric ;
+                          rdfs:comment "Number of photoinduced transformations (product formed or reactant consumed), per catalytic site and per time period." ;
+                          rdfs:label "Turn Over Frequency" .
 
 
-###  https://w3id.org/solar/o/core#ElectrochemicalMetric
+###  https://w3id.org/solar/o/pec#ElectrochemicalMetric
 solarpec:ElectrochemicalMetric rdf:type owl:Class ;
-                            rdfs:label "Electrochemical Metric" .
+                               rdfs:label "Electrochemical Metric" .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

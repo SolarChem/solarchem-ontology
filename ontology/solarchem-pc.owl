@@ -1,6 +1,5 @@
 @prefix : <https://w3id.org/solar/o/pc#> .
 @prefix dc: <http://purl.org/dc/terms/> .
-@prefix solar: <https://w3id.org/solar/o/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -9,32 +8,33 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix qudt: <http://qudt.org/2.1/schema/qudt#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix solarec: <https://w3id.org/solar/o/ec#> .
-@prefix solarpc: <https://w3id.org/solar/o/pc#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_> .
-@prefix solarpec: <https://w3id.org/solar/o/pec#> .
+@prefix solar: <https://w3id.org/solar/o/core#> .
 @prefix schema: <https://schema.org/> .
+@prefix solarec: <https://w3id.org/solar/o/ec#> .
+@prefix solarpc: <https://w3id.org/solar/o/pc#> .
+@prefix solarpec: <https://w3id.org/solar/o/pec#> .
 @base <https://w3id.org/solar/o/pc#> .
 
 <https://w3id.org/solar/o/pc#> rdf:type owl:Ontology ;
-                                   owl:imports <https://w3id.org/solar/o/core/0.7.0> ;
-                                   dc:creator "Ana Iglesias-Molina" ,
-                                             "Oier Beaskoetxea" ;
-                                   dc:contributor "Daniel Garijo" ,
-                                                  "Laura Collado" ,
-                                                  "Miguel Tecedor" ,
-                                                  "Víctor de la Peña" ;
-                                   dc:description "This ontology represents the execution of experiments related to electrocatalysis, photocatalysis and photoelectrocatalysis with inputs, outputs, and experimental conditions." ;
-                                   dc:license "http://purl.org/NET/rdflicense/cc-by4.0" ;
-                                   dc:title "The SolarChem Ontology: Photocatalysis Experiments" ;
-                                   vann:preferredNamespacePrefix "solarpc" ;
-                                   vann:preferredNamespaceUri "https://w3id.org/solar/o/pc#" ;
-                                   owl:versionInfo "v0.7.0" ;
-                                   owl:versionIRI <https://w3id.org/solar/o/pc/0.7.0> ;
-                                   dc:created "2022-09-25"^^xsd:date ;
-                                   dc:modified "2023-10-29"^^xsd:date ;
-                                   dc:publisher <https://oeg.fi.upm.es/> .
+                                owl:versionIRI <https://w3id.org/solar/o/pc/1.0.0> ;
+                                owl:imports <https://w3id.org/solar/o/core/1.0.0> ;
+                                dc:contributor "Daniel Garijo" ,
+                                               "Laura Collado" ,
+                                               "Miguel Tecedor" ,
+                                               "Víctor de la Peña" ;
+                                dc:created "2022-09-25"^^xsd:date ;
+                                dc:creator "Ana Iglesias-Molina" ,
+                                           "Oier Beaskoetxea" ;
+                                dc:description "This ontology represents the execution of experiments related to electrocatalysis, photocatalysis and photoelectrocatalysis with inputs, outputs, and experimental conditions." ;
+                                dc:license "http://purl.org/NET/rdflicense/cc-by4.0" ;
+                                dc:modified "2023-10-29"^^xsd:date ;
+                                dc:publisher <https://oeg.fi.upm.es/> ;
+                                dc:title "The SolarChem Ontology: Photocatalysis Experiments" ;
+                                vann:preferredNamespacePrefix "solarpc" ;
+                                vann:preferredNamespaceUri "https://w3id.org/solar/o/pc#" ;
+                                owl:versionInfo "v1.0.0" .
 
 #################################################################
 #    Annotation properties
@@ -48,12 +48,28 @@ dc:author rdf:type owl:AnnotationProperty .
 dc:contributor rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/dc/terms/created
+dc:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/terms/description
 dc:description rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/license
 dc:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+dc:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+dc:publisher rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/title
@@ -74,8 +90,9 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/solar/o/pc#reactorVolume
 solarpc:reactorVolume rdf:type owl:DatatypeProperty ;
-                   rdfs:domain solarpc:ReactorCondition ;
-                   rdfs:label "reactor volume" .
+                      rdfs:domain solarpc:ReactorCondition ;
+                      rdfs:comment "Quantitative measurement of the volume of a reactor in an experiment" ;
+                      rdfs:label "reactor volume" .
 
 
 #################################################################
@@ -84,88 +101,94 @@ solarpc:reactorVolume rdf:type owl:DatatypeProperty ;
 
 ###  https://w3id.org/solar/o/core#Condition
 solar:Condition rdf:type owl:Class ;
-             rdfs:label "Condition" .
+                rdfs:label "Condition" .
 
 
 ###  https://w3id.org/solar/o/core#ConversionMetric
 solar:ConversionMetric rdf:type owl:Class ;
-                    rdfs:label "Conversion Metric" .
+                       rdfs:comment "The conversion of the given units to desired units for any quantity to be measured" ;
+                       rdfs:label "Conversion Metric" .
 
 
 ###  https://w3id.org/solar/o/core#ExperimentExecution
 solar:ExperimentExecution rdf:type owl:Class ;
-                       rdfs:label "Experiment Execution" .
+                          rdfs:label "Experiment Execution" .
 
 
-###  https://w3id.org/solar/o/core#MaterialTransformationRole
-solar:MaterialTransformationRole rdf:type owl:Class ;
-                              rdfs:label "Material Transformation Role" .
+###  https://w3id.org/solar/o/core#Role
+solar:Role rdf:type owl:Class ;
+           rdfs:label "Role" .
 
 
 ###  https://w3id.org/solar/o/pc#ApparentQuantumYield
 solarpc:ApparentQuantumYield rdf:type owl:Class ;
-                          rdfs:subClassOf solar:ConversionMetric ;
-                          rdfs:label "Apparent Quantum Yield" .
+                             rdfs:subClassOf solar:ConversionMetric ;
+                             rdfs:comment "The ratio of the number of electrons participating in the reaction to the total number of incident photons under a specific wavelength condition" ;
+                             rdfs:label "Apparent Quantum Yield" .
 
 
 ###  https://w3id.org/solar/o/pc#Fixed-bedReactor
 solarpc:Fixed-bedReactor rdf:type owl:Class ;
-                      rdfs:subClassOf solarpc:ReactorCondition ;
-                      rdfs:label "Fixed-bed Reactor" .
+                         rdfs:subClassOf solarpc:ReactorCondition ;
+                         rdfs:label "Fixed-bed Reactor" .
 
 
 ###  https://w3id.org/solar/o/pc#Fluidised-bedReactor
 solarpc:Fluidised-bedReactor rdf:type owl:Class ;
-                          rdfs:subClassOf solarpc:ReactorCondition ;
-                          rdfs:label "Fluidised-bed Reactor" .
+                             rdfs:subClassOf solarpc:ReactorCondition ;
+                             rdfs:label "Fluidised-bed Reactor" .
 
 
 ###  https://w3id.org/solar/o/pc#MembraneReactor
 solarpc:MembraneReactor rdf:type owl:Class ;
-                     rdfs:subClassOf solarpc:ReactorCondition ;
-                     rdfs:label "Membrane Reactor" .
+                        rdfs:subClassOf solarpc:ReactorCondition ;
+                        rdfs:label "Membrane Reactor" .
 
 
 ###  https://w3id.org/solar/o/pc#MonolithicReactor
 solarpc:MonolithicReactor rdf:type owl:Class ;
-                       rdfs:subClassOf solarpc:ReactorCondition ;
-                       rdfs:label "Monolithic Reactor" .
+                          rdfs:subClassOf solarpc:ReactorCondition ;
+                          rdfs:label "Monolithic Reactor" .
 
 
 ###  https://w3id.org/solar/o/pc#OpticalFiberReactor
 solarpc:OpticalFiberReactor rdf:type owl:Class ;
-                         rdfs:subClassOf solarpc:ReactorCondition ;
-                         rdfs:label "Optical Fiber Reactor" .
+                            rdfs:subClassOf solarpc:ReactorCondition ;
+                            rdfs:label "Optical Fiber Reactor" .
 
 
 ###  https://w3id.org/solar/o/pc#PhotocatalysisExperiment
 solarpc:PhotocatalysisExperiment rdf:type owl:Class ;
-                              rdfs:subClassOf solar:ExperimentExecution ;
-                              rdfs:label "Photocatalysis Experiment" .
+                                 rdfs:subClassOf solar:ExperimentExecution ;
+                                 rdfs:comment "Experiment that measures the change in the rate of a chemical transformation under the action of light in the presence of a catalyst which absorbs light and is involved in the chemical reaction" ;
+                                 rdfs:label "Photocatalysis Experiment" .
 
 
 ###  https://w3id.org/solar/o/pc#PhotonicEfficiency
 solarpc:PhotonicEfficiency rdf:type owl:Class ;
-                        rdfs:subClassOf solar:ConversionMetric ;
-                        rdfs:label "Photonic Efficiency" .
+                           rdfs:subClassOf solar:ConversionMetric ;
+                           rdfs:comment "Ratio of the rate of the photoreaction measured for a specified time interval (usually the initial condi- tions) to the rate of incident photons within a defined wavelength interval inside the irradiation window of the reactor" ;
+                           rdfs:label "Photonic Efficiency" .
 
 
 ###  https://w3id.org/solar/o/pc#QuantumYield
 solarpc:QuantumYield rdf:type owl:Class ;
-                  rdfs:subClassOf solar:ConversionMetric ;
-                  rdfs:label "Quantum Yield" .
+                     rdfs:subClassOf solar:ConversionMetric ;
+                     rdfs:comment "The ratio of the number of photons emitted to the number of photons absorbed" ;
+                     rdfs:label "Quantum Yield" .
 
 
 ###  https://w3id.org/solar/o/pc#ReactorCondition
 solarpc:ReactorCondition rdf:type owl:Class ;
-                      rdfs:subClassOf solar:Condition ;
-                      rdfs:label "Reactor Condition" .
+                         rdfs:subClassOf solar:Condition ;
+                         rdfs:comment "The condition of the reactor devide that performs the process of a photocatalysis reaction" ;
+                         rdfs:label "Reactor Condition" .
 
 
 ###  https://w3id.org/solar/o/pc#SlurryReactor
 solarpc:SlurryReactor rdf:type owl:Class ;
-                   rdfs:subClassOf solarpc:ReactorCondition ;
-                   rdfs:label "Slurry Reactor" .
+                      rdfs:subClassOf solarpc:ReactorCondition ;
+                      rdfs:label "Slurry Reactor" .
 
 
 #################################################################
@@ -174,20 +197,23 @@ solarpc:SlurryReactor rdf:type owl:Class ;
 
 ###  https://w3id.org/solar/o/pc#Dye
 solarpc:Dye rdf:type owl:NamedIndividual ,
-                  solar:MaterialTransformationRole ;
-         rdfs:label "Dye" .
+                     solar:Role ;
+            rdfs:label "Dye" ;
+            rdfs:seeAlso <http://purl.obolibrary.org/obo/CHEBI_37958> .
 
 
 ###  https://w3id.org/solar/o/pc#Reductant
 solarpc:Reductant rdf:type owl:NamedIndividual ,
-                        solar:MaterialTransformationRole ;
-               rdfs:label "Reductant" .
+                           solar:Role ;
+                  rdfs:comment "The element or compound in a reduction-oxidation (redox) reaction that donates an electron to another species" ;
+                  rdfs:label "Reductant" ;
+                  rdfs:seeAlso <http://purl.obolibrary.org/obo/CHEBI_63247> .
 
 
 ###  https://w3id.org/solar/o/pc#Support
 solarpc:Support rdf:type owl:NamedIndividual ,
-                      solar:MaterialTransformationRole ;
-             rdfs:label "Support" .
+                         solar:Role ;
+                rdfs:label "Support" .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
