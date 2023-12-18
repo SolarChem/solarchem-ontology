@@ -8,8 +8,23 @@ Vocabulary for the representation of photocatalysis processes mentioned in scien
 
 This vocabulary is based on data used by the [IMDEA Energy](https://www.energia.imdea.org/) institute as part of its **[Artleafs](http://www.artleafs.eu/)** project. This project is dedicated to storing information regarding scientific articles related to the field of artificial photosynthesis, which is used to report how the photocatalysis experiments are done, to facilitate access to information and reproducibility of the same. The vocabulary also reuses concepts from other ontologies such as *[the Bibliographic Ontology](https://bibliontology.com/)* (BIBO) and [schema.org](https://schema.org/) to represent articles that define the experiments and their authors; *[Chemical Entities of Biological Interest](https://www.ebi.ac.uk/chebi/)* (ChEBI) used to represent chemical elements and *[Quantities, Units, Dimensions, and Types](https://www.qudt.org/)* (QUDT) for quantities and units of measure.
 
+## Availability
 
-# Purpose and scope of the vocabulary
+The landing page of the ontology is accessible at `https://w3id.org/solar/`. Solarchem is divided in 4 modules:
+- The solarchem core module: `https://w3id.org/solar/o/core`
+- The SolarChem Photocatalysis module: `https://w3id.org/solar/o/pc`
+- The SolarChem Electrocatalysis module: `http://w3id.org/solar/o/ec`
+- The SolarChem Photoelectrocatalysis: `http://w3id.org/solar/o/pec`
+
+All modules are available in a machine-readable manner with content negotiation. For example, to download a module in turtle, just issue the following command:
+```
+curl -sH "Accept:text/turtle"  -L https://w3id.org/solar/o/core
+```
+
+
+
+
+## Purpose and scope of the vocabulary
 
 This vocabulary focuses on the representation of photocatalysis processes described in scientific articles. The vocabulary defines several classes and properties that allow describing such experiments, being the class [phcat:MaterialTransformationProcess](#MaterialTransformationProcess) the central axis of it and defining through its properties the context of the complete experiment, such as the input chemicals and output, defined as [phcat:Input](#Input) and [phcat:Output](#Output); the conditions to perform the process, defined by [phcat:Condition](#Condition); and the article that mentions them by an element of the class [bibo:Article](http://bibliontology.com/content/article.html). In addition to these characteristics, material transformation processes have information that characterizes them, such as [phcat:operationMode](#operationMode), [phcat:Eg](#Eg) or energy band, [phcat:BET](#BET) or Surface Area and [phcat:Yield](#Yield).
 
