@@ -1,1 +1,0 @@
-# Solarchem documentation

@@ -27,11 +27,11 @@
                                                 "Víctor de la Peña" ;
                                  dc:created "2023-10-11"^^xsd:date ;
                                  dc:creator "Ana Iglesias-Molina" ;
-                                 dc:description "This ontology represents the execution of experiments related to electrocatalysis, photocatalysis and photoelectrocatalysis with inputs, outputs, and experimental conditions." ;
+                                 dc:description "This ontology represents the execution of experiments related to electrocatalysis, photocatalysis and photoelectrocatalysis with inputs, outputs, and experimental conditions."@en;
                                  dc:license "http://purl.org/NET/rdflicense/cc-by4.0" ;
                                  dc:modified "2023-10-29"^^xsd:date ;
                                  dc:publisher <https://oeg.fi.upm.es/> ;
-                                 dc:title "The SolarChem Ontology: Photoelectrocatalysis Experiments" ;
+                                 dc:title "The SolarChem Ontology: Photoelectrocatalysis Experiments"@en;
                                  vann:preferredNamespacePrefix "solarpec" ;
                                  vann:preferredNamespaceUri "https://w3id.org/solar/o/pec#" ;
                                  owl:versionInfo "v1.0.0" .
@@ -91,7 +91,7 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 ###  https://w3id.org/solar/o/pec#hasQuantumEfficiencyMetric
 solarpec:hasQuantumEfficiencyMetric rdf:type owl:ObjectProperty ;
                                     rdfs:range solarpec:QuantumEfficiencyMetric ;
-                                    rdfs:label "has quantum efficiency metric" .
+                                    rdfs:label "has quantum efficiency metric"@en.
 
 
 #################################################################
@@ -100,80 +100,82 @@ solarpec:hasQuantumEfficiencyMetric rdf:type owl:ObjectProperty ;
 
 ###  https://w3id.org/solar/o/core#Condition
 solar:Condition rdf:type owl:Class ;
-                rdfs:label "Condition" .
+                rdfs:label "Condition"@en.
 
 
 ###  https://w3id.org/solar/o/core#ElectrochemicalConfiguration
 solar:ElectrochemicalConfiguration rdf:type owl:Class ;
                                    rdfs:subClassOf solar:Condition ;
-                                   rdfs:label "Electrochemical Configuration" .
+                                   rdfs:label "Electrochemical Configuration"@en.
 
 
 ###  https://w3id.org/solar/o/core#ExperimentExecution
 solar:ExperimentExecution rdf:type owl:Class ;
-                          rdfs:label "Experiment Execution" .
+                          rdfs:label "Experiment Execution"@en.
 
 
 ###  https://w3id.org/solar/o/core#Role
 solar:Role rdf:type owl:Class ;
-           rdfs:label "Role" .
+           rdfs:label "Role"@en.
 
 
 ###  https://w3id.org/solar/o/pec#ABPE
 solarpec:ABPE rdf:type owl:Class ;
+              rdfs:comment "Applied Bias Photon-to-current Efficiency (ABPE): Used to describe the performance of the photoelectrodes. It is the difference between the power output in chemical fuel and any added electrical input power, divided by the solar power input"@en ;
+              rdfs:isDefinedBy <https://pubs.acs.org/doi/10.1021/jz501716g> ;
               rdfs:subClassOf solarpec:QuantumEfficiencyMetric ;
-              rdfs:label "Applied Bias Photon-to-Current Efficiency (ABPE)" .
+              rdfs:label "Applied Bias Photon-to-Current Efficiency (ABPE)"@en .
 
 
 ###  https://w3id.org/solar/o/pec#APCE
 solarpec:APCE rdf:type owl:Class ;
               rdfs:subClassOf solarpec:QuantumEfficiencyMetric ;
-              rdfs:comment "A measure of how absorbed photons transform to current" ;
-              rdfs:label "Absorbed Photon-to-Current Efficiency (APCE)" .
+              rdfs:comment "A measure of how absorbed photons transform to current"@en;
+              rdfs:label "Absorbed Photon-to-Current Efficiency (APCE)"@en.
 
 
 ###  https://w3id.org/solar/o/pec#ElectrochemicalMetric
 solarpec:ElectrochemicalMetric rdf:type owl:Class ;
-                               rdfs:label "Electrochemical Metric" .
+                               rdfs:label "Electrochemical Metric"@en.
 
 
 ###  https://w3id.org/solar/o/pec#FieldFactor
 solarpec:FieldFactor rdf:type owl:Class ;
                      rdfs:subClassOf solarpec:ElectrochemicalMetric ;
-                     rdfs:label "Field Factor" .
+                     rdfs:label "Field Factor"@en.
 
 
 ###  https://w3id.org/solar/o/pec#IPCE
 solarpec:IPCE rdf:type owl:Class ;
               rdfs:subClassOf solarpec:QuantumEfficiencyMetric ;
-              rdfs:comment "A measure of the ratio of the photocurrent (converted to an electron transfer rate) versus the rate of incident photons (converted from the calibrated power of a light source) as a function of wavelength" ;
-              rdfs:label "Incident Photon-to-Current Efficiency (IPCE)" .
+              rdfs:comment "A measure of the ratio of the photocurrent (converted to an electron transfer rate) versus the rate of incident photons (converted from the calibrated power of a light source) as a function of wavelength"@en;
+              rdfs:label "Incident Photon-to-Current Efficiency (IPCE)"@en.
 
 
 ###  https://w3id.org/solar/o/pec#Onset
 solarpec:Onset rdf:type owl:Class ;
                rdfs:subClassOf solarpec:ElectrochemicalMetric ;
-               rdfs:label "Onset" .
+               rdfs:label "Onset"@en.
 
 
 ###  https://w3id.org/solar/o/pec#PhotocurrentDensity
 solarpec:PhotocurrentDensity rdf:type owl:Class ;
                              rdfs:subClassOf solarpec:ElectrochemicalMetric ;
-                             rdfs:comment "The ratio of the photocurrent produced by the photoelectrode to the area irradiated by a sunlight" ;
-                             rdfs:label "Photocurrent Density" .
+                             rdfs:comment "The ratio of the photocurrent produced by the photoelectrode to the area irradiated by a sunlight"@en;
+                             rdfs:label "Photocurrent Density"@en.
 
 
 ###  https://w3id.org/solar/o/pec#PhotoelectrocatalysisExperiment
 solarpec:PhotoelectrocatalysisExperiment rdf:type owl:Class ;
                                          rdfs:subClassOf solar:ExperimentExecution ;
-                                         rdfs:comment "Experiment of a reaction based on the use of a semiconductor irradiated by light energy equal or greater than its band gap energy simultaneously biased by a gradient potential" ;
-                                         rdfs:label "Photoelectrocatalysis Experiment" .
+                                         rdfs:comment "Experiment of a reaction based on the use of a semiconductor irradiated by light energy equal or greater than its band gap energy simultaneously biased by a gradient potential"@en;
+                                         rdfs:label "Photoelectrocatalysis Experiment"@en.
 
 
 ###  https://w3id.org/solar/o/pec#QuantumEfficiencyMetric
 solarpec:QuantumEfficiencyMetric rdf:type owl:Class ;
-                                 rdfs:comment "The ratio of the number of carriers collected by the solar cell to the number of photons of a given energy incident on the solar cell" ;
-                                 rdfs:label "Quantum Efficiency Metric" .
+                                 rdfs:comment "The ratio of the number of carriers collected by the solar cell to the number of photons of a given energy incident on the solar cell"@en;
+                                 rdfs:label "Quantum Efficiency Metric"@en.
 
 
 #################################################################
@@ -183,70 +185,70 @@ solarpec:QuantumEfficiencyMetric rdf:type owl:Class ;
 ###  https://w3id.org/solar/o/pec#Anode
 solarpec:Anode rdf:type owl:NamedIndividual ,
                         solar:Role ;
-               dc:description "Electrode at which reduction takes place" ;
-               rdfs:label "Anode" ;
+               dc:description "Electrode at which reduction takes place"@en;
+               rdfs:label "Anode"@en;
                rdfs:seeAlso <http://purl.obolibrary.org/obo/CHMO_0002931> .
 
 
 ###  https://w3id.org/solar/o/pec#Cathode
 solarpec:Cathode rdf:type owl:NamedIndividual ,
                           solar:Role ;
-                 rdfs:comment "Electrode at which oxidation takes place" ;
-                 rdfs:label "Cathode" ;
+                 rdfs:comment "Electrode at which oxidation takes place"@en;
+                 rdfs:label "Cathode"@en;
                  rdfs:seeAlso <http://purl.obolibrary.org/obo/CHMO_0002932> .
 
 
 ###  https://w3id.org/solar/o/pec#Overlayer
 solarpec:Overlayer rdf:type owl:NamedIndividual ,
                             solar:Role ;
-                   rdfs:label "Overlayer" .
+                   rdfs:label "Overlayer"@en.
 
 
 ###  https://w3id.org/solar/o/pec#PEC
 solarpec:PEC rdf:type owl:NamedIndividual ,
                       solar:ElectrochemicalConfiguration ;
-             rdfs:comment "The configuration for a photoelectrocatalysis experiment" ;
-             rdfs:label "photoelectrocatalysis" .
+             rdfs:comment "The configuration for a photoelectrocatalysis experiment"@en;
+             rdfs:label "photoelectrocatalysis"@en.
 
 
 ###  https://w3id.org/solar/o/pec#PV-EC
 solarpec:PV-EC rdf:type owl:NamedIndividual ,
                         solar:ElectrochemicalConfiguration ;
-               rdfs:comment "The configuration for a photovoltaic-electrocatalysis experiment" ;
-               rdfs:label "photovoltaic-electrocatalysis" .
+               rdfs:comment "The configuration for a photovoltaic-electrocatalysis experiment"@en;
+               rdfs:label "photovoltaic-electrocatalysis"@en.
 
 
 ###  https://w3id.org/solar/o/pec#PV-PEC
 solarpec:PV-PEC rdf:type owl:NamedIndividual ,
                          solar:ElectrochemicalConfiguration ;
-                rdfs:comment "The configuration for a photovoltaic-photoelectrocatalysis experiment" ;
-                rdfs:label "photovoltaic-photoelectrocatalysis" .
+                rdfs:comment "The configuration for a photovoltaic-photoelectrocatalysis experiment"@en;
+                rdfs:label "photovoltaic-photoelectrocatalysis"@en.
 
 
 ###  https://w3id.org/solar/o/pec#Photoabsorber
 solarpec:Photoabsorber rdf:type owl:NamedIndividual ,
                                 solar:Role ;
-                       rdfs:label "Photoabsorber" .
+                       rdfs:label "Photoabsorber"@en.
 
 
 ###  https://w3id.org/solar/o/pec#Photocatalyst
 solarpec:Photocatalyst rdf:type owl:NamedIndividual ,
                                 solar:Role ;
-                       rdfs:label "Photocatalyst" .
+                       rdfs:label "Photocatalyst"@en.
 
 
 ###  https://w3id.org/solar/o/pec#Substrate
 solarpec:Substrate rdf:type owl:NamedIndividual ,
                             solar:Role ;
-                   rdfs:comment "A substrate is a molecule that is consumed in the course of a biochemical reaction" ;
-                   rdfs:label "Substrate" ;
+                   rdfs:comment "A substrate is a molecule that is consumed in the course of a biochemical reaction"@en;
+                   rdfs:label "Substrate"@en;
                    rdfs:seeAlso <http://semanticscience.org/resource/SIO_010362> .
 
 
 ###  https://w3id.org/solar/o/pec#TransparentConductiveContact
 solarpec:TransparentConductiveContact rdf:type owl:NamedIndividual ,
                                                solar:Role ;
-                                      rdfs:label "Transparent Conductive Contact" .
+                                      rdfs:label "Transparent Conductive Contact"@en.
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
