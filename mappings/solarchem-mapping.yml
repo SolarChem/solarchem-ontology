@@ -1,0 +1,128 @@
+base: "http://w3id.org/solar/i/"
+
+
+prefixes:
+  schema: "https://schema.org/"
+  foaf: "http://xmlns.com/foaf/0.1/"
+  dc: "http://purl.org/dc/elements/1.1/"
+  dct: "http://purl.org/dc/terms/"
+  rdfs: "http://www.w3.org/2000/01/rdf-schema#"
+  rdf: "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  solar: "http://w3id.org/solar/o/core#"
+  solarec: "http://w3id.org/solar/o/ec#"
+  solarpec: "http://w3id.org/solar/o/pec#"
+  solarpc: "http://w3id.org/solar/o/pc#"
+  bibo: "http://purl.org/ontology/bibo/"
+  prov: "http://www.w3.org/ns/prov#"
+  qudt: "http://qudt.org/2.1/schema/qudt"
+  unit: "http://qudt.org/vocab/unit/"
+
+mappings:
+  ARTICLE:
+    sources:
+      - [data/paper_references.csv~csv]
+    subjects: http://w3id.org/solar/i/Article/$(No_de_Ref)
+    po:
+      - [a, bibo:Article]
+      - [bibo:doi, $(DOI), xsd:string]
+      - [bibo:abstract, $(Abstract), xsd:string]
+      - [bibo:volume, $(Volume), xsd:string]
+      - [dc:title, $(Title), xsd:string]
+      - [bibo:issue, $(Issue), xsd:string]
+      - [dc:date, $(Year), xsd:gYear]
+      - [bibo:pageStart, $(Pages), xsd:string]
+      - p: solar:hasExperimentExecution
+        o:
+          - mapping: EXPEXEC
+            condition:
+              function: equal
+              parameters:
+                - [str1, $(No_de_Ref)]
+                - [str2, $(No_de_Ref)]
+ 
+  EXPEXEC:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/ExpExec/$(ID)
+    po:
+      - [a, solar:ExperimentExecution]
+      - [prov:used, http://w3id.org/solar/i/Input/Catalyst/$(ID)-$(Catalyst)~iri]
+      - [prov:used, http://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(Co_catalyst)~iri]
+      - [prov:used, http://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(co_catalyst_2)~iri]
+      - [prov:used, http://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(co_catalyst_3)~iri]
+      - [prov:used, http://w3id.org/solar/i/Input/Support/$(ID)-$(Support)~iri]
+      - [prov:used, http://w3id.org/solar/i/Input/Dopant/$(ID)-$(Dopant)~iri]
+      - [prov:used, http://w3id.org/solar/i/Input/Dye/$(ID)-$(Dyes)~iri]
+ 
+  CATALYST:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Input/Catalyst/$(ID)-$(Catalyst)
+    po:
+      - [a, solar:Input]
+      - [rdfs:label, $(Catalyst), xsd:string]
+      - [solar:hasRole, solar:Catalyst~iri]
+      - [qudt:numericValue, $(Masscat_g), xsd:string]
+      - [qudt:unit, unit:GM~iri]
+      - [solar:crystalStructure, $(TiO2_crystal_structure), xsd:string]
+ 
+  CO-CATALYST:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(Co_catalyst)
+    po:
+      - [a, solar:Input]
+      - [rdfs:label, $(Co_catalyst), xsd:string]
+      - [solar:hasRole, solar:Co-catalyst~iri]
+      - [qudt:floatPercentage, $(percent), xsd:float]
+ 
+  CO-CATALYST2:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(co_catalyst_2)
+    po:
+      - [a, solar:Input]
+      - [rdfs:label, $(co_catalyst_2), xsd:string]
+      - [solar:hasRole, solar:Co-catalyst~iri]
+      - [qudt:floatPercentage, $(percent_cc_2), xsd:float]
+ 
+  CO-CATALYST3:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(co_catalyst_3)
+    po:
+      - [a, solar:Input]
+      - [rdfs:label, $(co_catalyst_3), xsd:string]
+      - [solar:hasRole, solar:Co-catalyst~iri]
+      - [qudt:floatPercentage, $(percent_cc_3), xsd:float]
+ 
+  SUPPORT:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Input/Support/$(ID)-$(Support)
+    po:
+      - [a, solar:Input]
+      - [rdfs:label, $(Support), xsd:string]
+      - [solar:hasRole, solarpc:Support~iri]
+      - [qudt:floatPercentage, $(support_percent), xsd:float]
+ 
+  DOPANT:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Input/Dopant/$(ID)-$(Dopant)
+    po:
+      - [a, solar:Input]
+      - [rdfs:label, $(Dopant), xsd:string]
+      - [solar:hasRole, solar:Dopant~iri]
+      - [qudt:floatPercentage, $(dopant_percent), xsd:float]
+ 
+  DYE:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Input/Dye/$(ID)-$(Dyes)
+    po:
+      - [a, solar:Input]
+      - [rdfs:label, $(Dyes), xsd:string]
+      - [solar:hasRole, solarpc:Dye~iri]
+      - [qudt:floatPercentage, $(dye_percent), xsd:float]
+ 
