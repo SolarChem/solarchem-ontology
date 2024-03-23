@@ -53,6 +53,14 @@ mappings:
       - [prov:used, http://w3id.org/solar/i/Input/Support/$(ID)-$(Support)~iri]
       - [prov:used, http://w3id.org/solar/i/Input/Dopant/$(ID)-$(Dopant)~iri]
       - [prov:used, http://w3id.org/solar/i/Input/Dye/$(ID)-$(Dyes)~iri]
+      - [solar:hasLightSource, http://w3id.org/solar/i/Condition/LightSource/$(ID)~iri]
+      - [solar:hasCondition, http://w3id.org/solar/i/Condition/pH/$(ID)~iri]
+      - [solar:hasCondition, http://w3id.org/solar/i/Condition/Reactor/$(ID)~iri]
+      - [solar:hasCondition, http://w3id.org/solar/i/Condition/Pressure/$(ID)~iri]
+      - [solar:hasCondition, http://w3id.org/solar/i/Condition/Temperature/$(ID)~iri]
+      - [solar:hasCondition, http://w3id.org/solar/i/Condition/Time/$(ID)~iri]
+      - [solar:hasCondition, http://w3id.org/solar/o/core#$(Reaction_medium)Medium~iri]
+      - [solar:hasCondition, http://w3id.org/solar/o/core#$(Operation_mode)Mode~iri]
  
   CATALYST:
     sources:
@@ -65,6 +73,27 @@ mappings:
       - [qudt:numericValue, $(Masscat_g), xsd:string]
       - [qudt:unit, unit:GM~iri]
       - [solar:crystalStructure, $(TiO2_crystal_structure), xsd:string]
+      - [solar:depositionMethod, $(Deposition_method), xsd:string]
+      - [solar:hasBandGap, http://w3id.org/solar/i/BandGap/$(ID)-$(Catalyst)~iri]
+      - [solar:hasSurfaceArea, http://w3id.org/solar/i/SurfaceArea/$(ID)-$(Catalyst)~iri]
+ 
+  BANDGAP:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/BandGap/$(ID)-$(Catalyst)
+    po:
+      - [a, solar:BandGap]
+      - [qudt:numericValue, $(Eg_eV), xsd:float]
+      - [qudt:unit, unit:EV~iri]
+ 
+  SURFACEAREA:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/SurfaceArea/$(ID)-$(Catalyst)
+    po:
+      - [a, solar:SurfaceArea]
+      - [qudt:numericValue, $(BET_m2_g), xsd:float]
+      - [qudt:unit, unit:M2-PER-GM~iri]
  
   CO-CATALYST:
     sources:
@@ -125,4 +154,50 @@ mappings:
       - [rdfs:label, $(Dyes), xsd:string]
       - [solar:hasRole, solarpc:Dye~iri]
       - [qudt:floatPercentage, $(dye_percent), xsd:float]
+ 
+  PH:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Condition/pH/$(ID)
+    po:
+      - [a, solar:pHCondition]
+      - [qudt:numericValue, $(ph_value), xsd:float]
+      - [qudt:unit, unit:PH~iri]
+ 
+  REACTOR:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Condition/Reactor/$(ID)
+    po:
+      - [a, solarpc:ReactorCondition]
+      - [solarpc:reactorVolume, $(Reactor_Volume_l), xsd:float]
+      - [qudt:unit, unit:L~iri]
+      - [rdf:type, http://w3id.org/solar/o/pc#$(Reactor_type)Reactor~iri]
+ 
+  PRESSURE:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Condition/Pressure/$(ID)
+    po:
+      - [a, solar:PressureCondition]
+      - [qudt:numericValue, $(P_bar), xsd:float]
+      - [qudt:unit, unit:BAR~iri]
+ 
+  TEMPERATURE:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Condition/Temperature/$(ID)
+    po:
+      - [a, solar:TemperatureCondition]
+      - [qudt:numericValue, $(T_C), xsd:float]
+      - [qudt:unit, unit:DEG_C~iri]
+ 
+  TIME:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Condition/Time/$(ID)
+    po:
+      - [a, solar:TimeCondition]
+      - [qudt:numericValue, $(Reaction_time_h), xsd:float]
+      - [qudt:unit, unit:HR~iri]
  
