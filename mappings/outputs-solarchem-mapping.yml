@@ -1,0 +1,592 @@
+base: "http://w3id.org/solar/i/"
+
+
+prefixes:
+  schema: "https://schema.org/"
+  foaf: "http://xmlns.com/foaf/0.1/"
+  dc: "http://purl.org/dc/elements/1.1/"
+  dct: "http://purl.org/dc/terms/"
+  rdfs: "http://www.w3.org/2000/01/rdf-schema#"
+  rdf: "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  solar: "http://w3id.org/solar/o/core#"
+  solarec: "http://w3id.org/solar/o/ec#"
+  solarpec: "http://w3id.org/solar/o/pec#"
+  solarpc: "http://w3id.org/solar/o/pc#"
+  bibo: "http://purl.org/ontology/bibo/"
+  prov: "http://www.w3.org/ns/prov#"
+  qudt: "http://qudt.org/2.1/schema/qudt"
+  unit: "http://qudt.org/vocab/unit/"
+  obi: "http://purl.obolibrary.org/obo/OBI_"
+
+mappings:
+  H2_mol_gh:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/H2_mol_gh/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, H2, xsd:string]
+      - [qudt:numericValue, $(H2_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  CO_mol_gh:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/CO_mol_gh/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, CO, xsd:string]
+      - [qudt:numericValue, $(CO_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  CH4_mol_gh:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/CH4_mol_gh/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, CH4, xsd:string]
+      - [qudt:numericValue, $(CH4_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C2H4_mol_gh:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C2H4_mol_gh/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C2H4, xsd:string]
+      - [qudt:numericValue, $(C2H4_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C2H6_mol_gh:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C2H6_mol_gh/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C2H6, xsd:string]
+      - [qudt:numericValue, $(C2H6_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C3H6_mol_gh:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C3H6_mol_gh/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C3H6, xsd:string]
+      - [qudt:numericValue, $(C3H6_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C3H8_mol_gh:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C3H8_mol_gh/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C3H8, xsd:string]
+      - [qudt:numericValue, $(C3H8_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C4H8_mol_gh:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C4H8_mol_gh/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C4H8, xsd:string]
+      - [qudt:numericValue, $(C4H8_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C4H10_mol_gh:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C4H10_mol_gh/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C4H10, xsd:string]
+      - [qudt:numericValue, $(C4H10_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C5H10_mol_gh:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C5H10_mol_gh/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C5H10, xsd:string]
+      - [qudt:numericValue, $(C5H10_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C5H12_mol_gh:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C5H12_mol_gh/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C5H12, xsd:string]
+      - [qudt:numericValue, $(C5H12_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  CH3OH_mol_gh:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/CH3OH_mol_gh/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, CH3OH, xsd:string]
+      - [qudt:numericValue, $(CH3OH_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C2H5OH_mol_gh:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C2H5OH_mol_gh/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C2H5OH, xsd:string]
+      - [qudt:numericValue, $(C2H5OH_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  CH3COH_mol_gh:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/CH3COH_mol_gh/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, CH3COH, xsd:string]
+      - [qudt:numericValue, $(CH3COH_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  HCOOH_mol_gh:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/HCOOH_mol_gh/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, HCOOH, xsd:string]
+      - [qudt:numericValue, $(HCOOH_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  CH2O_mol_gh:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/CH2O_mol_gh/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, CH2O, xsd:string]
+      - [qudt:numericValue, $(CH2O_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C2H4O2_mol_gh:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C2H4O2_mol_gh/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C2H4O2, xsd:string]
+      - [qudt:numericValue, $(C2H4O2_mol_gh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  H2_mol_g:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/H2_mol_g/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, H2, xsd:string]
+      - [qudt:numericValue, $(H2_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  CO_mol_g:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/CO_mol_g/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, CO, xsd:string]
+      - [qudt:numericValue, $(CO_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  CH4_mol_g:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/CH4_mol_g/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, CH4, xsd:string]
+      - [qudt:numericValue, $(CH4_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C2H4_mol_g:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C2H4_mol_g/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C2H4, xsd:string]
+      - [qudt:numericValue, $(C2H4_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C2H6_mol_g:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C2H6_mol_g/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C2H6, xsd:string]
+      - [qudt:numericValue, $(C2H6_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C3H6_mol_g:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C3H6_mol_g/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C3H6, xsd:string]
+      - [qudt:numericValue, $(C3H6_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C3H8_mol_g:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C3H8_mol_g/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C3H8, xsd:string]
+      - [qudt:numericValue, $(C3H8_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C4H8_mol_g:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C4H8_mol_g/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C4H8, xsd:string]
+      - [qudt:numericValue, $(C4H8_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C4H10_mol_g:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C4H10_mol_g/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C4H10, xsd:string]
+      - [qudt:numericValue, $(C4H10_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C5H10_mol_g:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C5H10_mol_g/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C5H10, xsd:string]
+      - [qudt:numericValue, $(C5H10_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C5H12_mol_g:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C5H12_mol_g/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C5H12, xsd:string]
+      - [qudt:numericValue, $(C5H12_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  CH3OH_mol_g:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/CH3OH_mol_g/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, CH3OH, xsd:string]
+      - [qudt:numericValue, $(CH3OH_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C2H5OH_mol_g:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C2H5OH_mol_g/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C2H5OH, xsd:string]
+      - [qudt:numericValue, $(C2H5OH_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  CH3COH_mol_g:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/CH3COH_mol_g/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, CH3COH, xsd:string]
+      - [qudt:numericValue, $(CH3COH_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  HCOOH_mol_g:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/HCOOH_mol_g/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, HCOOH, xsd:string]
+      - [qudt:numericValue, $(HCOOH_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  CH2O_mol_g:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/CH2O_mol_g/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, CH2O, xsd:string]
+      - [qudt:numericValue, $(CH2O_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C2H4O2_mol_g:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C2H4O2_mol_g/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C2H4O2, xsd:string]
+      - [qudt:numericValue, $(C2H4O2_mol_g), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  H2_mol_m2h:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/H2_mol_m2h/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, H2, xsd:string]
+      - [qudt:numericValue, $(H2_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  CO_mol_m2h:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/CO_mol_m2h/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, CO, xsd:string]
+      - [qudt:numericValue, $(CO_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  CH4_mol_m2h:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/CH4_mol_m2h/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, CH4, xsd:string]
+      - [qudt:numericValue, $(CH4_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C2H4_mol_m2h:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C2H4_mol_m2h/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C2H4, xsd:string]
+      - [qudt:numericValue, $(C2H4_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C2H6_mol_m2h:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C2H6_mol_m2h/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C2H6, xsd:string]
+      - [qudt:numericValue, $(C2H6_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C3H6_mol_m2h:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C3H6_mol_m2h/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C3H6, xsd:string]
+      - [qudt:numericValue, $(C3H6_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C3H8_mol_m2h:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C3H8_mol_m2h/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C3H8, xsd:string]
+      - [qudt:numericValue, $(C3H8_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C4H8_mol_m2h:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C4H8_mol_m2h/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C4H8, xsd:string]
+      - [qudt:numericValue, $(C4H8_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C4H10_mol_m2h:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C4H10_mol_m2h/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C4H10, xsd:string]
+      - [qudt:numericValue, $(C4H10_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C5H10_mol_m2h:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C5H10_mol_m2h/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C5H10, xsd:string]
+      - [qudt:numericValue, $(C5H10_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C5H12_mol_m2h:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C5H12_mol_m2h/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C5H12, xsd:string]
+      - [qudt:numericValue, $(C5H12_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  CH3OH_mol_m2h:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/CH3OH_mol_m2h/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, CH3OH, xsd:string]
+      - [qudt:numericValue, $(CH3OH_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C2H5OH_mol_m2h:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C2H5OH_mol_m2h/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, C2H5OH, xsd:string]
+      - [qudt:numericValue, $(C2H5OH_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  CH3COH_mol_m2h:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/CH3COH_mol_m2h/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, CH3COH, xsd:string]
+      - [qudt:numericValue, $(CH3COH_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  HCOOH_mol_m2h:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/HCOOH_mol_m2h/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, HCOOH, xsd:string]
+      - [qudt:numericValue, $(HCOOH_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  CH2O_mol_m2h:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/CH2O_mol_m2h/$(ID)
+    po:
+      - [a, solar:Output]
+      - [a, solar:Output]
+      - [rdfs:label, CH2O, xsd:string]
+      - [rdfs:label, CH2O, xsd:string]
+      - [qudt:numericValue, $(CH2O_mol_m2h), xsd:float]
+      - [qudt:numericValue, $(CH2O_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
+      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 
+  C2H4O2_mol_m2h:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Output/C2H4O2_mol_m2h/$(ID)
+    po:
+      - [a, solar:Output]
+      - [a, solar:Output]
+      - [rdfs:label, C2H4O2, xsd:string]
+      - [rdfs:label, C2H4O2, xsd:string]
+      - [qudt:numericValue, $(C2H4O2_mol_m2h), xsd:float]
+      - [qudt:numericValue, $(C2H4O2_mol_m2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
+      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [prov:wasGeneratedBy, http://w3id.org/solar/i/ExpExec/$(ID)~iri]
+ 

@@ -16,6 +16,7 @@ prefixes:
   prov: "http://www.w3.org/ns/prov#"
   qudt: "http://qudt.org/2.1/schema/qudt"
   unit: "http://qudt.org/vocab/unit/"
+  obi: "http://purl.obolibrary.org/obo/OBI_"
 
 mappings:
   ARTICLE:
@@ -53,6 +54,7 @@ mappings:
       - [prov:used, http://w3id.org/solar/i/Input/Support/$(ID)-$(Support)~iri]
       - [prov:used, http://w3id.org/solar/i/Input/Dopant/$(ID)-$(Dopant)~iri]
       - [prov:used, http://w3id.org/solar/i/Input/Dye/$(ID)-$(Dyes)~iri]
+      - [prov:used, http://w3id.org/solar/i/Input/Reductant/$(ID)-$(Reductant)~iri]
       - [solar:hasLightSource, http://w3id.org/solar/i/Condition/LightSource/$(ID)~iri]
       - [solar:hasCondition, http://w3id.org/solar/i/Condition/pH/$(ID)~iri]
       - [solar:hasCondition, http://w3id.org/solar/i/Condition/Reactor/$(ID)~iri]
@@ -155,6 +157,16 @@ mappings:
       - [solar:hasRole, solarpc:Dye~iri]
       - [qudt:floatPercentage, $(dye_percent), xsd:float]
  
+  REDUCTANT:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Input/Reductant/$(ID)-$(Reductant)
+    po:
+      - [a, solar:Input]
+      - [rdfs:label, $(Reductant), xsd:string]
+      - [solar:hasRole, solarpc:Reductant~iri]
+      - [solarpc:reductantRatio, $(CO2_H2O_reductant_ratio), xsd:float]
+ 
   PH:
     sources:
       - [data/catalystsdata.csv~csv]
@@ -200,4 +212,35 @@ mappings:
       - [a, solar:TimeCondition]
       - [qudt:numericValue, $(Reaction_time_h), xsd:float]
       - [qudt:unit, unit:HR~iri]
+ 
+  LIGHT:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Condition/LightSource/$(ID)
+    po:
+      - [a, obi:0400065]
+      - [rdf:type, http://w3id.org/solar/o/core#$(Light_source)LightSource~iri]
+      - [solar:hasLamp, http://w3id.org/solar/o/core#$(Lamp)Lamp~iri]
+      - [solar:hasWavelength, http://w3id.org/solar/o/core#$(Wavelength_nm)WL~iri]
+      - [solar:hasIlluminatedArea, http://w3id.org/solar/i/IlluminatedArea/$(ID)~iri]
+      - [solar:hasPower, http://w3id.org/solar/i/Power/$(ID)~iri]
+      - [solar:hasIrradiance, http://w3id.org/solar/i/Irradiance/$(ID)~iri]
+ 
+  POWER:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Power/$(ID)
+    po:
+      - [a, solar:Power]
+      - [qudt:numericValue, $(Power_W), xsd:float]
+      - [qudt:unit, unit:W~iri]
+ 
+  IRRADIANCE:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Irradiance/$(ID)
+    po:
+      - [a, solar:Irradiance]
+      - [qudt:numericValue, $(Light_Intensity_W_m2), xsd:float]
+      - [qudt:unit, unit:W-PER-M2~iri]
  
