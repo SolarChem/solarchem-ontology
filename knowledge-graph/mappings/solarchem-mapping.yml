@@ -40,7 +40,7 @@ mappings:
               parameters:
                 - [str1, $(No_de_Ref)]
                 - [str2, $(No_de_Ref)]
-
+ 
   EXPEXEC:
     sources:
       - [data/catalystsdata.csv~csv]
@@ -63,7 +63,7 @@ mappings:
       - [solar:hasCondition, http://w3id.org/solar/i/Condition/Time/$(ID)~iri]
       - [solar:hasCondition, http://w3id.org/solar/o/core#$(Reaction_medium)Medium~iri]
       - [solar:hasCondition, http://w3id.org/solar/o/core#$(Operation_mode)Mode~iri]
-
+ 
   CATALYST:
     sources:
       - [data/catalystsdata.csv~csv]
@@ -78,7 +78,7 @@ mappings:
       - [solar:depositionMethod, $(Deposition_method), xsd:string]
       - [solar:hasBandGap, http://w3id.org/solar/i/BandGap/$(ID)-$(Catalyst)~iri]
       - [solar:hasSurfaceArea, http://w3id.org/solar/i/SurfaceArea/$(ID)-$(Catalyst)~iri]
-
+ 
   BANDGAP:
     sources:
       - [data/catalystsdata.csv~csv]
@@ -87,7 +87,7 @@ mappings:
       - [a, solar:BandGap]
       - [qudt:numericValue, $(Eg_eV), xsd:float]
       - [qudt:unit, unit:EV~iri]
-
+ 
   SURFACEAREA:
     sources:
       - [data/catalystsdata.csv~csv]
@@ -96,7 +96,7 @@ mappings:
       - [a, solar:SurfaceArea]
       - [qudt:numericValue, $(BET_m2_g), xsd:float]
       - [qudt:unit, unit:M2-PER-GM~iri]
-
+ 
   CO-CATALYST:
     sources:
       - [data/catalystsdata.csv~csv]
@@ -106,7 +106,7 @@ mappings:
       - [rdfs:label, $(Co_catalyst), xsd:string]
       - [solar:hasRole, solar:Co-catalyst~iri]
       - [qudt:floatPercentage, $(percent), xsd:float]
-
+ 
   CO-CATALYST2:
     sources:
       - [data/catalystsdata.csv~csv]
@@ -116,7 +116,7 @@ mappings:
       - [rdfs:label, $(co_catalyst_2), xsd:string]
       - [solar:hasRole, solar:Co-catalyst~iri]
       - [qudt:floatPercentage, $(percent_cc_2), xsd:float]
-
+ 
   CO-CATALYST3:
     sources:
       - [data/catalystsdata.csv~csv]
@@ -126,7 +126,7 @@ mappings:
       - [rdfs:label, $(co_catalyst_3), xsd:string]
       - [solar:hasRole, solar:Co-catalyst~iri]
       - [qudt:floatPercentage, $(percent_cc_3), xsd:float]
-
+ 
   SUPPORT:
     sources:
       - [data/catalystsdata.csv~csv]
@@ -136,7 +136,7 @@ mappings:
       - [rdfs:label, $(Support), xsd:string]
       - [solar:hasRole, solarpc:Support~iri]
       - [qudt:floatPercentage, $(support_percent), xsd:float]
-
+ 
   DOPANT:
     sources:
       - [data/catalystsdata.csv~csv]
@@ -146,7 +146,7 @@ mappings:
       - [rdfs:label, $(Dopant), xsd:string]
       - [solar:hasRole, solar:Dopant~iri]
       - [qudt:floatPercentage, $(dopant_percent), xsd:float]
-
+ 
   DYE:
     sources:
       - [data/catalystsdata.csv~csv]
@@ -156,7 +156,7 @@ mappings:
       - [rdfs:label, $(Dyes), xsd:string]
       - [solar:hasRole, solarpc:Dye~iri]
       - [qudt:floatPercentage, $(dye_percent), xsd:float]
-
+ 
   REDUCTANT:
     sources:
       - [data/catalystsdata.csv~csv]
@@ -166,7 +166,7 @@ mappings:
       - [rdfs:label, $(Reductant), xsd:string]
       - [solar:hasRole, solarpc:Reductant~iri]
       - [solarpc:reductantRatio, $(CO2_H2O_reductant_ratio), xsd:float]
-
+ 
   PH:
     sources:
       - [data/catalystsdata.csv~csv]
@@ -175,7 +175,7 @@ mappings:
       - [a, solar:pHCondition]
       - [qudt:numericValue, $(ph_value), xsd:float]
       - [qudt:unit, unit:PH~iri]
-
+ 
   REACTOR:
     sources:
       - [data/catalystsdata.csv~csv]
@@ -185,7 +185,7 @@ mappings:
       - [solarpc:reactorVolume, $(Reactor_Volume_l), xsd:float]
       - [qudt:unit, unit:L~iri]
       - [rdf:type, http://w3id.org/solar/o/pc#$(Reactor_type)Reactor~iri]
-
+ 
   PRESSURE:
     sources:
       - [data/catalystsdata.csv~csv]
@@ -194,7 +194,7 @@ mappings:
       - [a, solar:PressureCondition]
       - [qudt:numericValue, $(P_bar), xsd:float]
       - [qudt:unit, unit:BAR~iri]
-
+ 
   TEMPERATURE:
     sources:
       - [data/catalystsdata.csv~csv]
@@ -203,7 +203,7 @@ mappings:
       - [a, solar:TemperatureCondition]
       - [qudt:numericValue, $(T_C), xsd:float]
       - [qudt:unit, unit:DEG_C~iri]
-
+ 
   TIME:
     sources:
       - [data/catalystsdata.csv~csv]
@@ -212,7 +212,7 @@ mappings:
       - [a, solar:TimeCondition]
       - [qudt:numericValue, $(Reaction_time_h), xsd:float]
       - [qudt:unit, unit:HR~iri]
-
+ 
   LIGHT:
     sources:
       - [data/catalystsdata.csv~csv]
@@ -225,7 +225,7 @@ mappings:
       - [solar:hasIlluminatedArea, http://w3id.org/solar/i/IlluminatedArea/$(ID)~iri]
       - [solar:hasPower, http://w3id.org/solar/i/Power/$(ID)~iri]
       - [solar:hasIrradiance, http://w3id.org/solar/i/Irradiance/$(ID)~iri]
-
+ 
   POWER:
     sources:
       - [data/catalystsdata.csv~csv]
@@ -234,7 +234,7 @@ mappings:
       - [a, solar:Power]
       - [qudt:numericValue, $(Power_W), xsd:float]
       - [qudt:unit, unit:W~iri]
-
+ 
   IRRADIANCE:
     sources:
       - [data/catalystsdata.csv~csv]
@@ -243,3 +243,4 @@ mappings:
       - [a, solar:Irradiance]
       - [qudt:numericValue, $(Light_Intensity_W_m2), xsd:float]
       - [qudt:unit, unit:W-PER-M2~iri]
+ 
