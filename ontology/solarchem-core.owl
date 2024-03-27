@@ -485,13 +485,6 @@ solar:ExperimentExecution rdf:type owl:Class ;
                           rdfs:label "Experiment Execution"@en.
 
 
-###  https://w3id.org/solar/o/core#FaradaicEfficiency
-solar:FaradaicEfficiency rdf:type owl:Class ;
-                         rdfs:subClassOf solar:ConversionMetric ;
-                         rdfs:comment "Describes the efficiency with which charge (electrons) is transferred in a system facilitating an electrochemical reaction"@en;
-                         rdfs:label "Faradaic Efficiency"@en.
-
-
 ###  https://w3id.org/solar/o/core#IlluminatedArea
 solar:IlluminatedArea rdf:type owl:Class ;
                       rdfs:comment "The surface area in which a light source applies"@en;
@@ -562,12 +555,6 @@ solar:Output rdf:type owl:Class ;
              rdfs:label "Output"@en.
 
 
-###  https://w3id.org/solar/o/core#Overpotential
-solar:Overpotential rdf:type owl:Class ;
-                    rdfs:subClassOf solar:ElectrochemicalMetric ;
-                    rdfs:label "Overpotential"@en.
-
-
 ###  https://w3id.org/solar/o/core#Power
 solar:Power rdf:type owl:Class ;
             rdfs:comment "The amount of energy transferred or converted per unit time"@en;
@@ -608,19 +595,6 @@ solar:SolarSimulatorLight rdf:type owl:Class ;
                           owl:disjointWith solar:UltravioletVisibleLight ;
                           rdfs:comment "A light source that replicates the solar radiation"@en;
                           rdfs:label "Solar Simulator Light Source"@en.
-
-
-###  https://w3id.org/solar/o/core#SolarToFuel
-solar:SolarToFuel rdf:type owl:Class ;
-                  rdfs:subClassOf solar:ConversionMetric ;
-                  rdfs:comment "A function of the operating temperature and solar concentration ratio"@en;
-                  rdfs:label "Solar To Fuel"@en.
-
-
-###  https://w3id.org/solar/o/core#SolarToHydrogen
-solar:SolarToHydrogen rdf:type owl:Class ;
-                      rdfs:subClassOf solar:ConversionMetric ;
-                      rdfs:label "Solar To Hydrogen"@en.
 
 
 ###  https://w3id.org/solar/o/core#SurfaceArea
@@ -848,6 +822,33 @@ solar:XenonLamp rdf:type owl:NamedIndividual ,
                                                    solar:Wavelength ;
                                           rdfs:comment "Wavelength range of 400 to 780 nm"@en;
                                           rdfs:label "400-780 Wavelength"@en.
+
+
+###  https://w3id.org/solar/o/core#FaradaicEfficiency
+solar:FaradaicEfficiency rdf:type owl:NamedIndividual ,
+                                  solar:ConversionMetric ;
+                          rdfs:comment "Describes the efficiency with which charge (electrons) is transferred in a system facilitating an electrochemical reaction"@en;
+                          rdfs:label "Faradaic Efficiency"@en.
+
+
+###  https://w3id.org/solar/o/core#SolarToFuel
+solar:SolarToFuel rdf:type owl:NamedIndividual ,
+                           solar:ConversionMetric ;
+                  rdfs:comment "A function of the operating temperature and solar concentration ratio"@en;
+                  rdfs:label "Solar To Fuel"@en.
+
+
+###  https://w3id.org/solar/o/core#SolarToHydrogen
+solar:SolarToHydrogen rdf:type owl:NamedIndividual ,
+                               solar:ConversionMetric ;
+                      rdfs:label "Solar To Hydrogen"@en.
+
+
+###  https://w3id.org/solar/o/core#Overpotential
+solar:Overpotential rdf:type owl:NamedIndividual ,
+                             solar:ElectrochemicalMetric ;
+                    rdfs:label "Overpotential"@en.
+
 
 
 #################################################################
