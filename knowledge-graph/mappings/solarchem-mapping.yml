@@ -57,12 +57,22 @@ mappings:
       - [prov:used, http://w3id.org/solar/i/Input/Reductant/$(ID)-$(Reductant)~iri]
       - [solar:hasLightSource, http://w3id.org/solar/i/Condition/LightSource/$(ID)~iri]
       - [solar:hasCondition, http://w3id.org/solar/i/Condition/pH/$(ID)~iri]
-      - [solar:hasCondition, http://w3id.org/solar/i/Condition/Reactor/$(ID)~iri]
+      - [solar:hasCondition, http://w3id.org/solar/o/core#$(Reactor_type)Reactor~iri]
       - [solar:hasCondition, http://w3id.org/solar/i/Condition/Pressure/$(ID)~iri]
       - [solar:hasCondition, http://w3id.org/solar/i/Condition/Temperature/$(ID)~iri]
       - [solar:hasCondition, http://w3id.org/solar/i/Condition/Time/$(ID)~iri]
       - [solar:hasCondition, http://w3id.org/solar/o/core#$(Reaction_medium)Medium~iri]
       - [solar:hasCondition, http://w3id.org/solar/o/core#$(Operation_mode)Mode~iri]
+      - [solar:hasCondition, http://w3id.org/solar/i/Condition/ReactorVolume/$(ID)~iri]
+      - [solar:hasCondition, http://w3id.org/solar/i/Condition/ReactorResidenceTime/$(ID)~iri]
+      - p: solar:reportedIn
+        o:
+          - mapping: ARTICLE
+            condition:
+              function: equal
+              parameters:
+                - [str1, $(No_de_Ref)]
+                - [str2, $(No_de_Ref)]
  
   CATALYST:
     sources:
@@ -75,7 +85,6 @@ mappings:
       - [qudt:numericValue, $(Masscat_g), xsd:string]
       - [qudt:unit, unit:GM~iri]
       - [solar:crystalStructure, $(TiO2_crystal_structure), xsd:string]
-      - [solar:depositionMethod, $(Deposition_method), xsd:string]
       - [solar:hasBandGap, http://w3id.org/solar/i/BandGap/$(ID)-$(Catalyst)~iri]
       - [solar:hasSurfaceArea, http://w3id.org/solar/i/SurfaceArea/$(ID)-$(Catalyst)~iri]
  
@@ -182,9 +191,6 @@ mappings:
     subjects: http://w3id.org/solar/i/Condition/Reactor/$(ID)
     po:
       - [a, solarpc:ReactorCondition]
-      - [solarpc:reactorVolume, $(Reactor_Volume_l), xsd:float]
-      - [qudt:unit, unit:L~iri]
-      - [rdf:type, http://w3id.org/solar/o/pc#$(Reactor_type)Reactor~iri]
  
   PRESSURE:
     sources:
@@ -243,4 +249,31 @@ mappings:
       - [a, solar:Irradiance]
       - [qudt:numericValue, $(Light_Intensity_W_m2), xsd:float]
       - [qudt:unit, unit:W-PER-M2~iri]
+ 
+  ILLUMAREA:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/IlluminatedArea/$(ID)
+    po:
+      - [a, solar:IlluminatedArea]
+      - [qudt:numericValue, $(Illuminated_area_m2), xsd:float]
+      - [qudt:unit, unit:W-PER-M2~iri]
+ 
+  REACTORVOL:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Condition/ReactorVolume/$(ID)
+    po:
+      - [a, solar:ReactorVolumeCondition]
+      - [qudt:numericValue, $(Reactor_Volume_l), xsd:float]
+      - [qudt:unit, unit:L~iri]
+ 
+  REACTORRESTIME:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: http://w3id.org/solar/i/Condition/ReactorResidenceTime/$(ID)
+    po:
+      - [a, solar:ResidenceTimeCondition]
+      - [qudt:numericValue, $(Residence_time_min1), xsd:float]
+      - [qudt:unit, unit:PER-MIN~iri]
  
