@@ -21,17 +21,10 @@ prefixes:
 mappings:
   ARTICLE:
     sources:
-      - [data/paper_references.csv~csv]
-    subjects: http://w3id.org/solar/i/Article/$(No_de_Ref)
+      - [data/paper_references_soa.csv~csv]
+    subjects: $(SOA_URI)
     po:
       - [a, bibo:Article]
-      - [bibo:doi, $(DOI), xsd:string]
-      - [bibo:abstract, $(Abstract), xsd:string]
-      - [bibo:volume, $(Volume), xsd:string]
-      - [dc:title, $(Title), xsd:string]
-      - [bibo:issue, $(Issue), xsd:string]
-      - [dc:date, $(Year), xsd:gYear]
-      - [bibo:pageStart, $(Pages), xsd:string]
       - p: solar:hasExperimentExecution
         o:
           - mapping: EXPEXEC
