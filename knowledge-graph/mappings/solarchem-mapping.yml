@@ -21,18 +21,45 @@ prefixes:
 mappings:
   ARTICLE:
     sources:
-      - [data/paper_references_soa.csv~csv]
-    subjects: $(SOA_URI)
+      - [data/papersOA.json~jsonpath, "$[*]"]
+    subjects: http://w3id.org/solar/i/Article/$(solar_id)
     po:
-      - [a, bibo:Article]
+      - [a, schema:ScholarlyArticle]
+      - [bibo:doi, $(doi), xsd:string]
+      - [schema:volumeNumber, $(biblio.volume), xsd:string]
+      - [schema:name, $(title), xsd:string]
+      - [schema:issueNumer, $(biblio.issue), xsd:string]
+      - [schema:datePublished, $(publication_year), xsd:gYear]
+      - [schema:pageEnd, $(biblio.first_page), xsd:string]
+      - [schema:pageStart, $(biblio.last_page), xsd:string]
+      - [schema:isPartOf, $(primary_location.source.display_name), xsd:string]
+      - [schema:author, http://w3id.org/solar/i/Author/$(authorships.author.orcid)~iri]
       - p: solar:hasExperimentExecution
         o:
           - mapping: EXPEXEC
             condition:
               function: equal
               parameters:
-                - [str1, $(No_de_Ref)]
+                - [str1, $(solar_id)]
                 - [str2, $(No_de_Ref)]
+ 
+  AUTHOR:
+    sources:
+      - [data/papersOA.json~jsonpath, "$[*].authorships[*]"]
+    subjects: http://w3id.org/solar/i/Author/$(author.orcid)
+    po:
+      - [a, schema:Person]
+      - [schema:name, $(author.display_name), xsd:string]
+      - [schema:affiliation, http://w3id.org/solar/i/Affiliation/$(institutions.id)~iri]
+ 
+  AFFILIATION:
+    sources:
+      - [data/papersOA.json~jsonpath, "$[*].authorships[*]"]
+    subjects: http://w3id.org/solar/i/Affiliation/$(institutions.id)
+    po:
+      - [a, schema:Organization]
+      - [schema:name, $(institutions.display_name), xsd:string]
+      - [schema:addressCountry, http://w3id.org/solar/i/Country/$(institutions.country_code)~iri]
  
   EXPEXEC:
     sources:
@@ -40,6 +67,7 @@ mappings:
     subjects: http://w3id.org/solar/i/ExpExec/$(ID)
     po:
       - [a, solar:ExperimentExecution]
+      - [solar:reportedIn, http://w3id.org/solar/i/Article/$(No_de_Ref)~iri]
       - [prov:used, http://w3id.org/solar/i/Input/Catalyst/$(ID)-$(Catalyst)~iri]
       - [prov:used, http://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(Co_catalyst)~iri]
       - [prov:used, http://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(co_catalyst_2)~iri]
@@ -58,14 +86,6 @@ mappings:
       - [solar:hasCondition, http://w3id.org/solar/o/core#$(Operation_mode)Mode~iri]
       - [solar:hasCondition, http://w3id.org/solar/i/Condition/ReactorVolume/$(ID)~iri]
       - [solar:hasCondition, http://w3id.org/solar/i/Condition/ReactorResidenceTime/$(ID)~iri]
-      - p: solar:reportedIn
-        o:
-          - mapping: ARTICLE
-            condition:
-              function: equal
-              parameters:
-                - [str1, $(No_de_Ref)]
-                - [str2, $(No_de_Ref)]
  
   CATALYST:
     sources:
