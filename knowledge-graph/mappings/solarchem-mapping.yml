@@ -100,6 +100,14 @@ mappings:
       - [solar:crystalStructure, $(TiO2_crystal_structure), xsd:string]
       - [solar:hasBandGap, http://w3id.org/solar/i/BandGap/$(ID)-$(Catalyst)~iri]
       - [solar:hasSurfaceArea, http://w3id.org/solar/i/SurfaceArea/$(ID)-$(Catalyst)~iri]
+      - p: solar:hasChemical
+        o:
+          - mapping: CHEMICAL
+            condition:
+              function: equal
+              parameters:
+                - [str1, $(Catalyst)]
+                - [str2, $(Chemicals)]
  
   BANDGAP:
     sources:
@@ -128,6 +136,14 @@ mappings:
       - [rdfs:label, $(Co_catalyst), xsd:string]
       - [solar:hasRole, solar:Co-catalyst~iri]
       - [qudt:floatPercentage, $(percent), xsd:float]
+      - p: solar:hasChemical
+        o:
+          - mapping: CHEMICAL
+            condition:
+              function: equal
+              parameters:
+                - [str1, $(Catalyst)]
+                - [str2, $(Chemicals)]
  
   CO-CATALYST2:
     sources:
@@ -148,6 +164,14 @@ mappings:
       - [rdfs:label, $(co_catalyst_3), xsd:string]
       - [solar:hasRole, solar:Co-catalyst~iri]
       - [qudt:floatPercentage, $(percent_cc_3), xsd:float]
+      - p: solar:hasChemical
+        o:
+          - mapping: CHEMICAL
+            condition:
+              function: equal
+              parameters:
+                - [str1, $(Catalyst)]
+                - [str2, $(Chemicals)]
  
   SUPPORT:
     sources:
@@ -158,6 +182,14 @@ mappings:
       - [rdfs:label, $(Support), xsd:string]
       - [solar:hasRole, solarpc:Support~iri]
       - [qudt:floatPercentage, $(support_percent), xsd:float]
+      - p: solar:hasChemical
+        o:
+          - mapping: CHEMICAL
+            condition:
+              function: equal
+              parameters:
+                - [str1, $(Catalyst)]
+                - [str2, $(Chemicals)]
  
   DOPANT:
     sources:
@@ -168,6 +200,14 @@ mappings:
       - [rdfs:label, $(Dopant), xsd:string]
       - [solar:hasRole, solar:Dopant~iri]
       - [qudt:floatPercentage, $(dopant_percent), xsd:float]
+      - p: solar:hasChemical
+        o:
+          - mapping: CHEMICAL
+            condition:
+              function: equal
+              parameters:
+                - [str1, $(Catalyst)]
+                - [str2, $(Chemicals)]
  
   DYE:
     sources:
@@ -178,6 +218,14 @@ mappings:
       - [rdfs:label, $(Dyes), xsd:string]
       - [solar:hasRole, solarpc:Dye~iri]
       - [qudt:floatPercentage, $(dye_percent), xsd:float]
+      - p: solar:hasChemical
+        o:
+          - mapping: CHEMICAL
+            condition:
+              function: equal
+              parameters:
+                - [str1, $(Catalyst)]
+                - [str2, $(Chemicals)]
  
   REDUCTANT:
     sources:
@@ -188,6 +236,14 @@ mappings:
       - [rdfs:label, $(Reductant), xsd:string]
       - [solar:hasRole, solarpc:Reductant~iri]
       - [solarpc:reductantRatio, $(CO2_H2O_reductant_ratio), xsd:float]
+      - p: solar:hasChemical
+        o:
+          - mapping: CHEMICAL
+            condition:
+              function: equal
+              parameters:
+                - [str1, $(Catalyst)]
+                - [str2, $(Chemicals)]
  
   PH:
     sources:
@@ -289,4 +345,11 @@ mappings:
       - [a, solar:ResidenceTimeCondition]
       - [qudt:numericValue, $(Residence_time_min1), xsd:float]
       - [qudt:unit, unit:PER-MIN~iri]
+ 
+  CHEMICAL:
+    sources:
+      - [data/chemicals.csv~csv]
+    subjects: $(uri)
+    po:
+      - [rdfs:label, $(Chemicals), xsd:string]
  
