@@ -1,4 +1,4 @@
-base: "http://w3id.org/solar/i/"
+base: "https://w3id.org/solar/i/"
 
 
 prefixes:
@@ -8,10 +8,10 @@ prefixes:
   dct: "http://purl.org/dc/terms/"
   rdfs: "http://www.w3.org/2000/01/rdf-schema#"
   rdf: "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-  solar: "http://w3id.org/solar/o/core#"
-  solarec: "http://w3id.org/solar/o/ec#"
-  solarpec: "http://w3id.org/solar/o/pec#"
-  solarpc: "http://w3id.org/solar/o/pc#"
+  solar: "https://w3id.org/solar/o/core#"
+  solarec: "https://w3id.org/solar/o/ec#"
+  solarpec: "https://w3id.org/solar/o/pec#"
+  solarpc: "https://w3id.org/solar/o/pc#"
   bibo: "http://purl.org/ontology/bibo/"
   prov: "http://www.w3.org/ns/prov#"
   qudt: "http://qudt.org/2.1/schema/qudt/"
@@ -21,19 +21,19 @@ prefixes:
 mappings:
   ARTICLE:
     sources:
-      - [data/papersOA.json~jsonpath, "$[*]"]
-    subjects: http://w3id.org/solar/i/Article/$(solar_id)
+      - [data/papersOA.json~jsonpath, '$[*]']
+    subjects: https://w3id.org/solar/i/Article/$(solar_id)
     po:
       - [a, schema:ScholarlyArticle]
       - [bibo:doi, $(doi), xsd:string]
       - [schema:volumeNumber, $(biblio.volume), xsd:string]
       - [schema:name, $(title), xsd:string]
-      - [schema:issueNumer, $(biblio.issue), xsd:string]
+      - [schema:issueNumber, $(biblio.issue), xsd:string]
       - [schema:datePublished, $(publication_year), xsd:gYear]
       - [schema:pageEnd, $(biblio.first_page), xsd:string]
       - [schema:pageStart, $(biblio.last_page), xsd:string]
       - [schema:isPartOf, $(primary_location.source.display_name), xsd:string]
-      - [schema:author, http://w3id.org/solar/i/Author/$(authorships.author.orcid)~iri]
+      - [schema:author, https://w3id.org/solar/i/Author/$(authorships.author.orcid)~iri]
       - p: solar:hasExperimentExecution
         o:
           - mapping: EXPEXEC
@@ -45,52 +45,52 @@ mappings:
  
   AUTHOR:
     sources:
-      - [data/papersOA.json~jsonpath, "$[*].authorships[*]"]
-    subjects: http://w3id.org/solar/i/Author/$(author.orcid)
+      - [data/papersOA.json~jsonpath, '$[*].authorships[*]']
+    subjects: https://w3id.org/solar/i/Author/$(author.orcid)
     po:
       - [a, schema:Person]
       - [schema:name, $(author.display_name), xsd:string]
-      - [schema:affiliation, http://w3id.org/solar/i/Affiliation/$(institutions.id)~iri]
+      - [schema:affiliation, https://w3id.org/solar/i/Affiliation/$(institutions.id)~iri]
  
   AFFILIATION:
     sources:
-      - [data/papersOA.json~jsonpath, "$[*].authorships[*]"]
-    subjects: http://w3id.org/solar/i/Affiliation/$(institutions.id)
+      - [data/papersOA.json~jsonpath, '$[*].authorships[*]']
+    subjects: https://w3id.org/solar/i/Affiliation/$(institutions.id)
     po:
       - [a, schema:Organization]
       - [schema:name, $(institutions.display_name), xsd:string]
-      - [schema:addressCountry, http://w3id.org/solar/i/Country/$(institutions.country_code)~iri]
+      - [schema:addressCountry, https://w3id.org/solar/i/Country/$(institutions.country_code)~iri]
  
   EXPEXEC:
     sources:
       - [data/catalystsdata.csv~csv]
-    subjects: http://w3id.org/solar/i/ExpExec/$(ID)
+    subjects: https://w3id.org/solar/i/ExpExec/$(ID)
     po:
       - [a, solar:ExperimentExecution]
-      - [solar:reportedIn, http://w3id.org/solar/i/Article/$(No_de_Ref)~iri]
-      - [prov:used, http://w3id.org/solar/i/Input/Catalyst/$(ID)-$(Catalyst)~iri]
-      - [prov:used, http://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(Co_catalyst)~iri]
-      - [prov:used, http://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(co_catalyst_2)~iri]
-      - [prov:used, http://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(co_catalyst_3)~iri]
-      - [prov:used, http://w3id.org/solar/i/Input/Support/$(ID)-$(Support)~iri]
-      - [prov:used, http://w3id.org/solar/i/Input/Dopant/$(ID)-$(Dopant)~iri]
-      - [prov:used, http://w3id.org/solar/i/Input/Dye/$(ID)-$(Dyes)~iri]
-      - [prov:used, http://w3id.org/solar/i/Input/Reductant/$(ID)-$(Reductant)~iri]
-      - [solar:hasLightSource, http://w3id.org/solar/i/Condition/LightSource/$(ID)~iri]
-      - [solar:hasCondition, http://w3id.org/solar/i/Condition/pH/$(ID)~iri]
-      - [solar:hasCondition, http://w3id.org/solar/o/core#$(Reactor_type)Reactor~iri]
-      - [solar:hasCondition, http://w3id.org/solar/i/Condition/Pressure/$(ID)~iri]
-      - [solar:hasCondition, http://w3id.org/solar/i/Condition/Temperature/$(ID)~iri]
-      - [solar:hasCondition, http://w3id.org/solar/i/Condition/Time/$(ID)~iri]
-      - [solar:hasCondition, http://w3id.org/solar/o/core#$(Reaction_medium)Medium~iri]
-      - [solar:hasCondition, http://w3id.org/solar/o/core#$(Operation_mode)Mode~iri]
-      - [solar:hasCondition, http://w3id.org/solar/i/Condition/ReactorVolume/$(ID)~iri]
-      - [solar:hasCondition, http://w3id.org/solar/i/Condition/ReactorResidenceTime/$(ID)~iri]
+      - [solar:reportedIn, https://w3id.org/solar/i/Article/$(No_de_Ref)~iri]
+      - [prov:used, https://w3id.org/solar/i/Input/Catalyst/$(ID)-$(Catalyst)~iri]
+      - [prov:used, https://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(Co_catalyst)~iri]
+      - [prov:used, https://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(co_catalyst_2)~iri]
+      - [prov:used, https://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(co_catalyst_3)~iri]
+      - [prov:used, https://w3id.org/solar/i/Input/Support/$(ID)-$(Support)~iri]
+      - [prov:used, https://w3id.org/solar/i/Input/Dopant/$(ID)-$(Dopant)~iri]
+      - [prov:used, https://w3id.org/solar/i/Input/Dye/$(ID)-$(Dyes)~iri]
+      - [prov:used, https://w3id.org/solar/i/Input/Reductant/$(ID)-$(Reductant)~iri]
+      - [solar:hasLightSource, https://w3id.org/solar/i/Condition/LightSource/$(ID)~iri]
+      - [solar:hasCondition, https://w3id.org/solar/i/Condition/pH/$(ID)~iri]
+      - [solar:hasCondition, https://w3id.org/solar/o/core#$(Reactor_type)Reactor~iri]
+      - [solar:hasCondition, https://w3id.org/solar/i/Condition/Pressure/$(ID)~iri]
+      - [solar:hasCondition, https://w3id.org/solar/i/Condition/Temperature/$(ID)~iri]
+      - [solar:hasCondition, https://w3id.org/solar/i/Condition/Time/$(ID)~iri]
+      - [solar:hasCondition, https://w3id.org/solar/o/core#$(Reaction_medium)Medium~iri]
+      - [solar:hasCondition, https://w3id.org/solar/o/core#$(Operation_mode)Mode~iri]
+      - [solar:hasCondition, https://w3id.org/solar/i/Condition/ReactorVolume/$(ID)~iri]
+      - [solar:hasCondition, https://w3id.org/solar/i/Condition/ReactorResidenceTime/$(ID)~iri]
  
   CATALYST:
     sources:
       - [data/catalystsdata.csv~csv]
-    subjects: http://w3id.org/solar/i/Input/Catalyst/$(ID)-$(Catalyst)
+    subjects: https://w3id.org/solar/i/Input/Catalyst/$(ID)-$(Catalyst)
     po:
       - [a, solar:Input]
       - [rdfs:label, $(Catalyst), xsd:string]
@@ -98,8 +98,8 @@ mappings:
       - [qudt:numericValue, $(Masscat_g), xsd:float]
       - [qudt:unit, unit:GM~iri]
       - [solar:crystalStructure, $(TiO2_crystal_structure), xsd:string]
-      - [solar:hasBandGap, http://w3id.org/solar/i/BandGap/$(ID)-$(Catalyst)~iri]
-      - [solar:hasSurfaceArea, http://w3id.org/solar/i/SurfaceArea/$(ID)-$(Catalyst)~iri]
+      - [solar:hasBandGap, https://w3id.org/solar/i/BandGap/$(ID)-$(Catalyst)~iri]
+      - [solar:hasSurfaceArea, https://w3id.org/solar/i/SurfaceArea/$(ID)-$(Catalyst)~iri]
       - p: solar:hasChemical
         o:
           - mapping: CHEMICAL
@@ -112,7 +112,7 @@ mappings:
   BANDGAP:
     sources:
       - [data/catalystsdata.csv~csv]
-    subjects: http://w3id.org/solar/i/BandGap/$(ID)-$(Catalyst)
+    subjects: https://w3id.org/solar/i/BandGap/$(ID)-$(Catalyst)
     po:
       - [a, solar:BandGap]
       - [qudt:numericValue, $(Eg_eV), xsd:float]
@@ -121,7 +121,7 @@ mappings:
   SURFACEAREA:
     sources:
       - [data/catalystsdata.csv~csv]
-    subjects: http://w3id.org/solar/i/SurfaceArea/$(ID)-$(Catalyst)
+    subjects: https://w3id.org/solar/i/SurfaceArea/$(ID)-$(Catalyst)
     po:
       - [a, solar:SurfaceArea]
       - [qudt:numericValue, $(BET_m2_g), xsd:float]
@@ -130,7 +130,7 @@ mappings:
   CO-CATALYST:
     sources:
       - [data/catalystsdata.csv~csv]
-    subjects: http://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(Co_catalyst)
+    subjects: https://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(Co_catalyst)
     po:
       - [a, solar:Input]
       - [rdfs:label, $(Co_catalyst), xsd:string]
@@ -148,7 +148,7 @@ mappings:
   CO-CATALYST2:
     sources:
       - [data/catalystsdata.csv~csv]
-    subjects: http://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(co_catalyst_2)
+    subjects: https://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(co_catalyst_2)
     po:
       - [a, solar:Input]
       - [rdfs:label, $(co_catalyst_2), xsd:string]
@@ -158,7 +158,7 @@ mappings:
   CO-CATALYST3:
     sources:
       - [data/catalystsdata.csv~csv]
-    subjects: http://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(co_catalyst_3)
+    subjects: https://w3id.org/solar/i/Input/Co-catalyst/$(ID)-$(co_catalyst_3)
     po:
       - [a, solar:Input]
       - [rdfs:label, $(co_catalyst_3), xsd:string]
@@ -176,7 +176,7 @@ mappings:
   SUPPORT:
     sources:
       - [data/catalystsdata.csv~csv]
-    subjects: http://w3id.org/solar/i/Input/Support/$(ID)-$(Support)
+    subjects: https://w3id.org/solar/i/Input/Support/$(ID)-$(Support)
     po:
       - [a, solar:Input]
       - [rdfs:label, $(Support), xsd:string]
@@ -194,7 +194,7 @@ mappings:
   DOPANT:
     sources:
       - [data/catalystsdata.csv~csv]
-    subjects: http://w3id.org/solar/i/Input/Dopant/$(ID)-$(Dopant)
+    subjects: https://w3id.org/solar/i/Input/Dopant/$(ID)-$(Dopant)
     po:
       - [a, solar:Input]
       - [rdfs:label, $(Dopant), xsd:string]
@@ -212,7 +212,7 @@ mappings:
   DYE:
     sources:
       - [data/catalystsdata.csv~csv]
-    subjects: http://w3id.org/solar/i/Input/Dye/$(ID)-$(Dyes)
+    subjects: https://w3id.org/solar/i/Input/Dye/$(ID)-$(Dyes)
     po:
       - [a, solar:Input]
       - [rdfs:label, $(Dyes), xsd:string]
@@ -230,7 +230,7 @@ mappings:
   REDUCTANT:
     sources:
       - [data/catalystsdata.csv~csv]
-    subjects: http://w3id.org/solar/i/Input/Reductant/$(ID)-$(Reductant)
+    subjects: https://w3id.org/solar/i/Input/Reductant/$(ID)-$(Reductant)
     po:
       - [a, solar:Input]
       - [rdfs:label, $(Reductant), xsd:string]
@@ -248,7 +248,7 @@ mappings:
   PH:
     sources:
       - [data/catalystsdata.csv~csv]
-    subjects: http://w3id.org/solar/i/Condition/pH/$(ID)
+    subjects: https://w3id.org/solar/i/Condition/pH/$(ID)
     po:
       - [a, solar:pHCondition]
       - [qudt:numericValue, $(ph_value), xsd:float]
@@ -257,14 +257,14 @@ mappings:
   REACTOR:
     sources:
       - [data/catalystsdata.csv~csv]
-    subjects: http://w3id.org/solar/i/Condition/Reactor/$(ID)
+    subjects: https://w3id.org/solar/i/Condition/Reactor/$(ID)
     po:
-      - [a, solarpc:ReactorCondition]
+      - [a, solar:ReactorCondition]
  
   PRESSURE:
     sources:
       - [data/catalystsdata.csv~csv]
-    subjects: http://w3id.org/solar/i/Condition/Pressure/$(ID)
+    subjects: https://w3id.org/solar/i/Condition/Pressure/$(ID)
     po:
       - [a, solar:PressureCondition]
       - [qudt:numericValue, $(P_bar), xsd:float]
@@ -273,7 +273,7 @@ mappings:
   TEMPERATURE:
     sources:
       - [data/catalystsdata.csv~csv]
-    subjects: http://w3id.org/solar/i/Condition/Temperature/$(ID)
+    subjects: https://w3id.org/solar/i/Condition/Temperature/$(ID)
     po:
       - [a, solar:TemperatureCondition]
       - [qudt:numericValue, $(T_C), xsd:float]
@@ -282,7 +282,7 @@ mappings:
   TIME:
     sources:
       - [data/catalystsdata.csv~csv]
-    subjects: http://w3id.org/solar/i/Condition/Time/$(ID)
+    subjects: https://w3id.org/solar/i/Condition/Time/$(ID)
     po:
       - [a, solar:TimeCondition]
       - [qudt:numericValue, $(Reaction_time_h), xsd:float]
@@ -291,20 +291,20 @@ mappings:
   LIGHT:
     sources:
       - [data/catalystsdata.csv~csv]
-    subjects: http://w3id.org/solar/i/Condition/LightSource/$(ID)
+    subjects: https://w3id.org/solar/i/Condition/LightSource/$(ID)
     po:
       - [a, obi:0400065]
-      - [rdf:type, http://w3id.org/solar/o/core#$(Light_source)LightSource~iri]
-      - [solar:hasLamp, http://w3id.org/solar/o/core#$(Lamp)Lamp~iri]
-      - [solar:hasWavelength, http://w3id.org/solar/o/core#$(Wavelength_nm)WL~iri]
-      - [solar:hasIlluminatedArea, http://w3id.org/solar/i/IlluminatedArea/$(ID)~iri]
-      - [solar:hasPower, http://w3id.org/solar/i/Power/$(ID)~iri]
-      - [solar:hasIrradiance, http://w3id.org/solar/i/Irradiance/$(ID)~iri]
+      - [rdf:type, https://w3id.org/solar/o/core#$(Light_source)LightSource~iri]
+      - [solar:hasLamp, https://w3id.org/solar/o/core#$(Lamp)Lamp~iri]
+      - [solar:hasWavelength, https://w3id.org/solar/o/core#$(Wavelength_nm)WL~iri]
+      - [solar:hasIlluminatedArea, https://w3id.org/solar/i/IlluminatedArea/$(ID)~iri]
+      - [solar:hasPower, https://w3id.org/solar/i/Power/$(ID)~iri]
+      - [solar:hasIrradiance, https://w3id.org/solar/i/Irradiance/$(ID)~iri]
  
   POWER:
     sources:
       - [data/catalystsdata.csv~csv]
-    subjects: http://w3id.org/solar/i/Power/$(ID)
+    subjects: https://w3id.org/solar/i/Power/$(ID)
     po:
       - [a, solar:Power]
       - [qudt:numericValue, $(Power_W), xsd:float]
@@ -313,7 +313,7 @@ mappings:
   IRRADIANCE:
     sources:
       - [data/catalystsdata.csv~csv]
-    subjects: http://w3id.org/solar/i/Irradiance/$(ID)
+    subjects: https://w3id.org/solar/i/Irradiance/$(ID)
     po:
       - [a, solar:Irradiance]
       - [qudt:numericValue, $(Light_Intensity_W_m2), xsd:float]
@@ -322,7 +322,7 @@ mappings:
   ILLUMAREA:
     sources:
       - [data/catalystsdata.csv~csv]
-    subjects: http://w3id.org/solar/i/IlluminatedArea/$(ID)
+    subjects: https://w3id.org/solar/i/IlluminatedArea/$(ID)
     po:
       - [a, solar:IlluminatedArea]
       - [qudt:numericValue, $(Illuminated_area_m2), xsd:float]
@@ -331,7 +331,7 @@ mappings:
   REACTORVOL:
     sources:
       - [data/catalystsdata.csv~csv]
-    subjects: http://w3id.org/solar/i/Condition/ReactorVolume/$(ID)
+    subjects: https://w3id.org/solar/i/Condition/ReactorVolume/$(ID)
     po:
       - [a, solar:ReactorVolumeCondition]
       - [qudt:numericValue, $(Reactor_Volume_l), xsd:float]
@@ -340,7 +340,7 @@ mappings:
   REACTORRESTIME:
     sources:
       - [data/catalystsdata.csv~csv]
-    subjects: http://w3id.org/solar/i/Condition/ReactorResidenceTime/$(ID)
+    subjects: https://w3id.org/solar/i/Condition/ReactorResidenceTime/$(ID)
     po:
       - [a, solar:ResidenceTimeCondition]
       - [qudt:numericValue, $(Residence_time_min1), xsd:float]

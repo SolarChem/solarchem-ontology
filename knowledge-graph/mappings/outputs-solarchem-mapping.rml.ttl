@@ -1,0 +1,2257 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rml: <https://w3id.org/rml/>.
+@prefix schema: <https://schema.org/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix solar: <https://w3id.org/solar/o/core#>.
+@prefix solarec: <https://w3id.org/solar/o/ec#>.
+@prefix solarpec: <https://w3id.org/solar/o/pec#>.
+@prefix solarpc: <https://w3id.org/solar/o/pc#>.
+@prefix bibo: <http://purl.org/ontology/bibo/>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix qudt: <http://qudt.org/2.1/schema/qudt/>.
+@prefix unit: <http://qudt.org/vocab/unit/>.
+@prefix obi: <http://purl.obolibrary.org/obo/OBI_>.
+@base <https://w3id.org/solar/i/>.
+
+
+<#H2_mol_gh>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/H2_mol_gh/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "H2";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "H2_mol_gh";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q3027893";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#CO_mol_gh>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/CO_mol_gh/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "CO";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "CO_mol_gh";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q2025";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#CH4_mol_gh>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/CH4_mol_gh/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "CH4";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "CH4_mol_gh";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q37129";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C2H4_mol_gh>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C2H4_mol_gh/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C2H4";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C2H4_mol_gh";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q151313";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C2H6_mol_gh>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C2H6_mol_gh/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C2H6";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C2H6_mol_gh";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q52858";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C3H6_mol_gh>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C3H6_mol_gh/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C3H6";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C3H6_mol_gh";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q151324";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C3H8_mol_gh>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C3H8_mol_gh/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C3H8";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C3H8_mol_gh";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q131189";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C4H8_mol_gh>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C4H8_mol_gh/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C4H8";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C4H8_mol_gh";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q151335";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C4H10_mol_gh>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C4H10_mol_gh/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C4H10";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C4H10_mol_gh";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q134192";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C5H10_mol_gh>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C5H10_mol_gh/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C5H10";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C5H10_mol_gh";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q151353";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C5H12_mol_gh>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C5H12_mol_gh/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C5H12";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C5H12_mol_gh";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q2799651";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#CH3OH_mol_gh>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/CH3OH_mol_gh/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "CH3OH";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "CH3OH_mol_gh";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q14982";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C2H5OH_mol_gh>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C2H5OH_mol_gh/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C2H5OH";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C2H5OH_mol_gh";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q153";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#CH3COH_mol_gh>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/CH3COH_mol_gh/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "CH3COH";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "CH3COH_mol_gh";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q61457";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#HCOOH_mol_gh>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/HCOOH_mol_gh/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "HCOOH";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "HCOOH_mol_gh";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q161233";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#CH2O_mol_gh>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/CH2O_mol_gh/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "CH2O";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "CH2O_mol_gh";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q161210";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C2H4O2_mol_gh>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C2H4O2_mol_gh/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C2H4O2";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C2H4O2_mol_gh";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q47512";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#H2_mol_g>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/H2_mol_g/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "H2";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "H2_mol_g";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q3027893";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#CO_mol_g>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/CO_mol_g/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "CO";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "CO_mol_g";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q2025";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#CH4_mol_g>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/CH4_mol_g/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "CH4";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "CH4_mol_g";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q37129";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C2H4_mol_g>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C2H4_mol_g/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C2H4";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C2H4_mol_g";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q151313";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C2H6_mol_g>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C2H6_mol_g/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C2H6";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C2H6_mol_g";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q52858";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C3H6_mol_g>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C3H6_mol_g/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C3H6";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C3H6_mol_g";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q151324";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C3H8_mol_g>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C3H8_mol_g/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C3H8";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C3H8_mol_g";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q131189";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C4H8_mol_g>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C4H8_mol_g/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C4H8";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C4H8_mol_g";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q151335";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C4H10_mol_g>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C4H10_mol_g/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C4H10";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C4H10_mol_g";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q134192";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C5H10_mol_g>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C5H10_mol_g/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C5H10";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C5H10_mol_g";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q151353";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C5H12_mol_g>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C5H12_mol_g/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C5H12";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C5H12_mol_g";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q2799651";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#CH3OH_mol_g>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/CH3OH_mol_g/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "CH3OH";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "CH3OH_mol_g";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q14982";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C2H5OH_mol_g>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C2H5OH_mol_g/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C2H5OH";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C2H5OH_mol_g";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q153";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#CH3COH_mol_g>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/CH3COH_mol_g/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "CH3COH";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "CH3COH_mol_g";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q61457";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#HCOOH_mol_g>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/HCOOH_mol_g/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "HCOOH";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "HCOOH_mol_g";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q161233";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#CH2O_mol_g>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/CH2O_mol_g/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "CH2O";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "CH2O_mol_g";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q161210";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C2H4O2_mol_g>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C2H4O2_mol_g/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C2H4O2";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C2H4O2_mol_g";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-GM;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q47512";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#H2_mol_m2h>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/H2_mol_m2h/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "H2";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "H2_mol_m2h";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-M2-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q3027893";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#CO_mol_m2h>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/CO_mol_m2h/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "CO";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "CO_mol_m2h";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-M2-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q2025";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#CH4_mol_m2h>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/CH4_mol_m2h/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "CH4";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "CH4_mol_m2h";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-M2-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q37129";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C2H4_mol_m2h>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C2H4_mol_m2h/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C2H4";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C2H4_mol_m2h";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-M2-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q151313";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C2H6_mol_m2h>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C2H6_mol_m2h/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C2H6";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C2H6_mol_m2h";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-M2-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q52858";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C3H6_mol_m2h>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C3H6_mol_m2h/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C3H6";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C3H6_mol_m2h";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-M2-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q151324";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C3H8_mol_m2h>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C3H8_mol_m2h/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C3H8";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C3H8_mol_m2h";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-M2-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q131189";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C4H8_mol_m2h>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C4H8_mol_m2h/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C4H8";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C4H8_mol_m2h";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-M2-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q151335";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C4H10_mol_m2h>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C4H10_mol_m2h/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C4H10";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C4H10_mol_m2h";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-M2-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q134192";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C5H10_mol_m2h>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C5H10_mol_m2h/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C5H10";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C5H10_mol_m2h";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-M2-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q151353";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C5H12_mol_m2h>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C5H12_mol_m2h/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C5H12";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C5H12_mol_m2h";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-M2-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q2799651";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#CH3OH_mol_m2h>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/CH3OH_mol_m2h/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "CH3OH";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "CH3OH_mol_m2h";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-M2-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q14982";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C2H5OH_mol_m2h>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C2H5OH_mol_m2h/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C2H5OH";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C2H5OH_mol_m2h";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-M2-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q153";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#CH3COH_mol_m2h>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/CH3COH_mol_m2h/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "CH3COH";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "CH3COH_mol_m2h";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-M2-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q61457";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#HCOOH_mol_m2h>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/HCOOH_mol_m2h/{ID}" ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "HCOOH";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "HCOOH_mol_m2h";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-M2-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q161233";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#CH2O_mol_m2h>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/CH2O_mol_m2h/{ID}" ;
+    	rml:class solar:Output ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "CH2O";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "CH2O";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "CH2O_mol_m2h";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "CH2O_mol_m2h";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-M2-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-M2-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q161210";
+    		rml:termType rml:IRI ]
+    ];
+.
+
+
+
+<#C2H4O2_mol_m2h>
+    a rml:TriplesMap;
+    rml:logicalSource [
+    	rml:source "data/catalystsdata.csv";
+    	rml:referenceFormulation rml:CSV;
+    ];
+    rml:subjectMap [
+    	a rml:Subject ;
+    	rml:termType rml:IRI ;
+    	rml:template "https://w3id.org/solar/i/Output/C2H4O2_mol_m2h/{ID}" ;
+    	rml:class solar:Output ;
+    	rml:class solar:Output ;
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C2H4O2";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant rdfs:label];
+    	rml:objectMap	[ rml:constant "C2H4O2";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:string ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C2H4O2_mol_m2h";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:numericValue];
+    	rml:objectMap	[ rml:reference "C2H4O2_mol_m2h";
+    		rml:termType rml:Literal;
+    		rml:datatype xsd:float ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-M2-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant qudt:unit];
+    	rml:objectMap	[ rml:constant unit:MicroMOL-PER-M2-HR;
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant prov:wasGeneratedBy];
+    	rml:objectMap	[ rml:template "https://w3id.org/solar/i/ExpExec/{ID}";
+    		rml:termType rml:IRI ]
+    ];
+    rml:predicateObjectMap [
+    	rml:predicateMap	[ rml:constant solar:hasChemical];
+    	rml:objectMap	[ rml:constant "http://www.wikidata.org/entity/Q47512";
+    		rml:termType rml:IRI ]
+    ];
+.
+
