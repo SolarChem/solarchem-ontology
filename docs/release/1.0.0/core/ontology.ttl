@@ -1,0 +1,947 @@
+@prefix : <https://w3id.org/solar/o/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/solar/o/core#> .
+
+<https://w3id.org/solar/o/core#> rdf:type owl:Ontology ;
+                                  owl:versionIRI <https://w3id.org/solar/o/core/1.0.0> ;
+                                  <http://purl.org/dc/terms/contributor> "Daniel Garijo" ,
+                                                                         "Laura Collado" ,
+                                                                         "Miguel Tecedor" ,
+                                                                         "Víctor de la Peña" ;
+                                  <http://purl.org/dc/terms/created> "2022-09-25"^^xsd:date ;
+                                  <http://purl.org/dc/terms/creator> "Ana Iglesias-Molina" ,
+                                                                     "Oier Beaskoetxea" ;
+                                  <http://purl.org/dc/terms/description> "This ontology represents the execution of experiments related to electrocatalysis, photocatalysis and photoelectrocatalysis with inputs, outputs, and experimental conditions."@en ;
+                                  <http://purl.org/dc/terms/license> "http://purl.org/NET/rdflicense/cc-by4.0" ;
+                                  <http://purl.org/dc/terms/modified> "2023-10-29"^^xsd:date ;
+                                  <http://purl.org/dc/terms/publisher> <https://oeg.fi.upm.es/> ;
+                                  <http://purl.org/dc/terms/title> "The SolarChem Ontology" ;
+                                  <http://purl.org/vocab/vann/preferredNamespacePrefix> "solar" ;
+                                  <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/solar/o/core#" ;
+                                  owl:priorVersion <https://oeg-upm.github.io/solarchem-ontology/release/0.6.0/vocabulary/myDocumentation/doc/index-en.html> ;
+                                  owl:versionInfo "v1.0.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/IAO_0000115
+<http://purl.obolibrary.org/obo/IAO_0000115> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/author
+<http://purl.org/dc/terms/author> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/dc/terms/isPartOf
+<http://purl.org/dc/terms/isPartOf> rdf:type owl:ObjectProperty ;
+                                    rdfs:range <http://purl.org/ontology/bibo/Journal> ;
+                                    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+                                    rdfs:label "is part of"@en .
+
+
+###  http://qudt.org/2.1/schema/qudt/unit
+<http://qudt.org/2.1/schema/qudt/unit> rdf:type owl:ObjectProperty ;
+                                       rdfs:range <http://qudt.org/2.1/schema/qudt/Unit> ;
+                                       rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt/> ;
+                                       rdfs:label "unit"@en .
+
+
+###  http://www.w3.org/ns/prov#used
+<http://www.w3.org/ns/prov#used> rdf:type owl:ObjectProperty ;
+                                 rdfs:domain :ExperimentExecution ;
+                                 rdfs:range :Input ;
+                                 rdfs:isDefinedBy <http://www.w3.org/ns/prov#> ;
+                                 rdfs:label "used"@en .
+
+
+###  http://www.w3.org/ns/prov#wasGeneratedBy
+<http://www.w3.org/ns/prov#wasGeneratedBy> rdf:type owl:ObjectProperty ;
+                                           rdfs:domain :Output ;
+                                           rdfs:range :ExperimentExecution ;
+                                           rdfs:isDefinedBy <http://www.w3.org/ns/prov#> ;
+                                           rdfs:label "was generated by"@en .
+
+
+###  https://schema.org/affiliation
+<https://schema.org/affiliation> rdf:type owl:ObjectProperty ;
+                                 rdfs:domain <https://schema.org/Person> ;
+                                 rdfs:range <https://schema.org/Organization> ;
+                                 rdfs:isDefinedBy <https://schema.org/> ;
+                                 rdfs:label "affiliation" .
+
+
+###  https://schema.org/author
+<https://schema.org/author> rdf:type owl:ObjectProperty ;
+                            rdfs:domain <https://schema.org/ScholarlyArticle> ;
+                            rdfs:range <https://schema.org/Person> ;
+                            rdfs:isDefinedBy "https://schema.org/" ;
+                            rdfs:label "author" .
+
+
+###  https://w3id.org/solar/o/core#hasBandGap
+:hasBandGap rdf:type owl:ObjectProperty ;
+            rdfs:domain :Input ;
+            rdfs:range :BandGap ;
+            rdfs:comment "A relationship between the input of an experiment execution and its measure of band gap"@en ;
+            rdfs:label "has band gap"@en .
+
+
+###  https://w3id.org/solar/o/core#hasChemical
+:hasChemical rdf:type owl:ObjectProperty ;
+             rdfs:domain [ owl:intersectionOf ( :Input
+                                                :Output
+                                              ) ;
+                           rdf:type owl:Class
+                         ] ;
+             rdfs:comment "A relationship between the input of an experiment execution and the chemical substance it is made of"@en ;
+             rdfs:label "has chemical"@en .
+
+
+###  https://w3id.org/solar/o/core#hasCondition
+:hasCondition rdf:type owl:ObjectProperty ;
+              rdfs:domain :ExperimentExecution ;
+              rdfs:range :Condition ;
+              rdfs:comment "A relationship between an experiment execution and the conditions under it is performed"@en ;
+              rdfs:label "has condition"@en .
+
+
+###  https://w3id.org/solar/o/core#hasConversionMetric
+:hasConversionMetric rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Output ;
+                     rdfs:range :ConversionMetric ;
+                     rdfs:comment "A relationship between the output of an experiment execution and its conversion metric"@en ;
+                     rdfs:label "has conversion metric"@en .
+
+
+###  https://w3id.org/solar/o/core#hasElectrochemicalMetric
+:hasElectrochemicalMetric rdf:type owl:ObjectProperty ;
+                          rdfs:domain :Output ;
+                          rdfs:range :ElectrochemicalMetric ;
+                          rdfs:comment "A relationship between the output of an experiment execution and its electrochemical metrics"@en ;
+                          rdfs:label "has electrochemical metric"@en .
+
+
+###  https://w3id.org/solar/o/core#hasExperimentExecution
+:hasExperimentExecution rdf:type owl:ObjectProperty ;
+                        owl:inverseOf :reportedIn ;
+                        rdfs:domain <https://schema.org/ScholarlyArticle> ;
+                        rdfs:range :ExperimentExecution ;
+                        rdfs:comment "A relationship between a scientific publication and an experiment execution it describes"@en ;
+                        rdfs:label "has experiment execution"@en .
+
+
+###  https://w3id.org/solar/o/core#hasIlluminatedArea
+:hasIlluminatedArea rdf:type owl:ObjectProperty ;
+                    rdfs:range :IlluminatedArea ;
+                    rdfs:comment "A relationship between a light source and the measure of area that it illuminates"@en ;
+                    rdfs:label "has illuminated area"@en .
+
+
+###  https://w3id.org/solar/o/core#hasIrradiance
+:hasIrradiance rdf:type owl:ObjectProperty ;
+               rdfs:range :Irradiance ;
+               rdfs:comment "A relationship between a light source and its irradiance"@en ;
+               rdfs:label "has irradiance"@en .
+
+
+###  https://w3id.org/solar/o/core#hasLamp
+:hasLamp rdf:type owl:ObjectProperty ;
+         rdfs:range :Lamp ;
+         rdfs:comment "A relationship between a light source and the lamp that produces it"@en ;
+         rdfs:label "has lamp"@en .
+
+
+###  https://w3id.org/solar/o/core#hasLightSource
+:hasLightSource rdf:type owl:ObjectProperty ;
+                rdfs:comment "A relationship between an experiment execution and the light source it uses"@en ;
+                rdfs:label "has light source"@en .
+
+
+###  https://w3id.org/solar/o/core#hasPower
+:hasPower rdf:type owl:ObjectProperty ;
+          rdfs:range :Power ;
+          rdfs:comment "A relationship between a light source and its measure of power"@en ;
+          rdfs:label "has power"@en .
+
+
+###  https://w3id.org/solar/o/core#hasRole
+:hasRole rdf:type owl:ObjectProperty ;
+         rdfs:domain :Input ;
+         rdfs:range :Role ;
+         rdfs:comment "A relationship between the input of an experiment execution and the role it plays in the reaction"@en ;
+         rdfs:label "has role"@en .
+
+
+###  https://w3id.org/solar/o/core#hasSurfaceArea
+:hasSurfaceArea rdf:type owl:ObjectProperty ;
+                rdfs:domain :Input ;
+                rdfs:range :SurfaceArea ;
+                rdfs:comment "A relationship between the input of an experiment execution and its measure of surface area"@en ;
+                rdfs:label "has surface area"@en .
+
+
+###  https://w3id.org/solar/o/core#hasWavelength
+:hasWavelength rdf:type owl:ObjectProperty ;
+               rdfs:range :Wavelength ;
+               rdfs:comment "A relationship between a light source and its range of wavelength"@en ;
+               rdfs:label "has wavelength"@en .
+
+
+###  https://w3id.org/solar/o/core#reportedIn
+:reportedIn rdf:type owl:ObjectProperty ;
+            rdfs:domain :ExperimentExecution ;
+            rdfs:range <https://schema.org/ScholarlyArticle> ;
+            rdfs:comment "A relationship between an experiment execution and the scientific publication it is described in"@en ;
+            rdfs:label "reported in"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/chebi/formula
+<http://purl.obolibrary.org/obo/chebi/formula> rdf:type owl:DatatypeProperty ;
+                                               rdfs:range xsd:string ;
+                                               rdfs:isDefinedBy <http://purl.obolibrary.org/obo/chebi/> ;
+                                               rdfs:label "formula"@en .
+
+
+###  http://purl.org/ontology/bibo/doi
+<http://purl.org/ontology/bibo/doi> rdf:type owl:DatatypeProperty ;
+                                    rdfs:isDefinedBy <http://purl.org/ontology/bibo/> ;
+                                    rdfs:label "doi"@en .
+
+
+###  http://qudt.org/2.1/schema/qudt#numericValue
+<http://qudt.org/2.1/schema/qudt#numericValue> rdf:type owl:DatatypeProperty ;
+                                               rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt#> ;
+                                               rdfs:label "numeric value"@en .
+
+
+###  https://qudt.org/2.1/schema/qudt#floatPercentage
+<https://qudt.org/2.1/schema/qudt#floatPercentage> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain [ owl:intersectionOf ( :ConversionMetric
+                                                                                      :Input
+                                                                                    ) ;
+                                                                 rdf:type owl:Class
+                                                               ] ;
+                                                   rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt#> ;
+                                                   rdfs:label "float percentage"@en .
+
+
+###  https://schema.org/addressCountry
+<https://schema.org/addressCountry> rdf:type owl:DatatypeProperty ;
+                                    rdfs:isDefinedBy <https://schema.org/> ;
+                                    rdfs:label "address country" .
+
+
+###  https://schema.org/datePublished
+<https://schema.org/datePublished> rdf:type owl:DatatypeProperty ;
+                                   rdfs:label <https://schema.org/> ,
+                                              "date published" .
+
+
+###  https://schema.org/isPartOf
+<https://schema.org/isPartOf> rdf:type owl:DatatypeProperty ;
+                              rdfs:isDefinedBy <https://schema.org/> ;
+                              rdfs:label "is part of" .
+
+
+###  https://schema.org/issueNumber
+<https://schema.org/issueNumber> rdf:type owl:DatatypeProperty ;
+                                 rdfs:isDefinedBy <https://schema.org/> ;
+                                 rdfs:label "issue number" .
+
+
+###  https://schema.org/name
+<https://schema.org/name> rdf:type owl:DatatypeProperty ;
+                          rdfs:isDefinedBy <https://schema.org/> ;
+                          rdfs:label "name"@en .
+
+
+###  https://schema.org/pageEnd
+<https://schema.org/pageEnd> rdf:type owl:DatatypeProperty ;
+                             rdfs:label <https://schema.org/> ,
+                                        "page end" .
+
+
+###  https://schema.org/pageStart
+<https://schema.org/pageStart> rdf:type owl:DatatypeProperty ;
+                               rdfs:isDefinedBy <https://schema.org/> ;
+                               rdfs:label "page start" .
+
+
+###  https://schema.org/volumeNumer
+<https://schema.org/volumeNumer> rdf:type owl:DatatypeProperty ;
+                                 rdfs:comment "volume number" ;
+                                 rdfs:isDefinedBy <https://schema.org/> .
+
+
+###  https://w3id.org/solar/o/core#crystalStructure
+:crystalStructure rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Input ;
+                  rdfs:range xsd:string ;
+                  rdfs:comment "The type of crystal structure of the input of an experiment execution"@en ;
+                  rdfs:label "crystal structure"@en .
+
+
+###  https://w3id.org/solar/o/pc#reactorVolume
+<https://w3id.org/solar/o/pc#reactorVolume> rdf:type owl:DatatypeProperty ;
+                                            rdfs:comment "The measurement of volume of the reactor used in an experiment execution"@en ;
+                                            rdfs:label "reactor volume"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.obolibrary.org/obo/OBI_0002900
+<http://purl.obolibrary.org/obo/OBI_0002900> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0400065> ;
+                                             owl:disjointWith <http://purl.obolibrary.org/obo/OBI_0002901> ,
+                                                              <http://purl.obolibrary.org/obo/OBI_0002902> ,
+                                                              :MonochromaticLight ,
+                                                              :SolarSimulatorLight ,
+                                                              :UltravioletVisibleLight ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A light source that provides ultraviolet (UV) light for use in a distant area using a delivery system."@en ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
+                                             rdfs:label "ultraviolet light source"@en .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0002901
+<http://purl.obolibrary.org/obo/OBI_0002901> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0400065> ;
+                                             owl:disjointWith <http://purl.obolibrary.org/obo/OBI_0002902> ,
+                                                              :MonochromaticLight ,
+                                                              :SolarSimulatorLight ,
+                                                              :UltravioletVisibleLight ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A light source that provides visible light for use in a distant area using a delivery system."@en ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
+                                             rdfs:label "visible light source"@en .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0002902
+<http://purl.obolibrary.org/obo/OBI_0002902> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0400065> ;
+                                             owl:disjointWith :MonochromaticLight ,
+                                                              :SolarSimulatorLight ,
+                                                              :UltravioletVisibleLight ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A light source that light is produced from solar energy."@en ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
+                                             rdfs:label "solar ligh source"@en .
+
+
+###  http://purl.obolibrary.org/obo/OBI_0400065
+<http://purl.obolibrary.org/obo/OBI_0400065> rdf:type owl:Class ;
+                                             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :hasIlluminatedArea ;
+                                                               owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                             ] ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :hasIrradiance ;
+                                                               owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                             ] ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :hasWavelength ;
+                                                               owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                             ] ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :hasPower ;
+                                                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                             ] ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A light source is an optical subsystem that provides light for use in a distant area using a delivery system (e.g., fiber optics). Light sources may include one of a variety of lamps (e.g., xenon, halogen, mercury). Most light sources are operated from line power, but some may be powered from batteries. They are mostly used in endoscopic, microscopic, and other examination and/or in surgical procedures. The light source is part of the optical subsystem. In a flow-cytometer the light source directs high intensity light at particles at the interrogation point. The light source in a flow cytometer is usually a laser"@en ;
+                                             rdfs:isDefinedBy <http://purl.obolibrary.org/obo/obi.owl> ;
+                                             rdfs:label "light source"@en .
+
+
+###  http://purl.org/ontology/bibo/Journal
+<http://purl.org/ontology/bibo/Journal> rdf:type owl:Class ;
+                                        rdfs:isDefinedBy <http://purl.org/ontology/bibo/> ;
+                                        rdfs:label "Journal"@en .
+
+
+###  http://qudt.org/2.1/schema/qudt/Unit
+<http://qudt.org/2.1/schema/qudt/Unit> rdf:type owl:Class ;
+                                       rdfs:isDefinedBy <http://qudt.org/2.1/schema/qudt/Unit> ;
+                                       rdfs:label "Unit"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class ;
+                                              rdfs:isDefinedBy "http://www.w3.org/2004/02/skos/core#" ;
+                                              rdfs:label "Concept" .
+
+
+###  https://schema.org/Country
+<https://schema.org/Country> rdf:type owl:Class ;
+                             rdfs:isDefinedBy <https://schema.org/> ;
+                             rdfs:label "Country"@en .
+
+
+###  https://schema.org/Organization
+<https://schema.org/Organization> rdf:type owl:Class ;
+                                  rdfs:isDefinedBy <https://schema.org/> ;
+                                  rdfs:label "Organization" .
+
+
+###  https://schema.org/Person
+<https://schema.org/Person> rdf:type owl:Class ;
+                            rdfs:isDefinedBy <https://schema.org/> ;
+                            rdfs:label "Person"@en .
+
+
+###  https://schema.org/ScholarlyArticle
+<https://schema.org/ScholarlyArticle> rdf:type owl:Class ;
+                                      rdfs:isDefinedBy <https://schema.org/> ;
+                                      rdfs:label "Scholarly Article" .
+
+
+###  https://w3id.org/solar/o/core#BandGap
+:BandGap rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty <http://qudt.org/2.1/schema/qudt/unit> ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ;
+         rdfs:comment "Energy difference between the nonconductive and the conductive state of a material"@en ;
+         rdfs:label "Band Gap"@en .
+
+
+###  https://w3id.org/solar/o/core#Condition
+:Condition rdf:type owl:Class ;
+           rdfs:comment "Procedure that is varied in order to estimate a variable's effect by comparison with a control condition"@en ;
+           rdfs:label "Condition"@en .
+
+
+###  https://w3id.org/solar/o/core#ConversionMetric
+:ConversionMetric rdf:type owl:Class ;
+                  rdfs:comment "The conversion of the given units to desired units for any quantity to be measured"@en ;
+                  rdfs:label "Conversion Metric"@en .
+
+
+###  https://w3id.org/solar/o/core#ElectrochemicalConfiguration
+:ElectrochemicalConfiguration rdf:type owl:Class ;
+                              rdfs:subClassOf :Condition ;
+                              rdfs:comment "Arrangement or setup of electrodes, electrolytes, and electrocatalysts within an electrochemical cell or reactor" ;
+                              rdfs:label "Electrochemical Configuration"@en .
+
+
+###  https://w3id.org/solar/o/core#ElectrochemicalMetric
+:ElectrochemicalMetric rdf:type owl:Class ;
+                       rdfs:comment "Measures from a electrochemical experiment"@en ;
+                       rdfs:label "Electrochemical Metric"@en .
+
+
+###  https://w3id.org/solar/o/core#ExperimentExecution
+:ExperimentExecution rdf:type owl:Class ;
+                     rdfs:comment "A specific execution of an experiment"@en ;
+                     rdfs:label "Experiment Execution"@en .
+
+
+###  https://w3id.org/solar/o/core#IlluminatedArea
+:IlluminatedArea rdf:type owl:Class ;
+                 rdfs:comment "The surface area in which a light source applies"@en ;
+                 rdfs:label "Illuminated Area"@en .
+
+
+###  https://w3id.org/solar/o/core#Input
+:Input rdf:type owl:Class ;
+       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasBandGap ;
+                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasChemical ;
+                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                       ] ;
+       rdfs:comment "Chemical substance that is used as an input of an experiment execution"@en ;
+       rdfs:label "Input"@en .
+
+
+###  https://w3id.org/solar/o/core#Irradiance
+:Irradiance rdf:type owl:Class ;
+            rdfs:comment "Radiant power of all wavelengths incident from all upward directions on a small element of surface containing the point under consideration divided by the area of the element"@en ;
+            rdfs:label "Irradiance"@en .
+
+
+###  https://w3id.org/solar/o/core#Lamp
+:Lamp rdf:type owl:Class ;
+      rdfs:comment "A devide that generates heat, light, or any other form of radiation"@en ;
+      rdfs:label "Lamp"@en .
+
+
+###  https://w3id.org/solar/o/core#MonochromaticLight
+:MonochromaticLight rdf:type owl:Class ;
+                    rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0400065> ;
+                    owl:disjointWith :SolarSimulatorLight ,
+                                     :UltravioletVisibleLight ;
+                    rdfs:comment "A light source of a single wavelength"@en ;
+                    rdfs:label "Monochromatic Light Source"@en .
+
+
+###  https://w3id.org/solar/o/core#OperationModeCondition
+:OperationModeCondition rdf:type owl:Class ;
+                        rdfs:subClassOf :Condition ;
+                        rdfs:comment "The condition whether the operation is perfomed in batch-mode or continuous-mode"@en ;
+                        rdfs:label "Operation Mode Condition"@en .
+
+
+###  https://w3id.org/solar/o/core#Output
+:Output rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasExperimentExecution ;
+                          owl:minCardinality "1"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty <http://qudt.org/2.1/schema/qudt/unit> ;
+                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasChemical ;
+                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                        ] ;
+        rdfs:comment "Chemical substance that is produced as a result of an experiment execution"@en ;
+        rdfs:label "Output"@en .
+
+
+###  https://w3id.org/solar/o/core#Power
+:Power rdf:type owl:Class ;
+       rdfs:comment "The amount of energy transferred or converted per unit time"@en ;
+       rdfs:label "Power"@en .
+
+
+###  https://w3id.org/solar/o/core#PressureCondition
+:PressureCondition rdf:type owl:Class ;
+                   rdfs:subClassOf :Condition ;
+                   rdfs:comment "The pressure condition under which the experiment execution is carried out"@en ;
+                   rdfs:label "Pressure Condition"@en .
+
+
+###  https://w3id.org/solar/o/core#ReactionMediumCondition
+:ReactionMediumCondition rdf:type owl:Class ;
+                         rdfs:subClassOf :Condition ;
+                         rdfs:comment "The medium used for the reaction of the experiment execution"@en ;
+                         rdfs:label "Reaction Medium Condition"@en .
+
+
+###  https://w3id.org/solar/o/core#ReactionTimeCondition
+:ReactionTimeCondition rdf:type owl:Class ;
+                       rdfs:subClassOf :Condition ;
+                       rdfs:comment "The measure of time that the experiment execution takes"@en ;
+                       rdfs:label "Reaction Time Condition"@en .
+
+
+###  https://w3id.org/solar/o/core#ReactorCondition
+:ReactorCondition rdf:type owl:Class ;
+                  rdfs:subClassOf :Condition ;
+                  rdfs:comment "The condition of the reactor devide that performs the process of a photocatalysis reaction" ;
+                  rdfs:label "Reactor Condition" .
+
+
+###  https://w3id.org/solar/o/core#ReactorVolumeCondition
+:ReactorVolumeCondition rdf:type owl:Class ;
+                        rdfs:subClassOf :ReactorCondition ;
+                        rdfs:comment "Volume of the reactor used in an experiment" ;
+                        rdfs:label "Reactor Volume Condition" .
+
+
+###  https://w3id.org/solar/o/core#ResidenceTimeCondition
+:ResidenceTimeCondition rdf:type owl:Class ;
+                        rdfs:subClassOf :ReactorCondition ;
+                        rdfs:comment "Total time spent inside a reactor" ;
+                        rdfs:label "Residence Time Condition" .
+
+
+###  https://w3id.org/solar/o/core#Role
+:Role rdf:type owl:Class ;
+      rdfs:comment "A role is particular behaviour which a material entity may exhibit."@en ;
+      rdfs:label "Role"@en ;
+      rdfs:seeAlso <http://purl.obolibrary.org/obo/CHEBI_50906> .
+
+
+###  https://w3id.org/solar/o/core#SolarSimulatorLight
+:SolarSimulatorLight rdf:type owl:Class ;
+                     rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0400065> ;
+                     owl:disjointWith :UltravioletVisibleLight ;
+                     rdfs:comment "A light source that replicates the solar radiation"@en ;
+                     rdfs:label "Solar Simulator Light Source"@en .
+
+
+###  https://w3id.org/solar/o/core#SurfaceArea
+:SurfaceArea rdf:type owl:Class ;
+             rdfs:comment "The area or region used in the experiment execution"@en ;
+             rdfs:label "Surface Area"@en .
+
+
+###  https://w3id.org/solar/o/core#TemperatureCondition
+:TemperatureCondition rdf:type owl:Class ;
+                      rdfs:subClassOf :Condition ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty <http://qudt.org/2.1/schema/qudt/unit> ;
+                                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                      ] ;
+                      rdfs:comment "The measure of temperature in which the experiment execution is performed"@en ;
+                      rdfs:label "Temperature Condition"@en .
+
+
+###  https://w3id.org/solar/o/core#UltravioletVisibleLight
+:UltravioletVisibleLight rdf:type owl:Class ;
+                         rdfs:subClassOf <http://purl.obolibrary.org/obo/OBI_0400065> ;
+                         rdfs:comment "A light source that includes the segment of the elctromagnetic spectrum that the human eye can view"@en ;
+                         rdfs:label "Ultraviolet Visible Light Source"@en .
+
+
+###  https://w3id.org/solar/o/core#Wavelength
+:Wavelength rdf:type owl:Class ;
+            rdfs:comment "A physical quality which is equal to the distance between repeating units of a wave pattern."@en ;
+            rdfs:label "Wavelength"@en .
+
+
+###  https://w3id.org/solar/o/core#pHCondition
+:pHCondition rdf:type owl:Class ;
+             rdfs:subClassOf :Condition ;
+             rdfs:isDefinedBy "The measure of pH in which the experiment execution is carried out"@en ;
+             rdfs:label "pH Condition"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/solar/o/core#BatchMode
+:BatchMode rdf:type owl:NamedIndividual ,
+                    :OperationModeCondition ;
+           rdfs:comment "Operation mode in which nothing is added or removed until the end of the reaction"@en ;
+           rdfs:label "Batch Mode"@en .
+
+
+###  https://w3id.org/solar/o/core#Catalyst
+:Catalyst rdf:type owl:NamedIndividual ,
+                   :Role ;
+          rdfs:comment "A substance that increases the rate of a reaction without modifying the overall standard Gibbs energy change in the reaction"@en ;
+          rdfs:label "Catalyst"@en ;
+          rdfs:seeAlso <http://purl.obolibrary.org/obo/CHEBI_35223> .
+
+
+###  https://w3id.org/solar/o/core#Co-catalyst
+:Co-catalyst rdf:type owl:NamedIndividual ,
+                      :Role ;
+             rdfs:comment "A substance or agent that brings about catalysis in conjunction with one or more others"@en ;
+             rdfs:label "Co-catalyst"@en .
+
+
+###  https://w3id.org/solar/o/core#ContinuousMode
+:ContinuousMode rdf:type owl:NamedIndividual ,
+                         :OperationModeCondition ;
+                rdfs:comment "Operation mode in which inlet and outlet streams flow continuously during the reaction"@en ;
+                rdfs:label "Continuous Mode"@en .
+
+
+###  https://w3id.org/solar/o/core#Dopant
+:Dopant rdf:type owl:NamedIndividual ,
+                 :Role ;
+        rdfs:comment "Charge-transfer agent used to generate, by oxidation or reduction, positive or negative charges in an intrinsically conducting polymer"@en ;
+        rdfs:isDefinedBy <https://www.old.goldbook.iupac.org/index.html> ;
+        rdfs:label "Dopant"@en .
+
+
+###  https://w3id.org/solar/o/core#DoubleCell
+:DoubleCell rdf:type owl:NamedIndividual ,
+                     :ElectrochemicalConfiguration ;
+            rdfs:comment "A \"double cell\" configuration refers to a setup involving two compartments or cells connected by an electrolyte." ;
+            rdfs:label "Double Cell"@en .
+
+
+###  https://w3id.org/solar/o/core#FaradaicEfficiency
+:FaradaicEfficiency rdf:type owl:NamedIndividual ,
+                             :ConversionMetric ;
+                    rdfs:comment "Describes the efficiency with which charge (electrons) is transferred in a system facilitating an electrochemical reaction"@en ;
+                    rdfs:label "Faradaic Efficiency"@en .
+
+
+###  https://w3id.org/solar/o/core#Fixed-bedReactor
+:Fixed-bedReactor rdf:type owl:NamedIndividual ,
+                           :ReactorCondition ;
+                  rdfs:comment "Reactor in which the catalyst is stationary (usually packed in a tube) and the reactants pass over the catalyst" ;
+                  rdfs:label "Fixed-bed Reactor"@en .
+
+
+###  https://w3id.org/solar/o/core#FlowCell
+:FlowCell rdf:type owl:NamedIndividual ,
+                   :ElectrochemicalConfiguration ;
+          rdfs:comment "Electrochemical cell in which analyte solution flows at a constant velocity through stationary tubular electrode(s)." ;
+          rdfs:label "Flow Cell"@en .
+
+
+###  https://w3id.org/solar/o/core#Fluidised-bedReactor
+:Fluidised-bedReactor rdf:type owl:NamedIndividual ,
+                               :ReactorCondition ;
+                      rdfs:comment "A type of reactor with a bed of particles through which a gas flows at a rate sufficient to float (fluidize) the particles, though not entrain them. The container is usually cylindrical with a permeable plate at the bottom for passage of the gas. Such fluidization results in very good heat and mass transfer for catalytic reactions (fluidized catalyst) and sand bath heaters (fluidized sand). In a fluidized bed, the temperature is approximately uniform throughout, although mixing of gas and solid is frequently incomplete." ;
+                      rdfs:label "Fluidised-bed Reactor"@en .
+
+
+###  https://w3id.org/solar/o/core#FluorescentLamp
+:FluorescentLamp rdf:type owl:NamedIndividual ,
+                          :Lamp ;
+                 rdfs:comment "A fluorescent lamp generates light from collisions in a hot gas ('plasma') of free accelerated electrons with atoms– typically mercury – in which electrons are bumped up to higher energy levels and then fall back while emitting at two UV emission lines (254 nm and 185 nm)." ;
+                 rdfs:label "Fluorescent Lamp"@en .
+
+
+###  https://w3id.org/solar/o/core#GasMedium
+:GasMedium rdf:type owl:NamedIndividual ,
+                    :ReactionMediumCondition ;
+           rdfs:comment "Reaction medium that is composed of a gas"@en ;
+           rdfs:label "Gas Medium"@en .
+
+
+###  https://w3id.org/solar/o/core#HalogenLamp
+:HalogenLamp rdf:type owl:NamedIndividual ,
+                      :Lamp ;
+             rdfs:comment "Incandescent lamp that generates light by passing an electric current through a thin filament wire (usually of wolfram) until it is extremely hot." ;
+             rdfs:label "Halogen Lamp"@en .
+
+
+###  https://w3id.org/solar/o/core#LEDLamp
+:LEDLamp rdf:type owl:NamedIndividual ,
+                  :Lamp ;
+         rdfs:comment "This type of lamp produces light by passing the electric current through a semiconducting material—the diode—which then emits photons (light) through the principle of electroluminescence." ;
+         rdfs:label "LED Lamp"@en .
+
+
+###  https://w3id.org/solar/o/core#LiquidMedium
+:LiquidMedium rdf:type owl:NamedIndividual ,
+                       :ReactionMediumCondition ;
+              rdfs:comment "Reaction medium that is composed of a liquid"@en ;
+              rdfs:label "Liquid Medium"@en .
+
+
+###  https://w3id.org/solar/o/core#MembraneReactor
+:MembraneReactor rdf:type owl:NamedIndividual ,
+                          :ReactorCondition ;
+                 rdfs:comment "A reactor that combines a catalyst and a membrane to improve selectivity or to overcome equilibrium limitations. One product can be selectively removed through the membrane or the feed rate of one reactant through the membrane can be controlled." ;
+                 rdfs:label "Membrane Reactor"@en .
+
+
+###  https://w3id.org/solar/o/core#Mercury-XenonLamp
+:Mercury-XenonLamp rdf:type owl:NamedIndividual ,
+                            :Lamp ;
+                   rdfs:comment "Lamp that contains a tightly controlled mixture of xenon gas and mercury, given them the combined UV spectral lines of an Hg lamp with the IR spectral lines of a Xe lamp." ;
+                   rdfs:label "Mercury-Xenon Lamp"@en .
+
+
+###  https://w3id.org/solar/o/core#MercuryLamp
+:MercuryLamp rdf:type owl:NamedIndividual ,
+                      :Lamp ;
+             rdfs:comment "Gas-discharge lamp that uses an electric arc through vaporized mercury to produce light." ;
+             rdfs:label "Mercury Lamp"@en .
+
+
+###  https://w3id.org/solar/o/core#MonolithicReactor
+:MonolithicReactor rdf:type owl:NamedIndividual ,
+                            :ReactorCondition ;
+                   rdfs:comment "Reactors filled with monoliths that are either made of porous catalytic material or the catalytic material is deposited (washcoated) in the channels of an inert monolithic support." ;
+                   rdfs:label "Monolithic Reactor"@en .
+
+
+###  https://w3id.org/solar/o/core#OpticalFiberReactor
+:OpticalFiberReactor rdf:type owl:NamedIndividual ,
+                              :ReactorCondition ;
+                     rdfs:comment "Reactor that incorporates optical fibers as an integral part of the reaction system." ;
+                     rdfs:label "Optical Fiber Reactor"@en .
+
+
+###  https://w3id.org/solar/o/core#OtherLamp
+:OtherLamp rdf:type owl:NamedIndividual ,
+                    :Lamp ;
+           rdfs:comment "Additional lamps that are not fluorescent, Mercury, Mercury-Xenon, Xenon, halogen, Tungsten, Tungsten-Halide or solar simulator lamps." ;
+           rdfs:label "Other Lamp"@en .
+
+
+###  https://w3id.org/solar/o/core#Overpotential
+:Overpotential rdf:type owl:NamedIndividual ,
+                        :ElectrochemicalMetric ;
+               rdfs:comment "Deviation of the potential of an electrode from its equilibrium value required to cause a given current to flow through the electrode." ;
+               rdfs:label "Overpotential"@en .
+
+
+###  https://w3id.org/solar/o/core#Reagent
+:Reagent rdf:type owl:NamedIndividual ,
+                  :Role ;
+         rdfs:comment "A substance used in a chemical reaction to detect, measure, examine, or produce other substances."@en ;
+         rdfs:label "Reagent"@en ;
+         rdfs:seeAlso <http://purl.obolibrary.org/obo/CHEBI_33893> .
+
+
+###  https://w3id.org/solar/o/core#SingleCell
+:SingleCell rdf:type owl:NamedIndividual ,
+                     :ElectrochemicalConfiguration ;
+            rdfs:comment "Configuration composed of two electrodes (anode and cathode) immersed in an electrolyte solution and connected through an external circuit." ;
+            rdfs:label "Single Cell"@en .
+
+
+###  https://w3id.org/solar/o/core#SlurryReactor
+:SlurryReactor rdf:type owl:NamedIndividual ,
+                        :ReactorCondition ;
+               rdfs:comment "Reactor in which a finely-divided solid catalyst is suspended in a reactant liquid or reactant solution." ;
+               rdfs:label "Slurry Reactor"@en .
+
+
+###  https://w3id.org/solar/o/core#SolarSimulatorLamp
+:SolarSimulatorLamp rdf:type owl:NamedIndividual ,
+                             :Lamp ;
+                    rdfs:comment "Lamp that simulates the solar light spectrum." ;
+                    rdfs:label "Solar Simulator Lamp" .
+
+
+###  https://w3id.org/solar/o/core#SolarToFuel
+:SolarToFuel rdf:type owl:NamedIndividual ,
+                      :ConversionMetric ;
+             rdfs:comment "A function of the operating temperature and solar concentration ratio"@en ;
+             rdfs:label "Solar To Fuel"@en .
+
+
+###  https://w3id.org/solar/o/core#SolarToHydrogen
+:SolarToHydrogen rdf:type owl:NamedIndividual ,
+                          :ConversionMetric ;
+                 rdfs:comment "Metric that refers to the efficiency of converting solar energy into hydrogen energy. It is a measure of how effectively solar energy is utilized to produce hydrogen through various processes such as photovoltaic-electrolysis (PV-EC) and photoelectrochemistry (PEC)." ;
+                 rdfs:label "Solar To Hydrogen"@en .
+
+
+###  https://w3id.org/solar/o/core#StackCell
+:StackCell rdf:type owl:NamedIndividual ,
+                    :ElectrochemicalConfiguration ;
+           rdfs:comment "Individual cells stacked to achieve a higher voltage and power." ;
+           rdfs:label "Stack Cell"@en .
+
+
+###  https://w3id.org/solar/o/core#Tungsten-HalideLamp
+:Tungsten-HalideLamp rdf:type owl:NamedIndividual ,
+                              :Lamp ;
+                     rdfs:comment "Lamp that contain a tungsten filament and halogen in the gas, that interact when heated to form tungsten halide." ;
+                     rdfs:label "Tungsten-Halide Lamp"@en .
+
+
+###  https://w3id.org/solar/o/core#TungstenLamp
+:TungstenLamp rdf:type owl:NamedIndividual ,
+                       :Lamp ;
+              rdfs:comment "A lamp where a tungsten filament is heated to temperatures where visible light is emitted by resistance heating." ;
+              rdfs:label "Tungsten Lamp"@en .
+
+
+###  https://w3id.org/solar/o/core#XenonLamp
+:XenonLamp rdf:type owl:NamedIndividual ,
+                    :Lamp ;
+           rdfs:comment "An incandescent light bulb filled with xenon gas to improve life span or efficiency" ;
+           rdfs:label "Xenon Lamp"@en .
+
+
+###  https://w3id.org/solar/o/core#192-280WL
+<https://w3id.org/solar/o/core#192-280WL> rdf:type owl:NamedIndividual ,
+                                                   :Wavelength ;
+                                          rdfs:comment "Wavelength range of 192 to 280 nm"@en ;
+                                          rdfs:label "192-280 Wavelength"@en .
+
+
+###  https://w3id.org/solar/o/core#192-780WL
+<https://w3id.org/solar/o/core#192-780WL> rdf:type owl:NamedIndividual ,
+                                                   :Wavelength ;
+                                          rdfs:comment "Wavelength range of 192 to 780 nm"@en ;
+                                          rdfs:label "192-780 Wavelength"@en .
+
+
+###  https://w3id.org/solar/o/core#280-315WL
+<https://w3id.org/solar/o/core#280-315WL> rdf:type owl:NamedIndividual ,
+                                                   :Wavelength ;
+                                          rdfs:comment "Wavelength range of 280 to 315 nm"@en ;
+                                          rdfs:label "280-315 Wavelength"@en .
+
+
+###  https://w3id.org/solar/o/core#280-780WL
+<https://w3id.org/solar/o/core#280-780WL> rdf:type owl:NamedIndividual ,
+                                                   :Wavelength ;
+                                          rdfs:comment "Wavelength range of 280 to 780 nm"@en ;
+                                          rdfs:label "280-780 Wavelength"@en .
+
+
+###  https://w3id.org/solar/o/core#315-400WL
+<https://w3id.org/solar/o/core#315-400WL> rdf:type owl:NamedIndividual ,
+                                                   :Wavelength ;
+                                          rdfs:comment "Wavelength range of 315 to 400 nm"@en ;
+                                          rdfs:label "315-400 Wavelength"@en .
+
+
+###  https://w3id.org/solar/o/core#315-780WL
+<https://w3id.org/solar/o/core#315-780WL> rdf:type owl:NamedIndividual ,
+                                                   :Wavelength ;
+                                          rdfs:comment "Wavelength range of 315 to 780 nm"@en ;
+                                          rdfs:label "315-780 Wavelength"@en .
+
+
+###  https://w3id.org/solar/o/core#400-780WL
+<https://w3id.org/solar/o/core#400-780WL> rdf:type owl:NamedIndividual ,
+                                                   :Wavelength ;
+                                          rdfs:comment "Wavelength range of 400 to 780 nm"@en ;
+                                          rdfs:label "400-780 Wavelength"@en .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

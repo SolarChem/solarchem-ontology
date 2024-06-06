@@ -1,0 +1,226 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/solar/o/ec#"
+     xml:base="https://w3id.org/solar/o/ec"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://w3id.org/solar/o/ec#">
+        <owl:versionIRI rdf:resource="https://w3id.org/solar/o/ec/1.0.0"/>
+        <owl:imports rdf:resource="https://w3id.org/solar/o/core/1.0.0"/>
+        <terms:contributor>Daniel Garijo</terms:contributor>
+        <terms:contributor>Laura Collado</terms:contributor>
+        <terms:contributor>Miguel Tecedor</terms:contributor>
+        <terms:contributor>Víctor de la Peña</terms:contributor>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-10-11</terms:created>
+        <terms:creator>Ana Iglesias-Molina</terms:creator>
+        <terms:description xml:lang="en">This ontology represents the execution of experiments related to electrocatalysis, photocatalysis and photoelectrocatalysis with inputs, outputs, and experimental conditions.</terms:description>
+        <terms:license>http://purl.org/NET/rdflicense/cc-by4.0</terms:license>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-10-29</terms:modified>
+        <terms:publisher rdf:resource="https://oeg.fi.upm.es/"/>
+        <terms:title xml:lang="en">The SolarChem Ontology: Electrocatalysis Experiments</terms:title>
+        <vann:preferredNamespacePrefix>solarec</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>https://w3id.org/solar/o/ec#</vann:preferredNamespaceUri>
+        <owl:versionInfo>v1.0.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/author -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/author"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/publisher -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/solar/o/core#ElectrochemicalMetric -->
+
+
+    <owl:Class rdf:about="https://w3id.org/solar/o/core#ElectrochemicalMetric"/>
+    
+
+
+    <!-- https://w3id.org/solar/o/core#ExperimentExecution -->
+
+
+    <owl:Class rdf:about="https://w3id.org/solar/o/core#ExperimentExecution">
+        <rdfs:label xml:lang="en">Experiment Execution</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/solar/o/ec#ElectrocatalysisExperiment -->
+
+
+    <owl:Class rdf:about="https://w3id.org/solar/o/ec#ElectrocatalysisExperiment">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/solar/o/core#ExperimentExecution"/>
+        <rdfs:comment xml:lang="en">Experiment of a catalytic process involving oxidation and reduction reactions through the direct transfer of electrons</rdfs:comment>
+        <rdfs:label xml:lang="en">Electrocatalysis Experiment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/solar/o/pec#ElectrochemicalMetric -->
+
+
+    <owl:Class rdf:about="https://w3id.org/solar/o/pec#ElectrochemicalMetric">
+        <rdfs:comment>Metric specific of electrochemical or photoelectrochemical reactions</rdfs:comment>
+        <rdfs:label xml:lang="en">Electrochemical Metric</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/solar/o/ec#TafelSlope -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/ec#TafelSlope">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/core#ElectrochemicalMetric"/>
+        <rdfs:comment xml:lang="en">A parameter that quantifies the amount of electrochemical driving force required to produce a logarithmic increase in the observed current</rdfs:comment>
+        <rdfs:label xml:lang="en">Tafel Slope</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/solar/o/ec#TurnOverFrequency -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/ec#TurnOverFrequency">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/core#ElectrochemicalMetric"/>
+        <rdfs:comment xml:lang="en">Number of photoinduced transformations (product formed or reactant consumed), per catalytic site and per time period.</rdfs:comment>
+        <rdfs:label xml:lang="en">Turn Over Frequency</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

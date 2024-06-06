@@ -1,0 +1,180 @@
+@prefix : <https://w3id.org/solar/o/pc#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/solar/o/pc#> .
+
+<https://w3id.org/solar/o/pc#> rdf:type owl:Ontology ;
+                                owl:versionIRI <https://w3id.org/solar/o/pc/1.0.0> ;
+                                owl:imports <https://w3id.org/solar/o/core/1.0.0> ;
+                                <http://purl.org/dc/terms/contributor> "Daniel Garijo" ,
+                                                                       "Laura Collado" ,
+                                                                       "Miguel Tecedor" ,
+                                                                       "Víctor de la Peña" ;
+                                <http://purl.org/dc/terms/created> "2022-09-25"^^xsd:date ;
+                                <http://purl.org/dc/terms/creator> "Ana Iglesias-Molina" ,
+                                                                   "Oier Beaskoetxea" ;
+                                <http://purl.org/dc/terms/description> "This ontology represents the execution of experiments related to electrocatalysis, photocatalysis and photoelectrocatalysis with inputs, outputs, and experimental conditions."@en ;
+                                <http://purl.org/dc/terms/license> "http://purl.org/NET/rdflicense/cc-by4.0" ;
+                                <http://purl.org/dc/terms/modified> "2023-10-29"^^xsd:date ;
+                                <http://purl.org/dc/terms/publisher> <https://oeg.fi.upm.es/> ;
+                                <http://purl.org/dc/terms/title> "The SolarChem Ontology: Photocatalysis Experiments"@en ;
+                                <http://purl.org/vocab/vann/preferredNamespacePrefix> "solarpc" ;
+                                <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/solar/o/pc#" ;
+                                owl:versionInfo "v1.0.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/author
+<http://purl.org/dc/terms/author> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/solar/o/pc#reactorVolume
+:reactorVolume rdf:type owl:DatatypeProperty ;
+               rdfs:domain :ReactorCondition ;
+               rdfs:comment "Quantitative measurement of the volume of a reactor in an experiment"@en ;
+               rdfs:label "reactor volume"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/solar/o/core#Condition
+<https://w3id.org/solar/o/core#Condition> rdf:type owl:Class ;
+                                          rdfs:label "Condition"@en .
+
+
+###  https://w3id.org/solar/o/core#ConversionMetric
+<https://w3id.org/solar/o/core#ConversionMetric> rdf:type owl:Class ;
+                                                 rdfs:comment "The conversion of the given units to desired units for any quantity to be measured"@en ;
+                                                 rdfs:label "Conversion Metric"@en .
+
+
+###  https://w3id.org/solar/o/core#ExperimentExecution
+<https://w3id.org/solar/o/core#ExperimentExecution> rdf:type owl:Class ;
+                                                    rdfs:label "Experiment Execution"@en .
+
+
+###  https://w3id.org/solar/o/core#Role
+<https://w3id.org/solar/o/core#Role> rdf:type owl:Class ;
+                                     rdfs:label "Role"@en .
+
+
+###  https://w3id.org/solar/o/pc#PhotocatalysisExperiment
+:PhotocatalysisExperiment rdf:type owl:Class ;
+                          rdfs:subClassOf <https://w3id.org/solar/o/core#ExperimentExecution> ;
+                          rdfs:comment "Experiment that measures the change in the rate of a chemical transformation under the action of light in the presence of a catalyst which absorbs light and is involved in the chemical reaction"@en ;
+                          rdfs:label "Photocatalysis Experiment"@en .
+
+
+###  https://w3id.org/solar/o/pc#ReactorCondition
+:ReactorCondition rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/solar/o/pc#ApparentQuantumYield
+:ApparentQuantumYield rdf:type owl:NamedIndividual ,
+                               <https://w3id.org/solar/o/core#ConversionMetric> ;
+                      rdfs:comment "The ratio of the number of electrons participating in the reaction to the total number of incident photons under a specific wavelength condition"@en ;
+                      rdfs:label "Apparent Quantum Yield"@en .
+
+
+###  https://w3id.org/solar/o/pc#Dye
+:Dye rdf:type owl:NamedIndividual ,
+              <https://w3id.org/solar/o/core#Role> ;
+     rdfs:comment "The term dye refers to compounds which can impart color to a substrate when applied in solution from either aqueous or organic solvents. The substrates include textiles, plastics, polymers, etc. Both the applications to materials and color constitutions of dyes involve essentially chemical principles. Dyes and pigments are both commonly applied as a coloring material, but they are distinguished on the basis of their solubility either in water or organic solvents; therefore dyes are soluble, whereas pigments are insoluble"@en ;
+     rdfs:isDefinedBy <https://doi.org/10.1007/978-1-4419-8071-7_182> ;
+     rdfs:label "Dye"@en ;
+     rdfs:seeAlso <http://purl.obolibrary.org/obo/CHEBI_37958> .
+
+
+###  https://w3id.org/solar/o/pc#PhotonicEfficiency
+:PhotonicEfficiency rdf:type owl:NamedIndividual ,
+                             <https://w3id.org/solar/o/core#ConversionMetric> ;
+                    rdfs:comment "Ratio of the rate of the photoreaction measured for a specified time interval (usually the initial condi- tions) to the rate of incident photons within a defined wavelength interval inside the irradiation window of the reactor"@en ;
+                    rdfs:label "Photonic Efficiency"@en .
+
+
+###  https://w3id.org/solar/o/pc#QuantumYield
+:QuantumYield rdf:type owl:NamedIndividual ,
+                       <https://w3id.org/solar/o/core#ConversionMetric> ;
+              rdfs:comment "The ratio of the number of photons emitted to the number of photons absorbed"@en ;
+              rdfs:label "Quantum Yield"@en .
+
+
+###  https://w3id.org/solar/o/pc#Reductant
+:Reductant rdf:type owl:NamedIndividual ,
+                    <https://w3id.org/solar/o/core#Role> ;
+           rdfs:comment "The element or compound in a reduction-oxidation (redox) reaction that donates an electron to another species"@en ;
+           rdfs:label "Reductant"@en ;
+           rdfs:seeAlso <http://purl.obolibrary.org/obo/CHEBI_63247> .
+
+
+###  https://w3id.org/solar/o/pc#Support
+:Support rdf:type owl:NamedIndividual ,
+                  <https://w3id.org/solar/o/core#Role> ;
+         rdfs:comment "In multiphase catalysts, the active catalytic material is often present as the minor component dispersed upon a support sometimes called a carrier. The support may be catalytically inert but it may contribute to the overall catalytic activity." ;
+         rdfs:label "Support"@en .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

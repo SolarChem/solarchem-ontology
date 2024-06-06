@@ -1,0 +1,429 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/solar/o/pec#"
+     xml:base="https://w3id.org/solar/o/pec"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://w3id.org/solar/o/pec#">
+        <owl:versionIRI rdf:resource="https://w3id.org/solar/o/pec/1.0.0"/>
+        <owl:imports rdf:resource="https://w3id.org/solar/o/core/1.0.0"/>
+        <terms:contributor>Daniel Garijo</terms:contributor>
+        <terms:contributor>Laura Collado</terms:contributor>
+        <terms:contributor>Miguel Tecedor</terms:contributor>
+        <terms:contributor>Oier Beaskoetxea</terms:contributor>
+        <terms:contributor>Víctor de la Peña</terms:contributor>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-10-11</terms:created>
+        <terms:creator>Ana Iglesias-Molina</terms:creator>
+        <terms:description xml:lang="en">This ontology represents the execution of experiments related to electrocatalysis, photocatalysis and photoelectrocatalysis with inputs, outputs, and experimental conditions.</terms:description>
+        <terms:license>http://purl.org/NET/rdflicense/cc-by4.0</terms:license>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-10-29</terms:modified>
+        <terms:publisher rdf:resource="https://oeg.fi.upm.es/"/>
+        <terms:title xml:lang="en">The SolarChem Ontology: Photoelectrocatalysis Experiments</terms:title>
+        <vann:preferredNamespacePrefix>solarpec</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>https://w3id.org/solar/o/pec#</vann:preferredNamespaceUri>
+        <owl:versionInfo>v1.0.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/author -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/author"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/publisher -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/solar/o/pec#hasQuantumEfficiencyMetric -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/solar/o/pec#hasQuantumEfficiencyMetric">
+        <rdfs:range rdf:resource="https://w3id.org/solar/o/pec#QuantumEfficiencyMetric"/>
+        <rdfs:label xml:lang="en">has quantum efficiency metric</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/solar/o/core#Condition -->
+
+
+    <owl:Class rdf:about="https://w3id.org/solar/o/core#Condition">
+        <rdfs:label xml:lang="en">Condition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/solar/o/core#ElectrochemicalConfiguration -->
+
+
+    <owl:Class rdf:about="https://w3id.org/solar/o/core#ElectrochemicalConfiguration">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/solar/o/core#Condition"/>
+        <rdfs:label xml:lang="en">Electrochemical Configuration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/solar/o/core#ElectrochemicalMetric -->
+
+
+    <owl:Class rdf:about="https://w3id.org/solar/o/core#ElectrochemicalMetric"/>
+    
+
+
+    <!-- https://w3id.org/solar/o/core#ExperimentExecution -->
+
+
+    <owl:Class rdf:about="https://w3id.org/solar/o/core#ExperimentExecution">
+        <rdfs:label xml:lang="en">Experiment Execution</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/solar/o/core#Role -->
+
+
+    <owl:Class rdf:about="https://w3id.org/solar/o/core#Role">
+        <rdfs:label xml:lang="en">Role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/solar/o/pec#PhotoelectrocatalysisExperiment -->
+
+
+    <owl:Class rdf:about="https://w3id.org/solar/o/pec#PhotoelectrocatalysisExperiment">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/solar/o/core#ExperimentExecution"/>
+        <rdfs:comment xml:lang="en">Experiment of a reaction based on the use of a semiconductor irradiated by light energy equal or greater than its band gap energy simultaneously biased by a gradient potential</rdfs:comment>
+        <rdfs:label xml:lang="en">Photoelectrocatalysis Experiment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/solar/o/pec#QuantumEfficiencyMetric -->
+
+
+    <owl:Class rdf:about="https://w3id.org/solar/o/pec#QuantumEfficiencyMetric">
+        <rdfs:comment xml:lang="en">The ratio of the number of carriers collected by the solar cell to the number of photons of a given energy incident on the solar cell</rdfs:comment>
+        <rdfs:label xml:lang="en">Quantum Efficiency Metric</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/solar/o/pec#ABPE -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/pec#ABPE">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/pec#QuantumEfficiencyMetric"/>
+        <rdfs:comment xml:lang="en">Applied Bias Photon-to-current Efficiency (ABPE): Used to describe the performance of the photoelectrodes. It is the difference between the power output in chemical fuel and any added electrical input power, divided by the solar power input</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://pubs.acs.org/doi/10.1021/jz501716g"/>
+        <rdfs:label xml:lang="en">Applied Bias Photon-to-Current Efficiency (ABPE)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/solar/o/pec#APCE -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/pec#APCE">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/pec#QuantumEfficiencyMetric"/>
+        <rdfs:comment xml:lang="en">A measure of how absorbed photons transform to current</rdfs:comment>
+        <rdfs:label xml:lang="en">Absorbed Photon-to-Current Efficiency (APCE)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/solar/o/pec#Anode -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/pec#Anode">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/core#Role"/>
+        <terms:description xml:lang="en">Electrode at which reduction takes place</terms:description>
+        <rdfs:label xml:lang="en">Anode</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/CHMO_0002931"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/solar/o/pec#Cathode -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/pec#Cathode">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/core#Role"/>
+        <rdfs:comment xml:lang="en">Electrode at which oxidation takes place</rdfs:comment>
+        <rdfs:label xml:lang="en">Cathode</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/CHMO_0002932"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/solar/o/pec#FieldFactor -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/pec#FieldFactor">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/core#ElectrochemicalMetric"/>
+        <rdfs:label xml:lang="en">Field Factor</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/solar/o/pec#IPCE -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/pec#IPCE">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/pec#QuantumEfficiencyMetric"/>
+        <rdfs:comment xml:lang="en">A measure of the ratio of the photocurrent (converted to an electron transfer rate) versus the rate of incident photons (converted from the calibrated power of a light source) as a function of wavelength</rdfs:comment>
+        <rdfs:label xml:lang="en">Incident Photon-to-Current Efficiency (IPCE)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/solar/o/pec#Onset -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/pec#Onset">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/core#ElectrochemicalMetric"/>
+        <rdfs:label xml:lang="en">Onset</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/solar/o/pec#Overlayer -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/pec#Overlayer">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/core#Role"/>
+        <rdfs:label xml:lang="en">Overlayer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/solar/o/pec#PEC -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/pec#PEC">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/core#ElectrochemicalConfiguration"/>
+        <rdfs:comment xml:lang="en">The configuration for a photoelectrocatalysis experiment</rdfs:comment>
+        <rdfs:label xml:lang="en">photoelectrocatalysis</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/solar/o/pec#PV-EC -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/pec#PV-EC">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/core#ElectrochemicalConfiguration"/>
+        <rdfs:comment xml:lang="en">The configuration for a photovoltaic-electrocatalysis experiment</rdfs:comment>
+        <rdfs:label xml:lang="en">photovoltaic-electrocatalysis</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/solar/o/pec#PV-PEC -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/pec#PV-PEC">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/core#ElectrochemicalConfiguration"/>
+        <rdfs:comment xml:lang="en">The configuration for a photovoltaic-photoelectrocatalysis experiment</rdfs:comment>
+        <rdfs:label xml:lang="en">photovoltaic-photoelectrocatalysis</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/solar/o/pec#Photoabsorber -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/pec#Photoabsorber">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/core#Role"/>
+        <rdfs:label xml:lang="en">Photoabsorber</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/solar/o/pec#Photocatalyst -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/pec#Photocatalyst">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/core#Role"/>
+        <rdfs:label xml:lang="en">Photocatalyst</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/solar/o/pec#PhotocurrentDensity -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/pec#PhotocurrentDensity">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/core#ElectrochemicalMetric"/>
+        <rdfs:comment xml:lang="en">The ratio of the photocurrent produced by the photoelectrode to the area irradiated by a sunlight</rdfs:comment>
+        <rdfs:label xml:lang="en">Photocurrent Density</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/solar/o/pec#Substrate -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/pec#Substrate">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/core#Role"/>
+        <rdfs:comment xml:lang="en">A substrate is a molecule that is consumed in the course of a biochemical reaction</rdfs:comment>
+        <rdfs:label xml:lang="en">Substrate</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://semanticscience.org/resource/SIO_010362"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/solar/o/pec#TransparentConductiveContact -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/pec#TransparentConductiveContact">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/core#Role"/>
+        <rdfs:label xml:lang="en">Transparent Conductive Contact</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+
