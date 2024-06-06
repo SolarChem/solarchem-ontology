@@ -469,6 +469,7 @@ solar:ConversionMetric rdf:type owl:Class ;
 ###  https://w3id.org/solar/o/core#ElectrochemicalConfiguration
 solar:ElectrochemicalConfiguration rdf:type owl:Class ;
                                    rdfs:subClassOf solar:Condition ;
+                                   rdfs:comment "Arrangement or setup of electrodes, electrolytes, and electrocatalysts within an electrochemical cell or reactor" ;
                                    rdfs:label "Electrochemical Configuration"@en .
 
 
@@ -602,7 +603,7 @@ solar:ResidenceTimeCondition rdf:type owl:Class ;
 
 ###  https://w3id.org/solar/o/core#Role
 solar:Role rdf:type owl:Class ;
-           dc:description "A role is particular behaviour which a material entity may exhibit."@en ;
+           rdfs:comment "A role is particular behaviour which a material entity may exhibit."@en ;
            rdfs:label "Role"@en ;
            rdfs:seeAlso <http://purl.obolibrary.org/obo/CHEBI_50906> .
 
@@ -696,6 +697,7 @@ solar:Dopant rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/solar/o/core#DoubleCell
 solar:DoubleCell rdf:type owl:NamedIndividual ,
                           solar:ElectrochemicalConfiguration ;
+                 rdfs:comment "A \"double cell\" configuration refers to a setup involving two compartments or cells connected by an electrolyte." ;
                  rdfs:label "Double Cell"@en .
 
 
@@ -706,15 +708,31 @@ solar:FaradaicEfficiency rdf:type owl:NamedIndividual ,
                          rdfs:label "Faradaic Efficiency"@en .
 
 
+###  https://w3id.org/solar/o/core#Fixed-bedReactor
+solar:Fixed-bedReactor rdf:type owl:NamedIndividual ,
+                                solar:ReactorCondition ;
+                       rdfs:comment "Reactor in which the catalyst is stationary (usually packed in a tube) and the reactants pass over the catalyst" ;
+                       rdfs:label "Fixed-bed Reactor"@en .
+
+
 ###  https://w3id.org/solar/o/core#FlowCell
 solar:FlowCell rdf:type owl:NamedIndividual ,
                         solar:ElectrochemicalConfiguration ;
+               rdfs:comment "Electrochemical cell in which analyte solution flows at a constant velocity through stationary tubular electrode(s)." ;
                rdfs:label "Flow Cell"@en .
+
+
+###  https://w3id.org/solar/o/core#Fluidised-bedReactor
+solar:Fluidised-bedReactor rdf:type owl:NamedIndividual ,
+                                    solar:ReactorCondition ;
+                           rdfs:comment "A type of reactor with a bed of particles through which a gas flows at a rate sufficient to float (fluidize) the particles, though not entrain them. The container is usually cylindrical with a permeable plate at the bottom for passage of the gas. Such fluidization results in very good heat and mass transfer for catalytic reactions (fluidized catalyst) and sand bath heaters (fluidized sand). In a fluidized bed, the temperature is approximately uniform throughout, although mixing of gas and solid is frequently incomplete." ;
+                           rdfs:label "Fluidised-bed Reactor"@en .
 
 
 ###  https://w3id.org/solar/o/core#FluorescentLamp
 solar:FluorescentLamp rdf:type owl:NamedIndividual ,
                                solar:Lamp ;
+                      rdfs:comment "A fluorescent lamp generates light from collisions in a hot gas ('plasma') of free accelerated electrons with atoms– typically mercury – in which electrons are bumped up to higher energy levels and then fall back while emitting at two UV emission lines (254 nm and 185 nm)." ;
                       rdfs:label "Fluorescent Lamp"@en .
 
 
@@ -728,12 +746,14 @@ solar:GasMedium rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/solar/o/core#HalogenLamp
 solar:HalogenLamp rdf:type owl:NamedIndividual ,
                            solar:Lamp ;
+                  rdfs:comment "Incandescent lamp that generates light by passing an electric current through a thin filament wire (usually of wolfram) until it is extremely hot." ;
                   rdfs:label "Halogen Lamp"@en .
 
 
 ###  https://w3id.org/solar/o/core#LEDLamp
 solar:LEDLamp rdf:type owl:NamedIndividual ,
                        solar:Lamp ;
+              rdfs:comment "This type of lamp produces light by passing the electric current through a semiconducting material—the diode—which then emits photons (light) through the principle of electroluminescence." ;
               rdfs:label "LED Lamp"@en .
 
 
@@ -744,27 +764,52 @@ solar:LiquidMedium rdf:type owl:NamedIndividual ,
                    rdfs:label "Liquid Medium"@en .
 
 
+###  https://w3id.org/solar/o/core#MembraneReactor
+solar:MembraneReactor rdf:type owl:NamedIndividual ,
+                               solar:ReactorCondition ;
+                      rdfs:comment "A reactor that combines a catalyst and a membrane to improve selectivity or to overcome equilibrium limitations. One product can be selectively removed through the membrane or the feed rate of one reactant through the membrane can be controlled." ;
+                      rdfs:label "Membrane Reactor"@en .
+
+
 ###  https://w3id.org/solar/o/core#Mercury-XenonLamp
 solar:Mercury-XenonLamp rdf:type owl:NamedIndividual ,
                                  solar:Lamp ;
+                        rdfs:comment "Lamp that contains a tightly controlled mixture of xenon gas and mercury, given them the combined UV spectral lines of an Hg lamp with the IR spectral lines of a Xe lamp." ;
                         rdfs:label "Mercury-Xenon Lamp"@en .
 
 
 ###  https://w3id.org/solar/o/core#MercuryLamp
 solar:MercuryLamp rdf:type owl:NamedIndividual ,
                            solar:Lamp ;
+                  rdfs:comment "Gas-discharge lamp that uses an electric arc through vaporized mercury to produce light." ;
                   rdfs:label "Mercury Lamp"@en .
+
+
+###  https://w3id.org/solar/o/core#MonolithicReactor
+solar:MonolithicReactor rdf:type owl:NamedIndividual ,
+                                 solar:ReactorCondition ;
+                        rdfs:comment "Reactors filled with monoliths that are either made of porous catalytic material or the catalytic material is deposited (washcoated) in the channels of an inert monolithic support." ;
+                        rdfs:label "Monolithic Reactor"@en .
+
+
+###  https://w3id.org/solar/o/core#OpticalFiberReactor
+solar:OpticalFiberReactor rdf:type owl:NamedIndividual ,
+                                   solar:ReactorCondition ;
+                          rdfs:comment "Reactor that incorporates optical fibers as an integral part of the reaction system." ;
+                          rdfs:label "Optical Fiber Reactor"@en .
 
 
 ###  https://w3id.org/solar/o/core#OtherLamp
 solar:OtherLamp rdf:type owl:NamedIndividual ,
                          solar:Lamp ;
+                rdfs:comment "Additional lamps that are not fluorescent, Mercury, Mercury-Xenon, Xenon, halogen, Tungsten, Tungsten-Halide or solar simulator lamps." ;
                 rdfs:label "Other Lamp"@en .
 
 
 ###  https://w3id.org/solar/o/core#Overpotential
 solar:Overpotential rdf:type owl:NamedIndividual ,
                              solar:ElectrochemicalMetric ;
+                    rdfs:comment "Deviation of the potential of an electrode from its equilibrium value required to cause a given current to flow through the electrode." ;
                     rdfs:label "Overpotential"@en .
 
 
@@ -779,12 +824,21 @@ solar:Reagent rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/solar/o/core#SingleCell
 solar:SingleCell rdf:type owl:NamedIndividual ,
                           solar:ElectrochemicalConfiguration ;
+                 rdfs:comment "Configuration composed of two electrodes (anode and cathode) immersed in an electrolyte solution and connected through an external circuit." ;
                  rdfs:label "Single Cell"@en .
+
+
+###  https://w3id.org/solar/o/core#SlurryReactor
+solar:SlurryReactor rdf:type owl:NamedIndividual ,
+                             solar:ReactorCondition ;
+                    rdfs:comment "Reactor in which a finely-divided solid catalyst is suspended in a reactant liquid or reactant solution." ;
+                    rdfs:label "Slurry Reactor"@en .
 
 
 ###  https://w3id.org/solar/o/core#SolarSimulatorLamp
 solar:SolarSimulatorLamp rdf:type owl:NamedIndividual ,
                                   solar:Lamp ;
+                         rdfs:comment "Lamp that simulates the solar light spectrum." ;
                          rdfs:label "Solar Simulator Lamp" .
 
 
@@ -798,30 +852,35 @@ solar:SolarToFuel rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/solar/o/core#SolarToHydrogen
 solar:SolarToHydrogen rdf:type owl:NamedIndividual ,
                                solar:ConversionMetric ;
+                      rdfs:comment "Metric that refers to the efficiency of converting solar energy into hydrogen energy. It is a measure of how effectively solar energy is utilized to produce hydrogen through various processes such as photovoltaic-electrolysis (PV-EC) and photoelectrochemistry (PEC)." ;
                       rdfs:label "Solar To Hydrogen"@en .
 
 
 ###  https://w3id.org/solar/o/core#StackCell
 solar:StackCell rdf:type owl:NamedIndividual ,
                          solar:ElectrochemicalConfiguration ;
+                rdfs:comment "Individual cells stacked to achieve a higher voltage and power." ;
                 rdfs:label "Stack Cell"@en .
 
 
 ###  https://w3id.org/solar/o/core#Tungsten-HalideLamp
 solar:Tungsten-HalideLamp rdf:type owl:NamedIndividual ,
                                    solar:Lamp ;
+                          rdfs:comment "Lamp that contain a tungsten filament and halogen in the gas, that interact when heated to form tungsten halide." ;
                           rdfs:label "Tungsten-Halide Lamp"@en .
 
 
 ###  https://w3id.org/solar/o/core#TungstenLamp
 solar:TungstenLamp rdf:type owl:NamedIndividual ,
                             solar:Lamp ;
+                   rdfs:comment "A lamp where a tungsten filament is heated to temperatures where visible light is emitted by resistance heating." ;
                    rdfs:label "Tungsten Lamp"@en .
 
 
 ###  https://w3id.org/solar/o/core#XenonLamp
 solar:XenonLamp rdf:type owl:NamedIndividual ,
                          solar:Lamp ;
+                rdfs:comment "An incandescent light bulb filled with xenon gas to improve life span or efficiency" ;
                 rdfs:label "Xenon Lamp"@en .
 
 
@@ -872,36 +931,6 @@ solar:XenonLamp rdf:type owl:NamedIndividual ,
                                                    solar:Wavelength ;
                                           rdfs:comment "Wavelength range of 400 to 780 nm"@en ;
                                           rdfs:label "400-780 Wavelength"@en .
-
-
-###  https://w3id.org/solar/o/core#Fixed-bedReactor
-solar:Fixed-bedReactor rdf:type owl:NamedIndividual, solar:ReactorCondition ;
-                         rdfs:label "Fixed-bed Reactor"@en.
-
-
-###  https://w3id.org/solar/o/core#Fluidised-bedReactor
-solar:Fluidised-bedReactor rdf:type owl:NamedIndividual , solar:ReactorCondition ;
-                             rdfs:label "Fluidised-bed Reactor"@en.
-
-
-###  https://w3id.org/solar/o/core#MembraneReactor
-solar:MembraneReactor rdf:type owl:NamedIndividual , solar:ReactorCondition ;
-                        rdfs:label "Membrane Reactor"@en.
-
-
-###  https://w3id.org/solar/o/core#MonolithicReactor
-solar:MonolithicReactor rdf:type owl:NamedIndividual , solar:ReactorCondition ;
-                          rdfs:label "Monolithic Reactor"@en.
-
-
-###  https://w3id.org/solar/o/core#OpticalFiberReactor
-solar:OpticalFiberReactor rdf:type owl:NamedIndividual , solar:ReactorCondition ;
-                            rdfs:label "Optical Fiber Reactor"@en.
-
-
-###  https://w3id.org/solar/o/core#SlurryReactor
-solar:SlurryReactor rdf:type owl:NamedIndividual , solar:ReactorCondition ;
-                      rdfs:label "Slurry Reactor"@en.
 
 
 #################################################################
