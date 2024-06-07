@@ -20,20 +20,20 @@
 <https://w3id.org/solar/o/pec#> rdf:type owl:Ontology ;
                                  owl:versionIRI <https://w3id.org/solar/o/pec/1.0.0> ;
                                  owl:imports <https://w3id.org/solar/o/core/1.0.0> ;
-                                 dc:contributor "Daniel Garijo" ,
-                                                "Laura Collado" ,
-                                                "Miguel Tecedor" ,
-                                                "Oier Beaskoetxea" ,
-                                                "Víctor de la Peña" ;
-                                 dc:created "2023-10-11"^^xsd:date ;
-                                 dc:creator "Ana Iglesias-Molina" ;
+                                 dc:contributor "Daniel Garijo, Universidad Politécnica de Madrid (0000-0003-0454-7145)" ,
+                                                 "Laura Collado, IMDEA Energía (0000-0003-0216-3797)" ,
+                                                 "Miguel Tecedor, IMDEA Energía (0000-0002-9664-4665)" ,
+                                                 "Víctor de la Peña, IMDEA Energía (0000-0001-5762-4787)" ;
+                                 dc:created "2025-06-07"^^xsd:date ;
+                                 dc:creator "Ana Iglesias-Molina, Universidad Politécnica de Madrid (0000-0001-5375-8024)" ;
                                  dc:description "This ontology represents the execution of experiments related to electrocatalysis, photocatalysis and photoelectrocatalysis with inputs, outputs, and experimental conditions."@en;
                                  dc:license "http://purl.org/NET/rdflicense/cc-by4.0" ;
-                                 dc:modified "2023-10-29"^^xsd:date ;
+                                 dc:modified "2024-06-07"^^xsd:date ;
                                  dc:publisher <https://oeg.fi.upm.es/> ;
                                  dc:title "The SolarChem Ontology: Photoelectrocatalysis Experiments"@en;
                                  vann:preferredNamespacePrefix "solarpec" ;
                                  vann:preferredNamespaceUri "https://w3id.org/solar/o/pec#" ;
+                                owl:priorVersion <https://w3id.org/solar/o/pec/0.7.0/> ;
                                  owl:versionInfo "v1.0.0" .
 
 #################################################################
@@ -90,6 +90,7 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/solar/o/pec#hasQuantumEfficiencyMetric
 solarpec:hasQuantumEfficiencyMetric rdf:type owl:ObjectProperty ;
+                                    rdfs:comment "The quantum efficiency metric related to the output in an experiment execution."@en ;
                                     rdfs:range solarpec:QuantumEfficiencyMetric ;
                                     rdfs:label "has quantum efficiency metric"@en.
 
@@ -139,7 +140,7 @@ solarpec:QuantumEfficiencyMetric rdf:type owl:Class ;
 ###  https://w3id.org/solar/o/pec#Anode
 solarpec:Anode rdf:type owl:NamedIndividual ,
                         solar:Role ;
-               dc:description "Electrode at which reduction takes place"@en;
+               rdfs:comment "Electrode at which reduction takes place"@en;
                rdfs:label "Anode"@en;
                rdfs:seeAlso <http://purl.obolibrary.org/obo/CHMO_0002931> .
 
@@ -155,6 +156,7 @@ solarpec:Cathode rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/solar/o/pec#Overlayer
 solarpec:Overlayer rdf:type owl:NamedIndividual ,
                             solar:Role ;
+                   rdfs:comment "A monolayer or less of adsorbed atoms or molecules"@en;
                    rdfs:label "Overlayer"@en.
 
 
@@ -182,12 +184,14 @@ solarpec:PV-PEC rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/solar/o/pec#Photoabsorber
 solarpec:Photoabsorber rdf:type owl:NamedIndividual ,
                                 solar:Role ;
+                       rdfs:comment "Material in a PV device absorbing photons to produce charge carriers (electrons and electron holes)"@en ;
                        rdfs:label "Photoabsorber"@en.
 
 
 ###  https://w3id.org/solar/o/pec#Photocatalyst
 solarpec:Photocatalyst rdf:type owl:NamedIndividual ,
                                 solar:Role ;
+                       rdfs:comment "Catalyst able to produce, upon absorption of light, chemical transformations of the reaction partners. The excited state of the photocatalyst repeatedly interacts with the reaction partners forming reaction intermediates and regenerates itself after each cycle of such interactions."@en ;
                        rdfs:label "Photocatalyst"@en.
 
 
@@ -202,12 +206,14 @@ solarpec:Substrate rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/solar/o/pec#TransparentConductiveContact
 solarpec:TransparentConductiveContact rdf:type owl:NamedIndividual ,
                                                solar:Role ;
+                                      rdfs:comment "Optically transparent electrode (OTE). An electrode used for in situ spectroelectrochemistry."@en ;
                                       rdfs:label "Transparent Conductive Contact"@en.
 
 
 ###  https://w3id.org/solar/o/pec#Onset
 solarpec:Onset rdf:type owl:NamedIndividual ,
                         solar:ElectrochemicalMetric ;
+               rdfs:comment "The highest (for cathodic reactions) or lowest (for anodic reactions such as the OER) potential values at which a reaction product is produced at a given electrode and defined conditions"@en ;
                rdfs:label "Onset"@en.
 
 
@@ -221,6 +227,7 @@ solarpec:PhotocurrentDensity rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/solar/o/pec#FieldFactor
 solarpec:FieldFactor rdf:type owl:NamedIndividual ,
                               solar:ElectrochemicalMetric ;
+                     rdfs:comment "Electrochemical cell in which analyte solution flows at a constant velocity Vf through stationary tubular electrode(s)"@en ;
                      rdfs:label "Field Factor"@en.
 
 
