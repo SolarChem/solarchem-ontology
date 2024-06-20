@@ -641,3 +641,39 @@ mappings:
       - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
       - [solar:hasChemical, http://www.wikidata.org/entity/Q47512~iri]
  
+  CO2_mol_g:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Output/CO2_mol_g/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, CO2, xsd:string]
+      - [qudt:numericValue, $(co2_prod_molg), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [solar:hasChemical, http://www.wikidata.org/entity/Q1997~iri]
+ 
+  CO2_mol_gh:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Output/CO2_mol_gh/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, CO2, xsd:string]
+      - [qudt:numericValue, $(co2_prod_molgh), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-GM-HR~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [solar:hasChemical, http://www.wikidata.org/entity/Q1998~iri]
+ 
+  CO2_mol_m2h:
+    sources:
+      - [data/catalystsdata.csv~csv]
+    subjects: https://w3id.org/solar/i/Output/CO2_mol_m2h/$(ID)
+    po:
+      - [a, solar:Output]
+      - [rdfs:label, CO2, xsd:string]
+      - [qudt:numericValue, $(co2_prod_molm2h), xsd:float]
+      - [qudt:unit, unit:MicroMOL-PER-M2-HR~iri]
+      - [prov:wasGeneratedBy, https://w3id.org/solar/i/ExpExec/$(ID)~iri]
+      - [solar:hasChemical, http://www.wikidata.org/entity/Q1999~iri]
+ 
