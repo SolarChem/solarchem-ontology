@@ -1,20 +1,20 @@
 <https://w3id.org/solar/o/core#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <https://w3id.org/solar/o/core#> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/solar/o/core/1.0.0> .
-<https://w3id.org/solar/o/core#> <http://purl.org/dc/terms/contributor> "Daniel Garijo" .
-<https://w3id.org/solar/o/core#> <http://purl.org/dc/terms/contributor> "Laura Collado" .
-<https://w3id.org/solar/o/core#> <http://purl.org/dc/terms/contributor> "Miguel Tecedor" .
-<https://w3id.org/solar/o/core#> <http://purl.org/dc/terms/contributor> "Víctor de la Peña" .
+<https://w3id.org/solar/o/core#> <http://purl.org/dc/terms/contributor> "Daniel Garijo, Universidad Politécnica de Madrid (0000-0003-0454-7145)" .
+<https://w3id.org/solar/o/core#> <http://purl.org/dc/terms/contributor> "Laura Collado, IMDEA Energía (0000-0003-0216-3797)" .
+<https://w3id.org/solar/o/core#> <http://purl.org/dc/terms/contributor> "Miguel Tecedor, IMDEA Energía (0000-0002-9664-4665)" .
+<https://w3id.org/solar/o/core#> <http://purl.org/dc/terms/contributor> "Víctor de la Peña, IMDEA Energía (0000-0001-5762-4787)" .
 <https://w3id.org/solar/o/core#> <http://purl.org/dc/terms/created> "2022-09-25"^^<http://www.w3.org/2001/XMLSchema#date> .
-<https://w3id.org/solar/o/core#> <http://purl.org/dc/terms/creator> "Ana Iglesias-Molina" .
-<https://w3id.org/solar/o/core#> <http://purl.org/dc/terms/creator> "Oier Beaskoetxea" .
+<https://w3id.org/solar/o/core#> <http://purl.org/dc/terms/creator> "Ana Iglesias-Molina, Universidad Politécnica de Madrid (0000-0001-5375-8024)" .
+<https://w3id.org/solar/o/core#> <http://purl.org/dc/terms/creator> "Oier Beaskoetxea, Universidad Politécnica de Madrid" .
 <https://w3id.org/solar/o/core#> <http://purl.org/dc/terms/description> "This ontology represents the execution of experiments related to electrocatalysis, photocatalysis and photoelectrocatalysis with inputs, outputs, and experimental conditions."@en .
 <https://w3id.org/solar/o/core#> <http://purl.org/dc/terms/license> "http://purl.org/NET/rdflicense/cc-by4.0" .
-<https://w3id.org/solar/o/core#> <http://purl.org/dc/terms/modified> "2023-10-29"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/solar/o/core#> <http://purl.org/dc/terms/modified> "2024-06-07"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/solar/o/core#> <http://purl.org/dc/terms/publisher> <https://oeg.fi.upm.es/> .
 <https://w3id.org/solar/o/core#> <http://purl.org/dc/terms/title> "The SolarChem Ontology" .
 <https://w3id.org/solar/o/core#> <http://purl.org/vocab/vann/preferredNamespacePrefix> "solar" .
 <https://w3id.org/solar/o/core#> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/solar/o/core#" .
-<https://w3id.org/solar/o/core#> <http://www.w3.org/2002/07/owl#priorVersion> <https://oeg-upm.github.io/solarchem-ontology/release/0.6.0/vocabulary/myDocumentation/doc/index-en.html> .
+<https://w3id.org/solar/o/core#> <http://www.w3.org/2002/07/owl#priorVersion> <https://w3id.org/solar/o/core/0.7.0/> .
 <https://w3id.org/solar/o/core#> <http://www.w3.org/2002/07/owl#versionInfo> "v1.0.0" .
 # 
 # 
@@ -314,6 +314,13 @@ _:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 <https://w3id.org/solar/o/core#crystalStructure> <http://www.w3.org/2000/01/rdf-schema#comment> "The type of crystal structure of the input of an experiment execution"@en .
 <https://w3id.org/solar/o/core#crystalStructure> <http://www.w3.org/2000/01/rdf-schema#label> "crystal structure"@en .
 # 
+# https://w3id.org/solar/o/core#selectivityPercentage
+<https://w3id.org/solar/o/core#selectivityPercentage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/solar/o/core#selectivityPercentage> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/solar/o/core#Output> .
+<https://w3id.org/solar/o/core#selectivityPercentage> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
+<https://w3id.org/solar/o/core#selectivityPercentage> <http://www.w3.org/2000/01/rdf-schema#comment> "Percentage of selectivity of a catalyst with respect to an output" .
+<https://w3id.org/solar/o/core#selectivityPercentage> <http://www.w3.org/2000/01/rdf-schema#label> "selectivity percentage" .
+# 
 # https://w3id.org/solar/o/pc#reactorVolume
 <https://w3id.org/solar/o/pc#reactorVolume> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://w3id.org/solar/o/pc#reactorVolume> <http://www.w3.org/2000/01/rdf-schema#comment> "The measurement of volume of the reactor used in an experiment execution"@en .
@@ -599,7 +606,7 @@ _:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://w3id.org/solar/o/core#pHCondition
 <https://w3id.org/solar/o/core#pHCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/solar/o/core#pHCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/solar/o/core#Condition> .
-<https://w3id.org/solar/o/core#pHCondition> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "The measure of pH in which the experiment execution is carried out"@en .
+<https://w3id.org/solar/o/core#pHCondition> <http://www.w3.org/2000/01/rdf-schema#comment> "The measure of pH in which the experiment execution is carried out"@en .
 <https://w3id.org/solar/o/core#pHCondition> <http://www.w3.org/2000/01/rdf-schema#label> "pH Condition"@en .
 # 
 # 

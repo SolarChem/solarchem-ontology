@@ -11,21 +11,21 @@
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/solar/o/core#">
         <owl:versionIRI rdf:resource="https://w3id.org/solar/o/core/1.0.0"/>
-        <terms:contributor>Daniel Garijo</terms:contributor>
-        <terms:contributor>Laura Collado</terms:contributor>
-        <terms:contributor>Miguel Tecedor</terms:contributor>
-        <terms:contributor>Víctor de la Peña</terms:contributor>
+        <terms:contributor>Daniel Garijo, Universidad Politécnica de Madrid (0000-0003-0454-7145)</terms:contributor>
+        <terms:contributor>Laura Collado, IMDEA Energía (0000-0003-0216-3797)</terms:contributor>
+        <terms:contributor>Miguel Tecedor, IMDEA Energía (0000-0002-9664-4665)</terms:contributor>
+        <terms:contributor>Víctor de la Peña, IMDEA Energía (0000-0001-5762-4787)</terms:contributor>
         <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-09-25</terms:created>
-        <terms:creator>Ana Iglesias-Molina</terms:creator>
-        <terms:creator>Oier Beaskoetxea</terms:creator>
+        <terms:creator>Ana Iglesias-Molina, Universidad Politécnica de Madrid (0000-0001-5375-8024)</terms:creator>
+        <terms:creator>Oier Beaskoetxea, Universidad Politécnica de Madrid</terms:creator>
         <terms:description xml:lang="en">This ontology represents the execution of experiments related to electrocatalysis, photocatalysis and photoelectrocatalysis with inputs, outputs, and experimental conditions.</terms:description>
         <terms:license>http://purl.org/NET/rdflicense/cc-by4.0</terms:license>
-        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-10-29</terms:modified>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-06-07</terms:modified>
         <terms:publisher rdf:resource="https://oeg.fi.upm.es/"/>
         <terms:title>The SolarChem Ontology</terms:title>
         <vann:preferredNamespacePrefix>solar</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri>https://w3id.org/solar/o/core#</vann:preferredNamespaceUri>
-        <owl:priorVersion rdf:resource="https://oeg-upm.github.io/solarchem-ontology/release/0.6.0/vocabulary/myDocumentation/doc/index-en.html"/>
+        <owl:priorVersion rdf:resource="https://w3id.org/solar/o/core/0.7.0/"/>
         <owl:versionInfo>v1.0.0</owl:versionInfo>
     </owl:Ontology>
     
@@ -561,6 +561,18 @@
     
 
 
+    <!-- https://w3id.org/solar/o/core#selectivityPercentage -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/solar/o/core#selectivityPercentage">
+        <rdfs:domain rdf:resource="https://w3id.org/solar/o/core#Output"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Percentage of selectivity of a catalyst with respect to an output</rdfs:comment>
+        <rdfs:label>selectivity percentage</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/solar/o/pc#reactorVolume -->
 
 
@@ -1065,7 +1077,7 @@
 
     <owl:Class rdf:about="https://w3id.org/solar/o/core#pHCondition">
         <rdfs:subClassOf rdf:resource="https://w3id.org/solar/o/core#Condition"/>
-        <rdfs:isDefinedBy xml:lang="en">The measure of pH in which the experiment execution is carried out</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="en">The measure of pH in which the experiment execution is carried out</rdfs:comment>
         <rdfs:label xml:lang="en">pH Condition</rdfs:label>
     </owl:Class>
     
