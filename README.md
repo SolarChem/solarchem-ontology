@@ -30,6 +30,7 @@ All modules are available in a machine-readable manner with content negotiation.
 ```
 curl -sH "Accept:text/turtle"  -L https://w3id.org/solar/o/core
 ```
+The corresponding Knowledge Graph can be queried via an SPARQL endpoint: `https://graphdb.linkeddata.es/sparql`
 
 ## Acknowledgements
 
