@@ -1,12 +1,22 @@
 # SolarChem Ontology
 
-Authors: Oier Beaskoetxea
+**Contributors**: Ana Iglesias-Molina, Daniel Garijo, Victor de la Peña O'Shea, Laura Collado, Miguel Tecedor.
 
-Contributors: Ana Iglesias, Oscar Corcho, Daniel Garijo, Victor de la Peña O'Shea.
+**Past Contributors**: Oier Beaskoetxea, Oscar Corcho.
 
-Vocabulary for the representation of photocatalysis processes mentioned in scientific papers. These experiments serve to define how a photocatalysis experiment has been done; under what circumstances, what products were used and what have been the results in order to analyze and reproduce the experiments mentioned in the articles. This vocabulary has been created in collaboration with the [IMDEA Energía](https://www.energia.imdea.org/) institute of Madrid.
+Ontology for the representation of execution of experiments of three kinds, photocatalysis, electrocatalysis and photoelectrocatalysis, mentioned in scientific papers. It enables describing how experiments has been conducted; under what conditions, using which inputs and the outputs obtained and measured, in order to analyze and reproduce the experiments mentioned in scientific articles. It reuses concepts from other ontologies such as [the Bibliographic Ontology](https://bibliontology.com/) (BIBO) and [schema.org](https://schema.org/) to represent articles that define the experiments and their authors; [Chemical Entities of Biological Interest](https://www.ebi.ac.uk/chebi/) (ChEBI) used to represent chemical elements, [Ontology for Biomedical Investigations](https://obofoundry.org/ontology/obi.html) (OBI) for conditions in the experiments and [Quantities, Units, Dimensions, and Types](https://www.qudt.org/) (QUDT) for quantities and units of measurement. 
 
-This vocabulary is based on data used by the [IMDEA Energy](https://www.energia.imdea.org/) institute as part of its **[Artleafs](http://www.artleafs.eu/)** project. This project is dedicated to storing information regarding scientific articles related to the field of artificial photosynthesis, which is used to report how the photocatalysis experiments are done, to facilitate access to information and reproducibility of the same. The vocabulary also reuses concepts from other ontologies such as *[the Bibliographic Ontology](https://bibliontology.com/)* (BIBO) and [schema.org](https://schema.org/) to represent articles that define the experiments and their authors; *[Chemical Entities of Biological Interest](https://www.ebi.ac.uk/chebi/)* (ChEBI) used to represent chemical elements and *[Quantities, Units, Dimensions, and Types](https://www.qudt.org/)* (QUDT) for quantities and units of measure.
+We include in this repository the resources related to the ontology development and publication, along with a corresponding knowledge graph instantiating the ontology with photocatalysis experiments:
+* `./docs`: Releases of the documentation of the ontology.
+* `./knowledge-graph`: Resources related to the creation of the knowledge graph with photocatalysis experiments data extracted from scientific literature. It includes Jupyter notebooks used for data cleaning, processing and enrichment, configurations for the tools used and the mappings that establish the relationships between the source data and the ontology.
+* `./ontology`: OWL code for the four modules comprising the SolarChem ontology
+* `./requirements`: Requirements and competency questions that the ontology must satisfy written in natural language. 
+
+
+
+<p align="center">
+ <img src="./docs/vocab/images/solarchem-diagram.svg/" alt="workflow" width="100%"/>
+</p>
 
 ## Availability
 
@@ -21,29 +31,6 @@ All modules are available in a machine-readable manner with content negotiation.
 curl -sH "Accept:text/turtle"  -L https://w3id.org/solar/o/core
 ```
 
+## Acknowledgements
 
-
-
-## Purpose and scope of the vocabulary
-
-This vocabulary focuses on the representation of photocatalysis processes described in scientific articles. The vocabulary defines several classes and properties that allow describing such experiments, being the class [phcat:MaterialTransformationProcess](#MaterialTransformationProcess) the central axis of it and defining through its properties the context of the complete experiment, such as the input chemicals and output, defined as [phcat:Input](#Input) and [phcat:Output](#Output); the conditions to perform the process, defined by [phcat:Condition](#Condition); and the article that mentions them by an element of the class [bibo:Article](http://bibliontology.com/content/article.html). In addition to these characteristics, material transformation processes have information that characterizes them, such as [phcat:operationMode](#operationMode), [phcat:Eg](#Eg) or energy band, [phcat:BET](#BET) or Surface Area and [phcat:Yield](#Yield).
-
-The elements of [bibo:Article](http://bibliontology.com/content/article.html) refer to the article in which the process is described. Among its properties are informative data about it, as well as relationships with the elements [bibo:Journal](http://gbol.life/ontology/bibo/Journal/) and [schema:Person](https://schema.org/person). The latter also contain information including [schema:Country](https://schema.org/Country) useful for searching by the researchers country of affiliation. The elements of the classes [phcat:Input](#Input) and [phcat:Output](#Output) store a reference of type [phcat:hasChemical](#hasChemical) with the class [chebi:CHEBI_24431](https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:24431) (a chemical) but only the input elements fulfill a role of type [phcat:MaterialTransformationProcess](#MaterialTransformationProcess) for the process . On the other hand, the process can have several types of conditions, all of them subclasses of [phcat:Condition](#Condition), which represent an element measurable by some unit of measure and quantities of the QUDT ontology such as [qudt:Unit]( https://qudt.org/schema/qudt/Unit) and [qudt:value](https://qudt.org/schema/qudt/value).
-
-
-<!-- # Development phases
-
-The material generated in the different activities carried out during the development of the vocabulary, use
-cases, user stories, glossary of terms, etc., will be available in the [Vocabulary Wiki](#)
-
-# Project maintenance
-
-To manage those incidents or suggested improvements with respect to the vocabulary, we recommend you to follow
-the guides provided in [Issues Management](https://github.com/nombre-repositorio/wiki/issues-management) to
-generate an issue (work in progress)
-
-# Examples
-
-Some [queries](https://github.com/repository-name/blob/master/examples/queries.md) will be performed in a
-SPARQL endpoint to test and exemplify its operability. -->
-
+This resource has been created in collaboration with the [IMDEA Energía](https://www.energia.imdea.org/) institute of Madrid, as part of the research project _[SOLARCHEM 5.0](https://energia.imdea.org/en/porfolio/solarchem-5-0-towards-digital-transition-in-solar-chemistry-solarchem-5-0-ai-assisted-robotized-platform-for-the-development-of-efficient-photoelectrodes/): Towards Digital Transition in Solar Chemistry: AI-assisted robotized platform for the development of efficient photoelectrodes_, corresponding to the call 2021 and reference: TED2021-130173B-C41, within the State Program to Promote Scientific-Technical Research and its Transfer (Strategic Projects Oriented to Ecological Transition and Digital Transition).
