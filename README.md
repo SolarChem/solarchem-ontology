@@ -8,7 +8,7 @@ Ontology for the representation of execution of experiments of three kinds, phot
 
 We include in this repository the resources related to the ontology development and publication, along with a corresponding knowledge graph instantiating the ontology with photocatalysis experiments:
 * `./docs`: Releases of the documentation of the ontology.
-* `./knowledge-graph`: Resources related to the creation of the knowledge graph with photocatalysis experiments data extracted from scientific literature. It includes Jupyter notebooks used for data cleaning, processing and enrichment, configurations for the tools used and the mappings that establish the relationships between the source data and the ontology.
+* `./queries`: A Jupyter notebook that queries the [knowledge graph](https://github.com/SolarChem/solarchem-kg) to answer the requirements and competency questions.
 * `./ontology`: OWL code for the four modules comprising the SolarChem ontology
 * `./requirements`: Requirements and competency questions that the ontology must satisfy written in natural language. 
 
