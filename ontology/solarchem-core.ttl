@@ -38,7 +38,7 @@
                                   vann:preferredNamespaceUri "https://w3id.org/solar/o/core#" ;
                                   owl:priorVersion <https://w3id.org/solar/o/core/0.7.0/> ;
                                   owl:versionInfo "v1.0.0" ;
-                                  schema:logo "https://raw.githubusercontent.com/SolarChem/solarchem-ontology/main/docs/vocab/images/solarchem_logo_square.png".
+                                  schema:logo "https://raw.githubusercontent.com/SolarChem/solarchem-ontology/main/docs/vocab/images/solarchem_logo_square.png" .
 
 #################################################################
 #    Annotation properties
@@ -68,6 +68,10 @@ dc:creator rdf:type owl:AnnotationProperty .
 dc:description rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/dc/terms/identifier
+dc:identifier rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/terms/license
 dc:license rdf:type owl:AnnotationProperty .
 
@@ -90,6 +94,34 @@ vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
 
 ###  http://purl.org/vocab/vann/preferredNamespaceUri
 vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+skos:altLabel rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#broader
+skos:broader rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#historyNote
+skos:historyNote rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#inScheme
+skos:inScheme rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/logo
+schema:logo rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -691,11 +723,74 @@ solar:pHCondition rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
-###  https://w3id.org/solar/o/core#BatchMode
-solar:BatchMode rdf:type owl:NamedIndividual ,
-                         solar:OperationModeCondition ;
-                rdfs:comment "Operation mode in which nothing is added or removed until the end of the reaction"@en ;
-                rdfs:label "Batch Mode"@en .
+###  https://w3id.org/nfdi4cat/voc4cat_0000109
+<https://w3id.org/nfdi4cat/voc4cat_0000109> rdf:type owl:NamedIndividual ,
+                                                     skos:Concept ,
+                                                     solar:OperationModeCondition ;
+                                            dc:identifier "voc4cat_0000109"^^xsd:token ;
+                                            skos:altLabel "continuous flow mode"@en ,
+                                                          "continuous-flow mode"@en ,
+                                                          "flow-mode"@en ;
+                                            skos:broader <https://w3id.org/nfdi4cat/voc4cat_0000108> ;
+                                            skos:definition " Under flow conditions, a continuous flow of reactants is supplied to the reaction chamber and the formed products are removed and identified by an appropriate technique."@en ;
+                                            skos:historyNote "0000-0002-6242-2167 Nikolaos G. Moustakas created the resource"@en ;
+                                            skos:inScheme <https://w3id.org/nfdi4cat/voc4cat_> ;
+                                            skos:prefLabel "flow mode"@en .
+
+
+###  https://w3id.org/nfdi4cat/voc4cat_0000110
+<https://w3id.org/nfdi4cat/voc4cat_0000110> rdf:type owl:NamedIndividual ,
+                                                     skos:Concept ,
+                                                     solar:OperationModeCondition ;
+                                            dc:identifier "voc4cat_0000110"^^xsd:token ;
+                                            skos:altLabel "batch-mode"@en ;
+                                            skos:broader <https://w3id.org/nfdi4cat/voc4cat_0000108> ;
+                                            skos:definition "Operation mode in which the reaction chamber is filled with the (reactant) gas(es) up to a certain pressure, and the photoreaction products acummulate over time."@en ;
+                                            skos:historyNote "0000-0002-6242-2167 Nikolaos G. Moustakas created the resource"@en ;
+                                            skos:inScheme <https://w3id.org/nfdi4cat/voc4cat_> ;
+                                            skos:prefLabel "batch mode"@en .
+
+
+###  https://w3id.org/nfdi4cat/voc4cat_0000167
+<https://w3id.org/nfdi4cat/voc4cat_0000167> rdf:type owl:NamedIndividual ,
+                                                     skos:Concept ,
+                                                     solar:Lamp ;
+                                            dc:identifier "voc4cat_0000167"^^xsd:token ;
+                                            skos:altLabel "Hg-Xe lamp"@en ,
+                                                          "Hg/Xe lamp"@en ,
+                                                          "mercury xenon lamp"@en ;
+                                            skos:broader <https://w3id.org/nfdi4cat/voc4cat_0000166> ;
+                                            skos:definition "A lamp containing a mixture of mercury (Hg) and xenon (Xe) gases. Under electric current, the gas mixture gets ionized through a discharge electric charge creating a plasma generating UV and visible light. "@en ;
+                                            skos:historyNote "0000-0002-6242-2167 Nikolaos G. Moustakas created the resource"@en ;
+                                            skos:inScheme <https://w3id.org/nfdi4cat/voc4cat_> ;
+                                            skos:prefLabel "mercury-xenon lamp"@en .
+
+
+###  https://w3id.org/nfdi4cat/voc4cat_0000168
+<https://w3id.org/nfdi4cat/voc4cat_0000168> rdf:type owl:NamedIndividual ,
+                                                     skos:Concept ,
+                                                     solar:Lamp ;
+                                            dc:identifier "voc4cat_0000168"^^xsd:token ;
+                                            skos:altLabel "Xe lamp"@en ,
+                                                          "Xe-lamp"@en ;
+                                            skos:broader <https://w3id.org/nfdi4cat/voc4cat_0000166> ;
+                                            skos:definition "A lamp containing pure xenon (Xe) gas. Under electric current, the gas mixture gets ionized through a discharge electric charge creating a plasma generating UV and visible light. "@en ;
+                                            skos:historyNote "0000-0002-6242-2167 Nikolaos G. Moustakas created the resource"@en ;
+                                            skos:inScheme <https://w3id.org/nfdi4cat/voc4cat_> ;
+                                            skos:prefLabel "xenon lamp"@en .
+
+
+###  https://w3id.org/nfdi4cat/voc4cat_0007005
+<https://w3id.org/nfdi4cat/voc4cat_0007005> rdf:type owl:NamedIndividual ,
+                                                     skos:Concept ,
+                                                     solar:Role ;
+                                            dc:identifier "voc4cat_0007005"^^xsd:token ;
+                                            rdfs:seeAlso <http://purl.obolibrary.org/obo/CHEBI_33893> ;
+                                            skos:broader <https://w3id.org/nfdi4cat/voc4cat_0007004> ;
+                                            skos:definition "A substance that is added to a chemical reaction."@en ;
+                                            skos:historyNote "0000-0002-4041-0165 Julia Schumann created the resource"@en ;
+                                            skos:inScheme <https://w3id.org/nfdi4cat/voc4cat_> ;
+                                            skos:prefLabel "reagent"@en .
 
 
 ###  https://w3id.org/solar/o/core#Catalyst
@@ -711,13 +806,6 @@ solar:Co-catalyst rdf:type owl:NamedIndividual ,
                            solar:Role ;
                   rdfs:comment "A substance or agent that brings about catalysis in conjunction with one or more others"@en ;
                   rdfs:label "Co-catalyst"@en .
-
-
-###  https://w3id.org/solar/o/core#ContinuousMode
-solar:ContinuousMode rdf:type owl:NamedIndividual ,
-                              solar:OperationModeCondition ;
-                     rdfs:comment "Operation mode in which inlet and outlet streams flow continuously during the reaction"@en ;
-                     rdfs:label "Continuous Mode"@en .
 
 
 ###  https://w3id.org/solar/o/core#Dopant
@@ -805,13 +893,6 @@ solar:MembraneReactor rdf:type owl:NamedIndividual ,
                       rdfs:label "Membrane Reactor"@en .
 
 
-###  https://w3id.org/solar/o/core#Mercury-XenonLamp
-solar:Mercury-XenonLamp rdf:type owl:NamedIndividual ,
-                                 solar:Lamp ;
-                        rdfs:comment "Lamp that contains a tightly controlled mixture of xenon gas and mercury, given them the combined UV spectral lines of an Hg lamp with the IR spectral lines of a Xe lamp." ;
-                        rdfs:label "Mercury-Xenon Lamp"@en .
-
-
 ###  https://w3id.org/solar/o/core#MercuryLamp
 solar:MercuryLamp rdf:type owl:NamedIndividual ,
                            solar:Lamp ;
@@ -845,14 +926,6 @@ solar:Overpotential rdf:type owl:NamedIndividual ,
                              solar:ElectrochemicalMetric ;
                     rdfs:comment "Deviation of the potential of an electrode from its equilibrium value required to cause a given current to flow through the electrode." ;
                     rdfs:label "Overpotential"@en .
-
-
-###  https://w3id.org/solar/o/core#Reagent
-solar:Reagent rdf:type owl:NamedIndividual ,
-                       solar:Role ;
-              rdfs:comment "A substance used in a chemical reaction to detect, measure, examine, or produce other substances."@en ;
-              rdfs:label "Reagent"@en ;
-              rdfs:seeAlso <http://purl.obolibrary.org/obo/CHEBI_33893> .
 
 
 ###  https://w3id.org/solar/o/core#SingleCell
@@ -909,13 +982,6 @@ solar:TungstenLamp rdf:type owl:NamedIndividual ,
                             solar:Lamp ;
                    rdfs:comment "A lamp where a tungsten filament is heated to temperatures where visible light is emitted by resistance heating." ;
                    rdfs:label "Tungsten Lamp"@en .
-
-
-###  https://w3id.org/solar/o/core#XenonLamp
-solar:XenonLamp rdf:type owl:NamedIndividual ,
-                         solar:Lamp ;
-                rdfs:comment "An incandescent light bulb filled with xenon gas to improve life span or efficiency" ;
-                rdfs:label "Xenon Lamp"@en .
 
 
 ###  https://w3id.org/solar/o/core#192-280WL
