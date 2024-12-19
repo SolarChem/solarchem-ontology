@@ -18,8 +18,8 @@
 @base <https://w3id.org/solar/o/pec#> .
 
 <https://w3id.org/solar/o/pec#> rdf:type owl:Ontology ;
-                                 owl:versionIRI <https://w3id.org/solar/o/pec/1.0.0> ;
-                                 owl:imports <https://w3id.org/solar/o/core/1.0.0> ;
+                                 owl:versionIRI <https://w3id.org/solar/o/pec/1.1.0> ;
+                                owl:imports <https://w3id.org/solar/o/core#> ;
                                  dc:contributor "Daniel Garijo, Universidad Politécnica de Madrid (0000-0003-0454-7145)" ,
                                                 "Laura Collado, IMDEA Energía (0000-0003-0216-3797)" ,
                                                 "Miguel Tecedor, IMDEA Energía (0000-0002-9664-4665)" ,
@@ -28,13 +28,13 @@
                                  dc:creator "Ana Iglesias-Molina, Universidad Politécnica de Madrid (0000-0001-5375-8024)" ;
                                  dc:description "This ontology represents the execution of experiments related to electrocatalysis, photocatalysis and photoelectrocatalysis with inputs, outputs, and experimental conditions."@en ;
                                  dc:license "http://purl.org/NET/rdflicense/cc-by4.0" ;
-                                 dc:modified "2024-06-07"^^xsd:date ;
+                                 dc:modified "2024-12-19"^^xsd:date ;
                                  dc:publisher <https://oeg.fi.upm.es/> ;
                                  dc:title "The SolarChem Ontology: Photoelectrocatalysis Experiments"@en ;
                                  vann:preferredNamespacePrefix "solarpec" ;
                                  vann:preferredNamespaceUri "https://w3id.org/solar/o/pec#" ;
-                                 owl:priorVersion <https://w3id.org/solar/o/pec/0.7.0/> ;
-                                 owl:versionInfo "v1.0.0" ;
+                                 owl:priorVersion <https://w3id.org/solar/o/pec/1.0.0/> ;
+                                 owl:versionInfo "v1.1.0" ;
                                  schema:logo "https://raw.githubusercontent.com/SolarChem/solarchem-ontology/main/docs/vocab/images/solarchem_logo_square.png" .
 
 #################################################################
@@ -61,6 +61,10 @@ dc:creator rdf:type owl:AnnotationProperty .
 dc:description rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/dc/terms/identifier
+dc:identifier rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/terms/license
 dc:license rdf:type owl:AnnotationProperty .
 
@@ -85,8 +89,36 @@ vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
 vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 
+###  http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#broader
+<http://www.w3.org/2004/02/skos/core#broader> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#historyNote
+<http://www.w3.org/2004/02/skos/core#historyNote> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#inScheme
+<http://www.w3.org/2004/02/skos/core#inScheme> rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2004/02/skos/core#narrower
 <http://www.w3.org/2004/02/skos/core#narrower> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/logo
+schema:logo rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -125,6 +157,15 @@ solar:Role rdf:type owl:Class ;
            rdfs:label "Role"@en .
 
 
+###  https://w3id.org/solar/o/pec#ObservableProperty
+solarpec:ObservableProperty rdf:type owl:Class ;
+                            rdfs:comment "An observable quality (property, characteristic) of a FeatureOfInterest."@en ;
+                            rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                            rdfs:label "Observable Property"@en ;
+                            <http://www.w3.org/2004/02/skos/core#definition> "An observable quality (property, characteristic) of a FeatureOfInterest."@en ;
+                            <http://www.w3.org/2004/02/skos/core#example> "The height of a tree, the depth of a water body, or the temperature of a surface are examples of observable properties, while the value of a classic car is not (directly) observable but asserted."@en .
+
+
 ###  https://w3id.org/solar/o/pec#PhotoelectrocatalysisExperiment
 solarpec:PhotoelectrocatalysisExperiment rdf:type owl:Class ;
                                          rdfs:subClassOf solar:ExperimentExecution ;
@@ -134,6 +175,7 @@ solarpec:PhotoelectrocatalysisExperiment rdf:type owl:Class ;
 
 ###  https://w3id.org/solar/o/pec#QuantumEfficiencyMetric
 solarpec:QuantumEfficiencyMetric rdf:type owl:Class ;
+                                 rdfs:subClassOf <http://www.w3.org/ns/sosa/ObservableProperty> ;
                                  rdfs:comment "The ratio of the number of carriers collected by the solar cell to the number of photons of a given energy incident on the solar cell"@en ;
                                  rdfs:label "Quantum Efficiency Metric"@en .
 
@@ -197,11 +239,11 @@ solarpec:APCE rdf:type owl:NamedIndividual ,
               rdfs:label "Absorbed Photon-to-Current Efficiency (APCE)"@en .
 
 
-###  https://w3id.org/solar/o/pec#FieldFactor
-solarpec:FieldFactor rdf:type owl:NamedIndividual ,
-                              solar:ElectrochemicalMetric ;
-                     rdfs:comment "Electrochemical cell in which analyte solution flows at a constant velocity Vf through stationary tubular electrode(s)"@en ;
-                     rdfs:label "Field Factor"@en .
+###  https://w3id.org/solar/o/pec#FillFactor
+solarpec:FillFactor rdf:type owl:NamedIndividual ,
+                             solar:ElectrochemicalMetric ;
+                    rdfs:comment "Electrochemical cell in which analyte solution flows at a constant velocity Vf through stationary tubular electrode(s)"@en ;
+                    rdfs:label "Fill Factor"@en .
 
 
 ###  https://w3id.org/solar/o/pec#IPCE
