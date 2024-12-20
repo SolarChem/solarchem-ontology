@@ -1,0 +1,160 @@
+<div id="changelog">
+<h2 id="changes" class="list">Changes from last version</h2>
+<h3 id="changeClass" class="list">Classes</h3>
+<details><summary><u>Modified classes</u></summary>
+<ul><li><a href="#ConversionMetric">https://w3id.org/solar/o/core#ConversionMetric</a>
+<ul>
+<li>Added: SubClass of http://www.w3.org/ns/sosa/ObservableProperty</li>
+</ul>
+</li>
+<li><a href="#ElectrochemicalMetric">https://w3id.org/solar/o/core#ElectrochemicalMetric</a>
+<ul>
+<li>Added: SubClass of http://www.w3.org/ns/sosa/ObservableProperty</li>
+</ul>
+</li>
+</ul></details><details><summary><u>Added classes</u></summary>
+<ul><li><a href="#http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a>
+</li>
+<li><a href="#http://www.w3.org/ns/sosa/ObservableProperty">http://www.w3.org/ns/sosa/ObservableProperty</a>
+</li>
+<li><a href="#http://www.w3.org/ns/sosa/Observation">http://www.w3.org/ns/sosa/Observation</a>
+</li>
+<li><a href="#http://www.w3.org/ns/sosa/Result">http://www.w3.org/ns/sosa/Result</a>
+</li>
+<li><a href="#BaselineExperiment">https://w3id.org/solar/o/core#BaselineExperiment</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/solar/o/core#ExperimentExecution</li>
+</ul>
+</li>
+<li><a href="#CalculatedObservation">https://w3id.org/solar/o/core#CalculatedObservation</a>
+<ul>
+<li>Added: SubClass of http://www.w3.org/ns/sosa/Observation</li>
+</ul>
+</li>
+<li><a href="#Experiment">https://w3id.org/solar/o/core#Experiment</a>
+</li>
+<li><a href="#NormalizedObservation">https://w3id.org/solar/o/core#NormalizedObservation</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/solar/o/core#CalculatedObservation</li>
+</ul>
+</li>
+<li><a href="#RawObservation">https://w3id.org/solar/o/core#RawObservation</a>
+<ul>
+<li>Added: SubClass of http://www.w3.org/ns/sosa/Observation</li>
+</ul>
+</li>
+<li><a href="#ReferenceExperiment">https://w3id.org/solar/o/core#ReferenceExperiment</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/solar/o/core#ExperimentExecution</li>
+</ul>
+</li>
+</ul></details><details><summary><u>Deleted classes</u></summary>
+<ul><li><a href="#Output">https://w3id.org/solar/o/core#Output</a>
+</li>
+</ul></details><h3 id="changeProp" class="list">Object Properties</h3>
+<details><summary><u>Modified object properties</u></summary>
+<ul><li><a href="#http://www.w3.org/ns/prov#used">http://www.w3.org/ns/prov#used</a>
+<ul>
+<li>Deleted: Range https://w3id.org/solar/o/core#Input</li>
+<li>Deleted: domain https://w3id.org/solar/o/core#ExperimentExecution</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/prov#wasGeneratedBy">http://www.w3.org/ns/prov#wasGeneratedBy</a>
+<ul>
+<li>Deleted: Range https://w3id.org/solar/o/core#ExperimentExecution</li>
+<li>Deleted: domain https://w3id.org/solar/o/core#Output</li>
+</ul>
+</li>
+<li><a href="#hasChemical">https://w3id.org/solar/o/core#hasChemical</a>
+<ul>
+<li>Added: domain Intersection of (https://w3id.org/solar/o/core#Input, https://w3id.org/solar/o/core#NormalizedObservation)</li>
+</ul>
+<ul>
+<li>Deleted: domain Intersection of (https://w3id.org/solar/o/core#Input, https://w3id.org/solar/o/core#Output)</li>
+</ul>
+</li>
+<li><a href="#hasConversionMetric">https://w3id.org/solar/o/core#hasConversionMetric</a>
+<ul>
+<li>Added: domain http://www.w3.org/ns/prov#Activity</li>
+</ul>
+<ul>
+<li>Deleted: domain https://w3id.org/solar/o/core#Output</li>
+</ul>
+</li>
+<li><a href="#hasElectrochemicalMetric">https://w3id.org/solar/o/core#hasElectrochemicalMetric</a>
+<ul>
+<li>Added: domain http://www.w3.org/ns/prov#Activity</li>
+</ul>
+<ul>
+<li>Deleted: domain https://w3id.org/solar/o/core#Output</li>
+</ul>
+</li>
+<li><a href="#hasExperimentExecution">https://w3id.org/solar/o/core#hasExperimentExecution</a>
+<ul>
+<li>Added: domain https://w3id.org/solar/o/core#Experiment</li>
+</ul>
+</li>
+<li><a href="#reportedIn">https://w3id.org/solar/o/core#reportedIn</a>
+<ul>
+<li>Added: domain https://w3id.org/solar/o/core#Experiment</li>
+</ul>
+</li>
+</ul></details><details><summary><u>Added object properties</u></summary>
+<ul><li><a href="#http://www.w3.org/ns/prov#wasDerivedFrom">http://www.w3.org/ns/prov#wasDerivedFrom</a>
+</li>
+<li><a href="#http://www.w3.org/ns/sosa/hasFeatureOfInterest">http://www.w3.org/ns/sosa/hasFeatureOfInterest</a>
+<ul>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;http://www.w3.org/ns/sosa/hasFeatureOfInterest&gt; &lt;http://www.w3.org/ns/sosa/isFeatureOfInterestOf&gt;)</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/sosa/hasResult">http://www.w3.org/ns/sosa/hasResult</a>
+<ul>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;http://www.w3.org/ns/sosa/hasResult&gt; &lt;http://www.w3.org/ns/sosa/isResultOf&gt;)</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/sosa/isFeatureOfInterestOf">http://www.w3.org/ns/sosa/isFeatureOfInterestOf</a>
+<ul>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;http://www.w3.org/ns/sosa/hasFeatureOfInterest&gt; &lt;http://www.w3.org/ns/sosa/isFeatureOfInterestOf&gt;)</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/sosa/isResultOf">http://www.w3.org/ns/sosa/isResultOf</a>
+<ul>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;http://www.w3.org/ns/sosa/hasResult&gt; &lt;http://www.w3.org/ns/sosa/isResultOf&gt;)</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/sosa/observedProperty">http://www.w3.org/ns/sosa/observedProperty</a>
+</li>
+<li><a href="#hasExperiment">https://w3id.org/solar/o/core#hasExperiment</a>
+<ul>
+<li>Added: Range https://w3id.org/solar/o/core#Experiment</li>
+<li>Added: domain https://schema.org/ScholarlyArticle</li>
+</ul>
+</li>
+<li><a href="#supports">https://w3id.org/solar/o/core#supports</a>
+<ul>
+<li>Added: Range https://w3id.org/solar/o/core#ExperimentExecution</li>
+<li>Added: domain https://w3id.org/solar/o/core#ExperimentExecution</li>
+</ul>
+</li>
+</ul></details><h3 id="changeDataProp" class="list">Data Properties</h3>
+<details><summary><u>Modified data properties</u></summary>
+<ul><li><a href="#https://qudt.org/2.1/schema/qudt#floatPercentage">https://qudt.org/2.1/schema/qudt#floatPercentage</a>
+<ul>
+<li>Added: Domain https://w3id.org/solar/o/core#Input</li>
+</ul>
+<ul>
+<li>Deleted: Domain Intersection of (https://w3id.org/solar/o/core#ConversionMetric, https://w3id.org/solar/o/core#Input)</li>
+</ul>
+</li>
+</ul></details><details><summary><u>Added data properties</u></summary>
+<ul><li><a href="#formula">https://w3id.org/solar/o/core#formula</a>
+<ul>
+<li>Added: Domain http://www.w3.org/ns/prov#Activity</li>
+</ul>
+</li>
+</ul></details><details><summary><u>Deleted data properties</u></summary>
+<ul><li><a href="#http://purl.obolibrary.org/obo/chebi/formula">http://purl.obolibrary.org/obo/chebi/formula</a>
+</li>
+<li><a href="#selectivityPercentage">https://w3id.org/solar/o/core#selectivityPercentage</a>
+</li>
+</ul></details></div>
