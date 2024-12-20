@@ -1,0 +1,302 @@
+@prefix : <https://w3id.org/solar/o/pec#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/solar/o/pec#> .
+
+<https://w3id.org/solar/o/pec#> rdf:type owl:Ontology ;
+                                 owl:versionIRI <https://w3id.org/solar/o/pec/1.1.0> ;
+                                 owl:imports <https://w3id.org/solar/o/core#> ;
+                                 <http://purl.org/dc/terms/contributor> "Daniel Garijo, Universidad Politécnica de Madrid (0000-0003-0454-7145)" ,
+                                                                        "Laura Collado, IMDEA Energía (0000-0003-0216-3797)" ,
+                                                                        "Miguel Tecedor, IMDEA Energía (0000-0002-9664-4665)" ,
+                                                                        "Víctor de la Peña, IMDEA Energía (0000-0001-5762-4787)" ;
+                                 <http://purl.org/dc/terms/created> "2025-06-07"^^xsd:date ;
+                                 <http://purl.org/dc/terms/creator> "Ana Iglesias-Molina, Universidad Politécnica de Madrid (0000-0001-5375-8024)" ;
+                                 <http://purl.org/dc/terms/description> "This ontology represents the execution of experiments related to electrocatalysis, photocatalysis and photoelectrocatalysis with inputs, outputs, and experimental conditions."@en ;
+                                 <http://purl.org/dc/terms/license> "http://purl.org/NET/rdflicense/cc-by4.0" ;
+                                 <http://purl.org/dc/terms/modified> "2024-12-19"^^xsd:date ;
+                                 <http://purl.org/dc/terms/publisher> <https://oeg.fi.upm.es/> ;
+                                 <http://purl.org/dc/terms/title> "The SolarChem Ontology: Photoelectrocatalysis Experiments"@en ;
+                                 <http://purl.org/vocab/vann/preferredNamespacePrefix> "solarpec" ;
+                                 <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/solar/o/pec#" ;
+                                 owl:priorVersion <https://w3id.org/solar/o/pec/1.0.0/> ;
+                                 owl:versionInfo "v1.1.0" ;
+                                 <https://schema.org/logo> "https://raw.githubusercontent.com/SolarChem/solarchem-ontology/main/docs/vocab/images/solarchem_logo_square.png" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/author
+<http://purl.org/dc/terms/author> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/identifier
+<http://purl.org/dc/terms/identifier> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#broader
+<http://www.w3.org/2004/02/skos/core#broader> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+<http://www.w3.org/2004/02/skos/core#example> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#historyNote
+<http://www.w3.org/2004/02/skos/core#historyNote> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#inScheme
+<http://www.w3.org/2004/02/skos/core#inScheme> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#narrower
+<http://www.w3.org/2004/02/skos/core#narrower> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/logo
+<https://schema.org/logo> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/ns/sosa/ObservableProperty
+<http://www.w3.org/ns/sosa/ObservableProperty> rdf:type owl:Class ;
+                                               rdfs:comment "An observable quality (property, characteristic) of a FeatureOfInterest."@en ;
+                                               rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                               rdfs:label "Observable Property"@en ;
+                                               <http://www.w3.org/2004/02/skos/core#definition> "An observable quality (property, characteristic) of a FeatureOfInterest."@en ;
+                                               <http://www.w3.org/2004/02/skos/core#example> "The height of a tree, the depth of a water body, or the temperature of a surface are examples of observable properties, while the value of a classic car is not (directly) observable but asserted."@en .
+
+
+###  https://w3id.org/solar/o/core#Condition
+<https://w3id.org/solar/o/core#Condition> rdf:type owl:Class ;
+                                          rdfs:label "Condition"@en .
+
+
+###  https://w3id.org/solar/o/core#ElectrochemicalConfiguration
+<https://w3id.org/solar/o/core#ElectrochemicalConfiguration> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <https://w3id.org/solar/o/core#Condition> ;
+                                                             rdfs:label "Electrochemical Configuration"@en .
+
+
+###  https://w3id.org/solar/o/core#ExperimentExecution
+<https://w3id.org/solar/o/core#ExperimentExecution> rdf:type owl:Class ;
+                                                    rdfs:label "Experiment Execution"@en .
+
+
+###  https://w3id.org/solar/o/core#Role
+<https://w3id.org/solar/o/core#Role> rdf:type owl:Class ;
+                                     rdfs:label "Role"@en .
+
+
+###  https://w3id.org/solar/o/pec#PhotoelectrocatalysisExperiment
+:PhotoelectrocatalysisExperiment rdf:type owl:Class ;
+                                 rdfs:subClassOf <https://w3id.org/solar/o/core#ExperimentExecution> ;
+                                 rdfs:comment "Experiment of a reaction based on the use of a semiconductor irradiated by light energy equal or greater than its band gap energy simultaneously biased by a gradient potential"@en ;
+                                 rdfs:label "Photoelectrocatalysis Experiment"@en .
+
+
+###  https://w3id.org/solar/o/pec#QuantumEfficiencyMetric
+:QuantumEfficiencyMetric rdf:type owl:Class ;
+                         rdfs:subClassOf <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                         rdfs:comment "The ratio of the number of carriers collected by the solar cell to the number of photons of a given energy incident on the solar cell"@en ;
+                         rdfs:label "Quantum Efficiency Metric"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/nfdi4cat/voc4cat_0000002
+<https://w3id.org/nfdi4cat/voc4cat_0000002> rdf:type owl:NamedIndividual ,
+                                                     <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                            <http://purl.org/dc/terms/identifier> "voc4cat_0000002"^^xsd:token ;
+                                            <http://www.w3.org/2004/02/skos/core#altLabel> "photocatalytic material"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/nfdi4cat/voc4cat_0000001> ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "A material that absorbs photons (light) of appropriate energy and initiates or accelerates a photochemical reaction, while it regenerates itself after each reaction cycle."@en ;
+                                            <http://www.w3.org/2004/02/skos/core#historyNote> "0000-0002-6242-2167 Nikolaos G. Moustakas created the resource"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/nfdi4cat/voc4cat_> ;
+                                            <http://www.w3.org/2004/02/skos/core#narrower> <https://w3id.org/nfdi4cat/voc4cat_0000003> ,
+                                                                                           <https://w3id.org/nfdi4cat/voc4cat_0000016> ,
+                                                                                           <https://w3id.org/nfdi4cat/voc4cat_0000045> ,
+                                                                                           <https://w3id.org/nfdi4cat/voc4cat_0000066> ;
+                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "photocatalyst"@en .
+
+
+###  https://w3id.org/nfdi4cat/voc4cat_0007254
+<https://w3id.org/nfdi4cat/voc4cat_0007254> rdf:type owl:NamedIndividual ,
+                                                     <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                            <http://purl.org/dc/terms/identifier> "voc4cat_0007254"^^xsd:token ;
+                                            rdfs:seeAlso <http://purl.obolibrary.org/obo/CHMO_0002932> ;
+                                            <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/nfdi4cat/voc4cat_0007201> ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "The electrode where reduction occurs in an electrochemical cell. It is the negative electrode in an electrolytic cell, while it is the positive electrode in a galvanic cell. "@en ;
+                                            <http://www.w3.org/2004/02/skos/core#historyNote> "0009-0008-1278-8890 Michael Götte created the resource"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/nfdi4cat/voc4cat_> ;
+                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "cathode"@en .
+
+
+###  https://w3id.org/nfdi4cat/voc4cat_0007255
+<https://w3id.org/nfdi4cat/voc4cat_0007255> rdf:type owl:NamedIndividual ,
+                                                     <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                            <http://purl.org/dc/terms/identifier> "voc4cat_0007255"^^xsd:token ;
+                                            rdfs:seeAlso <http://purl.obolibrary.org/obo/CHMO_0002931> ;
+                                            <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/nfdi4cat/voc4cat_0007201> ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "The electrode where oxidation occurs in an electrochemical cell. It is the positive electrode in an electrolytic cell, while it is the negative electrode in a galvanic cell."@en ;
+                                            <http://www.w3.org/2004/02/skos/core#historyNote> "0009-0008-1278-8890 Michael Götte created the resource"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/nfdi4cat/voc4cat_> ;
+                                            <http://www.w3.org/2004/02/skos/core#prefLabel> "anode"@en .
+
+
+###  https://w3id.org/solar/o/pec#ABPE
+:ABPE rdf:type owl:NamedIndividual ,
+               :QuantumEfficiencyMetric ;
+      rdfs:comment "Applied Bias Photon-to-current Efficiency (ABPE): Used to describe the performance of the photoelectrodes. It is the difference between the power output in chemical fuel and any added electrical input power, divided by the solar power input"@en ;
+      rdfs:isDefinedBy <https://pubs.acs.org/doi/10.1021/jz501716g> ;
+      rdfs:label "Applied Bias Photon-to-Current Efficiency (ABPE)"@en .
+
+
+###  https://w3id.org/solar/o/pec#APCE
+:APCE rdf:type owl:NamedIndividual ,
+               :QuantumEfficiencyMetric ;
+      rdfs:comment "A measure of how absorbed photons transform to current"@en ;
+      rdfs:label "Absorbed Photon-to-Current Efficiency (APCE)"@en .
+
+
+###  https://w3id.org/solar/o/pec#FillFactor
+:FillFactor rdf:type owl:NamedIndividual ,
+                     <https://w3id.org/solar/o/core#ElectrochemicalMetric> ;
+            rdfs:comment "Electrochemical cell in which analyte solution flows at a constant velocity Vf through stationary tubular electrode(s)"@en ;
+            rdfs:label "Fill Factor"@en .
+
+
+###  https://w3id.org/solar/o/pec#IPCE
+:IPCE rdf:type owl:NamedIndividual ,
+               :QuantumEfficiencyMetric ;
+      rdfs:comment "A measure of the ratio of the photocurrent (converted to an electron transfer rate) versus the rate of incident photons (converted from the calibrated power of a light source) as a function of wavelength"@en ;
+      rdfs:label "Incident Photon-to-Current Efficiency (IPCE)"@en .
+
+
+###  https://w3id.org/solar/o/pec#Onset
+:Onset rdf:type owl:NamedIndividual ,
+                <https://w3id.org/solar/o/core#ElectrochemicalMetric> ;
+       rdfs:comment "The highest (for cathodic reactions) or lowest (for anodic reactions such as the OER) potential values at which a reaction product is produced at a given electrode and defined conditions"@en ;
+       rdfs:label "Onset"@en .
+
+
+###  https://w3id.org/solar/o/pec#Overlayer
+:Overlayer rdf:type owl:NamedIndividual ,
+                    <https://w3id.org/solar/o/core#Role> ;
+           rdfs:comment "A monolayer or less of adsorbed atoms or molecules"@en ;
+           rdfs:label "Overlayer"@en .
+
+
+###  https://w3id.org/solar/o/pec#PEC
+:PEC rdf:type owl:NamedIndividual ,
+              <https://w3id.org/solar/o/core#ElectrochemicalConfiguration> ;
+     rdfs:comment "The configuration for a photoelectrocatalysis experiment"@en ;
+     rdfs:label "photoelectrocatalysis"@en .
+
+
+###  https://w3id.org/solar/o/pec#PV-EC
+:PV-EC rdf:type owl:NamedIndividual ,
+                <https://w3id.org/solar/o/core#ElectrochemicalConfiguration> ;
+       rdfs:comment "The configuration for a photovoltaic-electrocatalysis experiment"@en ;
+       rdfs:label "photovoltaic-electrocatalysis"@en .
+
+
+###  https://w3id.org/solar/o/pec#PV-PEC
+:PV-PEC rdf:type owl:NamedIndividual ,
+                 <https://w3id.org/solar/o/core#ElectrochemicalConfiguration> ;
+        rdfs:comment "The configuration for a photovoltaic-photoelectrocatalysis experiment"@en ;
+        rdfs:label "photovoltaic-photoelectrocatalysis"@en .
+
+
+###  https://w3id.org/solar/o/pec#Photoabsorber
+:Photoabsorber rdf:type owl:NamedIndividual ,
+                        <https://w3id.org/solar/o/core#Role> ;
+               rdfs:comment "Material in a PV device absorbing photons to produce charge carriers (electrons and electron holes)"@en ;
+               rdfs:label "Photoabsorber"@en .
+
+
+###  https://w3id.org/solar/o/pec#PhotocurrentDensity
+:PhotocurrentDensity rdf:type owl:NamedIndividual ,
+                              <https://w3id.org/solar/o/core#ElectrochemicalMetric> ;
+                     rdfs:comment "The ratio of the photocurrent produced by the photoelectrode to the area irradiated by a sunlight"@en ;
+                     rdfs:label "Photocurrent Density"@en .
+
+
+###  https://w3id.org/solar/o/pec#Substrate
+:Substrate rdf:type owl:NamedIndividual ,
+                    <https://w3id.org/solar/o/core#Role> ;
+           rdfs:comment "A substrate is a molecule that is consumed in the course of a biochemical reaction"@en ;
+           rdfs:label "Substrate"@en ;
+           rdfs:seeAlso <http://semanticscience.org/resource/SIO_010362> .
+
+
+###  https://w3id.org/solar/o/pec#TransparentConductiveContact
+:TransparentConductiveContact rdf:type owl:NamedIndividual ,
+                                       <https://w3id.org/solar/o/core#Role> ;
+                              rdfs:comment "Optically transparent electrode (OTE). An electrode used for in situ spectroelectrochemistry."@en ;
+                              rdfs:label "Transparent Conductive Contact"@en .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

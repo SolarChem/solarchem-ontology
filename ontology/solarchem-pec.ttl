@@ -19,7 +19,7 @@
 
 <https://w3id.org/solar/o/pec#> rdf:type owl:Ontology ;
                                  owl:versionIRI <https://w3id.org/solar/o/pec/1.1.0> ;
-                                owl:imports <https://w3id.org/solar/o/core#> ;
+                                 owl:imports solar: ;
                                  dc:contributor "Daniel Garijo, Universidad Politécnica de Madrid (0000-0003-0454-7145)" ,
                                                 "Laura Collado, IMDEA Energía (0000-0003-0216-3797)" ,
                                                 "Miguel Tecedor, IMDEA Energía (0000-0002-9664-4665)" ,
@@ -101,6 +101,10 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 <http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
 
 
+###  http://www.w3.org/2004/02/skos/core#example
+<http://www.w3.org/2004/02/skos/core#example> rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2004/02/skos/core#historyNote
 <http://www.w3.org/2004/02/skos/core#historyNote> rdf:type owl:AnnotationProperty .
 
@@ -122,19 +126,17 @@ schema:logo rdf:type owl:AnnotationProperty .
 
 
 #################################################################
-#    Object Properties
-#################################################################
-
-###  https://w3id.org/solar/o/pec#hasQuantumEfficiencyMetric
-solarpec:hasQuantumEfficiencyMetric rdf:type owl:ObjectProperty ;
-                                    rdfs:range solarpec:QuantumEfficiencyMetric ;
-                                    rdfs:comment "The quantum efficiency metric related to the output in an experiment execution."@en ;
-                                    rdfs:label "has quantum efficiency metric"@en .
-
-
-#################################################################
 #    Classes
 #################################################################
+
+###  http://www.w3.org/ns/sosa/ObservableProperty
+<http://www.w3.org/ns/sosa/ObservableProperty> rdf:type owl:Class ;
+                                               rdfs:comment "An observable quality (property, characteristic) of a FeatureOfInterest."@en ;
+                                               rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
+                                               rdfs:label "Observable Property"@en ;
+                                               <http://www.w3.org/2004/02/skos/core#definition> "An observable quality (property, characteristic) of a FeatureOfInterest."@en ;
+                                               <http://www.w3.org/2004/02/skos/core#example> "The height of a tree, the depth of a water body, or the temperature of a surface are examples of observable properties, while the value of a classic car is not (directly) observable but asserted."@en .
+
 
 ###  https://w3id.org/solar/o/core#Condition
 solar:Condition rdf:type owl:Class ;
@@ -155,15 +157,6 @@ solar:ExperimentExecution rdf:type owl:Class ;
 ###  https://w3id.org/solar/o/core#Role
 solar:Role rdf:type owl:Class ;
            rdfs:label "Role"@en .
-
-
-###  https://w3id.org/solar/o/pec#ObservableProperty
-solarpec:ObservableProperty rdf:type owl:Class ;
-                            rdfs:comment "An observable quality (property, characteristic) of a FeatureOfInterest."@en ;
-                            rdfs:isDefinedBy <http://www.w3.org/ns/sosa/> ;
-                            rdfs:label "Observable Property"@en ;
-                            <http://www.w3.org/2004/02/skos/core#definition> "An observable quality (property, characteristic) of a FeatureOfInterest."@en ;
-                            <http://www.w3.org/2004/02/skos/core#example> "The height of a tree, the depth of a water body, or the temperature of a surface are examples of observable properties, while the value of a classic car is not (directly) observable but asserted."@en .
 
 
 ###  https://w3id.org/solar/o/pec#PhotoelectrocatalysisExperiment
