@@ -1013,18 +1013,32 @@
     "@value" : "Accumulated Charge"
   } ]
 }, {
-  "@id" : "https://w3id.org/solar/o/core#BandGap",
+  "@id" : "https://w3id.org/solar/o/core#BETSurfaceArea",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://w3id.org/solar/o/core#GeneralCharacterizationMetric"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Energy difference between the nonconductive and the conductive state of a material"
+    "@value" : "Specific surface area (m2 g–1) determined from the adsorption isotherm of a gas with the help of the Brunauer, Emmett, and Teller (BET) model using the conventional value for the molecular cross-section."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "Band Gap"
+    "@value" : "BET Surface Area"
+  } ]
+}, {
+  "@id" : "https://w3id.org/solar/o/core#BandGapEnergy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/solar/o/core#GeneralCharacterizationMetric"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Energy difference between the bottom of the conduction band and the top of the valence band."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Band Gap Energy"
   } ]
 }, {
   "@id" : "https://w3id.org/solar/o/core#BaselineExperiment",
@@ -1116,16 +1130,28 @@
     "@value" : "Coulombic Efficiency"
   } ]
 }, {
-  "@id" : "https://w3id.org/solar/o/core#CrystalStructure",
+  "@id" : "https://w3id.org/solar/o/core#CrystallinePhase",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://w3id.org/solar/o/core#GeneralCharacterizationMetric"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "The type of crystal structure of the input of an experiment execution"
+    "@value" : "A distinct arrangement of atoms in a crystal structure, characterized by a specific composition and symmetry."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Crystal Structure"
+    "@value" : "Crystalline Phase"
+  } ]
+}, {
+  "@id" : "https://w3id.org/solar/o/core#CrystalliteSize",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/solar/o/core#GeneralCharacterizationMetric"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Size of a single crystal in a polycrystalline material."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Crystallite Size"
   } ]
 }, {
   "@id" : "https://w3id.org/solar/o/core#Dopant",
@@ -1265,6 +1291,18 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Fluidised-bed Reactor"
+  } ]
+}, {
+  "@id" : "https://w3id.org/solar/o/core#FluorescenceLifetime",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/solar/o/core#GeneralCharacterizationMetric"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Time a fluorophore spends in the excited state before emitting a photon and returning to the ground state."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Fluorescence Lifetime"
   } ]
 }, {
   "@id" : "https://w3id.org/solar/o/core#FluorescentLamp",
@@ -1566,6 +1604,18 @@
     "@value" : "Percentage"
   } ]
 }, {
+  "@id" : "https://w3id.org/solar/o/core#PoreSizeDistribution",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/solar/o/core#GeneralCharacterizationMetric"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The distribution of pore volume with respect to pore size"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Pore Size Distribution"
+  } ]
+}, {
   "@id" : "https://w3id.org/solar/o/core#Power",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -1807,20 +1857,6 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Stack Cell"
-  } ]
-}, {
-  "@id" : "https://w3id.org/solar/o/core#SurfaceArea",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/solar/o/core#GeneralCharacterizationMetric"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "The area or region used in the experiment execution"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Surface Area"
   } ]
 }, {
   "@id" : "https://w3id.org/solar/o/core#TemperatureCondition",
