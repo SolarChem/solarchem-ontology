@@ -380,18 +380,6 @@
     
 
 
-    <!-- https://w3id.org/solar/o/core#hasBandGap -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/solar/o/core#hasBandGap">
-        <rdfs:domain rdf:resource="https://w3id.org/solar/o/core#Input"/>
-        <rdfs:range rdf:resource="https://w3id.org/solar/o/core#BandGap"/>
-        <rdfs:comment xml:lang="en">A relationship between the input of an experiment execution and its measure of band gap</rdfs:comment>
-        <rdfs:label xml:lang="en">has band gap</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/solar/o/core#hasChemical -->
 
 
@@ -513,18 +501,6 @@
     
 
 
-    <!-- https://w3id.org/solar/o/core#hasSurfaceArea -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/solar/o/core#hasSurfaceArea">
-        <rdfs:domain rdf:resource="https://w3id.org/solar/o/core#Input"/>
-        <rdfs:range rdf:resource="https://w3id.org/solar/o/core#SurfaceArea"/>
-        <rdfs:comment xml:lang="en">A relationship between the input of an experiment execution and its measure of surface area</rdfs:comment>
-        <rdfs:label xml:lang="en">has surface area</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/solar/o/core#hasWavelength -->
 
 
@@ -587,17 +563,6 @@
     <owl:DatatypeProperty rdf:about="http://qudt.org/2.1/schema/qudt#numericValue">
         <rdfs:isDefinedBy rdf:resource="http://qudt.org/2.1/schema/qudt#"/>
         <rdfs:label xml:lang="en">numeric value</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://qudt.org/2.1/schema/qudt#floatPercentage -->
-
-
-    <owl:DatatypeProperty rdf:about="https://qudt.org/2.1/schema/qudt#floatPercentage">
-        <rdfs:domain rdf:resource="https://w3id.org/solar/o/core#Input"/>
-        <rdfs:isDefinedBy rdf:resource="http://qudt.org/2.1/schema/qudt#"/>
-        <rdfs:label xml:lang="en">float percentage</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -672,24 +637,12 @@
     
 
 
-    <!-- https://schema.org/volumeNumer -->
+    <!-- https://schema.org/volumeNumber -->
 
 
-    <owl:DatatypeProperty rdf:about="https://schema.org/volumeNumer">
+    <owl:DatatypeProperty rdf:about="https://schema.org/volumeNumber">
         <rdfs:comment>volume number</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://schema.org/"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://w3id.org/solar/o/core#crystalStructure -->
-
-
-    <owl:DatatypeProperty rdf:about="https://w3id.org/solar/o/core#crystalStructure">
-        <rdfs:domain rdf:resource="https://w3id.org/solar/o/core#Input"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">The type of crystal structure of the input of an experiment execution</rdfs:comment>
-        <rdfs:label xml:lang="en">crystal structure</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -930,22 +883,6 @@
     
 
 
-    <!-- https://w3id.org/solar/o/core#BandGap -->
-
-
-    <owl:Class rdf:about="https://w3id.org/solar/o/core#BandGap">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://qudt.org/2.1/schema/qudt/unit"/>
-                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">Energy difference between the nonconductive and the conductive state of a material</rdfs:comment>
-        <rdfs:label xml:lang="en">Band Gap</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/solar/o/core#BaselineExperiment -->
 
 
@@ -1029,6 +966,17 @@
     
 
 
+    <!-- https://w3id.org/solar/o/core#GeneralCharacterizationMetric -->
+
+
+    <owl:Class rdf:about="https://w3id.org/solar/o/core#GeneralCharacterizationMetric">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+        <rdfs:comment>Metrics intrinsically related to the input catalyst of the experiment execution</rdfs:comment>
+        <rdfs:label>General Characterization Metric</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/solar/o/core#IlluminatedArea -->
 
 
@@ -1043,12 +991,6 @@
 
 
     <owl:Class rdf:about="https://w3id.org/solar/o/core#Input">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/solar/o/core#hasBandGap"/>
-                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/solar/o/core#hasChemical"/>
@@ -1236,16 +1178,6 @@
     
 
 
-    <!-- https://w3id.org/solar/o/core#SurfaceArea -->
-
-
-    <owl:Class rdf:about="https://w3id.org/solar/o/core#SurfaceArea">
-        <rdfs:comment xml:lang="en">The area or region used in the experiment execution</rdfs:comment>
-        <rdfs:label xml:lang="en">Surface Area</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://w3id.org/solar/o/core#TemperatureCondition -->
 
 
@@ -1397,6 +1329,28 @@
     
 
 
+    <!-- https://w3id.org/solar/o/core#AccumulatedCharge -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/core#AccumulatedCharge">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/core#ElectrochemicalMetric"/>
+        <rdfs:comment>Accumulated charge in the oxidation (anodic) or reduction (cathodic) process</rdfs:comment>
+        <rdfs:label>Accumulated Charge</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/solar/o/core#BandGap -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/core#BandGap">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/core#GeneralCharacterizationMetric"/>
+        <rdfs:comment xml:lang="en">Energy difference between the nonconductive and the conductive state of a material</rdfs:comment>
+        <rdfs:label xml:lang="en">Band Gap</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/solar/o/core#Catalyst -->
 
 
@@ -1420,6 +1374,28 @@
     
 
 
+    <!-- https://w3id.org/solar/o/core#CoulombicEfficiency -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/core#CoulombicEfficiency">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/core#ElectrochemicalMetric"/>
+        <rdfs:comment>Ratio of accumulated loads in the unloading and loading processes</rdfs:comment>
+        <rdfs:label>Coulombic Efficiency</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/solar/o/core#CrystalStructure -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/core#CrystalStructure">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/core#GeneralCharacterizationMetric"/>
+        <rdfs:comment>The type of crystal structure of the input of an experiment execution</rdfs:comment>
+        <rdfs:label>Crystal Structure</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/solar/o/core#Dopant -->
 
 
@@ -1439,6 +1415,17 @@
         <rdf:type rdf:resource="https://w3id.org/solar/o/core#ElectrochemicalConfiguration"/>
         <rdfs:comment>A &quot;double cell&quot; configuration refers to a setup involving two compartments or cells connected by an electrolyte.</rdfs:comment>
         <rdfs:label xml:lang="en">Double Cell</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/solar/o/core#ExchangeCurrentDensity -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/core#ExchangeCurrentDensity">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/core#ElectrochemicalMetric"/>
+        <rdfs:comment>Intrinsic activity of a catalyst under electrochemical equilibrium conditions</rdfs:comment>
+        <rdfs:label>Exchange Current Density</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1505,6 +1492,28 @@
         <rdf:type rdf:resource="https://w3id.org/solar/o/core#ReactionMediumCondition"/>
         <rdfs:comment xml:lang="en">Reaction medium that is composed of a gas</rdfs:comment>
         <rdfs:label xml:lang="en">Gas Medium</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/solar/o/core#HalfCurrentTime -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/core#HalfCurrentTime">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/core#ElectrochemicalMetric"/>
+        <rdfs:comment>Time in which the current decreases in half its initial value</rdfs:comment>
+        <rdfs:label>Half Current Time</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/solar/o/core#HalfPotential -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/core#HalfPotential">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/core#ElectrochemicalMetric"/>
+        <rdfs:comment>Reference value of the oxidation-reduction process</rdfs:comment>
+        <rdfs:label>Half Potential</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1608,6 +1617,28 @@
     
 
 
+    <!-- https://w3id.org/solar/o/core#PeakSeparation -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/core#PeakSeparation">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/core#ElectrochemicalMetric"/>
+        <rdfs:comment>Separation between the potentials of the observed peaks in the current-potential intensity curve</rdfs:comment>
+        <rdfs:label>Peak Separation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/solar/o/core#Percentage -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/core#Percentage">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/core#GeneralCharacterizationMetric"/>
+        <rdfs:comment>The percentage of an input not catalyst in an experiment execution</rdfs:comment>
+        <rdfs:label>Percentage</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/solar/o/core#Production -->
 
 
@@ -1692,6 +1723,17 @@
         <rdf:type rdf:resource="https://w3id.org/solar/o/core#ElectrochemicalConfiguration"/>
         <rdfs:comment>Individual cells stacked to achieve a higher voltage and power.</rdfs:comment>
         <rdfs:label xml:lang="en">Stack Cell</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/solar/o/core#SurfaceArea -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/solar/o/core#SurfaceArea">
+        <rdf:type rdf:resource="https://w3id.org/solar/o/core#GeneralCharacterizationMetric"/>
+        <rdfs:comment xml:lang="en">The area or region used in the experiment execution</rdfs:comment>
+        <rdfs:label xml:lang="en">Surface Area</rdfs:label>
     </owl:NamedIndividual>
     
 

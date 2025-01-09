@@ -9,26 +9,6 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid10",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/solar/o/core#hasChemical"
-  } ]
-}, {
-  "@id" : "_:genid11",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "http://qudt.org/2.1/schema/qudt/unit"
-  } ]
-}, {
   "@id" : "_:genid4",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#cardinality" : [ {
@@ -71,22 +51,22 @@
 }, {
   "@id" : "_:genid8",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#cardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/solar/o/core#hasChemical"
+  } ]
+}, {
+  "@id" : "_:genid9",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#maxCardinality" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
     "@value" : "1"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://qudt.org/2.1/schema/qudt/unit"
-  } ]
-}, {
-  "@id" : "_:genid9",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#cardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "1"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/solar/o/core#hasBandGap"
   } ]
 }, {
   "@id" : "http://purl.obolibrary.org/obo/IAO_0000115",
@@ -541,19 +521,6 @@
     "@value" : "Relation linking an Observation to the property that was observed. The ObservableProperty should be a property of the FeatureOfInterest (linked by hasFeatureOfInterest) of this Observation."
   } ]
 }, {
-  "@id" : "https://qudt.org/2.1/schema/qudt#floatPercentage",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/solar/o/core#Input"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://qudt.org/2.1/schema/qudt#"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "float percentage"
-  } ]
-}, {
   "@id" : "https://schema.org/Country",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
@@ -687,7 +654,7 @@
     "@value" : "page start"
   } ]
 }, {
-  "@id" : "https://schema.org/volumeNumer",
+  "@id" : "https://schema.org/volumeNumber",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "volume number"
@@ -1034,8 +1001,23 @@
     "@value" : "400-780 Wavelength"
   } ]
 }, {
+  "@id" : "https://w3id.org/solar/o/core#AccumulatedCharge",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/solar/o/core#ElectrochemicalMetric"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Accumulated charge in the oxidation (anodic) or reduction (cathodic) process"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Accumulated Charge"
+  } ]
+}, {
   "@id" : "https://w3id.org/solar/o/core#BandGap",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/solar/o/core#GeneralCharacterizationMetric"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Energy difference between the nonconductive and the conductive state of a material"
@@ -1043,9 +1025,6 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Band Gap"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid8"
   } ]
 }, {
   "@id" : "https://w3id.org/solar/o/core#BaselineExperiment",
@@ -1125,6 +1104,30 @@
     "@id" : "http://www.w3.org/ns/sosa/ObservableProperty"
   } ]
 }, {
+  "@id" : "https://w3id.org/solar/o/core#CoulombicEfficiency",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/solar/o/core#ElectrochemicalMetric"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Ratio of accumulated loads in the unloading and loading processes"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Coulombic Efficiency"
+  } ]
+}, {
+  "@id" : "https://w3id.org/solar/o/core#CrystalStructure",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/solar/o/core#GeneralCharacterizationMetric"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The type of crystal structure of the input of an experiment execution"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Crystal Structure"
+  } ]
+}, {
   "@id" : "https://w3id.org/solar/o/core#Dopant",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -1180,6 +1183,18 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/ns/sosa/ObservableProperty"
+  } ]
+}, {
+  "@id" : "https://w3id.org/solar/o/core#ExchangeCurrentDensity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/solar/o/core#ElectrochemicalMetric"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Intrinsic activity of a catalyst under electrochemical equilibrium conditions"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Exchange Current Density"
   } ]
 }, {
   "@id" : "https://w3id.org/solar/o/core#Experiment",
@@ -1279,6 +1294,42 @@
     "@value" : "Gas Medium"
   } ]
 }, {
+  "@id" : "https://w3id.org/solar/o/core#GeneralCharacterizationMetric",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Metrics intrinsically related to the input catalyst of the experiment execution"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "General Characterization Metric"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/sosa/ObservableProperty"
+  } ]
+}, {
+  "@id" : "https://w3id.org/solar/o/core#HalfCurrentTime",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/solar/o/core#ElectrochemicalMetric"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Time in which the current decreases in half its initial value"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Half Current Time"
+  } ]
+}, {
+  "@id" : "https://w3id.org/solar/o/core#HalfPotential",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/solar/o/core#ElectrochemicalMetric"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Reference value of the oxidation-reduction process"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Half Potential"
+  } ]
+}, {
   "@id" : "https://w3id.org/solar/o/core#HalogenLamp",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -1314,9 +1365,7 @@
     "@value" : "Input"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "_:genid9"
-  }, {
-    "@id" : "_:genid10"
+    "@id" : "_:genid8"
   } ]
 }, {
   "@id" : "https://w3id.org/solar/o/core#Irradiance",
@@ -1491,6 +1540,30 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Overpotential"
+  } ]
+}, {
+  "@id" : "https://w3id.org/solar/o/core#PeakSeparation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/solar/o/core#ElectrochemicalMetric"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Separation between the potentials of the observed peaks in the current-potential intensity curve"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Peak Separation"
+  } ]
+}, {
+  "@id" : "https://w3id.org/solar/o/core#Percentage",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/solar/o/core#GeneralCharacterizationMetric"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The percentage of an input not catalyst in an experiment execution"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Percentage"
   } ]
 }, {
   "@id" : "https://w3id.org/solar/o/core#Power",
@@ -1737,7 +1810,10 @@
   } ]
 }, {
   "@id" : "https://w3id.org/solar/o/core#SurfaceArea",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/solar/o/core#GeneralCharacterizationMetric"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The area or region used in the experiment execution"
@@ -1760,7 +1836,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/solar/o/core#Condition"
   }, {
-    "@id" : "_:genid11"
+    "@id" : "_:genid9"
   } ]
 }, {
   "@id" : "https://w3id.org/solar/o/core#Tungsten-HalideLamp",
@@ -1814,23 +1890,6 @@
     "@value" : "Wavelength"
   } ]
 }, {
-  "@id" : "https://w3id.org/solar/o/core#crystalStructure",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "The type of crystal structure of the input of an experiment execution"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/solar/o/core#Input"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "crystal structure"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ]
-}, {
   "@id" : "https://w3id.org/solar/o/core#formula",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -1841,23 +1900,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "formula"
-  } ]
-}, {
-  "@id" : "https://w3id.org/solar/o/core#hasBandGap",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A relationship between the input of an experiment execution and its measure of band gap"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/solar/o/core#Input"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "has band gap"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/solar/o/core#BandGap"
   } ]
 }, {
   "@id" : "https://w3id.org/solar/o/core#hasChemical",
@@ -2007,23 +2049,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "https://w3id.org/solar/o/core#Role"
-  } ]
-}, {
-  "@id" : "https://w3id.org/solar/o/core#hasSurfaceArea",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A relationship between the input of an experiment execution and its measure of surface area"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/solar/o/core#Input"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "has surface area"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/solar/o/core#SurfaceArea"
   } ]
 }, {
   "@id" : "https://w3id.org/solar/o/core#hasWavelength",
